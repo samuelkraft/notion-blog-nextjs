@@ -52,6 +52,10 @@ export default function Home({ posts }) {
             <a href="https://www.notion.so/5b53abc87b284beab0c169c9fb695b4d?v=e4ed5b1a8f2e4e12b6d1ef68fa66e518">
               this table
             </a>
+            . Get the source code on{" "}
+            <a href="https://github.com/samuelkraft/notion-blog-nextjs">
+              Github
+            </a>
             .
           </p>
         </header>
