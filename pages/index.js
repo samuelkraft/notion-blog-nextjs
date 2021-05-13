@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import styles from "./index.module.css";
 
+export const databaseId = "5b53abc87b284beab0c169c9fb695b4d";
+
 export default function Home({ posts }) {
   return (
     <div>
@@ -46,7 +48,11 @@ export default function Home({ posts }) {
           <h1>Next.js blog powered by Notion API</h1>
           <p>
             This is an example of a Next.js blog with data fetched with Notions
-            API
+            API. The data comes from{" "}
+            <a href="https://www.notion.so/5b53abc87b284beab0c169c9fb695b4d?v=e4ed5b1a8f2e4e12b6d1ef68fa66e518">
+              this table
+            </a>
+            .
           </p>
         </header>
 
@@ -83,7 +89,7 @@ export default function Home({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const database = await getDatabase("5b53abc87b284beab0c169c9fb695b4d");
+  const database = await getDatabase(databaseId);
 
   return {
     props: {

@@ -2,11 +2,10 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
+import { databaseId } from "./index.js";
 import styles from "./post.module.css";
 
 export default function Post({ page, blocks }) {
-  console.log("page", page);
-  console.log("blocks", blocks);
   if (!page || !blocks) {
     return <div />;
   }
@@ -70,11 +69,7 @@ export default function Post({ page, blocks }) {
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase("5b53abc87b284beab0c169c9fb695b4d");
-  console.log(
-    "paths",
-    database.map((page) => ({ params: { id: page.id } }))
-  );
+  const database = await getDatabase(databaseId);
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,
