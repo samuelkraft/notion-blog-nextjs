@@ -5,6 +5,8 @@ import Link from "next/link";
 import styles from "./post.module.css";
 
 export default function Post({ page, blocks }) {
+  console.log("page", page);
+  console.log("blocks", blocks);
   const name = page.properties.Name.title[0]?.plain_text;
   return (
     <div>
@@ -21,7 +23,6 @@ export default function Post({ page, blocks }) {
           {blocks.map((block) => {
             const { type, id } = block;
             const value = block[type];
-            console.log("type", type);
 
             if (type === "paragraph") {
               return (
