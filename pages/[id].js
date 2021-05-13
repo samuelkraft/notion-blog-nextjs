@@ -7,7 +7,10 @@ import styles from "./post.module.css";
 export default function Post({ page, blocks }) {
   console.log("page", page);
   console.log("blocks", blocks);
-  const name = page.properties.Name.title[0]?.plain_text;
+  if (!page || !blocks) {
+    return <div />;
+  }
+  const name = page?.properties.Name.title[0]?.plain_text;
   return (
     <div>
       <Head>
@@ -16,9 +19,7 @@ export default function Post({ page, blocks }) {
       </Head>
 
       <article className={styles.container}>
-        <h1 className={styles.name}>
-          {page.properties.Name.title[0]?.plain_text}
-        </h1>
+        <h1 className={styles.name}>{name}</h1>
         <section>
           {blocks.map((block) => {
             const { type, id } = block;
@@ -70,6 +71,10 @@ export default function Post({ page, blocks }) {
 
 export const getStaticPaths = async () => {
   const database = await getDatabase("5b53abc87b284beab0c169c9fb695b4d");
+  console.log(
+    "paths",
+    database.map((page) => ({ params: { id: page.id } }))
+  );
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,
