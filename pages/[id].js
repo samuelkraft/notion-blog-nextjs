@@ -20,7 +20,7 @@ const Text = ({ text }) => {
           bold ? styles.bold : "",
           code ? styles.code : "",
           italic ? styles.italic : "",
-          striketrough ? styles.striketrough : "",
+          striketrough ? styles.strikethrough : "",
           underline ? styles.underline : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
