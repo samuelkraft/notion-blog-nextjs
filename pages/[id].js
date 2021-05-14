@@ -11,7 +11,7 @@ const Text = ({ text }) => {
   }
   return text.map((value) => {
     const {
-      annotations: { bold, code, color, italic, striketrough, underline },
+      annotations: { bold, code, color, italic, strikethrough, underline },
       text,
     } = value;
     return (
@@ -20,7 +20,7 @@ const Text = ({ text }) => {
           bold ? styles.bold : "",
           code ? styles.code : "",
           italic ? styles.italic : "",
-          striketrough ? styles.strikethrough : "",
+          strikethrough ? styles.strikethrough : "",
           underline ? styles.underline : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
