@@ -5,6 +5,114 @@ import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
 
+const Text = ({ value }) => {
+  const {
+    annotations: { bold, code, color, italic, striketrough, underline },
+    text,
+  } = value;
+  return (
+    <span
+      className={[
+        bold ? styles.bold : "",
+        code ? styles.code : "",
+        italic ? styles.italic : "",
+        striketrough ? styles.striketrough : "",
+        underline ? styles.underline : "",
+      ].join(" ")}
+      style={color !== "default" ? { color } : {}}
+    >
+      {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
+    </span>
+  );
+};
+
+const renderBlock = (block) => {
+  const { type, id } = block;
+  const value = block[type];
+
+  switch (type) {
+    case "paragraph":
+      return (
+        <p>
+          {value.text.map((value) => (
+            <Text value={value} key={value.plain_text} />
+          ))}
+        </p>
+      );
+      break;
+    case "heading_1":
+      return (
+        <h1>
+          {value.text.map((value) => (
+            <Text value={value} key={value.plain_text} />
+          ))}
+        </h1>
+      );
+      break;
+    case "heading_2":
+      return (
+        <h2>
+          {value.text.map((value) => (
+            <Text value={value} key={value.plain_text} />
+          ))}
+        </h2>
+      );
+      break;
+    case "heading_3":
+      return (
+        <h3>
+          {value.text.map((value) => (
+            <Text value={value} key={value.plain_text} />
+          ))}
+        </h3>
+      );
+      break;
+    case "bulleted_list_item":
+    case "numbered_list_item":
+      return (
+        <>
+          {value.text.map((value) => (
+            <li key={value.plain_text}>
+              <Text value={value} />
+            </li>
+          ))}
+        </>
+      );
+      break;
+    case "to_do":
+      return (
+        <div key={id}>
+          <label htmlFor={id}>
+            <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
+            {value.text.map((value) => (
+              <Text value={value} key={value.plain_text} />
+            ))}
+          </label>
+        </div>
+      );
+      break;
+    case "toggle":
+      return (
+        <details key={id}>
+          <summary>
+            {value.text.map((value) => (
+              <Text value={value} key={value.plain_text} />
+            ))}
+          </summary>
+          It's a toggle!
+        </details>
+      );
+      break;
+    case "child_page":
+      return <p>{value.title}</p>;
+      break;
+    default:
+      return `❌ Unsupported block (${
+        type === "unsupported" ? "unsupported by Notion API" : type
+      })`;
+  }
+};
+
 export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
@@ -20,45 +128,9 @@ export default function Post({ page, blocks }) {
       <article className={styles.container}>
         <h1 className={styles.name}>{name}</h1>
         <section>
-          {blocks.map((block) => {
-            const { type, id } = block;
-            const value = block[type];
-
-            if (type === "paragraph") {
-              return (
-                <p key={id}>
-                  {value.text.map((p) => {
-                    return p.text.link ? (
-                      <a href={p.text.link.url}>{p.text.content}</a>
-                    ) : (
-                      p.text.content
-                    );
-                  })}
-                </p>
-              );
-            }
-            if (type === "heading_1") {
-              return <h1 key={id}>{value.text.map((p) => p.plain_text)}</h1>;
-            }
-            if (type === "heading_2") {
-              return <h2 key={id}>{value.text.map((p) => p.plain_text)}</h2>;
-            }
-            if (
-              type === "numbered_list_item" ||
-              type === "bulleted_list_item"
-            ) {
-              return (
-                <Fragment key={id}>
-                  {value.text.map((p) => (
-                    <li>{p.plain_text}</li>
-                  ))}
-                </Fragment>
-              );
-            }
-            return (
-              <Fragment key={id}>{`❌ Unsupported type (${type})`}</Fragment>
-            );
-          })}
+          {blocks.map((block) => (
+            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+          ))}
           <Link href="/">
             <a className={styles.back}>← Go home</a>
           </Link>
