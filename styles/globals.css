@@ -18,3 +18,14 @@ a {
 h1 {
   font-weight: 800;
 }
+
+:root {
+  /* Your default theme */
+  --background: white;
+  --foreground: black;
+}
+
+[data-theme='dark'] {
+  --background: black;
+  --foreground: white;
+}
