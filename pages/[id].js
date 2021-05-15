@@ -42,28 +42,24 @@ const renderBlock = (block) => {
           <Text text={value.text} />
         </p>
       );
-      break;
     case "heading_1":
       return (
         <h1>
           <Text text={value.text} />
         </h1>
       );
-      break;
     case "heading_2":
       return (
         <h2>
           <Text text={value.text} />
         </h2>
       );
-      break;
     case "heading_3":
       return (
         <h3>
           <Text text={value.text} />
         </h3>
       );
-      break;
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
@@ -71,7 +67,6 @@ const renderBlock = (block) => {
           <Text text={value.text} />
         </li>
       );
-      break;
     case "to_do":
       return (
         <div>
@@ -81,7 +76,6 @@ const renderBlock = (block) => {
           </label>
         </div>
       );
-      break;
     case "toggle":
       return (
         <details>
@@ -91,10 +85,8 @@ const renderBlock = (block) => {
           It's a toggle!
         </details>
       );
-      break;
     case "child_page":
       return <p>{value.title}</p>;
-      break;
     default:
       return `❌ Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type
