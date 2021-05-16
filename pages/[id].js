@@ -5,7 +5,7 @@ import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
 
-const Text = ({ text }) => {
+export const Text = ({ text }) => {
   if (!text) {
     return null;
   }
@@ -98,16 +98,17 @@ export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
-  const name = page?.properties.Name.title[0]?.plain_text;
   return (
     <div>
       <Head>
-        <title>{name}</title>
+        <title>{page.properties.Name.title[0].plain_text}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <article className={styles.container}>
-        <h1 className={styles.name}>{name}</h1>
+        <h1 className={styles.name}>
+          <Text text={page.properties.Name.title} />
+        </h1>
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>

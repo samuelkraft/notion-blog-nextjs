@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getDatabase } from "../lib/notion";
+import { Text } from "./[id].js";
 import styles from "./index.module.css";
 
 export const databaseId = "5b53abc87b284beab0c169c9fb695b4d";
@@ -49,10 +50,8 @@ export default function Home({ posts }) {
           <p>
             This is an example of a Next.js blog with data fetched with Notions
             API. The data comes from{" "}
-            <a href="https://www.notion.so/5b53abc87b284beab0c169c9fb695b4d?v=e4ed5b1a8f2e4e12b6d1ef68fa66e518">
-              this table
-            </a>
-            . Get the source code on{" "}
+            <a href={`https://www.notion.so/${databaseId}`}>this table</a>. Get
+            the source code on{" "}
             <a href="https://github.com/samuelkraft/notion-blog-nextjs">
               Github
             </a>
@@ -75,7 +74,9 @@ export default function Home({ posts }) {
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
-                    <a>{post.properties.Name.title[0]?.plain_text}</a>
+                    <a>
+                      <Text text={post.properties.Name.title} />
+                    </a>
                   </Link>
                 </h3>
 
