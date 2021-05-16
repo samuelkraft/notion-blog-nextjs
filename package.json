@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^0.1.3",
-    "next": "10.x",
+    "next": "10.2.0",
     "react": "17.x",
     "react-dom": "17.x"
   }
