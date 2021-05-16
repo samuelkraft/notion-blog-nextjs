@@ -6,7 +6,7 @@ Demo: [https://notion-blog-nextjs-coral.vercel.app](https://notion-blog-nextjs-c
 
 First, follow Notions [getting started guide](https://developers.notion.com/docs/getting-started) for getting your `NOTION_TOKEN`, then add it to a .env.local.
 
-To change the source of your data change the `databaseId` in `index.js`.
+To change the source of your data create a new table or list in Notion and change the `databaseId` in `index.js`.
 
 Start the server with
 
