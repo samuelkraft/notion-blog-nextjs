@@ -4,7 +4,7 @@ Demo: [https://notion-blog-nextjs-coral.vercel.app](https://notion-blog-nextjs-c
 
 ## Getting Started
 
-First, follow Notions [getting started guide](https://developers.notion.com/docs/getting-started) to get a `NOTION_TOKEN` and a `NOTION_DATABASE_ID`, then and add them to a file called `.env.local`.
+First, follow Notions [getting started guide](https://developers.notion.com/docs/getting-started) to get a `NOTION_TOKEN` and a `NOTION_DATABASE_ID`, then add them to a file called `.env.local`.
 
 ```
 NOTION_TOKEN=
