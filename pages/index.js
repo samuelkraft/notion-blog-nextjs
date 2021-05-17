@@ -4,7 +4,9 @@ import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
 
-export const databaseId = "5b53abc87b284beab0c169c9fb695b4d";
+export const databaseId = process.env.NOTION_DATABASE_ID
+  ? process.env.NOTION_DATABASE_ID
+  : "5b53abc87b284beab0c169c9fb695b4d";
 
 export default function Home({ posts }) {
   return (
