@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getDatabase } from "../lib/notion";
-import { Text } from "./[id].js";
+import { StyledText } from '@9gustin/react-notion-render';
 import styles from "./index.module.css";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
@@ -75,7 +75,7 @@ export default function Home({ posts }) {
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
                     <a>
-                      <Text text={post.properties.Name.title} />
+                      {post.properties.Name.title.map(({text, annotations}) => (<StyledText text={text} annotations={annotations} />))}
                     </a>
                   </Link>
                 </h3>

@@ -3,98 +3,10 @@ import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
-import styles from "./post.module.css";
 
-export const Text = ({ text }) => {
-  if (!text) {
-    return null;
-  }
-  return text.map((value) => {
-    const {
-      annotations: { bold, code, color, italic, strikethrough, underline },
-      text,
-    } = value;
-    return (
-      <span
-        className={[
-          bold ? styles.bold : "",
-          code ? styles.code : "",
-          italic ? styles.italic : "",
-          strikethrough ? styles.strikethrough : "",
-          underline ? styles.underline : "",
-        ].join(" ")}
-        style={color !== "default" ? { color } : {}}
-      >
-        {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
-      </span>
-    );
-  });
-};
+import { render, StyledText } from '@9gustin/react-notion-render';
 
-const renderBlock = (block) => {
-  const { type, id } = block;
-  const value = block[type];
-
-  switch (type) {
-    case "paragraph":
-      return (
-        <p>
-          <Text text={value.text} />
-        </p>
-      );
-    case "heading_1":
-      return (
-        <h1>
-          <Text text={value.text} />
-        </h1>
-      );
-    case "heading_2":
-      return (
-        <h2>
-          <Text text={value.text} />
-        </h2>
-      );
-    case "heading_3":
-      return (
-        <h3>
-          <Text text={value.text} />
-        </h3>
-      );
-    case "bulleted_list_item":
-    case "numbered_list_item":
-      return (
-        <li>
-          <Text text={value.text} />
-        </li>
-      );
-    case "to_do":
-      return (
-        <div>
-          <label htmlFor={id}>
-            <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-            <Text text={value.text} />
-          </label>
-        </div>
-      );
-    case "toggle":
-      return (
-        <details>
-          <summary>
-            <Text text={value.text} />
-          </summary>
-          {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
-        </details>
-      );
-    case "child_page":
-      return <p>{value.title}</p>;
-    default:
-      return `❌ Unsupported block (${
-        type === "unsupported" ? "unsupported by Notion API" : type
-      })`;
-  }
-};
+import styles from './index.module.css';
 
 export default function Post({ page, blocks }) {
   if (!page || !blocks) {
@@ -108,13 +20,11 @@ export default function Post({ page, blocks }) {
       </Head>
 
       <article className={styles.container}>
-        <h1 className={styles.name}>
-          <Text text={page.properties.Name.title} />
+        <h1>
+          {page.properties.Name.title.map(({text, annotations}) => (<StyledText text={text} annotations={annotations} />))}
         </h1>
         <section>
-          {blocks.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
+          {render(blocks)}
           <Link href="/">
             <a className={styles.back}>← Go home</a>
           </Link>

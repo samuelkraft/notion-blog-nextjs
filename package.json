@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@9gustin/react-notion-render": "^1.1.1",
     "@notionhq/client": "^0.1.8",
     "next": "10.2.3",
     "react": "17.x",
