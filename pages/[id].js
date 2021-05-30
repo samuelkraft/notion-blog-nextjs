@@ -21,7 +21,7 @@ export default function Post({ page, blocks }) {
 
       <article className={styles.container}>
         <h1>
-          {page.properties.Name.title.map(({text, annotations}) => (<StyledText text={text} annotations={annotations} />))}
+          {page.properties.Name.title.map(({text, annotations}, index) => (<StyledText key={index} text={text} annotations={annotations} />))}
         </h1>
         <section>
           {render(blocks)}

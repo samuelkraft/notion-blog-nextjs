@@ -75,7 +75,7 @@ export default function Home({ posts }) {
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
                     <a>
-                      {post.properties.Name.title.map(({text, annotations}) => (<StyledText text={text} annotations={annotations} />))}
+                      {post.properties.Name.title.map(({text, annotations}, index) => (<StyledText key={index} text={text} annotations={annotations} />))}
                     </a>
                   </Link>
                 </h3>
