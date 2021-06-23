@@ -55,7 +55,7 @@ export default function Home({ posts }) {
             <a href="https://github.com/samuelkraft/notion-blog-nextjs">
               Github
             </a> or read{" "}
-            <a href="https://samuelkraft.com/blog/building-a-notion-blog-with-public-api">my blogpost</a>
+            <a href="https://samuelkraft.com/blog/building-a-notion-blog-with-public-api">my blogpost</a>{" "}
             on building your own.
           </p>
         </header>
