@@ -87,15 +87,6 @@ export default function Home({ posts }) {
               </li>
             );
           })}
-          <ol className={styles.posts}>
-            {posts.map((post) => (
-              <li key={post.id}>
-                <Link href={`/${post.id}`}>
-                  <Text text={post.properties.Name.title} />
-                </Link>
-              </li>
-            ))}
-          </ol>
         </ol>
       </main>
     </div>
