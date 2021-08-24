@@ -9,6 +9,20 @@
   font-size: 32px;
 }
 
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container figure {
+  margin-left: 0;
+  margin-rigth: 0;
+}
+
+.container figcaption {
+  opacity: 0.6;
+}
+
 .name {
   font-size: 36px;
 }

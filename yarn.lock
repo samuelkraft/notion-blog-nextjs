@@ -114,10 +114,10 @@
   dependencies:
     "@napi-rs/triples" "^1.0.3"
 
-"@notionhq/client@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-0.2.4.tgz#8d908a781501f4110166af05ef2da61c00782422"
-  integrity sha512-omokCm0TwRH0DTCkHGCX4V4jEd7XQoMvQ9d7bcLn+mZgnTW5uU50T+vqQudr6p3y3BMeCXROI/u+JmU2RJT/AQ==
+"@notionhq/client@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-0.3.0.tgz#88f939c2bd6d14e89c0c1c94d4d435a09059f406"
+  integrity sha512-lncHgZ+0WSB5inliMoI2gQ/B5KE7VHYQ8/3r31gp7xADupJC4S2k+hetl6GBjp91EmcL2QHMZirJc0kFYUqu/w==
   dependencies:
     "@types/node-fetch" "^2.5.10"
     node-fetch "^2.6.1"
