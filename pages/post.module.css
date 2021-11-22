@@ -38,14 +38,14 @@
 
 .code {
   font-family: monospace;
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(217, 228, 221);
   padding: 2px 4px;
   border-radius: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
   .code {
-    background-color: rgb(15, 8, 28);
+    background-color: rgb(217, 228, 221);
   }
 }
 

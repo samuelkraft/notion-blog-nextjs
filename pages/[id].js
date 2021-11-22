@@ -4,6 +4,7 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
+import { CopyBlock, nord } from "react-code-blocks";
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -99,6 +100,18 @@ const renderBlock = (block) => {
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );
+    case "code":
+      const language = value.language;
+      return value.text.map((text) => {
+        return (
+          <CopyBlock
+            text={text.plain_text}
+            language={language}
+            showLineNumbers={false}
+            theme={nord}
+          />
+        );
+      });
     default:
       return `❌ Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type
@@ -137,7 +150,11 @@ export default function Post({ page, blocks }) {
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
   return {
-    paths: database.map((page) => ({ params: { id: page.id } })),
+    paths: database
+      .filter((el) => el.properties.Published.checkbox)
+      .map((page) => ({
+        params: { id: page.properties.Slug.rich_text[0]?.plain_text },
+      })),
     fallback: true,
   };
 };
@@ -148,7 +165,6 @@ export const getStaticProps = async (context) => {
   const _page = database.find(
     (el) => el.properties.Slug.rich_text[0]?.plain_text === slug
   );
-  console.log(_page);
   const id = _page.id;
 
   const page = await getPage(id);

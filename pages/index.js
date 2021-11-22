@@ -115,8 +115,6 @@ export default function Home({ posts, externalPosts }) {
 export const getStaticProps = async () => {
   const database = await getDatabase(databaseId);
   const externalDatabase = await getDatabase(externalDatabaseId);
-  console.log(externalDatabase);
-  console.log(externalDatabase.map((el) => el.properties.Name.title));
 
   const publishedPosts = database
     .filter((el) => el.properties.Published.checkbox)
