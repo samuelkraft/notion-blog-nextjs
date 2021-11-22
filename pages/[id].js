@@ -92,7 +92,7 @@ const renderBlock = (block) => {
     case "image":
       const src =
         value.type === "external" ? value.external.url : value.file.url;
-      const caption = value.caption ? value.caption[0].plain_text : "";
+      const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
         <figure>
           <img src={src} alt={caption} />
@@ -143,7 +143,14 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const { id } = context.params;
+  const { id: slug } = context.params;
+  const database = await getDatabase(databaseId);
+  const _page = database.find(
+    (el) => el.properties.Slug.rich_text[0]?.plain_text === slug
+  );
+  console.log(_page);
+  const id = _page.id;
+
   const page = await getPage(id);
   const blocks = await getBlocks(id);
 

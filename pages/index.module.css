@@ -1,3 +1,7 @@
+.section {
+  margin-bottom: 40px;
+}
+
 .container {
   padding: 0 20px;
   max-width: 700px;
@@ -25,9 +29,20 @@
 }
 
 .heading {
+  display: inline-block;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #dedede;
+  text-transform: uppercase;
+  font-size: 15px;
+  opacity: 0.6;
+  letter-spacing: 0.5px;
+}
+
+.summary {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
   text-transform: uppercase;
   font-size: 15px;
   opacity: 0.6;
@@ -47,7 +62,7 @@
 }
 
 .post {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .postTitle {

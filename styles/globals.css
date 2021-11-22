@@ -13,8 +13,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: rgb(24, 24, 31);
-    color: rgb(238, 238, 238);
+    background-color: rgb(251, 247, 240);
+    color: rgb(85, 85, 85);
   }
 }
 
