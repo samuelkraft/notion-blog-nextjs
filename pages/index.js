@@ -10,17 +10,17 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Notion Next.js blog</title>
+        <title>Vincent Escoffier website</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.container}>
         <header className={styles.header}>
-          <h1>Next.js blog powered by Notion API</h1>
+          <h1>My playground</h1>
         </header>
 
         <h2 className={styles.heading}>All Posts</h2>
-        {<ol className={styles.posts}>
+        <ol className={styles.posts}>
           {posts.map((post) => {
             const date = new Date(post.last_edited_time).toLocaleString(
               "en-US",
@@ -47,7 +47,7 @@ export default function Home({ posts }) {
               </li>
             );
           })}
-        </ol>}
+        </ol>
       </main>
     </div>
   );
