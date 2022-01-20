@@ -53,6 +53,22 @@
   font-style: italic;
 }
 
+.pre_code_block {
+  font-family: monospace;
+  background: rgb(15, 8, 28);
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 2.3;
+  border-radius: 0.75em;
+  overflow: auto;
+}
+
+.code_block {
+  color: rgb(242, 242, 242);
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .strikethrough {
   text-decoration: line-through;
 }

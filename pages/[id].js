@@ -104,6 +104,10 @@ const renderBlock = (block) => {
       return <hr key={id} />;
     case "quote":
       return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
+    case "code":
+      return <pre className={styles.pre_code_block}>
+              <code className={styles.code_block} key={id}>{value.text[0].plain_text}</code>
+            </pre>
     default:
       return `❌ Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type
