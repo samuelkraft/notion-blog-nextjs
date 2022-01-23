@@ -53,10 +53,11 @@
 .postTitle {
   margin-bottom: 10px;
   font-size: 1.4rem;
+  color: white;
 }
 
 .postTitle a {
-  color: inherit;
+  color: white;
 }
 
 .postDescription {
