@@ -10,8 +10,8 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Notion Next.js blog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Ayush's Blog</title>
+        <link rel="icon" href="/favicon-modified.png" />
       </Head>
 
       <main className={styles.container}>
@@ -66,7 +66,9 @@ export default function Home({ posts }) {
 
         <h2 className={styles.heading}>All Posts</h2>
         <ol className={styles.posts}>
+          
           {posts.map((post) => {
+          /*  if (post.properties.Status.select.name == 'Complete'){*/
             const date = new Date(post.last_edited_time).toLocaleString(
               "en-US",
               {
@@ -75,7 +77,9 @@ export default function Home({ posts }) {
                 year: "numeric",
               }
             );
+        
             return (
+              
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
@@ -91,7 +95,9 @@ export default function Home({ posts }) {
                 </Link>
               </li>
             );
+         
           })}
+        
         </ol>
       </main>
     </div>
@@ -100,6 +106,9 @@ export default function Home({ posts }) {
 
 export const getStaticProps = async () => {
   const database = await getDatabase(databaseId);
+  
+  
+  
 
   return {
     props: {
