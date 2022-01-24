@@ -43,27 +43,33 @@
   border-radius: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .code {
-    background-color: rgb(15, 8, 28);
-  }
-}
+
 
 .italic {
   font-style: italic;
 }
 
-.pre_code_block {
-  background: rgb(15, 8, 28);
-  padding: 20px;
+.pre {
+  background-color: rgb(242, 242, 242);
+  padding: 2px 4px;
   margin: 20px 0;
   line-height: 2.3;
-  border-radius: 0.75em;
+  border-radius: 12px;
   overflow: auto;
 }
 
+@media (prefers-color-scheme: dark) {
+  .code {
+    background-color: rgb(15, 8, 28);
+  }
+  .pre {
+    background-color: rgb(15, 8, 28);
+  }
+}
+
 .code_block {
-  font-family: 'Consolas';
+  padding: 20px;
+  font-family: monospace;
   color: rgb(242, 242, 242);
   display: flex;
   flex-wrap: wrap;

@@ -104,7 +104,7 @@ const renderBlock = (block) => {
     case "quote":
       return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
     case "code":
-      return <pre className={styles.pre_code_block}>
+      return <pre className={styles.pre}>
               <code className={styles.code_block} key={id}>{value.text[0].plain_text}</code>
             </pre>
     default:
