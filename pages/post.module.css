@@ -43,11 +43,21 @@
   border-radius: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .code {
-    background-color: rgb(15, 8, 28);
-  }
+.file {
+  padding: 2px 4px;
+  text-decoration: none;
 }
+
+.file a {
+  color: inherit;
+}
+
+.file:hover {
+  background: rgba(55, 53, 47, 0.08);
+  cursor: pointer;
+  border-radius: 2px;
+}
+
 
 .italic {
   font-style: italic;
@@ -59,4 +69,15 @@
 
 .underline {
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .code {
+    background-color: rgb(15, 8, 28);
+  }
+  .file:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  border-radius: 2px;
+  }
 }
