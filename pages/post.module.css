@@ -1,84 +1,105 @@
 .container {
-  padding: 0 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.5;
+	padding: 0 20px;
+	max-width: 700px;
+	margin: 0 auto;
+	line-height: 1.5;
 }
 
 .container h1 {
-  font-size: 32px;
+	font-size: 32px;
 }
 
 .container img {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .container figure {
-  margin-left: 0;
-  margin-right: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .container figcaption {
-  opacity: 0.6;
+	opacity: 0.6;
 }
 
 .name {
-  font-size: 36px;
+	font-size: 36px;
 }
 
 .back {
-  display: inline-block;
-  margin-bottom: 20px;
+	display: inline-block;
+	margin-bottom: 20px;
 }
 
 .bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .code {
-  font-family: monospace;
-  background-color: rgb(242, 242, 242);
-  padding: 2px 4px;
-  border-radius: 2px;
+	font-family: monospace;
+	background-color: rgb(242, 242, 242);
+	padding: 2px 4px;
+	border-radius: 2px;
 }
 
-
-
 .italic {
-  font-style: italic;
+	font-style: italic;
 }
 
 .pre {
-  background-color: rgb(242, 242, 242);
-  padding: 2px 4px;
-  margin: 20px 0;
-  line-height: 2.3;
-  border-radius: 12px;
-  overflow: auto;
-}
-
-@media (prefers-color-scheme: dark) {
-  .code {
-    background-color: rgb(15, 8, 28);
-  }
-  .pre {
-    background-color: rgb(15, 8, 28);
-  }
+	background-color: rgb(242, 242, 242);
+	padding: 2px 4px;
+	margin: 20px 0;
+	line-height: 2.3;
+	border-radius: 12px;
+	overflow: auto;
 }
 
 .code_block {
-  padding: 20px;
-  font-family: monospace;
-  color: rgb(242, 242, 242);
-  display: flex;
-  flex-wrap: wrap;
+	padding: 20px;
+	font-family: monospace;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.file {
+	padding: 2px 4px;
+	text-decoration: none;
+}
+
+.file a {
+	color: inherit;
+}
+
+.file:hover {
+	background: rgba(55, 53, 47, 0.08);
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.italic {
+	font-style: italic;
 }
 
 .strikethrough {
-  text-decoration: line-through;
+	text-decoration: line-through;
 }
 
 .underline {
-  text-decoration: underline;
+	text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+	.code {
+		background-color: rgb(15, 8, 28);
+	}
+	.file:hover {
+		background: rgba(255, 255, 255, 0.1);
+		cursor: pointer;
+		border-radius: 2px;
+	}
+	.pre {
+		background-color: rgb(15, 8, 28);
+	}
 }
