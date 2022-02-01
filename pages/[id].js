@@ -103,16 +103,24 @@ const renderBlock = (block) => {
       return <hr key={id} />;
     case "quote":
       return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
+    case "code":
+      return (
+        <pre className={styles.pre}>
+          <code className={styles.code_block} key={id}>
+            {value.text[0].plain_text}
+          </code>
+        </pre>
+      );
     case "file":
-      const src_file = 
+      const src_file =
         value.type === "external" ? value.external.url : value.file.url;
       const splitSourceArray = src_file.split("/");
-      const lastElementInArray = splitSourceArray[splitSourceArray.length - 1]
+      const lastElementInArray = splitSourceArray[splitSourceArray.length - 1];
       const caption_file = value.caption ? value.caption[0]?.plain_text : "";
       return (
         <figure>
           <div className={styles.file}>
-            📎 {" "}
+            📎{" "}
             <Link href={src_file} passHref>
               {lastElementInArray.split("?")[0]}
             </Link>

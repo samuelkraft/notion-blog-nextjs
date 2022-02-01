@@ -43,6 +43,26 @@
   border-radius: 2px;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.pre {
+  background-color: rgb(242, 242, 242);
+  padding: 2px 4px;
+  margin: 20px 0;
+  line-height: 2.3;
+  border-radius: 12px;
+  overflow: auto;
+}
+
+.code_block {
+  padding: 20px;
+  font-family: monospace;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .file {
   padding: 2px 4px;
   text-decoration: none;
@@ -57,7 +77,6 @@
   cursor: pointer;
   border-radius: 2px;
 }
-
 
 .italic {
   font-style: italic;
@@ -76,8 +95,11 @@
     background-color: rgb(15, 8, 28);
   }
   .file:hover {
-  background: rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  border-radius: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .pre {
+    background-color: rgb(15, 8, 28);
   }
 }
