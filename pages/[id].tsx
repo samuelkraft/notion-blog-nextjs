@@ -1,78 +1,94 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../lib/notion";
+import { getDatabase, getPage, getBlocks, Block } from "../lib/notion";
 import Link from "next/link";
-import { databaseId } from "./index.js";
+import { databaseId } from "./index";
 import styles from "./post.module.css";
+import { getFileUrl, ValidatedPost } from "../lib/validation";
+// TODO type defs
 
-export const Text = ({ text }) => {
+type Text = Extract<Block, { type: "paragraph" }>["paragraph"]["text"];
+export const Text: React.FC<{ text: Text, parentId: string }> = ({ text, parentId }) => {
   if (!text) {
     return null;
   }
-  return text.map((value) => {
-    const {
-      annotations: { bold, code, color, italic, strikethrough, underline },
-      text,
-    } = value;
-    return (
-      <span
-        className={[
-          bold ? styles.bold : "",
-          code ? styles.code : "",
-          italic ? styles.italic : "",
-          strikethrough ? styles.strikethrough : "",
-          underline ? styles.underline : "",
-        ].join(" ")}
-        style={color !== "default" ? { color } : {}}
-      >
-        {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
-      </span>
-    );
-  });
+  return <>
+  {
+    text.map((value, i) => {
+      const {
+        annotations: { bold, code, color, italic, strikethrough, underline },
+      } = value;
+      return (
+        <span
+          className={[
+            bold ? styles.bold : "",
+            code ? styles.code : "",
+            italic ? styles.italic : "",
+            strikethrough ? styles.strikethrough : "",
+            underline ? styles.underline : "",
+          ].join(" ")}
+          style={color !== "default" ? { color } : {}}
+          key={parentId + i}
+        >
+          <TextContent text={value}/>
+        </span>
+      );
+    })
+  }
+  </>;
 };
 
-const renderBlock = (block) => {
+const TextContent: React.FC<{ text: Text[number] }> = ({ text }) => {
+  switch(text.type) {
+    case "text":
+      return text.text.link ? <a href={text.text.link.url}>{text.text.content}</a> : <>{text.text.content}</>;
+    default:
+      console.warn(`❌ Unsupported text type: ${text.type}`);
+      return null;
+  }
+}
+
+const Block: React.FC<Block | BlockWithChildren> = (block) => {
   const { type, id } = block;
-  const value = block[type];
 
   switch (type) {
     case "paragraph":
       return (
         <p>
-          <Text text={value.text} />
+          <Text text={block[type].text} parentId={block.id} />
         </p>
       );
     case "heading_1":
       return (
         <h1>
-          <Text text={value.text} />
+          <Text text={block[type].text} parentId={block.id} />
         </h1>
       );
     case "heading_2":
       return (
         <h2>
-          <Text text={value.text} />
+          <Text text={block[type].text} parentId={block.id} />
         </h2>
       );
     case "heading_3":
       return (
         <h3>
-          <Text text={value.text} />
+          <Text text={block[type].text} parentId={block.id} />
         </h3>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
         <li>
-          <Text text={value.text} />
+          <Text text={block[type].text} parentId={block.id} />
         </li>
       );
     case "to_do":
       return (
         <div>
           <label htmlFor={id}>
-            <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-            <Text text={value.text} />
+            <input type="checkbox" id={id} defaultChecked={block[type].checked} />{" "}
+            <Text text={block[type].text} parentId={block.id} />
           </label>
         </div>
       );
@@ -80,19 +96,16 @@ const renderBlock = (block) => {
       return (
         <details>
           <summary>
-            <Text text={value.text} />
+            <Text text={block[type].text} parentId={block.id} />
           </summary>
-          {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
+          {"children" in block[type] && (block as BlockWithChildren)[type].children?.map((block) => <Block {...block}/>)}
         </details>
       );
     case "child_page":
-      return <p>{value.title}</p>;
+      return <p>{block[type].title}</p>;
     case "image":
-      const src =
-        value.type === "external" ? value.external.url : value.file.url;
-      const caption = value.caption ? value.caption[0]?.plain_text : "";
+      const src = getFileUrl(block[type]);
+      const caption = block[type].caption ? block[type].caption[0]?.plain_text : "";
       return (
         <figure>
           <img src={src} alt={caption} />
@@ -102,21 +115,20 @@ const renderBlock = (block) => {
     case "divider":
       return <hr key={id} />;
     case "quote":
-      return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
+      return <blockquote key={id}>{block[type].text[0].plain_text}</blockquote>;
     case "code":
       return (
         <pre className={styles.pre}>
           <code className={styles.code_block} key={id}>
-            {value.text[0].plain_text}
+            {block[type].text[0].plain_text}
           </code>
         </pre>
       );
     case "file":
-      const src_file =
-        value.type === "external" ? value.external.url : value.file.url;
+      const src_file = getFileUrl(block[type]);
       const splitSourceArray = src_file.split("/");
       const lastElementInArray = splitSourceArray[splitSourceArray.length - 1];
-      const caption_file = value.caption ? value.caption[0]?.plain_text : "";
+      const caption_file = block[type].caption ? block[type].caption[0]?.plain_text : "";
       return (
         <figure>
           <div className={styles.file}>
@@ -129,13 +141,19 @@ const renderBlock = (block) => {
         </figure>
       );
     default:
-      return `❌ Unsupported block (${
+      console.warn(`❌ Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type
-      })`;
+      })`);
+      return null;
   }
 };
 
-export default function Post({ page, blocks }) {
+interface PostProps {
+  page: ValidatedPost;
+  blocks: Block[];
+}
+
+export default function Post({ page, blocks }: PostProps) {
   if (!page || !blocks) {
     return <div />;
   }
@@ -148,12 +166,10 @@ export default function Post({ page, blocks }) {
 
       <article className={styles.container}>
         <h1 className={styles.name}>
-          <Text text={page.properties.Name.title} />
+          <Text text={page.properties.Name.title} parentId={page.id}/>
         </h1>
         <section>
-          {blocks.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
+          {blocks.map((block) => <Block {...block} key={block.id}/>)}
           <Link href="/">
             <a className={styles.back}>← Go home</a>
           </Link>
@@ -170,6 +186,9 @@ export const getStaticPaths = async () => {
     fallback: true,
   };
 };
+
+// currently we use only block children for toggle, extend interface if needed
+type BlockWithChildren = Block & { toggle: { children: Block[] } };
 
 export const getStaticProps = async (context) => {
   const { id } = context.params;
@@ -188,14 +207,14 @@ export const getStaticProps = async (context) => {
         };
       })
   );
-  const blocksWithChildren = blocks.map((block) => {
+  const blocksWithChildren = blocks.map<BlockWithChildren>((block) => {
     // Add child blocks if the block should contain children but none exists
     if (block.has_children && !block[block.type].children) {
       block[block.type]["children"] = childBlocks.find(
         (x) => x.id === block.id
       )?.children;
     }
-    return block;
+    return block as BlockWithChildren;
   });
 
   return {

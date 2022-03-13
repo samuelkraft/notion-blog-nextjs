@@ -1,12 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getDatabase } from "../lib/notion";
-import { Text } from "./[id].js";
+import { ValidatedPost } from "../lib/validation";
+import { Text } from "./[id]";
 import styles from "./index.module.css";
+import React from "react";
+
+
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-export default function Home({ posts }) {
+const Home: React.FC<{ posts: ValidatedPost[] }> = ({ posts }) => {
   return (
     <div>
       <Head>
@@ -80,7 +84,7 @@ export default function Home({ posts }) {
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
                     <a>
-                      <Text text={post.properties.Name.title} />
+                      <Text text={post.properties.Name.title} parentId={post.id} />
                     </a>
                   </Link>
                 </h3>
@@ -108,3 +112,5 @@ export const getStaticProps = async () => {
     revalidate: 1,
   };
 };
+
+export default Home;
