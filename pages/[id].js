@@ -150,6 +150,13 @@ const renderBlock = (block) => {
           {caption_file && <figcaption>{caption_file}</figcaption>}
         </figure>
       );
+    case "bookmark":
+      const href = value.url
+      return (
+        <a href={ href } target="_brank" className={styles.bookmark}>
+          { href }
+        </a>
+      );
     default:
       return `❌ Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type

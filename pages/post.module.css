@@ -90,6 +90,11 @@
   text-decoration: underline;
 }
 
+.bookmark {
+  display: block;
+  margin-bottom: 10px;
+}
+
 @media (prefers-color-scheme: dark) {
   .code {
     background-color: rgb(15, 8, 28);
