@@ -31,6 +31,25 @@ export const Text = ({ text }) => {
   });
 };
 
+const renderNestedList = (block) => {
+  const { type } = block;
+  const value = block[type];
+  const isNumberedList = value.children[0].type === 'numbered_list_item'
+
+  if (isNumberedList) {
+    return (
+      <ol>
+        {value.children.map((block) => renderBlock(block))}
+      </ol>
+    )
+  }
+  return (
+    <ul>
+      {value.children.map((block) => renderBlock(block))}
+    </ul>
+  )
+}
+
 const renderBlock = (block) => {
   const { type, id } = block;
   const value = block[type];
@@ -65,6 +84,7 @@ const renderBlock = (block) => {
       return (
         <li>
           <Text text={value.text} />
+          {!!value.children && renderNestedList(block)}
         </li>
       );
     case "to_do":
