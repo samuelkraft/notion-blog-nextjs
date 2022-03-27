@@ -1,4 +1,11 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
 body {
   padding: 0;
   margin: 0;
@@ -8,25 +15,10 @@ body {
 
 body {
   background-color: white;
-  color: black;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: rgb(24, 24, 31);
-    color: rgb(238, 238, 238);
-  }
-}
-
-a {
-  color: #2563eb;
-  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
 * {
   box-sizing: border-box;
-}
-
-h1 {
-  font-weight: 800;
+  
 }

@@ -163,6 +163,7 @@ export const getStaticProps = async (context) => {
         };
       })
   );
+  //Returns blocks AND their children
   const blocksWithChildren = blocks.map((block) => {
     // Add child blocks if the block should contain children but none exists
     if (block.has_children && !block[block.type].children) {
