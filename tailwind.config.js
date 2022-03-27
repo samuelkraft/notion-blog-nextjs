@@ -5,9 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'sans': ['open-sans','ui-sans-serif', 'system-ui'],
-      }
+      
     },
     
   },
