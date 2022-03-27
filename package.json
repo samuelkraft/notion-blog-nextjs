@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "@notionhq/client": "^0.4.4",
-    "autoprefixer": "^9.8.8",
+    "autoprefixer": "^10.4.4",
     "next": "12.0.1",
-    "postcss": "^7.0.39",
+    "postcss": "^8.4.12",
     "react": "17.x",
     "react-dom": "17.x",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+    "tailwindcss": "^3.0.23"
   }
 }

@@ -6,12 +6,10 @@ function Navbar() {
     function handleToggle(){
         console.log(isExpanded);
         setIsExpanded(!isExpanded);
-        
-        
     }
     return (
         <div >
-            <div class="fixed top-0 z-10 bg-white w-full border-b border-[#EDEDED]">
+            <div className="fixed top-0 z-10 bg-white w-full border-b border-[#EDEDED]">
             <nav class=" flex w-4/5 mx-auto items-center text-center justify-between inline-block align-middle flex-wrap py-5 ">
                 <div class="flex items-center flex-shrink-0 text-black mr-6">
                     <a href="" class="font-bold text-2xl tracking-tight">ayush shah</a>
