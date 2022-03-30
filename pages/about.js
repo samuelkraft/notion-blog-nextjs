@@ -27,7 +27,7 @@ function About({ blogPosts }) {
             
 
             <div class="mt-6" >
-                    <a href="contact" class="inline-block text-m px-4 py-2 leading-none border rounded-full text-white bg-black border-black hover:border-stone-400 hover:text-stone-400 hover:bg-white mt-4 sm:mt-0">contact</a>
+                    <a href="contact" class="inline-block text-m px-4 py-2 leading-none border rounded-full text-white bg-black border-black hover:border-stone-400 hover:text-stone-400 hover:bg-white mt-4 sm:mt-0">contact me</a>
                 </div>
 
                 </div>

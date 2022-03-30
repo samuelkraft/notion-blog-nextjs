@@ -1,10 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import Image from 'next/image';
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
 import Navbar from "../components/Navbar.js"
 import { InlineWidget } from "react-calendly";
+
+import instagram from "../public/instagram.svg";
+import mail from "../public/mail.png";
+import linkedin from "../public/linkedin.svg";
+import github from "../public/github.svg";
+import twitter from "../public/twitter.svg";
 
 function Contact() {
   
@@ -25,7 +31,24 @@ function Contact() {
             <h2 class="text-md text-left mb-6 ">You can always reach out on social media, send me an email, or book a time to chat below!</h2>
             </div>
             <div>
-            <h2 class="text-md text-left ">Email: ayush110shah@gmail.com</h2>
+            
+            
+            <div class="flex flex-row">
+
+<div class="mr-3">
+        <Link href="mailto: ayush110shah@gmail.com" target="_blank" rel="noopener noreferrer"><a ><Image src={mail}/></a></Link>
+        </div> 
+        <div class="mr-3">
+        <Link href="https://www.linkedin.com/in/shah-ayush/" ><a target="_blank" rel="noopener noreferrer"><Image src={linkedin}/></a></Link>
+        </div> 
+        <div class="mr-3">
+        <Link href="https://www.instagram.com/_ayushshah_/"><a target="_blank" rel="noopener noreferrer"><Image src={instagram}/></a></Link>
+        </div> 
+        <div class="mr-3">
+        <Link href="https://github.com/ayush110"><a target="_blank" rel="noopener noreferrer"><Image src={github}/></a></Link>
+            </div>
+                
+                </div>
             </div>
             </div>
            

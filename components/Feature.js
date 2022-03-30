@@ -21,7 +21,7 @@ function Feature() {
 
                     <div class=" md:inline-block text-center md:text-left self-center mx-auto ">
                         <h1 class="text-4xl font-bold">hi, I'm Ayush</h1>
-                        <h2 class="max-w-sm mt-4 mx-auto"> Lorem epsum grlfiflfjglafgjlkgdfjghdfghdkjghdfkghdkgdhkjgd gfghdskjghfdk ghdgj hkfghdkjghdkj ghdfkjg dh jkdh gjkdfgh dfkjg hdsfjghdsf</h2>
+                        <h2 class="max-w-sm mt-4 mx-auto"> Also a first-year Systems Design Engineering student at the University of Waterloo.</h2>
                         <a href="about" class=" inline-block text-sm px-4 py-2 leading-none border rounded-full text-white bg-black border-black hover:border-stone-400 hover:text-stone-400 hover:bg-white mt-4 sm:mt-8">Find out more</a>
                     </div>
 
