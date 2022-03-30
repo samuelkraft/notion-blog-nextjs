@@ -33,11 +33,10 @@ function Contact() {
 
         
 <div>
-    <div class="calendly-inline-widget" data-url="https://calendly.com/ayush110/30min" style={{ minWidth: '320px', height:"630px" }}></div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/ayush110/30min" style={{ minWidth: '320px', height:"70px" }}></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </div>
    
-    <iframe class="bg-white" src="https://calendly.com/ayush110/30min" color="white"width="100%" height="650" scrolling="no" frameborder="0"></iframe>
 </div>
   
 
