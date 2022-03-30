@@ -1,21 +1,18 @@
 
 import Link from "next/link";
-import BlogCard from "./BlogCard.js";
+
 import { Text } from "../pages/[id].js";
 
 function BlogPosts({posts}) {
 
+    
   return (
     <div>
 
-        <div class="divide-y divide-stone">
-
-                <h2 class="text-2xl font-bold text-center mb-3">Blog Posts</h2>
         
-            <div>
                 
         <div >
-        <ol class="grid md:grid-cols-2 md:mx-24 my-6" >
+        <ol class="grid md:grid-cols-2 md:mx-9 my-6" >
           
           {posts.map((post) => {
           /*  if (post.properties.Status.select.name == 'Complete'){*/
@@ -108,8 +105,7 @@ function BlogPosts({posts}) {
         </ol>
         
 </div>
-            </div>
-        </div>
+            
 
     
       

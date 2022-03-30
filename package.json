@@ -13,6 +13,7 @@
     "next": "12.0.1",
     "postcss": "^8.4.12",
     "react": "17.x",
+    "react-calendly": "^3.0.1",
     "react-dom": "17.x",
     "tailwindcss": "^3.0.23"
   }

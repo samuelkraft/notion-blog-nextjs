@@ -4,15 +4,13 @@ import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
 import Navbar from "../components/Navbar.js"
-import Feature from "../components/Feature.js"
+
 import BlogPosts from "../components/BlogPosts.js"
-//import { useState } from "react";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-export default function Home({ posts }) {
-
-  //const [posts, setPosts] = useState(posts);
+function BlogPage({ blogPosts }) {
+    
   return (
     <div>
       <Head>
@@ -21,19 +19,24 @@ export default function Home({ posts }) {
       </Head>
 
       <Navbar/>
-      <Feature/>
+      
       <main className={styles.container}>
-      <div class="w-4/5 mx-auto">
-      <div class="divide-y divide-stone">
+        <div class="w-4/5 mx-auto">
+            <div class="divide-y divide-stone mt-32">
+                
+            <div>
+            <h2 class="text-2xl font-bold text-left mb-6">Blog</h2>
+            <h2 class="text-md text-left mb-3 mb-9">Welcome to the blog page! This is the place where I plan to put all my thoughts. Don't take it too seriously lol...it's a work in progress :)</h2>
+            </div>
 
-<h2 class="text-2xl font-bold text-center mb-3">Blog Posts</h2>
-
-<div>
-      <BlogPosts posts={posts}/>
-    </div>
-    </div>
-             </div> 
-      </main>
+             
+            <div>
+                    <BlogPosts posts={blogPosts}/>
+            </div>
+              </div>  
+            </div>
+           
+            </main>
     </div>
   );
 }
@@ -43,8 +46,10 @@ export const getStaticProps = async () => {
   
   return {
     props: {
-      posts: database,
+      blogPosts: database,
     },
     revalidate: 1,
   };
 };
+
+export default BlogPage
