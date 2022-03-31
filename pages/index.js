@@ -6,6 +6,7 @@ import styles from "./index.module.css";
 import Navbar from "../components/Navbar.js"
 import Feature from "../components/Feature.js"
 import BlogPosts from "../components/BlogPosts.js"
+import Footer from "../components/Footer.js";
 //import { useState } from "react";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
@@ -14,11 +15,12 @@ export default function Home({ posts }) {
 
   //const [posts, setPosts] = useState(posts);
   return (
-    <div>
+    <div class="flex flex-col min-h-screen ">
       <Head>
         <title>Ayush's Blog</title>
         <link rel="icon" href="/favicon-modified.png" />
       </Head>
+      <div class="flex-grow">
 
       <Navbar/>
       <Feature/>
@@ -34,6 +36,9 @@ export default function Home({ posts }) {
     </div>
              </div> 
       </main>
+      </div>
+      <Footer/>
+
     </div>
   );
 }

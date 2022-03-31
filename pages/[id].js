@@ -4,6 +4,7 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
+import Navbar from "../components/Navbar";
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -116,25 +117,29 @@ export default function Post({ page, blocks }) {
   }
   return (
     <div>
-      <Head>
+       
+        <Head>
         <title>{page.properties.Title.title[0].plain_text}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+    <Navbar/>
       <article className={styles.container}>
-        <h1 className={styles.name}>
+      <div class="w-4/5 mx-auto mt-32">
+        <h1 class="font-bold">
           <Text text={page.properties.Title.title} />
         </h1>
-        <section>
+        <section class="mt-4">
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
-          <Link href="/">
-            <a className={styles.back}>← Go home</a>
-          </Link>
+          
         </section>
+        </div>
       </article>
+    
     </div>
+     
   );
 }
 

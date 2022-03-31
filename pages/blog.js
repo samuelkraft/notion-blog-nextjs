@@ -4,7 +4,7 @@ import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
 import Navbar from "../components/Navbar.js"
-
+import Footer from "../components/Footer";
 import BlogPosts from "../components/BlogPosts.js"
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
@@ -12,12 +12,13 @@ export const databaseId = process.env.NOTION_DATABASE_ID;
 function BlogPage({ blogPosts }) {
     
   return (
-    <div>
+    <div class="flex flex-col min-h-screen ">
       <Head>
         <title>Ayush's Blog</title>
         <link rel="icon" href="/favicon-modified.png" />
       </Head>
 
+<div class="flex-grow">
       <Navbar/>
       
       <main className={styles.container}>
@@ -38,6 +39,8 @@ function BlogPage({ blogPosts }) {
             </div>
            
             </main>
+            </div>
+            <Footer/>
     </div>
   );
 }

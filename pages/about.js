@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import Footer from "../components/Footer.js";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
 import Navbar from "../components/Navbar.js"
@@ -8,16 +8,17 @@ import Navbar from "../components/Navbar.js"
 function About({ blogPosts }) {
     
   return (
-    <div>
+    <div class="flex flex-col min-h-screen ">
       <Head>
         <title>Ayush's Blog</title>
         <link rel="icon" href="/favicon-modified.png" />
       </Head>
 
+    <div class="flex-grow">
       <Navbar/>
       
       <main className={styles.container}>
-      <div class="w-4/5 mx-auto mt-32">
+      <div class="w-4/5 mx-auto mt-32 ">
             
 
             <div >
@@ -34,6 +35,9 @@ function About({ blogPosts }) {
           
                     
             </main>
+            </div>
+            <Footer/>
+
     </div>
   );
 }
