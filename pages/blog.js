@@ -28,7 +28,7 @@ function BlogPage({ blogPosts }) {
             <div>
             <h2 class="text-2xl font-bold text-left mb-6">Blog</h2>
             <h2 class="text-md text-left mb-3">Welcome to my blog page! This is my little corner of the web where I plan to share my journey navigating through this planet. Don't take it too seriously lol...it's a work in progress :)</h2>
-            <h3 class="text-xs text-stone-400 text-left mb-3 mb-9">Disclaimer: you're going to find a lot of punishingly bad puns &#128521;</h3>
+            <h3 class="text-xs text-stone-400 text-left mb-3 mb-9">Disclaimer: you're going to find a lot of punishingly bad puns...</h3>
             </div>
 
              

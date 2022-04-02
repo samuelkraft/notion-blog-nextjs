@@ -28,7 +28,7 @@ export default function Home({ posts }) {
       <div class="w-4/5 mx-auto">
       <div class="divide-y divide-stone">
 
-<h2 class="text-2xl font-bold text-center mb-3">Blog Posts</h2>
+<h2 class="text-2xl font-bold text-center mb-3 mt-9 md:mt-0">Blog Posts</h2>
 
 <div>
       <BlogPosts posts={posts}/>

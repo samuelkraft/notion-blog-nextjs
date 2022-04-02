@@ -24,7 +24,7 @@ function Feature() {
                         <h2 class="max-w-sm mt-4 mx-auto">
                         I am eclectic, conscientious, and also a first year systems design engineering student at the University of Waterloo &#x1F609;
                         </h2>
-                        <a href="about" class=" inline-block text-sm px-4 py-2 leading-none border rounded-full text-white bg-black border-black hover:border-stone-400 hover:text-stone-400 hover:bg-transparent mt-4 sm:mt-8">Find out more</a>
+                        <a href="about" class=" inline-block text-sm px-4 py-2 leading-none border rounded-full text-white bg-black border-black hover:border-stone-400 hover:text-stone-400 hover:bg-transparent mt-4  sm:mt-8">Find out more</a>
                     </div>
 
                 </div>
