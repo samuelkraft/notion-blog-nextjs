@@ -17,10 +17,10 @@ function Footer() {
 
 
     return (
-        <footer class="static text-center lg:text-left bg-white text-black-300">
-  <div class="flex justify-center items-center lg:justify-between p-6 border-t">
+    <footer class="static text-center lg:text-left bg-white text-black-300">
+  <div class="flex flex-col md:flex-row justify-center items-center md:justify-between p-6 border-t">
     <div class="mr-12 hidden lg:block">
-      <span>Designed and Developed by Ayush Shah</span>
+      <span class="text-xs">Designed and Developed by Ayush Shah</span>
     </div>
     <div class="flex justify-center">
     
@@ -41,7 +41,7 @@ function Footer() {
     
         
     </div>
-    <div class="flex"> 
+    <div class="flex text-xs"> 
     <div class="mr-3 hover:text-stone-400">
     <Link href="/"><a>home</a></Link>
         </div>
