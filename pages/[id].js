@@ -212,10 +212,9 @@ export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
-    fallback: true,
+    fallback: false,
   };
 };
-
 export const getStaticProps = async (context) => {
   const { id } = context.params;
   const page = await getPage(id);
@@ -233,6 +232,8 @@ export const getStaticProps = async (context) => {
         };
       })
   );
+
+  
   //Returns blocks AND their children
   const blocksWithChildren = blocks.map((block) => {
     // Add child blocks if the block should contain children but none exists
@@ -252,3 +253,5 @@ export const getStaticProps = async (context) => {
     revalidate: 1,
   };
 };
+
+
