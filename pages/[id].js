@@ -52,7 +52,7 @@ const renderBlock = (block) => {
     case "heading_1":
       return (
         <h1>
-          <Text text={value.text} /><br/>
+          <Text text={value.text} />
         </h1>
       );
     case "heading_2":
@@ -118,6 +118,38 @@ const renderBlock = (block) => {
 };
 
 export default function Post({ page, blockes }) {
+
+
+  const date = new Date(page.last_edited_time).toLocaleString(
+    "en-US",
+    {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    }
+  );
+
+  const title = page.properties.Title.title;
+  const postId = page.id;
+  
+
+  let imgSrc = "";
+  let hasImage = false;
+  if ( page.properties.Cover.files.length != 0){
+      imgSrc = page.properties.Cover.files[0].file.url;
+      hasImage = true;
+      console.log("image") 
+  } else{
+      console.log('noimage')
+  };
+  
+  const type = page.properties.Type.select.name;
+  const description = page.properties.Description.rich_text[0].plain_text;
+  const tags = page.properties.Tags.multi_select;
+
+
+
+
   if (!page || !blockes) {
     return <div />;
   }
@@ -132,9 +164,30 @@ export default function Post({ page, blockes }) {
     <Navbar/>
       <article className={styles.container}>
       <div class="w-4/5 mx-auto mt-32">
+      <p class="text-indigo-500 text-md font-medium">{type}</p>
+      
         <h1 class="font-bold">
           <Text text={page.properties.Title.title} />
         </h1>
+        <p class="text-gray-700  font-light text-lg pb-3">{description}</p>
+        {(hasImage) ?  (<img alt="blog photo" src={imgSrc} class="max-h-40 w-full object-cover mb-4" />) : console.log('no image')}
+                        <div class="bg-white w-full ">
+                            
+                          
+                            
+                            <div class="flex flex-wrap justify-starts items-center ">
+
+                                    {tags.map((tag) => {
+                                        return (
+                                        <div class="text-xs mr-2 py-1.5 px-4 text-gray-600 bg-blue-100 rounded-2xl">
+                                            #{tag.name}
+                                        </div>
+                                        )}
+                                    )}
+                                
+                                </div>
+                                </div>
+
         <section class="mt-4">
           {blockes.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}
@@ -143,7 +196,8 @@ export default function Post({ page, blockes }) {
             </Fragment>
                       ))}
                       
-          
+          <hr></hr>
+          <p class="text-gray-700 text-sm mt-3">{date}</p>
         </section>
         </div>
       </article>
