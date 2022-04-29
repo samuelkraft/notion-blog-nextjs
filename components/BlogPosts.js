@@ -8,8 +8,6 @@ function BlogPosts({posts}) {
     
   return (
     <div>
-
-        
                 
         <div >
         <ol class="grid md:grid-cols-2 md:mx-9 my-6" >
