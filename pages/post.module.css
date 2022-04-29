@@ -9,6 +9,10 @@
   font-size: 32px;
 }
 
+.container h2 {
+  font-size: 24px;
+}
+
 .container img {
   width: 100%;
   height: auto;

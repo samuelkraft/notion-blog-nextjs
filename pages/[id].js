@@ -34,38 +34,43 @@ export const Text = ({ text }) => {
 
 const renderBlock = (block) => {
   const { type, id } = block;
+  console.log(block);
   const value = block[type];
 
   switch (type) {
+    case "text":
+      return (
+        <br></br>
+      );
     case "paragraph":
       return (
         <p>
-          <Text text={value.text} />
+          <Text text={value.text} /><br/>
         </p>
       );
     case "heading_1":
       return (
         <h1>
-          <Text text={value.text} />
+          <Text text={value.text} /><br/>
         </h1>
       );
     case "heading_2":
       return (
         <h2>
-          <Text text={value.text} />
+          <Text text={value.text} /><br/>
         </h2>
       );
     case "heading_3":
       return (
         <h3>
-          <Text text={value.text} />
+          <Text text={value.text} /><br/>
         </h3>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
         <li>
-          <Text text={value.text} />
+          <Text text={value.text} /><br/>
         </li>
       );
     case "to_do":
@@ -74,7 +79,7 @@ const renderBlock = (block) => {
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
             <Text text={value.text} />
-          </label>
+          </label><br/>
         </div>
       );
     case "toggle":
@@ -97,7 +102,7 @@ const renderBlock = (block) => {
       return (
         <figure>
           <img src={src} alt={caption} />
-          {caption && <figcaption>{caption}</figcaption>}
+          {caption && <figcaption>{caption}</figcaption>}<br/>
         </figure>
       );
     case "divider":
@@ -111,8 +116,8 @@ const renderBlock = (block) => {
   }
 };
 
-export default function Post({ page, blocks }) {
-  if (!page || !blocks) {
+export default function Post({ page, blockes }) {
+  if (!page || !blockes) {
     return <div />;
   }
   return (
@@ -130,9 +135,12 @@ export default function Post({ page, blocks }) {
           <Text text={page.properties.Title.title} />
         </h1>
         <section class="mt-4">
-          {blocks.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
+          {blockes.map((block) => (
+            <Fragment key={block.id}>{renderBlock(block)}
+            
+            
+            </Fragment>
+                      ))}
           
         </section>
         </div>
@@ -182,7 +190,7 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       page,
-      blocks: blocksWithChildren,
+      blockes: blocksWithChildren,
     },
     revalidate: 1,
   };
