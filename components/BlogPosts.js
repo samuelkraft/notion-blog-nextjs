@@ -10,7 +10,7 @@ function BlogPosts({posts}) {
     <div>
                 
         <div >
-        <ol class="grid md:grid-cols-2 md:mx-9 my-6" >
+        <ol className="grid md:grid-cols-2 md:mx-9 my-6" >
           
           {posts.map((post) => {
           /*  if (post.properties.Status.select.name == 'Complete'){*/
@@ -26,7 +26,7 @@ function BlogPosts({posts}) {
             const title = post.properties.Title.title;
             const postId = post.id;
             
-            console.log(post.properties);
+           
             let imgSrc = "";
             let hasImage = false;
             if ( post.properties.Cover.files.length != 0){
@@ -45,40 +45,40 @@ function BlogPosts({posts}) {
             return (
 
               
-              <li key={postId} class="m-4" >
+              <li key={postId} className="m-4" >
                     
-                <div class="overflow-hidden shadow-xl rounded-3xl h-90   cursor-pointer m-auto">
-                    <Link href={`/${postId}`} class="w-full block h-full">
+                <div className="overflow-hidden shadow-xl rounded-3xl h-90   cursor-pointer m-auto">
+                    <Link href={`/${postId}`} className="w-full block h-full">
                         <a>
 
-                        {(hasImage) ?  (<img alt="blog photo" src={imgSrc} class="max-h-40 w-full object-cover " />) : console.log('no image')}
-                        <div class="bg-white w-full p-4">
-                            <p class="text-indigo-500 text-md font-medium">
+                        {(hasImage) ?  (<img alt="blog photo" src={imgSrc} className="max-h-40 w-full object-cover " />) : console.log('no image')}
+                        <div className="bg-white w-full p-4">
+                            <p className="text-indigo-500 text-md font-medium">
                                 {type}
 
                             </p>
-                            <p class="text-gray-800  text-xl font-medium mb-2">
+                            <p className="text-gray-800  text-xl font-medium mb-2">
                             
                                   
                                     <Text text={title} />
                                    
                             </p>
-                            <p class="text-gray-400  font-light text-md">{description}
+                            <p className="text-gray-400  font-light text-md">{description}
                             </p>
-                            <div class="flex items-center mt-4">
+                            <div className="flex items-center mt-4">
                             
-                                <div class="flex flex-col justify-between text-sm">
+                                <div className="flex flex-col justify-between text-sm">
                                     
-                                    <p class="text-gray-400 ">
+                                    <p className="text-gray-400 ">
                                         {date}
                                     </p>
                                 </div>
                             </div>
-                            <div class="flex flex-wrap justify-starts items-center mt-4">
+                            <div className="flex flex-wrap justify-starts items-center mt-4">
 
                                     {tags.map((tag) => {
                                         return (
-                                        <div class="text-xs mr-2 py-1.5 px-4 text-gray-600 bg-blue-100 rounded-2xl">
+                                        <div key={`${postId}${tag.name}`} className="text-xs mr-2 py-1.5 px-4 text-gray-600 bg-blue-100 rounded-2xl">
                                             #{tag.name}
                                         </div>
                                         )}
