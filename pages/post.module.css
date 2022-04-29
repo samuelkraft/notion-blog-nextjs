@@ -2,7 +2,7 @@
   padding: 0 20px;
   max-width: 1000px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
 .container h1 {
@@ -13,6 +13,11 @@
   font-size: 24px;
 }
 
+.container li {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  margin-left: 30px;
+}
 .container img {
   width: 100%;
   height: auto;

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -69,9 +70,9 @@ const renderBlock = (block) => {
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li>
-          <Text text={value.text} /><br/>
-        </li>
+      
+        <li><Text text={value.text} /></li>
+        
       );
     case "to_do":
       return (
@@ -141,11 +142,15 @@ export default function Post({ page, blockes }) {
             
             </Fragment>
                       ))}
+                      
           
         </section>
         </div>
       </article>
-    
+      <br></br>
+      <br></br>
+      <br></br>
+    <Footer/>
     </div>
      
   );
