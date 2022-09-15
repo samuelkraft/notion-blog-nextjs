@@ -1,22 +1,20 @@
 .container {
   padding: 0 20px;
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto;
+ 
 }
 
-.logos {
-  display: flex;
-  align-items: center;
-  padding: 40px 0 20px;
-}
 
 .header {
   margin-bottom: 50px;
+  
 }
 
 .header p {
   opacity: 0.7;
   line-height: 1.5;
+ 
 }
 
 .plus {

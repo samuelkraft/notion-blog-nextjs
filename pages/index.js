@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
+import Menu from "../components/menu";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -16,10 +17,10 @@ export default function Home({ posts }) {
 
       <main className={styles.container}>
         <header className={styles.header}>
-          
-          <h1>のんびり趣味で綴っている私小説サイトです</h1>
+          <Menu/>
+          <h1>DenDe's Novel site</h1>
           <p>
-              山梨県でSEをしながらのんびり不定期で更新中。基本的に短編中心で書いています。このサイトはこちらの<a href="https://github.com/samuelkraft/notion-blog-nextjs">notion-blog-nextjs</a>
+              のんびり趣味で綴っている私小説サイトです。山梨県でSEをしながらのんびり不定期で更新中。基本的に短編中心で書いています。このサイトはこちらの<a href="https://github.com/samuelkraft/notion-blog-nextjs">notion-blog-nextjs</a>
               を使わせて頂いています。それにしてもNotionで執筆できるのがとても快適です。ありがとうございます。
           </p>
           <p>コメント感想などはコチラ→<a href="https://twitter.com/dendeiriamaka1">dende趣味Twitter</a></p>
