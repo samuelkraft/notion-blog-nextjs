@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-const aboutOwner = memo(() =>{
+const linkPage = memo(() =>{
 
     return (
         <>
@@ -13,4 +13,4 @@ const aboutOwner = memo(() =>{
 
 
 })
-export default aboutOwner
+export default linkPage

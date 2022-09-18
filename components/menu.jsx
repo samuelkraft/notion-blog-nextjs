@@ -18,13 +18,13 @@ const Menu = memo(() => {
                 </Link>
             </li>
             <li>
-                <Link href="/category">
-                    <a>リンク</a>
+                <Link href="/illustration">
+                    <a>イラスト</a>
                 </Link>
             </li>
             <li>
-                <Link href="/aboutOwner">
-                    <a>筆者紹介</a>
+                <Link href="/linkPage">
+                    <a>リンク</a>
                 </Link>
             </li>
             

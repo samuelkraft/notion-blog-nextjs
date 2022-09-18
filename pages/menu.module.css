@@ -4,12 +4,12 @@
 }
 
 .ul li {
-  width: 140px;
+  width: 125px;
   text-align: center;
   background-color: #333;
   float: left;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 40px;
   margin-right: 2px;
 }
 
@@ -17,6 +17,52 @@
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  padding: 20px;
+  
+}
+@media screen and (max-width:600px){
+  .ul {
+    list-style: none;
+    overflow: hidden;
+  }
+  
+  .ul li {
+    width: 72px;
+    text-align: center;
+    background-color: #333;
+    float: left;
+    height: 35px;
+    line-height: 30px;
+    margin-right: 1px;
+  }
+  
+  .ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+  }
+  
 }
 
+@media screen and (max-width:375px){
+  .ul {
+    list-style: none;
+    overflow: hidden;
+  }
+  
+  .ul li {
+    width: 65px;
+    text-align: center;
+    background-color: #333;
+    float: left;
+    height: 25px;
+    line-height: 20px;
+    margin-right: 1px;
+  }
+  
+  .ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 9px;
+  }
+  
+}
