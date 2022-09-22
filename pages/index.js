@@ -4,10 +4,22 @@ import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
 import Menu from "../components/menu";
+import { useState } from "react";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
+  const [selectValue, setSelectValue] = useState("");
+
+  const onChangeTag = (e) => {
+    setSelectValue(e.target.value);
+  };
+  console.log(selectValue);
+  const Tags = posts.map((post) => post.properties.Tags.multi_select[0].name);
+  console.log(Tags);
+
+  const set = new Set(Tags);
+  const setSelectOption = [...set];
   return (
     <div>
       <Head>
@@ -17,16 +29,34 @@ export default function Home({ posts }) {
 
       <main className={styles.container}>
         <header className={styles.header}>
-          <Menu/>
+          <Menu />
           <h1>DenDe's Novel site</h1>
           <p>
-              のんびり趣味で綴っている私小説サイトです。山梨県でSEをしながらのんびり不定期で更新中。基本的に短編中心で書いています。このサイトはこちらの<a href="https://github.com/samuelkraft/notion-blog-nextjs">notion-blog-nextjs</a>
-              を使わせて頂いています。それにしてもNotionで執筆できるのがとても快適です。ありがとうございます。
+            のんびり趣味で綴っている私小説サイトです。山梨県でSEをしながらのんびり不定期で更新中。基本的に短編中心で書いています。このサイトはこちらの
+            <a href="https://github.com/samuelkraft/notion-blog-nextjs">
+              notion-blog-nextjs
+            </a>
+            を使わせて頂いています。それにしてもNotionで執筆できるのがとても快適です。ありがとうございます。
           </p>
-          <p>コメント感想などはコチラ→<a href="https://twitter.com/dendeiriamaka1">dende趣味Twitter</a></p>
-          <p>エンジニアに興味がある人はコチラ→<a href="https://twitter.com/dendeiriamaka1">学習記録Twitter</a></p>
+          <p>
+            コメント感想などはコチラ→
+            <a href="https://twitter.com/dendeiriamaka1">dende趣味Twitter</a>
+          </p>
+          <p>
+            エンジニアに興味がある人はコチラ→
+            <a href="https://twitter.com/dendeiriamaka1">学習記録Twitter</a>
+          </p>
         </header>
-
+        <div className={`${styles.cp_ipselect} ${styles.cp_sl02}`}>
+          <select required onChange={onChangeTag} class="test">
+            <option value="" hidden>
+              select Tags
+            </option>
+            {setSelectOption.map((tag) => {
+              return <option value={tag}>{tag}</option>;
+            })}
+          </select>
+        </div>
         <h2 className={styles.heading}>All Posts</h2>
         <ol className={styles.posts}>
           {posts.map((post) => {
