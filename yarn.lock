@@ -72,10 +72,10 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.0.0.tgz#c54a5a739dee04b20338d305226a2acdf701f67f"
   integrity sha512-FFOGGWwTCRMu9W7MF496Urefxtuo2lttxF1vwS+1rIRsKvuLrWhVaVTj3T8sf2EBL6gtJbmh4TYlizS+obnGKA==
 
-"@notionhq/client@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-0.4.4.tgz#f18c52e5c4939913d54f32e076d05976c3cd699f"
-  integrity sha512-Gi07yVgEReImvM9y9rYpcOoPr7d6EFYXjy3KwM29ftu7WIaUNMPErPTlaSTFb0H0GX93EQjDC3kpol7WMupY7Q==
+"@notionhq/client@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-2.2.1.tgz#e2e4db22181990ca00365436ceda409f7a2e4871"
+  integrity sha512-EExR8gCWuqvYQsNw5Z9kvZhRTy7wgioI4ypr5y0dPclvxBXZ7I7Yy509ZbCbeAFes33eLFV8Heu0svQwg8ZSZQ==
   dependencies:
     "@types/node-fetch" "^2.5.10"
     node-fetch "^2.6.1"
