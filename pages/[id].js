@@ -52,32 +52,32 @@ const renderBlock = (block) => {
     case "paragraph":
       return (
         <p>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </p>
       );
     case "heading_1":
       return (
         <h1>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </h1>
       );
     case "heading_2":
       return (
         <h2>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </h2>
       );
     case "heading_3":
       return (
         <h3>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </h3>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
         <li>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
           {!!value.children && renderNestedList(block)}
         </li>
       );
@@ -86,7 +86,7 @@ const renderBlock = (block) => {
         <div>
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-            <Text text={value.text} />
+            <Text text={value.rich_text} />
           </label>
         </div>
       );
@@ -94,7 +94,7 @@ const renderBlock = (block) => {
       return (
         <details>
           <summary>
-            <Text text={value.text} />
+            <Text text={value.rich_text} />
           </summary>
           {value.children?.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
@@ -116,12 +116,12 @@ const renderBlock = (block) => {
     case "divider":
       return <hr key={id} />;
     case "quote":
-      return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
+      return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
     case "code":
       return (
         <pre className={styles.pre}>
           <code className={styles.code_block} key={id}>
-            {value.text[0].plain_text}
+            {value.rich_text[0].plain_text}
           </code>
         </pre>
       );
