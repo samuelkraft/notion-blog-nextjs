@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../lib/notion";
+import { getDatabase, getPage, getBlocks } from "../../lib/notion";
 import Link from "next/link";
-import { databaseId } from "./index.js";
-import styles from "./post.module.css";
+import { databaseId } from "../index.js";
+import styles from "../post.module.css";
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -25,7 +25,7 @@ export const Text = ({ text }) => {
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
       >
-        {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
+        {text.link ? <Link href={text.link.url}>{text.content}</Link> : text.content}
       </span>
     );
   });
@@ -145,14 +145,13 @@ const renderBlock = (block) => {
     case "bookmark":
       const href = value.url;
       return (
-        <a href={href} target="_brank" className={styles.bookmark}>
+        <Link href={href} target="_brank" className={styles.bookmark}>
           {href}
-        </a>
+        </Link>
       );
     default:
-      return `❌ Unsupported block (${
-        type === "unsupported" ? "unsupported by Notion API" : type
-      })`;
+      return `❌ Unsupported block (${type === "unsupported" ? "unsupported by Notion API" : type
+        })`;
   }
 };
 
@@ -186,9 +185,10 @@ export default function Post({ page, blocks }) {
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
+  const paths = database.map((page) => ({ params: { id: page.id } }))
   return {
-    paths: database.map((page) => ({ params: { id: page.id } })),
-    fallback: true,
+    paths,
+    fallback: false,
   };
 };
 

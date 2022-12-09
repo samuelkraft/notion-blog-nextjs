@@ -1,0 +1,209 @@
+@font-face {
+	font-family: "Gilroy";
+	src: url("/assets/fonts/Gilroy-Semibold.eot");
+	src: local("Gilroy Semibold"), local("Gilroy-Semibold"),
+		url("/assets/fonts/Gilroy-Semibold.eot?#iefix") format("embedded-opentype"),
+		url("/assets/fonts/Gilroy-Semibold.woff2") format("woff2"),
+		url("/assets/fonts/Gilroy-Semibold.woff") format("woff"),
+		url("/assets/fonts/Gilroy-Semibold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/assets/fonts/Gilroy-Medium.eot");
+	src: local("Gilroy Medium"), local("Gilroy-Medium"),
+		url("/assets/fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"),
+		url("/assets/fonts/Gilroy-Medium.woff2") format("woff2"),
+		url("/assets/fonts/Gilroy-Medium.woff") format("woff"),
+		url("/assets/fonts/Gilroy-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/assets/fonts/Gilroy-Bold.eot");
+	src: local("Gilroy Bold"), local("Gilroy-Bold"),
+		url("/assets/fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"),
+		url("/assets/fonts/Gilroy-Bold.woff2") format("woff2"),
+		url("/assets/fonts/Gilroy-Bold.woff") format("woff"),
+		url("/assets/fonts/Gilroy-Bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/assets/fonts/Gilroy-Regular.eot");
+	src: local("Gilroy Regular"), local("Gilroy-Regular"),
+		url("/assets/fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"),
+		url("/assets/fonts/Gilroy-Regular.woff2") format("woff2"),
+		url("/assets/fonts/Gilroy-Regular.woff") format("woff"),
+		url("/assets/fonts/Gilroy-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "AllRoundGothic-Demi";
+	src: url("/assets/fonts/AllRoundGothic-Demi.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+* {
+	scroll-behavior: smooth;
+}
+body {
+	line-height: 1;
+	font-family: "Gilroy", sans-serif;
+	background: #fcfcfd; /* fallback for old browsers */
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #98c5e5;
+}
+
+*::-webkit-scrollbar {
+	width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #4375ff;
+	border-radius: 50px;
+	border: transparent;
+}
