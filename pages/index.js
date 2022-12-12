@@ -6,6 +6,7 @@ import { useTranslation } from "next-i18next";
 
 import Hero from "../components/homepage/HeroHomePage";
 import InfiniteSlider from "../components/slider/InfiniteSlider";
+import HomeSection01 from "../components/homepage/HomeSection01";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -19,6 +20,7 @@ export default function Home({ posts }) {
       </Head>
       <Hero />
       <InfiniteSlider />
+      <HomeSection01 />
 
     </div>
   );

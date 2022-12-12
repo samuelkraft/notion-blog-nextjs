@@ -4,12 +4,12 @@ import { Button } from "@mantine/core";
 
 const GradientButton = React.forwardRef(
 	(
-		{ gradientColor, children, marginLeft, marginRight, onClick, href, type, size },
+		{ gradientColor, children, marginLeft, marginRight, onClick, href, type, size, width },
 		ref
 	) => {
 		return (
 			<Button
-				size={size}
+				size={width ? undefined : size}
 				component={type ? "button" : "a"}
 				ref={ref}
 				href={href}
@@ -26,6 +26,8 @@ const GradientButton = React.forwardRef(
 						fontFamily: "'Gilroy',sans-serif",
 						fontWeight: 600,
 						filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+						width: width || "",
+						height: size === "lg" ? "3.5rem" : "2.5rem",
 						'&:hover': {
 							backgroundColor: gradientColor,
 							textDecoration: "none",

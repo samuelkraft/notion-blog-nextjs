@@ -61,7 +61,7 @@ const Hero = () => {
 	);
 };
 
-const HeroContainer = styled.div`
+export const HeroContainer = styled.div`
 	padding: 2rem;
 	@media screen and (min-width: 768px) {
 		padding: 1rem;
@@ -85,7 +85,7 @@ const HeroContainer = styled.div`
 	}
 `;
 
-const HeroWrapper = styled.div`
+export const HeroWrapper = styled.div`
 	display: flex;
 	flex-flow: column;
 
@@ -115,6 +115,7 @@ const HeroWrapper = styled.div`
 		font-size: 50px;
 		justify-content: space-evenly;
 		flex-flow: row;
+		gap: 2rem;
 	}
 	@media screen and (min-width: 1440px) {
 		font-size: 52px;
@@ -124,7 +125,7 @@ const HeroWrapper = styled.div`
 	}
 `;
 
-const Slogan = styled.div`
+export const Slogan = styled.div`
 	h1 {
 		font-family: "AllRoundGothic-Demi";
 		font-weight: 600;
@@ -177,12 +178,12 @@ export const Heading = styled.div`
 
 	@media screen and (min-width: 768px) {
 		h2 {
-			font-size: 22px;
+			font-size: 18px;
 		}
 	}
 	@media screen and (min-width: 1024px) {
 		h2 {
-			font-size: 22px;
+			font-size: 18px;
 		}
 		width: 28rem;
 	}
@@ -322,7 +323,15 @@ const BlurCircleBottomLeft = styled.div`
 	z-index: 1;
 	transform: matrix(-0.21, -0.97, 0.99, -0.17, 0, 0);
 
-	@media screen and (max-width: 991px) {
+	@media screen and (min-width: 320px) {
+		width: 200px;
+		height: 300px;
+		left: 0;
+		right: none;
+	}
+
+	
+	@media screen and (min-width: 765px) {
 		width: 300px;
 		height: 500px;
 		left: 0;

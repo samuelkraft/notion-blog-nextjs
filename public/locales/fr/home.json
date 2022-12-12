@@ -1,4 +1,22 @@
 {
 	"greeting": "Bonjour",
-	"trustedUs": "Ils nous ont fait confiance"
+	"trustedUs": "Ils nous ont fait confiance",
+	"section01_title": "Société étrangère, vous êtes implantée en France ?",
+	"section01_heading_pt1": "La France exerce un réel attrait pour les investisseurs étrangers. Diriger une société étrangère établie sur le territoire français suppose toutefois de ",
+	"section01_bold1": "se conformer aux règles comptables, fiscales, sociales comme juridiques ",
+	"section01_heading_pt2": "en vigueur en France.",
+	"section01_heading_pt3": "En tant que cabinet d’expertise comptable français, A.S PARTNERS, vous apporte le ",
+	"section01_bold2": "meilleur accompagnement pour vos business en France",
+	"section01_heading_pt4": ", quel que soit le domaine administratif ou financier.",
+	"our": "Nos ",
+	"section01_bold3": "experts-comptables",
+	"section01_heading_pt5": " diplômés en France et aux Etats-Unis, ainsi que nos collaborateurs confirmés et spécialisés, exercent leur métier dans le respect de la réglementation professionnelle et des normes en France.",
+	"readMore": "En savoir plus",
+	"whyUs": "Pourquoi nous choisir ?",
+	"comptable_dedie": "Comptable dédié",
+	"administrativeServices": "Services administratifs",
+	"expertiseRH": "Expertise RH",
+	"conseillerRH": "Conseiller RH",
+	"conseillerFiscal": "Conseiller fiscal",
+	"auditServices": "Services d’audit"
 }
