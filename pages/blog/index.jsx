@@ -83,13 +83,13 @@ export default function Blog({ posts }) {
 						return (
 							<li key={post.id} className={styles.post}>
 								<h3 className={styles.postTitle}>
-									<Link href={`/article/${post.id}`}>
+									<Link href={`/article/${post.id}`} locale="fr" >
 										<Text text={post.properties.Name.title} />
 									</Link>
 								</h3>
 
 								<p className={styles.postDescription}>{date}</p>
-								<Link href={`/article/${post.id}`}>Read post →</Link>
+								<Link href={`/article/${post.id}`} locale="fr" >Read post →</Link>
 							</li>
 						);
 					})}

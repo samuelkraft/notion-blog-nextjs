@@ -7,6 +7,8 @@ import { useTranslation } from "next-i18next";
 import Hero from "../components/homepage/HeroHomePage";
 import InfiniteSlider from "../components/slider/InfiniteSlider";
 import HomeSection01 from "../components/homepage/HomeSection01";
+import HomeSection02 from "../components/homepage/HomeSection02";
+import HomeSection03 from "../components/homepage/HomeSection03";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -15,13 +17,14 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Notion Next.js blog</title>
+        <title>Expand CPA</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
       <InfiniteSlider />
       <HomeSection01 />
-
+      <HomeSection02 />
+      <HomeSection03 />
     </div>
   );
 }

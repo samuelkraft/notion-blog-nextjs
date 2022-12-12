@@ -1,14 +1,12 @@
 import GradientButton from "../button/GradientButton";
 import styled from "styled-components";
 import Link from "next/link";
-import Image from "next/image";
 
 // Animation
 import { motion } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 import { useTranslation } from "next-i18next";
 
-import HeroImage1 from "../../images/img-header-01.jpg";
 
 const Hero = () => {
 	const { t } = useTranslation("common");

@@ -106,7 +106,7 @@ const HomeSection01 = () => {
 
 export default HomeSection01;
 
-const HomeSection01Container = styled.div`
+export const HomeSection01Container = styled.div`
 	margin-top: 10rem;
 	padding: 2rem;
 	@media screen and (min-width: 768px) {
@@ -131,7 +131,7 @@ const HomeSection01Container = styled.div`
 	}
 `;
 
-const HomeSection01Wrapper = styled(HeroWrapper)`
+export const HomeSection01Wrapper = styled(HeroWrapper)`
 	.text-content {
 		@media screen and (min-width: 1024px) {
 			margin-top: 0rem;
@@ -144,7 +144,7 @@ const HomeSection01Wrapper = styled(HeroWrapper)`
 	}
 `;
 
-const HeadingSection01 = styled(Heading)`
+export const HeadingSection01 = styled(Heading)`
 	margin-top: 1.5rem;
 	h2 {
 		font-style: normal;
@@ -173,7 +173,7 @@ const HeadingSection01 = styled(Heading)`
 	}
 `;
 
-const SloganSection01 = styled(Slogan)`
+export const SloganSection01 = styled(Slogan)`
 	h1 {
 		font-family: "AllRoundGothic-Demi";
 		font-weight: 600;
@@ -291,7 +291,7 @@ const FeaturesCard4 = styled(FeaturesCard2)``;
 const FeaturesCard5 = styled(FeaturesCard)``;
 const FeaturesCard6 = styled(FeaturesCard2)``;
 
-const Tag = styled.div`
+export const Tag = styled.div`
 	text-transform: uppercase;
 	font-style: normal;
 	font-weight: 500;
