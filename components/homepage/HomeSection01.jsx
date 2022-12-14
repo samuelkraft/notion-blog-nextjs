@@ -214,6 +214,10 @@ export const FeaturesCardContainer = styled.div`
 	grid-auto-columns: 1fr;
 	grid-template-columns: 1fr 1fr;
 
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+
 	@media screen and (min-width: 320px) {
 		grid-template-columns: 1fr;
 		justify-self: center;
@@ -222,7 +226,13 @@ export const FeaturesCardContainer = styled.div`
 	@media screen and (min-width: 768px) {
 		grid-column-gap: 2rem;
 		grid-row-gap: 2rem;
+		grid-template-columns: 300px 300px;
+	}
+
+	@media screen and (min-width: 1024px) {
 		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 3rem;
+		grid-row-gap: 3rem;
 	}
 
 	margin-top: 5rem;
@@ -252,7 +262,7 @@ export const FeaturesCard = styled.div`
 	}
 
 	@media screen and (min-width: 320px) {
-		width: 280px;
+		width: 300px;
 		height: 280px;
 	}
 

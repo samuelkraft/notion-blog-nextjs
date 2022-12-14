@@ -27,6 +27,7 @@ const Hero = () => {
 					<RowButtonContainer>
 						<Link href='/services' passHref>
 							<GradientButton
+								width='200px'
 								size='lg'
 								gradientColor='#0657CF'
 								component='button'
@@ -36,6 +37,7 @@ const Hero = () => {
 						</Link>
 						<Link href='/#contact' passHref>
 							<GradientButton
+								width='200px'
 								size='lg'
 								component='button'
 								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
@@ -164,24 +166,24 @@ export const Heading = styled.div`
 	h2 {
 		font-style: normal;
 		font-weight: 400;
-		font-size: 18px;
+		font-size: 22px;
 		color: #1b1464;
 	}
 
 	@media screen and (max-width: 465px) {
 		h2 {
-			font-size: 18px;
+			font-size: 22px;
 		}
 	}
 
 	@media screen and (min-width: 768px) {
 		h2 {
-			font-size: 18px;
+			font-size: 22px;
 		}
 	}
 	@media screen and (min-width: 1024px) {
 		h2 {
-			font-size: 18px;
+			font-size: 22px;
 		}
 		width: 28rem;
 	}
@@ -197,7 +199,7 @@ const RowButtonContainer = styled.div`
 	}
 `;
 
-const HeroImageContainer = styled(motion.div)`
+export const HeroImageContainer = styled(motion.div)`
 	position: relative;
 	width: 100%;
 	height: 100%;

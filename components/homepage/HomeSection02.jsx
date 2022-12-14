@@ -19,9 +19,7 @@ const HomeSection02 = () => {
 	return (
 		<HomeSection01Container>
 			<HomeSection02Wrapper>
-				<ImageWrapper>
-					<Image src={comptableDedie} />
-				</ImageWrapper>
+				<ImageWrapper></ImageWrapper>
 				<motion.div
 					className='text-content'
 					variants={titleAnim}
@@ -51,12 +49,14 @@ const HomeSection02 = () => {
 						</h2>
 					</HeadingSection01>
 
-					<GradientButton
-						gradientColor='#0657CF'
-						component='button'
-						width={200}>
-						{t("readMore")}
-					</GradientButton>
+					<HeadingSection01>
+						<GradientButton
+							gradientColor='#0657CF'
+							component='button'
+							width={200}>
+							{t("readMore")}
+						</GradientButton>
+					</HeadingSection01>
 				</motion.div>
 			</HomeSection02Wrapper>
 		</HomeSection01Container>
@@ -70,13 +70,49 @@ const HomeSection02Wrapper = styled(HomeSection01Wrapper)`
 		flex-direction: column-reverse;
 	}
 
-	.text-content {
-		width: 50%;
+	@media screen and (min-width: 1024px) {
+		.text-content {
+			width: 50%;
+		}
 	}
 `;
 
 const ImageWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	width: 38vw;
+	height: 56vh;
+	border-top-left-radius: 25vw;
+	border-bottom-left-radius: 25vw;
+	border-bottom-right-radius: 25vw;
+	background-image: url("https://images.unsplash.com/photo-1624797432677-6f803a98acb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80");
+	background-position: 50% 0%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@media screen and (max-width: 479px) {
+		margin-top: 3rem;
+		width: 100%;
+		height: 50vh;
+	}
+
+	@media screen and (min-width: 767px) {
+		margin-top: 3rem;
+
+		height: 80vh;
+		width: 100%;
+	}
+
+	@media screen and (min-width: 991px) {
+		height: 90vh;
+		width: 40vw;
+		background-position: 50% 0%;
+	}
+
+	@media screen and (min-width: 1024px) {
+		height: 140vh;
+		background-position: 50% 0%;
+	}
+
+	@media screen and (min-width: 1440px) {
+		background-position: 50% 0%;
+	}
 `;

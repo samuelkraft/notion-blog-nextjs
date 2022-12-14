@@ -44,7 +44,11 @@ const TextContent = styled.div`
 	grid-template-columns: 1fr 1fr;
 	justify-content: space-between;
 	align-items: center;
-	padding: 3rem;
+	padding: 8rem;
+
+	@media screen and (max-width: 1024px) {
+		grid-template-columns: 1fr;
+	}
 `;
 
 const SloganSection03 = styled(SloganSection01)`
@@ -64,15 +68,13 @@ const SloganSection03 = styled(SloganSection01)`
 
 		@media screen and (min-width: 768px) {
 			font-size: 52px;
-			width: 40rem;
+			width: 100%;
 		}
 		@media screen and (min-width: 1024px) {
 			font-size: 58px;
-			width: 30rem;
 			margin-top: 3.5rem;
 		}
 		@media screen and (min-width: 1440px) {
-			width: 40rem;
 			font-size: 58px;
 			line-height: 77px;
 			letter-spacing: 0.327px;

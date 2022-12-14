@@ -9,6 +9,8 @@ import InfiniteSlider from "../components/slider/InfiniteSlider";
 import HomeSection01 from "../components/homepage/HomeSection01";
 import HomeSection02 from "../components/homepage/HomeSection02";
 import HomeSection03 from "../components/homepage/HomeSection03";
+import HomeSection04 from "../components/homepage/HomeSection04";
+import HomeSection05 from "../components/homepage/HomeSection05";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -25,6 +27,8 @@ export default function Home({ posts }) {
       <HomeSection01 />
       <HomeSection02 />
       <HomeSection03 />
+      <HomeSection04 />
+      <HomeSection05 />
     </div>
   );
 }

@@ -18,13 +18,13 @@ const GradientButton = React.forwardRef(
 				styles={{
 					root: {
 						background: gradientColor,
-						boxShadow: "0px 10.2188px 20.4375px rgba(123, 66, 246, 0.15)",
 						marginLeft: marginLeft || "",
 						marginRight: marginRight || "",
 						borderRadius: 10,
 						color: "white",
 						fontFamily: "'Gilroy',sans-serif",
 						fontWeight: 600,
+						fontSize: "16px",
 						filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 						width: width || "",
 						height: size === "lg" ? "3.5rem" : "2.5rem",

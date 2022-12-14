@@ -10,7 +10,17 @@ import complices from "../../images/complices.png";
 import face2face from "../../images/face2face.png";
 import planon from "../../images/planon.png";
 import trucknet from "../../images/trucknet.png";
-
+import louboutin from "../../images/louboutin.png";
+import segway from "../../images/segway.png";
+import wilkie from "../../images/willkie.png";
+import neuberger from "../../images/neuberger.png";
+import unitedHaztalan from "../../images/unitedHaztalan.png";
+import vestiaireCollectif from "../../images/vestiaireCollectif.png";
+import latham from "../../images/latham.png";
+import airCullinaire from "../../images/airCullinaire.png";
+import stoick from "../../images/stoick.png";
+import foodGates from "../../images/foodGates.png";
+import pangea from "../../images/pangea.png";
 import Image from "next/image";
 
 const InfiniteSlider = () => {
@@ -19,11 +29,22 @@ const InfiniteSlider = () => {
 		veepee,
 		kmart,
 		follow,
-		chateautec,
+		louboutin,
+		vestiaireCollectif,
+		wilkie,
+		segway,
+		neuberger,
+		unitedHaztalan,
 		varonis,
+		latham,
+		airCullinaire,
+		chateautec,
 		planon,
 		complices,
 		trucknet,
+		stoick,
+		foodGates,
+		pangea,
 		face2face,
 	];
 	return (
@@ -87,10 +108,10 @@ const InfiniteSliderContainer = styled.div`
 `;
 
 const InfiniteSliderWrapper = styled.div`
-	width: 300%;
+	width: 400%;
 	position: relative;
 	overflow: hidden;
-	height: 5rem;
+	height: 8rem;
 `;
 
 const SlideInfinite = keyframes`
@@ -100,24 +121,25 @@ const SlideInfinite = keyframes`
 		}
 	
 		100% {
-			left: -100%;
+			left: -200%;
 		}
 	
 `;
 
 const BrandSlider = styled.div`
-	width: 300%;
+	width: 400%;
 	display: flex;
 	align-items: center;
-	height: 5rem;
+	height: 8rem;
 	justify-content: space-around;
 	position: absolute;
 	left: 0;
 	gap: 2rem;
 	animation-name: ${SlideInfinite};
-	animation-duration: 8s;
+	animation-duration: 15s;
 	animation-iteration-count: infinite;
-	animation-direction: alternate-reverse;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
 `;
 
 export default InfiniteSlider;
