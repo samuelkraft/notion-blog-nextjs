@@ -142,12 +142,12 @@ export const Slogan = styled.div`
 			width: 40rem;
 		}
 		@media screen and (min-width: 1024px) {
-			font-size: 34px;
-			width: 30rem;
+			font-size: 48px;
+			width: 35rem;
 			margin-top: 3.5rem;
 		}
 		@media screen and (min-width: 1440px) {
-			font-size: 52px;
+			font-size: 56px;
 			width: 40rem;
 		}
 	}

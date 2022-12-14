@@ -113,9 +113,8 @@ const useStyles = createStyles((theme) => ({
 		marginTop: theme.spacing.sm,
 		padding: `${theme.spacing.md}px ${theme.spacing.md * 2}px`,
 		paddingBottom: theme.spacing.xl,
-		borderTop: `1px solid ${
-			theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1]
-		}`,
+		borderTop: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1]
+			}`,
 	},
 
 	hiddenMobile: {
@@ -468,10 +467,10 @@ export function HeaderMegaMenu() {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-					<Anchor href='#' className={classes.link}>
+					<Anchor href='/blog' className={classes.link}>
 						{t("blog")}
 					</Anchor>
-					<Anchor href='#' className={classes.link}>
+					<Anchor href='/#contact' className={classes.link}>
 						{t("contact")}
 					</Anchor>
 

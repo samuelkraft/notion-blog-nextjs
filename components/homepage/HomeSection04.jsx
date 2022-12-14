@@ -103,15 +103,14 @@ const ImageWrapper1 = styled.div`
 	overflow: hidden;
 	width: 28vw;
 	height: 80vh;
-	border-top-left-radius: 25vw;
+	border-top-right-radius: 25vw;
 	border-bottom-left-radius: 25vw;
 	border-bottom-right-radius: 25vw;
 	background-image: url("https://assets.website-files.com/62e87007d1ea4833faeaf799/630fb0b4b919f6551863564a_image-why-us-01.jpg");
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	grid-column-start: 1;
-	grid-column-end: 2;
+	grid-column-start: 2;
 	grid-row-start: 1;
 	grid-row-end: 5;
 
@@ -126,13 +125,13 @@ const ImageWrapper2 = styled.div`
 	height: 12vw;
 	border-top-left-radius: 100%;
 	border-top-right-radius: 100%;
-	border-bottom-right-radius: 100%;
+	border-bottom-left-radius: 100%;
 	background-image: url("https://assets.website-files.com/62e87007d1ea4833faeaf799/630fb7c04f5bb53842dd0208_why-us-image-02.jpg");
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
 
-	grid-column-start: 2;
+	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 4;
 	grid-row-end: 5;

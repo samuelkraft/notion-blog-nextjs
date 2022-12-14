@@ -46,6 +46,10 @@ const TextContent = styled.div`
 	align-items: center;
 	padding: 8rem;
 
+	@media screen and (max-width: 500px) {
+		padding: 2rem;
+	}
+
 	@media screen and (max-width: 1024px) {
 		grid-template-columns: 1fr;
 	}
