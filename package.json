@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
+    "@mantine/carousel": "^5.9.5",
     "@mantine/core": "^5.9.2",
     "@mantine/ds": "^5.9.2",
     "@mantine/hooks": "^5.9.2",
@@ -16,6 +17,7 @@
     "@mantine/prism": "^5.9.2",
     "@notionhq/client": "^2.2.1",
     "@tabler/icons": "^1.116.1",
+    "embla-carousel-react": "^7.0.5",
     "framer-motion": "^7.6.19",
     "i18next": "^22.1.4",
     "next": "13.0.0",

@@ -313,6 +313,13 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@mantine/carousel@^5.9.5":
+  "integrity" "sha512-PiZBHa/zoaHRgisVSQZWST/0QRytYd/1rcVlwMSqaiE5ov7W+7wtt8ETXDr2GgCnQVfX26ZSFND94KDn3aExHA=="
+  "resolved" "https://registry.npmjs.org/@mantine/carousel/-/carousel-5.9.5.tgz"
+  "version" "5.9.5"
+  dependencies:
+    "@mantine/utils" "5.9.5"
+
 "@mantine/core@^5.9.2":
   "integrity" "sha512-moNWbvwg8LwGNTHzoHx6qeEAfmP//H2Kc8vMGpUu6L/SP2xR+V1ZAjfrCcccplu6gYmjjPrR91Ui3ATD7xatlg=="
   "resolved" "https://registry.npmjs.org/@mantine/core/-/core-5.9.2.tgz"
@@ -372,6 +379,11 @@
   "integrity" "sha512-dvqqbdrK/nw4stFCXRCn38Ru12RqdWv8uzbywP5dQVCyTw8pW/Cq+T7YCWpbkFcKFea9UhOrPhBygJcjc13FgA=="
   "resolved" "https://registry.npmjs.org/@mantine/utils/-/utils-5.9.2.tgz"
   "version" "5.9.2"
+
+"@mantine/utils@5.9.5":
+  "integrity" "sha512-OtMOvXMyqpZ+Tz25DYRwRkvERvmF4L0RJiq+JnXk+1yKDvG+JZQuMMLnt0nZ81T6q7uzDSA29cJ45syHL2BXmQ=="
+  "resolved" "https://registry.npmjs.org/@mantine/utils/-/utils-5.9.5.tgz"
+  "version" "5.9.5"
 
 "@motionone/animation@^10.13.1":
   "integrity" "sha512-mZcJxLjHor+bhcPuIFErMDNyrdb2vJur8lSfMCsuCB4UyV8ILZLvK+t+pg56erv8ud9xQGK/1OGPt10agPrCyQ=="
@@ -774,6 +786,18 @@
     "dom-serializer" "^1.0.1"
     "domelementtype" "^2.2.0"
     "domhandler" "^4.2.0"
+
+"embla-carousel-react@^7.0.5":
+  "integrity" "sha512-qhw980gKj7G+O5d3WSwj0TyhcbpGP3DqJPiAatt1t3wEEcZqn7csaIfLh4e1N/0kna9sZfZZRzz+//NSrUodSg=="
+  "resolved" "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-7.0.5.tgz"
+  "version" "7.0.5"
+  dependencies:
+    "embla-carousel" "7.0.5"
+
+"embla-carousel@7.0.5":
+  "integrity" "sha512-loRcu0La0F7bhEMwbvgpi14iaaIEdwacH1xoplnaYfwN4KMgECkiuLgu4lx+v6MYd6lSpg/bw7ZxEuLUwYjavg=="
+  "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.5.tgz"
+  "version" "7.0.5"
 
 "entities@^2.0.0":
   "integrity" "sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A=="

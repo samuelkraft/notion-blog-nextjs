@@ -103,7 +103,7 @@ const HomeSection05 = () => {
 	);
 };
 
-const HomeSection05Container = styled(HomeSection01Container)`
+export const HomeSection05Container = styled(HomeSection01Container)`
 	margin-top: 25rem;
 
 	@media screen and (max-width: 768px) {
@@ -111,7 +111,7 @@ const HomeSection05Container = styled(HomeSection01Container)`
 	}
 `;
 
-const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
+export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
 	display: flex;
 	flex-flow: column;
 

@@ -11,6 +11,8 @@ import HomeSection02 from "../components/homepage/HomeSection02";
 import HomeSection03 from "../components/homepage/HomeSection03";
 import HomeSection04 from "../components/homepage/HomeSection04";
 import HomeSection05 from "../components/homepage/HomeSection05";
+import HomeSection06 from "../components/homepage/HomeSection06";
+import ContactForm from "../components/homepage/ContactForm";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -29,6 +31,8 @@ export default function Home({ posts }) {
       <HomeSection03 />
       <HomeSection04 />
       <HomeSection05 />
+      <HomeSection06 />
+      <ContactForm />
     </div>
   );
 }
