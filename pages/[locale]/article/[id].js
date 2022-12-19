@@ -1,9 +1,11 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../../lib/notion";
+import { getDatabase, getPage, getBlocks } from "../../../lib/notion";
 import Link from "next/link";
 import { databaseId } from "../index.js";
-import styles from "../post.module.css";
+import styles from "../../post.module.css";
+import { getI18nProps } from '../../../lib/getStatic'
+
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -185,7 +187,7 @@ export default function Post({ page, blocks }) {
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
-  const paths = database.map((page) => ({ params: { id: page.id } }))
+  const paths = database.map((page) => ({ params: { id: page.id, locale: "fr" } }))
   return {
     paths,
     fallback: false,
@@ -223,6 +225,7 @@ export const getStaticProps = async (context) => {
     props: {
       page,
       blocks: blocksWithChildren,
+      ...(await getI18nProps(context, ['common', 'home']))
     },
     revalidate: 1,
   };

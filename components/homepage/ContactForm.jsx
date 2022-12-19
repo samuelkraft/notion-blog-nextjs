@@ -53,7 +53,7 @@ const ContactForm = () => {
 	}
 
 	return (
-		<ContactFormContainer>
+		<ContactFormContainer id="contact">
 			<Tag style={{ width: "35%" }}>
 				<span>Contact</span>
 			</Tag>
@@ -93,7 +93,7 @@ const ContactForm = () => {
 									},
 								},
 							}}
-							// {...form.getInputProps("email")}
+						// {...form.getInputProps("email")}
 						/>
 
 						<RowWrapper>

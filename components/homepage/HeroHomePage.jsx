@@ -1,6 +1,6 @@
 import GradientButton from "../button/GradientButton";
 import styled from "styled-components";
-import Link from "next/link";
+import Link from '../../components/Link'
 
 // Animation
 import { motion } from "framer-motion";

@@ -23,7 +23,6 @@ import { useDisclosure } from "@mantine/hooks";
 import {
 	IconCoin,
 	IconChevronDown,
-	IconWorld,
 	IconArticle,
 	IconUsers,
 	IconMathSymbols,
@@ -35,9 +34,14 @@ import {
 
 import { useTranslation } from "next-i18next";
 import Logo from "../../images/logo_Expand-CPA.svg";
-import France from "../../images/flag-france.svg";
 import Image from "next/image";
-import styled from "styled-components";
+import LinkComponent from "../Link";
+
+import LanguageSwitcher from "./LanguageSwitcher";
+import i18nextConfig from '../../next-i18next.config'
+import { useRouter } from 'next/router'
+
+
 
 const useStyles = createStyles((theme) => ({
 	root: {
@@ -131,6 +135,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function HeaderMegaMenu() {
+	const router = useRouter()
+	const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale
 	const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
 		useDisclosure(false);
 	const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
@@ -184,7 +190,7 @@ export function HeaderMegaMenu() {
 
 	const businessLinks = businessServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Anchor href={item.href} component='a' className={classes.subLinkText}>
+			<LinkComponent href={item.href} className={classes.subLinkText}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={theme.fn.primaryColor()} />
@@ -196,13 +202,13 @@ export function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</Anchor>
+			</LinkComponent>
 		</UnstyledButton>
 	));
 
 	const privateTaxLinks = privateTaxServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Anchor href={item.href} component='a' className={classes.subLinkText}>
+			<LinkComponent href={item.href} className={classes.subLinkText}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={theme.fn.primaryColor()} />
@@ -214,7 +220,7 @@ export function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</Anchor>
+			</LinkComponent>
 		</UnstyledButton>
 	));
 
@@ -229,17 +235,17 @@ export function HeaderMegaMenu() {
 							className={classes.hiddenDesktop}
 							size='lg'
 						/>
-						<Anchor href='/' component='a'>
+						<LinkComponent href='/' component='a'>
 							<Image src={Logo} width='150' height='100' />
-						</Anchor>
+						</LinkComponent>
 						<Container fluid>
 							<Group
 								sx={{ height: "100%" }}
 								spacing={10}
 								className={classes.hiddenMobile}>
-								<Anchor href='/about' className={classes.link}>
+								<LinkComponent href='/about' className={classes.link}>
 									{t("cabinet")}
-								</Anchor>
+								</LinkComponent>
 								<HoverCard
 									width={600}
 									position='bottom'
@@ -247,7 +253,7 @@ export function HeaderMegaMenu() {
 									shadow='md'
 									withinPortal>
 									<HoverCard.Target>
-										<a href='/services' className={classes.link}>
+										<Anchor href='/services' className={classes.link}>
 											<Center inline>
 												<Box component='span' mr={5}>
 													{t("business")}
@@ -257,7 +263,7 @@ export function HeaderMegaMenu() {
 													color={theme.fn.primaryColor()}
 												/>
 											</Center>
-										</a>
+										</Anchor>
 									</HoverCard.Target>
 
 									<HoverCard.Dropdown sx={{ overflow: "hidden" }}>
@@ -270,14 +276,15 @@ export function HeaderMegaMenu() {
 												}}>
 												{t("business")}
 											</Text>
-											<Anchor
+											<LinkComponent
 												href='/services'
 												size='xs'
 												style={{
 													fontFamily: "'Gilroy',sans-serif",
+													color: theme.colors.blue[6],
 												}}>
 												View all
-											</Anchor>
+											</LinkComponent>
 										</Group>
 
 										<Divider
@@ -311,14 +318,17 @@ export function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Button
-													variant='default'
-													style={{
-														fontFamily: "'Gilroy',sans-serif",
-														fontWeight: 600,
-													}}>
-													{t("contact")}
-												</Button>
+												<LinkComponent href="/#contact">
+													<Button
+
+														variant='default'
+														style={{
+															fontFamily: "'Gilroy',sans-serif",
+															fontWeight: 600,
+														}}>
+														{t("contact")}
+													</Button>
+												</LinkComponent>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
@@ -353,14 +363,15 @@ export function HeaderMegaMenu() {
 												}}>
 												{t("tax")}
 											</Text>
-											<Anchor
+											<LinkComponent
 												href='#'
 												size='xs'
 												style={{
 													fontFamily: "'Gilroy',sans-serif",
+													color: theme.colors.blue[6],
 												}}>
 												View all
-											</Anchor>
+											</LinkComponent>
 										</Group>
 
 										<Divider
@@ -394,36 +405,38 @@ export function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Button
-													variant='default'
-													style={{
-														fontFamily: "'Gilroy',sans-serif",
-														fontWeight: 600,
-													}}>
-													{t("contact")}
-												</Button>
+												<LinkComponent href="/#contact">
+													<Button
+														variant='default'
+														style={{
+															fontFamily: "'Gilroy',sans-serif",
+															fontWeight: 600,
+														}}>
+														{t("contact")}
+													</Button>
+												</LinkComponent>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
 								</HoverCard>
-								<Anchor href='/blog' className={classes.link}>
+								<LinkComponent href='/blog' className={classes.link}>
 									{t("blog")}
-								</Anchor>
-								<Anchor href='/#contact' className={classes.link}>
+								</LinkComponent>
+								<LinkComponent href='/#contact' className={classes.link}>
 									{t("contact")}
-								</Anchor>
+								</LinkComponent>
 
 								<Group className={classes.hiddenMobile}>
-									<LanguageSwitcher>
-										<IconWorld strokeWidth={2} color={"black"} />
-										<Anchor
-											href='/en'
-											component='a'
-											className={classes.subLinkText}>
-											Français
-										</Anchor>
-										<Image src={France} />
-									</LanguageSwitcher>
+									{i18nextConfig.i18n.locales.map((locale) => {
+										if (locale === currentLocale) return null
+										return (
+											<LanguageSwitcher
+												className={classes.subLinkText}
+												locale={locale}
+												key={locale} />
+										)
+									})}
+
 								</Group>
 							</Group>
 						</Container>
@@ -445,9 +458,9 @@ export function HeaderMegaMenu() {
 						color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
 					/>
 
-					<Anchor href='/about' className={classes.link}>
+					<LinkComponent href='/about' className={classes.link}>
 						{t("cabinet")}
-					</Anchor>
+					</LinkComponent>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
 						<Center inline>
 							<Box component='span' mr={5}>
@@ -467,12 +480,12 @@ export function HeaderMegaMenu() {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-					<Anchor href='/blog' className={classes.link}>
+					<LinkComponent href='/blog' className={classes.link}>
 						{t("blog")}
-					</Anchor>
-					<Anchor href='/#contact' className={classes.link}>
+					</LinkComponent>
+					<LinkComponent href='/#contact' className={classes.link}>
 						{t("contact")}
-					</Anchor>
+					</LinkComponent>
 
 					<Divider
 						my='sm'
@@ -483,15 +496,3 @@ export function HeaderMegaMenu() {
 		</Box>
 	);
 }
-
-const LanguageSwitcher = styled.div`
-	display: flex;
-	font-family: "Gilroy", sans-serif;
-	font-weight: 600;
-	line-height: 1.5;
-	color: black;
-	gap: 10px;
-	padding: 0.5rem 1rem;
-	border-radius: 3rem;
-	border: 2px solid black;
-`;

@@ -5,7 +5,7 @@ import Footer from "../components/footer/Footer"
 import { AnimatePresence } from "framer-motion";
 import { appWithTranslation } from 'next-i18next'
 import { MantineProvider } from "@mantine/core";
-
+import MyDocument from "../pages/_document";
 
 function MyApp({ Component, pageProps }) {
   return (
