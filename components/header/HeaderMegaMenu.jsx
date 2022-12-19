@@ -228,7 +228,7 @@ export function HeaderMegaMenu() {
 		<Box mb={160}>
 			<Header height={120} className={classes.root} fixed>
 				<Container className={classes.inner} fluid>
-					<Group position='left' spacing={"xl"} sx={{ height: "100%" }}>
+					<Group position='left' sx={{ height: "100%" }}>
 						<Burger
 							opened={drawerOpened}
 							onClick={toggleDrawer}
@@ -437,17 +437,6 @@ export function HeaderMegaMenu() {
 									})}
 								</Group>
 							</Group>
-							<Group className={classes.hiddenDesktop}>
-								{i18nextConfig.i18n.locales.map((locale) => {
-									if (locale === currentLocale) return null
-									return (
-										<LanguageSwitcher
-											className={classes.subLinkText}
-											locale={locale}
-											key={locale} />
-									)
-								})}
-							</Group>
 						</Container>
 					</Group>
 				</Container>
@@ -458,7 +447,17 @@ export function HeaderMegaMenu() {
 				onClose={closeDrawer}
 				size='100%'
 				padding='md'
-				title='Navigation'
+				title={<Group className={classes.hiddenDesktop} onClick={closeDrawer}>
+					{i18nextConfig.i18n.locales.map((locale) => {
+						if (locale === currentLocale) return null
+						return (
+							<LanguageSwitcher
+								className={classes.subLinkText}
+								locale={locale}
+								key={locale} />
+						)
+					})}
+				</Group>}
 				className={classes.hiddenDesktop}
 				zIndex={1000000}>
 				<ScrollArea sx={{ height: "calc(100vh - 60px)" }} mx='-md'>
