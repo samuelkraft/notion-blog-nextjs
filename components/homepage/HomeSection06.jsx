@@ -33,6 +33,7 @@ const HomeSection06 = () => {
 							<GradientButton
 								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
 								component='button'
+								size='lg'
 								width={200}>
 								{t("contactUs")}
 							</GradientButton>
@@ -223,6 +224,7 @@ export const RowWrapper = styled.div`
 	@media screen and (max-width: 768px) {
 		margin-bottom: 3rem;
 		flex-flow: column;
+		gap: 2rem;
 		justify-content: flex-start;
 		align-items: flex-start;
 	}
@@ -257,7 +259,7 @@ export const SloganSection06 = styled.h1`
 	}
 `;
 
-const ButtonContainer = styled.div`
+export const ButtonContainer = styled.div`
 	@media screen and (min-width: 1024px) {
 		margin-top: 2rem;
 	}

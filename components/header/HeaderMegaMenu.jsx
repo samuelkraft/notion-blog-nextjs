@@ -148,31 +148,37 @@ export function HeaderMegaMenu() {
 			icon: IconArticle,
 			title: t("administrativeServices"),
 			href: "/services/administrative-services",
+			color: "#7B42F6"
 		},
 		{
 			icon: IconUsers,
 			title: t("payrollServices"),
 			href: "/services/payroll-services",
+			color: "#1B1464"
 		},
 		{
 			icon: IconMathSymbols,
 			title: t("accountingServices"),
 			href: "/services/accounting-services",
+			color: "#2457F5"
 		},
 		{
 			icon: IconScale,
 			title: t("legalServices"),
 			href: "/services/legal-services",
+			color: "#EAB652"
 		},
 		{
 			icon: IconPigMoney,
 			title: t("taxServices"),
 			href: "/services/tax-services",
+			color: "#FF630B"
 		},
 		{
 			icon: IconEye,
 			title: t("auditServices"),
 			href: "/services/audit-services",
+			color: "#3DF29B"
 		},
 	];
 	const privateTaxServices = [
@@ -193,7 +199,7 @@ export function HeaderMegaMenu() {
 			<LinkComponent href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
-						<item.icon size={22} color={theme.fn.primaryColor()} />
+						<item.icon size={22} color={item.color} />
 					</ThemeIcon>
 					<Text
 						size='md'

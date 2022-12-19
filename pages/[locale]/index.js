@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { getDatabase } from "../../lib/notion";
 import { useTranslation } from "next-i18next";
-import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
+import { getStaticPaths, getI18nProps } from '../../lib/getStatic'
 
 
 import Hero from "../../components/homepage/HeroHomePage";
@@ -13,6 +13,7 @@ import HomeSection04 from "../../components/homepage/HomeSection04";
 import HomeSection05 from "../../components/homepage/HomeSection05";
 import HomeSection06 from "../../components/homepage/HomeSection06";
 import ContactForm from "../../components/homepage/ContactForm";
+import BlogSection from "../../components/homepage/BlogSection";
 
 
 
@@ -34,10 +35,22 @@ export default function Home({ posts }) {
       <HomeSection04 />
       <HomeSection05 />
       <HomeSection06 />
+      <BlogSection posts={posts} />
       <ContactForm />
     </div>
   );
 }
 
-const getStaticProps = makeStaticProps(['common', 'home'])
+
+const getStaticProps = async (ctx) => {
+  const database = await getDatabase(databaseId);
+
+  return {
+    props: {
+      posts: database,
+      ...(await getI18nProps(ctx, ['common', 'home']))
+    },
+    revalidate: 1,
+  };
+};
 export { getStaticPaths, getStaticProps }
