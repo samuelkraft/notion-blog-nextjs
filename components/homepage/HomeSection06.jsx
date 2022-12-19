@@ -75,6 +75,11 @@ const HomeSection06 = () => {
 								bottom: "-16rem",
 							},
 						},
+
+						indicator: {
+							backgroundColor: "#3672F8",
+						}
+
 					})}>
 					<Carousel.Slide>
 						<FeedbackCard>

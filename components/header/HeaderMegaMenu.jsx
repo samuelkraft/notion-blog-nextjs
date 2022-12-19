@@ -190,7 +190,7 @@ export function HeaderMegaMenu() {
 
 	const businessLinks = businessServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<LinkComponent href={item.href} className={classes.subLinkText}>
+			<LinkComponent href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={theme.fn.primaryColor()} />
@@ -208,7 +208,7 @@ export function HeaderMegaMenu() {
 
 	const privateTaxLinks = privateTaxServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<LinkComponent href={item.href} className={classes.subLinkText}>
+			<LinkComponent href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={theme.fn.primaryColor()} />
@@ -425,7 +425,6 @@ export function HeaderMegaMenu() {
 								<LinkComponent href='/#contact' className={classes.link}>
 									{t("contact")}
 								</LinkComponent>
-
 								<Group className={classes.hiddenMobile}>
 									{i18nextConfig.i18n.locales.map((locale) => {
 										if (locale === currentLocale) return null
@@ -436,8 +435,18 @@ export function HeaderMegaMenu() {
 												key={locale} />
 										)
 									})}
-
 								</Group>
+							</Group>
+							<Group className={classes.hiddenDesktop}>
+								{i18nextConfig.i18n.locales.map((locale) => {
+									if (locale === currentLocale) return null
+									return (
+										<LanguageSwitcher
+											className={classes.subLinkText}
+											locale={locale}
+											key={locale} />
+									)
+								})}
 							</Group>
 						</Container>
 					</Group>
@@ -458,7 +467,7 @@ export function HeaderMegaMenu() {
 						color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
 					/>
 
-					<LinkComponent href='/about' className={classes.link}>
+					<LinkComponent href='/about' className={classes.link} onClick={closeDrawer}>
 						{t("cabinet")}
 					</LinkComponent>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -480,10 +489,10 @@ export function HeaderMegaMenu() {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-					<LinkComponent href='/blog' className={classes.link}>
+					<LinkComponent href='/blog' className={classes.link} onClick={closeDrawer}>
 						{t("blog")}
 					</LinkComponent>
-					<LinkComponent href='/#contact' className={classes.link}>
+					<LinkComponent href='/#contact' className={classes.link} onClick={closeDrawer}>
 						{t("contact")}
 					</LinkComponent>
 

@@ -53,7 +53,7 @@ const ContactForm = () => {
 	}
 
 	return (
-		<ContactFormContainer id="contact">
+		<ContactFormContainer id='contact'>
 			<Tag style={{ width: "35%" }}>
 				<span>Contact</span>
 			</Tag>
@@ -93,10 +93,10 @@ const ContactForm = () => {
 									},
 								},
 							}}
-						// {...form.getInputProps("email")}
+							// {...form.getInputProps("email")}
 						/>
 
-						<RowWrapper>
+						<Group position='left' spacing='xl'>
 							<TextInput
 								required
 								label='Nom'
@@ -121,7 +121,6 @@ const ContactForm = () => {
 								label='Prénom'
 								placeholder='Prénom'
 								tyoe='text'
-								style={{ marginLeft: "2rem" }}
 								radius='lg'
 								size='lg'
 								icon={<IconUser color='#2457F5' />}
@@ -136,7 +135,7 @@ const ContactForm = () => {
 									},
 								}}
 							/>
-						</RowWrapper>
+						</Group>
 
 						<TextInput
 							required
@@ -455,7 +454,7 @@ const ImageWrapper = styled.div`
 		width: 320px;
 		height: 180px;
 	}
-	@media screen and (min-width: 500px) {
+	@media screen and (min-width: 510px) {
 		width: 500px;
 		height: 280px;
 	}

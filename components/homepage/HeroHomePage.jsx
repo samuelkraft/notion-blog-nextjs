@@ -31,7 +31,7 @@ const Hero = () => {
 								size='lg'
 								gradientColor='#0657CF'
 								component='button'
-								style={{ margin: "1rem" }}>
+							>
 								{t("ourServices")}
 							</GradientButton>
 						</Link>
@@ -41,7 +41,7 @@ const Hero = () => {
 								size='lg'
 								component='button'
 								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-								style={{ margin: "1rem" }}>
+							>
 								{t("contactUs")}
 							</GradientButton>
 						</Link>
@@ -194,7 +194,7 @@ const RowButtonContainer = styled.div`
 	display: flex;
 	gap: 2rem;
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 500px) {
 		flex-flow: column;
 	}
 `;
