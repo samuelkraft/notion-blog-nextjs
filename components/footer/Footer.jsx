@@ -73,16 +73,30 @@ const Footer = () => {
 							<span>contact@asp-experts.com</span>
 						</div>
 					</a>
-					<a href='https://www.google.com/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8746969,2.3380772,17z/data=!4m14!1m8!3m7!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!2s46+Rue+La+Fayette,+75009+Paris!3b1!8m2!3d48.8746969!4d2.3402659!10e3!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'>
-						<div className='links'>
-							<IconMapPin size={28} />
-							<div className='column-location'>
+
+					<div className='links'>
+						<IconMapPin size={28} />
+						<div className='column-location'>
+							<a
+								href='https://www.google.fr/maps/place/87+Rue+La+Bo%C3%A9tie,+75008+Paris/@48.8717882,2.3063296,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc6832f7acf:0xa76d2d4cc6634b68!8m2!3d48.8717882!4d2.3085183?hl=fr'
+								target='_blank'
+								rel='noopener noreferrer'>
 								<span>87 rue la Boétie, 75008 PARIS</span>
+							</a>
+							<a
+								href='https://www.google.fr/maps/place/34+Rue+Poissonni%C3%A8re,+75002+Paris/@48.8699193,2.345757,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e165da4e065:0x101837ce411c25e4!8m2!3d48.8699193!4d2.3479457?hl=fr'
+								target='_blank'
+								rel='noopener noreferrer'>
 								<span>34 rue Poissonnière, 75002 PARIS</span>
+							</a>
+							<a
+								href='https://www.google.fr/maps/place/%D7%A7%D7%A0%D7%99%D7%95%D7%9F+%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99,+Derech+Menachem+Begin+132,+Tel+Aviv-Yafo,+Isra%C3%ABl%E2%80%AD/@32.0743897,34.7899806,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b991302fe6f:0x7e4710b90ab7ab85!8m2!3d32.0743897!4d34.7921693?hl=fr'
+								target='_blank'
+								rel='noopener noreferrer'>
 								<span>Menahem Begin, 132 TEL AVIV</span>
-							</div>
+							</a>
 						</div>
-					</a>
+					</div>
 				</div>
 			</FooterWrapper>
 			<Copyright>
@@ -112,7 +126,7 @@ const FooterContainer = styled.footer`
 		padding: 2rem 20%;
 	}
 	@media screen and (min-width: 2500px) {
-		padding: 2rem 32%;
+		padding: 2rem 25%;
 	}
 `;
 
@@ -127,7 +141,6 @@ const FooterWrapper = styled.div`
 			font-family: "AllRoundGothic-Demi";
 			font-weight: 500;
 			font-size: 1.2rem;
-			margin-left: 1rem;
 		}
 		@media screen and (max-width: 767px) {
 			width: 100%;
@@ -147,8 +160,8 @@ const FooterWrapper = styled.div`
 	a::after {
 		text-decoration: none;
 		color: #1b1464;
-		font-size: 16px;
 		font-weight: 500;
+		font-size: 1.2rem;
 	}
 
 	.links {

@@ -215,29 +215,43 @@ const ContactForm = () => {
 						</ImageWrapper>
 					</ContactInfoContainer>
 					<ContactInfoContainer>
-						<ContactInfo>
-							<Image src={redLocation} />
-							<p>
-								87 rue la Boétie, 75008 PARIS <br />
-								34 rue Poissonnière, 75002 PARIS
-							</p>
-						</ContactInfo>
-						<ContactInfo>
-							<Image src={greenLocation} />
-							<p>Menahem Begin, 132 TEL AVIV</p>
-						</ContactInfo>
-						<ContactInfo>
-							<Image src={phone} />
-							<p>
-								<u>01 86 96 37 01</u>
-								<br />
-								<u>06 59 69 13 42</u>
-							</p>
-						</ContactInfo>
-						<ContactInfo>
-							<Image src={mail} />
-							<p>contact@asp-experts.com</p>
-						</ContactInfo>
+						<a
+							href='https://www.google.fr/maps/place/87+Rue+La+Bo%C3%A9tie,+75008+Paris/@48.8717882,2.3063296,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc6832f7acf:0xa76d2d4cc6634b68!8m2!3d48.8717882!4d2.3085183?hl=fr'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<ContactInfo>
+								<Image src={redLocation} />
+								<p>
+									87 rue la Boétie, 75008 PARIS <br />
+									34 rue Poissonnière, 75002 PARIS
+								</p>
+							</ContactInfo>
+						</a>
+						<a
+							href='https://www.google.fr/maps/place/%D7%A7%D7%A0%D7%99%D7%95%D7%9F+%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99,+Derech+Menachem+Begin+132,+Tel+Aviv-Yafo,+Isra%C3%ABl%E2%80%AD/@32.0743897,34.7899806,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b991302fe6f:0x7e4710b90ab7ab85!8m2!3d32.0743897!4d34.7921693?hl=fr'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<ContactInfo>
+								<Image src={greenLocation} />
+								<p>Menahem Begin, 132 TEL AVIV</p>
+							</ContactInfo>
+						</a>
+						<a href='tel:01-86-96-37-01'>
+							<ContactInfo>
+								<Image src={phone} />
+								<p>
+									<u>01 86 96 37 01</u>
+									<br />
+									<u>06 59 69 13 42</u>
+								</p>
+							</ContactInfo>
+						</a>
+						<a href='mailto:contact@asp-experts.com'>
+							<ContactInfo>
+								<Image src={mail} />
+								<p>contact@asp-experts.com</p>
+							</ContactInfo>
+						</a>
 					</ContactInfoContainer>
 				</TextContentContainer2>
 			</ContactFormLayout>
@@ -284,9 +298,6 @@ const ContactFormLayout = styled.div`
 		flex-flow: row;
 		gap: 3rem;
 		padding: 5rem;
-	}
-
-	@media screen and (min-width: 1440px) {
 	}
 `;
 
