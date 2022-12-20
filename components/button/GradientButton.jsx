@@ -25,7 +25,7 @@ const GradientButton = React.forwardRef(
 						fontFamily: "'Gilroy',sans-serif",
 						fontWeight: 600,
 						fontSize: "16px",
-						filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+						boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 						width: width || "",
 						height: size === "lg" ? "3.5rem" : "2.5rem",
 						'&:hover': {
@@ -36,7 +36,7 @@ const GradientButton = React.forwardRef(
 					},
 				}}>
 				{children}
-			</Button>
+			</Button >
 		);
 	}
 );

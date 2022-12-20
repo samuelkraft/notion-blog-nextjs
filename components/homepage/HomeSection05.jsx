@@ -104,10 +104,15 @@ const HomeSection05 = () => {
 };
 
 export const HomeSection05Container = styled(HomeSection01Container)`
-	margin-top: 25rem;
-
 	@media screen and (max-width: 768px) {
 		margin-top: 0rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		margin-top: 15rem;
+	}
+	@media screen and (min-width: 1440px) {
+		margin-top: 25rem;
 	}
 `;
 
@@ -140,14 +145,10 @@ export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
 	@media screen and (min-width: 1024px) {
 		font-size: 50px;
 		justify-content: space-evenly;
-		flex-flow: column;
-		gap: 2rem;
+		gap: 5rem;
 	}
 	@media screen and (min-width: 1440px) {
 		font-size: 52px;
-		flex-flow: column;
-		justify-content: space-evenly;
-		gap: 5rem;
 	}
 `;
 

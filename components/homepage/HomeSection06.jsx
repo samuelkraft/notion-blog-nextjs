@@ -279,6 +279,10 @@ const FeedbackCard = styled.div`
 		width: 320px;
 	}
 
+	@media screen and (min-width: 1024px) {
+		width: 380px;
+	}
+
 	@media screen and (min-width: 1440px) {
 		width: 500px;
 		padding: 5rem;

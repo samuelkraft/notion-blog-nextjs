@@ -78,8 +78,6 @@ const HomeSection02Wrapper = styled(HomeSection01Wrapper)`
 `;
 
 const ImageWrapper = styled.div`
-	width: 38vw;
-	height: 56vh;
 	border-top-left-radius: 25vw;
 	border-bottom-left-radius: 25vw;
 	border-bottom-right-radius: 25vw;
@@ -87,6 +85,9 @@ const ImageWrapper = styled.div`
 	background-position: 50% 0%;
 	background-size: cover;
 	background-repeat: no-repeat;
+	margin-top: 3rem;
+	width: 100%;
+	height: 50vh;
 
 	@media screen and (max-width: 479px) {
 		margin-top: 3rem;

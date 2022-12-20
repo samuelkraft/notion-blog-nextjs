@@ -107,7 +107,6 @@ const HomeSection01 = () => {
 export default HomeSection01;
 
 export const HomeSection01Container = styled.div`
-	margin-top: 10rem;
 	padding: 2rem;
 	@media screen and (min-width: 768px) {
 		padding: 1rem;
@@ -244,7 +243,7 @@ export const FeaturesCard = styled.div`
 	justify-content: center;
 	border: 2.5px solid #1b1464;
 	border-radius: 51px;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	padding: 2rem;
 	width: 300px;
 	height: 280px;
