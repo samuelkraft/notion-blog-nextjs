@@ -61,7 +61,6 @@ const SloganSection03 = styled(SloganSection01)`
 	align-items: center;
 	h1 {
 		font-family: "AllRoundGothic-Demi";
-		font-weight: 600;
 		font-size: 42px;
 		color: #1b1464;
 		line-height: 1.2;

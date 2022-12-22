@@ -34,7 +34,7 @@ const HomeSection06 = () => {
 								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
 								component='button'
 								size='lg'
-								width={200}>
+							>
 								{t("contactUs")}
 							</GradientButton>
 						</ButtonContainer>
@@ -235,7 +235,6 @@ export const RowWrapper = styled.div`
 
 export const SloganSection06 = styled.h1`
 	font-family: "AllRoundGothic-Demi";
-	font-weight: 600;
 	font-size: 42px;
 	color: #1b1464;
 
@@ -311,7 +310,6 @@ const AvatarContent = styled.div`
 
 	h3 {
 		font-family: "AllRoundGothic-Demi";
-		font-weight: 600;
 		font-size: 24px;
 		color: #1b1464;
 
@@ -323,7 +321,6 @@ const AvatarContent = styled.div`
 	p {
 		font-size: 16px;
 		color: #1b1464;
-		font-weight: 500;
 		@media screen and (min-width: 1440px) {
 			font-size: 24px;
 		}

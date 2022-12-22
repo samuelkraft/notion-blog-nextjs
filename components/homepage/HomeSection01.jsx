@@ -83,7 +83,7 @@ const HomeSection01 = () => {
 					<FeaturesCard4>
 						<Image src={circle_4} />
 						<div className='text-content'>
-							<h4>{t("conseillerRH")}</h4>
+							<h4>{t("conseilJuridique")}</h4>
 						</div>
 					</FeaturesCard4>
 					<FeaturesCard5>
@@ -175,7 +175,6 @@ export const HeadingSection01 = styled(Heading)`
 export const SloganSection01 = styled(Slogan)`
 	h1 {
 		font-family: "AllRoundGothic-Demi";
-		font-weight: 600;
 		font-size: 42px;
 		color: #1b1464;
 		line-height: 1.2;

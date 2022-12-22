@@ -93,7 +93,7 @@ const ContactForm = () => {
 									},
 								},
 							}}
-							// {...form.getInputProps("email")}
+						// {...form.getInputProps("email")}
 						/>
 
 						<Group position='left' spacing='xl'>
@@ -346,7 +346,6 @@ const TextContent = styled.div`
 		font-family: "AllRoundGothic-Demi";
 		@media screen and (max-width: 1024px) {
 			font-size: 42px;
-			font-weight: 600;
 			line-height: 1.2;
 			margin-bottom: 0.5rem;
 			margin-top: 2rem;
@@ -355,14 +354,12 @@ const TextContent = styled.div`
 
 		@media screen and (min-width: 1024px) {
 			font-size: 42px;
-			font-weight: 600;
 			margin-bottom: 1rem;
 			line-height: 44px;
 			text-align: start;
 		}
 		@media screen and (min-width: 1440px) {
 			font-size: 46px;
-			font-weight: 600;
 			margin-bottom: 1rem;
 			line-height: 55px;
 			text-align: start;

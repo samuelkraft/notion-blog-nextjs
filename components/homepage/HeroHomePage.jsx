@@ -128,7 +128,6 @@ export const HeroWrapper = styled.div`
 export const Slogan = styled.div`
 	h1 {
 		font-family: "AllRoundGothic-Demi";
-		font-weight: 600;
 		font-size: 32px;
 		color: #1b1464;
 		line-height: 1.2;

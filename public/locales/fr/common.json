@@ -2,6 +2,7 @@
 	"slogan": "Experts comptables français et américains établis en France",
 	"sloganSubtitle": "Nous sommes spécialisés dans le conseil et l’accompagnement d’entreprises étrangères et de résidents étrangers établis en France",
 	"ourServices": "Nos services",
+	"ourExpertises": "Nos domaines d'expertises",
 	"cabinet": "Notre cabinet",
 	"business": "Services aux entreprises",
 	"tax": "Services fiscaux privés",
@@ -18,5 +19,16 @@
 	"footerLinks": "Liens utiles",
 	"coordonnees": "Coordonnées",
 	"contactUs": "Contactez-nous",
-	"contactUsText": "Nous sommes à votre disposition pour répondre à toutes vos questions."
+	"contactUsText": "Nous sommes à votre disposition pour répondre à toutes vos questions.",
+	"comptable_dedie": "Comptable dédié",
+	"expertiseRH": "Expertise RH",
+	"conseilJuridique": "Conseil Juridique",
+	"conseillerFiscal": "Conseiller fiscal",
+	"conseillerJuridique_heading": "Conseiller juridique français pour société étrangère située en France",
+	"auditServices_heading": "Missions d’audit dans les sociétés étrangères établies en France",
+	"taxServices_heading": "Fiscalité du particulier en France : prestations pour entreprises étrangères",
+	"accountingServices_heading": "Prestations comptables pour entreprise étrangère en France",
+	"expertiseRH_heading": "Notre expertise pour les RH d’une société étrangère en France",
+	"usTax_heading": "Prestations comptables pour imposition USA pour Américains basés en France",
+	"administrativeServices_heading": "Entreprise étrangère en France : nos prestations administratives"
 }

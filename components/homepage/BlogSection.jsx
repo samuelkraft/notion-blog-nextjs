@@ -34,8 +34,7 @@ const BlogSection = ({ posts }) => {
 							<GradientButton
 								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
 								component='button'
-								size='lg'
-								width={200}>
+								size='lg'>
 								{t("seeAll")}
 							</GradientButton>
 						</ButtonContainer>
@@ -89,7 +88,7 @@ const BlogSection = ({ posts }) => {
 							year: "numeric",
 						});
 						return (
-							<Carousel.Slide>
+							<Carousel.Slide key={post.id}>
 								<Link href={`/article/${post.id}`} locale='fr'>
 									<BlogCard
 										cover={
