@@ -14,6 +14,7 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
 import { HeroImageContainer } from "./HeroHomePage";
+import Link from "../Link";
 
 const HomeSection04 = () => {
 	const { t } = useTranslation("home");
@@ -47,29 +48,31 @@ const HomeSection04 = () => {
 					</HeadingSection01>
 					<HeadingSection01>
 						<RowWrapper className=''>
-							<Image src={check} alt='check' width={50} height={50} />
+							<Image src={check} alt='check1' width={50} height={50} />
 							<h2>{t("section04_check1")}</h2>
 						</RowWrapper>
 					</HeadingSection01>
 					<HeadingSection01>
 						<RowWrapper className=''>
-							<Image src={check} alt='check' width={50} height={50} />
+							<Image src={check} alt='check2' width={50} height={50} />
 							<h2>{t("section04_check2")}</h2>
 						</RowWrapper>
 					</HeadingSection01>
 					<HeadingSection01>
 						<RowWrapper className=''>
-							<Image src={check} alt='check' width={50} height={50} />
+							<Image src={check} alt='check3' width={50} height={50} />
 							<h2>{t("section04_check3")}</h2>
 						</RowWrapper>
 					</HeadingSection01>
 					<div style={{ marginTop: "2rem" }}>
-						<GradientButton
-							gradientColor='#0657CF'
-							component='button'
-							width={200}>
-							{t("readMore")}
-						</GradientButton>
+						<Link href='/services/accounting-services'>
+							<GradientButton
+								gradientColor='#0657CF'
+								component='button'
+								width={200}>
+								{t("readMore")}
+							</GradientButton>
+						</Link>
 					</div>
 				</motion.div>
 				<HeroImageContainerSection04 variants={fade}>
@@ -134,7 +137,7 @@ const ImageWrapper2 = styled.div`
 	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 4;
-	grid-row-end: 5;
+	grid-row-end: 4;
 
 	@media screen and (max-width: 991px) {
 		justify-self: start;

@@ -18,7 +18,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import {
 	TextInput,
-	Select,
 	Modal,
 	useMantineTheme,
 	Group,
@@ -61,10 +60,10 @@ const ContactForm = () => {
 			<RowWrapper>
 				<SloganSection06>{t("followUs")}</SloganSection06>
 				<SocialMediaContainer>
-					<Image src={linkedin} />
-					<Image src={instagram} />
-					<Image src={whatsapp} />
-					<Image src={youtube} />
+					<Image src={linkedin} alt="linkedin" />
+					<Image src={instagram} alt="instagram" />
+					<Image src={whatsapp} alt="whatsapp" />
+					<Image src={youtube} alt="youtube" />
 				</SocialMediaContainer>
 			</RowWrapper>
 
@@ -220,7 +219,7 @@ const ContactForm = () => {
 							target='_blank'
 							rel='noopener noreferrer'>
 							<ContactInfo>
-								<Image src={redLocation} />
+								<Image src={redLocation} alt="paris" />
 								<p>
 									87 rue la Boétie, 75008 PARIS <br />
 									34 rue Poissonnière, 75002 PARIS
@@ -232,13 +231,13 @@ const ContactForm = () => {
 							target='_blank'
 							rel='noopener noreferrer'>
 							<ContactInfo>
-								<Image src={greenLocation} />
+								<Image src={greenLocation} alt="tel aviv" />
 								<p>Menahem Begin, 132 TEL AVIV</p>
 							</ContactInfo>
 						</a>
 						<a href='tel:01-86-96-37-01'>
 							<ContactInfo>
-								<Image src={phone} />
+								<Image src={phone} alt="phone" />
 								<p>
 									<u>01 86 96 37 01</u>
 									<br />
@@ -248,7 +247,7 @@ const ContactForm = () => {
 						</a>
 						<a href='mailto:contact@asp-experts.com'>
 							<ContactInfo>
-								<Image src={mail} />
+								<Image src={mail} alt="mail" />
 								<p>contact@asp-experts.com</p>
 							</ContactInfo>
 						</a>

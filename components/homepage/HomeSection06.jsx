@@ -13,6 +13,7 @@ import GradientButton from "../button/GradientButton";
 import { Carousel } from "@mantine/carousel";
 import { IconArrowRight, IconArrowLeft } from "@tabler/icons";
 import { Avatar } from "@mantine/core";
+import Link from "../Link";
 
 const HomeSection06 = () => {
 	const { t } = useTranslation("home", "common");
@@ -30,13 +31,15 @@ const HomeSection06 = () => {
 					<RowWrapper>
 						<SloganSection06>{t("section06_title")}</SloganSection06>
 						<ButtonContainer>
-							<GradientButton
-								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-								component='button'
-								size='lg'
-							>
-								{t("contactUs")}
-							</GradientButton>
+							<Link href='/#contact'>
+								<GradientButton
+									gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
+									component='button'
+									size='lg'
+								>
+									{t("contactUs")}
+								</GradientButton>
+							</Link>
 						</ButtonContainer>
 					</RowWrapper>
 				</motion.div>

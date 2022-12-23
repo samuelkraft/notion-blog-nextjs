@@ -147,7 +147,7 @@ export const Slogan = styled.div`
 		}
 		@media screen and (min-width: 1440px) {
 			font-size: 56px;
-			width: 40rem;
+			width: 42rem;
 		}
 	}
 `;

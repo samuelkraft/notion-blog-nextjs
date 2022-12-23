@@ -16,6 +16,7 @@ import circle_4 from "../../images/circle_4.svg";
 import circle_5 from "../../images/circle_5.svg";
 import circle_6 from "../../images/circle_6.svg";
 import Image from "next/image";
+import Link from "../../components/Link";
 
 const HomeSection01 = () => {
 	const { t } = useTranslation("home");
@@ -54,46 +55,48 @@ const HomeSection01 = () => {
 							{t("section01_heading_pt5")}
 						</h2>
 					</HeadingSection01>
-					<GradientButton
-						gradientColor='#0657CF'
-						component='button'
-						width={200}>
-						{t("readMore")}
-					</GradientButton>
+					<Link href='/services'>
+						<GradientButton
+							gradientColor='#0657CF'
+							component='button'
+							width={200}>
+							{t("readMore")}
+						</GradientButton>
+					</Link>
 				</motion.div>
 				<FeaturesCardContainer>
 					<FeaturesCard>
-						<Image src={circle_1} />
+						<Image src={circle_1} alt="comptable_dedie" />
 						<div className='text-content'>
 							<h4>{t("comptable_dedie")}</h4>
 						</div>
 					</FeaturesCard>
 					<FeaturesCard2>
-						<Image src={circle_2} />
+						<Image src={circle_2} alt="administrativeServices" />
 						<div className='text-content'>
 							<h4>{t("administrativeServices")}</h4>
 						</div>
 					</FeaturesCard2>
 					<FeaturesCard3>
-						<Image src={circle_3} />
+						<Image src={circle_3} alt="expertiseRH" />
 						<div className='text-content'>
 							<h4>{t("expertiseRH")}</h4>
 						</div>
 					</FeaturesCard3>
 					<FeaturesCard4>
-						<Image src={circle_4} />
+						<Image src={circle_4} alt="conseilJuridique" />
 						<div className='text-content'>
 							<h4>{t("conseilJuridique")}</h4>
 						</div>
 					</FeaturesCard4>
 					<FeaturesCard5>
-						<Image src={circle_5} />
+						<Image src={circle_5} alt="conseillerFiscal" />
 						<div className='text-content'>
 							<h4>{t("conseillerFiscal")}</h4>
 						</div>
 					</FeaturesCard5>
 					<FeaturesCard6>
-						<Image src={circle_6} />
+						<Image src={circle_6} alt="auditServices" />
 						<div className='text-content'>
 							<h4>{t("auditServices")}</h4>
 						</div>

@@ -31,12 +31,14 @@ const BlogSection = ({ posts }) => {
 					<RowWrapper>
 						<SloganSection06>{t("blog_section")}</SloganSection06>
 						<ButtonContainer>
-							<GradientButton
-								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-								component='button'
-								size='lg'>
-								{t("seeAll")}
-							</GradientButton>
+							<Link href='/blog'>
+								<GradientButton
+									gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
+									component='button'
+									size='lg'>
+									{t("seeAll")}
+								</GradientButton>
+							</Link>
 						</ButtonContainer>
 					</RowWrapper>
 				</motion.div>

@@ -242,7 +242,7 @@ export function HeaderMegaMenu() {
 							size='lg'
 						/>
 						<LinkComponent href='/' component='a'>
-							<Image src={Logo} width='150' height='100' />
+							<Image src={Logo} width='150' height='100' alt="Expand CPA LOGO" />
 						</LinkComponent>
 						<Container fluid>
 							<Group
@@ -436,7 +436,6 @@ export function HeaderMegaMenu() {
 										if (locale === currentLocale) return null
 										return (
 											<LanguageSwitcher
-												className={classes.subLinkText}
 												locale={locale}
 												key={locale} />
 										)
@@ -458,7 +457,6 @@ export function HeaderMegaMenu() {
 						if (locale === currentLocale) return null
 						return (
 							<LanguageSwitcher
-								className={classes.subLinkText}
 								locale={locale}
 								key={locale} />
 						)

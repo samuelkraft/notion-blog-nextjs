@@ -5,13 +5,13 @@ import {
 	SloganSection01,
 	Tag,
 } from "./HomeSection01";
-import Image from "next/image";
 import GradientButton from "../button/GradientButton";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
-import comptableDedie from "../../images/comptable_dedie.png";
+
+import Link from "../Link"
 
 const HomeSection02 = () => {
 	const { t } = useTranslation("home");
@@ -50,12 +50,14 @@ const HomeSection02 = () => {
 					</HeadingSection01>
 
 					<HeadingSection01>
-						<GradientButton
-							gradientColor='#0657CF'
-							component='button'
-							width={200}>
-							{t("readMore")}
-						</GradientButton>
+						<Link href='/services/accounting-services'>
+							<GradientButton
+								gradientColor='#0657CF'
+								component='button'
+								width={200}>
+								{t("readMore")}
+							</GradientButton>
+						</Link>
 					</HeadingSection01>
 				</motion.div>
 			</HomeSection02Wrapper>

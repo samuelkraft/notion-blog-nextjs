@@ -13,6 +13,7 @@ import { titleAnim, fade } from "../../lib/animation";
 
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
+import Link from "../Link";
 
 const HomeSection05 = () => {
 	const { t } = useTranslation("home");
@@ -45,12 +46,14 @@ const HomeSection05 = () => {
 						</h2>
 					</HeadingSection01>
 					<HeadingSection01>
-						<GradientButton
-							gradientColor='#0657CF'
-							component='button'
-							width={200}>
-							{t("readMore")}
-						</GradientButton>
+						<Link href='/services/administrative-services'>
+							<GradientButton
+								gradientColor='#0657CF'
+								component='button'
+								width={200}>
+								{t("readMore")}
+							</GradientButton>
+						</Link>
 					</HeadingSection01>
 				</motion.div>
 				<CardContainer>

@@ -24,13 +24,14 @@ const LanguageSwitcher = ({ locale, ...rest }) => {
 		href = rest.href ? `/${locale}${rest.href}` : pName;
 	}
 	return (
-		<LanguageSwitcherStyles>
-			<IconLanguage strokeWidth={2} color={"black"} />
-			<Link href={href} onClick={() => languageDetector.cache(locale)}>
+		<Link href={href} onClick={() => languageDetector.cache(locale)}>
+			<LanguageSwitcherStyles>
+				<IconLanguage strokeWidth={2} color={"black"} />
 				{locale === "fr" ? "Français" : "English"}
-			</Link>
-			<Image src={locale === "fr" ? France : usa} />
-		</LanguageSwitcherStyles>
+				<Image src={locale === "fr" ? France : usa} alt="language" />
+			</LanguageSwitcherStyles>
+
+		</Link>
 	);
 };
 

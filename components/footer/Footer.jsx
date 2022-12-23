@@ -15,7 +15,7 @@ const Footer = () => {
 			<FooterWrapper>
 				<div className='brand'>
 					<Link href='/'>
-						<Image src={Logo} width={200} height={150} />
+						<Image src={Logo} width={200} height={150} alt="logo" />
 					</Link>
 					<div>
 						<p>{t("slogan")}</p>

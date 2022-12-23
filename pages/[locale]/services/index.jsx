@@ -67,7 +67,7 @@ const ServicesPages = ({}) => {
 				<ServicesCardContainer>
 					<Link href='/services/administrative-services'>
 						<ServicesCard>
-							<Image src={circle_2} />
+							<Image src={circle_2} alt='administrativeServices' />
 							<div className='text-content'>
 								<h4>{t("administrativeServices")}</h4>
 								<p>{t("administrativeServices_heading")}</p>
@@ -78,7 +78,7 @@ const ServicesPages = ({}) => {
 
 					<Link href='/services/accounting-services'>
 						<ServicesCard>
-							<Image src={circle_1} />
+							<Image src={circle_1} alt='accountingServices' />
 							<div className='text-content'>
 								<h4>{t("accountingServices")}</h4>
 								<p>{t("accountingServices_heading")}</p>
@@ -89,7 +89,7 @@ const ServicesPages = ({}) => {
 
 					<Link href='/services/legal-services'>
 						<ServicesCard>
-							<Image src={circle_3} />
+							<Image src={circle_3} alt='expertise RH' />
 							<div className='text-content'>
 								<h4>{t("expertiseRH")}</h4>
 								<p>{t("expertiseRH_heading")}</p>
@@ -100,7 +100,7 @@ const ServicesPages = ({}) => {
 
 					<Link href='/services/legal-services'>
 						<ServicesCard>
-							<Image src={circle_4} />
+							<Image src={circle_4} alt='legal services' />
 							<div className='text-content'>
 								<h4>{t("conseilJuridique")}</h4>
 								<p>{t("conseillerJuridique_heading")}</p>
@@ -110,7 +110,7 @@ const ServicesPages = ({}) => {
 					</Link>
 					<Link href='/services/tax-services'>
 						<ServicesCard>
-							<Image src={circle_5} />
+							<Image src={circle_5} alt='tax services' />
 							<div className='text-content'>
 								<h4>{t("conseillerFiscal")}</h4>
 								<p>{t("taxServices_heading")}</p>
@@ -118,9 +118,9 @@ const ServicesPages = ({}) => {
 							<IconArrowRight size={33} color='#1b1464' />
 						</ServicesCard>
 					</Link>
-					<Link href='/services/tax-services'>
+					<Link href='/services/audit-services'>
 						<ServicesCard>
-							<Image src={circle_6} />
+							<Image src={circle_6} alt='auditServices' />
 							<div className='text-content'>
 								<h4>{t("auditServices")}</h4>
 								<p>{t("auditServices_heading")}</p>
@@ -130,7 +130,7 @@ const ServicesPages = ({}) => {
 					</Link>
 					<Link href='/french-tax'>
 						<ServicesCard>
-							<Image src={circle_7} />
+							<Image src={circle_7} alt='french Tax' />
 							<div className='text-content'>
 								<h4>{t("frenchTax")}</h4>
 								<p>{t("accountingServices_heading")}</p>
@@ -140,7 +140,7 @@ const ServicesPages = ({}) => {
 					</Link>
 					<Link href='/usa-tax'>
 						<ServicesCard>
-							<Image src={circle_8} />
+							<Image src={circle_8} alt='usa tax' />
 							<div className='text-content'>
 								<h4>{t("usTax")}</h4>
 								<p>{t("usTax_heading")}</p>
