@@ -151,7 +151,6 @@ const FooterWrapper = styled.div`
 		font-family: "AllRoundGothic-Demi";
 		color: #1b1464;
 		font-size: 36px;
-		font-weight: 600;
 		margin-bottom: 1.5rem;
 	}
 
