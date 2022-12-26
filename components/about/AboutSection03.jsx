@@ -175,7 +175,7 @@ const AboutSection03 = () => {
 
 export default AboutSection03;
 
-const AboutSection03Container = styled(HomeSection05Container)`
+export const AboutSection03Container = styled(HomeSection05Container)`
 	@media screen and (max-width: 768px) {
 		margin-top: 0rem;
 	}

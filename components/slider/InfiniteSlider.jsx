@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "next-i18next";
 import styled, { keyframes } from "styled-components";
 import veepee from "../../images/veepee.png";
@@ -12,7 +11,7 @@ import planon from "../../images/planon.png";
 import trucknet from "../../images/trucknet.png";
 import louboutin from "../../images/louboutin.png";
 import segway from "../../images/segway.png";
-import wilkie from "../../images/willkie.png";
+import wilkie from "../../images/wilkie.png";
 import neuberger from "../../images/neuberger.png";
 import unitedHaztalan from "../../images/unitedHaztalan.png";
 import vestiaireCollectif from "../../images/vestiaireCollectif.png";
@@ -50,19 +49,19 @@ const InfiniteSlider = () => {
 	return (
 		<div>
 			<Heading>{t("trustedUs")}</Heading>
-			<InfiniteSliderContainer className=''>
-				<InfiniteSliderWrapper className=''>
+			<InfiniteSliderContainer>
+				<InfiniteSliderWrapper>
 					<BrandSlider>
 						{images.map((i) => {
 							return (
-								<div className='' key={Math.random(0, 100)}>
+								<div key={Math.random(0, 100)}>
 									<Image src={i} alt={Math.random(0, 100)} />
 								</div>
 							);
 						})}
 						{images.map((i) => {
 							return (
-								<div className='' key={Math.random(0, 100)}>
+								<div key={Math.random(0, 100)}>
 									<Image src={i} alt={Math.random(0, 100)} />
 								</div>
 							);
