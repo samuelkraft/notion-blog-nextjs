@@ -25,6 +25,7 @@ export const AboutSection02Wrapper = styled.div`
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	justify-content: space-between;
 	gap: 3rem;
 `;
 

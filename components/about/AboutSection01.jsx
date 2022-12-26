@@ -97,7 +97,6 @@ export const SloganAbout = styled.h1`
 	font-size: 42px;
 	color: #1b1464;
 	line-height: 1.2;
-
 	@media screen and (max-width: 465px) {
 		font-size: 42px;
 	}
