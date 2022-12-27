@@ -59,7 +59,7 @@ export default AboutSection04;
 
 const OurPartners = styled.div`
 	font-family: "AllRoundGothic-Demi";
-	font-size: 42px;
+	font-size: 36px;
 	color: #1b1464;
 	line-height: 1.2;
 	margin: 3rem 0;

@@ -11,6 +11,7 @@
 		"@emotion/react": "^11.10.5",
 		"@mantine/carousel": "^5.9.5",
 		"@mantine/core": "^5.9.2",
+		"@mantine/dropzone": "^5.9.5",
 		"@mantine/ds": "^5.9.2",
 		"@mantine/hooks": "^5.9.2",
 		"@mantine/next": "^5.9.2",
