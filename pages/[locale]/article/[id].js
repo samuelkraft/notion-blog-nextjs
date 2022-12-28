@@ -219,7 +219,7 @@ export const getStaticPaths = async () => {
 	}));
 	return {
 		paths,
-		fallback: true,
+		fallback: "blocking",
 	};
 };
 
@@ -256,7 +256,7 @@ export const getStaticProps = async (context) => {
 			blocks: blocksWithChildren,
 			...(await getI18nProps(context, ["common", "home"])),
 		},
-		revalidate: 1,
+		revalidate: 60,
 	};
 };
 

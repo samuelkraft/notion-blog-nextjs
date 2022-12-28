@@ -12,7 +12,7 @@ const getStaticProps = async (ctx) => {
 			posts: database,
 			...(await getI18nProps(ctx, ["common", "home"])),
 		},
-		revalidate: 1,
+		revalidate: 60,
 	};
 };
 
