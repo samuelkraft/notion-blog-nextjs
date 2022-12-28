@@ -96,7 +96,7 @@ const BlogSection = ({ posts }) => {
 										cover={
 											post?.cover?.external?.url ||
 											post?.cover?.file?.url ||
-											"https://assets.website-files.com/62e87007d1ea4814ebeaf7b5/630b6e744fa8ae74a200b8b1_main-post-04-p-500.jpg"
+											"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
 										}>
 										<div className='thumbnail'>
 											<span className='category'>

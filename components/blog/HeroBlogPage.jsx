@@ -18,51 +18,54 @@ const HeroBlogPage = ({ posts }) => {
 			<Subtitle>{t("blog")}</Subtitle>
 			<HeadingLarge>Articles & News</HeadingLarge>
 			<GridContainer>
-				<Link href={`/article/${post.id}`} locale='fr'>
-					<BigCard
-						cover={
-							post?.cover?.external?.url ||
-							post?.cover?.file?.url ||
-							"https://assets.website-files.com/62e87007d1ea4814ebeaf7b5/630b6e744fa8ae74a200b8b1_main-post-04-p-500.jpg"
-						}>
-						<div className='thumbnail'>
-							<span className='category'>
-								{post?.properties?.Tags?.multi_select[0].name || "New"}
-							</span>
-						</div>
-						<div className='content'>
-							<p>{date}</p>
-							<h1>
-								{post?.properties?.Name?.title[0].plain_text || "Article"}
-							</h1>
-							<Link href={`/article/${post.id}`} locale='fr'>
-								{t("readNow")} →
-							</Link>
-						</div>
-					</BigCard>
-
-					<BigCard
-						cover={
-							post?.cover?.external?.url ||
-							post?.cover?.file?.url ||
-							"https://assets.website-files.com/62e87007d1ea4814ebeaf7b5/630b6e744fa8ae74a200b8b1_main-post-04-p-500.jpg"
-						}>
-						<div className='thumbnail'>
-							<span className='category'>
-								{post?.properties?.Tags?.multi_select[0].name || "New"}
-							</span>
-						</div>
-						<div className='content'>
-							<p>{date}</p>
-							<h1>
-								{post?.properties?.Name?.title[0].plain_text || "Article"}
-							</h1>
-							<Link href={`/article/${post.id}`} locale='fr'>
-								{t("readNow")} →
-							</Link>
-						</div>
-					</BigCard>
-				</Link>
+				<div>
+					<Link href={`/article/${post.id}`} locale='fr'>
+						<BigCard
+							cover={
+								post?.cover?.external?.url ||
+								post?.cover?.file?.url ||
+								"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
+							}>
+							<div className='thumbnail'>
+								<span className='category'>
+									{post?.properties?.Tags?.multi_select[0].name || "New"}
+								</span>
+							</div>
+							<div className='content'>
+								<p>{date}</p>
+								<h1>
+									{post?.properties?.Name?.title[0].plain_text || "Article"}
+								</h1>
+								<Link href={`/article/${post.id}`} locale='fr'>
+									{t("readNow")} →
+								</Link>
+							</div>
+						</BigCard>
+					</Link>
+					<Link href={`/article/${post.id}`} locale='fr'>
+						<BigCard
+							cover={
+								post?.cover?.external?.url ||
+								post?.cover?.file?.url ||
+								"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
+							}>
+							<div className='thumbnail'>
+								<span className='category'>
+									{post?.properties?.Tags?.multi_select[0].name || "New"}
+								</span>
+							</div>
+							<div className='content'>
+								<p>{date}</p>
+								<h1>
+									{post?.properties?.Name?.title[0].plain_text || "Article"}
+								</h1>
+								<Link href={`/article/${post.id}`} locale='fr'>
+									{t("readNow")} →
+								</Link>
+							</div>
+						</BigCard>
+					</Link>
+				</div>
 				<RightSection>
 					<Subtitle>{t("popular")}</Subtitle>
 					{sidebarCards.map((post) => (
@@ -74,7 +77,7 @@ const HeroBlogPage = ({ posts }) => {
 											src={
 												post?.cover?.external?.url ||
 												post?.cover?.file?.url ||
-												"https://assets.website-files.com/62e87007d1ea4814ebeaf7b5/630b6e744fa8ae74a200b8b1_main-post-04-p-500.jpg"
+												"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
 											}
 											alt={post?.properties?.Name?.title[0].plain_text}
 											className='cover-image'
@@ -104,12 +107,16 @@ const HeroBlogPage = ({ posts }) => {
 
 export default HeroBlogPage;
 
-const HeroBlogPageContainer = styled.div`
+export const HeroBlogPageContainer = styled.div`
 	width: 100%;
 	max-width: 1400px;
 	margin-right: auto;
 	margin-left: auto;
 	padding: 5rem;
+
+	@media screen and (max-width: 767px) {
+		padding: 1rem;
+	}
 `;
 
 const Subtitle = styled.div`
@@ -126,12 +133,11 @@ const Subtitle = styled.div`
 	text-transform: uppercase;
 `;
 
-const HeadingLarge = styled.h1`
+export const HeadingLarge = styled.h1`
 	color: #1b1464;
 	font-family: "AllRoundGothic-Demi";
 	font-size: 3.5rem;
 	line-height: 1.2;
-	font-weight: 500;
 	margin-top: 10px;
 	margin-bottom: 10px;
 
@@ -160,16 +166,13 @@ const GridContainer = styled.div`
 	max-width: 100%;
 	margin-top: 2rem;
 	@media screen and (max-width: 991px) {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 `;
 
 const BigCard = styled.div`
-	grid-column-start: span 1;
-	grid-column-end: span 1;
-	grid-row-start: span 1;
-	grid-row-end: span 1;
-	align-self: stretch;
 	margin-bottom: 2rem;
 	display: flex;
 	flex-direction: column;
@@ -177,7 +180,6 @@ const BigCard = styled.div`
 	background: rgba(217, 224, 236, 0.2);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 13px;
-
 	.thumbnail {
 		position: relative;
 		width: 100%;
@@ -186,6 +188,12 @@ const BigCard = styled.div`
 		border-top-left-radius: 13px;
 		border-top-right-radius: 13px;
 		background: url(${(props) => props.cover});
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+
+		max-width: 100%;
+		vertical-align: middle;
+		display: inline-block;
 	}
 
 	.category {
@@ -235,13 +243,6 @@ const BigCard = styled.div`
 `;
 
 const RightSection = styled.div`
-	position: relative;
-	grid-column-start: span 1;
-	grid-column-end: span 1;
-	grid-row-start: span 1;
-	grid-row-end: span 1;
-	align-self: stretch;
-
 	.list {
 		padding-bottom: 2rem;
 	}
@@ -254,8 +255,7 @@ const RightSection = styled.div`
 		width: 100%;
 		height: 100%;
 		flex-direction: column;
-		grid-column-gap: 10px;
-		grid-row-gap: 10px;
+
 		border-radius: 24px;
 		background: rgba(217, 224, 236, 0.2);
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -269,7 +269,6 @@ const RightSection = styled.div`
 
 	.card_sidebar_layout {
 		display: grid;
-		justify-content: stretch;
 		align-items: center;
 		grid-auto-columns: 1fr;
 		grid-column-gap: 1rem;
@@ -278,11 +277,6 @@ const RightSection = styled.div`
 		grid-template-rows: auto;
 
 		.thumbnail {
-			grid-column-start: span 1;
-			grid-column-end: span 1;
-			grid-row-start: span 1;
-			grid-row-end: span 1;
-
 			width: 12rem;
 			height: 100%;
 
@@ -316,12 +310,6 @@ const RightSection = styled.div`
 		}
 
 		.content {
-			grid-column-start: span 1;
-			grid-column-end: span 1;
-			grid-row-start: span 1;
-			grid-row-end: span 1;
-			justify-self: start;
-
 			display: flex;
 			height: 100%;
 			padding: 26px 26px 40px;
@@ -334,8 +322,15 @@ const RightSection = styled.div`
 				font-size: 24px;
 				font-family: "AllRoundGothic-Demi";
 				color: #1b1464;
-				line-height: 38px;
 				letter-spacing: 0.327px;
+
+				@media screen and (max-width: 767px) {
+					font-size: 20px;
+				}
+			}
+
+			@media screen and (max-width: 767px) {
+				padding: 0.5rem;
 			}
 		}
 	}
