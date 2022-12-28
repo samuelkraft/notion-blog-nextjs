@@ -50,18 +50,18 @@ const CategoryBlog = ({
 								<BlogPostCard
 									cover={
 										post?.cover?.external?.url ||
-										post?.cover?.file?.url ||
 										"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
 									}>
 									<div className='thumbnail'>
 										<span className='category'>
-											{post?.properties?.Tags?.multi_select[0].name || "New"}
+											{post?.properties?.Tags?.multi_select[0]?.name || "New"}
 										</span>
 									</div>
 									<div className='content'>
 										<p>{date}</p>
 										<h1>
-											{post?.properties?.Name?.title[0].plain_text || "Article"}
+											{post?.properties?.Name?.title[0]?.plain_text ||
+												"Article"}
 										</h1>
 										<Link href={`/article/${post.id}`} locale='fr'>
 											{t("readNow")} →

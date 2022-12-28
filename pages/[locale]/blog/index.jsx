@@ -23,13 +23,13 @@ export const databaseId = process.env.NOTION_DATABASE_ID;
 export default function Blog({ posts }) {
 	const { t } = useTranslation("common");
 	const categoryBusinessPosts = posts.filter(
-		(post) => post?.properties?.Tags?.multi_select[0].name === "Business"
+		(post) => post?.properties?.Tags?.multi_select[0]?.name === "Business"
 	);
 	const categoryLegalPosts = posts.filter(
-		(post) => post?.properties?.Tags?.multi_select[0].name === "Legal"
+		(post) => post?.properties?.Tags?.multi_select[0]?.name === "Legal"
 	);
 	const categoryTaxPosts = posts.filter(
-		(post) => post?.properties?.Tags?.multi_select[0].name === "Tax"
+		(post) => post?.properties?.Tags?.multi_select[0]?.name === "Tax"
 	);
 
 	return (

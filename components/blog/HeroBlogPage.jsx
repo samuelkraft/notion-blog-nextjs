@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next";
 
 const HeroBlogPage = ({ posts }) => {
 	const { t } = useTranslation("common");
-	console.log(posts);
+
 	const post = posts[0];
 	const date = new Date(post.last_edited_time).toLocaleString("en-US", {
 		month: "short",
@@ -23,18 +23,17 @@ const HeroBlogPage = ({ posts }) => {
 						<BigCard
 							cover={
 								post?.cover?.external?.url ||
-								post?.cover?.file?.url ||
 								"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
 							}>
 							<div className='thumbnail'>
 								<span className='category'>
-									{post?.properties?.Tags?.multi_select[0].name || "New"}
+									{post?.properties?.Tags?.multi_select[0]?.name || "New"}
 								</span>
 							</div>
 							<div className='content'>
 								<p>{date}</p>
 								<h1>
-									{post?.properties?.Name?.title[0].plain_text || "Article"}
+									{post?.properties?.Name?.title[0]?.plain_text || "Article"}
 								</h1>
 								<Link href={`/article/${post.id}`} locale='fr'>
 									{t("readNow")} →
@@ -51,13 +50,13 @@ const HeroBlogPage = ({ posts }) => {
 							}>
 							<div className='thumbnail'>
 								<span className='category'>
-									{post?.properties?.Tags?.multi_select[0].name || "New"}
+									{post?.properties?.Tags?.multi_select[0]?.name || "New"}
 								</span>
 							</div>
 							<div className='content'>
 								<p>{date}</p>
 								<h1>
-									{post?.properties?.Name?.title[0].plain_text || "Article"}
+									{post?.properties?.Name?.title[0]?.plain_text || "Article"}
 								</h1>
 								<Link href={`/article/${post.id}`} locale='fr'>
 									{t("readNow")} →
@@ -79,17 +78,17 @@ const HeroBlogPage = ({ posts }) => {
 												post?.cover?.file?.url ||
 												"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
 											}
-											alt={post?.properties?.Name?.title[0].plain_text}
+											alt={post?.properties?.Name?.title[0]?.plain_text}
 											className='cover-image'
 										/>
 										<div className='category-tag'>
-											{post?.properties?.Tags?.multi_select[0].name || "New"}
+											{post?.properties?.Tags?.multi_select[0]?.name || "New"}
 										</div>
 									</div>
 									<div className='content'>
 										<p>{date}</p>
 										<h1>
-											{post?.properties?.Name?.title[0].plain_text || "Article"}
+											{post?.properties?.Name?.title[0]?.plain_text || "Article"}
 										</h1>
 										<Link href={`/article/${post.id}`} locale='fr'>
 											{t("readNow")} →

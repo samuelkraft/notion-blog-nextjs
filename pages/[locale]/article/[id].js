@@ -8,6 +8,8 @@ import { getI18nProps } from "../../../lib/getStatic";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { IconArrowLeft } from "@tabler/icons";
+import { Skeleton } from "@mantine/core";
+import { useRouter } from "next/router";
 
 export const Text = ({ text }) => {
 	if (!text) {
@@ -168,21 +170,34 @@ export default function Post({ page, blocks }) {
 	if (!page || !blocks) {
 		return <div />;
 	}
+
+	const router = useRouter();
+	if (router.isFallback) {
+		return (
+			<>
+				<Skeleton height={50} circle mb='xl' />
+				<Skeleton height={8} radius='xl' />
+				<Skeleton height={8} mt={6} radius='xl' />
+				<Skeleton height={8} mt={6} width='70%' radius='xl' />
+			</>
+		);
+	}
 	return (
 		<div>
 			<Head>
-				<title>{page.properties.Name.title[0].plain_text}</title>
+				<title>
+					{page.properties.Name.title[0]?.plain_text || "New Article"}
+				</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Thumbnail
 				src={
-					page?.cover?.file?.url ||
 					page?.cover?.external?.url ||
 					"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
 				}></Thumbnail>
 			<article className={styles.container}>
 				<h1 className={styles.name}>
-					<Text text={page.properties.Name.title} />
+					<Text text={page.properties.Name?.title || "Title"} />
 				</h1>
 				<section>
 					{blocks.map((block) => (
@@ -204,7 +219,7 @@ export const getStaticPaths = async () => {
 	}));
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 };
 
