@@ -81,7 +81,7 @@ const HiringForm = () => {
 
 	return (
 		<ContactFormContainer id='contact'>
-			<Tag style={{ width: "35%" }}>
+			<Tag style={{ width: "40%" }}>
 				<span>{t("recrutement")}</span>
 			</Tag>
 
@@ -118,7 +118,7 @@ const HiringForm = () => {
 										},
 									},
 								}}
-								// {...form.getInputProps("email")}
+							// {...form.getInputProps("email")}
 							/>
 
 							<Group position='left' spacing='xl'>

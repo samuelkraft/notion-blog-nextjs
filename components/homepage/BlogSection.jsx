@@ -104,11 +104,11 @@ const BlogSection = ({ posts }) => {
 											</span>
 										</div>
 										<div className='content'>
+											<p>{date}</p>
 											<h1>
 												{post?.properties?.Name?.title[0].plain_text ||
 													"Article"}
 											</h1>
-											<p>{date}</p>
 											<Link href={`/article/${post.id}`} locale='fr'>
 												{t("readNow")} →
 											</Link>
@@ -156,7 +156,7 @@ const BlogCard = styled.div`
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		background: rgba(0, 0, 0, 0.35);
+		background-color: rgba(129, 129, 139, 0.5);
 		border-radius: 0px 30px 0px 0px;
 		padding: 0.5rem 2rem;
 		color: #fff;
