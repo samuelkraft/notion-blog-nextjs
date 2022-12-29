@@ -7,7 +7,7 @@ const nextConfig = {
     trailingSlash: true,
     images: {
         loader: "default",
-        domains: ['www.notion.so'],
+        domains: ['www.notion.so', "images.unsplash.com"],
     },
 }
 
