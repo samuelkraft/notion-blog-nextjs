@@ -27,7 +27,6 @@ import {
 
 import styled from "styled-components";
 import check from "../../../../images/check.svg";
-import circle_1 from "../../../../images/circle_1.svg";
 import circle_2 from "../../../../images/circle_2.svg";
 import circle_3 from "../../../../images/circle_3.svg";
 import circle_4 from "../../../../images/circle_4.svg";
@@ -43,21 +42,21 @@ const useStyles = createStyles((theme) => ({
 
 	title: {
 		fontFamily: "AllRoundGothic-Demi",
-		fontSize: "32px",
+		fontSize: "42px",
 		color: "#352d61",
 
 		"@media screen and (max-width: 465px)": {
-			fontSize: "32px",
+			fontSize: "42px",
 		},
 
 		"@media screen and (min-width: 768px)": {
-			fontSize: "36px",
+			fontSize: "48px",
 		},
 		"@media screen and (min-width: 1024px)": {
-			fontSize: "38px",
+			fontSize: "50px",
 		},
 		"@media screen and (min-width: 1440px)": {
-			fontSize: "42px",
+			fontSize: "52px",
 		},
 
 		lineHeight: 1.2,
@@ -477,7 +476,7 @@ const AdministritiveServices = ({}) => {
 							<RowWrapper className=''>
 								<Image src={circle_2} alt='check1' width={50} height={50} />
 								<Heading>
-									<LinkComponent href='/services/accounting-services'>
+									<LinkComponent href='/services/tax-services'>
 										<b>
 											<u>{t("section10_bullet2")}</u>
 										</b>
