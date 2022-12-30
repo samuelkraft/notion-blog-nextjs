@@ -32,8 +32,8 @@ import {
 
 import styled from "styled-components";
 import check from "../../../../images/check.svg";
+import circle_1 from "../../../../images/circle_1.svg";
 import circle_2 from "../../../../images/circle_2.svg";
-import circle_3 from "../../../../images/circle_3.svg";
 import circle_4 from "../../../../images/circle_4.svg";
 import circle_5 from "../../../../images/circle_5.svg";
 import circle_6 from "../../../../images/circle_6.svg";
@@ -437,7 +437,7 @@ const PayrollServices = ({}) => {
 
 						<Heading>
 							<RowWrapper className=''>
-								<Image src={circle_5} alt='check1' width={50} height={50} />
+								<Image src={circle_1} alt='check1' width={50} height={50} />
 								<Heading>
 									<LinkComponent href='/services/accounting-services'>
 										<b>
@@ -447,7 +447,7 @@ const PayrollServices = ({}) => {
 								</Heading>
 							</RowWrapper>
 							<RowWrapper className=''>
-								<Image src={circle_2} alt='check1' width={50} height={50} />
+								<Image src={circle_5} alt='check1' width={50} height={50} />
 								<Heading>
 									<LinkComponent href='/services/tax-services'>
 										<b>
@@ -457,7 +457,7 @@ const PayrollServices = ({}) => {
 								</Heading>
 							</RowWrapper>
 							<RowWrapper className=''>
-								<Image src={circle_3} alt='check1' width={50} height={50} />
+								<Image src={circle_2} alt='check1' width={50} height={50} />
 								<Heading>
 									<LinkComponent href='/services/payroll-services'>
 										<b>

@@ -555,6 +555,16 @@ const AccountingServices = ({}) => {
 									</LinkComponent>
 								</Heading>
 							</RowWrapper>
+							<RowWrapper className=''>
+								<Image src={circle_5} alt='check1' width={50} height={50} />
+								<Heading>
+									<LinkComponent href='/services/tax-services'>
+										<b>
+											<u>{t("section8_bullet3")}</u>
+										</b>
+									</LinkComponent>
+								</Heading>
+							</RowWrapper>
 
 							<RowWrapper className=''>
 								<Image src={circle_6} alt='check1' width={50} height={50} />

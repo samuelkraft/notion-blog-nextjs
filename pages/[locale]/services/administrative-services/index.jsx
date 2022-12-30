@@ -23,6 +23,7 @@ import {
 
 import styled from "styled-components";
 import check from "../../../../images/check.svg";
+import circle_1 from "../../../../images/circle_1.svg";
 import circle_2 from "../../../../images/circle_2.svg";
 import circle_3 from "../../../../images/circle_3.svg";
 import circle_4 from "../../../../images/circle_4.svg";
@@ -31,6 +32,8 @@ import circle_6 from "../../../../images/circle_6.svg";
 import circle_7 from "../../../../images/circle_7.svg";
 import circle_8 from "../../../../images/circle_8.svg";
 import LinkComponent from "../../../../components/Link";
+import { ImageWrapperFullWidth } from "../payroll-services";
+
 const useStyles = createStyles((theme) => ({
 	wrapper: {
 		padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
@@ -146,7 +149,7 @@ const AdministritiveServices = ({}) => {
 
 			<HeroContainer>
 				<div className={classes.wrapper}>
-					<Layout>
+					<LayoutColumn>
 						<TextContent>
 							<Slogan>{t("section1_title")}</Slogan>
 							<Heading>{t("section1_text1")}</Heading>
@@ -155,26 +158,14 @@ const AdministritiveServices = ({}) => {
 							</Heading>
 							<Heading>{t("section1_text2")}</Heading>
 						</TextContent>
-						<ImageWrapper>
-							<Image
-								src='https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80'
-								fill
-							/>
-						</ImageWrapper>
-					</Layout>
+						<ImageWrapperFullWidth src='https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80'></ImageWrapperFullWidth>
+					</LayoutColumn>
 				</div>
 			</HeroContainer>
 
 			<HeroContainer>
 				<div className={classes.wrapper}>
-					<LayoutReversed>
-						<ImageWrapper>
-							<Image
-								src='https://images.unsplash.com/photo-1541628951107-a9af5346a3e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=689&q=80'
-								fill
-							/>
-						</ImageWrapper>
-
+					<LayoutColumn>
 						<TextContent>
 							<Slogan>{t("section2_title")}</Slogan>
 							<Heading>
@@ -184,13 +175,14 @@ const AdministritiveServices = ({}) => {
 								<Heading>{t("section2_text1")}</Heading>
 							</Heading>
 						</TextContent>
-					</LayoutReversed>
+						<ImageWrapperFullWidth src='https://images.unsplash.com/photo-1541628951107-a9af5346a3e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=689&q=80'></ImageWrapperFullWidth>
+					</LayoutColumn>
 				</div>
 			</HeroContainer>
 
 			<HeroContainer>
 				<div className={classes.wrapper}>
-					<Layout>
+					<LayoutColumn>
 						<TextContent>
 							<Slogan>{t("section3_title")}</Slogan>
 							<Heading>
@@ -201,25 +193,14 @@ const AdministritiveServices = ({}) => {
 								<Heading>{t("section3_text2")}</Heading>
 							</Heading>
 						</TextContent>
-						<ImageWrapper>
-							<Image
-								src='https://images.unsplash.com/photo-1548783300-70b41bc84f56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-								fill
-							/>
-						</ImageWrapper>
-					</Layout>
+						<ImageWrapperFullWidth src='https://images.unsplash.com/photo-1548783300-70b41bc84f56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'></ImageWrapperFullWidth>
+					</LayoutColumn>
 				</div>
 			</HeroContainer>
 
 			<HeroContainer>
 				<div className={classes.wrapper}>
-					<LayoutReversed>
-						<ImageWrapper>
-							<Image
-								src='https://images.unsplash.com/photo-1522968941782-e27ac665baa3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80'
-								fill
-							/>
-						</ImageWrapper>
+					<LayoutColumn>
 						<TextContent>
 							<Slogan>{t("section4_title")}</Slogan>
 							<Heading>
@@ -276,8 +257,9 @@ const AdministritiveServices = ({}) => {
 									</Heading>
 								</RowWrapper>
 							</Heading>
+							<ImageWrapperFullWidth src='https://images.unsplash.com/photo-1522968941782-e27ac665baa3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80'></ImageWrapperFullWidth>
 						</TextContent>
-					</LayoutReversed>
+					</LayoutColumn>
 				</div>
 			</HeroContainer>
 
@@ -371,14 +353,7 @@ const AdministritiveServices = ({}) => {
 
 			<HeroContainer>
 				<div className={classes.wrapper}>
-					<LayoutReversed>
-						<ImageWrapper>
-							<Image
-								src='https://images.unsplash.com/photo-1554224154-22dec7ec8818?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-								fill
-							/>
-						</ImageWrapper>
-
+					<LayoutColumn>
 						<TextContent>
 							<Slogan>{t("section8_title")}</Slogan>
 							<Heading>
@@ -419,13 +394,14 @@ const AdministritiveServices = ({}) => {
 								</Heading>
 							</Heading>
 						</TextContent>
-					</LayoutReversed>
+						<ImageWrapperFullWidth src='https://images.unsplash.com/photo-1554224154-22dec7ec8818?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'></ImageWrapperFullWidth>
+					</LayoutColumn>
 				</div>
 			</HeroContainer>
 
 			<HeroContainer>
 				<div className={classes.wrapper}>
-					<Layout>
+					<LayoutColumn>
 						<TextContent>
 							<Slogan>{t("section9_title")}</Slogan>
 							<Heading>
@@ -444,10 +420,8 @@ const AdministritiveServices = ({}) => {
 								</Heading>
 							</Heading>
 						</TextContent>
-						<ImageWrapperHorizontal>
-							<Image src='/team.jpg' fill />
-						</ImageWrapperHorizontal>
-					</Layout>
+						<ImageWrapperFullWidth src='/team.jpg'></ImageWrapperFullWidth>
+					</LayoutColumn>
 				</div>
 			</HeroContainer>
 
@@ -460,7 +434,7 @@ const AdministritiveServices = ({}) => {
 
 						<Heading>
 							<RowWrapper className=''>
-								<Image src={circle_5} alt='check1' width={50} height={50} />
+								<Image src={circle_1} alt='check1' width={50} height={50} />
 								<Heading>
 									<LinkComponent href='/services/accounting-services'>
 										<b>
@@ -470,7 +444,7 @@ const AdministritiveServices = ({}) => {
 								</Heading>
 							</RowWrapper>
 							<RowWrapper className=''>
-								<Image src={circle_2} alt='check1' width={50} height={50} />
+								<Image src={circle_5} alt='check1' width={50} height={50} />
 								<Heading>
 									<LinkComponent href='/services/tax-services'>
 										<b>
