@@ -6,14 +6,12 @@ import Image from "next/image";
 export { getStaticPaths, getStaticProps };
 import {
 	createStyles,
-	Title,
 	SimpleGrid,
 	Text,
 	Button,
 	ThemeIcon,
 	Grid,
 	Col,
-	List,
 } from "@mantine/core";
 
 import {
@@ -21,8 +19,6 @@ import {
 	IconBulb,
 	IconFileDescription,
 	IconBriefcase,
-	IconCircleCheck,
-	IconCircleDashed,
 } from "@tabler/icons";
 
 import styled from "styled-components";
@@ -120,9 +116,9 @@ const AdministritiveServices = ({}) => {
 				<div className={classes.wrapper}>
 					<Grid gutter={80}>
 						<Col span={12} md={5}>
-							<Title className={classes.title} order={2} mb='lg'>
+							<Slogan className={classes.title} order={2} mb='lg'>
 								{t("page_title")}
-							</Title>
+							</Slogan>
 							<Text color='#1b1464' size='lg'>
 								{t("persona")}
 							</Text>
@@ -578,18 +574,14 @@ export const LayoutColumn = styled.div`
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	h1,
-	h2 {
-		width: 80%;
-	}
 `;
 
 export const TextContent = styled.div`
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
-	align-items: center;
-	align-content: center;
+	align-items: start;
+	align-content: start;
 	gap: 1rem;
 `;
 
@@ -614,7 +606,7 @@ export const Slogan = styled.h1`
 	}
 `;
 
-const Subtitle = styled.h1`
+export const Subtitle = styled.h1`
 	font-family: "AllRoundGothic-Demi";
 	font-size: 24px;
 	line-height: 1.2;
@@ -664,7 +656,7 @@ export const Heading = styled.h2`
 	}
 `;
 
-const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div`
 	position: relative;
 	width: 400px;
 	height: 500px;
@@ -678,7 +670,7 @@ const ImageWrapper = styled.div`
 	}
 `;
 
-const ImageWrapperHorizontal = styled(ImageWrapper)`
+export const ImageWrapperHorizontal = styled(ImageWrapper)`
 	width: 500px;
 	height: 400px;
 
@@ -688,7 +680,7 @@ const ImageWrapperHorizontal = styled(ImageWrapper)`
 	}
 `;
 
-const RowWrapper = styled.div`
+export const RowWrapper = styled.div`
 	display: flex;
 	gap: 2rem;
 	line-height: 1.5;
