@@ -5,14 +5,10 @@ export { getStaticPaths, getStaticProps };
 import { HeroContainer } from "../../../../components/homepage/HeroHomePage";
 import Image from "next/image";
 import {
-	Layout,
 	LayoutColumn,
-	LayoutReversed,
 	Slogan,
 	Subtitle,
 	RowWrapper,
-	ImageWrapper,
-	ImageWrapperHorizontal,
 	Heading,
 	TextContent,
 } from "../administrative-services";
@@ -520,7 +516,7 @@ const PayrollServices = ({}) => {
 
 export default PayrollServices;
 
-const ImageWrapperFullWidth = styled.div`
+export const ImageWrapperFullWidth = styled.div`
 	width: 100%;
 	height: 50vh;
 	overflow: hidden;
