@@ -72,7 +72,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const AccountingServices = ({}) => {
+const AccountingServices = ({ }) => {
 	const { t } = useTranslation("accountingServices");
 	const features = [
 		{
@@ -227,8 +227,9 @@ const AccountingServices = ({}) => {
 									<RowWrapper className=''>
 										<Image src={check} alt='check1' width={50} height={50} />
 										<Heading>
-											<b>{t("section3_bold3")}</b>
-											{t("section3_bullet4")}
+											{t("section3_bullet3")}
+											<b>{t("section3_bold4")}</b>
+											{t("section3_bullet3_2")}
 										</Heading>
 									</RowWrapper>
 									<RowWrapper className=''>
