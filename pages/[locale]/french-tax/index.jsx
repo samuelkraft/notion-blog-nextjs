@@ -73,7 +73,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const FrenchTax = ({}) => {
+const FrenchTax = ({ }) => {
 	const { t } = useTranslation("frenchTax");
 
 	const features = [
@@ -136,14 +136,16 @@ const FrenchTax = ({}) => {
 								{t("persona")}
 							</Text>
 
-							<Button
-								variant='gradient'
-								gradient={{ deg: 133, from: "#4364f7", to: "#1b1464" }}
-								size='lg'
-								radius='md'
-								mt='xl'>
-								{t("contactUs")}
-							</Button>
+							<LinkComponent href='/#contact'>
+								<Button
+									variant='gradient'
+									gradient={{ deg: 133, from: "#4364f7", to: "#1b1464" }}
+									size='lg'
+									radius='md'
+									mt='xl'>
+									{t("contactUs")}
+								</Button>
+							</LinkComponent>
 						</Col>
 						<Col span={12} md={7}>
 							<SimpleGrid
