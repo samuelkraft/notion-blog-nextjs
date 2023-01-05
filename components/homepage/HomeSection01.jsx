@@ -115,7 +115,7 @@ export const HomeSection01Container = styled.div`
 		padding: 1rem;
 	}
 	@media screen and (min-width: 1024px) {
-		padding: 1rem 6%;
+		padding: 1rem 12%;
 	}
 
 	@media screen and (min-width: 1440px) {
@@ -137,13 +137,33 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 	.text-content {
 		@media screen and (min-width: 1024px) {
 			margin-top: 0rem;
-			gap: 2rem;
 		}
 
 		@media screen and (min-width: 1440px) {
 			margin-top: 0rem;
+			gap: 2rem;
+
 		}
 	}
+
+
+	@media screen and (min-width: 768px) {
+		font-size: 48px;
+		flex-flow: column;
+	}
+	@media screen and (min-width: 1200px) {
+		font-size: 50px;
+		justify-content: space-evenly;
+		flex-flow: row;
+		gap: 2rem;
+	}
+	@media screen and (min-width: 1440px) {
+		font-size: 52px;
+		flex-flow: row;
+		justify-content: space-evenly;
+		gap: 5rem;
+	}
+
 `;
 
 export const HeadingSection01 = styled(Heading)`
@@ -191,7 +211,7 @@ export const SloganSection01 = styled(Slogan)`
 			width: 40rem;
 		}
 		@media screen and (min-width: 1024px) {
-			font-size: 58px;
+			font-size: 56px;
 			width: 30rem;
 			margin-top: 3.5rem;
 		}
@@ -230,7 +250,7 @@ export const FeaturesCardContainer = styled.div`
 		grid-template-columns: 300px 300px;
 	}
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1200px) {
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 3rem;
 		grid-row-gap: 3rem;
@@ -267,7 +287,7 @@ export const FeaturesCard = styled.div`
 		height: 280px;
 	}
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1200px) {
 		width: 230px;
 		height: 300px;
 

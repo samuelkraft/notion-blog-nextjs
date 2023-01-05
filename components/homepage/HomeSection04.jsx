@@ -122,6 +122,15 @@ const ImageWrapper1 = styled.div`
 		width: 40vw;
 		height: 75vw;
 	}
+
+	@media screen and (max-width: 767px) {
+		height: 70vh;
+	}
+
+	@media screen and (max-width: 479px) {
+		height: 50vh;
+	}
+
 `;
 const ImageWrapper2 = styled.div`
 	width: 12vw;
@@ -143,6 +152,14 @@ const ImageWrapper2 = styled.div`
 		justify-self: start;
 		width: 36vw;
 		height: 36vw;
+	}
+
+	@media screen and (max-width: 767px) {
+		justify-self: center;
+	}
+
+	@media screen and (max-width: 479px) {
+		justify-self: start;
 	}
 `;
 

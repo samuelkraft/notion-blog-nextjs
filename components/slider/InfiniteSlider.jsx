@@ -25,26 +25,26 @@ import Image from "next/image";
 const InfiniteSlider = () => {
 	const { t } = useTranslation("home");
 	const images = [
-		veepee,
-		kmart,
-		follow,
-		louboutin,
-		vestiaireCollectif,
-		wilkie,
-		segway,
-		neuberger,
-		unitedHaztalan,
-		varonis,
-		latham,
-		airCullinaire,
-		chateautec,
-		planon,
-		complices,
-		trucknet,
-		stoick,
-		foodGates,
-		pangea,
 		face2face,
+		pangea,
+		foodGates,
+		stoick,
+		trucknet,
+		complices,
+		planon,
+		chateautec,
+		airCullinaire,
+		varonis,
+		unitedHaztalan,
+		neuberger,
+		segway,
+		latham,
+		wilkie,
+		vestiaireCollectif,
+		louboutin,
+		follow,
+		kmart,
+		veepee,
 	];
 	return (
 		<div>
@@ -89,12 +89,12 @@ const Heading = styled.h3`
 		font-size: 24px;
 	}
 	@media screen and (min-width: 768px) {
-		font-size: 28px;
+		font-size: 36px;
 	}
 `;
 
 const InfiniteSliderContainer = styled.div`
-	margin: 3rem 5rem;
+	margin: 3rem 0rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -102,7 +102,7 @@ const InfiniteSliderContainer = styled.div`
 
 	@media screen and (max-width: 1024px) {
 		margin: 3rem 0;
-		padding: 0 2rem;
+		padding: 0 ;
 	}
 `;
 
@@ -118,9 +118,43 @@ const SlideInfinite = keyframes`
 		0% {
 			left: 0;
 		}
-	
+
+		25% {
+			left: -75%;
+		}
+		
+		50% {
+			left: -150%;
+		}
+
+		75% {
+			left: -225%;
+		}
 		100% {
-			left: -200%;
+			left: -300%;
+		}
+	
+`;
+
+const SlideInfiniteMobile = keyframes`
+	
+		0% {
+			left: 0;
+		}
+
+		25% {
+			left: -375%;
+		}
+		
+		50% {
+			left: -750%;
+		}
+
+		75% {
+			left: -1000%;
+		}
+		100% {
+			left: -1500%;
 		}
 	
 `;
@@ -135,10 +169,16 @@ const BrandSlider = styled.div`
 	left: 0;
 	gap: 2rem;
 	animation-name: ${SlideInfinite};
-	animation-duration: 15s;
+	animation-duration: 20s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-timing-function: ease-in-out;
+
+	@media screen and (max-width: 500px) {
+		width: 1200%;
+		animation-name: ${SlideInfiniteMobile};
+		animation-duration: 25s;
+	}
 `;
 
 export default InfiniteSlider;

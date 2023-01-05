@@ -73,6 +73,7 @@ const HomeSection02Wrapper = styled(HomeSection01Wrapper)`
 	}
 
 	@media screen and (min-width: 1024px) {
+		align-items: center;
 		.text-content {
 			width: 50%;
 		}
@@ -89,7 +90,7 @@ const ImageWrapper = styled.div`
 	background-repeat: no-repeat;
 	margin-top: 3rem;
 	width: 100%;
-	height: 50vh;
+	height: 80vh;
 
 	@media screen and (max-width: 479px) {
 		margin-top: 3rem;
@@ -99,7 +100,6 @@ const ImageWrapper = styled.div`
 
 	@media screen and (min-width: 767px) {
 		margin-top: 3rem;
-
 		height: 80vh;
 		width: 100%;
 	}
@@ -112,10 +112,8 @@ const ImageWrapper = styled.div`
 
 	@media screen and (min-width: 1024px) {
 		height: 140vh;
-		background-position: 50% 0%;
 	}
 
 	@media screen and (min-width: 1440px) {
-		background-position: 50% 0%;
 	}
 `;
