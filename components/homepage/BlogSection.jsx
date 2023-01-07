@@ -13,7 +13,7 @@ import GradientButton from "../button/GradientButton";
 import { Carousel } from "@mantine/carousel";
 import { IconArrowRight, IconArrowLeft } from "@tabler/icons";
 import { SloganSection06, ButtonContainer, RowWrapper } from "./HomeSection06";
-import Link from "../Link";
+import Link from "next/link";
 
 const BlogSection = ({ posts }) => {
 	const { t } = useTranslation("home");

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Link from "../Link";
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 const HeroBlogPage = ({ posts }) => {

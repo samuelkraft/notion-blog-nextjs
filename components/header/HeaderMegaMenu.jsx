@@ -35,7 +35,7 @@ import {
 import { useTranslation } from "next-i18next";
 import Logo from "../../images/logo_Expand-CPA.svg";
 import Image from "next/image";
-import LinkComponent from "../Link";
+import Link from "next/link";
 
 import LanguageSwitcher from "./LanguageSwitcher";
 import i18nextConfig from '../../next-i18next.config'
@@ -196,7 +196,7 @@ export function HeaderMegaMenu() {
 
 	const businessLinks = businessServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<LinkComponent href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
+			<Link href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={item.color} />
@@ -208,13 +208,13 @@ export function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</LinkComponent>
+			</Link>
 		</UnstyledButton>
 	));
 
 	const privateTaxLinks = privateTaxServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<LinkComponent href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
+			<Link href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={theme.fn.primaryColor()} />
@@ -226,7 +226,7 @@ export function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</LinkComponent>
+			</Link>
 		</UnstyledButton>
 	));
 
@@ -241,17 +241,17 @@ export function HeaderMegaMenu() {
 							className={classes.hiddenDesktop}
 							size='lg'
 						/>
-						<LinkComponent href='/' component='a'>
+						<Link href='/' component='a'>
 							<Image src={Logo} width='150' height='100' alt="Expand CPA LOGO" />
-						</LinkComponent>
+						</Link>
 						<Container fluid>
 							<Group
 								sx={{ height: "100%" }}
 								spacing={10}
 								className={classes.hiddenMobile}>
-								<LinkComponent href='/about' className={classes.link}>
+								<Link href='/about' className={classes.link}>
 									{t("cabinet")}
-								</LinkComponent>
+								</Link>
 								<HoverCard
 									width={600}
 									position='bottom'
@@ -282,7 +282,7 @@ export function HeaderMegaMenu() {
 												}}>
 												{t("business")}
 											</Text>
-											<LinkComponent
+											<Link
 												href='/services'
 												size='xs'
 												style={{
@@ -290,7 +290,7 @@ export function HeaderMegaMenu() {
 													color: theme.colors.blue[6],
 												}}>
 												View all
-											</LinkComponent>
+											</Link>
 										</Group>
 
 										<Divider
@@ -324,7 +324,7 @@ export function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<LinkComponent href="/#contact">
+												<Link href="/#contact">
 													<Button
 
 														variant='default'
@@ -334,7 +334,7 @@ export function HeaderMegaMenu() {
 														}}>
 														{t("contact")}
 													</Button>
-												</LinkComponent>
+												</Link>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
@@ -369,7 +369,7 @@ export function HeaderMegaMenu() {
 												}}>
 												{t("tax")}
 											</Text>
-											<LinkComponent
+											<Link
 												href='#'
 												size='xs'
 												style={{
@@ -377,7 +377,7 @@ export function HeaderMegaMenu() {
 													color: theme.colors.blue[6],
 												}}>
 												View all
-											</LinkComponent>
+											</Link>
 										</Group>
 
 										<Divider
@@ -411,7 +411,7 @@ export function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<LinkComponent href="/#contact">
+												<Link href="/#contact">
 													<Button
 														variant='default'
 														style={{
@@ -420,17 +420,17 @@ export function HeaderMegaMenu() {
 														}}>
 														{t("contact")}
 													</Button>
-												</LinkComponent>
+												</Link>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
 								</HoverCard>
-								<LinkComponent href='/blog' className={classes.link}>
+								<Link href='/blog' className={classes.link}>
 									{t("blog")}
-								</LinkComponent>
-								<LinkComponent href='/#contact' className={classes.link}>
+								</Link>
+								<Link href='/#contact' className={classes.link}>
 									{t("contact")}
-								</LinkComponent>
+								</Link>
 								<Group className={classes.hiddenMobile}>
 									{i18nextConfig.i18n.locales.map((locale) => {
 										if (locale === currentLocale) return null
@@ -470,9 +470,9 @@ export function HeaderMegaMenu() {
 						color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
 					/>
 
-					<LinkComponent href='/about' className={classes.link} onClick={closeDrawer}>
+					<Link href='/about' className={classes.link} onClick={closeDrawer}>
 						{t("cabinet")}
-					</LinkComponent>
+					</Link>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
 						<Center inline>
 							<Box component='span' mr={5}>
@@ -492,12 +492,12 @@ export function HeaderMegaMenu() {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-					<LinkComponent href='/blog' className={classes.link} onClick={closeDrawer}>
+					<Link href='/blog' className={classes.link} onClick={closeDrawer}>
 						{t("blog")}
-					</LinkComponent>
-					<LinkComponent href='/#contact' className={classes.link} onClick={closeDrawer}>
+					</Link>
+					<Link href='/#contact' className={classes.link} onClick={closeDrawer}>
 						{t("contact")}
-					</LinkComponent>
+					</Link>
 
 					<Divider
 						my='sm'

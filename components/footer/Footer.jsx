@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "../Link";
+import Link from "next/link";
 import styled from "styled-components";
 
 import Logo from "../../images/logo_Expand-CPA.svg";

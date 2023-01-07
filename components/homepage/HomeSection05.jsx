@@ -13,7 +13,7 @@ import { titleAnim, fade } from "../../lib/animation";
 
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
-import Link from "../Link";
+import Link from "next/link";
 
 const HomeSection05 = () => {
 	const { t } = useTranslation("home");

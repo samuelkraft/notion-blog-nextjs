@@ -1,6 +1,6 @@
 import { HeroBlogPageContainer, HeadingLarge } from "./HeroBlogPage";
 import styled from "styled-components";
-import Link from "../Link";
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { useState } from "react";
 

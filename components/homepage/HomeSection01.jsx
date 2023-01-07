@@ -16,7 +16,7 @@ import circle_4 from "../../images/circle_4.svg";
 import circle_5 from "../../images/circle_5.svg";
 import circle_6 from "../../images/circle_6.svg";
 import Image from "next/image";
-import Link from "../../components/Link";
+import Link from "next/link";
 
 const HomeSection01 = () => {
 	const { t } = useTranslation("home");

@@ -13,7 +13,7 @@ import GradientButton from "../button/GradientButton";
 import { Carousel } from "@mantine/carousel";
 import { IconArrowRight, IconArrowLeft } from "@tabler/icons";
 import { Avatar } from "@mantine/core";
-import Link from "../Link";
+import Link from "next/link";
 
 const HomeSection06 = () => {
 	const { t } = useTranslation("home", "common");

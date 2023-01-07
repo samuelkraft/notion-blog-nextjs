@@ -14,7 +14,7 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
 import { HeroImageContainer } from "./HeroHomePage";
-import Link from "../Link";
+import Link from "next/link";
 
 const HomeSection04 = () => {
 	const { t } = useTranslation("home");

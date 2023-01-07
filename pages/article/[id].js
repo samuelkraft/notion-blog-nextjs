@@ -1,11 +1,12 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../../../lib/notion";
+import { getDatabase, getPage, getBlocks } from "../../lib/notion";
 import Link from "next/link";
 import { databaseId } from "../index.js";
-import styles from "../../post.module.css";
-import { getI18nProps } from "../../../lib/getStatic";
+import styles from "../post.module.css";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useEffect } from "react";
 import styled from "styled-components";
 import { IconArrowLeft } from "@tabler/icons";
 import { Skeleton } from "@mantine/core";
@@ -159,14 +160,20 @@ const renderBlock = (block) => {
 				</Link>
 			);
 		default:
-			return `❌ Unsupported block (${
-				type === "unsupported" ? "unsupported by Notion API" : type
-			})`;
+			return `❌ Unsupported block (${type === "unsupported" ? "unsupported by Notion API" : type
+				})`;
 	}
 };
 
 export default function Post({ page, blocks }) {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common", "home"]);
+	}, []);
+
 	if (!page || !blocks) {
 		return <div />;
 	}
@@ -215,7 +222,7 @@ export default function Post({ page, blocks }) {
 export const getStaticPaths = async () => {
 	const database = await getDatabase(databaseId);
 	const paths = database.map((page) => ({
-		params: { id: page.id, locale: "fr" },
+		params: { id: page.id },
 	}));
 	return {
 		paths,
@@ -225,6 +232,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
 	const { id } = context.params;
+
 	const page = await getPage(id);
 	const blocks = await getBlocks(id);
 
@@ -254,7 +262,7 @@ export const getStaticProps = async (context) => {
 		props: {
 			page,
 			blocks: blocksWithChildren,
-			...(await getI18nProps(context, ["common", "home"])),
+			...(await serverSideTranslations(context.locale, ["common"])),
 		},
 		revalidate: 60,
 	};

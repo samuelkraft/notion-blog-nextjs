@@ -1,15 +1,24 @@
 import GradientButton from "../button/GradientButton";
 import styled from "styled-components";
-import Link from '../../components/Link'
+import Link from 'next/link'
 
 // Animation
 import { motion } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 import { useTranslation } from "next-i18next";
 
+import { useEffect } from "react";
 
 const Hero = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ['common', 'home'])
+	}, [])
+
+
 	return (
 		<HeroContainer>
 			<HeroWrapper>

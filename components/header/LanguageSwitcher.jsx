@@ -3,7 +3,6 @@ import France from "../../images/flag-france.svg";
 
 import { IconLanguage } from "@tabler/icons";
 
-import languageDetector from "../../lib/languageDetector";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,24 +10,13 @@ import usa from "../../images/usa.svg";
 
 const LanguageSwitcher = ({ locale, ...rest }) => {
 	const router = useRouter();
-	let href = rest.href || router.asPath;
-	let pName = router.pathname;
-	Object.keys(router.query).forEach((k) => {
-		if (k === "locale") {
-			pName = pName.replace(`[${k}]`, locale);
-			return;
-		}
-		pName = pName.replace(`[${k}]`, router.query[k]);
-	});
-	if (locale) {
-		href = rest.href ? `/${locale}${rest.href}` : pName;
-	}
+	console.log(router.locale)
 	return (
-		<Link href={href} onClick={() => languageDetector.cache(locale)}>
+		<Link href='/' locale={router.locale === "fr" ? "en" : "fr"}>
 			<LanguageSwitcherStyles>
 				<IconLanguage strokeWidth={2} color={"black"} />
-				{locale === "fr" ? "Français" : "English"}
-				<Image src={locale === "fr" ? France : usa} alt="language" />
+				{router.locale === "fr" ? "Français" : "English"}
+				<Image src={router.locale === "fr" ? France : usa} alt="language" />
 			</LanguageSwitcherStyles>
 
 		</Link>

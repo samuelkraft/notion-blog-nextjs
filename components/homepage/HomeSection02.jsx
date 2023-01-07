@@ -11,7 +11,7 @@ import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 
-import Link from "../Link"
+import Link from "next/link"
 
 const HomeSection02 = () => {
 	const { t } = useTranslation("home");

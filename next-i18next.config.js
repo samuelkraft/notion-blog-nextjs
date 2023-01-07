@@ -1,15 +1,23 @@
-// used for SSR (getServerSideProps)
-// const path = require('path')
-// const localePath = path.resolve('./public/locales')
+const HttpBackend = require('i18next-http-backend/cjs')
+const ChainedBackend = require('i18next-chained-backend').default
+const LocalStorageBackend = require('i18next-localstorage-backend').default
+
+const isBrowser = typeof window !== 'undefined'
 
 module.exports = {
-    // https://www.i18next.com/overview/configuration-options#logging
     debug: process.env.NODE_ENV === 'development',
+    backend: {
+        backendOptions: [{ expirationTime: 60 * 60 * 1000 }, {}], // 1 hour
+        backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [],
+    },
+    // react: { // used only for the lazy reload
+    //   bindI18n: 'languageChanged loaded',
+    //   useSuspense: false
+    // },
     i18n: {
         defaultLocale: 'fr',
         locales: ['fr', 'en'],
     },
-    // localePath,
-    reloadOnPrerender: process.env.NODE_ENV === 'development',
-    // serializeConfig: false,
+    serializeConfig: false,
+    use: isBrowser ? [ChainedBackend] : [],
 }
