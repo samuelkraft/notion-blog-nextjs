@@ -40,14 +40,14 @@ const ContactForm = () => {
 			if (!field.name) return;
 			formData[field.name] = field.value;
 		});
-		// fetch("https://popay.preprod.popay.io/api/mail", {
-		// 	method: "post",
-		// 	//mode: 'no-cors', // 'cors' by default
-		// 	headers: {
-		// 		"Content-Type": "application/json",
-		// 	},
-		// 	body: JSON.stringify(formData),
-		// });
+		fetch(`/api/monday`, {
+			method: "post",
+			//mode: 'no-cors', // 'cors' by default
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(formData),
+		});
 		console.log(formData);
 	}
 
@@ -67,14 +67,14 @@ const ContactForm = () => {
 				</SocialMediaContainer>
 			</RowWrapper>
 
-			<ContactFormLayout>
+			<Form method='post' onSubmit={handleOnSubmit}>
 				<TextContentContainer>
 					<TextContent>
 						<h1>{t("form_title")}</h1>
 
 						<p>{t("form_paragraph")}</p>
 					</TextContent>
-					<Form method='post' onSubmit={handleOnSubmit}>
+					<FormLayout>
 						<TextInput
 							required
 							label='Email'
@@ -92,7 +92,6 @@ const ContactForm = () => {
 									},
 								},
 							}}
-						// {...form.getInputProps("email")}
 						/>
 
 						<Group position='left' spacing='xl'>
@@ -104,7 +103,6 @@ const ContactForm = () => {
 								radius='lg'
 								size='lg'
 								name='firstName'
-								// {...form.getInputProps("firstName")}
 								icon={<IconUser color='#2457F5' />}
 								styles={{
 									defaultVariant: {
@@ -124,7 +122,6 @@ const ContactForm = () => {
 								size='lg'
 								icon={<IconUser color='#2457F5' />}
 								name='lastName'
-								// {...form.getInputProps("lastName")}
 								styles={{
 									defaultVariant: {
 										borderColor: "#2457F5",
@@ -145,7 +142,6 @@ const ContactForm = () => {
 							size='lg'
 							icon={<IconPhone color='#2457F5' />}
 							name='phone'
-							// {...form.getInputProps("phone")}
 							styles={{
 								defaultVariant: {
 									borderColor: "#2457F5",
@@ -159,6 +155,7 @@ const ContactForm = () => {
 						<Textarea
 							placeholder='Your comment'
 							label='Your comment'
+							name='message'
 							withAsterisk
 							size='lg'
 							radius='lg'
@@ -205,7 +202,7 @@ const ContactForm = () => {
 							onClick={() => setOpened(true)}>
 							Demander une démo
 						</GradientButton>
-					</Form>
+					</FormLayout>
 				</TextContentContainer>
 				<TextContentContainer2>
 					<ContactInfoContainer>
@@ -253,7 +250,7 @@ const ContactForm = () => {
 						</a>
 					</ContactInfoContainer>
 				</TextContentContainer2>
-			</ContactFormLayout>
+			</Form>
 		</ContactFormContainer>
 	);
 };
@@ -284,7 +281,7 @@ const ContactFormContainer = styled.div`
 	}
 `;
 
-const ContactFormLayout = styled.div`
+const Form = styled.form`
 	display: flex;
 	justify-content: space-between;
 	flex-flow: column;
@@ -388,7 +385,7 @@ const TextContent = styled.div`
 	}
 `;
 
-const Form = styled.form`
+const FormLayout = styled.div`
 	display: flex;
 	height: 80%;
 	flex-flow: column;
