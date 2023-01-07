@@ -17,12 +17,12 @@ import { useEffect } from "react";
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
-    const { t, i18n } = useTranslation("home", {
+    const { t, i18n } = useTranslation("common", {
         bindI18n: "languageChanged loaded",
     });
 
     useEffect(() => {
-        i18n.reloadResources(i18n.resolvedLanguage, ["home", "common"]);
+        i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
     }, []);
 
     return (
@@ -51,7 +51,7 @@ const getStaticProps = async ({ locale }) => {
     return {
         props: {
             posts: database,
-            ...(await serverSideTranslations(locale, ["home", "common"])),
+            ...(await serverSideTranslations(locale, ["common"])),
         },
         revalidate: 60,
     };
