@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 
 import { useTranslation } from "next-i18next";
+import { useEffect } from "react";
 import GradientButton from "../button/GradientButton";
 
 import { Carousel } from "@mantine/carousel";
@@ -16,7 +17,15 @@ import { SloganSection06, ButtonContainer, RowWrapper } from "./HomeSection06";
 import Link from "next/link";
 
 const BlogSection = ({ posts }) => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
+
+
 	return (
 		<HomeSection05Container>
 			<HomeSection05Wrapper>

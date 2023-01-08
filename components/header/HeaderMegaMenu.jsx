@@ -40,7 +40,7 @@ import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
 import i18nextConfig from '../../next-i18next.config'
 import { useRouter } from 'next/router'
-
+import { useEffect } from 'react'
 
 
 const useStyles = createStyles((theme) => ({
@@ -141,7 +141,14 @@ export function HeaderMegaMenu() {
 		useDisclosure(false);
 	const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
 	const { classes, theme } = useStyles();
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
+
 
 	const businessServices = [
 		{

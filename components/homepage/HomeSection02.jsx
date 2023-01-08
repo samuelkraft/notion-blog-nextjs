@@ -10,11 +10,18 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
+import { useEffect } from "react";
 
 import Link from "next/link"
 
 const HomeSection02 = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
 
 	return (
 		<HomeSection01Container>

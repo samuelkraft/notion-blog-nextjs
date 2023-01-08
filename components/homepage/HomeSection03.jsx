@@ -2,9 +2,16 @@ import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 
 import { SloganSection01, HeadingSection01 } from "./HomeSection01";
+import { useEffect } from "react";
 
 const HomeSection03 = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
 
 	return (
 		<HomeSection03Container>

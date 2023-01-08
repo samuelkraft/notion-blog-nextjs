@@ -14,9 +14,16 @@ import { titleAnim, fade } from "../../lib/animation";
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const HomeSection05 = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
 	return (
 		<HomeSection05Container>
 			<HomeSection05Wrapper>

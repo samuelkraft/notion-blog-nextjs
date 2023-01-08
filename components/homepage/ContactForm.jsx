@@ -14,7 +14,7 @@ import redLocation from "../../images/red_location.svg";
 import greenLocation from "../../images/green_location.svg";
 import phone from "../../images/phone.svg";
 import map from "../../images/map.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import {
 	TextInput,
@@ -28,7 +28,13 @@ import {
 import { IconMail, IconUser, IconPhone, IconCircleCheck } from "@tabler/icons";
 
 const ContactForm = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
 	const theme = useMantineTheme();
 	const [opened, setOpened] = useState(false);
 	const router = useRouter();

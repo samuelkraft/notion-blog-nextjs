@@ -14,10 +14,17 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
 import { HeroImageContainer } from "./HeroHomePage";
+import { useEffect } from "react";
 import Link from "next/link";
 
 const HomeSection04 = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
 
 	return (
 		<HomeSection01Container>

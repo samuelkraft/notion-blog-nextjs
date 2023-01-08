@@ -6,9 +6,16 @@ import Logo from "../../images/logo_Expand-CPA.svg";
 import { useTranslation } from "next-i18next";
 
 import { IconPhone, IconMail, IconMapPin } from "@tabler/icons";
+import { useEffect } from "react";
 
 const Footer = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
 
 	return (
 		<FooterContainer>

@@ -17,9 +17,16 @@ import circle_5 from "../../images/circle_5.svg";
 import circle_6 from "../../images/circle_6.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const HomeSection01 = () => {
-	const { t } = useTranslation("common");
+	const { t, i18n } = useTranslation("common", {
+		bindI18n: "languageChanged loaded",
+	});
+
+	useEffect(() => {
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
+	}, []);
 	return (
 		<HomeSection01Container>
 			<HomeSection01Wrapper>
