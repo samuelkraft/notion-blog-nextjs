@@ -8,6 +8,8 @@ import AboutSection04 from "../../components/about/AboutSection04";
 import AboutSection05 from "../../components/about/AboutSection05";
 import HeroAboutPage from "../../components/about/HeroAboutPage";
 import HiringForm from "../../components/about/HiringForm";
+import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
+import Footer from "../../components/footer/Footer";
 
 const AboutPage = ({ }) => {
 	const { t, i18n } = useTranslation("common", {
@@ -20,6 +22,7 @@ const AboutPage = ({ }) => {
 
 	return (
 		<>
+			<HeaderMegaMenu />
 			<HeroAboutPage />
 			<AboutSection01 />
 			<AboutSection02 />
@@ -27,6 +30,7 @@ const AboutPage = ({ }) => {
 			<AboutSection04 />
 			<AboutSection05 />
 			<HiringForm />
+			<Footer />
 		</>
 	);
 };

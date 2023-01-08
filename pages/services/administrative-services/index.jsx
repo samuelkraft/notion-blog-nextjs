@@ -2,6 +2,8 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect } from "react";
 import { HeroContainer } from "../../../components/homepage/HeroHomePage";
+import HeaderMegaMenu from "../../../components/header/HeaderMegaMenu";
+import Footer from "../../../components/footer/Footer";
 import Image from "next/image";
 import {
 	createStyles,
@@ -119,6 +121,7 @@ const AdministritiveServices = ({ }) => {
 
 	return (
 		<>
+			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
 					<Grid gutter={80}>
@@ -512,6 +515,7 @@ const AdministritiveServices = ({ }) => {
 					</TextContent>
 				</LayoutColumn>
 			</HeroContainer>
+			<Footer />
 		</>
 	);
 };

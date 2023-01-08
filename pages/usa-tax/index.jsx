@@ -40,6 +40,8 @@ import circle_7 from "../../images/circle_7.svg";
 import Link from "next/link";
 
 import { ImageWrapperFullWidth } from "../services/payroll-services";
+import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
+import Footer from "../../components/footer/Footer";
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -129,6 +131,7 @@ const UsaTax = ({ }) => {
 
 	return (
 		<>
+			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
 					<Grid gutter={80}>
@@ -553,6 +556,7 @@ const UsaTax = ({ }) => {
 					</TextContent>
 				</LayoutColumn>
 			</HeroContainer>
+			<Footer />
 		</>
 	);
 };

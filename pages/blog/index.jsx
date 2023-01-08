@@ -4,6 +4,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect } from "react";
 import HeroBlogPage from "../../components/blog/HeroBlogPage";
 import CategoryBlog from "../../components/blog/CategoryBlog";
+import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
+import Footer from "../../components/footer/Footer";
 
 const getStaticProps = async ({ locale }) => {
 	const database = await getDatabase(databaseId);
@@ -42,6 +44,7 @@ export default function Blog({ posts }) {
 
 	return (
 		<>
+			<HeaderMegaMenu />
 			<HeroBlogPage posts={posts} />
 			<CategoryBlog
 				posts={posts}
@@ -49,6 +52,7 @@ export default function Blog({ posts }) {
 				categoryLegalPosts={categoryLegalPosts}
 				categoryTaxPosts={categoryTaxPosts}
 			/>
+			<Footer />
 		</>
 	);
 }

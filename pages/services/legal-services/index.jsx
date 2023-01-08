@@ -38,7 +38,8 @@ import circle_6 from "../../../images/circle_6.svg";
 import circle_7 from "../../../images/circle_7.svg";
 import circle_8 from "../../../images/circle_8.svg";
 import Link from "next/link";
-
+import HeaderMegaMenu from "../../../components/header/HeaderMegaMenu";
+import Footer from "../../../components/footer/Footer";
 import { ImageWrapperFullWidth } from "../payroll-services";
 
 const useStyles = createStyles((theme) => ({
@@ -128,6 +129,7 @@ const LegalServices = ({ }) => {
 
 	return (
 		<>
+			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
 					<Grid gutter={80}>
@@ -541,6 +543,7 @@ const LegalServices = ({ }) => {
 					</TextContent>
 				</LayoutColumn>
 			</HeroContainer>
+			<Footer />
 		</>
 	);
 };

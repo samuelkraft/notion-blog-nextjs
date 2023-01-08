@@ -11,6 +11,8 @@ import styled from "styled-components";
 import { IconArrowLeft } from "@tabler/icons";
 import { Skeleton } from "@mantine/core";
 import { useRouter } from "next/router";
+import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
+import Footer from "../../components/footer/Footer";
 
 export const Text = ({ text }) => {
 	if (!text) {
@@ -197,6 +199,7 @@ export default function Post({ page, blocks }) {
 				</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
+			<HeaderMegaMenu />
 			<Thumbnail
 				src={
 					page?.cover?.external?.url ||
@@ -215,6 +218,7 @@ export default function Post({ page, blocks }) {
 					</Link>
 				</section>
 			</article>
+			<Footer />
 		</div>
 	);
 }

@@ -78,6 +78,7 @@ const useStyles = createStyles((theme) => ({
 		padding: "8px 12px",
 		borderRadius: theme.radius.sm,
 		textDecoration: "none",
+		cursor: "pointer",
 		fontFamily: "'Gilroy', sans-serif",
 		color:
 			theme.colorScheme === "dark"
@@ -134,7 +135,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-export function HeaderMegaMenu() {
+export default function HeaderMegaMenu() {
 	const router = useRouter()
 	const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale
 	const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
@@ -355,7 +356,7 @@ export function HeaderMegaMenu() {
 									shadow='md'
 									withinPortal>
 									<HoverCard.Target>
-										<Anchor href='#' className={classes.link}>
+										<Text className={classes.link}>
 											<Center inline>
 												<Box component='span' mr={5}>
 													{t("tax")}
@@ -365,7 +366,7 @@ export function HeaderMegaMenu() {
 													color={theme.fn.primaryColor()}
 												/>
 											</Center>
-										</Anchor>
+										</Text>
 									</HoverCard.Target>
 
 									<HoverCard.Dropdown sx={{ overflow: "hidden" }}>

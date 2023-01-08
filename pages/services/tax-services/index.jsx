@@ -2,6 +2,8 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect } from "react";
 import { HeroContainer } from "../../../components/homepage/HeroHomePage";
+import HeaderMegaMenu from "../../../components/header/HeaderMegaMenu";
+import Footer from "../../../components/footer/Footer";
 import Image from "next/image";
 import {
     LayoutColumn,
@@ -526,6 +528,7 @@ const TaxServices = ({ }) => {
                     </TextContent>
                 </LayoutColumn>
             </HeroContainer>
+            <Footer />
         </>
     );
 };

@@ -13,7 +13,8 @@ import HomeSection06 from "../components/homepage/HomeSection06";
 import ContactForm from "../components/homepage/ContactForm";
 import BlogSection from "../components/homepage/BlogSection";
 import { useEffect } from "react";
-
+import HeaderMegaMenu from "../components/header/HeaderMegaMenu"
+import Footer from "../components/footer/Footer"
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
@@ -31,6 +32,7 @@ export default function Home({ posts }) {
                 <title>Expand CPA</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
+            <HeaderMegaMenu />
             <Hero />
             <InfiniteSlider />
             <HomeSection01 />
@@ -41,6 +43,7 @@ export default function Home({ posts }) {
             <HomeSection06 />
             <BlogSection posts={posts} />
             <ContactForm />
+            <Footer />
         </div>
     );
 }
