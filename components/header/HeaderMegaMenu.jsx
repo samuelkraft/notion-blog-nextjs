@@ -186,11 +186,13 @@ export function HeaderMegaMenu() {
 			icon: IconCoinEuro,
 			title: t("frenchTax"),
 			href: "/french-tax",
+			color: "#0657CF",
 		},
 		{
 			icon: IconCoin,
 			title: t("usTax"),
 			href: "/usa-tax",
+			color: "#002495",
 		},
 	];
 
@@ -259,7 +261,7 @@ export function HeaderMegaMenu() {
 									shadow='md'
 									withinPortal>
 									<HoverCard.Target>
-										<Anchor href='/services' className={classes.link}>
+										<Link href='/services' className={classes.link}>
 											<Center inline>
 												<Box component='span' mr={5}>
 													{t("business")}
@@ -269,7 +271,7 @@ export function HeaderMegaMenu() {
 													color={theme.fn.primaryColor()}
 												/>
 											</Center>
-										</Anchor>
+										</Link>
 									</HoverCard.Target>
 
 									<HoverCard.Dropdown sx={{ overflow: "hidden" }}>
@@ -369,15 +371,6 @@ export function HeaderMegaMenu() {
 												}}>
 												{t("tax")}
 											</Text>
-											<Link
-												href='#'
-												size='xs'
-												style={{
-													fontFamily: "'Gilroy',sans-serif",
-													color: theme.colors.blue[6],
-												}}>
-												View all
-											</Link>
 										</Group>
 
 										<Divider

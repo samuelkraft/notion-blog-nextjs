@@ -16,7 +16,7 @@ import { Avatar } from "@mantine/core";
 import Link from "next/link";
 
 const HomeSection06 = () => {
-	const { t } = useTranslation("home", "common");
+	const { t } = useTranslation("common", "common");
 	return (
 		<HomeSection05Container>
 			<HomeSection05Wrapper>

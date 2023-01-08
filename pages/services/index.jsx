@@ -83,89 +83,77 @@ const ServicesPages = ({ }) => {
 					</RowWrapper>
 				</div>
 				<ServicesCardContainer>
-					<Link href='/services/administrative-services'>
-						<ServicesCard>
-							<Image src={circle_2} alt='administrativeServices' />
-							<div className='text-content'>
-								<h4>{t("administrativeServices")}</h4>
-								<p>{t("administrativeServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
+					<ServicesCard href='/services/administrative-services'>
+						<Image src={circle_2} alt='administrativeServices' />
+						<div className='text-content'>
+							<h4>{t("administrativeServices")}</h4>
+							<p>{t("administrativeServices_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
 
-					<Link href='/services/accounting-services'>
-						<ServicesCard>
-							<Image src={circle_1} alt='accountingServices' />
-							<div className='text-content'>
-								<h4>{t("accountingServices")}</h4>
-								<p>{t("accountingServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
+					<ServicesCard href='/services/accounting-services'>
+						<Image src={circle_1} alt='accountingServices' />
+						<div className='text-content'>
+							<h4>{t("accountingServices")}</h4>
+							<p>{t("accountingServices_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
 
-					<Link href='/services/legal-services'>
-						<ServicesCard>
-							<Image src={circle_3} alt='expertise RH' />
-							<div className='text-content'>
-								<h4>{t("expertiseRH")}</h4>
-								<p>{t("expertiseRH_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
+					<ServicesCard href='/services/legal-services'>
+						<Image src={circle_3} alt='expertise RH' />
+						<div className='text-content'>
+							<h4>{t("expertiseRH")}</h4>
+							<p>{t("expertiseRH_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
 
-					<Link href='/services/legal-services'>
-						<ServicesCard>
-							<Image src={circle_4} alt='legal services' />
-							<div className='text-content'>
-								<h4>{t("conseilJuridique")}</h4>
-								<p>{t("conseillerJuridique_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
-					<Link href='/services/tax-services'>
-						<ServicesCard>
-							<Image src={circle_5} alt='tax services' />
-							<div className='text-content'>
-								<h4>{t("conseillerFiscal")}</h4>
-								<p>{t("taxServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
-					<Link href='/services/audit-services'>
-						<ServicesCard>
-							<Image src={circle_6} alt='auditServices' />
-							<div className='text-content'>
-								<h4>{t("auditServices")}</h4>
-								<p>{t("auditServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
-					<Link href='/french-tax'>
-						<ServicesCard>
-							<Image src={circle_7} alt='french Tax' />
-							<div className='text-content'>
-								<h4>{t("frenchTax")}</h4>
-								<p>{t("accountingServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
-					<Link href='/usa-tax'>
-						<ServicesCard>
-							<Image src={circle_8} alt='usa tax' />
-							<div className='text-content'>
-								<h4>{t("usTax")}</h4>
-								<p>{t("usTax_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</Link>
+					<ServicesCard href='/services/legal-services'>
+						<Image src={circle_4} alt='legal services' />
+						<div className='text-content'>
+							<h4>{t("conseilJuridique")}</h4>
+							<p>{t("conseillerJuridique_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
+
+					<ServicesCard href='/services/tax-services'>
+						<Image src={circle_5} alt='tax services' />
+						<div className='text-content'>
+							<h4>{t("conseillerFiscal")}</h4>
+							<p>{t("taxServices_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
+
+					<ServicesCard href='/services/audit-services'>
+						<Image src={circle_6} alt='auditServices' />
+						<div className='text-content'>
+							<h4>{t("auditServices")}</h4>
+							<p>{t("auditServices_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
+
+					<ServicesCard href='/french-tax'>
+						<Image src={circle_7} alt='french Tax' />
+						<div className='text-content'>
+							<h4>{t("frenchTax")}</h4>
+							<p>{t("accountingServices_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
+
+					<ServicesCard href='/usa-tax'>
+						<Image src={circle_8} alt='usa tax' />
+						<div className='text-content'>
+							<h4>{t("usTax")}</h4>
+							<p>{t("usTax_heading")}</p>
+						</div>
+						<IconArrowRight size={33} color='#1b1464' />
+					</ServicesCard>
 				</ServicesCardContainer>
 			</ServicesWrapper>
 		</ServicesContainer>
@@ -178,11 +166,29 @@ const ServicesContainer = styled(HomeSection05Container)`
 		margin-top: 0rem;
 	}
 
+	@media screen and (min-width: 768px) {
+		padding: 2rem;
+	}
 	@media screen and (min-width: 1024px) {
 		margin-top: 0rem;
+
+		padding: 1rem 12%;
 	}
+
 	@media screen and (min-width: 1440px) {
 		margin-top: 0rem;
+
+		padding: 1rem 12%;
+	}
+	@media screen and (min-width: 1800px) {
+		padding: 1rem 8%;
+	}
+
+	@media screen and (min-width: 2100px) {
+		padding: 1rem 16%;
+	}
+	@media screen and (min-width: 2500px) {
+		padding: 1rem 25%;
 	}
 `;
 
@@ -222,7 +228,7 @@ const ServicesCardContainer = styled(FeaturesCardContainer)`
 		justify-self: center;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 1024px) {
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 3rem;
 		grid-row-gap: 3rem;
@@ -231,7 +237,7 @@ const ServicesCardContainer = styled(FeaturesCardContainer)`
 	margin-top: 3rem;
 `;
 
-const ServicesCard = styled(FeaturesCard)`
+const ServicesCard = styled(Link)`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -249,7 +255,7 @@ const ServicesCard = styled(FeaturesCard)`
 		font-family: "AllRoundGothic-Demi";
 		font-style: normal;
 		font-weight: 400;
-		font-size: 32px;
+		font-size: 38px;
 		line-height: 48px;
 		letter-spacing: 0.327px;
 		color: #1b1464;

@@ -10,7 +10,6 @@ import usa from "../../images/usa.svg";
 
 const LanguageSwitcher = ({ locale, ...rest }) => {
 	const router = useRouter();
-	console.log(router.locale)
 	return (
 		<Link href='/' locale={router.locale === "fr" ? "en" : "fr"}>
 			<LanguageSwitcherStyles>

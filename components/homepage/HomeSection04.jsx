@@ -17,7 +17,7 @@ import { HeroImageContainer } from "./HeroHomePage";
 import Link from "next/link";
 
 const HomeSection04 = () => {
-	const { t } = useTranslation("home");
+	const { t } = useTranslation("common");
 
 	return (
 		<HomeSection01Container>

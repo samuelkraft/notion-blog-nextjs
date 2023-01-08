@@ -14,7 +14,7 @@ import { titleAnim, fade } from "../../lib/animation";
 import Link from "next/link"
 
 const HomeSection02 = () => {
-	const { t } = useTranslation("home");
+	const { t } = useTranslation("common");
 
 	return (
 		<HomeSection01Container>

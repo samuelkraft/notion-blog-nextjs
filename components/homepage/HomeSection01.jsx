@@ -19,7 +19,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HomeSection01 = () => {
-	const { t } = useTranslation("home");
+	const { t } = useTranslation("common");
 	return (
 		<HomeSection01Container>
 			<HomeSection01Wrapper>

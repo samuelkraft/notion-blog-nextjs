@@ -10,12 +10,12 @@ import HeroAboutPage from "../../components/about/HeroAboutPage";
 import HiringForm from "../../components/about/HiringForm";
 
 const AboutPage = ({ }) => {
-	const { t, i18n } = useTranslation("home", {
+	const { t, i18n } = useTranslation("common", {
 		bindI18n: "languageChanged loaded",
 	});
 
 	useEffect(() => {
-		i18n.reloadResources(i18n.resolvedLanguage, ["home", "common"]);
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
 
 	return (
@@ -35,7 +35,7 @@ const AboutPage = ({ }) => {
 const getStaticProps = async ({ locale }) => {
 	return {
 		props: {
-			...(await serverSideTranslations(locale, ["home", "common"])),
+			...(await serverSideTranslations(locale, ["common"])),
 		},
 		revalidate: 60,
 	};

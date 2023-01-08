@@ -171,7 +171,7 @@ export default function Post({ page, blocks }) {
 	});
 
 	useEffect(() => {
-		i18n.reloadResources(i18n.resolvedLanguage, ["common", "home"]);
+		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
 
 	if (!page || !blocks) {

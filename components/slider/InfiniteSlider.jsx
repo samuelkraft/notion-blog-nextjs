@@ -23,7 +23,7 @@ import pangea from "../../images/pangea.png";
 import Image from "next/image";
 
 const InfiniteSlider = () => {
-	const { t } = useTranslation("home");
+	const { t } = useTranslation("common");
 	const images = [
 		face2face,
 		pangea,

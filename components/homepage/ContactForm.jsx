@@ -28,7 +28,7 @@ import {
 import { IconMail, IconUser, IconPhone, IconCircleCheck } from "@tabler/icons";
 
 const ContactForm = () => {
-	const { t } = useTranslation("home");
+	const { t } = useTranslation("common");
 	const theme = useMantineTheme();
 	const [opened, setOpened] = useState(false);
 	const router = useRouter();

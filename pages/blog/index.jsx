@@ -11,7 +11,7 @@ const getStaticProps = async ({ locale }) => {
 	return {
 		props: {
 			posts: database,
-			...(await serverSideTranslations(locale, ["home", "common"])),
+			...(await serverSideTranslations(locale, ["common"])),
 		},
 		revalidate: 60,
 	};

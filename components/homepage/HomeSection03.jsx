@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { SloganSection01, HeadingSection01 } from "./HomeSection01";
 
 const HomeSection03 = () => {
-	const { t } = useTranslation("home");
+	const { t } = useTranslation("common");
 
 	return (
 		<HomeSection03Container>

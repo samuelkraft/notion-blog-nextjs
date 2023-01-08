@@ -16,7 +16,7 @@ import { SloganSection06, ButtonContainer, RowWrapper } from "./HomeSection06";
 import Link from "next/link";
 
 const BlogSection = ({ posts }) => {
-	const { t } = useTranslation("home");
+	const { t } = useTranslation("common");
 	return (
 		<HomeSection05Container>
 			<HomeSection05Wrapper>
