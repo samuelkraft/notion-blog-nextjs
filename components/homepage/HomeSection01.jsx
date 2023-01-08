@@ -58,7 +58,7 @@ const HomeSection01 = () => {
 					<Link href='/services'>
 						<GradientButton
 							gradientColor='#0657CF'
-							component='button'
+							type='button'
 							width={200}>
 							{t("readMore")}
 						</GradientButton>

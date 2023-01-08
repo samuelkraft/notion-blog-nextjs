@@ -19,7 +19,6 @@ import {
 } from "../../components/homepage/HomeSection06";
 
 import {
-	FeaturesCard,
 	FeaturesCardContainer,
 	HeadingSection01,
 } from "../../components/homepage/HomeSection01";
@@ -73,12 +72,14 @@ const ServicesPages = ({ }) => {
 						</div>
 
 						<ButtonContainer>
-							<GradientButton
-								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-								component='button'
-								size='lg'>
-								{t("contactUs")}
-							</GradientButton>
+							<Link href='/#contact'>
+								<GradientButton
+									gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
+									type='button'
+									size='lg'>
+									{t("contactUs")}
+								</GradientButton>
+							</Link>
 						</ButtonContainer>
 					</RowWrapper>
 				</div>

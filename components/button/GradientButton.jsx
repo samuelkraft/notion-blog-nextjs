@@ -36,7 +36,7 @@ const GradientButton = React.forwardRef(
 					},
 				}}>
 				{children}
-			</Button >
+			</Button>
 		);
 	}
 );

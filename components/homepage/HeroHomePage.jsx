@@ -7,17 +7,8 @@ import { motion } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 import { useTranslation } from "next-i18next";
 
-import { useEffect } from "react";
-
 const Hero = () => {
-	const { t, i18n } = useTranslation("common", {
-		bindI18n: "languageChanged loaded",
-	});
-
-	useEffect(() => {
-		i18n.reloadResources(i18n.resolvedLanguage, ['common', 'home'])
-	}, [])
-
+	const { t } = useTranslation("common");
 
 	return (
 		<HeroContainer>
@@ -34,21 +25,21 @@ const Hero = () => {
 						<h2>{t("sloganSubtitle")}</h2>
 					</Heading>
 					<RowButtonContainer>
-						<Link href='/services' passHref>
+						<Link href='/services'>
 							<GradientButton
 								width='200px'
 								size='lg'
 								gradientColor='#0657CF'
-								component='button'
+								type='button'
 							>
 								{t("ourServices")}
 							</GradientButton>
 						</Link>
-						<Link href='/#contact' passHref>
+						<Link href='/#contact'>
 							<GradientButton
 								width='200px'
 								size='lg'
-								component='button'
+								type='button'
 								gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
 							>
 								{t("contactUs")}

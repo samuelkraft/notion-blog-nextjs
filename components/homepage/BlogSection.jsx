@@ -34,7 +34,7 @@ const BlogSection = ({ posts }) => {
 							<Link href='/blog'>
 								<GradientButton
 									gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-									component='button'
+									type='button'
 									size='lg'>
 									{t("seeAll")}
 								</GradientButton>
@@ -91,29 +91,27 @@ const BlogSection = ({ posts }) => {
 						});
 						return (
 							<Carousel.Slide key={post.id}>
-								<Link href={`/article/${post.id}`} locale='fr'>
-									<BlogCard
-										cover={
-											post?.cover?.external?.url ||
-											"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
-										}>
-										<div className='thumbnail'>
-											<span className='category'>
-												{post?.properties?.Tags?.multi_select[0]?.name || "New"}
-											</span>
-										</div>
-										<div className='content'>
-											<p>{date}</p>
-											<h1>
-												{post?.properties?.Name?.title[0]?.plain_text ||
-													"Article"}
-											</h1>
-											<Link href={`/article/${post.id}`} locale='fr'>
-												{t("readNow")} →
-											</Link>
-										</div>
-									</BlogCard>
-								</Link>
+								<BlogCard
+									cover={
+										post?.cover?.external?.url ||
+										"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
+									}>
+									<div className='thumbnail'>
+										<span className='category'>
+											{post?.properties?.Tags?.multi_select[0]?.name || "New"}
+										</span>
+									</div>
+									<div className='content'>
+										<p>{date}</p>
+										<h1>
+											{post?.properties?.Name?.title[0]?.plain_text ||
+												"Article"}
+										</h1>
+										<Link href={`/article/${post.id}`} locale='fr'>
+											{t("readNow")} →
+										</Link>
+									</div>
+								</BlogCard>
 							</Carousel.Slide>
 						);
 					})}

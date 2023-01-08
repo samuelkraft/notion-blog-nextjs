@@ -219,7 +219,7 @@ export function HeaderMegaMenu() {
 			<Link href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
-						<item.icon size={22} color={theme.fn.primaryColor()} />
+						<item.icon size={22} color={item.color} />
 					</ThemeIcon>
 					<Text
 						size='md'
@@ -425,14 +425,7 @@ export function HeaderMegaMenu() {
 									{t("contact")}
 								</Link>
 								<Group className={classes.hiddenMobile}>
-									{i18nextConfig.i18n.locales.map((locale) => {
-										if (locale === currentLocale) return null
-										return (
-											<LanguageSwitcher
-												locale={locale}
-												key={locale} />
-										)
-									})}
+									<LanguageSwitcher />
 								</Group>
 							</Group>
 						</Container>
@@ -446,14 +439,7 @@ export function HeaderMegaMenu() {
 				size='100%'
 				padding='md'
 				title={<Group className={classes.hiddenDesktop} onClick={closeDrawer}>
-					{i18nextConfig.i18n.locales.map((locale) => {
-						if (locale === currentLocale) return null
-						return (
-							<LanguageSwitcher
-								locale={locale}
-								key={locale} />
-						)
-					})}
+					<LanguageSwitcher />
 				</Group>}
 				className={classes.hiddenDesktop}
 				zIndex={1000000}>

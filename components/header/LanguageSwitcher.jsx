@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import usa from "../../images/usa.svg";
 
-const LanguageSwitcher = ({ locale, ...rest }) => {
+const LanguageSwitcher = () => {
 	const router = useRouter();
 	return (
 		<Link href='/' locale={router.locale === "fr" ? "en" : "fr"}>
@@ -17,7 +17,6 @@ const LanguageSwitcher = ({ locale, ...rest }) => {
 				{router.locale === "fr" ? "Français" : "English"}
 				<Image src={router.locale === "fr" ? France : usa} alt="language" />
 			</LanguageSwitcherStyles>
-
 		</Link>
 	);
 };

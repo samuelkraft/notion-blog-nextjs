@@ -14,14 +14,16 @@ const AboutSection05 = () => {
 					<JoinOurTeamContainer>
 						<h1>{t("joinOurTeam")}</h1>
 						<h3>{t("joinOurTeamText")}</h3>
-						<a href='' passHref>
+						<a href=''>
 							<BorderedButton
 								borderColor='white'
 								textColor='white'
 								hoverable={false}
 								externalUrl={false}
 								rightIcon={<IconArrowRight size={16} />}
-								fontSize={16}>
+								fontSize={16}
+								type="button"
+							>
 								En savoir plus
 							</BorderedButton>
 						</a>

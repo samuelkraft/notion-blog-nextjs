@@ -58,25 +58,42 @@ const HiringForm = () => {
 	const { classes, theme } = useStyles();
 	const [opened, setOpened] = useState(false);
 	const router = useRouter();
-
+	const [selectedFile, setSelectedFile] = useState(null);
 	const openRef = useRef(null);
+
+	const onDrop = acceptedFiles => {
+		// Update the selectedFile state with the accepted file
+		setSelectedFile(acceptedFiles[0]);
+	}
 
 	async function handleOnSubmit(e) {
 		e.preventDefault();
-		const formData = {};
-		Array.from(e.currentTarget.elements).forEach((field) => {
-			if (!field.name) return;
-			formData[field.name] = field.value;
-		});
-		// fetch("https://popay.preprod.popay.io/api/mail", {
-		// 	method: "post",
-		// 	//mode: 'no-cors', // 'cors' by default
-		// 	headers: {
-		// 		"Content-Type": "application/json",
-		// 	},
-		// 	body: JSON.stringify(formData),
+		console.log(e.currentTarget.elements)
+		const formData = new FormData();
+		// Append the selected file to the FormData object
+		formData.append('file', selectedFile);
+		formData.append('firstName', e.currentTarget.elements.firstName.value);
+		formData.append('lastName', e.currentTarget.elements.lastName.value);
+		formData.append('phone', e.currentTarget.elements.phone.value);
+		formData.append('email', e.currentTarget.elements.email.value);
+		formData.append('message', e.currentTarget.elements.message.value);
+		// Array.from(e.currentTarget.elements).forEach((field) => {
+		// 	if (!field.name) return;
+		// 	formData.append(field.name, field.value);
 		// });
-		console.log(formData);
+
+
+		// Affiche les valeurs
+		for (var value of formData.values()) {
+			console.log(value);
+		}
+
+		const res = await fetch("/api/hiring", {
+			method: "POST",
+			body: formData,
+		})
+
+		const resBody = await res.json();
 	}
 
 	return (
@@ -94,13 +111,13 @@ const HiringForm = () => {
 					<Image src={youtube} alt='youtube' />
 				</SocialMediaContainer>
 			</RowWrapper>
-			<FormWrapper>
-				<Form method='post' onSubmit={handleOnSubmit}>
+			<Form method='post' onSubmit={handleOnSubmit}>
+				<FormLayout>
 					<TextContentContainer>
 						<TextContent>
 							<h1>{t("joinUsText")}</h1>
 						</TextContent>
-						<FormLayout>
+						<FormColumn>
 							<TextInput
 								required
 								label='Email'
@@ -184,6 +201,7 @@ const HiringForm = () => {
 							<Textarea
 								placeholder='Your message'
 								label='Your message'
+								name="message"
 								withAsterisk
 								size='xl'
 								radius='lg'
@@ -221,38 +239,17 @@ const HiringForm = () => {
 									</Flex>
 								</Group>
 							</Modal>
-						</FormLayout>
+						</FormColumn>
 					</TextContentContainer>
-					<FormLayout>
+					<FormColumn>
 						<div className={classes.wrapper}>
 							<Dropzone
 								openRef={openRef}
-								onDrop={(files) => {
-									console.log(files);
-									const formData = new FormData();
-									formData.append("file", files[0]);
-									fetch("http://MY_UPLOAD_SERVER.COM/api/upload", {
-										method: "POST",
-										headers: {
-											"Content-Type": "multipart/form-data",
-										},
-										body: formData,
-									})
-										.then((res) => {
-											const respJson = res.json();
-											// console.log("File uploaded", respJson);
-											// TODO: Update ui and states....
-											// setUploads(respJson.url);
-											return respJson;
-										})
-										.catch((err) => {
-											console.log("File upload error", err);
-											// TODO: Update ui and states with error....
-										});
-								}}
+								onDrop={onDrop}
 								onReject={(files) => console.log("rejected files", files)}
 								className={classes.dropzone}
 								radius='md'
+								name="file"
 								multiple={false}
 								accept={[MIME_TYPES.pdf]}
 								maxSize={30 * 1024 ** 2}>
@@ -278,10 +275,18 @@ const HiringForm = () => {
 										<Dropzone.Reject>Pdf file less than 30mb</Dropzone.Reject>
 										<Dropzone.Idle>Upload resume</Dropzone.Idle>
 									</Text>
-									<Text align='center' size='sm' mt='xs' color='dimmed'>
-										Drag&apos;n&apos;drop files here to upload. We can accept
-										only <i>.pdf</i> files that are less than 30mb in size.
-									</Text>
+
+									{selectedFile ? (
+										<Text align='center' size='sm' mt='xs' color='dimmed'>
+											{selectedFile.name}
+										</Text>
+									) :
+										(
+											<Text align='center' size='sm' mt='xs' color='dimmed'>
+												Drag & apos;n&apos;drop files here to upload. We can accept only <i>.pdf</i> files that are less than 30mb in size.
+											</Text>
+										)
+									}
 								</div>
 							</Dropzone>
 
@@ -293,8 +298,8 @@ const HiringForm = () => {
 								Select files
 							</Button>
 						</div>
-					</FormLayout>
-				</Form>
+					</FormColumn>
+				</FormLayout>
 				<GradientButton
 					type='submit'
 					size='lg'
@@ -303,7 +308,7 @@ const HiringForm = () => {
 					onClick={() => setOpened(true)}>
 					Demander une démo
 				</GradientButton>
-			</FormWrapper>
+			</Form>
 		</ContactFormContainer>
 	);
 };
@@ -336,7 +341,7 @@ const ContactFormContainer = styled.div`
 	}
 `;
 
-const FormWrapper = styled.div`
+const Form = styled.form`
 	display: flex;
 	flex-flow: column;
 	gap: 2rem;
@@ -351,7 +356,7 @@ const FormWrapper = styled.div`
 	}
 `;
 
-const Form = styled.form`
+const FormLayout = styled.div`
 	display: flex;
 	justify-content: space-between;
 	flex-flow: column;
@@ -441,7 +446,7 @@ const TextContent = styled.div`
 	}
 `;
 
-const FormLayout = styled.div`
+const FormColumn = styled.div`
 	display: flex;
 	flex-flow: column;
 	justify-content: center;

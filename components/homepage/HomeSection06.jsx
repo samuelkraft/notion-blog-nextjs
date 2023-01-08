@@ -16,7 +16,7 @@ import { Avatar } from "@mantine/core";
 import Link from "next/link";
 
 const HomeSection06 = () => {
-	const { t } = useTranslation("common", "common");
+	const { t } = useTranslation("common");
 	return (
 		<HomeSection05Container>
 			<HomeSection05Wrapper>
@@ -34,7 +34,7 @@ const HomeSection06 = () => {
 							<Link href='/#contact'>
 								<GradientButton
 									gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-									component='button'
+									type='button'
 									size='lg'
 								>
 									{t("contactUs")}

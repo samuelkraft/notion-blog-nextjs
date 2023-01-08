@@ -17,8 +17,10 @@
 		"@mantine/next": "^5.9.2",
 		"@mantine/prism": "^5.9.2",
 		"@notionhq/client": "^2.2.1",
+		"@sendgrid/mail": "^7.7.0",
 		"@tabler/icons": "^1.116.1",
 		"embla-carousel-react": "^7.0.5",
+		"formidable": "^2.1.1",
 		"framer-motion": "^7.6.19",
 		"i18next": "^22.1.4",
 		"i18next-chained-backend": "^4.2.0",
@@ -30,6 +32,7 @@
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-i18next": "^12.1.1",
-		"styled-components": "^5.3.6"
+		"styled-components": "^5.3.6",
+		"yup": "^0.32.11"
 	}
 }
