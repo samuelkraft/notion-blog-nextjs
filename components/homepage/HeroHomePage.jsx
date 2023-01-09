@@ -56,10 +56,66 @@ const Hero = () => {
 				</motion.div>
 				<BlurCircleContainer>
 					<HeroImageContainer variants={fade}>
-						<ImageWrapper1></ImageWrapper1>
-						<ImageWrapper2></ImageWrapper2>
-						<ImageWrapper3></ImageWrapper3>
-						<ImageWrapper4></ImageWrapper4>
+						<ImageWrapper1 initial={{ opacity: 0, scale: 0.5 }}
+							animate={{ opacity: 1, scale: 1 }}
+							transition={{
+								delay: 0.5,
+								default: {
+									duration: 1,
+									ease: [0, 0.71, 0.2, 1.01],
+								},
+								scale: {
+									type: "spring",
+									damping: 10,
+									stiffness: 100,
+									restDelta: 0.001,
+								},
+							}} />
+						<ImageWrapper2 initial={{ opacity: 0, scale: 0.5 }}
+							animate={{ opacity: 1, scale: 1 }}
+							transition={{
+								delay: 0.75,
+								default: {
+									duration: 1,
+									ease: [0, 0.71, 0.2, 1.01],
+								},
+								scale: {
+									type: "spring",
+									damping: 10,
+									stiffness: 100,
+									restDelta: 0.001,
+								},
+							}} />
+						<ImageWrapper3 initial={{ opacity: 0, scale: 0.5 }}
+							animate={{ opacity: 1, scale: 1 }}
+							transition={{
+								delay: 1,
+								default: {
+									duration: 1,
+									ease: [0, 0.71, 0.2, 1.01],
+								},
+								scale: {
+									type: "spring",
+									damping: 10,
+									stiffness: 100,
+									restDelta: 0.001,
+								},
+							}} />
+						<ImageWrapper4 initial={{ opacity: 0, scale: 0.5 }}
+							animate={{ opacity: 1, scale: 1 }}
+							transition={{
+								delay: 1.25,
+								default: {
+									duration: 1,
+									ease: [0, 0.71, 0.2, 1.01],
+								},
+								scale: {
+									type: "spring",
+									damping: 10,
+									stiffness: 100,
+									restDelta: 0.001,
+								},
+							}} />
 					</HeroImageContainer>
 					<BlurCircleBottomLeft />
 				</BlurCircleContainer>
@@ -222,7 +278,7 @@ export const HeroImageContainer = styled(motion.div)`
 	}
 `;
 
-const ImageWrapper1 = styled.div`
+const ImageWrapper1 = styled(motion.div)`
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
@@ -244,7 +300,7 @@ const ImageWrapper1 = styled.div`
 	}
 `;
 
-const ImageWrapper2 = styled.div`
+const ImageWrapper2 = styled(motion.div)`
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-row-start: 1;
@@ -268,7 +324,7 @@ const ImageWrapper2 = styled.div`
 	}
 `;
 
-const ImageWrapper3 = styled.div`
+const ImageWrapper3 = styled(motion.div)`
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 4;
@@ -291,7 +347,7 @@ const ImageWrapper3 = styled.div`
 		height: 40vw;
 	}
 `;
-const ImageWrapper4 = styled.div`
+const ImageWrapper4 = styled(motion.div)`
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-row-start: 3;

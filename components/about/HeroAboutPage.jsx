@@ -1,15 +1,63 @@
-import Image from "next/image";
 import styled from "styled-components";
 
 import { HeroContainer } from "../homepage/HeroHomePage";
+import { motion } from "framer-motion";
 
 const HeroAboutPage = () => {
 	return (
 		<HeroContainer>
 			<GridContainer>
-				<ImageWrapper1 />
-				<ImageWrapper2 />
-				<ImageWrapper3 />
+				<ImageWrapper1
+					initial={{ opacity: 0, scale: 0.5 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{
+						delay: 1.5,
+						default: {
+							duration: 1,
+							ease: [0, 0.71, 0.2, 1.01],
+						},
+						scale: {
+							type: "spring",
+							damping: 10,
+							stiffness: 100,
+							restDelta: 0.001,
+						},
+					}}
+				/>
+				<ImageWrapper2
+					initial={{ opacity: 0, scale: 0.5 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{
+						delay: 1.5,
+						default: {
+							duration: 1,
+							ease: [0, 0.71, 0.2, 1.01],
+						},
+						scale: {
+							type: "spring",
+							damping: 10,
+							stiffness: 100,
+							restDelta: 0.001,
+						},
+					}}
+				/>
+				<ImageWrapper3
+					initial={{ opacity: 0, scale: 0.5 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{
+						delay: 1.5,
+						default: {
+							duration: 1,
+							ease: [0, 0.71, 0.2, 1.01],
+						},
+						scale: {
+							type: "spring",
+							damping: 10,
+							stiffness: 100,
+							restDelta: 0.001,
+						},
+					}}
+				/>
 			</GridContainer>
 		</HeroContainer>
 	);
@@ -17,7 +65,7 @@ const HeroAboutPage = () => {
 
 export default HeroAboutPage;
 
-const GridContainer = styled.div`
+const GridContainer = styled(motion.div)`
 	margin-top: 4rem;
 	grid-column-gap: 2rem;
 	grid-row-gap: 2rem;
@@ -31,7 +79,7 @@ const GridContainer = styled.div`
 	}
 `;
 
-const ImageWrapper1 = styled.div`
+const ImageWrapper1 = styled(motion.div)`
 	position: relative;
 	width: 20vw;
 	height: 75vh;
@@ -59,7 +107,7 @@ const ImageWrapper1 = styled.div`
 	}
 `;
 
-const ImageWrapper2 = styled.div`
+const ImageWrapper2 = styled(motion.div)`
 	width: 20vw;
 	height: 75vh;
 	margin-top: -5vw;
@@ -95,7 +143,7 @@ const ImageWrapper2 = styled.div`
 	}
 `;
 
-const ImageWrapper3 = styled.div`
+const ImageWrapper3 = styled(motion.div)`
 	width: 20vw;
 	height: 75vh;
 	border-radius: 25vw 25vw 25vw 0px;
