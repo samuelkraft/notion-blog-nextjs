@@ -41,6 +41,8 @@ import circle_6 from "../../../images/circle_6.svg";
 import circle_7 from "../../../images/circle_7.svg";
 import circle_8 from "../../../images/circle_8.svg";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 const useStyles = createStyles((theme) => ({
 	wrapper: {
 		padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
@@ -75,9 +77,10 @@ const PayrollServices = ({ }) => {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["payrollServices", "common"]);
-	}, []);
+	}, [router.locale]);
 
 
 	const features = [

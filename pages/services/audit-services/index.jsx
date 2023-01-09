@@ -40,6 +40,8 @@ import circle_5 from "../../../images/circle_5.svg";
 import circle_7 from "../../../images/circle_7.svg";
 import circle_8 from "../../../images/circle_8.svg";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 
 import { ImageWrapperFullWidth } from "../payroll-services";
 
@@ -77,9 +79,11 @@ const AuditServices = ({ }) => {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["auditServices", "common"]);
-	}, []);
+	}, [router.locale]);
 
 
 	const features = [

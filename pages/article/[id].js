@@ -172,15 +172,12 @@ export default function Post({ page, blocks }) {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
-	}, []);
+	}, [router.locale]);
 
-	if (!page || !blocks) {
-		return <div />;
-	}
-
-	const router = useRouter();
 	if (router.isFallback) {
 		return (
 			<>
@@ -191,6 +188,11 @@ export default function Post({ page, blocks }) {
 			</>
 		);
 	}
+
+	if (!page || !blocks) {
+		return <div />;
+	}
+
 	return (
 		<div>
 			<Head>

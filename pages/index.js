@@ -16,15 +16,19 @@ import { useEffect } from "react";
 import HeaderMegaMenu from "../components/header/HeaderMegaMenu"
 import Footer from "../components/footer/Footer"
 export const databaseId = process.env.NOTION_DATABASE_ID;
+import { useRouter } from "next/router";
+
+
 
 export default function Home({ posts }) {
     const { t, i18n } = useTranslation("common", {
         bindI18n: "languageChanged loaded",
     });
+    const router = useRouter();
 
     useEffect(() => {
         i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
-    }, []);
+    }, [router.locale]);
 
     return (
         <div>

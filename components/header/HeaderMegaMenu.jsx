@@ -206,7 +206,7 @@ export default function HeaderMegaMenu() {
 
 	const businessLinks = businessServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Link href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
+			<Link href={item.href} locale={router.locale} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={item.color} />
@@ -224,7 +224,7 @@ export default function HeaderMegaMenu() {
 
 	const privateTaxLinks = privateTaxServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Link href={item.href} className={classes.subLinkText} onClick={closeDrawer}>
+			<Link href={item.href} locale={router.locale} className={classes.subLinkText} onClick={closeDrawer}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={item.color} />
@@ -251,7 +251,7 @@ export default function HeaderMegaMenu() {
 							className={classes.hiddenDesktop}
 							size='lg'
 						/>
-						<Link href='/' component='a'>
+						<Link href='/' locale={router.locale}>
 							<Image src={Logo} width='150' height='100' alt="Expand CPA LOGO" />
 						</Link>
 						<Container fluid>
@@ -259,7 +259,7 @@ export default function HeaderMegaMenu() {
 								sx={{ height: "100%" }}
 								spacing={10}
 								className={classes.hiddenMobile}>
-								<Link href='/about' className={classes.link}>
+								<Link href='/about' locale={router.locale} className={classes.link}>
 									{t("cabinet")}
 								</Link>
 								<HoverCard
@@ -294,6 +294,7 @@ export default function HeaderMegaMenu() {
 											</Text>
 											<Link
 												href='/services'
+												locale={router.locale}
 												size='xs'
 												style={{
 													fontFamily: "'Gilroy',sans-serif",
@@ -334,9 +335,8 @@ export default function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Link href="/#contact">
+												<Link href="/#contact" locale={router.locale}>
 													<Button
-
 														variant='default'
 														style={{
 															fontFamily: "'Gilroy',sans-serif",
@@ -412,7 +412,7 @@ export default function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Link href="/#contact">
+												<Link href="/#contact" locale={router.locale}>
 													<Button
 														variant='default'
 														style={{
@@ -426,10 +426,10 @@ export default function HeaderMegaMenu() {
 										</div>
 									</HoverCard.Dropdown>
 								</HoverCard>
-								<Link href='/blog' className={classes.link}>
+								<Link href='/blog' locale={router.locale} className={classes.link}>
 									{t("blog")}
 								</Link>
-								<Link href='/#contact' className={classes.link}>
+								<Link href='/#contact' locale={router.locale} className={classes.link}>
 									{t("contact")}
 								</Link>
 								<Group className={classes.hiddenMobile}>
@@ -457,7 +457,7 @@ export default function HeaderMegaMenu() {
 						color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
 					/>
 
-					<Link href='/about' className={classes.link} onClick={closeDrawer}>
+					<Link href='/about' locale={router.locale} className={classes.link} onClick={closeDrawer}>
 						{t("cabinet")}
 					</Link>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -479,10 +479,10 @@ export default function HeaderMegaMenu() {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-					<Link href='/blog' className={classes.link} onClick={closeDrawer}>
+					<Link href='/blog' locale={router.locale} className={classes.link} onClick={closeDrawer}>
 						{t("blog")}
 					</Link>
-					<Link href='/#contact' className={classes.link} onClick={closeDrawer}>
+					<Link href='/#contact' locale={router.locale} className={classes.link} onClick={closeDrawer}>
 						{t("contact")}
 					</Link>
 

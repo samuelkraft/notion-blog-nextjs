@@ -6,6 +6,7 @@ import HeroBlogPage from "../../components/blog/HeroBlogPage";
 import CategoryBlog from "../../components/blog/CategoryBlog";
 import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
 import Footer from "../../components/footer/Footer";
+import { useRouter } from "next/router";
 
 const getStaticProps = async ({ locale }) => {
 	const database = await getDatabase(databaseId);
@@ -28,9 +29,11 @@ export default function Blog({ posts }) {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
-	}, []);
+	}, [router.locale]);
 
 	const categoryBusinessPosts = posts.filter(
 		(post) => post?.properties?.Tags?.multi_select[0]?.name === "Business"

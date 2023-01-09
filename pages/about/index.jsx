@@ -11,14 +11,8 @@ import HiringForm from "../../components/about/HiringForm";
 import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
 import Footer from "../../components/footer/Footer";
 import { motion } from "framer-motion";
-import {
-	pageAnimation,
-	fade,
-	photoAnim,
-	lineAnim,
-	slider,
-	sliderContainer,
-} from "../../lib/animation";
+import { useRouter } from "next/router";
+import { pageAnimation, slider, sliderContainer } from "../../lib/animation";
 import styled from "styled-components";
 
 const AboutPage = ({}) => {
@@ -26,9 +20,11 @@ const AboutPage = ({}) => {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
-	}, []);
+	}, [router.locale]);
 
 	return (
 		<motion.div variants={sliderContainer} initial='hidden' animate='show'>

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { IconArrowRight } from "@tabler/icons";
 import styled from "styled-components";
 import { Tag } from "../../components/homepage/HomeSection01";
-
+import { useRouter } from "next/router";
 import {
 	HomeSection05Container,
 	HomeSection05Wrapper,
@@ -54,9 +54,11 @@ const ServicesPages = ({ }) => {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
-	}, []);
+	}, [router.locale]);
 
 	return (
 		<>

@@ -33,6 +33,7 @@ import circle_7 from "../../../images/circle_7.svg";
 import circle_8 from "../../../images/circle_8.svg";
 import Link from "next/link";
 import { ImageWrapperFullWidth } from "../payroll-services";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -68,9 +69,11 @@ const AdministritiveServices = ({ }) => {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["administrativeServices", "common"]);
-	}, []);
+	}, [router.locale]);
 
 	const features = [
 		{

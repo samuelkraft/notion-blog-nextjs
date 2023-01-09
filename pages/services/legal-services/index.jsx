@@ -41,6 +41,7 @@ import Link from "next/link";
 import HeaderMegaMenu from "../../../components/header/HeaderMegaMenu";
 import Footer from "../../../components/footer/Footer";
 import { ImageWrapperFullWidth } from "../payroll-services";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -76,9 +77,11 @@ const LegalServices = ({ }) => {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["legalServices", "common"]);
-	}, []);
+	}, [router.locale]);
 
 	const features = [
 		{

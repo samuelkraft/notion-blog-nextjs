@@ -42,6 +42,7 @@ import Link from "next/link";
 import { ImageWrapperFullWidth } from "../services/payroll-services";
 import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
 import Footer from "../../components/footer/Footer";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -77,9 +78,11 @@ const UsaTax = ({ }) => {
 		bindI18n: "languageChanged loaded",
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["usaTax", "common"]);
-	}, []);
+	}, [router.locale]);
 
 
 	const features = [
