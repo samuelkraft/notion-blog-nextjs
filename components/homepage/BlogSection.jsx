@@ -4,11 +4,11 @@ import { Tag } from "./HomeSection01";
 import { HomeSection05Container, HomeSection05Wrapper } from "./HomeSection05";
 
 // Animation
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 
 import { useTranslation } from "next-i18next";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import GradientButton from "../button/GradientButton";
 
 import { Carousel } from "@mantine/carousel";
@@ -25,9 +25,23 @@ const BlogSection = ({ posts }) => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
 
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
 
 	return (
-		<HomeSection05Container>
+		<HomeSection05Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref}
+		>
 			<HomeSection05Wrapper>
 				<motion.div
 					className='text-content'
@@ -101,6 +115,21 @@ const BlogSection = ({ posts }) => {
 						return (
 							<Carousel.Slide key={post.id}>
 								<BlogCard
+									initial={{ opacity: 0, scale: 0.5 }}
+									animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.5 }}
+									transition={{
+										delay: 1.5,
+										default: {
+											duration: 5,
+											ease: [0, 0.71, 0.2, 1.01],
+										},
+										scale: {
+											type: "tween",
+											damping: 10,
+											stiffness: 100,
+											restDelta: 0.001,
+										},
+									}}
 									cover={
 										post?.cover?.external?.url ||
 										"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
@@ -130,7 +159,7 @@ const BlogSection = ({ posts }) => {
 	);
 };
 
-const BlogCard = styled.div`
+const BlogCard = styled(motion.div)`
 	width: 400px;
 	height: 450px;
 	display: flex;

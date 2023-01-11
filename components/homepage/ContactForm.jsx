@@ -14,7 +14,7 @@ import redLocation from "../../images/red_location.svg";
 import greenLocation from "../../images/green_location.svg";
 import phone from "../../images/phone.svg";
 import map from "../../images/map.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import {
 	TextInput,
@@ -26,11 +26,16 @@ import {
 } from "@mantine/core";
 
 import { IconMail, IconUser, IconPhone, IconCircleCheck } from "@tabler/icons";
+import { motion, useInView } from 'framer-motion'
+
 
 const ContactForm = () => {
 	const { t, i18n } = useTranslation("common", {
 		bindI18n: "languageChanged loaded",
 	});
+
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
 
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
@@ -58,7 +63,19 @@ const ContactForm = () => {
 	}
 
 	return (
-		<ContactFormContainer id='contact'>
+		<ContactFormContainer id='contact'
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref}
+		>
 			<Tag style={{ width: "35%" }}>
 				<span>Contact</span>
 			</Tag>
@@ -261,7 +278,7 @@ const ContactForm = () => {
 	);
 };
 
-const ContactFormContainer = styled.div`
+const ContactFormContainer = styled(motion.div)`
 	padding: 1rem;
 
 	@media screen and (min-width: 768px) {

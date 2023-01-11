@@ -10,7 +10,7 @@ import whatsapp from "../../images/whatsapp.svg";
 import youtube from "../../images/youtube.svg";
 import instagram from "../../images/instagram.svg";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/router";
 import {
 	TextInput,
@@ -23,10 +23,11 @@ import {
 
 import { IconMail, IconUser, IconPhone, IconCircleCheck } from "@tabler/icons";
 
-import { useRef } from "react";
 import { Text, Button, createStyles } from "@mantine/core";
 import { Dropzone, MIME_TYPES } from "@mantine/dropzone";
 import { IconCloudUpload, IconX, IconDownload } from "@tabler/icons";
+
+import { motion, useInView } from "framer-motion"
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -60,7 +61,8 @@ const HiringForm = () => {
 	const router = useRouter();
 	const [selectedFile, setSelectedFile] = useState(null);
 	const openRef = useRef(null);
-
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
 	const onDrop = acceptedFiles => {
 		// Update the selectedFile state with the accepted file
 		setSelectedFile(acceptedFiles[0]);
@@ -97,7 +99,19 @@ const HiringForm = () => {
 	}
 
 	return (
-		<ContactFormContainer id='contact'>
+		<ContactFormContainer id='contact'
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'beforeChildren',
+			}}
+			ref={ref}
+		>
 			<Tag style={{ width: "40%" }}>
 				<span>{t("recrutement")}</span>
 			</Tag>
@@ -315,7 +329,7 @@ const HiringForm = () => {
 
 export default HiringForm;
 
-const ContactFormContainer = styled.div`
+const ContactFormContainer = styled(motion.div)`
 	padding: 1rem;
 
 	@media screen and (min-width: 768px) {

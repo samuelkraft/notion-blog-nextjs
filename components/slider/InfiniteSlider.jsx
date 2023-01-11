@@ -21,6 +21,8 @@ import stoick from "../../images/stoick.png";
 import foodGates from "../../images/foodGates.png";
 import pangea from "../../images/pangea.png";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 
 const InfiniteSlider = () => {
 	const { t } = useTranslation("common");
@@ -46,8 +48,24 @@ const InfiniteSlider = () => {
 		kmart,
 		veepee,
 	];
+
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
 	return (
-		<div>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref}
+		>
 			<Heading>{t("trustedUs")}</Heading>
 			<InfiniteSliderContainer>
 				<InfiniteSliderWrapper>
@@ -69,7 +87,7 @@ const InfiniteSlider = () => {
 					</BrandSlider>
 				</InfiniteSliderWrapper>
 			</InfiniteSliderContainer>
-		</div>
+		</motion.div>
 	);
 };
 

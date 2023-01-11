@@ -9,11 +9,14 @@ import franco from "../../images/franco.png";
 import frenchAmerican from "../../images/frenchAmerican.png";
 import pennylane from "../../images/pennylane.png";
 import memories from "../../images/memories.png";
-
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import { HomeSection05Wrapper } from "../homepage/HomeSection05";
 import Image from "next/image";
 const AboutSection04 = () => {
 	const { t } = useTranslation("common");
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
 	const partners = [
 		cic,
 		businessFrance,
@@ -25,7 +28,18 @@ const AboutSection04 = () => {
 		franco,
 	];
 	return (
-		<AboutSection03Container>
+		<AboutSection03Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'beforeChildren',
+			}}
+			ref={ref} >
 			<HomeSection05Wrapper>
 				<OurPartners>
 					<h1>{t("ourPartners")}</h1>

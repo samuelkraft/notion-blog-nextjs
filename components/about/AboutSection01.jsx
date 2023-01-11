@@ -5,17 +5,49 @@ import { Tag } from "../homepage/HomeSection01";
 import { useTranslation } from "next-i18next";
 
 import logoArrow from "../../images/logo_arrow.png";
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
+
 
 const AboutSection01 = () => {
 	const { t } = useTranslation("common");
+
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
 	return (
-		<AboutSection01Container>
+		<AboutSection01Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'beforeChildren',
+			}}
+			ref={ref}
+		>
 			<AboutSection01Wrapper>
 				<Tag style={{ width: "30%" }}>
 					<span>{t("about")}</span>
 				</Tag>
 
-				<SloganAbout>{t("slogan")}</SloganAbout>
+				<SloganAbout
+					initial={{ y: 200, opacity: 0 }}
+					animate={{
+						y: 0,
+						opacity: 1,
+					}}
+					transition={{
+						duration: 1,
+						delay: 1.5,
+						ease: 'easeInOut',
+					}}
+				>
+					{t("slogan")}
+				</SloganAbout>
 
 				<OurStoryContainer>
 					<StoryContainer>
@@ -34,11 +66,41 @@ const AboutSection01 = () => {
 						</Story>
 					</StoryContainer>
 
-					<StoryImageWrapper />
+					<StoryImageWrapper
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.5 }}
+						transition={{
+							delay: 1.25,
+							default: {
+								duration: 1,
+								ease: [0, 0.71, 0.2, 1.01],
+							},
+							scale: {
+								type: "spring",
+								damping: 10,
+								stiffness: 100,
+								restDelta: 0.001,
+							},
+						}} />
 				</OurStoryContainer>
 
 				<OurStoryContainer2>
-					<StoryImageWrapper2 />
+					<StoryImageWrapper2
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.5 }}
+						transition={{
+							delay: 1.25,
+							default: {
+								duration: 1,
+								ease: [0, 0.71, 0.2, 1.01],
+							},
+							scale: {
+								type: "spring",
+								damping: 10,
+								stiffness: 100,
+								restDelta: 0.001,
+							},
+						}} />
 
 					<StoryContainer>
 						<Story>
@@ -58,7 +120,7 @@ const AboutSection01 = () => {
 
 export default AboutSection01;
 
-export const AboutSection01Container = styled.div`
+export const AboutSection01Container = styled(motion.div)`
 	margin-top: 4rem;
 
 	padding: 2rem;
@@ -92,7 +154,7 @@ const AboutSection01Wrapper = styled.div`
 	text-align: center;
 `;
 
-export const SloganAbout = styled.h1`
+export const SloganAbout = styled(motion.h1)`
 	font-family: "AllRoundGothic-Demi";
 	font-size: 42px;
 	color: #1b1464;
@@ -167,7 +229,7 @@ const Story = styled.div`
 	}
 `;
 
-const StoryImageWrapper = styled.div`
+const StoryImageWrapper = styled(motion.div)`
 	width: 100%;
 	height: 30vh;
 	border-top-right-radius: 12vw;

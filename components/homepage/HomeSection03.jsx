@@ -2,7 +2,9 @@ import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 
 import { SloganSection01, HeadingSection01 } from "./HomeSection01";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useInView, motion } from "framer-motion";
+
 
 const HomeSection03 = () => {
 	const { t, i18n } = useTranslation("common", {
@@ -13,8 +15,23 @@ const HomeSection03 = () => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
 
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
+
 	return (
-		<HomeSection03Container>
+		<HomeSection03Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref} >
 			<TextContent>
 				<SloganSection03>
 					<h1>{t("section03_title")}</h1>
@@ -41,7 +58,7 @@ const HomeSection03 = () => {
 	);
 };
 
-const HomeSection03Container = styled.div`
+const HomeSection03Container = styled(motion.div)`
 	margin: 3rem 0;
 	background: rgba(217, 224, 236, 0.2);
 `;

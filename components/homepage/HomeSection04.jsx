@@ -8,13 +8,13 @@ import {
 } from "./HomeSection01";
 import check from "../../images/check.svg";
 // Animation
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
 import { HeroImageContainer } from "./HeroHomePage";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 const HomeSection04 = () => {
@@ -26,8 +26,23 @@ const HomeSection04 = () => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
 
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
 	return (
-		<HomeSection01Container>
+		<HomeSection01Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref}
+		>
 			<HomeSection01Wrapper>
 				<motion.div
 					className='text-content'
@@ -82,9 +97,39 @@ const HomeSection04 = () => {
 						</Link>
 					</div>
 				</motion.div>
-				<HeroImageContainerSection04 variants={fade}>
-					<ImageWrapper1></ImageWrapper1>
-					<ImageWrapper2></ImageWrapper2>
+				<HeroImageContainerSection04>
+					<ImageWrapper1
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{
+							delay: 5,
+							default: {
+								duration: 1,
+								ease: [0, 0.71, 0.2, 1.01],
+							},
+							scale: {
+								type: "spring",
+								damping: 10,
+								stiffness: 100,
+								restDelta: 0.001,
+							},
+						}} />
+					<ImageWrapper2
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{
+							delay: 5,
+							default: {
+								duration: 1,
+								ease: [0, 0.71, 0.2, 1.01],
+							},
+							scale: {
+								type: "spring",
+								damping: 10,
+								stiffness: 100,
+								restDelta: 0.001,
+							},
+						}} />
 				</HeroImageContainerSection04>
 			</HomeSection01Wrapper>
 		</HomeSection01Container>
@@ -107,7 +152,7 @@ const RowWrapper = styled.div`
 	align-items: center;
 `;
 
-const ImageWrapper1 = styled.div`
+const ImageWrapper1 = styled(motion.div)`
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
@@ -139,7 +184,7 @@ const ImageWrapper1 = styled.div`
 	}
 
 `;
-const ImageWrapper2 = styled.div`
+const ImageWrapper2 = styled(motion.div)`
 	width: 12vw;
 	height: 12vw;
 	border-top-left-radius: 100%;

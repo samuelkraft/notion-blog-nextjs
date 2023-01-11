@@ -4,11 +4,28 @@ import { AboutSection01Container } from "./AboutSection01";
 import { AboutSection02Wrapper } from "./AboutSection02";
 import { IconArrowRight } from "@tabler/icons";
 import BorderedButton from "../button/BorderedButton";
+import { motion, useInView } from 'framer-motion';
+import { useRef } from "react";
 
 const AboutSection05 = () => {
 	const { t } = useTranslation("common");
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
 	return (
-		<AboutSection05Container>
+		<AboutSection05Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'beforeChildren',
+			}}
+			ref={ref}
+		>
 			<AboutSection02Wrapper>
 				<AboutSection05Wrapper>
 					<JoinOurTeamContainer>

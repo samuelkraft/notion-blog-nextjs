@@ -1,122 +1,184 @@
-import React from "react";
+import React from 'react'
 
-import { useTranslation } from "next-i18next";
-import GradientButton from "../button/GradientButton";
-import styled from "styled-components";
+import { useTranslation } from 'next-i18next'
+import GradientButton from '../button/GradientButton'
+import styled from 'styled-components'
 
 // Animation
-import { motion } from "framer-motion";
-import { titleAnim, fade } from "../../lib/animation";
-import { Slogan, Heading, HeroWrapper } from "./HeroHomePage";
+import { motion, useInView } from 'framer-motion'
+import { titleAnim, fade } from '../../lib/animation'
+import { Slogan, Heading, HeroWrapper } from './HeroHomePage'
 
-import circle_1 from "../../images/circle_1.svg";
-import circle_2 from "../../images/circle_2.svg";
-import circle_3 from "../../images/circle_3.svg";
-import circle_4 from "../../images/circle_4.svg";
-import circle_5 from "../../images/circle_5.svg";
-import circle_6 from "../../images/circle_6.svg";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect } from "react";
+import circle_1 from '../../images/circle_1.svg'
+import circle_2 from '../../images/circle_2.svg'
+import circle_3 from '../../images/circle_3.svg'
+import circle_4 from '../../images/circle_4.svg'
+import circle_5 from '../../images/circle_5.svg'
+import circle_6 from '../../images/circle_6.svg'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 
 const HomeSection01 = () => {
-	const { t, i18n } = useTranslation("common", {
-		bindI18n: "languageChanged loaded",
-	});
+	const { t, i18n } = useTranslation('common', {
+		bindI18n: 'languageChanged loaded',
+	})
 
 	useEffect(() => {
-		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
-	}, []);
+		i18n.reloadResources(i18n.resolvedLanguage, ['common'])
+	}, [])
+
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
 	return (
-		<HomeSection01Container>
+		<HomeSection01Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref}
+		>
 			<HomeSection01Wrapper>
 				<motion.div
 					className='text-content'
 					variants={titleAnim}
 					initial='hidden'
-					animate='show'>
+					animate='show'
+				>
 					<Tag>
-						<span>{t("whyUs")}</span>
+						<span>{t('whyUs')}</span>
 					</Tag>
 					<SloganSection01>
-						<h1>{t("section01_title")}</h1>
+						<motion.h1
+							initial={{ y: 200, opacity: 0.5 }}
+							animate={{
+								y: 0,
+								opacity: 1,
+							}}
+							transition={{
+								duration: 1,
+								delay: 3,
+								ease: 'easeInOut',
+							}}
+						>
+							{t('section01_title')}
+						</motion.h1>
 					</SloganSection01>
-					<HeadingSection01>
-						<h2>
-							{t("section01_heading_pt1")}
-							<b>{t("section01_bold1")}</b>
-							{t("section01_heading_pt2")}
-						</h2>
-					</HeadingSection01>
-					<HeadingSection01>
-						<h2>
-							{t("section01_heading_pt3")}
-							<b>{t("section01_bold2")}</b>
-							{t("section01_heading_pt4")}
-						</h2>
-					</HeadingSection01>
-					<HeadingSection01 style={{ marginBottom: "3rem" }}>
-						<h2>
-							{t("our")}
-							<b>{t("section01_bold3")}</b>
-							{t("section01_heading_pt5")}
-						</h2>
-					</HeadingSection01>
-					<Link href='/services'>
-						<GradientButton
-							gradientColor='#0657CF'
-							type='button'
-							width={200}>
-							{t("readMore")}
-						</GradientButton>
-					</Link>
+					<motion.div
+						initial={{ y: 200, opacity: 0.5 }}
+						animate={{
+							y: 0,
+							opacity: 1,
+						}}
+						transition={{
+							duration: 1,
+							delay: 3,
+							ease: 'easeInOut',
+						}}
+					>
+						<HeadingSection01>
+							<h2>
+								{t('section01_heading_pt1')}
+								<b>{t('section01_bold1')}</b>
+								{t('section01_heading_pt2')}
+							</h2>
+						</HeadingSection01>
+						<HeadingSection01>
+							<h2>
+								{t('section01_heading_pt3')}
+								<b>{t('section01_bold2')}</b>
+								{t('section01_heading_pt4')}
+							</h2>
+						</HeadingSection01>
+						<HeadingSection01 style={{ marginBottom: '3rem' }}>
+							<h2>
+								{t('our')}
+								<b>{t('section01_bold3')}</b>
+								{t('section01_heading_pt5')}
+							</h2>
+						</HeadingSection01>
+						<Link href='/services'>
+							<GradientButton
+								gradientColor='#0657CF'
+								type='button'
+								width={200}
+							>
+								{t('readMore')}
+							</GradientButton>
+						</Link>
+					</motion.div>
 				</motion.div>
 				<FeaturesCardContainer>
 					<FeaturesCard>
-						<Image src={circle_1} alt="comptable_dedie" />
+						<Image
+							src={circle_1}
+							alt='comptable_dedie'
+						/>
 						<div className='text-content'>
-							<h4>{t("comptable_dedie")}</h4>
+							<h4>{t('comptable_dedie')}</h4>
 						</div>
 					</FeaturesCard>
 					<FeaturesCard2>
-						<Image src={circle_2} alt="administrativeServices" />
+						<Image
+							src={circle_2}
+							alt='administrativeServices'
+						/>
 						<div className='text-content'>
-							<h4>{t("administrativeServices")}</h4>
+							<h4>{t('administrativeServices')}</h4>
 						</div>
 					</FeaturesCard2>
 					<FeaturesCard3>
-						<Image src={circle_3} alt="expertiseRH" />
+						<Image
+							src={circle_3}
+							alt='expertiseRH'
+						/>
 						<div className='text-content'>
-							<h4>{t("expertiseRH")}</h4>
+							<h4>{t('expertiseRH')}</h4>
 						</div>
 					</FeaturesCard3>
 					<FeaturesCard4>
-						<Image src={circle_4} alt="conseilJuridique" />
+						<Image
+							src={circle_4}
+							alt='conseilJuridique'
+						/>
 						<div className='text-content'>
-							<h4>{t("conseilJuridique")}</h4>
+							<h4>{t('conseilJuridique')}</h4>
 						</div>
 					</FeaturesCard4>
 					<FeaturesCard5>
-						<Image src={circle_5} alt="conseillerFiscal" />
+						<Image
+							src={circle_5}
+							alt='conseillerFiscal'
+						/>
 						<div className='text-content'>
-							<h4>{t("conseillerFiscal")}</h4>
+							<h4>{t('conseillerFiscal')}</h4>
 						</div>
 					</FeaturesCard5>
 					<FeaturesCard6>
-						<Image src={circle_6} alt="auditServices" />
+						<Image
+							src={circle_6}
+							alt='auditServices'
+						/>
 						<div className='text-content'>
-							<h4>{t("auditServices")}</h4>
+							<h4>{t('auditServices')}</h4>
 						</div>
 					</FeaturesCard6>
 				</FeaturesCardContainer>
 			</HomeSection01Wrapper>
 		</HomeSection01Container>
-	);
-};
+	)
+}
 
-export default HomeSection01;
+export default HomeSection01
 
-export const HomeSection01Container = styled.div`
+export const HomeSection01Container = styled(motion.div)`
 	padding: 2rem;
 	@media screen and (min-width: 768px) {
 		padding: 1rem;
@@ -138,7 +200,7 @@ export const HomeSection01Container = styled.div`
 	@media screen and (min-width: 2500px) {
 		padding: 1rem 25%;
 	}
-`;
+`
 
 export const HomeSection01Wrapper = styled(HeroWrapper)`
 	.text-content {
@@ -149,10 +211,8 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 		@media screen and (min-width: 1440px) {
 			margin-top: 0rem;
 			gap: 2rem;
-
 		}
 	}
-
 
 	@media screen and (min-width: 768px) {
 		font-size: 48px;
@@ -170,8 +230,7 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 		justify-content: space-evenly;
 		gap: 5rem;
 	}
-
-`;
+`
 
 export const HeadingSection01 = styled(Heading)`
 	margin-top: 1.5rem;
@@ -200,11 +259,11 @@ export const HeadingSection01 = styled(Heading)`
 		}
 		width: 90%;
 	}
-`;
+`
 
 export const SloganSection01 = styled(Slogan)`
 	h1 {
-		font-family: "AllRoundGothic-Demi";
+		font-family: 'AllRoundGothic-Demi';
 		font-size: 42px;
 		color: #1b1464;
 		line-height: 1.2;
@@ -229,7 +288,7 @@ export const SloganSection01 = styled(Slogan)`
 			letter-spacing: 0.327px;
 		}
 	}
-`;
+`
 
 export const FeaturesCardContainer = styled.div`
 	position: relative;
@@ -264,9 +323,9 @@ export const FeaturesCardContainer = styled.div`
 	}
 
 	margin-top: 5rem;
-`;
+`
 
-export const FeaturesCard = styled.div`
+export const FeaturesCard = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -280,7 +339,7 @@ export const FeaturesCard = styled.div`
 
 	.text-content {
 		margin-top: 2rem;
-		font-family: "AllRoundGothic-Demi";
+		font-family: 'AllRoundGothic-Demi';
 		font-style: normal;
 		font-weight: 400;
 		font-size: 32px;
@@ -312,7 +371,7 @@ export const FeaturesCard = styled.div`
 			font-size: 32px;
 		}
 	}
-`;
+`
 
 const FeaturesCard2 = styled(FeaturesCard)`
 	transform: translateY(-3rem);
@@ -323,11 +382,11 @@ const FeaturesCard2 = styled(FeaturesCard)`
 	@media screen and (min-width: 768px) {
 		transform: translateY(-3rem);
 	}
-`;
-const FeaturesCard3 = styled(FeaturesCard)``;
-const FeaturesCard4 = styled(FeaturesCard2)``;
-const FeaturesCard5 = styled(FeaturesCard)``;
-const FeaturesCard6 = styled(FeaturesCard2)``;
+`
+const FeaturesCard3 = styled(FeaturesCard)``
+const FeaturesCard4 = styled(FeaturesCard2)``
+const FeaturesCard5 = styled(FeaturesCard)``
+const FeaturesCard6 = styled(FeaturesCard2)``
 
 export const Tag = styled.div`
 	text-transform: uppercase;
@@ -343,4 +402,4 @@ export const Tag = styled.div`
 	@media screen and (max-width: 1024px) {
 		margin: 2rem 0;
 	}
-`;
+`

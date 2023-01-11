@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Anchor } from '@mantine/core';
 import styled from "styled-components";
 
 import Logo from "../../images/logo_Expand-CPA.svg";
@@ -21,9 +21,9 @@ const Footer = () => {
 		<FooterContainer>
 			<FooterWrapper>
 				<div className='brand'>
-					<Link href='/'>
+					<Anchor href='/'>
 						<Image src={Logo} width={200} height={150} alt="logo" />
-					</Link>
+					</Anchor>
 					<div>
 						<p>{t("slogan")}</p>
 					</div>
@@ -31,39 +31,39 @@ const Footer = () => {
 				<div className='column'>
 					<h2>{t("footerLinks")}</h2>
 					<div>
-						<Link href='/about'>
+						<Anchor href='/about'>
 							<div className='links'>
 								<span>{t("cabinet")}</span>
 							</div>
-						</Link>
+						</Anchor>
 					</div>
 					<div>
-						<Link href='/services'>
+						<Anchor href='/services'>
 							<div className='links'>
 								<span>{t("business")}</span>
 							</div>
-						</Link>
+						</Anchor>
 					</div>
 					<div>
-						<Link href='/french-tax'>
+						<Anchor href='/french-tax'>
 							<div className='links'>
 								<span>{t("tax")}</span>
 							</div>
-						</Link>
+						</Anchor>
 					</div>
 					<div>
-						<Link href='/blog'>
+						<Anchor href='/blog'>
 							<div className='links'>
 								<span>{t("blog")}</span>
 							</div>
-						</Link>
+						</Anchor>
 					</div>
 					<div>
-						<Link href='/#contact'>
+						<Anchor href='/#contact'>
 							<div className='links'>
 								<span>{t("contact")}</span>
 							</div>
-						</Link>
+						</Anchor>
 					</div>
 				</div>
 				<div className='column'>

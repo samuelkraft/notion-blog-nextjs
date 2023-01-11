@@ -20,14 +20,18 @@ import hodaya from "../../images/hodaya.png";
 import hana from "../../images/hana.png";
 import sarfati from "../../images/sarfati.png";
 import attali from "../../images/attali.png";
-
+import { useRef } from "react";
 import {
 	HomeSection05Container,
 	HomeSection05Wrapper,
 } from "../homepage/HomeSection05";
 
+import { motion, useInView } from 'framer-motion';
+
 const AboutSection03 = () => {
 	const { t } = useTranslation("common");
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
 	const teamMembers = [
 		{
 			name: "Léa",
@@ -116,7 +120,19 @@ const AboutSection03 = () => {
 		},
 	];
 	return (
-		<AboutSection03Container>
+		<AboutSection03Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'beforeChildren',
+			}}
+			ref={ref}
+		>
 			<HomeSection05Wrapper>
 				<OurTeam>
 					<h1>{t("ourTeam")}</h1>

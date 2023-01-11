@@ -8,9 +8,9 @@ import {
 import GradientButton from "../button/GradientButton";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import Link from "next/link"
 
@@ -23,8 +23,23 @@ const HomeSection02 = () => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
 
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
+
 	return (
-		<HomeSection01Container>
+		<HomeSection01Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref}>
 			<HomeSection02Wrapper>
 				<ImageWrapper></ImageWrapper>
 				<motion.div
@@ -36,36 +51,60 @@ const HomeSection02 = () => {
 						<span>{t("whyUs")}</span>
 					</Tag>
 					<SloganSection01>
-						<h1>{t("section02_title")}</h1>
+						<motion.h1
+							initial={{ y: 200, opacity: 0.5 }}
+							animate={{
+								y: 0,
+								opacity: 1,
+							}}
+							transition={{
+								duration: 1,
+								delay: 4.5,
+								ease: 'easeInOut',
+							}}>{t("section02_title")}</motion.h1>
 					</SloganSection01>
-					<HeadingSection01>
-						<h2>
-							{t("section02_heading_pt1")}
-							<b>
-								<u> {t("section02_bold1")}</u>
-							</b>
-							<b>{t("section02_bold2")}</b>
-							{t("section02_heading_pt2")}
-						</h2>
-					</HeadingSection01>
-					<HeadingSection01>
-						<h2>
-							{t("section02_heading_pt3")}
-							<b>{t("section02_bold3")}</b>
-							{t("section02_heading_pt4")}
-						</h2>
-					</HeadingSection01>
+					<motion.div
+						initial={{ y: 200, opacity: 0.5 }}
+						animate={{
+							y: 0,
+							opacity: 1,
+						}}
+						transition={{
+							duration: 1,
+							delay: 4.5,
+							ease: 'easeInOut',
+						}}
+					>
 
-					<HeadingSection01>
-						<Link href='/services/accounting-services'>
-							<GradientButton
-								gradientColor='#0657CF'
-								type='button'
-								width={200}>
-								{t("readMore")}
-							</GradientButton>
-						</Link>
-					</HeadingSection01>
+						<HeadingSection01>
+							<h2>
+								{t("section02_heading_pt1")}
+								<b>
+									<u> {t("section02_bold1")}</u>
+								</b>
+								<b>{t("section02_bold2")}</b>
+								{t("section02_heading_pt2")}
+							</h2>
+						</HeadingSection01>
+						<HeadingSection01>
+							<h2>
+								{t("section02_heading_pt3")}
+								<b>{t("section02_bold3")}</b>
+								{t("section02_heading_pt4")}
+							</h2>
+						</HeadingSection01>
+
+						<HeadingSection01>
+							<Link href='/services/accounting-services'>
+								<GradientButton
+									gradientColor='#0657CF'
+									type='button'
+									width={200}>
+									{t("readMore")}
+								</GradientButton>
+							</Link>
+						</HeadingSection01>
+					</motion.div>
 				</motion.div>
 			</HomeSection02Wrapper>
 		</HomeSection01Container>

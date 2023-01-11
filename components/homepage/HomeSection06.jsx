@@ -4,7 +4,7 @@ import { Tag } from "./HomeSection01";
 import { HomeSection05Container, HomeSection05Wrapper } from "./HomeSection05";
 
 // Animation
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { titleAnim, fade } from "../../lib/animation";
 
 import { useTranslation } from "next-i18next";
@@ -14,7 +14,7 @@ import { Carousel } from "@mantine/carousel";
 import { IconArrowRight, IconArrowLeft } from "@tabler/icons";
 import { Avatar } from "@mantine/core";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const HomeSection06 = () => {
 	const { t, i18n } = useTranslation("common", {
@@ -24,8 +24,24 @@ const HomeSection06 = () => {
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
+
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
 	return (
-		<HomeSection05Container>
+		<HomeSection05Container
+			initial={{ opacity: 0 }}
+			animate={{
+				opacity: isInView ? 1 : 0,
+			}}
+			transition={{
+				duration: 1,
+				delay: 0.5,
+				ease: 'easeInOut',
+				when: 'afterChildren',
+			}}
+			ref={ref}
+		>
 			<HomeSection05Wrapper>
 				<motion.div
 					className='text-content'
