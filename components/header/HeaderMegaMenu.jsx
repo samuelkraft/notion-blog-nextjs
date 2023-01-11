@@ -16,6 +16,7 @@ import {
 	Collapse,
 	ScrollArea,
 	Container,
+	Anchor,
 } from "@mantine/core";
 
 import { useDisclosure } from "@mantine/hooks";
@@ -205,7 +206,7 @@ export default function HeaderMegaMenu() {
 
 	const businessLinks = businessServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Link href={item.href} locale={router.locale} className={classes.subLinkText} onClick={closeDrawer} replace>
+			<Anchor href={item.href} className={classes.subLinkText} onClick={closeDrawer} >
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={item.color} />
@@ -217,13 +218,13 @@ export default function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</Link>
+			</Anchor>
 		</UnstyledButton>
 	));
 
 	const privateTaxLinks = privateTaxServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Link href={item.href} locale={router.locale} className={classes.subLinkText} onClick={closeDrawer} replace>
+			<Anchor href={item.href} className={classes.subLinkText} onClick={closeDrawer} >
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={item.color} />
@@ -235,7 +236,7 @@ export default function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</Link>
+			</Anchor>
 		</UnstyledButton>
 	));
 
@@ -250,17 +251,17 @@ export default function HeaderMegaMenu() {
 							className={classes.hiddenDesktop}
 							size='lg'
 						/>
-						<Link href='/' locale={router.locale} replace>
+						<Anchor href='/'  >
 							<Image src={Logo} width='150' height='100' alt="Expand CPA LOGO" />
-						</Link>
+						</Anchor>
 						<Container fluid>
 							<Group
 								sx={{ height: "100%" }}
 								spacing={10}
 								className={classes.hiddenMobile}>
-								<Link href='/about' locale={router.locale} className={classes.link} replace>
+								<Anchor href='/about' className={classes.link} >
 									{t("cabinet")}
-								</Link>
+								</Anchor>
 								<HoverCard
 									width={600}
 									position='bottom'
@@ -268,7 +269,7 @@ export default function HeaderMegaMenu() {
 									shadow='md'
 									withinPortal>
 									<HoverCard.Target>
-										<Link href='/services' className={classes.link} replace>
+										<Anchor href='/services' className={classes.link} >
 											<Center inline>
 												<Box component='span' mr={5}>
 													{t("business")}
@@ -278,7 +279,7 @@ export default function HeaderMegaMenu() {
 													color={theme.fn.primaryColor()}
 												/>
 											</Center>
-										</Link>
+										</Anchor>
 									</HoverCard.Target>
 
 									<HoverCard.Dropdown sx={{ overflow: "hidden" }}>
@@ -291,18 +292,17 @@ export default function HeaderMegaMenu() {
 												}}>
 												{t("business")}
 											</Text>
-											<Link
+											<Anchor
 												href='/services'
-												locale={router.locale}
 												size='xs'
 												style={{
 													fontFamily: "'Gilroy',sans-serif",
 													color: theme.colors.blue[6],
 												}}
-												replace
+
 											>
 												View all
-											</Link>
+											</Anchor>
 										</Group>
 
 										<Divider
@@ -336,7 +336,7 @@ export default function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Link href="/#contact" locale={router.locale} replace>
+												<Anchor href="/#contact">
 													<Button
 														variant='default'
 														style={{
@@ -345,7 +345,7 @@ export default function HeaderMegaMenu() {
 														}}>
 														{t("contact")}
 													</Button>
-												</Link>
+												</Anchor>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
@@ -413,7 +413,7 @@ export default function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Link href="/#contact" locale={router.locale} replace>
+												<Anchor href="/#contact"  >
 													<Button
 														variant='default'
 														style={{
@@ -422,17 +422,17 @@ export default function HeaderMegaMenu() {
 														}}>
 														{t("contact")}
 													</Button>
-												</Link>
+												</Anchor>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
 								</HoverCard>
-								<Link href='/blog' locale={router.locale} className={classes.link} replace>
+								<Anchor href='/blog' className={classes.link} >
 									{t("blog")}
-								</Link>
-								<Link href='/#contact' locale={router.locale} className={classes.link} replace>
+								</Anchor>
+								<Anchor href='/#contact' className={classes.link} >
 									{t("contact")}
-								</Link>
+								</Anchor>
 								<Group className={classes.hiddenMobile}>
 									<LanguageSwitcher />
 								</Group>
@@ -458,9 +458,9 @@ export default function HeaderMegaMenu() {
 						color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
 					/>
 
-					<Link href='/about' locale={router.locale} className={classes.link} onClick={closeDrawer} replace>
+					<Anchor href='/about' className={classes.link} onClick={closeDrawer} >
 						{t("cabinet")}
-					</Link>
+					</Anchor>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
 						<Center inline>
 							<Box component='span' mr={5}>
@@ -480,12 +480,12 @@ export default function HeaderMegaMenu() {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-					<Link href='/blog' locale={router.locale} className={classes.link} onClick={closeDrawer} replace>
+					<Anchor href='/blog' className={classes.link} onClick={closeDrawer} >
 						{t("blog")}
-					</Link>
-					<Link href='/#contact' locale={router.locale} className={classes.link} onClick={closeDrawer} replace>
+					</Anchor>
+					<Anchor href='/#contact' className={classes.link} onClick={closeDrawer} >
 						{t("contact")}
-					</Link>
+					</Anchor>
 
 					<Divider
 						my='sm'

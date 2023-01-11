@@ -37,7 +37,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../../lib/animation";
-
+import Head from 'next/head';
 
 const getStaticProps = async ({ locale }) => {
 
@@ -63,111 +63,124 @@ const ServicesPages = ({ }) => {
 	}, [router.locale]);
 
 	return (
-		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
-			<HeaderMegaMenu />
-			<ServicesContainer>
-				<ServicesWrapper>
-					<div className='text-content'>
-						<Tag style={{ width: "35%" }}>
-							<span>Services</span>
-						</Tag>
-						<RowWrapper>
-							<div>
-								<SloganSection06>{t("ourExpertises")}</SloganSection06>
-								<HeadingSection01>
-									<h2>{t("sloganSubtitle")}</h2>
-								</HeadingSection01>
-							</div>
+		<>
+			<Head>
+				<title>{t("services_meta_title")}</title>
+				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+				<link rel="manifest" href="/site.webmanifest" />
+				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+				<meta name="msapplication-TileColor" content="#da532c" />
+				<meta name="theme-color" content="#ffffff" />
+				<meta name="description" content={t("home_meta_description")} />
+			</Head>
+			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+				<HeaderMegaMenu />
+				<ServicesContainer>
+					<ServicesWrapper>
+						<div className='text-content'>
+							<Tag style={{ width: "35%" }}>
+								<span>Services</span>
+							</Tag>
+							<RowWrapper>
+								<div>
+									<SloganSection06>{t("ourExpertises")}</SloganSection06>
+									<HeadingSection01>
+										<h2>{t("sloganSubtitle")}</h2>
+									</HeadingSection01>
+								</div>
 
-							<ButtonContainer>
-								<Link href='/#contact'>
-									<GradientButton
-										gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-										type='button'
-										size='lg'>
-										{t("contactUs")}
-									</GradientButton>
-								</Link>
-							</ButtonContainer>
-						</RowWrapper>
-					</div>
-					<ServicesCardContainer>
-						<ServicesCard href='/services/administrative-services'>
-							<Image src={circle_2} alt='administrativeServices' />
-							<div className='text-content'>
-								<h4>{t("administrativeServices")}</h4>
-								<p>{t("administrativeServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
+								<ButtonContainer>
+									<Link href='/#contact'>
+										<GradientButton
+											gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
+											type='button'
+											size='lg'>
+											{t("contactUs")}
+										</GradientButton>
+									</Link>
+								</ButtonContainer>
+							</RowWrapper>
+						</div>
+						<ServicesCardContainer>
+							<ServicesCard href='/services/administrative-services'>
+								<Image src={circle_2} alt='administrativeServices' />
+								<div className='text-content'>
+									<h4>{t("administrativeServices")}</h4>
+									<p>{t("administrativeServices_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
 
-						<ServicesCard href='/services/accounting-services'>
-							<Image src={circle_1} alt='accountingServices' />
-							<div className='text-content'>
-								<h4>{t("accountingServices")}</h4>
-								<p>{t("accountingServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
+							<ServicesCard href='/services/accounting-services'>
+								<Image src={circle_1} alt='accountingServices' />
+								<div className='text-content'>
+									<h4>{t("accountingServices")}</h4>
+									<p>{t("accountingServices_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
 
-						<ServicesCard href='/services/legal-services'>
-							<Image src={circle_3} alt='expertise RH' />
-							<div className='text-content'>
-								<h4>{t("expertiseRH")}</h4>
-								<p>{t("expertiseRH_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
+							<ServicesCard href='/services/legal-services'>
+								<Image src={circle_3} alt='expertise RH' />
+								<div className='text-content'>
+									<h4>{t("expertiseRH")}</h4>
+									<p>{t("expertiseRH_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
 
-						<ServicesCard href='/services/legal-services'>
-							<Image src={circle_4} alt='legal services' />
-							<div className='text-content'>
-								<h4>{t("conseilJuridique")}</h4>
-								<p>{t("conseillerJuridique_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
+							<ServicesCard href='/services/legal-services'>
+								<Image src={circle_4} alt='legal services' />
+								<div className='text-content'>
+									<h4>{t("conseilJuridique")}</h4>
+									<p>{t("conseillerJuridique_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
 
-						<ServicesCard href='/services/tax-services'>
-							<Image src={circle_5} alt='tax services' />
-							<div className='text-content'>
-								<h4>{t("conseillerFiscal")}</h4>
-								<p>{t("taxServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
+							<ServicesCard href='/services/tax-services'>
+								<Image src={circle_5} alt='tax services' />
+								<div className='text-content'>
+									<h4>{t("conseillerFiscal")}</h4>
+									<p>{t("taxServices_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
 
-						<ServicesCard href='/services/audit-services'>
-							<Image src={circle_6} alt='auditServices' />
-							<div className='text-content'>
-								<h4>{t("auditServices")}</h4>
-								<p>{t("auditServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
+							<ServicesCard href='/services/audit-services'>
+								<Image src={circle_6} alt='auditServices' />
+								<div className='text-content'>
+									<h4>{t("auditServices")}</h4>
+									<p>{t("auditServices_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
 
-						<ServicesCard href='/french-tax'>
-							<Image src={circle_7} alt='french Tax' />
-							<div className='text-content'>
-								<h4>{t("frenchTax")}</h4>
-								<p>{t("accountingServices_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
+							<ServicesCard href='/french-tax'>
+								<Image src={circle_7} alt='french Tax' />
+								<div className='text-content'>
+									<h4>{t("frenchTax")}</h4>
+									<p>{t("accountingServices_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
 
-						<ServicesCard href='/usa-tax'>
-							<Image src={circle_8} alt='usa tax' />
-							<div className='text-content'>
-								<h4>{t("usTax")}</h4>
-								<p>{t("usTax_heading")}</p>
-							</div>
-							<IconArrowRight size={33} color='#1b1464' />
-						</ServicesCard>
-					</ServicesCardContainer>
-				</ServicesWrapper>
-			</ServicesContainer>
-			<Footer />
-		</motion.div>
+							<ServicesCard href='/usa-tax'>
+								<Image src={circle_8} alt='usa tax' />
+								<div className='text-content'>
+									<h4>{t("usTax")}</h4>
+									<p>{t("usTax_heading")}</p>
+								</div>
+								<IconArrowRight size={33} color='#1b1464' />
+							</ServicesCard>
+						</ServicesCardContainer>
+					</ServicesWrapper>
+				</ServicesContainer>
+				<Footer />
+			</motion.div>
+		</>
 	);
 };
 

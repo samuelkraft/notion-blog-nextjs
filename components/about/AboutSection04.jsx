@@ -36,14 +36,14 @@ const AboutSection04 = () => {
 							{partners.map((i) => {
 								return (
 									<div key={Math.random(0, 100)}>
-										<Image src={i} alt={Math.random(0, 100)} />
+										<Image src={i} alt={i.toString()} />
 									</div>
 								);
 							})}
 							{partners.map((i) => {
 								return (
 									<div key={Math.random(0, 100)}>
-										<Image src={i} alt={Math.random(0, 100)} />
+										<Image src={i} alt={i.toString()} />
 									</div>
 								);
 							})}

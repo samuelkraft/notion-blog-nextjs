@@ -12,6 +12,7 @@ import HeaderMegaMenu from '../../components/header/HeaderMegaMenu'
 import Footer from '../../components/footer/Footer'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import {
 	aboutPageAnimation,
 	slider,
@@ -19,7 +20,7 @@ import {
 } from '../../lib/animation'
 import styled from 'styled-components'
 
-const AboutPage = ({}) => {
+const AboutPage = ({ }) => {
 	const { t, i18n } = useTranslation('common', {
 		bindI18n: 'languageChanged loaded',
 	})
@@ -31,27 +32,70 @@ const AboutPage = ({}) => {
 	}, [router.locale])
 
 	return (
-		<motion.div
-			variants={sliderContainer}
-			initial='hidden'
-			animate='show'
-		>
-			<Frame1 variants={slider}></Frame1>
-			<Frame2 variants={slider}></Frame2>
-			<Frame3 variants={slider}></Frame3>
-			<Frame4 variants={slider}></Frame4>
-			<motion.div variants={aboutPageAnimation}>
-				<HeaderMegaMenu />
-				<HeroAboutPage />
-				<AboutSection01 />
-				<AboutSection02 />
-				<AboutSection03 />
-				<AboutSection04 />
-				<AboutSection05 />
-				<HiringForm />
-				<Footer />
+		<>
+			<Head>
+				<title>{t('about_meta_title')}</title>
+				<link
+					rel='apple-touch-icon'
+					sizes='180x180'
+					href='/apple-touch-icon.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='32x32'
+					href='/favicon-32x32.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='16x16'
+					href='/favicon-16x16.png'
+				/>
+				<link
+					rel='manifest'
+					href='/site.webmanifest'
+				/>
+				<link
+					rel='mask-icon'
+					href='/safari-pinned-tab.svg'
+					color='#5bbad5'
+				/>
+				<meta
+					name='msapplication-TileColor'
+					content='#da532c'
+				/>
+				<meta
+					name='theme-color'
+					content='#ffffff'
+				/>
+				<meta
+					name='description'
+					content={t('home_meta_description')}
+				/>
+			</Head>
+			<motion.div
+				variants={sliderContainer}
+				initial='hidden'
+				animate='show'
+			>
+				<Frame1 variants={slider}></Frame1>
+				<Frame2 variants={slider}></Frame2>
+				<Frame3 variants={slider}></Frame3>
+				<Frame4 variants={slider}></Frame4>
+				<motion.div variants={aboutPageAnimation}>
+					<HeaderMegaMenu />
+					<HeroAboutPage />
+					<AboutSection01 />
+					<AboutSection02 />
+					<AboutSection03 />
+					<AboutSection04 />
+					<AboutSection05 />
+					<HiringForm />
+					<Footer />
+				</motion.div>
 			</motion.div>
-		</motion.div>
+		</>
 	)
 }
 
