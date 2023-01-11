@@ -43,7 +43,8 @@ import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
 import Footer from "../../components/footer/Footer";
 import { ImageWrapperFullWidth } from "../services/payroll-services";
 import { useRouter } from "next/router";
-
+import { pageAnimation, titleAnim } from '../../lib/animation'
+import { motion } from "framer-motion"
 const useStyles = createStyles((theme) => ({
 	wrapper: {
 		padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
@@ -133,13 +134,13 @@ const FrenchTax = ({ }) => {
 	));
 
 	return (
-		<>
+		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
 					<Grid gutter={80}>
 						<Col span={12} md={5}>
-							<Slogan className={classes.title} order={2} mb='lg'>
+							<Slogan className={classes.title} variant={titleAnim} initial="hidden" animate="show" order={2} mb='lg'>
 								{t("page_title")}
 							</Slogan>
 							<Text color='#1b1464' size='lg'>
@@ -665,7 +666,7 @@ const FrenchTax = ({ }) => {
 				</LayoutColumn>
 			</HeroContainer>
 			<Footer />
-		</>
+		</motion.div>
 	);
 };
 

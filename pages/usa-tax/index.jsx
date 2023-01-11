@@ -43,6 +43,8 @@ import { ImageWrapperFullWidth } from "../services/payroll-services";
 import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
 import Footer from "../../components/footer/Footer";
 import { useRouter } from "next/router";
+import { pageAnimation } from "../../lib/animation";
+import { motion } from "framer-motion";
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -133,7 +135,7 @@ const UsaTax = ({ }) => {
 	));
 
 	return (
-		<>
+		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
@@ -560,7 +562,7 @@ const UsaTax = ({ }) => {
 				</LayoutColumn>
 			</HeroContainer>
 			<Footer />
-		</>
+		</motion.div>
 	);
 };
 

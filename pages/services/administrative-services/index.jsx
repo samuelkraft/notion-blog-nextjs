@@ -34,6 +34,8 @@ import circle_8 from "../../../images/circle_8.svg";
 import Link from "next/link";
 import { ImageWrapperFullWidth } from "../payroll-services";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion"
+import { pageAnimation } from "../../../lib/animation";
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -123,7 +125,7 @@ const AdministritiveServices = ({ }) => {
 	));
 
 	return (
-		<>
+		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
@@ -519,7 +521,7 @@ const AdministritiveServices = ({ }) => {
 				</LayoutColumn>
 			</HeroContainer>
 			<Footer />
-		</>
+		</motion.div>
 	);
 };
 
@@ -587,7 +589,7 @@ export const TextContent = styled.div`
 	gap: 1rem;
 `;
 
-export const Slogan = styled.h1`
+export const Slogan = styled(motion.h1)`
 	font-family: "AllRoundGothic-Demi";
 	font-size: 32px;
 	color: #352d61;

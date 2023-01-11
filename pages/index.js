@@ -17,8 +17,8 @@ import HeaderMegaMenu from "../components/header/HeaderMegaMenu"
 import Footer from "../components/footer/Footer"
 export const databaseId = process.env.NOTION_DATABASE_ID;
 import { useRouter } from "next/router";
-
-
+import { motion } from "framer-motion"
+import { pageAnimation } from "../lib/animation";
 
 export default function Home({ posts }) {
     const { t, i18n } = useTranslation("common", {
@@ -36,18 +36,20 @@ export default function Home({ posts }) {
                 <title>Expand CPA</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
-            <HeaderMegaMenu />
-            <Hero />
-            <InfiniteSlider />
-            <HomeSection01 />
-            <HomeSection02 />
-            <HomeSection03 />
-            <HomeSection04 />
-            <HomeSection05 />
-            <HomeSection06 />
-            <BlogSection posts={posts} />
-            <ContactForm />
-            <Footer />
+            <motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+                <HeaderMegaMenu />
+                <Hero />
+                <InfiniteSlider />
+                <HomeSection01 />
+                <HomeSection02 />
+                <HomeSection03 />
+                <HomeSection04 />
+                <HomeSection05 />
+                <HomeSection06 />
+                <BlogSection posts={posts} />
+                <ContactForm />
+                <Footer />
+            </motion.div>
         </div>
     );
 }

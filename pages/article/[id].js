@@ -13,6 +13,8 @@ import { Skeleton } from "@mantine/core";
 import { useRouter } from "next/router";
 import HeaderMegaMenu from "../../components/header/HeaderMegaMenu";
 import Footer from "../../components/footer/Footer";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../../lib/animation";
 
 export const Text = ({ text }) => {
 	if (!text) {
@@ -194,7 +196,7 @@ export default function Post({ page, blocks }) {
 	}
 
 	return (
-		<div>
+		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 			<Head>
 				<title>
 					{page.properties.Name.title[0]?.plain_text || "New Article"}
@@ -221,7 +223,7 @@ export default function Post({ page, blocks }) {
 				</section>
 			</article>
 			<Footer />
-		</div>
+		</motion.div>
 	);
 }
 

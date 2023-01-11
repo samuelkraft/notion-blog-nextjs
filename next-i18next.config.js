@@ -10,10 +10,10 @@ module.exports = {
         backendOptions: [{ expirationTime: 60 * 60 * 1000 }, {}], // 1 hour
         backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [],
     },
-    // react: { // used only for the lazy reload
-    //   bindI18n: 'languageChanged loaded',
-    //   useSuspense: false
-    // },
+    react: { // used only for the lazy reload
+        bindI18n: 'languageChanged loaded',
+        useSuspense: false
+    },
     i18n: {
         defaultLocale: 'fr',
         locales: ['fr', 'en'],

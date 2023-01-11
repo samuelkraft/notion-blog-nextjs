@@ -41,7 +41,8 @@ import circle_7 from "../../../images/circle_7.svg";
 import circle_8 from "../../../images/circle_8.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import { motion } from "framer-motion";
+import { pageAnimation } from '../../../lib/animation';
 
 import { ImageWrapperFullWidth } from "../payroll-services";
 
@@ -134,7 +135,7 @@ const AuditServices = ({ }) => {
 	));
 
 	return (
-		<>
+		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
@@ -503,7 +504,7 @@ const AuditServices = ({ }) => {
 				</LayoutColumn>
 			</HeroContainer>
 			<Footer />
-		</>
+		</motion.div>
 	);
 };
 

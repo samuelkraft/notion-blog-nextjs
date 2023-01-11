@@ -42,6 +42,8 @@ import HeaderMegaMenu from "../../../components/header/HeaderMegaMenu";
 import Footer from "../../../components/footer/Footer";
 import { ImageWrapperFullWidth } from "../payroll-services";
 import { useRouter } from "next/router";
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../../../lib/animation';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -131,7 +133,7 @@ const AccountingServices = ({ }) => {
 	));
 
 	return (
-		<>
+		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 			<HeaderMegaMenu />
 			<HeroContainer>
 				<div className={classes.wrapper}>
@@ -624,7 +626,7 @@ const AccountingServices = ({ }) => {
 				</LayoutColumn>
 			</HeroContainer>
 			<Footer />
-		</>
+		</motion.div>
 	);
 };
 
