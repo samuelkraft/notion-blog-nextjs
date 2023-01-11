@@ -191,9 +191,9 @@ const ContactForm = () => {
 									justify='center'
 									gap={30}>
 									<TextContentContentModal>
-										<h1>Le formulaire à été envoyé ! </h1>
+										<h1>{t("form_success_title")}</h1>
 										<p>
-											Vous allez être recontacté dans les plus brefs délais.
+											{t("form_success_subtitle")}
 										</p>
 									</TextContentContentModal>
 									<IconCircleCheck size={60} color='#4364F7' />
@@ -206,7 +206,7 @@ const ContactForm = () => {
 							width='300px'
 							gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
 							onClick={() => setOpened(true)}>
-							Demander une démo
+							{t("send")}
 						</GradientButton>
 					</FormLayout>
 				</TextContentContainer>

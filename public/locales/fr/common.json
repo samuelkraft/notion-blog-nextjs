@@ -141,5 +141,8 @@
 	"followUs": "Suivez notre actualité",
 	"form_title": "Nous contacter",
 	"form_paragraph": "Un de nos experts vous recontactera dans la journée pour vous présenter nos solution de paie et RH et concevoir un devis adapté à vos besoins",
-	"blog_section": "Nos articles de blog"
+	"blog_section": "Nos articles de blog",
+	"form_success_title": "Le formulaire à été envoyé !",
+	"form_success_subtitle": "Vous allez être recontacté dans les plus brefs délais.",
+	"send": "Envoyer"
 }

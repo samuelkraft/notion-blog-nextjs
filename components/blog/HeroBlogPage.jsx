@@ -6,6 +6,7 @@ const HeroBlogPage = ({ posts }) => {
 	const { t } = useTranslation("common");
 
 	const post = posts[0];
+	const post2 = posts[1];
 	const date = new Date(post.last_edited_time).toLocaleString("en-US", {
 		month: "short",
 		day: "2-digit",
@@ -41,21 +42,21 @@ const HeroBlogPage = ({ posts }) => {
 					</BigCard>
 					<BigCard
 						cover={
-							post?.cover?.external?.url ||
-							post?.cover?.file?.url ||
+							post2?.cover?.external?.url ||
+							post2?.cover?.file?.url ||
 							"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
 						}>
 						<div className='thumbnail'>
 							<span className='category'>
-								{post?.properties?.Tags?.multi_select[0]?.name || "New"}
+								{post2?.properties?.Tags?.multi_select[0]?.name || "New"}
 							</span>
 						</div>
 						<div className='content'>
 							<p>{date}</p>
 							<h1>
-								{post?.properties?.Name?.title[0]?.plain_text || "Article"}
+								{post2?.properties?.Name?.title[0]?.plain_text || "Article"}
 							</h1>
-							<Link href={`/article/${post.id}`} locale='fr'>
+							<Link href={`/article/${post2.id}`} locale='fr'>
 								{t("readNow")} →
 							</Link>
 						</div>
@@ -64,7 +65,7 @@ const HeroBlogPage = ({ posts }) => {
 				<RightSection>
 					<Subtitle>{t("popular")}</Subtitle>
 					{sidebarCards.map((post) => (
-						<div className='list'>
+						<div className='list' key={post.id}>
 							<div className='card_sidebar'>
 								<div className='card_sidebar_layout'>
 									<div className='thumbnail'>

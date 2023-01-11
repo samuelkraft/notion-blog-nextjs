@@ -137,5 +137,8 @@
 	"usTax_heading": "US taxation for international employees and entrepreneurs based in France",
 	"administrativeServices_heading": "Administrative services for international companies in France",
 	"frenchTax_heading": "Individual income tax services for employees of international companies in France",
-	"ourExpertises": "Our areas of expertise"
+	"ourExpertises": "Our areas of expertise",
+	"form_success_title": "The form has been sent !",
+	"form_success_subtitle": "You will be contacted as soon as possible.",
+	"send": "Send"
 }

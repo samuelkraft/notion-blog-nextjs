@@ -4,16 +4,17 @@ import { Button } from "@mantine/core";
 
 const BorderedButton = React.forwardRef(
     (
-        { borderColor, children, hoverable, textColor, externalUrl, rightIcon, solidColor, fontSize, compact, href, onClick }, ref
+        { borderColor, children, hoverable, textColor, externalUrl, rightIcon, solidColor, fontSize, compact, href, onClick, type }, ref
 
     ) => {
         return (
             <Button variant="bordered"
                 target={externalUrl ? "_blank" : ""}
                 rel={externalUrl ? "noopener noreferrer" : ""}
-                component="a"
+                component={type ? "button" : "a"}
                 href={href}
                 onClick={onClick}
+                type={type}
                 ref={ref}
                 rightIcon={rightIcon ? rightIcon : null}
                 compact={compact}
