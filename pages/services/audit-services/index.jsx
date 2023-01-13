@@ -138,7 +138,7 @@ const AuditServices = ({ }) => {
 	return (
 		<>
 			<Head>
-				<title>{t("page_title")}</title>
+				<title>{router.locale === "fr" ? "Auditeur français : missions pour entreprises étrangères" : "French Auditor: Support for International Companies" || "Auditeur français : missions pour entreprises étrangères"}</title>
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -146,7 +146,7 @@ const AuditServices = ({ }) => {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
-				<meta name="description" content={t("persona")} />
+				<meta name="description" content={router.locale === "fr" ? "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez AS PARTNERS pour ces missions." : "International companies operating in France often need the support of a French auditor. A.S PARTNERS is fully equipped to support companies with audits." || "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez AS PARTNERS pour ces missions."} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

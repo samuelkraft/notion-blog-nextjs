@@ -34,7 +34,7 @@ const AboutPage = ({ }) => {
 	return (
 		<>
 			<Head>
-				<title>{t('about_meta_title')}</title>
+				<title>{router.locale === "fr" ? "Expand CPA - À propos" : "Expand CPA - About" || "Expand CPA - À propos"} </title>
 				<link
 					rel='apple-touch-icon'
 					sizes='180x180'
@@ -69,10 +69,8 @@ const AboutPage = ({ }) => {
 					name='theme-color'
 					content='#ffffff'
 				/>
-				<meta
-					name='description'
-					content={t('home_meta_description')}
-				/>
+				<meta name="description" content={router.locale === "fr" ? "Experts comptables français et américains établis en France. Nous sommes spécialisés dans le conseil et l’accompagnement d’entreprises étrangères et de résidents étrangers établis en France" : "French and American Chartered Accountants Based in France, At A.S Partners, our French CPAs specialize in advising and assisting international companies and citizens in France" || "Experts comptables français et américains établis en France. Nous sommes spécialisés dans le conseil et l’accompagnement d’entreprises étrangères et de résidents étrangers établis en France"} />
+
 			</Head>
 			<motion.div
 				variants={sliderContainer}

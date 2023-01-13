@@ -136,7 +136,7 @@ const PayrollServices = ({ }) => {
 	return (
 		<>
 			<Head>
-				<title>{t("page_title")}</title>
+				<title>{router.locale === "fr" ? "Expertise RH pour une entreprise étrangère en France" : "HR expertise for a foreign company in France" || "Expertise RH pour une entreprise étrangère en France"}</title>
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -144,7 +144,7 @@ const PayrollServices = ({ }) => {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
-				<meta name="description" content={t("persona")} />
+				<meta name="description" content={router.locale === "fr" ? "Le droit du travail soulève de nombreuses difficultés pour une société étrangère implantée en France. Mieux vaut recourir à l’expertise RH d’un cabinet" : "For international companies expanding into France, understanding local labor laws can be difficult. Work with the French HR experts at A.S PARTNERS.." || "Le droit du travail soulève de nombreuses difficultés pour une société étrangère implantée en France. Mieux vaut recourir à l’expertise RH d’un cabinet"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

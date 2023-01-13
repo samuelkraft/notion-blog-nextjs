@@ -65,7 +65,7 @@ const ServicesPages = ({ }) => {
 	return (
 		<>
 			<Head>
-				<title>{t("services_meta_title")}</title>
+				<title>{router.locale === "fr" ? "Expand CPA - Nos Services" : "Expand CPA - Our Services" || "Expand CPA - Nos Services"}</title>
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -73,7 +73,7 @@ const ServicesPages = ({ }) => {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
-				<meta name="description" content={t("home_meta_description")} />
+				<meta name="description" content={router.locale === "fr" ? "Experts comptables français et américains établis en France. Nous sommes spécialisés dans le conseil et l’accompagnement d’entreprises étrangères et de résidents étrangers établis en France" : "French and American Chartered Accountants Based in France, At A.S Partners, our French CPAs specialize in advising and assisting international companies and citizens in France" || "Experts comptables français et américains établis en France. Nous sommes spécialisés dans le conseil et l’accompagnement d’entreprises étrangères et de résidents étrangers établis en France"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

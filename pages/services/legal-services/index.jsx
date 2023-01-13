@@ -136,6 +136,7 @@ const LegalServices = ({ }) => {
 	return (
 		<>
 			<Head>
+				<title>{router.locale === "fr" ? "Conseil juridique pour société étrangère basée en France" : "Legal Services for International Companies Based in France" || "Conseil juridique pour société étrangère basée en France"}</title>
 				<title>{t("page_title")}</title>
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -144,7 +145,7 @@ const LegalServices = ({ }) => {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
-				<meta name="description" content={t("persona")} />
+				<meta name="description" content={router.locale === "fr" ? "Une entreprise étrangère qui s'implante en France recherche un conseil juridique pertinent pour l'accompagner. C'est notre métier !" : "International companies setting up business in France need expert legal advice. That’s our job." || "Une entreprise étrangère qui s'implante en France recherche un conseil juridique pertinent pour l'accompagner. C'est notre métier !"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

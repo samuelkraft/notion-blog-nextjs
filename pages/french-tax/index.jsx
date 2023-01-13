@@ -138,7 +138,7 @@ const FrenchTax = ({ }) => {
 	return (
 		<>
 			<Head>
-				<title>{t("page_title")}</title>
+				<title>{router.locale === "fr" ? "Fiscalité privée française : nos prestations" : "French Private Tax : Our Services"}</title>
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -146,7 +146,7 @@ const FrenchTax = ({ }) => {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
-				<meta name="description" content={t("persona")} />
+				<meta name="description" content={router.locale === "fr" ? "Les entreprises étrangères situées en France recherchent des conseils pour la fiscalité privée française de leurs collaborateurs. Nous savons faire." : "International companies located in France need expert advice to help their employees navigate the French tax code. Trust A.S PARTNERS – a French tax firm." || "Les entreprises étrangères situées en France recherchent des conseils pour la fiscalité privée française de leurs collaborateurs. Nous savons faire."} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />
