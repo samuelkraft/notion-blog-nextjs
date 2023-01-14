@@ -144,6 +144,7 @@ const TaxServices = ({ }) => {
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff" />
+                <meta property="og:image" content="https://my-og-img.vercel.app/api/og" />
                 <meta name="description" content={router.locale === "fr" ? "Implanter une entreprise en France c'est compliqué pour un étranger. Voici comment se faire aider par un conseiller fiscal français." : "As a non-French citizen, setting up a business in France is complicated. Here is how to get help from a French Tax Consultant." || "Implanter une entreprise en France c'est compliqué pour un étranger. Voici comment se faire aider par un conseiller fiscal français."} />
             </Head>
             <motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">

@@ -453,15 +453,15 @@
     "hey-listen" "^1.0.8"
     "tslib" "^2.3.1"
 
-"@next/env@13.0.0":
-  "integrity" "sha512-65v9BVuah2Mplohm4+efsKEnoEuhmlGm8B2w6vD1geeEP2wXtlSJCvR/cCRJ3fD8wzCQBV41VcMBQeYET6MRkg=="
-  "resolved" "https://registry.npmjs.org/@next/env/-/env-13.0.0.tgz"
-  "version" "13.0.0"
+"@next/env@13.1.2":
+  "integrity" "sha512-PpT4UZIX66VMTqXt4HKEJ+/PwbS+tWmmhZlazaws1a+dbUA5pPdjntQ46Jvj616i3ZKN9doS9LHx3y50RLjAWg=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-13.1.2.tgz"
+  "version" "13.1.2"
 
-"@next/swc-win32-x64-msvc@13.0.0":
-  "integrity" "sha512-FFOGGWwTCRMu9W7MF496Urefxtuo2lttxF1vwS+1rIRsKvuLrWhVaVTj3T8sf2EBL6gtJbmh4TYlizS+obnGKA=="
-  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.0.0.tgz"
-  "version" "13.0.0"
+"@next/swc-win32-x64-msvc@13.1.2":
+  "integrity" "sha512-avsyveEvcvH42PvKjR4Pb8JlLttuGURr2H3ZhS2b85pHOiZ7yjH3rMUoGnNzuLMApyxYaCvd4MedPrLhnNhkog=="
+  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.1.2.tgz"
+  "version" "13.1.2"
 
 "@notionhq/client@^2.2.1":
   "integrity" "sha512-EExR8gCWuqvYQsNw5Z9kvZhRTy7wgioI4ypr5y0dPclvxBXZ7I7Yy509ZbCbeAFes33eLFV8Heu0svQwg8ZSZQ=="
@@ -561,6 +561,11 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@resvg/resvg-wasm@2.0.0-alpha.4":
+  "integrity" "sha512-pWIG9a/x1ky8gXKRhPH1OPKpHFoMN1ISLbJ+O+gPXQHIAKhNd5I28RlWf7q576hAOQA9JZTlo3p/M2uyLzJmmw=="
+  "resolved" "https://registry.npmjs.org/@resvg/resvg-wasm/-/resvg-wasm-2.0.0-alpha.4.tgz"
+  "version" "2.0.0-alpha.4"
+
 "@sendgrid/client@^7.7.0":
   "integrity" "sha512-SxH+y8jeAQSnDavrTD0uGDXYIIkFylCo+eDofVmZLQ0f862nnqbC3Vd1ej6b7Le7lboyzQF6F7Fodv02rYspuA=="
   "resolved" "https://registry.npmjs.org/@sendgrid/client/-/client-7.7.0.tgz"
@@ -584,10 +589,18 @@
     "@sendgrid/client" "^7.7.0"
     "@sendgrid/helpers" "^7.7.0"
 
-"@swc/helpers@0.4.11":
-  "integrity" "sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw=="
-  "resolved" "https://registry.npmjs.org/@swc/helpers/-/helpers-0.4.11.tgz"
-  "version" "0.4.11"
+"@shuding/opentype.js@1.4.0-beta.0":
+  "integrity" "sha512-3NgmNyH3l/Hv6EvsWJbsvpcpUba6R8IREQ83nH83cyakCw7uM1arZKNfHwv1Wz6jgqrF/j4x5ELvR6PnK9nTcA=="
+  "resolved" "https://registry.npmjs.org/@shuding/opentype.js/-/opentype.js-1.4.0-beta.0.tgz"
+  "version" "1.4.0-beta.0"
+  dependencies:
+    "fflate" "^0.7.3"
+    "string.prototype.codepointat" "^0.2.1"
+
+"@swc/helpers@0.4.14":
+  "integrity" "sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw=="
+  "resolved" "https://registry.npmjs.org/@swc/helpers/-/helpers-0.4.14.tgz"
+  "version" "0.4.14"
   dependencies:
     "tslib" "^2.4.0"
 
@@ -645,6 +658,15 @@
   "integrity" "sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew=="
   "resolved" "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
   "version" "0.16.2"
+
+"@vercel/og@^0.0.27":
+  "integrity" "sha512-cUk6HmfLmBOISAA8gvPRNUx3eVOSyXblxiuv3uN9UTxLwdalQzPlHC/0byvTMR1eVi0y1trD5u6um/4xiTqgOQ=="
+  "resolved" "https://registry.npmjs.org/@vercel/og/-/og-0.0.27.tgz"
+  "version" "0.0.27"
+  dependencies:
+    "@resvg/resvg-wasm" "2.0.0-alpha.4"
+    "satori" "0.0.46"
+    "yoga-wasm-web" "0.3.0"
 
 "ansi-styles@^3.2.1":
   "integrity" "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA=="
@@ -796,6 +818,16 @@
   dependencies:
     "node-fetch" "2.6.7"
 
+"css-background-parser@^0.1.0":
+  "integrity" "sha512-2EZLisiZQ+7m4wwur/qiYJRniHX4K5Tc9w93MT3AS0WS1u5kaZ4FKXlOTBhOjc+CgEgPiGY+fX1yWD8UwpEqUA=="
+  "resolved" "https://registry.npmjs.org/css-background-parser/-/css-background-parser-0.1.0.tgz"
+  "version" "0.1.0"
+
+"css-box-shadow@1.0.0-3":
+  "integrity" "sha512-9jaqR6e7Ohds+aWwmhe6wILJ99xYQbfmK9QQB9CcMjDbTxPZjwEmUQpU91OG05Xgm8BahT5fW+svbsQGjS/zPg=="
+  "resolved" "https://registry.npmjs.org/css-box-shadow/-/css-box-shadow-1.0.0-3.tgz"
+  "version" "1.0.0-3"
+
 "css-color-keywords@^1.0.0":
   "integrity" "sha512-FyyrDHZKEjXDpNJYvVsV960FiqQyXc/LlYmsxl2BcdMb2WPx0OGRVgTg55rPSyLSNMqP52R9r8geSp7apN3Ofg=="
   "resolved" "https://registry.npmjs.org/css-color-keywords/-/css-color-keywords-1.0.0.tgz"
@@ -887,6 +919,11 @@
   "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.5.tgz"
   "version" "7.0.5"
 
+"emoji-regex@^10.2.1":
+  "integrity" "sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA=="
+  "resolved" "https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.2.1.tgz"
+  "version" "10.2.1"
+
 "entities@^2.0.0":
   "integrity" "sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A=="
   "resolved" "https://registry.npmjs.org/entities/-/entities-2.2.0.tgz"
@@ -913,6 +950,11 @@
   "integrity" "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA=="
   "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
   "version" "4.0.0"
+
+"fflate@^0.7.3":
+  "integrity" "sha512-5u2V/CDW15QM1XbbgS+0DfPxVB+jUKhWEKuuFuHncbk3tEEqzmoXL+2KyOFuKGqOnmdIy0/davWF1CkuwtibCw=="
+  "resolved" "https://registry.npmjs.org/fflate/-/fflate-0.7.4.tgz"
+  "version" "0.7.4"
 
 "file-selector@^0.6.0":
   "integrity" "sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw=="
@@ -1206,31 +1248,30 @@
     "@babel/runtime" "7.16.7"
     "i18next-browser-languagedetector" "6.1.2"
 
-"next@13.0.0":
-  "integrity" "sha512-puH1WGM6rGeFOoFdXXYfUxN9Sgi4LMytCV5HkQJvVUOhHfC1DoVqOfvzaEteyp6P04IW+gbtK2Q9pInVSrltPA=="
-  "resolved" "https://registry.npmjs.org/next/-/next-13.0.0.tgz"
-  "version" "13.0.0"
+"next@^13.1.2":
+  "integrity" "sha512-Rdnnb2YH///w78FEOR/IQ6TXga+qpth4OqFSem48ng1PYYKr6XBsIk1XVaRcIGM3o6iiHnun0nJvkJHDf+ICyQ=="
+  "resolved" "https://registry.npmjs.org/next/-/next-13.1.2.tgz"
+  "version" "13.1.2"
   dependencies:
-    "@next/env" "13.0.0"
-    "@swc/helpers" "0.4.11"
+    "@next/env" "13.1.2"
+    "@swc/helpers" "0.4.14"
     "caniuse-lite" "^1.0.30001406"
     "postcss" "8.4.14"
-    "styled-jsx" "5.1.0"
-    "use-sync-external-store" "1.2.0"
+    "styled-jsx" "5.1.1"
   optionalDependencies:
-    "@next/swc-android-arm-eabi" "13.0.0"
-    "@next/swc-android-arm64" "13.0.0"
-    "@next/swc-darwin-arm64" "13.0.0"
-    "@next/swc-darwin-x64" "13.0.0"
-    "@next/swc-freebsd-x64" "13.0.0"
-    "@next/swc-linux-arm-gnueabihf" "13.0.0"
-    "@next/swc-linux-arm64-gnu" "13.0.0"
-    "@next/swc-linux-arm64-musl" "13.0.0"
-    "@next/swc-linux-x64-gnu" "13.0.0"
-    "@next/swc-linux-x64-musl" "13.0.0"
-    "@next/swc-win32-arm64-msvc" "13.0.0"
-    "@next/swc-win32-ia32-msvc" "13.0.0"
-    "@next/swc-win32-x64-msvc" "13.0.0"
+    "@next/swc-android-arm-eabi" "13.1.2"
+    "@next/swc-android-arm64" "13.1.2"
+    "@next/swc-darwin-arm64" "13.1.2"
+    "@next/swc-darwin-x64" "13.1.2"
+    "@next/swc-freebsd-x64" "13.1.2"
+    "@next/swc-linux-arm-gnueabihf" "13.1.2"
+    "@next/swc-linux-arm64-gnu" "13.1.2"
+    "@next/swc-linux-arm64-musl" "13.1.2"
+    "@next/swc-linux-x64-gnu" "13.1.2"
+    "@next/swc-linux-x64-musl" "13.1.2"
+    "@next/swc-win32-arm64-msvc" "13.1.2"
+    "@next/swc-win32-ia32-msvc" "13.1.2"
+    "@next/swc-win32-x64-msvc" "13.1.2"
 
 "node-fetch@^2.6.1", "node-fetch@2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
@@ -1293,7 +1334,7 @@
   "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz"
   "version" "2.3.1"
 
-"postcss-value-parser@^4.0.2":
+"postcss-value-parser@^4.0.2", "postcss-value-parser@^4.2.0":
   "integrity" "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="
   "resolved" "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   "version" "4.2.0"
@@ -1403,6 +1444,19 @@
     "path-parse" "^1.0.7"
     "supports-preserve-symlinks-flag" "^1.0.0"
 
+"satori@0.0.46":
+  "integrity" "sha512-7RfTz38MB0n8tzmRHtUh1y0K7609CLBHpYuyZuh9rpf9FyhOd2in+6EHuqu6ul/Jebn1qD1HdYKtAMjb7uiNAQ=="
+  "resolved" "https://registry.npmjs.org/satori/-/satori-0.0.46.tgz"
+  "version" "0.0.46"
+  dependencies:
+    "@shuding/opentype.js" "1.4.0-beta.0"
+    "css-background-parser" "^0.1.0"
+    "css-box-shadow" "1.0.0-3"
+    "css-to-react-native" "^3.0.0"
+    "emoji-regex" "^10.2.1"
+    "postcss-value-parser" "^4.2.0"
+    "yoga-wasm-web" "^0.3.0"
+
 "scheduler@^0.23.0":
   "integrity" "sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw=="
   "resolved" "https://registry.npmjs.org/scheduler/-/scheduler-0.23.0.tgz"
@@ -1433,6 +1487,11 @@
   "integrity" "sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ=="
   "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz"
   "version" "0.5.7"
+
+"string.prototype.codepointat@^0.2.1":
+  "integrity" "sha512-2cBVCj6I4IOvEnjgO/hWqXjqBGsY+zwPmHl12Srk9IXSZ56Jwwmy+66XO5Iut/oQVR7t5ihYdLB0GMa4alEUcg=="
+  "resolved" "https://registry.npmjs.org/string.prototype.codepointat/-/string.prototype.codepointat-0.2.1.tgz"
+  "version" "0.2.1"
 
 "style-to-js@1.1.0":
   "integrity" "sha512-1OqefPDxGrlMwcbfpsTVRyzwdhr4W0uxYQzeA2F1CBc8WG04udg2+ybRnvh3XYL4TdHQrCahLtax2jc8xaE6rA=="
@@ -1472,10 +1531,10 @@
     "shallowequal" "^1.1.0"
     "supports-color" "^5.5.0"
 
-"styled-jsx@5.1.0":
-  "integrity" "sha512-/iHaRJt9U7T+5tp6TRelLnqBqiaIT0HsO0+vgyj8hK2KUk7aejFqRrumqPUlAqDwAj8IbS/1hk3IhBAAK/FCUQ=="
-  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.0.tgz"
-  "version" "5.1.0"
+"styled-jsx@5.1.1":
+  "integrity" "sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw=="
+  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.1.tgz"
+  "version" "5.1.1"
   dependencies:
     "client-only" "0.0.1"
 
@@ -1533,11 +1592,6 @@
   dependencies:
     "use-isomorphic-layout-effect" "^1.1.1"
 
-"use-sync-external-store@1.2.0":
-  "integrity" "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
-  "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
-  "version" "1.2.0"
-
 "void-elements@3.1.0":
   "integrity" "sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w=="
   "resolved" "https://registry.npmjs.org/void-elements/-/void-elements-3.1.0.tgz"
@@ -1565,6 +1619,11 @@
   "integrity" "sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg=="
   "resolved" "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
   "version" "1.10.2"
+
+"yoga-wasm-web@^0.3.0", "yoga-wasm-web@0.3.0":
+  "integrity" "sha512-rD3L4jyMlO1m+RWU60lNwZQK5zmzglCV5fI1gTRikmpv3YzmNIZQbjyfE6cMNb9Xaly/C1SwemYGbsiOekMvnQ=="
+  "resolved" "https://registry.npmjs.org/yoga-wasm-web/-/yoga-wasm-web-0.3.0.tgz"
+  "version" "0.3.0"
 
 "yup@^0.32.11":
   "integrity" "sha512-Z2Fe1bn+eLstG8DRR6FTavGD+MeAwyfmouhHsIUgaADz8jvFKbO/fXc2trJKZg+5EBjh4gGm3iU/t3onKlXHIg=="
