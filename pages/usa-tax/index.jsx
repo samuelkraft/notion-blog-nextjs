@@ -138,7 +138,7 @@ const UsaTax = ({ }) => {
 	return (
 		<>
 			<Head>
-				<title>{t("page_title")}</title>
+				<title>{router.locale === "fr" ? "Impôt aux États-Unis pour Américains situés en France" : "U.S. Tax for Americans in France" || "Impôt aux États-Unis pour Américains situés en France"}</title>
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -147,7 +147,7 @@ const UsaTax = ({ }) => {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta property="og:image" content="/api/og" />
-				<meta name="description" content={t("persona")} />
+				<meta name="description" content={router.locale === "fr" ? "Un Américain en France doit-il payer son impôt aux États-Unis et si oui comment s’y prendre ? A.S PARTNERS vous accompagne !" : "If you’re an American living in France, knwoing where and how you owe tax can be confusing. A.S PARTNERS, a French-American Accounting Firm, can help." || "Un Américain en France doit-il payer son impôt aux États-Unis et si oui comment s’y prendre ? A.S PARTNERS vous accompagne !"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

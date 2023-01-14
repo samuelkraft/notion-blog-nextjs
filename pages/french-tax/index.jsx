@@ -138,7 +138,7 @@ const FrenchTax = ({ }) => {
 	return (
 		<>
 			<Head>
-				<title>{router.locale === "fr" ? "Fiscalité privée française : nos prestations" : "French Private Tax : Our Services"}</title>
+				<title>{router.locale === "fr" ? "Fiscalité privée française : nos prestations" : "French Private Tax : Our Services" || "Fiscalité privée française : nos prestations"}</title>
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

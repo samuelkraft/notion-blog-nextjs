@@ -145,7 +145,7 @@ const AccountingServices = ({ }) => {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta property="og:image" content="/api/og" />
-				<meta name="description" content={router.locale === "fr" ? "Tenir la comptabilité s’avère complexe pour une entreprise étrangère installée en France. Faites appel à un comptable français en cabinet." : "Any international company establishing a business in France must comply with French administrative rules. Get support from a specialized accountant." || "Tenir la comptabilité s’avère complexe pour une entreprise étrangère installée en France. Faites appel à un comptable français en cabinet."} />
+				<meta name="description" content={router.locale === "fr" ? "Tenir la comptabilité s’avère complexe pour une entreprise étrangère installée en France. Faites appel à un comptable français en cabinet." : "For an international company with operations in France, managing your accounts is a complex task: work with a French accountant to ensure success." || "Tenir la comptabilité s’avère complexe pour une entreprise étrangère installée en France. Faites appel à un comptable français en cabinet."} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

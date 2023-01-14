@@ -137,7 +137,7 @@ const AdministritiveServices = ({ }) => {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta property="og:image" content="/api/og" />
-				<meta name="description" content={t("persona")} />
+				<meta name="description" content={router.locale === "fr" ? "Toute société étrangère qui s’installe en France doit se conformer aux formalités du pays. Faites-vous aider par un expert-comptable spécialisé" : "Any international company establishing a business in France must comply with French administrative rules. Get support from a specialized accountant." || "Toute société étrangère qui s’installe en France doit se conformer aux formalités du pays. Faites-vous aider par un expert-comptable spécialisé"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />
