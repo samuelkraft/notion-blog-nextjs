@@ -145,7 +145,7 @@ const LegalServices = ({ }) => {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
-				<meta property="og:image" content="https://my-og-img.vercel.app/api/og" />
+				<meta property="og:image" content="/api/og" />
 				<meta name="description" content={router.locale === "fr" ? "Une entreprise étrangère qui s'implante en France recherche un conseil juridique pertinent pour l'accompagner. C'est notre métier !" : "International companies setting up business in France need expert legal advice. That’s our job." || "Une entreprise étrangère qui s'implante en France recherche un conseil juridique pertinent pour l'accompagner. C'est notre métier !"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">

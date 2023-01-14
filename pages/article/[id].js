@@ -235,7 +235,7 @@ export default function Post({ page, blocks }) {
 					name='theme-color'
 					content='#ffffff'
 				/>
-				<meta property="og:image" content="https://my-og-img.vercel.app/api/og" />
+				<meta property="og:image" content="/api/og" />
 				<meta
 					name='description'
 					content={page.properties.Name.title[0]?.plain_text || "New Article"}

@@ -69,7 +69,7 @@ const AboutPage = ({ }) => {
 					name='theme-color'
 					content='#ffffff'
 				/>
-				<meta property="og:image" content="https://my-og-img.vercel.app/api/og" />
+				<meta property="og:image" content="/api/og" />
 				<meta name="description" content={router.locale === "fr" ? "Experts comptables français et américains établis en France. Nous sommes spécialisés dans le conseil et l’accompagnement d’entreprises étrangères et de résidents étrangers établis en France" : "French and American Chartered Accountants Based in France, At A.S Partners, our French CPAs specialize in advising and assisting international companies and citizens in France" || "Experts comptables français et américains établis en France. Nous sommes spécialisés dans le conseil et l’accompagnement d’entreprises étrangères et de résidents étrangers établis en France"} />
 
 			</Head>

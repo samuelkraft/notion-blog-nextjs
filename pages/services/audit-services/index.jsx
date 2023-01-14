@@ -146,7 +146,7 @@ const AuditServices = ({ }) => {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
-				<meta property="og:image" content="https://my-og-img.vercel.app/api/og" />
+				<meta property="og:image" content="/api/og" />
 				<meta name="description" content={router.locale === "fr" ? "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez AS PARTNERS pour ces missions." : "International companies operating in France often need the support of a French auditor. A.S PARTNERS is fully equipped to support companies with audits." || "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez AS PARTNERS pour ces missions."} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
