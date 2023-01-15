@@ -252,7 +252,7 @@ export default function HeaderMegaMenu() {
 							size='lg'
 						/>
 						<Anchor href='/'  >
-							<Image src={Logo} width='150' height='100' alt="Expand CPA LOGO" />
+							<Image src={Logo} width='150' height='100' priority alt="Expand CPA LOGO" />
 						</Anchor>
 						<Container fluid>
 							<Group

@@ -58,11 +58,11 @@ const AboutSection01 = () => {
 						<h1>{t("whoAreWe")}</h1>
 						<Story>
 							<Image src={logoArrow} alt='logo arrow' />
-							<h3>{t("story1")}</h3>
+							<h2>{t("story1")}</h2>
 						</Story>
 						<Story>
 							<Image src={logoArrow} alt='logo arrow' />
-							<h3>{t("story2")}</h3>
+							<h2>{t("story2")}</h2>
 						</Story>
 					</StoryContainer>
 
@@ -105,11 +105,11 @@ const AboutSection01 = () => {
 					<StoryContainer>
 						<Story>
 							<Image src={logoArrow} alt='logo arrow' />
-							<h3>{t("story3")}</h3>
+							<h2>{t("story3")}</h2>
 						</Story>
 						<Story>
 							<Image src={logoArrow} alt='logo arrow' />
-							<h3>{t("story4")}</h3>
+							<h2>{t("story4")}</h2>
 						</Story>
 					</StoryContainer>
 				</OurStoryContainer2>
@@ -121,7 +121,7 @@ const AboutSection01 = () => {
 export default AboutSection01;
 
 export const AboutSection01Container = styled(motion.div)`
-	margin-top: 4rem;
+	margin-top: 8rem;
 
 	padding: 2rem;
 	@media screen and (min-width: 768px) {
@@ -218,7 +218,7 @@ const Story = styled.div`
 	gap: 3rem;
 	margin: 3rem 0;
 	align-items: center;
-	h3 {
+	h2 {
 		font-size: 20px;
 		color: #1b1464;
 		text-align: left;

@@ -127,10 +127,10 @@ const Hero = () => {
 export const HeroContainer = styled.div`
 	padding: 2rem;
 	@media screen and (min-width: 768px) {
-		padding: 1rem;
+		padding: 1rem 8%;
 	}
 	@media screen and (min-width: 1024px) {
-		padding: 1rem 6%;
+		padding: 1rem 12%;
 	}
 
 	@media screen and (min-width: 1440px) {

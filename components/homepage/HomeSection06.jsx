@@ -115,6 +115,7 @@ const HomeSection06 = () => {
 									src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
 									radius='xl'
 									size='xl'
+									alt='John Doe'
 								/>
 								<AvatarContent>
 									<h3>John Doe</h3>
@@ -136,6 +137,7 @@ const HomeSection06 = () => {
 									src='https://images.unsplash.com/photo-1628890920690-9e29d0019b9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
 									radius='xl'
 									size='xl'
+									alt='feedback2'
 								/>
 								<AvatarContent>
 									<h3>John Doe</h3>
@@ -157,6 +159,7 @@ const HomeSection06 = () => {
 									src='https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80'
 									radius='xl'
 									size='xl'
+									alt='feedback3'
 								/>
 								<AvatarContent>
 									<h3>John Doe</h3>
@@ -178,6 +181,7 @@ const HomeSection06 = () => {
 									src='https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80'
 									radius='xl'
 									size='xl'
+									alt='feedback4'
 								/>
 								<AvatarContent>
 									<h3>John Doe</h3>
@@ -199,6 +203,7 @@ const HomeSection06 = () => {
 									src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80'
 									radius='xl'
 									size='xl'
+									alt='feedback5'
 								/>
 								<AvatarContent>
 									<h3>John Doe</h3>
@@ -220,6 +225,7 @@ const HomeSection06 = () => {
 									src='https://images.unsplash.com/photo-1539614474468-f423a2d2270c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
 									radius='xl'
 									size='xl'
+									alt='feedback6'
 								/>
 								<AvatarContent>
 									<h3>John Doe</h3>

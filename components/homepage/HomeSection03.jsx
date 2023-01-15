@@ -69,7 +69,7 @@ const TextContent = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	padding: 8rem;
-
+	grid-gap: 1.6rem;
 	@media screen and (max-width: 500px) {
 		padding: 2rem;
 	}

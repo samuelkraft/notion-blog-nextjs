@@ -1,56 +1,61 @@
 @font-face {
-	font-family: "Gilroy";
-	src: url("/assets/fonts/Gilroy-Semibold.eot");
-	src: local("Gilroy Semibold"), local("Gilroy-Semibold"),
-		url("/assets/fonts/Gilroy-Semibold.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/Gilroy-Semibold.woff2") format("woff2"),
-		url("/assets/fonts/Gilroy-Semibold.woff") format("woff"),
-		url("/assets/fonts/Gilroy-Semibold.ttf") format("truetype");
+	font-family: 'Gilroy';
+	src: url('/assets/fonts/Gilroy-Semibold.eot');
+	src: local('Gilroy Semibold'), local('Gilroy-Semibold'),
+		url('/assets/fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Gilroy-Semibold.woff2') format('woff2'),
+		url('/assets/fonts/Gilroy-Semibold.woff') format('woff'),
+		url('/assets/fonts/Gilroy-Semibold.ttf') format('truetype');
 	font-weight: 600;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-	font-family: "Gilroy";
-	src: url("/assets/fonts/Gilroy-Medium.eot");
-	src: local("Gilroy Medium"), local("Gilroy-Medium"),
-		url("/assets/fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/Gilroy-Medium.woff2") format("woff2"),
-		url("/assets/fonts/Gilroy-Medium.woff") format("woff"),
-		url("/assets/fonts/Gilroy-Medium.ttf") format("truetype");
+	font-family: 'Gilroy';
+	src: url('/assets/fonts/Gilroy-Medium.eot');
+	src: local('Gilroy Medium'), local('Gilroy-Medium'),
+		url('/assets/fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Gilroy-Medium.woff2') format('woff2'),
+		url('/assets/fonts/Gilroy-Medium.woff') format('woff'),
+		url('/assets/fonts/Gilroy-Medium.ttf') format('truetype');
 	font-weight: 500;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-	font-family: "Gilroy";
-	src: url("/assets/fonts/Gilroy-Bold.eot");
-	src: local("Gilroy Bold"), local("Gilroy-Bold"),
-		url("/assets/fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/Gilroy-Bold.woff2") format("woff2"),
-		url("/assets/fonts/Gilroy-Bold.woff") format("woff"),
-		url("/assets/fonts/Gilroy-Bold.ttf") format("truetype");
+	font-family: 'Gilroy';
+	src: url('/assets/fonts/Gilroy-Bold.eot');
+	src: local('Gilroy Bold'), local('Gilroy-Bold'),
+		url('/assets/fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Gilroy-Bold.woff2') format('woff2'),
+		url('/assets/fonts/Gilroy-Bold.woff') format('woff'),
+		url('/assets/fonts/Gilroy-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-	font-family: "Gilroy";
-	src: url("/assets/fonts/Gilroy-Regular.eot");
-	src: local("Gilroy Regular"), local("Gilroy-Regular"),
-		url("/assets/fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/Gilroy-Regular.woff2") format("woff2"),
-		url("/assets/fonts/Gilroy-Regular.woff") format("woff"),
-		url("/assets/fonts/Gilroy-Regular.ttf") format("truetype");
+	font-family: 'Gilroy';
+	src: url('/assets/fonts/Gilroy-Regular.eot');
+	src: local('Gilroy Regular'), local('Gilroy-Regular'),
+		url('/assets/fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Gilroy-Regular.woff2') format('woff2'),
+		url('/assets/fonts/Gilroy-Regular.woff') format('woff'),
+		url('/assets/fonts/Gilroy-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-	font-family: "AllRoundGothic-Demi";
-	src: url("/assets/fonts/AllRoundGothic-Demi.ttf");
+	font-family: 'AllRoundGothic-Demi';
+	src: url('/assets/fonts/AllRoundGothic-Demi.ttf');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 html,
@@ -160,7 +165,7 @@ section {
 }
 body {
 	line-height: 1;
-	font-family: "Gilroy", sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	background: #fcfcfd; /* fallback for old browsers */
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
@@ -176,7 +181,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
+	content: '';
 	content: none;
 }
 table {

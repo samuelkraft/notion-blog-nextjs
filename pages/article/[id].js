@@ -120,7 +120,7 @@ const renderBlock = (block) => {
 		case "image":
 			const src =
 				value.type === "external" ? value.external.url : value.file.url;
-			const caption = value.caption ? value.caption[0]?.plain_text : "";
+			const caption = value.caption ? value.caption[0]?.plain_text : "image";
 			return (
 				<figure>
 					<img src={src} alt={caption} />
@@ -196,7 +196,7 @@ export default function Post({ page, blocks }) {
 	}
 
 	return (
-		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit" key={page.id}>
 			<Head>
 				<title>
 					{page.properties.Name.title[0]?.plain_text || "New Article"}
@@ -246,7 +246,9 @@ export default function Post({ page, blocks }) {
 				src={
 					page?.cover?.external?.url ||
 					"https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
-				}></Thumbnail>
+				}
+				alt="cover"
+			></Thumbnail>
 			<article className={styles.container}>
 				<h1 className={styles.name}>
 					<Text text={page.properties.Name?.title || "Title"} />

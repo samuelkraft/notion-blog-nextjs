@@ -114,11 +114,11 @@ const HomeSection02 = () => {
 export default HomeSection02;
 
 const HomeSection02Wrapper = styled(HomeSection01Wrapper)`
-	@media screen and (max-width: 1023px) {
+	@media screen and (max-width: 1199px) {
 		flex-direction: column-reverse;
 	}
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1200px) {
 		align-items: center;
 		.text-content {
 			width: 50%;
@@ -152,14 +152,14 @@ const ImageWrapper = styled.div`
 
 	@media screen and (min-width: 991px) {
 		height: 90vh;
+	
+	}
+
+	@media screen and (min-width: 1200px) {
+		height: 140vh;
 		width: 40vw;
 		background-position: 50% 0%;
 	}
 
-	@media screen and (min-width: 1024px) {
-		height: 140vh;
-	}
-
-	@media screen and (min-width: 1440px) {
-	}
+	
 `;

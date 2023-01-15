@@ -122,7 +122,7 @@ const HomeSection01 = () => {
 							alt='comptable_dedie'
 						/>
 						<div className='text-content'>
-							<h4>{t('comptable_dedie')}</h4>
+							<h3>{t('comptable_dedie')}</h3>
 						</div>
 					</FeaturesCard>
 					<FeaturesCard2>
@@ -131,7 +131,7 @@ const HomeSection01 = () => {
 							alt='administrativeServices'
 						/>
 						<div className='text-content'>
-							<h4>{t('administrativeServices')}</h4>
+							<h3>{t('administrativeServices')}</h3>
 						</div>
 					</FeaturesCard2>
 					<FeaturesCard3>
@@ -140,7 +140,7 @@ const HomeSection01 = () => {
 							alt='expertiseRH'
 						/>
 						<div className='text-content'>
-							<h4>{t('expertiseRH')}</h4>
+							<h3>{t('expertiseRH')}</h3>
 						</div>
 					</FeaturesCard3>
 					<FeaturesCard4>
@@ -149,7 +149,7 @@ const HomeSection01 = () => {
 							alt='conseilJuridique'
 						/>
 						<div className='text-content'>
-							<h4>{t('conseilJuridique')}</h4>
+							<h3>{t('conseilJuridique')}</h3>
 						</div>
 					</FeaturesCard4>
 					<FeaturesCard5>
@@ -158,7 +158,7 @@ const HomeSection01 = () => {
 							alt='conseillerFiscal'
 						/>
 						<div className='text-content'>
-							<h4>{t('conseillerFiscal')}</h4>
+							<h3>{t('conseillerFiscal')}</h3>
 						</div>
 					</FeaturesCard5>
 					<FeaturesCard6>
@@ -167,7 +167,7 @@ const HomeSection01 = () => {
 							alt='auditServices'
 						/>
 						<div className='text-content'>
-							<h4>{t('auditServices')}</h4>
+							<h3>{t('auditServices')}</h3>
 						</div>
 					</FeaturesCard6>
 				</FeaturesCardContainer>
@@ -181,24 +181,24 @@ export default HomeSection01
 export const HomeSection01Container = styled(motion.div)`
 	padding: 2rem;
 	@media screen and (min-width: 768px) {
-		padding: 1rem;
+		padding: 3rem;
 	}
 	@media screen and (min-width: 1024px) {
-		padding: 1rem 12%;
+		padding: 3rem 12%;
 	}
 
 	@media screen and (min-width: 1440px) {
-		padding: 1rem 12%;
+		padding: 3rem 12%;
 	}
 	@media screen and (min-width: 1800px) {
-		padding: 1rem 8%;
+		padding: 3rem 8%;
 	}
 
 	@media screen and (min-width: 2100px) {
-		padding: 1rem 16%;
+		padding: 3rem 16%;
 	}
 	@media screen and (min-width: 2500px) {
-		padding: 1rem 25%;
+		padding: 3rem 25%;
 	}
 `
 
@@ -218,6 +218,13 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 		font-size: 48px;
 		flex-flow: column;
 	}
+
+	@media screen and (min-width: 1024px) {
+		font-size: 48px;
+		flex-flow: column;
+		justify-content: center;
+	}
+
 	@media screen and (min-width: 1200px) {
 		font-size: 50px;
 		justify-content: space-evenly;
@@ -253,7 +260,15 @@ export const HeadingSection01 = styled(Heading)`
 			font-size: 20px;
 		}
 	}
+
 	@media screen and (min-width: 1024px) {
+		h2 {
+			font-size: 22px;
+		}
+		width: 100%;
+	}
+
+	@media screen and (min-width: 1200px) {
 		h2 {
 			font-size: 20px;
 		}
@@ -276,7 +291,7 @@ export const SloganSection01 = styled(Slogan)`
 			font-size: 52px;
 			width: 40rem;
 		}
-		@media screen and (min-width: 1024px) {
+		@media screen and (min-width: 1200px) {
 			font-size: 56px;
 			width: 30rem;
 			margin-top: 3.5rem;

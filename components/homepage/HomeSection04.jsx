@@ -140,8 +140,8 @@ const HeroImageContainerSection04 = styled(HeroImageContainer)`
 	align-items: center;
 	justify-content: center;
 
-	@media screen and (min-width: 1024px) {
-		margin-top: 20rem;
+	@media screen and (min-width: 1200px) {
+		margin-top: 15rem;
 	}
 `;
 
@@ -200,7 +200,7 @@ const ImageWrapper2 = styled(motion.div)`
 	grid-row-start: 4;
 	grid-row-end: 4;
 
-	@media screen and (max-width: 991px) {
+	@media screen and (max-width: 1200px) {
 		justify-self: start;
 		width: 36vw;
 		height: 36vw;

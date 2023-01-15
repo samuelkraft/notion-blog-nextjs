@@ -15,6 +15,7 @@ const GradientButton = React.forwardRef(
 				href={href}
 				onClick={onClick}
 				type={type}
+				aria-label={children}
 				styles={{
 					root: {
 						background: gradientColor,
