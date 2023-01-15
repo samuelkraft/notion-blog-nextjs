@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { Anchor } from '@mantine/core';
 import styled from "styled-components";
-
+import Link from 'next/link';
 import Logo from "../../images/logo_Expand-CPA.svg";
 import { useTranslation } from "next-i18next";
-
+import { useRouter } from "next/router";
 import { IconPhone, IconMail, IconMapPin } from "@tabler/icons";
 import { useEffect } from "react";
 
@@ -17,13 +16,22 @@ const Footer = () => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, []);
 
+	const router = useRouter();
+
+	const handlePreventRefreshOnSameLink = (e, href) => {
+		if (router.asPath === href) {
+			e.preventDefault();
+		}
+	};
+
+
 	return (
 		<FooterContainer>
 			<FooterWrapper>
 				<div className='brand'>
-					<Anchor href='/'>
+					<Link locale={router.locale} href='/' onClick={(e) => handlePreventRefreshOnSameLink(e, '/')}>
 						<Image src={Logo} width={200} height={150} alt="logo" />
-					</Anchor>
+					</Link>
 					<div>
 						<p>{t("slogan")}</p>
 					</div>
@@ -31,39 +39,39 @@ const Footer = () => {
 				<div className='column'>
 					<h2>{t("footerLinks")}</h2>
 					<div>
-						<Anchor href='/about'>
+						<Link locale={router.locale} href='/about' onClick={(e) => handlePreventRefreshOnSameLink(e, '/about/')}>
 							<div className='links'>
 								<span>{t("cabinet")}</span>
 							</div>
-						</Anchor>
+						</Link>
 					</div>
 					<div>
-						<Anchor href='/services'>
+						<Link locale={router.locale} href='/services' onClick={(e) => handlePreventRefreshOnSameLink(e, '/services/')}>
 							<div className='links'>
 								<span>{t("business")}</span>
 							</div>
-						</Anchor>
+						</Link>
 					</div>
 					<div>
-						<Anchor href='/french-tax'>
+						<Link locale={router.locale} href='/french-tax' onClick={(e) => handlePreventRefreshOnSameLink(e, '/french-tax/')}>
 							<div className='links'>
 								<span>{t("tax")}</span>
 							</div>
-						</Anchor>
+						</Link>
 					</div>
 					<div>
-						<Anchor href='/blog'>
+						<Link locale={router.locale} href='/blog' onClick={(e) => handlePreventRefreshOnSameLink(e, '/blog/')}>
 							<div className='links'>
 								<span>{t("blog")}</span>
 							</div>
-						</Anchor>
+						</Link>
 					</div>
 					<div>
-						<Anchor href='/#contact'>
+						<Link locale={router.locale} href='/#contact' onClick={(e) => handlePreventRefreshOnSameLink(e, '/#contact')}>
 							<div className='links'>
 								<span>{t("contact")}</span>
 							</div>
-						</Anchor>
+						</Link>
 					</div>
 				</div>
 				<div className='column'>
