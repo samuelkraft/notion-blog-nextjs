@@ -145,5 +145,18 @@
 	"ourExpertises": "Our areas of expertise",
 	"form_success_title": "The form has been sent !",
 	"form_success_subtitle": "You will be contacted as soon as possible.",
-	"send": "Send"
+	"send": "Send",
+	"needs": "I am interested in",
+	"audit-annual": "Annual Audit",
+	"compta-courante": "Current Accounting",
+	"compta-exception": "Exception Accounting",
+	"irpp": "IRPP",
+	"payroll": "Payroll",
+	"itin": "ITIN",
+	"rh": "HR",
+	"juridique": "Legal",
+	"your_message": "Your message",
+	"phone": "Phone",
+	"firstName": "First name",
+	"lastName": "Last name"
 }

@@ -23,9 +23,10 @@ import {
 	Group,
 	Textarea,
 	Flex,
+	Select,
 } from "@mantine/core";
 
-import { IconMail, IconUser, IconPhone, IconCircleCheck } from "@tabler/icons";
+import { IconMail, IconUser, IconPhone, IconCircleCheck, IconBriefcase } from "@tabler/icons";
 import { motion, useInView } from 'framer-motion'
 
 
@@ -120,8 +121,8 @@ const ContactForm = () => {
 						<Group position='left' spacing='xl'>
 							<TextInput
 								required
-								label='Nom'
-								placeholder='Nom'
+								label={t("firstName")}
+								placeholder={t("firstName")}
 								type='text'
 								radius='lg'
 								size='lg'
@@ -138,8 +139,8 @@ const ContactForm = () => {
 							/>
 							<TextInput
 								required
-								label='Prénom'
-								placeholder='Prénom'
+								label={t("lastName")}
+								placeholder={t("lastName")}
 								tyoe='text'
 								radius='lg'
 								size='lg'
@@ -158,7 +159,7 @@ const ContactForm = () => {
 
 						<TextInput
 							required
-							label='Telephone'
+							label={t("phone")}
 							placeholder='01 23 45 67 89'
 							type='tel'
 							radius='lg'
@@ -175,9 +176,30 @@ const ContactForm = () => {
 							}}
 						/>
 
+						<Select
+							label={t("needs")}
+							placeholder={t("compta-courante")}
+							data={[
+								{ value: "audit-annuel", label: t("audit-annual") },
+								{ value: "compta-courante", label: t("compta-courante") },
+								{ value: "compta-exception", label: t("compta-exception") },
+								{ value: "irpp", label: t("irpp") },
+								{ value: "itin", label: t("itin") },
+								{ value: "juridique", label: t("juridique") },
+								{ value: "paie", label: t("payroll") },
+								{ value: "rh", label: t("rh") },
+							]}
+							required
+							radius='lg'
+							size='lg'
+							icon={<IconBriefcase color='#4364F7' />}
+							name='needs'
+
+						/>
+
 						<Textarea
-							placeholder='Your comment'
-							label='Your comment'
+							placeholder={t("your_message")}
+							label={t("your_message")}
 							name='message'
 							withAsterisk
 							size='lg'

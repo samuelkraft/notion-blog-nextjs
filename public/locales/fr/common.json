@@ -149,5 +149,18 @@
 	"blog_section": "Nos articles de blog",
 	"form_success_title": "Le formulaire à été envoyé !",
 	"form_success_subtitle": "Vous allez être recontacté dans les plus brefs délais.",
-	"send": "Envoyer"
+	"send": "Envoyer",
+	"needs": "Je suis intéressé par",
+	"audit-annual": "Audit annuel",
+	"compta-courante": "Compta courante",
+	"compta-exception": "Compta exception",
+	"irpp": "IRPP",
+	"payroll": "Paie",
+	"itin": "ITIN",
+	"rh": "RH",
+	"juridique": "Juridique",
+	"your_message": "Votre message",
+	"phone": "Téléphone",
+	"firstName": "Prénom",
+	"lastName": "Nom"
 }

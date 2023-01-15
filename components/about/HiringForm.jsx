@@ -155,8 +155,8 @@ const HiringForm = () => {
 							<Group position='left' spacing='xl'>
 								<TextInput
 									required
-									label='Nom'
-									placeholder='Nom'
+									label={t("firstName")}
+									placeholder={t("firstName")}
 									type='text'
 									radius='lg'
 									size='lg'
@@ -174,8 +174,8 @@ const HiringForm = () => {
 								/>
 								<TextInput
 									required
-									label='Prénom'
-									placeholder='Prénom'
+									label={t("lastName")}
+									placeholder={t("lastName")}
 									tyoe='text'
 									radius='lg'
 									size='lg'
@@ -195,7 +195,7 @@ const HiringForm = () => {
 
 							<TextInput
 								required
-								label='Telephone'
+								label={t("phone")}
 								placeholder='01 23 45 67 89'
 								type='tel'
 								radius='lg'
@@ -213,8 +213,8 @@ const HiringForm = () => {
 								}}
 							/>
 							<Textarea
-								placeholder='Your message'
-								label='Your message'
+								placeholder={t("your_message")}
+								label={t("your_message")}
 								name="message"
 								withAsterisk
 								size='xl'

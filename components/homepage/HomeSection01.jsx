@@ -122,7 +122,7 @@ const HomeSection01 = () => {
 							alt='comptable_dedie'
 						/>
 						<div className='text-content'>
-							<h3>{t('comptable_dedie')}</h3>
+							{t('comptable_dedie')}
 						</div>
 					</FeaturesCard>
 					<FeaturesCard2>
@@ -131,7 +131,7 @@ const HomeSection01 = () => {
 							alt='administrativeServices'
 						/>
 						<div className='text-content'>
-							<h3>{t('administrativeServices')}</h3>
+							{t('administrativeServices')}
 						</div>
 					</FeaturesCard2>
 					<FeaturesCard3>
@@ -140,7 +140,7 @@ const HomeSection01 = () => {
 							alt='expertiseRH'
 						/>
 						<div className='text-content'>
-							<h3>{t('expertiseRH')}</h3>
+							{t('expertiseRH')}
 						</div>
 					</FeaturesCard3>
 					<FeaturesCard4>
@@ -149,7 +149,7 @@ const HomeSection01 = () => {
 							alt='conseilJuridique'
 						/>
 						<div className='text-content'>
-							<h3>{t('conseilJuridique')}</h3>
+							{t('conseilJuridique')}
 						</div>
 					</FeaturesCard4>
 					<FeaturesCard5>
@@ -158,7 +158,7 @@ const HomeSection01 = () => {
 							alt='conseillerFiscal'
 						/>
 						<div className='text-content'>
-							<h3>{t('conseillerFiscal')}</h3>
+							{t('conseillerFiscal')}
 						</div>
 					</FeaturesCard5>
 					<FeaturesCard6>
@@ -167,7 +167,7 @@ const HomeSection01 = () => {
 							alt='auditServices'
 						/>
 						<div className='text-content'>
-							<h3>{t('auditServices')}</h3>
+							{t('auditServices')}
 						</div>
 					</FeaturesCard6>
 				</FeaturesCardContainer>

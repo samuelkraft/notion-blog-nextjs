@@ -16,7 +16,6 @@ import {
 	Collapse,
 	ScrollArea,
 	Container,
-	Anchor,
 } from "@mantine/core";
 
 import { useDisclosure } from "@mantine/hooks";
@@ -151,41 +150,47 @@ export default function HeaderMegaMenu() {
 	}, []);
 
 
+	const handlePreventRefreshOnSameLink = (e, href) => {
+		if (router.asPath === href) {
+			e.preventDefault();
+		}
+	};
+
 	const businessServices = [
 		{
 			icon: IconArticle,
 			title: t("administrativeServices"),
-			href: "/services/administrative-services",
+			href: "/services/administrative-services/",
 			color: "#7B42F6"
 		},
 		{
 			icon: IconUsers,
 			title: t("payrollServices"),
-			href: "/services/payroll-services",
+			href: "/services/payroll-services/",
 			color: "#1B1464"
 		},
 		{
 			icon: IconMathSymbols,
 			title: t("accountingServices"),
-			href: "/services/accounting-services",
+			href: "/services/accounting-services/",
 			color: "#2457F5"
 		},
 		{
 			icon: IconScale,
 			title: t("legalServices"),
-			href: "/services/legal-services",
+			href: "/services/legal-services/",
 			color: "#EAB652"
 		},
 		{
 			icon: IconPigMoney,
 			title: t("taxServices"),
-			href: "/services/tax-services",
+			href: "/services/tax-services/",
 			color: "#FF630B"
 		},
 		{
 			icon: IconEye,
 			title: t("auditServices"),
-			href: "/services/audit-services",
+			href: "/services/audit-services/",
 			color: "#3DF29B"
 		},
 	];
@@ -193,20 +198,27 @@ export default function HeaderMegaMenu() {
 		{
 			icon: IconCoinEuro,
 			title: t("frenchTax"),
-			href: "/french-tax",
+			href: "/french-tax/",
 			color: "#0657CF",
 		},
 		{
 			icon: IconCoin,
 			title: t("usTax"),
-			href: "/usa-tax",
+			href: "/usa-tax/",
 			color: "#002495",
 		},
 	];
 
 	const businessLinks = businessServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Anchor href={item.href} className={classes.subLinkText} onClick={closeDrawer} >
+			<Link href={item.href}
+				className={classes.subLinkText}
+				locale={router.locale}
+				onClick={(e) => {
+					handlePreventRefreshOnSameLink(e, item.href)
+					closeDrawer()
+				}}
+			>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={item.color} />
@@ -218,13 +230,20 @@ export default function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</Anchor>
+			</Link>
 		</UnstyledButton>
 	));
 
 	const privateTaxLinks = privateTaxServices.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
-			<Anchor href={item.href} className={classes.subLinkText} onClick={closeDrawer} >
+			<Link
+				href={item.href}
+				className={classes.subLinkText}
+				locale={router.locale}
+				onClick={(e) => {
+					handlePreventRefreshOnSameLink(e, item.href)
+					closeDrawer()
+				}}>
 				<Group noWrap align='center'>
 					<ThemeIcon size={34} variant='default' radius='md'>
 						<item.icon size={22} color={item.color} />
@@ -236,7 +255,7 @@ export default function HeaderMegaMenu() {
 						{item.title}
 					</Text>
 				</Group>
-			</Anchor>
+			</Link>
 		</UnstyledButton>
 	));
 
@@ -251,17 +270,17 @@ export default function HeaderMegaMenu() {
 							className={classes.hiddenDesktop}
 							size='lg'
 						/>
-						<Anchor href='/'  >
+						<Link href='/' locale={router.locale} onClick={(e) => handlePreventRefreshOnSameLink(e, "/")} >
 							<Image src={Logo} width='150' height='100' priority alt="Expand CPA LOGO" />
-						</Anchor>
+						</Link>
 						<Container fluid>
 							<Group
 								sx={{ height: "100%" }}
 								spacing={10}
 								className={classes.hiddenMobile}>
-								<Anchor href='/about' className={classes.link} >
+								<Link href='/about' className={classes.link} locale={router.locale} onClick={(e) => handlePreventRefreshOnSameLink(e, "/about/")} >
 									{t("cabinet")}
-								</Anchor>
+								</Link>
 								<HoverCard
 									width={600}
 									position='bottom'
@@ -269,7 +288,7 @@ export default function HeaderMegaMenu() {
 									shadow='md'
 									withinPortal>
 									<HoverCard.Target>
-										<Anchor href='/services' className={classes.link} >
+										<Link href='/services' className={classes.link} locale={router.locale} onClick={(e) => handlePreventRefreshOnSameLink(e, "/services/")} >
 											<Center inline>
 												<Box component='span' mr={5}>
 													{t("business")}
@@ -279,7 +298,7 @@ export default function HeaderMegaMenu() {
 													color={theme.fn.primaryColor()}
 												/>
 											</Center>
-										</Anchor>
+										</Link>
 									</HoverCard.Target>
 
 									<HoverCard.Dropdown sx={{ overflow: "hidden" }}>
@@ -292,17 +311,18 @@ export default function HeaderMegaMenu() {
 												}}>
 												{t("business")}
 											</Text>
-											<Anchor
+											<Link
+												locale={router.locale}
 												href='/services'
 												size='xs'
 												style={{
 													fontFamily: "'Gilroy',sans-serif",
 													color: theme.colors.blue[6],
 												}}
-
+												onClick={(e) => handlePreventRefreshOnSameLink(e, "/services/")}
 											>
 												View all
-											</Anchor>
+											</Link>
 										</Group>
 
 										<Divider
@@ -336,7 +356,7 @@ export default function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Anchor href="/#contact">
+												<Link href="/#contact" onClick={(e) => handlePreventRefreshOnSameLink(e, "/#contact")} locale={router.locale}>
 													<Button
 														variant='default'
 														style={{
@@ -345,7 +365,7 @@ export default function HeaderMegaMenu() {
 														}}>
 														{t("contact")}
 													</Button>
-												</Anchor>
+												</Link>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
@@ -413,7 +433,7 @@ export default function HeaderMegaMenu() {
 														{t("contactUsText")}
 													</Text>
 												</div>
-												<Anchor href="/#contact"  >
+												<Link href="/#contact" onClick={(e) => handlePreventRefreshOnSameLink(e, "/#contact")} locale={router.locale} >
 													<Button
 														variant='default'
 														style={{
@@ -422,17 +442,17 @@ export default function HeaderMegaMenu() {
 														}}>
 														{t("contact")}
 													</Button>
-												</Anchor>
+												</Link>
 											</Group>
 										</div>
 									</HoverCard.Dropdown>
 								</HoverCard>
-								<Anchor href='/blog' className={classes.link} >
+								<Link href='/blog' className={classes.link} locale={router.locale} onClick={(e) => handlePreventRefreshOnSameLink(e, "/blog/")}  >
 									{t("blog")}
-								</Anchor>
-								<Anchor href='/#contact' className={classes.link} >
+								</Link>
+								<Link href='/#contact' className={classes.link} locale={router.locale} onClick={(e) => handlePreventRefreshOnSameLink(e, "/#contact")}  >
 									{t("contact")}
-								</Anchor>
+								</Link>
 								<Group className={classes.hiddenMobile}>
 									<LanguageSwitcher />
 								</Group>
@@ -458,9 +478,16 @@ export default function HeaderMegaMenu() {
 						color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
 					/>
 
-					<Anchor href='/about' className={classes.link} onClick={closeDrawer} >
+					<Link
+						href='/about'
+						className={classes.link}
+						onClick={(e) => {
+							handlePreventRefreshOnSameLink(e, "/about/")
+							closeDrawer()
+						}}
+						locale={router.locale} >
 						{t("cabinet")}
-					</Anchor>
+					</Link>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
 						<Center inline>
 							<Box component='span' mr={5}>
@@ -480,12 +507,26 @@ export default function HeaderMegaMenu() {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-					<Anchor href='/blog' className={classes.link} onClick={closeDrawer} >
+					<Link
+						href='/blog'
+						className={classes.link}
+						onClick={(e) => {
+							handlePreventRefreshOnSameLink(e, "/blog/")
+							closeDrawer()
+						}}
+						locale={router.locale} >
 						{t("blog")}
-					</Anchor>
-					<Anchor href='/#contact' className={classes.link} onClick={closeDrawer} >
+					</Link>
+					<Link
+						href='/#contact'
+						className={classes.link}
+						onClick={(e) => {
+							handlePreventRefreshOnSameLink(e, "/blog/")
+							closeDrawer()
+						}}
+						locale={router.locale}>
 						{t("contact")}
-					</Anchor>
+					</Link>
 
 					<Divider
 						my='sm'
