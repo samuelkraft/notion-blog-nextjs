@@ -147,7 +147,7 @@ const AuditServices = ({ }) => {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta property="og:image" content="/api/og" />
-				<meta name="description" content={router.locale === "fr" ? "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez AS PARTNERS pour ces missions." : "International companies operating in France often need the support of a French auditor. A.S PARTNERS is fully equipped to support companies with audits." || "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez AS PARTNERS pour ces missions."} />
+				<meta name="description" content={router.locale === "fr" ? "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez Expand CPA pour ces missions." : "International companies operating in France often need the support of a French auditor. Expand CPA is fully equipped to support companies with audits." || "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez Expand CPA pour ces missions."} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

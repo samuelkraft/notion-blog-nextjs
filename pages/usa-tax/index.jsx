@@ -147,7 +147,7 @@ const UsaTax = ({ }) => {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta property="og:image" content="/api/og" />
-				<meta name="description" content={router.locale === "fr" ? "Un Américain en France doit-il payer son impôt aux États-Unis et si oui comment s’y prendre ? A.S PARTNERS vous accompagne !" : "If you’re an American living in France, knwoing where and how you owe tax can be confusing. A.S PARTNERS, a French-American Accounting Firm, can help." || "Un Américain en France doit-il payer son impôt aux États-Unis et si oui comment s’y prendre ? A.S PARTNERS vous accompagne !"} />
+				<meta name="description" content={router.locale === "fr" ? "Un Américain en France doit-il payer son impôt aux États-Unis et si oui comment s’y prendre ? Expand CPA vous accompagne !" : "If you’re an American living in France, knwoing where and how you owe tax can be confusing. Expand CPA, a French-American Accounting Firm, can help." || "Un Américain en France doit-il payer son impôt aux États-Unis et si oui comment s’y prendre ? Expand CPA vous accompagne !"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

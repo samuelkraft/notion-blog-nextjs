@@ -145,7 +145,7 @@ const PayrollServices = ({ }) => {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta property="og:image" content="/api/og" />
-				<meta name="description" content={router.locale === "fr" ? "Le droit du travail soulève de nombreuses difficultés pour une société étrangère implantée en France. Mieux vaut recourir à l’expertise RH d’un cabinet" : "For international companies expanding into France, understanding local labor laws can be difficult. Work with the French HR experts at A.S PARTNERS.." || "Le droit du travail soulève de nombreuses difficultés pour une société étrangère implantée en France. Mieux vaut recourir à l’expertise RH d’un cabinet"} />
+				<meta name="description" content={router.locale === "fr" ? "Le droit du travail soulève de nombreuses difficultés pour une société étrangère implantée en France. Mieux vaut recourir à l’expertise RH d’un cabinet" : "For international companies expanding into France, understanding local labor laws can be difficult. Work with the French HR experts at Expand CPA.." || "Le droit du travail soulève de nombreuses difficultés pour une société étrangère implantée en France. Mieux vaut recourir à l’expertise RH d’un cabinet"} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />

@@ -147,7 +147,7 @@ const FrenchTax = ({ }) => {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta property="og:image" content="/api/og" />
-				<meta name="description" content={router.locale === "fr" ? "Les entreprises étrangères situées en France recherchent des conseils pour la fiscalité privée française de leurs collaborateurs. Nous savons faire." : "International companies located in France need expert advice to help their employees navigate the French tax code. Trust A.S PARTNERS – a French tax firm." || "Les entreprises étrangères situées en France recherchent des conseils pour la fiscalité privée française de leurs collaborateurs. Nous savons faire."} />
+				<meta name="description" content={router.locale === "fr" ? "Les entreprises étrangères situées en France recherchent des conseils pour la fiscalité privée française de leurs collaborateurs. Nous savons faire." : "International companies located in France need expert advice to help their employees navigate the French tax code. Trust Expand CPA – a French tax firm." || "Les entreprises étrangères situées en France recherchent des conseils pour la fiscalité privée française de leurs collaborateurs. Nous savons faire."} />
 			</Head>
 			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
 				<HeaderMegaMenu />
