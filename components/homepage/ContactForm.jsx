@@ -263,8 +263,8 @@ const ContactForm = () => {
 							<ContactInfo>
 								<Image src={redLocation} alt="paris" />
 								<p>
-									87 rue la Boétie, 75008 PARIS <br />
-									34 rue Poissonnière, 75002 PARIS
+									46 Rue Lafayette 75009 Paris <br />
+									7 Rue Theodule Ribot 75017 Paris
 								</p>
 							</ContactInfo>
 						</a>
@@ -287,10 +287,10 @@ const ContactForm = () => {
 								</p>
 							</ContactInfo>
 						</a>
-						<a href='mailto:contact@asp-experts.com'>
+						<a href='mailto:contact@expand-cpa.com'>
 							<ContactInfo>
 								<Image src={mail} alt="mail" />
-								<p>contact@asp-experts.com</p>
+								<p>contact@expand-cpa.com</p>
 							</ContactInfo>
 						</a>
 					</ContactInfoContainer>

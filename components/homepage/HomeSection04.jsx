@@ -68,7 +68,7 @@ const HomeSection04 = () => {
 							{t("section04_heading_pt4")}
 						</h2>
 					</HeadingSection01>
-					<HeadingSection01>
+					{/* <HeadingSection01>
 						<RowWrapper className=''>
 							<Image src={check} alt='check1' width={50} height={50} />
 							<h2>{t("section04_check1")}</h2>
@@ -85,7 +85,7 @@ const HomeSection04 = () => {
 							<Image src={check} alt='check3' width={50} height={50} />
 							<h2>{t("section04_check3")}</h2>
 						</RowWrapper>
-					</HeadingSection01>
+					</HeadingSection01> */}
 					<div style={{ marginTop: "2rem" }}>
 						<Link href='/services/accounting-services'>
 							<GradientButton

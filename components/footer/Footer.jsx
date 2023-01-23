@@ -82,10 +82,10 @@ const Footer = () => {
 							<span>01 86 96 37 01 / 06 59 69 13 42</span>
 						</div>
 					</a>
-					<a href='mailto:contact@asp-experts.com'>
+					<a href='mailto:contact@expand-cpa.com'>
 						<div className='links'>
 							<IconMail size={28} />
-							<span>contact@asp-experts.com</span>
+							<span>contact@expand-cpa.com</span>
 						</div>
 					</a>
 
@@ -96,13 +96,13 @@ const Footer = () => {
 								href='https://www.google.fr/maps/place/87+Rue+La+Bo%C3%A9tie,+75008+Paris/@48.8717882,2.3063296,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc6832f7acf:0xa76d2d4cc6634b68!8m2!3d48.8717882!4d2.3085183?hl=fr'
 								target='_blank'
 								rel='noopener noreferrer'>
-								<span>87 rue la Boétie, 75008 PARIS</span>
+								<span>46 Rue Lafayette 75009 Paris</span>
 							</a>
 							<a
 								href='https://www.google.fr/maps/place/34+Rue+Poissonni%C3%A8re,+75002+Paris/@48.8699193,2.345757,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e165da4e065:0x101837ce411c25e4!8m2!3d48.8699193!4d2.3479457?hl=fr'
 								target='_blank'
 								rel='noopener noreferrer'>
-								<span>34 rue Poissonnière, 75002 PARIS</span>
+								<span>7 Rue Theodule Ribot 75017 Paris</span>
 							</a>
 							<a
 								href='https://www.google.fr/maps/place/%D7%A7%D7%A0%D7%99%D7%95%D7%9F+%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99,+Derech+Menachem+Begin+132,+Tel+Aviv-Yafo,+Isra%C3%ABl%E2%80%AD/@32.0743897,34.7899806,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b991302fe6f:0x7e4710b90ab7ab85!8m2!3d32.0743897!4d34.7921693?hl=fr'
