@@ -100,9 +100,9 @@ const HomeSection02 = () => {
                                 <GradientButton
                                     gradientColor='#0657CF'
                                     type='button'
+                                    width={200}
                                 >
                                     {t('readMore')}
-                                    width={200}
                                 </GradientButton>
                             </Link>
                         </HeadingSection01>
