@@ -191,7 +191,7 @@ const AdministritiveServices = ({}) => {
                     <InfiniteSlider />
 
                     <AboutSection05
-                        paragraph={t('contactUsText')}
+                        title={t('CTA')}
                         btnText={t('contactUs')}
                         standalone
                     />
@@ -752,7 +752,7 @@ export const LayoutColumn = styled.div`
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     align-content: center;
 `
 
@@ -889,6 +889,10 @@ const Feature = styled.div`
         cursor: pointer;
         :hover {
             text-decoration: underline;
+        }
+
+        @media screen and (max-width: 465px) {
+            font-size: 20px;
         }
     }
 `

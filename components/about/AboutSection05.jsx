@@ -92,7 +92,8 @@ const JoinOurTeamContainer = styled.div`
     flex-direction: column;
     gap: 2rem;
     align-items: flex-start;
-    justify-content: start;
+    align-content: center;
+    justify-content: center;
     height: 50vh;
 
     h1 {
@@ -120,15 +121,16 @@ const JoinOurTeamContainer = styled.div`
 
     @media screen and (max-width: 768px) {
         padding: 3rem;
+        height: 30vh;
     }
 
     @media screen and (max-width: 425px) {
         padding: 2rem;
+        height: 30vh;
     }
 `
 
 const JoinOurTeamContainer2 = styled(JoinOurTeamContainer)`
-    gap: 3rem;
     h3 {
         font-size: 24px;
         font-family: 'AllRoundGothic-Demi';
@@ -136,10 +138,20 @@ const JoinOurTeamContainer2 = styled(JoinOurTeamContainer)`
         text-align: left;
 
         @media screen and (max-width: 768px) {
-            font-size: 18px;
+            font-size: 20px;
         }
         @media screen and (max-width: 425px) {
-            font-size: 18px;
+            font-size: 24px;
+        }
+    }
+
+    h1 {
+        font-family: 'AllRoundGothic-Demi';
+        font-size: 28px;
+        letter-spacing: 0.327px;
+        text-align: left;
+        @media screen and (max-width: 768px) {
+            font-size: 36px;
         }
     }
 `
