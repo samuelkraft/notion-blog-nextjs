@@ -66,13 +66,14 @@ const TextContent = styled.div`
     align-self: center;
     padding: 8rem 18rem;
     grid-gap: 1.6rem;
-    @media screen and (max-width: 500px) {
-        padding: 2rem;
-    }
 
     @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
-        padding: 8rem 15rem;
+        padding: 9rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        padding: 2rem;
     }
 `
 
@@ -87,12 +88,12 @@ const SloganSection03 = styled(SloganSection01)`
     align-items: center;
 
     font-family: 'AllRoundGothic-Demi';
-    font-size: 42px;
+    font-size: 32px;
     color: #1b1464;
     line-height: 1.2;
 
     @media screen and (max-width: 465px) {
-        font-size: 42px;
+        font-size: 32px;
     }
 
     @media screen and (min-width: 768px) {
