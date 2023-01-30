@@ -186,16 +186,19 @@ export const HomeSection01Container = styled(motion.div)`
 	@media screen and (min-width: 1024px) {
 		padding: 3rem 12%;
 	}
+	@media screen and (min-width: 1200px) {
+		padding: 3rem 18%;
+	}
 
 	@media screen and (min-width: 1440px) {
-		padding: 3rem 12%;
+		padding: 3rem 20%;
 	}
 	@media screen and (min-width: 1800px) {
-		padding: 3rem 8%;
+		padding: 3rem 20%;
 	}
 
 	@media screen and (min-width: 2100px) {
-		padding: 3rem 16%;
+		padding: 3rem 20%;
 	}
 	@media screen and (min-width: 2500px) {
 		padding: 3rem 25%;
@@ -210,7 +213,7 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 
 		@media screen and (min-width: 1440px) {
 			margin-top: 0rem;
-			gap: 2rem;
+			gap: 1.5rem;
 		}
 	}
 
@@ -284,22 +287,17 @@ export const SloganSection01 = styled(Slogan)`
 		line-height: 1.2;
 
 		@media screen and (max-width: 465px) {
-			font-size: 42px;
+			font-size: 32px;
 		}
 
 		@media screen and (min-width: 768px) {
-			font-size: 52px;
-			width: 40rem;
+			font-size: 38px;
 		}
 		@media screen and (min-width: 1200px) {
-			font-size: 56px;
-			width: 30rem;
-			margin-top: 3.5rem;
+			font-size: 40px;
 		}
 		@media screen and (min-width: 1440px) {
-			width: 40rem;
-			font-size: 64px;
-			line-height: 77px;
+			font-size: 46px;
 			letter-spacing: 0.327px;
 		}
 	}
@@ -414,7 +412,5 @@ export const Tag = styled.div`
 	border: 1.5px solid #000000;
 	border-radius: 16px;
 	padding: 0.5rem 1rem;
-	@media screen and (max-width: 1024px) {
-		margin: 2rem 0;
-	}
+		margin: 1.5rem 0;
 `

@@ -66,7 +66,7 @@ const HeroAboutPage = () => {
 export default HeroAboutPage;
 
 const GridContainer = styled(motion.div)`
-	margin-top: 4rem;
+	margin-top: 6rem;
 	grid-column-gap: 2rem;
 	grid-row-gap: 2rem;
 	grid-template-columns: 1fr 1fr 1fr;

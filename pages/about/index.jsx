@@ -89,7 +89,10 @@ const AboutPage = ({ }) => {
 					<AboutSection02 />
 					<AboutSection03 />
 					<AboutSection04 />
-					<AboutSection05 />
+					<AboutSection05
+						title={t("joinOurTeam")}
+						paragraph={t("joinOurTeamText")}
+						btnText={t("seeMore")} />
 					<HiringForm />
 					<Footer />
 				</motion.div>

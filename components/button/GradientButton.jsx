@@ -1,10 +1,11 @@
 import React from "react";
 import { Button } from "@mantine/core";
 // import Link from "next/client";
+import { IconChevronDown } from '@tabler/icons';
 
 const GradientButton = React.forwardRef(
 	(
-		{ gradientColor, children, marginLeft, marginRight, onClick, href, type, size, width },
+		{ gradientColor, children, marginLeft, marginRight, onClick, href, type, size, width, rightIcon },
 		ref
 	) => {
 		return (
@@ -16,6 +17,7 @@ const GradientButton = React.forwardRef(
 				onClick={onClick}
 				type={type}
 				aria-label={children}
+				rightIcon={rightIcon}
 				styles={{
 					root: {
 						background: gradientColor,

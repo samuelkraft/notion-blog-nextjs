@@ -14,8 +14,9 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import GradientButton from "../button/GradientButton";
 import { HeroImageContainer } from "./HeroHomePage";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { Collapse } from '@mantine/core';
 
 const HomeSection04 = () => {
 	const { t, i18n } = useTranslation("common", {
@@ -28,6 +29,8 @@ const HomeSection04 = () => {
 
 	const ref = useRef(null)
 	const isInView = useInView(ref, { once: true })
+
+	const [opened, setOpened] = useState(false);
 
 	return (
 		<HomeSection01Container
@@ -68,33 +71,38 @@ const HomeSection04 = () => {
 							{t("section04_heading_pt4")}
 						</h2>
 					</HeadingSection01>
-					{/* <HeadingSection01>
-						<RowWrapper className=''>
-							<Image src={check} alt='check1' width={50} height={50} />
-							<h2>{t("section04_check1")}</h2>
-						</RowWrapper>
-					</HeadingSection01>
 					<HeadingSection01>
-						<RowWrapper className=''>
-							<Image src={check} alt='check2' width={50} height={50} />
-							<h2>{t("section04_check2")}</h2>
-						</RowWrapper>
+						<Collapse in={opened}>
+							<HeadingSection01>
+								<RowWrapper className=''>
+									<Image src={check} alt='check1' width={50} height={50} />
+									<h2>{t("section04_check1")}</h2>
+								</RowWrapper>
+							</HeadingSection01>
+							<HeadingSection01>
+								<RowWrapper className=''>
+									<Image src={check} alt='check2' width={50} height={50} />
+									<h2>{t("section04_check2")}</h2>
+								</RowWrapper>
+							</HeadingSection01>
+							<HeadingSection01>
+								<RowWrapper className=''>
+									<Image src={check} alt='check3' width={50} height={50} />
+									<h2>{t("section04_check3")}</h2>
+								</RowWrapper>
+							</HeadingSection01>
+						</Collapse>
 					</HeadingSection01>
-					<HeadingSection01>
-						<RowWrapper className=''>
-							<Image src={check} alt='check3' width={50} height={50} />
-							<h2>{t("section04_check3")}</h2>
-						</RowWrapper>
-					</HeadingSection01> */}
+
 					<div style={{ marginTop: "2rem" }}>
-						<Link href='/services/accounting-services'>
-							<GradientButton
-								gradientColor='#0657CF'
-								type='button'
-								width={200}>
-								{t("readMore")}
-							</GradientButton>
-						</Link>
+						<GradientButton
+							gradientColor='#0657CF'
+							type='button'
+							width={200}
+							onClick={() => setOpened((o) => !o)}
+						>
+							{t("readMore")}
+						</GradientButton>
 					</div>
 				</motion.div>
 				<HeroImageContainerSection04>
@@ -132,7 +140,7 @@ const HomeSection04 = () => {
 						}} />
 				</HeroImageContainerSection04>
 			</HomeSection01Wrapper>
-		</HomeSection01Container>
+		</HomeSection01Container >
 	);
 };
 

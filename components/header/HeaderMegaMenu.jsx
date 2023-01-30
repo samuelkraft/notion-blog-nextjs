@@ -260,7 +260,7 @@ export default function HeaderMegaMenu() {
 	));
 
 	return (
-		<Box mb={160}>
+		<Box mb={120}>
 			<Header height={120} className={classes.root} fixed>
 				<Container className={classes.inner} fluid>
 					<Group position='left' sx={{ height: "100%" }}>

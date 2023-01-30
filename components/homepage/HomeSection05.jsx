@@ -130,16 +130,7 @@ const HomeSection05 = () => {
 };
 
 export const HomeSection05Container = styled(HomeSection01Container)`
-	@media screen and (max-width: 768px) {
-		margin-top: 0rem;
-	}
 
-	@media screen and (min-width: 1024px) {
-		margin-top: 15rem;
-	}
-	@media screen and (min-width: 1440px) {
-		margin-top: 25rem;
-	}
 `;
 
 export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
@@ -151,13 +142,6 @@ export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
 		flex-flow: column;
 		justify-content: center;
 
-		@media screen and (min-width: 1024px) {
-			margin-top: -10rem;
-		}
-
-		@media screen and (min-width: 1440px) {
-			margin-top: -20rem;
-		}
 	}
 
 	@media screen and (max-width: 465px) {
@@ -185,8 +169,7 @@ const CardContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 
-	@media screen and (max-width: 1200px) {
-		margin-top: 3rem;
+	@media screen and (max-width: 1440px) {
 		grid-template-columns: 1fr;
 	}
 `;
@@ -194,7 +177,6 @@ const CardContainer = styled.div`
 const BorderedCard = styled.div`
 	display: flex;
 	flex-flow: column;
-	justify-content: space-between;
 	align-items: center;
 	padding: 3rem;
 	border: 3px solid #1b1464;
@@ -212,7 +194,7 @@ const BorderedCard = styled.div`
 		font-size: 20px;
 	}
 
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: 1440px) {
 		height: 800px;
 	}
 `;

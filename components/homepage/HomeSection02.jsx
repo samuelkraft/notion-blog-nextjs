@@ -152,11 +152,12 @@ const ImageWrapper = styled.div`
 
 	@media screen and (min-width: 991px) {
 		height: 90vh;
+		width: 100%;
 	
 	}
 
-	@media screen and (min-width: 1200px) {
-		height: 140vh;
+	@media screen and (min-width: 1440px) {
+		height: 100vh;
 		width: 40vw;
 		background-position: 50% 0%;
 	}

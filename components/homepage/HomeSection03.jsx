@@ -59,7 +59,6 @@ const HomeSection03 = () => {
 };
 
 const HomeSection03Container = styled(motion.div)`
-	margin: 3rem 0;
 	background: rgba(217, 224, 236, 0.2);
 `;
 
@@ -68,13 +67,13 @@ const TextContent = styled.div`
 	grid-template-columns: 1fr 1fr;
 	justify-content: space-between;
 	align-items: center;
-	padding: 8rem;
+	padding: 8rem 15rem;
 	grid-gap: 1.6rem;
 	@media screen and (max-width: 500px) {
 		padding: 2rem;
 	}
 
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1200px) {
 		grid-template-columns: 1fr;
 	}
 `;
@@ -94,16 +93,14 @@ const SloganSection03 = styled(SloganSection01)`
 		}
 
 		@media screen and (min-width: 768px) {
-			font-size: 52px;
+			font-size: 38px;
 			width: 100%;
 		}
-		@media screen and (min-width: 1024px) {
-			font-size: 58px;
-			margin-top: 3.5rem;
+		@media screen and (min-width: 1200px) {
+			font-size: 40px;
 		}
 		@media screen and (min-width: 1440px) {
-			font-size: 58px;
-			line-height: 77px;
+			font-size: 46px;
 			letter-spacing: 0.327px;
 		}
 	}
