@@ -26,9 +26,7 @@ const Hero = () => {
                     initial='hidden'
                     animate='show'
                 >
-                    <Slogan>
-                        <h1>{t('slogan')}</h1>
-                    </Slogan>
+                    <Slogan>{t('slogan')}</Slogan>
                     <Heading>
                         <h2>{t('sloganSubtitle')}</h2>
                     </Heading>
@@ -168,7 +166,6 @@ export const HeroWrapper = styled.div`
         display: flex;
         flex-flow: column;
         justify-content: center;
-        align-items: start;
     }
 
     @media screen and (max-width: 465px) {
@@ -176,44 +173,39 @@ export const HeroWrapper = styled.div`
     }
 
     @media screen and (min-width: 768px) {
-        font-size: 32px;
         flex-flow: column;
     }
     @media screen and (min-width: 1200px) {
-        font-size: 38px;
         flex-flow: row;
         gap: 2rem;
     }
     @media screen and (min-width: 1440px) {
-        font-size: 46px;
         flex-flow: row;
         gap: 5rem;
     }
 `
 
-export const Slogan = styled.div`
-    h1 {
-        font-family: 'AllRoundGothic-Demi';
+export const Slogan = styled(motion.h1)`
+    font-family: 'AllRoundGothic-Demi';
+    font-size: 32px;
+    color: #1b1464;
+    line-height: 1.2;
+
+    @media screen and (max-width: 465px) {
         font-size: 32px;
-        color: #1b1464;
-        line-height: 1.2;
+    }
 
-        @media screen and (max-width: 465px) {
-            font-size: 32px;
-        }
-
-        @media screen and (min-width: 768px) {
-            font-size: 48px;
-            width: 40rem;
-        }
-        @media screen and (min-width: 1024px) {
-            font-size: 48px;
-            width: 35rem;
-        }
-        @media screen and (min-width: 1440px) {
-            font-size: 56px;
-            width: 42rem;
-        }
+    @media screen and (min-width: 768px) {
+        font-size: 48px;
+        width: 40rem;
+    }
+    @media screen and (min-width: 1024px) {
+        font-size: 48px;
+        width: 35rem;
+    }
+    @media screen and (min-width: 1440px) {
+        font-size: 56px;
+        width: 42rem;
     }
 `
 
@@ -265,8 +257,6 @@ const RowButtonContainer = styled.div`
 
 export const HeroImageContainer = styled(motion.div)`
     position: relative;
-    width: 100%;
-    height: 100%;
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
     grid-template-rows: auto auto auto auto auto;
@@ -275,6 +265,10 @@ export const HeroImageContainer = styled(motion.div)`
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr 1fr;
     margin-top: 3rem;
+
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
+        grid-template-columns: 300px 300px;
+    }
 `
 
 const ImageWrapper1 = styled(motion.div)`
@@ -298,9 +292,19 @@ const ImageWrapper1 = styled(motion.div)`
         height: 75vw;
     }
 
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
+        justify-self: center;
+        width: 25vw;
+        height: 40vw;
+    }
+
     @media screen and (min-width: 1440px) {
         width: 12vw;
         height: 20vw;
+    }
+    @media screen and (min-width: 1800px) {
+        width: 10vw;
+        height: 16vw;
     }
 `
 
@@ -321,15 +325,25 @@ const ImageWrapper2 = styled(motion.div)`
     background-size: cover;
     background-repeat: no-repeat;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
         justify-self: start;
         width: 40vw;
         height: 40vw;
     }
 
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
+        justify-self: start;
+        width: 25vw;
+        height: 25vw;
+    }
+
     @media screen and (min-width: 1440px) {
         width: 12vw;
         height: 12vw;
+    }
+    @media screen and (min-width: 1800px) {
+        width: 10vw;
+        height: 10vw;
     }
 `
 
@@ -350,15 +364,23 @@ const ImageWrapper3 = styled(motion.div)`
     background-size: cover;
     background-repeat: no-repeat;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
         justify-self: start;
         width: 40vw;
         height: 40vw;
     }
-
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
+        justify-self: center;
+        width: 25vw;
+        height: 25vw;
+    }
     @media screen and (min-width: 1440px) {
         width: 12vw;
         height: 12vw;
+    }
+    @media screen and (min-width: 1800px) {
+        width: 10vw;
+        height: 10vw;
     }
 `
 const ImageWrapper4 = styled(motion.div)`
@@ -376,15 +398,25 @@ const ImageWrapper4 = styled(motion.div)`
     background-size: cover;
     background-repeat: no-repeat;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
         justify-self: start;
         width: 40vw;
         height: 75vw;
     }
 
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
+        justify-self: start;
+        width: 25vw;
+        height: 40vw;
+    }
+
     @media screen and (min-width: 1440px) {
         width: 12vw;
         height: 20vw;
+    }
+    @media screen and (min-width: 1800px) {
+        width: 10vw;
+        height: 16vw;
     }
 `
 
@@ -426,7 +458,7 @@ const BlurCircleBottomLeft = styled.div`
         margin-left: 4rem;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1800px) {
         width: 500px;
         height: 550px;
     }

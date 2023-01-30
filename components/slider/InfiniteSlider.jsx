@@ -113,7 +113,7 @@ const Heading = styled.h3`
         font-size: 24px;
     }
     @media screen and (min-width: 768px) {
-        font-size: 36px;
+        font-size: 32px;
     }
 `
 

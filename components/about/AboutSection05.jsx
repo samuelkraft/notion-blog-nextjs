@@ -121,12 +121,12 @@ const JoinOurTeamContainer = styled.div`
 
     @media screen and (max-width: 768px) {
         padding: 3rem;
-        height: 30vh;
+        height: 50vh;
     }
 
     @media screen and (max-width: 425px) {
         padding: 2rem;
-        height: 30vh;
+        height: 50vh;
     }
 `
 
@@ -152,6 +152,13 @@ const JoinOurTeamContainer2 = styled(JoinOurTeamContainer)`
         text-align: left;
         @media screen and (max-width: 768px) {
             font-size: 36px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 36px;
+        }
+        @media screen and (min-width: 1440px) {
+            font-size: 28px;
         }
     }
 `
