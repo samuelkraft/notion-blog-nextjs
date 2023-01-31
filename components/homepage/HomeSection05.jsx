@@ -52,22 +52,22 @@ const HomeSection05 = () => {
                     <Tag style={{ width: '35%' }}>
                         <span>{t('whyUs')}</span>
                     </Tag>
-                    <SloganSection01>{t('section05_title')}</SloganSection01>
-                    <HeadingSection01>
+                    <SloganSection05>{t('section05_title')}</SloganSection05>
+                    <HeadingSection05>
                         <h2>
                             {t('section05_heading_pt1')}
                             <b>{t('section05_bold1')}</b>
                             {t('section05_heading_pt2')}
                         </h2>
-                    </HeadingSection01>
-                    <HeadingSection01>
+                    </HeadingSection05>
+                    <HeadingSection05>
                         <h2>
                             {t('section05_heading_pt3')}
                             <b>{t('section05_bold2')}</b>
                             {t('section05_heading_pt4')}
                         </h2>
-                    </HeadingSection01>
-                    <HeadingSection01>
+                    </HeadingSection05>
+                    <HeadingSection05>
                         <Link href='/services/administrative-services'>
                             <GradientButton
                                 gradientColor='#0657CF'
@@ -77,7 +77,7 @@ const HomeSection05 = () => {
                                 {t('readMore')}
                             </GradientButton>
                         </Link>
-                    </HeadingSection01>
+                    </HeadingSection05>
                 </motion.div>
                 <CardContainer>
                     <BorderedCard>
@@ -158,8 +158,23 @@ export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
     }
 `
 
+const SloganSection05 = styled(SloganSection01)`
+    @media screen and (min-width: 1440px) {
+        width: 40rem;
+    }
+`
+
+const HeadingSection05 = styled(HeadingSection01)`
+    @media screen and (min-width: 1200px) {
+        h2 {
+            font-size: 20px;
+        }
+        width: 100%;
+    }
+`
+
 const CardContainer = styled.div`
-    margin-top: 5rem;
+    margin-top: 3rem;
     @media screen and (max-width: 1440px) {
         display: grid;
         grid-template-columns: 1fr;
@@ -171,7 +186,7 @@ const CardContainer = styled.div`
     @media screen and (min-width: 1441px) {
         display: grid;
         grid-template-columns: repeat(2, 525px);
-        grid-gap: 1.5rem;
+        grid-gap: 3rem;
         justify-content: center;
         align-items: center;
     }

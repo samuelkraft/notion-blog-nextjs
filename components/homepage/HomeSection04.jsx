@@ -172,7 +172,6 @@ const HeroImageContainerSection04 = styled(HeroImageContainer)`
 const HomeSection04Wrapper = styled(HomeSection01Wrapper)`
     @media screen and (min-width: 1200px) {
         .text-content {
-            transform: translateX(7rem) !important;
         }
     }
 `
@@ -188,8 +187,8 @@ const ImageWrapper1 = styled(motion.div)`
     position: relative;
     z-index: 1;
     overflow: hidden;
-    width: 28vw;
-    height: 80vh;
+    width: 20vw;
+    height: 50vh;
     border-top-right-radius: 25vw;
     border-bottom-left-radius: 25vw;
     border-bottom-right-radius: 25vw;
@@ -206,13 +205,28 @@ const ImageWrapper1 = styled(motion.div)`
         width: 40vw;
         height: 75vw;
     }
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
+        justify-self: center;
+        width: 25vw;
+        height: 40vw;
+    }
 
     @media screen and (max-width: 767px) {
-        height: 70vh;
+        height: 40vh;
     }
 
     @media screen and (max-width: 479px) {
-        height: 50vh;
+        height: 40vh;
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 12vw;
+        height: 25vw;
+    }
+
+    @media screen and (min-width: 1800px) {
+        width: 15vw;
+        height: 25vw;
     }
 `
 const ImageWrapper2 = styled(motion.div)`
@@ -238,7 +252,7 @@ const ImageWrapper2 = styled(motion.div)`
     }
 
     @media screen and (max-width: 767px) {
-        justify-self: center;
+        justify-self: start;
     }
 
     @media screen and (max-width: 479px) {

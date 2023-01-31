@@ -51,7 +51,7 @@ const HomeSection02 = () => {
                     <Tag>
                         <span>{t('whyUs')}</span>
                     </Tag>
-                    <SloganSection01
+                    <SloganSection02
                         initial={{ y: 200, opacity: 0.5 }}
                         animate={{
                             y: 0,
@@ -64,7 +64,7 @@ const HomeSection02 = () => {
                         }}
                     >
                         {t('section02_title')}
-                    </SloganSection01>
+                    </SloganSection02>
                     <motion.div
                         initial={{ y: 200, opacity: 0.5 }}
                         animate={{
@@ -129,6 +129,18 @@ const HomeSection02Wrapper = styled(HomeSection01Wrapper)`
     }
 `
 
+const SloganSection02 = styled(SloganSection01)`
+    @media screen and (min-width: 768px) {
+        width: 40rem;
+    }
+    @media screen and (min-width: 1024px) {
+        width: 30rem;
+    }
+    @media screen and (min-width: 1440px) {
+        width: 35rem;
+    }
+`
+
 const ImageWrapper = styled.div`
     border-top-left-radius: 25vw;
     border-bottom-left-radius: 25vw;
@@ -154,20 +166,26 @@ const ImageWrapper = styled.div`
     }
 
     @media screen and (min-width: 991px) {
-        height: 90vh;
+        height: 60vh;
         width: 100%;
+        background-position: 50% 40%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        transform: translateX(-20%);
     }
 
     @media screen and (min-width: 1440px) {
-        height: 80vh;
-        width: 40vw;
-        background-position: 50% 0%;
+        height: 70vh;
+        width: 100%;
+        background-position: 50% 50%;
         margin-right: 5rem;
+        transform: translateX(0%);
     }
     @media screen and (min-width: 2100px) {
         height: 60vh;
-        width: 40vw;
-        background-position: 50% 0%;
+        width: 25vw;
+        background-position: 50% 40%;
         margin-right: 5rem;
     }
 `

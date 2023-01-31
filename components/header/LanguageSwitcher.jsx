@@ -14,8 +14,8 @@ const LanguageSwitcher = () => {
 		<Link href='/' locale={router.locale === "fr" ? "en" : "fr"}>
 			<LanguageSwitcherStyles>
 				<IconLanguage strokeWidth={2} color={"black"} />
-				{router.locale === "fr" ? "Français" : "English"}
-				<Image src={router.locale === "fr" ? France : usa} alt="language" />
+				{router.locale === "fr" ? "English" : "Français"}
+				<Image src={router.locale === "fr" ? usa : France} alt="language" />
 			</LanguageSwitcherStyles>
 		</Link>
 	);

@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 
-import { SloganSection01, HeadingSection01 } from './HomeSection01'
+import { SloganSection01, HomeSection01Container } from './HomeSection01'
 import { useEffect, useRef } from 'react'
 import { useInView, motion } from 'framer-motion'
 
@@ -53,7 +53,7 @@ const HomeSection03 = () => {
     )
 }
 
-const HomeSection03Container = styled(motion.div)`
+const HomeSection03Container = styled(HomeSection01Container)`
     background: rgba(217, 224, 236, 0.2);
 `
 
@@ -64,16 +64,10 @@ const TextContent = styled.div`
     align-items: center;
     align-content: center;
     align-self: center;
-    padding: 8rem 18rem;
     grid-gap: 1.6rem;
 
     @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
-        padding: 9rem;
-    }
-
-    @media screen and (max-width: 500px) {
-        padding: 2rem;
     }
 `
 

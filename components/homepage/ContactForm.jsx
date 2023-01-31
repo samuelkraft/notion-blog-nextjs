@@ -257,7 +257,7 @@ const ContactForm = () => {
 					</ContactInfoContainer>
 					<ContactInfoContainer>
 						<a
-							href='https://www.google.fr/maps/place/87+Rue+La+Bo%C3%A9tie,+75008+Paris/@48.8717882,2.3063296,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc6832f7acf:0xa76d2d4cc6634b68!8m2!3d48.8717882!4d2.3085183?hl=fr'
+							href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
 							target='_blank'
 							rel='noopener noreferrer'>
 							<ContactInfo>
@@ -467,7 +467,7 @@ const ContactInfoContainer = styled.div`
 	align-content: center;
 `;
 const ContactInfo = styled.div`
-	width: 400px;
+	width: 420px;
 	display: flex;
 	flex-flow: row;
 	align-items: center;

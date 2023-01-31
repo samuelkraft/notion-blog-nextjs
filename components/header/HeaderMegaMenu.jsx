@@ -85,6 +85,10 @@ const useStyles = createStyles((theme) => ({
 				: theme.colors.gray[9],
 		fontSize: theme.fontSizes.md,
 		fontWeight: 600,
+
+		"@media screen and (min-width: 1300px)": {
+			fontSize: theme.fontSizes.xl,
+		},
 	},
 
 	subLink: {

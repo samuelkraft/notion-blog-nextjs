@@ -212,7 +212,7 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 
         @media screen and (min-width: 1440px) {
             margin-top: 0rem;
-            gap: 1.5rem;
+            gap: 2rem;
             width: 100%;
         }
     }
@@ -236,7 +236,7 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 `
 
 export const HeadingSection01 = styled(Heading)`
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     h2 {
         font-style: normal;
         font-weight: 400;
@@ -285,12 +285,15 @@ export const SloganSection01 = styled(Slogan)`
 
     @media screen and (min-width: 768px) {
         font-size: 38px;
+        width: 45rem;
     }
     @media screen and (min-width: 1200px) {
         font-size: 34px;
+        width: 35rem;
     }
     @media screen and (min-width: 1440px) {
         font-size: 38px;
+        width: 35rem;
     }
 `
 
@@ -408,5 +411,5 @@ export const Tag = styled.div`
     border: 1.5px solid #000000;
     border-radius: 16px;
     padding: 0.5rem 1rem;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
 `

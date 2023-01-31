@@ -93,13 +93,13 @@ const Footer = () => {
 						<IconMapPin size={28} />
 						<div className='column-location'>
 							<a
-								href='https://www.google.fr/maps/place/87+Rue+La+Bo%C3%A9tie,+75008+Paris/@48.8717882,2.3063296,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc6832f7acf:0xa76d2d4cc6634b68!8m2!3d48.8717882!4d2.3085183?hl=fr'
+								href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
 								target='_blank'
 								rel='noopener noreferrer'>
 								<span>46 Rue Lafayette 75009 Paris</span>
 							</a>
 							<a
-								href='https://www.google.fr/maps/place/34+Rue+Poissonni%C3%A8re,+75002+Paris/@48.8699193,2.345757,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e165da4e065:0x101837ce411c25e4!8m2!3d48.8699193!4d2.3479457?hl=fr'
+								href='https://www.google.fr/maps/place/7+Rue+Th%C3%A9odule+Ribot,+75017+Paris/@48.8794754,2.3005712,19.25z/data=!4m5!3m4!1s0x47e66f957a5df687:0x9924b093569f6139!8m2!3d48.8793096!4d2.3008406?hl=fr'
 								target='_blank'
 								rel='noopener noreferrer'>
 								<span>7 Rue Theodule Ribot 75017 Paris</span>
