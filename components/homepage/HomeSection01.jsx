@@ -213,7 +213,7 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
         @media screen and (min-width: 1440px) {
             margin-top: 0rem;
             gap: 2rem;
-            width: 100%;
+            width: 60%;
         }
     }
 
