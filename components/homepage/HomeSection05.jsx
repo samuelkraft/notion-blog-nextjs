@@ -155,6 +155,9 @@ export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
     }
     @media screen and (min-width: 1440px) {
         font-size: 52px;
+        .text-content {
+            width: 100%;
+        }
     }
 `
 
