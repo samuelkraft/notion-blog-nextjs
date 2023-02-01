@@ -176,6 +176,8 @@ export default function Post({ page, blocks }) {
 
 	const router = useRouter();
 
+	console.log(page)
+
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, [router.locale]);
@@ -199,7 +201,7 @@ export default function Post({ page, blocks }) {
 		<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit" key={page.id}>
 			<Head>
 				<title>
-					{page.properties.Name.title[0]?.plain_text || "New Article"}
+					{page?.properties?.Titre.title?.plain_text || "New Article"}
 				</title>
 				<link
 					rel='apple-touch-icon'
@@ -238,7 +240,7 @@ export default function Post({ page, blocks }) {
 				<meta property="og:image" content="/api/og" />
 				<meta
 					name='description'
-					content={page.properties.Name.title[0]?.plain_text || "New Article"}
+					content={page.properties.Titre.title?.plain_text || "New Article"}
 				/>
 			</Head>
 			<HeaderMegaMenu />
@@ -251,7 +253,7 @@ export default function Post({ page, blocks }) {
 			></Thumbnail>
 			<article className={styles.container}>
 				<h1 className={styles.name}>
-					<Text text={page.properties.Name?.title || "Title"} />
+					<Text text={page.properties.Titre?.title || "Title"} />
 				</h1>
 				<section>
 					{blocks.map((block) => (
