@@ -201,7 +201,7 @@ const RightContainer = styled.div`
 `
 
 const BlogPostCard = styled.div`
-    height: 450px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     gap: 1rem;

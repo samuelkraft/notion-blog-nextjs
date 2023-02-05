@@ -45,7 +45,7 @@
     "outsourcedHR": "Outsourced HR Assistant",
     "certifiedPublicAccountantLegal": "Certified Public Accountant & Legal Revisor",
     "ourPartner": "Our Partners",
-    "recrutement": "hiring",
+    "recrutement": "Hiring",
     "joinUs": "Join Us",
     "joinUsText": "Let's work together",
     "joinOurTeam": "Join Our Team",
@@ -158,5 +158,38 @@
     "your_message": "Your message",
     "phone": "Phone",
     "firstName": "First name",
-    "lastName": "Last name"
+    "lastName": "Last name",
+
+    "sectionJuridique_title": "Conseiller juridique pour entités de droit français",
+    "sectionJuridique_text1": "Les prestations en conseil juridique du cabinet d’expertise-comptable Expand CPA ",
+    "sectionJuridique_bold1": "recouvrent tous les aspects légaux",
+    "sectionJuridique_text2": " tant à lors de la création qu’au cours de la vie de l’entreprise. Ces missions régulières ou ponctuelles concernent les domaines suivants : ",
+
+    "sectionJuridique_bullet1": "Droit des sociétés",
+    "sectionJuridique_bullet2": "Droit fiscal",
+    "sectionJuridique_bullet3": "Droit du travail",
+    "sectionJuridique_bullet4": "Droit commercial",
+    "sectionJuridique_bullet5": "Droit du contentieux dans sa phase amiable",
+
+    "sectionFiscal_title": "Conseiller fiscal pour la fiscalité de votre entreprise étrangère en France",
+    "sectionFiscal_bold1": "Les fiscalistes d’Expand CPA",
+    "sectionFiscal_text1": " effectuent les diverses déclarations relatives aux impôts et taxes tout au long de l’année (liasse fiscale annuelle, déclarations de TVA, etc.). ",
+    "sectionFiscal_text2": "Les collaborateurs de notre cabinet réalise réalisent aussi des prestations de conseiller fiscal personnalisées :",
+
+    "sectionFiscal_bullet1_bold": "Optimisation de la fiscalité",
+    "sectionFiscal_bullet1": " de l’entreprise ainsi que celle des revenus du patrimoine de ses dirigeants étrangers",
+
+    "sectionFiscal_bullet2": "Application des règles fiscales régies par  la ",
+    "sectionFiscal_bullet2_bold": "convention fiscale franco-américaine",
+    "sectionFiscal_bullet3": "Accompagnement en cas de ",
+    "sectionFiscal_bullet3_bold": "contrôle opérée par l’administration ",
+    "sectionFiscal_bullet3_2": "fiscale française.",
+
+    "sectionAudit_title": "Prestations d’audit légal ou contractuel pour sociétés sur le sol français",
+    "sectionAudit_text1": "Le cabinet Expand CPA réalise également des missions d’audit et est ",
+    "sectionAudit_bold1": "inscrit sur la liste des commissaires aux comptes ",
+    "sectionAudit_text2": "établie par le Haut Conseil des Commissaires aux Comptes (H3C), sous le numéro 4100090695. Il est membre de la ",
+    "sectionAudit_bold2": "Compagnie régionale des commissaires aux comptes de Paris.",
+    "sectionAudit_text3": "Nos interventions sont diverses et variées. Elles peuvent être effectuées dans le cadre d’une obligation légale qui s’impose à certaines entreprises ou bien d’une démarche volontaire. Les diligences effectuées par notre cabinet sont un gage de qualité à l’égard des actionnaires ou bien des banques.",
+    "sectionAudit_text4": "Quant aux missions d’audit dites contractuelles (audit informatique, social, fiscal, administratif, juridique, etc.), nous disposons des compétences internes diverses et variées qui nous permettent d’adapter chaque mission à votre besoin."
 }

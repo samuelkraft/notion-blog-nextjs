@@ -244,7 +244,7 @@ export const Heading = styled.div`
         h2 {
             font-size: 22px;
         }
-        width: 28rem;
+        width: 32rem;
     }
 `
 

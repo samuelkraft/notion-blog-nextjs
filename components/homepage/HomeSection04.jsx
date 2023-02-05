@@ -6,17 +6,14 @@ import {
     Tag,
     HeadingSection01,
 } from './HomeSection01'
-import check from '../../images/check.svg'
 // Animation
 import { motion, useInView } from 'framer-motion'
 import { titleAnim, fade } from '../../lib/animation'
-import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 import { HeroImageContainer } from './HeroHomePage'
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { Collapse } from '@mantine/core'
 
 const HomeSection04 = () => {
     const { t, i18n } = useTranslation('common', {
@@ -71,53 +68,17 @@ const HomeSection04 = () => {
                         </h2>
                     </HeadingSection01>
                     <HeadingSection01>
-                        <Collapse in={opened}>
-                            <HeadingSection01>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check1'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <h2>{t('section04_check1')}</h2>
-                                </RowWrapper>
-                            </HeadingSection01>
-                            <HeadingSection01>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check2'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <h2>{t('section04_check2')}</h2>
-                                </RowWrapper>
-                            </HeadingSection01>
-                            <HeadingSection01>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check3'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <h2>{t('section04_check3')}</h2>
-                                </RowWrapper>
-                            </HeadingSection01>
-                        </Collapse>
+                        <Link href='/services/payroll-services'>
+                            <GradientButton
+                                gradientColor='#0657CF'
+                                type='button'
+                                width={200}
+                                onClick={() => setOpened((o) => !o)}
+                            >
+                                {t('readMore')}
+                            </GradientButton>
+                        </Link>
                     </HeadingSection01>
-
-                    <div style={{ marginTop: '2rem' }}>
-                        <GradientButton
-                            gradientColor='#0657CF'
-                            type='button'
-                            width={200}
-                            onClick={() => setOpened((o) => !o)}
-                        >
-                            {t('readMore')}
-                        </GradientButton>
-                    </div>
                 </motion.div>
                 <HeroImageContainerSection04>
                     <ImageWrapper1
@@ -174,13 +135,6 @@ const HomeSection04Wrapper = styled(HomeSection01Wrapper)`
         .text-content {
         }
     }
-`
-
-const RowWrapper = styled.div`
-    display: flex;
-    gap: 2rem;
-    line-height: 1.5;
-    align-items: center;
 `
 
 const ImageWrapper1 = styled(motion.div)`

@@ -185,7 +185,7 @@ const BlogSection = ({ posts }) => {
 
 const BlogCard = styled(motion.div)`
     width: 400px;
-    height: 450px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     gap: 1rem;

@@ -20,19 +20,17 @@ const AboutSection05 = ({ title, paragraph, btnText, standalone }) => {
                         <JoinOurTeamContainer2>
                             <h1>{title}</h1>
                             <h3>{paragraph}</h3>
-                            <a href=''>
-                                <BorderedButton
-                                    borderColor='white'
-                                    textColor='white'
-                                    hoverable={false}
-                                    externalUrl={false}
-                                    rightIcon={<IconArrowRight size={16} />}
-                                    fontSize={16}
-                                    type='button'
-                                >
-                                    {btnText}
-                                </BorderedButton>
-                            </a>
+                            <BorderedButton
+                                borderColor='white'
+                                textColor='white'
+                                hoverable={false}
+                                externalUrl={false}
+                                rightIcon={<IconArrowRight size={16} />}
+                                fontSize={16}
+                                type='button'
+                            >
+                                {btnText}
+                            </BorderedButton>
                         </JoinOurTeamContainer2>
                         <ImageWrapper />
                     </AboutSection05Wrapper>
@@ -56,7 +54,11 @@ const AboutSection05 = ({ title, paragraph, btnText, standalone }) => {
                             <JoinOurTeamContainer>
                                 <h1>{title}</h1>
                                 <h3>{paragraph}</h3>
-                                <a href=''>
+                                <a
+                                    href='https://www.linkedin.com/company/asp-experts/'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
                                     <BorderedButton
                                         borderColor='white'
                                         textColor='white'

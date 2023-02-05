@@ -29,7 +29,7 @@ const HomeSection05 = () => {
     const isInView = useInView(ref, { once: true })
 
     return (
-        <HomeSection05Container
+        <HomeSection01Container
             initial={{ opacity: 0 }}
             animate={{
                 opacity: isInView ? 1 : 0,
@@ -42,7 +42,7 @@ const HomeSection05 = () => {
             }}
             ref={ref}
         >
-            <HomeSection05Wrapper>
+            <HomeSection01Wrapper>
                 <motion.div
                     className='text-content'
                     variants={titleAnim}
@@ -52,7 +52,7 @@ const HomeSection05 = () => {
                     <Tag style={{ width: '35%' }}>
                         <span>{t('whyUs')}</span>
                     </Tag>
-                    <SloganSection05>{t('section05_title')}</SloganSection05>
+                    <SloganSection01>{t('section05_title')}</SloganSection01>
                     <HeadingSection05>
                         <h2>
                             {t('section05_heading_pt1')}
@@ -79,53 +79,9 @@ const HomeSection05 = () => {
                         </Link>
                     </HeadingSection05>
                 </motion.div>
-                <CardContainer>
-                    <BorderedCard>
-                        <h3>{t('section05_card1_title')}</h3>
-
-                        <p>
-                            {t('section05_card1_text1')}
-                            <b>{t('section05_card1_text_bold1')}</b>
-                            {t('section05_card1_text2')}
-                        </p>
-
-                        <p>
-                            {t('section05_card1_text3')}
-                            <b>
-                                <u>{t('section05_card1_text_bold2')}</u>
-                            </b>
-                            {t('section05_card1_text4')}
-                            <b>{t('section05_card1_text_bold3')}</b>
-                            {t('section05_card1_text5')}
-                        </p>
-
-                        <p>
-                            {t('section05_card1_text6')}
-                            <b>{t('section05_card1_text_bold4')}</b>
-                            {t('section05_card1_text7')}
-                        </p>
-                    </BorderedCard>
-
-                    <BorderedCard>
-                        <h3>{t('section05_card2_title')}</h3>
-
-                        <p>
-                            {t('section05_card2_text1')}
-                            <b>{t('section05_card2_text_bold1')}</b>
-                            {t('section05_card2_text2')}
-                            <b>{t('section05_card2_text_bold2')}</b>
-                            {t('section05_card2_text3')}
-                        </p>
-
-                        <p>
-                            {t('section05_card2_text4')}
-                            <b>{t('section05_card2_text_bold3')}</b>
-                            {t('section05_card2_text5')}
-                        </p>
-                    </BorderedCard>
-                </CardContainer>
-            </HomeSection05Wrapper>
-        </HomeSection05Container>
+                <ImageWrapper />
+            </HomeSection01Wrapper>
+        </HomeSection01Container>
     )
 }
 
@@ -217,6 +173,49 @@ const BorderedCard = styled.div`
 
     @media screen and (min-width: 1440px) {
         height: 800px;
+    }
+`
+
+const ImageWrapper = styled.div`
+    border-top-right-radius: 25vw;
+    border-bottom-left-radius: 25vw;
+    border-bottom-right-radius: 25vw;
+    background-image: url('https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80');
+    background-position: 50% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+    width: 100%;
+    height: 50vh;
+    align-self: center;
+
+    @media screen and (max-width: 479px) {
+        margin-top: 3rem;
+        width: 100%;
+        height: 50vh;
+    }
+
+    @media screen and (min-width: 767px) {
+        margin-top: 3rem;
+        height: 80vh;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 991px) {
+        height: 45vh;
+        width: 100%;
+        background-position: 50% 40%;
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: 60vh;
+        background-position: 50% 50%;
+    }
+    @media screen and (min-width: 2100px) {
+        height: 60vh;
+        width: 25vw;
+        background-position: 50% 40%;
+        margin-right: 5rem;
     }
 `
 

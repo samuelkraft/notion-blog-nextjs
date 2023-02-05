@@ -77,7 +77,7 @@ const HomeSection02 = () => {
                             ease: 'easeInOut',
                         }}
                     >
-                        <HeadingSection01>
+                        <HeadingSection02>
                             <h2>
                                 {t('section02_heading_pt1')}
                                 <b>
@@ -86,16 +86,16 @@ const HomeSection02 = () => {
                                 <b>{t('section02_bold2')}</b>
                                 {t('section02_heading_pt2')}
                             </h2>
-                        </HeadingSection01>
-                        <HeadingSection01>
+                        </HeadingSection02>
+                        <HeadingSection02>
                             <h2>
                                 {t('section02_heading_pt3')}
                                 <b>{t('section02_bold3')}</b>
                                 {t('section02_heading_pt4')}
                             </h2>
-                        </HeadingSection01>
+                        </HeadingSection02>
 
-                        <HeadingSection01>
+                        <HeadingSection02>
                             <Link href='/services/accounting-services'>
                                 <GradientButton
                                     gradientColor='#0657CF'
@@ -105,7 +105,7 @@ const HomeSection02 = () => {
                                     {t('readMore')}
                                 </GradientButton>
                             </Link>
-                        </HeadingSection01>
+                        </HeadingSection02>
                     </motion.div>
                 </motion.div>
             </HomeSection02Wrapper>
@@ -141,17 +141,26 @@ const SloganSection02 = styled(SloganSection01)`
     }
 `
 
+export const HeadingSection02 = styled(HeadingSection01)`
+    @media screen and (min-width: 1200px) {
+        h2 {
+            font-size: 20px;
+        }
+        width: 90%;
+    }
+`
+
 const ImageWrapper = styled.div`
     border-top-left-radius: 25vw;
     border-bottom-left-radius: 25vw;
     border-bottom-right-radius: 25vw;
-    background-image: url('https://images.unsplash.com/photo-1624797432677-6f803a98acb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80');
+    background-image: url('https://img.freepik.com/free-photo/businesspeople-shaking-hands_107420-84877.jpg?w=740&t=st=1675455325~exp=1675455925~hmac=ec11c12670311cdf811cf9ff78a88e65808505555a244541e1f918ad67f66708');
     background-position: 50% 0%;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 3rem;
     width: 100%;
-    height: 80vh;
+    height: 50vh;
 
     @media screen and (max-width: 479px) {
         margin-top: 3rem;

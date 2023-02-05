@@ -19,6 +19,9 @@ export const databaseId = process.env.NOTION_DATABASE_ID;
 import { useRouter } from "next/router";
 import { motion } from "framer-motion"
 import { pageAnimation } from "../lib/animation";
+import HomeSectionJuridique from '../components/homepage/HomeSectionJuridique';
+import HomeSectionFiscal from '../components/homepage/HomeSectionFiscal';
+import HomeSectionAudit from '../components/homepage/HomeSectionAudit';
 
 export default function Home({ posts }) {
     const { t, i18n } = useTranslation("common", {
@@ -53,8 +56,11 @@ export default function Home({ posts }) {
                 <HomeSection02 />
                 <HomeSection03 />
                 <HomeSection04 />
+                <HomeSectionJuridique />
+                <HomeSectionFiscal />
+                <HomeSectionAudit />
                 <HomeSection05 />
-                <HomeSection06 />
+                {/* <HomeSection06 /> */}
                 <BlogSection posts={posts} />
                 <ContactForm />
                 <Footer />

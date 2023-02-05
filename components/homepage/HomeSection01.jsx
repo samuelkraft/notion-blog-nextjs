@@ -212,7 +212,6 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 
         @media screen and (min-width: 1440px) {
             margin-top: 0rem;
-            gap: 2rem;
             width: 60%;
         }
     }
@@ -228,10 +227,8 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
 
     @media screen and (min-width: 1200px) {
         flex-flow: row;
-        gap: 0rem;
     }
     @media screen and (min-width: 1800px) {
-        gap: 0rem;
     }
 `
 
@@ -289,7 +286,7 @@ export const SloganSection01 = styled(Slogan)`
     }
     @media screen and (min-width: 1200px) {
         font-size: 34px;
-        width: 35rem;
+        width: 30rem;
     }
     @media screen and (min-width: 1440px) {
         font-size: 38px;
