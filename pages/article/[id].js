@@ -176,8 +176,6 @@ export default function Post({ page, blocks }) {
 
 	const router = useRouter();
 
-	console.log(page)
-
 	useEffect(() => {
 		i18n.reloadResources(i18n.resolvedLanguage, ["common"]);
 	}, [router.locale]);

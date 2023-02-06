@@ -20,7 +20,6 @@ const BlogSection = ({ posts }) => {
     const { t, i18n } = useTranslation('common', {
         bindI18n: 'languageChanged loaded',
     })
-    console.log(posts)
     useEffect(() => {
         i18n.reloadResources(i18n.resolvedLanguage, ['common'])
     }, [])

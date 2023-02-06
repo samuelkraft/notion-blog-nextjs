@@ -2,13 +2,47 @@
     "contactUs": "Contact Us",
     "page_title": "U.S. Tax for Americans in France",
     "persona": "If you’re an American living in France, knwoing where and how you owe tax can be confusing. Expand CPA, a French-American Accounting Firm, can help.",
-    "feature1": "Americans in France",
-    "feature1_text": "Our US Tax Return Services",
-    "feature2": "Impôt aux États-Unis pour Américains situés en France",
-    "feature2_text": "Nos autres prestations spécifiques",
-    "feature3": "US Tax for Americans Located in France",
-    "feature3_text": "Other Services",
-    "feature4": "Expand CPA: A Trusted US Tax Advisor",
+    "CTA": "Benefit from Expand CPA's expertise !",
+
+    "readMore": "Read more",
+    "readLess": "Read less",
+
+    "features_title": "Our key services :",
+
+    "declaration_revenu": "Income statements",
+    "feature1": "Preparation of federal tax declarations (form 1040) for American residents living in France",
+    "feature2": "U.S. income tax returns",
+    "feature3": "Completion of Form 1040-NR for Non-Residents Doing Business with the United States",
+    "feature4": "FBAR: declaration of accounts abroad (current account, savings, investment, life insurance taken out abroad, etc.)",
+    "feature5": "Report of foreign financial assets in form 8938",
+
+    "expatriation": "Expatriation",
+
+    "feature6": "Advice on renouncing U.S. citizenship or long-time resident status",
+    "feature7": "Form 8854: declaration of income for American expatriates",
+
+    "conseils": "Advice",
+    "feature8": "Tax regularization of previous years & Streamline Certification",
+    "feature9": "Assistance in the event of a tax audit by the Internal Revenue Service (IRS)",
+    "feature10": "Assistance with resident petitions to the IRS",
+
+    "demande_itin": "ITIN number request",
+    "demande_itin_text": "Are you subject to US tax but you are not a resident? Our certified agent assists you and simplifies obtaining your ITIN number.",
+
+    "missions": "Our missions",
+    "mission1": "Verification of the authenticity, accuracy and completeness of the file",
+    "mission2": "Simplification of the administrative process",
+    "mission3": "Exchanges with American institutions and sending of the file",
+    "mission4": "Receipt of the assigned number",
+
+    "devez-vous_itin": "Do you need to get an ITIN number?",
+    "devez-vous_itin1": "Not eligible for US Social Security",
+    "devez-vous_itin2": "Providing a federal tax identification number or filing a federal income tax return",
+    "devez-vous_itin3": "Belonging to one of the following categories :",
+    "devez-vous_itin4": "Non-resident alien who must file a US tax return",
+    "devez-vous_itin5": "Resident alien who must file a US tax return",
+    "devez-vous_itin6": "Dependent or Spouse of a U.S. Citizen or Resident Alien",
+    "devez-vous_itin7": "Dependent or spouse of a foreign visa holder",
 
     "section1_title": "US Taxation for Americans Based in France",
     "section1_text1": "Expand CPA is an internationally oriented accounting firm that specializes in providing services to US companies and citizens based in France. Our consultants in accounting, tax, law, and human resources advise American companies throughout France. With both French and American accounting degrees, our consultants are equipped to provide expert advice and personal tax support to American entrepreneurs, employees, and retirees in France. We can handle all aspects of ",

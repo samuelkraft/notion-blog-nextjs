@@ -33,7 +33,6 @@ export default function Blog({ posts }) {
     })
 
     const router = useRouter()
-    console.log(posts)
     useEffect(() => {
         i18n.reloadResources(i18n.resolvedLanguage, ['common'])
     }, [router.locale])

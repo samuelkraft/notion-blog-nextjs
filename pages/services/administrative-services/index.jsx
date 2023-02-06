@@ -8,13 +8,7 @@ import Image from 'next/image'
 
 import styled from 'styled-components'
 import check from '../../../images/check.svg'
-import circle_1 from '../../../images/circle_1.svg'
-import circle_3 from '../../../images/circle_3.svg'
-import circle_4 from '../../../images/circle_4.svg'
-import circle_5 from '../../../images/circle_5.svg'
-import circle_6 from '../../../images/circle_6.svg'
-import circle_7 from '../../../images/circle_7.svg'
-import circle_8 from '../../../images/circle_8.svg'
+
 import feat1 from '../../../images/administrativeServices/feat1.svg'
 import feat2 from '../../../images/administrativeServices/feat2.svg'
 import feat3 from '../../../images/administrativeServices/feat3.svg'
@@ -23,20 +17,12 @@ import feat5 from '../../../images/administrativeServices/feat5.svg'
 import feat6 from '../../../images/administrativeServices/feat6.svg'
 import feat7 from '../../../images/administrativeServices/feat7.svg'
 
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../../../lib/animation'
 import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 import AboutSection05 from '../../../components/about/AboutSection05'
-import { ActionIcon, Collapse, Button } from '@mantine/core'
-import { useState } from 'react'
-import {
-    IconChevronDown,
-    IconSquareRoundedChevronDown,
-    IconSquareRoundedChevronUp,
-} from '@tabler/icons'
 
 const AdministritiveServices = ({}) => {
     const { t, i18n } = useTranslation(['administrativeServices'], {
@@ -51,8 +37,6 @@ const AdministritiveServices = ({}) => {
             'common',
         ])
     }, [router.locale])
-
-    const [collapse1, setCollapse1] = useState(false)
 
     return (
         <>
@@ -215,26 +199,11 @@ const AdministritiveServices = ({}) => {
                     <LayoutColumn>
                         <TextContent>
                             <Slogan>{t('section3_title')}</Slogan>
-                            <Collapse in={collapse1}>
-                                <Heading>{t('section3_text1')}</Heading>
-                                <Heading>
-                                    <b>{t('section3_bold1')}</b>
-                                </Heading>
-                                <Heading>{t('section3_text2')}</Heading>
-                            </Collapse>
-                            <Button
-                                onClick={() => setCollapse1((o) => !o)}
-                                color='indigo'
-                                rightIcon={
-                                    collapse1 ? (
-                                        <IconSquareRoundedChevronUp />
-                                    ) : (
-                                        <IconSquareRoundedChevronDown />
-                                    )
-                                }
-                            >
-                                {collapse1 ? t('readLess') : t('readMore')}
-                            </Button>
+                            <Heading>{t('section3_text1')}</Heading>
+                            <Heading>
+                                <b>{t('section3_bold1')}</b>
+                            </Heading>
+                            <Heading>{t('section3_text2')}</Heading>
                         </TextContent>
                     </LayoutColumn>
                 </HeroContainer>
@@ -649,6 +618,7 @@ export const TextContent = styled.div`
 `
 
 export const Slogan = styled(motion.h1)`
+    margin: 2rem 0;
     font-family: 'AllRoundGothic-Demi';
     font-size: 32px;
     color: #352d61;
@@ -750,29 +720,34 @@ export const RowWrapper = styled.div`
     align-items: center;
 `
 
-const FeaturesContainer = styled.div`
+export const FeaturesContainer = styled.div`
     margin-top: 2rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-flow: column;
     justify-content: start;
     gap: 2rem;
+
+    @media screen and (max-width: 1200px) {
+        grid-template-columns: 1fr;
+    }
 `
 
-const Feature = styled.div`
+export const Feature = styled.div`
     display: flex;
     gap: 1.5rem;
     align-items: center;
     justify-content: start;
+    padding: 1.5rem;
+    border: 2px solid #1b1464;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     p {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 30px;
         color: #352d61;
         font-family: 'AllRoundGothic-Demi';
-        cursor: pointer;
-        :hover {
-            text-decoration: underline;
-        }
 
         @media screen and (max-width: 465px) {
             font-size: 20px;

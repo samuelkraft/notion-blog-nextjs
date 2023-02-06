@@ -1,29 +1,39 @@
 {
     "contactUs": "Contactez-nous",
-    "page_title": "Fiscalité privée française : nos prestations",
+    "page_title": "Fiscalité du particulier en France",
     "persona": "Les entreprises étrangères situées en France recherchent des conseils pour la fiscalité privée française de leurs collaborateurs. Nous savons faire.",
-    "feature1": "Fiscalité du particulier en France ",
-    "feature1_text": "Prestations pour entreprises étrangères",
-    "feature2": "Conseil fiscal privé",
-    "feature2_text": "Nous établissons les déclarations fiscales françaises des particuliers",
-    "feature3": "Fiscalité privée française",
-    "feature3_text": "Nos prestations sur mesure",
-    "feature4": "Autres prestations pour résidents fiscaux ",
 
-    "section1_title": "Fiscalité du particulier en France : prestations pour entreprises étrangères",
+    "CTA": "Bénéficiez de l’expertise Expand CPA !",
+
+    "readMore": "Voir plus",
+    "readLess": "Voir moins",
+
+    "features_title": "Nos services clés :",
+
+    "feature1": "Dépôt des déclarations de revenus pour les résidents français devant déclarer des revenus mondiaux et assistance à l'application de différentes conventions fiscales internationales.",
+    "feature2": "Déclarations de revenus pour les non-résidents afin de déclarer les revenus de sources françaises",
+    "feature3": "Déclaration d'impôt sur la fortune immobilière (IFI), pour les résidents et les non-résidents.",
+    "feature4": "Simulations et calcul de l'impôt français annuel pour les résidents nouvellement arrivés.",
+    "feature5": "Analyse et calcul des plus-values immobilières et préparation des déclarations nécessaires.",
+    "feature6": "Analyse et calcul des droits de succession internationaux, enquêtes sur les droits de donation.",
+    "feature7": "Assistance en cas de contrôle fiscal pour les personnes physiques qui établissent habituellement leurs propres déclarations fiscales.",
+    "feature8": "Analyse des trusts dont le fiduciaire, le constituant ou le bénéficiaire est un résident français et préparation des déclarations fiscales correspondantes.",
+    "feature9": "Assistance pour l'introduction de recours en matière de sécurité sociale pour le compte de résidents et de non-résidents enregistrés pour des soins de santé dans un autre pays de l'UE.",
+
+    "section1_title": "Fiscalité du particulier en France",
     "section1_text1": "Notre cabinet d’expertise comptable Expand CPA est spécialisé dans le suivi des entreprises étrangères qui s’implantent en France. Prestations comptables, financières, administratives, RH, juridiques, fiscales ou d’audit, cette palette de missions complète vise à accompagner les dirigeants de ces sociétés dans leur gestion sur notre territoire. Mais notre métier va au-delà. Ainsi, nous réalisons également diverses missions relatives à la ",
     "section1_bold1": "fiscalité privée française",
     "section1_text2": ", pour les résidents comme les non-résidents.",
 
-    "section2_title": "Société étrangère ou étranger retraité, vous envisagez de vous installer en France ?",
+    "section2_title": "Salarié en détachement, entrepreneur ou simplement retraité, vous envisagez de vous installer en France ?",
     "section2_text1": "Créer une activité économique en France exige d’une entreprise étrangère d’étudier le projet sous de multiples facettes ",
     "section2_bold1": "y compris la fiscalité du particulier en France ",
     "section2_text2": "et le droit fiscal international. Quant à ",
     "section2_bold2": "un étranger qui envisage de passer sa retraite ",
     "section2_text3": "en France, il doit aussi analyser sa future imposition locale comme mondiale. ",
 
-    "section2_subtitle1": "La fiscalité privée française, un domaine complexe à appréhender pour des étrangers",
-    "section2_text4": "Que les salariés,dirigeants étrangers de l’entité française ou retraités soient résidents ou non, il importe de comprendre et d’appliquer correctement les règles en matière d’",
+    "section2_subtitle1": "La fiscalité des personnes physiques en France, un domaine complexe à appréhender pour des étrangers",
+    "section2_text4": "Que les salariés, dirigeants étrangers de l’entité française ou retraités soient résidents ou non, il importe de comprendre et d’appliquer correctement les règles en matière d’",
     "section2_bold3": "imposition des revenus comme du patrimoine.",
     "section2_text5": "Plutôt que de tenter de s’y retrouver seul dans les multiples dispositions ainsi que la convention fiscale franco-étrangère, ",
     "section2_bold4": "confiez l’étude des dossiers et l’établissement des déclarations ",
@@ -44,7 +54,7 @@
     "section2_bullet2_3": "en France ?",
     "section2_bullet3": "Quelles sont les ",
     "section2_bullet3_2": "obligations déclaratives françaises ",
-    "section2_bullet3_3": "pour un résident fiscal français ? Et pour un non résident ? ",
+    "section2_bullet3_3": "pour un résident fiscal français ? Et pour un non-résident ? ",
     "section2_bullet4": "Qu’est-ce que l'",
     "section2_bullet4_2": "l’IFI ",
     "section2_bullet4_3": "(impôt sur la fortune immobilière) et à qui s’applique-t-il en France ?",
@@ -89,7 +99,7 @@
     "section3_bullet4_2": "plus-values immobilières ",
     "section3_bullet4_3": "sur la déclaration de revenus (à titre indicatif).",
 
-    "section3_subtitle2": "Conseiller fiscal pour votre patrimoine privé",
+    "section3_subtitle2": "Déclarations fiscales françaises pour étrangers non-résidents en France",
     "section3_text4": "Les non-résidents doivent également réaliser la déclaration annuelle de revenus. Toutefois, ils sont imposables ",
     "section3_bold2": "uniquement sur les revenus de source française. ",
 
@@ -109,7 +119,7 @@
 
     "section3_bold5": "Expand CPA constitue un partenaire de confiance pour réaliser ce type de démarche administrative en toute sérénité. ",
     "section3_text9": " Notre agent certifié vous aide à obtenir votre numéro ITIN si vous êtes dans un des cas de figure suivants :",
-    "section3_bullet7": "Étranger non résident qui doit produire une déclaration de revenus aux USA",
+    "section3_bullet7": "Étranger non-résident qui doit produire une déclaration de revenus aux USA",
     "section3_bullet8": "Étranger résident qui doit réaliser une déclaration de revenus aux USA",
     "section3_bullet9": "Personne à charge ou conjoint d’un citoyen américain ou d’un étranger résident",
     "section3_bullet10": "Personne à charge ou conjoint d’un titulaire de visa étranger.",
@@ -119,7 +129,7 @@
     "section4_text1": " Les étrangers dont l’employeur est une entreprise étrangère en France tout comme les retraités vivant sur le sol français ont l’assurance de trouver chez Expand CPA un conseiller fiscal quand les situations ou projets de vie l’exigent.",
 
     "section4_subtitle1": "Nous analysons et déterminons votre résidence fiscale",
-    "section4_text2": "Nous aidons les entreprises étrangères implantées en France à déterminer pour chaque personne étrangère amenée à y travailler quel régime fiscal s’applique. Nous vérifions si les conditions pour disposer de la résidence fiscale française sont réunies. Nous expliquons les conséquences à nos clients.",
+    "section4_text2": "Nous aidons les entreprises étrangères implantées en France à déterminer pour chaque personne étrangère amenée à y travailler quel régime fiscal s’applique. Nous vérifions si les conditions pour disposer de la résidence fiscale française sont réunies et expliquons les conséquences à nos clients.",
 
     "section4_subtitle2": "Nous aidons à l’optimisation fiscale pour le particulier",
     "section4_text3": "L’optimisation fiscale fait partie du ",
@@ -147,8 +157,8 @@
     "section4_bullet8": "Dépôt de réclamations ",
     "section4_bullet8_2": "de cotisations sociales pour le compte de résidents ou de non-résidents qui bénéficient de soins de santé dans un autre pays de l’UE.",
 
-    "section5_title": "Pourquoi confier la fiscalité privée française à Expand CPA ?",
-    "section5_text1": "Notre cabinet d’expertise comptable est votre partenaire idéal pour la fiscalité de la famille en France :",
+    "section5_title": "Pourquoi confier sa fiscalité privée à Expand CPA ?",
+    "section5_text1": "Notre cabinet d’expertise comptable est votre partenaire idéal pour la fiscalité privée en France :",
     "section5_bullet1": "Nos collaborateurs et experts-comptables ",
     "section5_bullet1_2": "maîtrisent les impôts français du particulier ",
     "section5_bullet1_3": "sur le bout des doigts",

@@ -10,71 +10,29 @@ import {
     RowWrapper,
     Heading,
     TextContent,
+    FeaturesContainer,
+    Feature,
 } from '../services/administrative-services'
 
-import {
-    createStyles,
-    SimpleGrid,
-    Text,
-    Button,
-    ThemeIcon,
-    Grid,
-    Col,
-} from '@mantine/core'
-
-import {
-    IconBuilding,
-    IconBulb,
-    IconFileDescription,
-    IconBriefcase,
-} from '@tabler/icons'
-
 import check from '../../images/check.svg'
-import circle_1 from '../../images/circle_1.svg'
-import circle_2 from '../../images/circle_2.svg'
-import circle_3 from '../../images/circle_3.svg'
-import circle_4 from '../../images/circle_4.svg'
-import circle_5 from '../../images/circle_5.svg'
-import circle_6 from '../../images/circle_6.svg'
-import circle_7 from '../../images/circle_7.svg'
-import Link from 'next/link'
+import feat1 from '../../images/taxServices/Group1.svg'
+import feat2 from '../../images/taxServices/Group3.svg'
+import feat3 from '../../images/taxServices/Group6.svg'
+import feat4 from '../../images/frenchTax/feat1.svg'
+import feat5 from '../../images/frenchTax/feat2.svg'
+import feat6 from '../../images/frenchTax/feat3.svg'
+import feat9 from '../../images/taxServices/Group4.svg'
+import feat7 from '../../images/taxServices/Group5.svg'
+import feat8 from '../../images/taxServices/Group7.svg'
 
-import { ImageWrapperFullWidth } from '../services/payroll-services'
 import HeaderMegaMenu from '../../components/header/HeaderMegaMenu'
 import Footer from '../../components/footer/Footer'
 import { useRouter } from 'next/router'
 import { pageAnimation } from '../../lib/animation'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-
-const useStyles = createStyles((theme) => ({
-    wrapper: {
-        padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
-    },
-
-    title: {
-        fontFamily: 'AllRoundGothic-Demi',
-        fontSize: '42px',
-        color: '#352d61',
-
-        '@media screen and (max-width: 465px)': {
-            fontSize: '42px',
-        },
-
-        '@media screen and (min-width: 768px)': {
-            fontSize: '48px',
-        },
-        '@media screen and (min-width: 1024px)': {
-            fontSize: '50px',
-        },
-        '@media screen and (min-width: 1440px)': {
-            fontSize: '52px',
-        },
-
-        lineHeight: 1.2,
-        marginBottom: theme.spacing.md,
-    },
-}))
+import InfiniteSlider from '../../components/slider/InfiniteSlider'
+import AboutSection05 from '../../components/about/AboutSection05'
 
 const UsaTax = ({}) => {
     const { t, i18n } = useTranslation('usaTax', {
@@ -86,61 +44,6 @@ const UsaTax = ({}) => {
     useEffect(() => {
         i18n.reloadResources(i18n.resolvedLanguage, ['usaTax', 'common'])
     }, [router.locale])
-
-    const features = [
-        {
-            icon: IconBuilding,
-            title: t('feature1'),
-            description: t('feature1_text'),
-        },
-        {
-            icon: IconBulb,
-            title: t('feature2'),
-            description: t('feature2_text'),
-        },
-        {
-            icon: IconFileDescription,
-            title: t('feature3'),
-            description: t('feature3_text'),
-        },
-        {
-            icon: IconBriefcase,
-            title: t('feature4'),
-            description: '',
-        },
-    ]
-
-    const { classes } = useStyles()
-
-    const items = features.map((feature) => (
-        <div key={feature.title}>
-            <ThemeIcon
-                size={60}
-                radius='md'
-                variant='gradient'
-                gradient={{ deg: 133, from: '#4364f7', to: '#1b1464' }}
-            >
-                <feature.icon
-                    size={33}
-                    stroke={1.5}
-                />
-            </ThemeIcon>
-            <Text
-                size='xl'
-                mt='sm'
-                color='#1b1464'
-                style={{ fontFamily: 'AllRoundGothic-Demi' }}
-            >
-                {feature.title}
-            </Text>
-            <Text
-                color='#1b1464'
-                size='lg'
-            >
-                {feature.description}
-            </Text>
-        </div>
-    ))
 
     return (
         <>
@@ -206,76 +109,267 @@ const UsaTax = ({}) => {
                 exit='exit'
             >
                 <HeaderMegaMenu />
-                <HeroContainer>
-                    <div className={classes.wrapper}>
-                        <Grid gutter={80}>
-                            <Col
-                                span={12}
-                                md={5}
-                            >
-                                <Slogan
-                                    className={classes.title}
-                                    order={2}
-                                    mb='lg'
-                                >
-                                    {t('page_title')}
-                                </Slogan>
-                                <Text
-                                    color='#1b1464'
-                                    size='lg'
-                                >
-                                    {t('persona')}
-                                </Text>
-                                <Link href='/#contact'>
-                                    <Button
-                                        variant='gradient'
-                                        gradient={{
-                                            deg: 133,
-                                            from: '#4364f7',
-                                            to: '#1b1464',
-                                        }}
-                                        size='lg'
-                                        radius='md'
-                                        mt='xl'
-                                    >
-                                        {t('contactUs')}
-                                    </Button>
-                                </Link>
-                            </Col>
-                            <Col
-                                span={12}
-                                md={7}
-                            >
-                                <SimpleGrid
-                                    cols={2}
-                                    spacing={30}
-                                    breakpoints={[{ maxWidth: 'md', cols: 1 }]}
-                                >
-                                    {items}
-                                </SimpleGrid>
-                            </Col>
-                        </Grid>
-                    </div>
-                </HeroContainer>
 
-                <HeroContainer>
-                    <div className={classes.wrapper}>
-                        <LayoutColumn>
-                            <TextContent>
-                                <Slogan>{t('section1_title')}</Slogan>
-                                <Heading>
-                                    {t('section1_text1')}
-                                    <b>{t('section1_bold1')}</b>
-                                    {t('section1_text2')}
-                                </Heading>
-                            </TextContent>
-                            <ImageWrapperFullWidth src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80' />
-                        </LayoutColumn>
-                    </div>
-                </HeroContainer>
+                <HeroContainer style={{ marginTop: '10rem' }}>
+                    <LayoutColumn>
+                        <TextContent>
+                            <Slogan>{t('section1_title')}</Slogan>
+                            <Heading>
+                                {t('section1_text1')}
+                                <b>{t('section1_bold1')}</b>
+                                {t('section1_text2')}
+                            </Heading>
+                        </TextContent>
+                    </LayoutColumn>
 
+                    <Heading>
+                        <Slogan>{t('features_title')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('declaration_revenu')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <FeaturesContainer>
+                            <Feature>
+                                <Image
+                                    src={feat1}
+                                    alt='feat1'
+                                />
+                                <p>{t('feature1')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat2}
+                                    alt='feat2'
+                                />
+                                <p>{t('feature2')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat3}
+                                    alt='feat3'
+                                />
+                                <p>{t('feature3')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat4}
+                                    alt='feat4'
+                                />
+                                <p>{t('feature4')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat5}
+                                    alt='feat5'
+                                />
+                                <p>{t('feature5')}</p>
+                            </Feature>
+                        </FeaturesContainer>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('expatriation')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <FeaturesContainer>
+                            <Feature>
+                                <Image
+                                    src={feat6}
+                                    alt='feat6'
+                                />
+                                <p>{t('feature6')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat7}
+                                    alt='feat7'
+                                />
+                                <p>{t('feature7')}</p>
+                            </Feature>
+                        </FeaturesContainer>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('conseils')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <FeaturesContainer>
+                            <Feature>
+                                <Image
+                                    src={feat8}
+                                    alt='feat8'
+                                />
+                                <p>{t('feature8')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat9}
+                                    alt='feat9'
+                                />
+                                <p>{t('feature9')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat7}
+                                    alt='feat10'
+                                />
+                                <p>{t('feature10')}</p>
+                            </Feature>
+                        </FeaturesContainer>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('demande_itin')}</Slogan>
+                    </Heading>
+
+                    <Heading>{t('demande_itin_text')}</Heading>
+
+                    <Heading>
+                        <Slogan>{t('missions')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('mission1')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('mission2')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('mission3')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('mission4')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('devez-vous_itin')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={feat2}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('devez-vous_itin1')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={feat3}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('devez-vous_itin2')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('devez-vous_itin3')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('devez-vous_itin4')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('devez-vous_itin5')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('devez-vous_itin6')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+                    <Heading>
+                        <RowWrapper className=''>
+                            <Image
+                                src={check}
+                                alt='check1'
+                                width={50}
+                                height={50}
+                            />
+                            <Heading>{t('devez-vous_itin7')}</Heading>
+                        </RowWrapper>
+                    </Heading>
+
+                    <InfiniteSlider />
+
+                    <AboutSection05
+                        title={t('CTA')}
+                        btnText={t('contactUs')}
+                        standalone
+                    />
+                </HeroContainer>
                 <HeroContainer>
-                    <div className={classes.wrapper}>
+                    <div>
                         <LayoutColumn>
                             <TextContent>
                                 <Slogan>{t('section2_title')}</Slogan>
@@ -425,7 +519,7 @@ const UsaTax = ({}) => {
                 </HeroContainer>
 
                 <HeroContainer>
-                    <div className={classes.wrapper}>
+                    <div>
                         <LayoutColumn>
                             <TextContent>
                                 <Slogan>{t('section3_title')}</Slogan>
@@ -487,14 +581,12 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                 </Heading>
                             </TextContent>
-
-                            <ImageWrapperFullWidth src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80' />
                         </LayoutColumn>
                     </div>
                 </HeroContainer>
 
                 <HeroContainer>
-                    <div className={classes.wrapper}>
+                    <div>
                         <LayoutColumn>
                             <TextContent>
                                 <Slogan>{t('section4_title')}</Slogan>

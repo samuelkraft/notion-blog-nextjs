@@ -12,68 +12,26 @@ import {
     RowWrapper,
     Heading,
     TextContent,
+    FeaturesContainer,
+    Feature,
 } from '../administrative-services'
 
-import {
-    createStyles,
-    SimpleGrid,
-    Text,
-    Button,
-    ThemeIcon,
-    Grid,
-    Col,
-} from '@mantine/core'
-
-import {
-    IconBuilding,
-    IconBulb,
-    IconFileDescription,
-    IconBriefcase,
-} from '@tabler/icons'
+import feat1 from '../../../images/taxServices/Group1.svg'
+import feat2 from '../../../images/taxServices/Group2.svg'
+import feat3 from '../../../images/taxServices/Group3.svg'
+import feat4 from '../../../images/taxServices/Group4.svg'
+import feat5 from '../../../images/taxServices/Group5.svg'
+import feat6 from '../../../images/taxServices/Group6.svg'
+import Group7 from '../../../images/taxServices/Group7.svg'
+import feat7 from '../../../images/administrativeServices/feat7.svg'
 
 import check from '../../../images/check.svg'
-import circle_1 from '../../../images/circle_1.svg'
-import circle_2 from '../../../images/circle_2.svg'
-import circle_3 from '../../../images/circle_3.svg'
-import circle_4 from '../../../images/circle_4.svg'
-import circle_6 from '../../../images/circle_6.svg'
-import circle_7 from '../../../images/circle_7.svg'
-import circle_8 from '../../../images/circle_8.svg'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../../../lib/animation'
-import { ImageWrapperFullWidth } from '../payroll-services'
 import Head from 'next/head'
-
-const useStyles = createStyles((theme) => ({
-    wrapper: {
-        padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
-    },
-
-    title: {
-        fontFamily: 'AllRoundGothic-Demi',
-        fontSize: '42px',
-        color: '#352d61',
-
-        '@media screen and (max-width: 465px)': {
-            fontSize: '42px',
-        },
-
-        '@media screen and (min-width: 768px)': {
-            fontSize: '48px',
-        },
-        '@media screen and (min-width: 1024px)': {
-            fontSize: '50px',
-        },
-        '@media screen and (min-width: 1440px)': {
-            fontSize: '52px',
-        },
-
-        lineHeight: 1.2,
-        marginBottom: theme.spacing.md,
-    },
-}))
+import InfiniteSlider from '../../../components/slider/InfiniteSlider'
+import AboutSection05 from '../../../components/about/AboutSection05'
 
 const TaxServices = ({}) => {
     const { t, i18n } = useTranslation('taxServices', {
@@ -83,63 +41,8 @@ const TaxServices = ({}) => {
     const router = useRouter()
 
     useEffect(() => {
-        i18n.reloadResources(i18n.resolvedLanguage, ['taxServices', 'common'])
+        i18n.reloadResources(i18n.resolvedLanguage, ['taxServices'])
     }, [router.locale])
-
-    const features = [
-        {
-            icon: IconBuilding,
-            title: t('feature1'),
-            description: t('feature1_text'),
-        },
-        {
-            icon: IconBulb,
-            title: t('feature2'),
-            description: t('feature2_text'),
-        },
-        {
-            icon: IconFileDescription,
-            title: t('feature3'),
-            description: t('feature3_text'),
-        },
-        {
-            icon: IconBriefcase,
-            title: t('feature4'),
-            description: '',
-        },
-    ]
-
-    const { classes } = useStyles()
-
-    const items = features.map((feature) => (
-        <div key={feature.title}>
-            <ThemeIcon
-                size={60}
-                radius='md'
-                variant='gradient'
-                gradient={{ deg: 133, from: '#4364f7', to: '#1b1464' }}
-            >
-                <feature.icon
-                    size={33}
-                    stroke={1.5}
-                />
-            </ThemeIcon>
-            <Text
-                size='xl'
-                mt='sm'
-                color='#1b1464'
-                style={{ fontFamily: 'AllRoundGothic-Demi' }}
-            >
-                {feature.title}
-            </Text>
-            <Text
-                color='#1b1464'
-                size='lg'
-            >
-                {feature.description}
-            </Text>
-        </div>
-    ))
 
     return (
         <>
@@ -205,77 +108,116 @@ const TaxServices = ({}) => {
                 exit='exit'
             >
                 <HeaderMegaMenu />
-                <HeroContainer>
-                    <div className={classes.wrapper}>
-                        <Grid gutter={80}>
-                            <Col
-                                span={12}
-                                md={5}
-                            >
-                                <Slogan
-                                    className={classes.title}
-                                    order={2}
-                                    mb='lg'
-                                >
-                                    {t('page_title')}
-                                </Slogan>
-                                <Text
-                                    color='#1b1464'
-                                    size='lg'
-                                >
-                                    {t('persona')}
-                                </Text>
+                <HeroContainer style={{ marginTop: '10rem' }}>
+                    <LayoutColumn>
+                        <TextContent>
+                            <Slogan>{t('section1_title')}</Slogan>
+                            <Heading>
+                                {t('section1_text1')}
+                                <b>{t('section1_bold1')}</b>
+                                {t('section1_text2')}
+                            </Heading>
+                        </TextContent>
+                    </LayoutColumn>
 
-                                <Link href='/#contact'>
-                                    <Button
-                                        variant='gradient'
-                                        gradient={{
-                                            deg: 133,
-                                            from: '#4364f7',
-                                            to: '#1b1464',
-                                        }}
-                                        size='lg'
-                                        radius='md'
-                                        mt='xl'
-                                    >
-                                        {t('contactUs')}
-                                    </Button>
-                                </Link>
-                            </Col>
-                            <Col
-                                span={12}
-                                md={7}
-                            >
-                                <SimpleGrid
-                                    cols={2}
-                                    spacing={30}
-                                    breakpoints={[{ maxWidth: 'md', cols: 1 }]}
-                                >
-                                    {items}
-                                </SimpleGrid>
-                            </Col>
-                        </Grid>
-                    </div>
+                    <Heading>
+                        <Slogan>{t('features_title')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('fiscalite_courante')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <FeaturesContainer>
+                            <Feature>
+                                <Image
+                                    src={feat1}
+                                    alt='feat1'
+                                />
+                                <p>{t('feature1_')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat2}
+                                    alt='feat2'
+                                />
+                                <p>{t('feature2_')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat3}
+                                    alt='feat3'
+                                />
+                                <p>{t('feature3_')}</p>
+                            </Feature>
+                        </FeaturesContainer>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('controle_fiscal')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <FeaturesContainer>
+                            <Feature>
+                                <Image
+                                    src={feat4}
+                                    alt='feat4'
+                                />
+                                <p>{t('feature4_')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat5}
+                                    alt='feat5'
+                                />
+                                <p>{t('feature5')}</p>
+                            </Feature>
+                        </FeaturesContainer>
+                    </Heading>
+
+                    <Heading>
+                        <Slogan>{t('notre_specialite')}</Slogan>
+                    </Heading>
+
+                    <Heading>
+                        <FeaturesContainer>
+                            <Feature>
+                                <Image
+                                    src={feat6}
+                                    alt='feat6'
+                                />
+                                <p>{t('feature6')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={Group7}
+                                    alt='feat7'
+                                />
+                                <p>{t('feature7')}</p>
+                            </Feature>
+                            <Feature>
+                                <Image
+                                    src={feat7}
+                                    alt='feat8'
+                                />
+                                <p>{t('feature8')}</p>
+                            </Feature>
+                        </FeaturesContainer>
+                    </Heading>
+
+                    <InfiniteSlider />
+
+                    <AboutSection05
+                        title={t('CTA')}
+                        btnText={t('contactUs')}
+                        standalone
+                    />
                 </HeroContainer>
 
                 <HeroContainer>
-                    <div className={classes.wrapper}>
-                        <LayoutColumn>
-                            <TextContent>
-                                <Slogan>{t('section1_title')}</Slogan>
-                                <Heading>
-                                    {t('section1_text1')}
-                                    <b>{t('section1_bold1')}</b>
-                                    {t('section1_text2')}
-                                </Heading>
-                            </TextContent>
-                            <ImageWrapperFullWidth src='https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80' />
-                        </LayoutColumn>
-                    </div>
-                </HeroContainer>
-
-                <HeroContainer>
-                    <div className={classes.wrapper}>
+                    <div>
                         <LayoutColumn>
                             <TextContent>
                                 <Slogan>{t('section2_title')}</Slogan>
@@ -328,7 +270,7 @@ const TaxServices = ({}) => {
                                         </Heading>
                                     </RowWrapper>
 
-                                    <RowWrapper>
+                                    {/* <RowWrapper>
                                         <Image
                                             src={check}
                                             alt='check1'
@@ -341,7 +283,7 @@ const TaxServices = ({}) => {
                                             <b>{t('section2_bullet3_2')}</b>
                                             {t('section2_bullet3_3')}
                                         </Heading>
-                                    </RowWrapper>
+                                    </RowWrapper> */}
 
                                     <RowWrapper>
                                         <Image
@@ -401,7 +343,7 @@ const TaxServices = ({}) => {
                                             {t('section2_bullet7_3')}
                                         </Heading>
                                     </RowWrapper>
-                                    <RowWrapper>
+                                    {/* <RowWrapper>
                                         <Image
                                             src={check}
                                             alt='check1'
@@ -409,12 +351,12 @@ const TaxServices = ({}) => {
                                             height={50}
                                         />
 
-                                        <Heading>
+                                         <Heading>
                                             {t('section2_bullet8')}
                                             <b>{t('section2_bullet8_2')}</b>
                                             {t('section2_bullet8_3')}
-                                        </Heading>
-                                    </RowWrapper>
+                                        </Heading> 
+                                    </RowWrapper> */}
                                     <RowWrapper>
                                         <Image
                                             src={check}
@@ -429,20 +371,19 @@ const TaxServices = ({}) => {
                                             {t('section2_bullet9_3')}
                                         </Heading>
                                     </RowWrapper>
-                                    <RowWrapper>
+                                    {/* <RowWrapper>
                                         <Image
                                             src={check}
                                             alt='check1'
                                             width={50}
                                             height={50}
                                         />
-
-                                        <Heading>
+                                         <Heading>
                                             {t('section2_bullet10')}
                                             <b>{t('section2_bullet10_2')}</b>
                                             {t('section2_bullet10_3')}
                                         </Heading>
-                                    </RowWrapper>
+                                    </RowWrapper> */}
                                 </Heading>
                             </TextContent>
                         </LayoutColumn>
@@ -450,7 +391,7 @@ const TaxServices = ({}) => {
                 </HeroContainer>
 
                 <HeroContainer>
-                    <div className={classes.wrapper}>
+                    <div>
                         <LayoutColumn>
                             <TextContent>
                                 <Slogan>{t('section3_title')}</Slogan>
@@ -534,7 +475,7 @@ const TaxServices = ({}) => {
                                     </RowWrapper>
                                 </Heading>
 
-                                <Subtitle>{t('section3_subtitle2')}</Subtitle>
+                                {/* <Subtitle>{t('section3_subtitle2')}</Subtitle>
 
                                 <Heading>
                                     <b>{t('section3_bold4')}</b>
@@ -545,16 +486,14 @@ const TaxServices = ({}) => {
                                     {t('section3_text9')}
                                     <b>{t('section3_bold5')}</b>
                                     {t('section3_text10')}
-                                </Heading>
+                                </Heading> */}
                             </TextContent>
-
-                            <ImageWrapperFullWidth src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80' />
                         </LayoutColumn>
                     </div>
                 </HeroContainer>
 
                 <HeroContainer>
-                    <div className={classes.wrapper}>
+                    <div>
                         <LayoutColumn>
                             <TextContent>
                                 <Slogan>{t('section4_title')}</Slogan>
@@ -576,10 +515,10 @@ const TaxServices = ({}) => {
 
                                 <Subtitle>{t('section4_subtitle2')}</Subtitle>
 
-                                <Heading>
+                                {/* <Heading>
                                     <b>{t('section4_bold4')}</b>
                                     {t('section4_text6')}
-                                </Heading>
+                                </Heading> */}
 
                                 <Heading>
                                     <b>{t('section4_bold5')}</b>
