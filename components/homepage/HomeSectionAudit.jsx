@@ -70,12 +70,11 @@ const HomeSectionAudit = () => {
                         <h2>{t('sectionAudit_text4')}</h2>
                     </HeadingSection02>
                     <HeadingSection02>
-                        <Link href='/services/payroll-services'>
+                        <Link href='/services/audit-services'>
                             <GradientButton
                                 gradientColor='#0657CF'
                                 type='button'
                                 width={200}
-                                onClick={() => setOpened((o) => !o)}
                             >
                                 {t('readMore')}
                             </GradientButton>

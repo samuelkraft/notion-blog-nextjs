@@ -113,12 +113,11 @@ const HomeSectionFiscal = () => {
                         </HeadingSection01>
                     </ColumnWrapper>
                     <HeadingSection01>
-                        <Link href='/services/payroll-services'>
+                        <Link href='/services/tax-services'>
                             <GradientButton
                                 gradientColor='#0657CF'
                                 type='button'
                                 width={200}
-                                onClick={() => setOpened((o) => !o)}
                             >
                                 {t('readMore')}
                             </GradientButton>

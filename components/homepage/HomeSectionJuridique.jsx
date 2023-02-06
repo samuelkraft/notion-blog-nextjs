@@ -12,7 +12,7 @@ import { titleAnim, fade } from '../../lib/animation'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 import check from '../../images/check.svg'
@@ -125,12 +125,11 @@ const HomeSectionJuridique = () => {
                         </HeadingSection01>
                     </ColumnWrapper>
                     <HeadingSection01>
-                        <Link href='/services/payroll-services'>
+                        <Link href='/services/legal-services'>
                             <GradientButton
                                 gradientColor='#0657CF'
                                 type='button'
                                 width={200}
-                                onClick={() => setOpened((o) => !o)}
                             >
                                 {t('readMore')}
                             </GradientButton>
