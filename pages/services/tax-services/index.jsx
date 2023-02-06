@@ -225,12 +225,13 @@ const TaxServices = ({}) => {
                                     <b>{t('section2_bold1')}</b>
                                     {t('section2_text1')}
                                 </Heading>
+
                                 <Subtitle>{t('section2_subtitle1')}</Subtitle>
 
-                                <Heading>
+                                {/* <Heading>
                                     <b>{t('section2_bold2')}</b>
                                     {t('section2_text2')}
-                                </Heading>
+                                </Heading> */}
 
                                 <Heading>
                                     <b>{t('section2_bold3')}</b>

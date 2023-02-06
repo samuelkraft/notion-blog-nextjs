@@ -186,11 +186,9 @@ const AdministritiveServices = ({}) => {
                         <TextContent>
                             <Slogan>{t('section2_title')}</Slogan>
                             <Heading>
-                                <Heading>
-                                    <b>{t('section2_bold1')}</b>
-                                </Heading>
-                                <Heading>{t('section2_text1')}</Heading>
+                                <b>{t('section2_bold1')}</b>
                             </Heading>
+                            <Heading>{t('section2_text1')}</Heading>
                         </TextContent>
                     </LayoutColumn>
                 </HeroContainer>
@@ -549,7 +547,6 @@ const AdministritiveServices = ({}) => {
                         </TextContent>
                     </LayoutColumn>
                 </HeroContainer>
-
                 <Footer />
             </motion.div>
         </>
@@ -618,7 +615,6 @@ export const TextContent = styled.div`
 `
 
 export const Slogan = styled(motion.h1)`
-    margin: 2rem 0;
     font-family: 'AllRoundGothic-Demi';
     font-size: 32px;
     color: #352d61;
@@ -721,7 +717,7 @@ export const RowWrapper = styled.div`
 `
 
 export const FeaturesContainer = styled.div`
-    margin-top: 2rem;
+    margin: 2rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-flow: column;
