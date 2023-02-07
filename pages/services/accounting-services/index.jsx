@@ -459,7 +459,6 @@ const AccountingServices = ({}) => {
                                         />
                                         <Heading>
                                             <b>{t('section4_bullet6')}</b>
-                                            {t('section4_bullet6_2')}
                                         </Heading>
                                     </RowWrapper>
                                     <RowWrapper className=''>
@@ -494,20 +493,8 @@ const AccountingServices = ({}) => {
                                             height={50}
                                         />
                                         <Heading>
-                                            <b>{t('section4_bullet9')}</b>
-                                            {t('section4_bullet9_2')}
-                                        </Heading>
-                                    </RowWrapper>
-                                    <RowWrapper className=''>
-                                        <Image
-                                            src={check}
-                                            alt='check1'
-                                            width={50}
-                                            height={50}
-                                        />
-                                        <Heading>
-                                            <b>{t('section4_bullet10')}</b>
-                                            {t('section4_bullet10_2')}
+                                            {t('section4_bullet9')}
+                                            <b> {t('section4_bullet9_2')}</b>
                                         </Heading>
                                     </RowWrapper>
                                 </Heading>
@@ -543,6 +530,48 @@ const AccountingServices = ({}) => {
                             <Heading>
                                 {t('section6_text1')}
                                 <b>{t('section6_bold1')}</b>
+                            </Heading>
+
+                            <Subtitle>{t('section6_subtitle3')}</Subtitle>
+
+                            <Heading>{t('section6_text6')}</Heading>
+
+                            <Heading>
+                                <RowWrapper className=''>
+                                    <Image
+                                        src={check}
+                                        alt='check1'
+                                        width={50}
+                                        height={50}
+                                    />
+                                    <Heading>
+                                        <b>{t('section6_bullet3')}</b>
+                                        {t('section6_bullet3_2')}
+                                    </Heading>
+                                </RowWrapper>
+                                <RowWrapper className=''>
+                                    <Image
+                                        src={check}
+                                        alt='check1'
+                                        width={50}
+                                        height={50}
+                                    />
+                                    <Heading>
+                                        <b>{t('section6_bullet4')}</b>
+                                        {t('section6_bullet4_2')}
+                                    </Heading>
+                                </RowWrapper>
+                                <RowWrapper className=''>
+                                    <Image
+                                        src={check}
+                                        alt='check1'
+                                        width={50}
+                                        height={50}
+                                    />
+                                    <Heading>
+                                        <b>{t('section6_bullet5')}</b>
+                                    </Heading>
+                                </RowWrapper>
                             </Heading>
 
                             <Subtitle>{t('section6_subtitle1')}</Subtitle>
@@ -591,48 +620,6 @@ const AccountingServices = ({}) => {
                                     <Heading>
                                         <b>{t('section6_bullet2')}</b>
                                         {t('section6_bullet2_2')}
-                                    </Heading>
-                                </RowWrapper>
-                            </Heading>
-
-                            <Subtitle>{t('section6_subtitle3')}</Subtitle>
-
-                            <Heading>{t('section6_text6')}</Heading>
-
-                            <Heading>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check1'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <Heading>
-                                        <b>{t('section6_bullet3')}</b>
-                                        {t('section6_bullet3_2')}
-                                    </Heading>
-                                </RowWrapper>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check1'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <Heading>
-                                        <b>{t('section6_bullet4')}</b>
-                                        {t('section6_bullet4_2')}
-                                    </Heading>
-                                </RowWrapper>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check1'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <Heading>
-                                        <b>{t('section6_bullet5')}</b>
                                     </Heading>
                                 </RowWrapper>
                             </Heading>

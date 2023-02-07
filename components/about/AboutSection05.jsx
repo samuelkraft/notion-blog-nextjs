@@ -128,7 +128,7 @@ const JoinOurTeamContainer = styled.div`
 
     @media screen and (max-width: 425px) {
         padding: 2rem;
-        height: 50vh;
+        height: 60vh;
     }
 `
 

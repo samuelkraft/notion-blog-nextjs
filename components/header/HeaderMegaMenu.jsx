@@ -795,6 +795,16 @@ export default function HeaderMegaMenu() {
                         {t('contact')}
                     </Link>
 
+                    <div className={classes.link}>
+                        <a
+                            href='https://www.linkedin.com/company/asp-experts/'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                        >
+                            {t('recrutement')}
+                        </a>
+                    </div>
+
                     <Divider
                         my='sm'
                         color={

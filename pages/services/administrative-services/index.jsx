@@ -344,24 +344,7 @@ const AdministritiveServices = ({}) => {
                                     />
                                     <Heading>{t('section6_bullet3')}</Heading>
                                 </RowWrapper>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check1'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <Heading>{t('section6_bullet4')}</Heading>
-                                </RowWrapper>
-                                <RowWrapper className=''>
-                                    <Image
-                                        src={check}
-                                        alt='check1'
-                                        width={50}
-                                        height={50}
-                                    />
-                                    <Heading>{t('section6_bullet5')}</Heading>
-                                </RowWrapper>
+
                                 <RowWrapper className=''>
                                     <Image
                                         src={check}

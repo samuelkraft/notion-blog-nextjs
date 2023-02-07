@@ -84,7 +84,7 @@ const OurVisionContainer = styled.div`
     @media screen and (max-width: 425px) {
         padding: 2rem;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 2100px) {
         width: 80%;
     }
 `

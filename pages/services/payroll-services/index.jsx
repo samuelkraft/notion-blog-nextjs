@@ -197,7 +197,8 @@ const PayrollServices = ({}) => {
                                 <Heading>
                                     {t('section2_text3')}
                                     <b>{t('section2_bold2')}</b>
-                                    {t('section2_text4')}
+                                </Heading>
+                                <Heading>
                                     <b>{t('section2_bold3')}</b>
                                     {t('section2_text5')}
                                 </Heading>
@@ -278,6 +279,7 @@ const PayrollServices = ({}) => {
                                                 {t('section3_bullet5_2')}
                                             </Heading>
                                         </RowWrapper>
+
                                         <RowWrapper className=''>
                                             <Image
                                                 src={check}
@@ -291,6 +293,31 @@ const PayrollServices = ({}) => {
                                                 {t('section3_bullet6_2')}
                                             </Heading>
                                         </RowWrapper>
+
+                                        <RowWrapper className=''>
+                                            <Image
+                                                src={check}
+                                                alt='check1'
+                                                width={50}
+                                                height={50}
+                                            />
+                                            <Heading>
+                                                {t('section3_bullet11')}
+                                            </Heading>
+                                        </RowWrapper>
+
+                                        <RowWrapper className=''>
+                                            <Image
+                                                src={check}
+                                                alt='check1'
+                                                width={50}
+                                                height={50}
+                                            />
+                                            <Heading>
+                                                {t('section3_bullet12')}
+                                            </Heading>
+                                        </RowWrapper>
+
                                         <RowWrapper className=''>
                                             <Image
                                                 src={check}
@@ -430,6 +457,54 @@ const PayrollServices = ({}) => {
                                         />
                                         <Heading>
                                             {t('section4_bullet6')}
+                                        </Heading>
+                                    </RowWrapper>
+
+                                    <RowWrapper className=''>
+                                        <Image
+                                            src={check}
+                                            alt='check1'
+                                            width={50}
+                                            height={50}
+                                        />
+                                        <Heading>
+                                            {t('section4_bullet7')}
+                                        </Heading>
+                                    </RowWrapper>
+
+                                    <RowWrapper className=''>
+                                        <Image
+                                            src={check}
+                                            alt='check1'
+                                            width={50}
+                                            height={50}
+                                        />
+                                        <Heading>
+                                            {t('section4_bullet8')}
+                                        </Heading>
+                                    </RowWrapper>
+
+                                    <RowWrapper className=''>
+                                        <Image
+                                            src={check}
+                                            alt='check1'
+                                            width={50}
+                                            height={50}
+                                        />
+                                        <Heading>
+                                            {t('section4_bullet9')}
+                                        </Heading>
+                                    </RowWrapper>
+
+                                    <RowWrapper className=''>
+                                        <Image
+                                            src={check}
+                                            alt='check1'
+                                            width={50}
+                                            height={50}
+                                        />
+                                        <Heading>
+                                            {t('section4_bullet10')}
                                         </Heading>
                                     </RowWrapper>
                                 </Heading>
