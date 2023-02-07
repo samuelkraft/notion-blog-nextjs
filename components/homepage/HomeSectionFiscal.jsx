@@ -58,8 +58,8 @@ const HomeSectionFiscal = () => {
                     </SloganSection01>
                     <HeadingSection01>
                         <h2>
-                            {t('sectionFiscal_text1')}
                             <b>{t('sectionFiscal_bold1')}</b>
+                            {t('sectionFiscal_text1')}
                         </h2>
                     </HeadingSection01>
 
