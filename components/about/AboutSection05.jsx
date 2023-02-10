@@ -6,6 +6,7 @@ import { IconArrowRight } from '@tabler/icons'
 import BorderedButton from '../button/BorderedButton'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
 
 const AboutSection05 = ({ title, paragraph, btnText, standalone }) => {
     const { t } = useTranslation('common')
@@ -20,17 +21,19 @@ const AboutSection05 = ({ title, paragraph, btnText, standalone }) => {
                         <JoinOurTeamContainer2>
                             <h1>{title}</h1>
                             <h3>{paragraph}</h3>
-                            <BorderedButton
-                                borderColor='white'
-                                textColor='white'
-                                hoverable={false}
-                                externalUrl={false}
-                                rightIcon={<IconArrowRight size={16} />}
-                                fontSize={16}
-                                type='button'
-                            >
-                                {btnText}
-                            </BorderedButton>
+                            <Link href='/#contact'>
+                                <BorderedButton
+                                    borderColor='white'
+                                    textColor='white'
+                                    hoverable={false}
+                                    externalUrl={false}
+                                    rightIcon={<IconArrowRight size={16} />}
+                                    fontSize={16}
+                                    type='button'
+                                >
+                                    {btnText}
+                                </BorderedButton>
+                            </Link>
                         </JoinOurTeamContainer2>
                         <ImageWrapper />
                     </AboutSection05Wrapper>
@@ -106,6 +109,12 @@ const JoinOurTeamContainer = styled.div`
         @media screen and (max-width: 768px) {
             font-size: 36px;
         }
+        @media screen and (min-width: 1440px) {
+            font-size: 32px;
+        }
+        @media screen and (min-width: 1800px) {
+            font-size: 36px;
+        }
     }
 
     h3 {
@@ -118,6 +127,13 @@ const JoinOurTeamContainer = styled.div`
         }
         @media screen and (max-width: 425px) {
             font-size: 18px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            font-size: 18px;
+        }
+        @media screen and (min-width: 1800px) {
+            font-size: 22px;
         }
     }
 

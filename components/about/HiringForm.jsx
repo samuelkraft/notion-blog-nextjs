@@ -13,12 +13,12 @@ import instagram from '../../images/instagram.svg'
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import {
-	TextInput,
-	Modal,
-	useMantineTheme,
-	Group,
-	Textarea,
-	Flex,
+    TextInput,
+    Modal,
+    useMantineTheme,
+    Group,
+    Textarea,
+    Flex,
 } from '@mantine/core'
 
 import { IconMail, IconUser, IconPhone, IconCircleCheck } from '@tabler/icons'
@@ -30,360 +30,370 @@ import { IconCloudUpload, IconX, IconDownload } from '@tabler/icons'
 import { motion, useInView } from 'framer-motion'
 
 const useStyles = createStyles((theme) => ({
-	wrapper: {
-		position: 'relative',
-		marginBottom: 30,
-	},
+    wrapper: {
+        position: 'relative',
+        marginBottom: 30,
+    },
 
-	dropzone: {
-		borderWidth: 1,
-		paddingBottom: 50,
-		color: '#1B1464',
-	},
+    dropzone: {
+        borderWidth: 1,
+        paddingBottom: 50,
+        color: '#1B1464',
+    },
 
-	icon: {
-		color: '#2457F5',
-	},
+    icon: {
+        color: '#2457F5',
+    },
 
-	control: {
-		position: 'absolute',
-		width: 250,
-		left: 'calc(50% - 125px)',
-		bottom: -20,
-		background: 'linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);',
-	},
+    control: {
+        position: 'absolute',
+        width: 250,
+        left: 'calc(50% - 125px)',
+        bottom: -20,
+        background: 'linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);',
+    },
 }))
 
 const HiringForm = () => {
-	const { t } = useTranslation('common')
-	const { classes, theme } = useStyles()
-	const [opened, setOpened] = useState(false)
-	const router = useRouter()
-	const [selectedFile, setSelectedFile] = useState(null)
-	const openRef = useRef(null)
-	const ref = useRef(null)
-	const isInView = useInView(ref, { once: true })
-	const onDrop = (acceptedFiles) => {
-		// Update the selectedFile state with the accepted file
-		setSelectedFile(acceptedFiles[0])
-	}
+    const { t } = useTranslation('common')
+    const { classes, theme } = useStyles()
+    const [opened, setOpened] = useState(false)
+    const router = useRouter()
+    const [selectedFile, setSelectedFile] = useState(null)
+    const openRef = useRef(null)
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    const onDrop = (acceptedFiles) => {
+        // Update the selectedFile state with the accepted file
+        setSelectedFile(acceptedFiles[0])
+    }
 
-	async function handleOnSubmit(e) {
-		e.preventDefault()
-		console.log(e.currentTarget.elements)
-		const formData = new FormData()
-		// Append the selected file to the FormData object
-		formData.append('file', selectedFile)
-		formData.append('firstName', e.currentTarget.elements.firstName.value)
-		formData.append('lastName', e.currentTarget.elements.lastName.value)
-		formData.append('phone', e.currentTarget.elements.phone.value)
-		formData.append('email', e.currentTarget.elements.email.value)
-		formData.append('message', e.currentTarget.elements.message.value)
-		// Array.from(e.currentTarget.elements).forEach((field) => {
-		// 	if (!field.name) return;
-		// 	formData.append(field.name, field.value);
-		// });
+    async function handleOnSubmit(e) {
+        e.preventDefault()
+        console.log(e.currentTarget.elements)
+        const formData = new FormData()
+        // Append the selected file to the FormData object
+        formData.append('file', selectedFile)
+        formData.append('firstName', e.currentTarget.elements.firstName.value)
+        formData.append('lastName', e.currentTarget.elements.lastName.value)
+        formData.append('phone', e.currentTarget.elements.phone.value)
+        formData.append('email', e.currentTarget.elements.email.value)
+        formData.append('message', e.currentTarget.elements.message.value)
+        // Array.from(e.currentTarget.elements).forEach((field) => {
+        // 	if (!field.name) return;
+        // 	formData.append(field.name, field.value);
+        // });
 
-		// Affiche les valeurs
-		for (var value of formData.values()) {
-			console.log(value)
-		}
+        // Affiche les valeurs
+        for (var value of formData.values()) {
+            console.log(value)
+        }
 
-		const res = await fetch('/api/hiring', {
-			method: 'POST',
-			body: formData,
-		})
+        const res = await fetch('/api/hiring', {
+            method: 'POST',
+            body: formData,
+        })
 
-		const resBody = await res.json()
-	}
+        const resBody = await res.json()
+    }
 
-	return (
-		<ContactFormContainer
-			id='contact'
-			initial={{ opacity: 0 }}
-			animate={{
-				opacity: isInView ? 1 : 0,
-			}}
-			transition={{
-				duration: 1,
-				delay: 0.5,
-				ease: 'easeInOut',
-				when: 'beforeChildren',
-			}}
-			ref={ref}
-		>
-			<Tag style={{ width: '40%' }}>
-				<span>{t('recrutement')}</span>
-			</Tag>
+    return (
+        <ContactFormContainer
+            id='contact'
+            initial={{ opacity: 0 }}
+            animate={{
+                opacity: isInView ? 1 : 0,
+            }}
+            transition={{
+                duration: 1,
+                delay: 0.5,
+                ease: 'easeInOut',
+                when: 'beforeChildren',
+            }}
+            ref={ref}
+        >
+            <Tag style={{ width: '40%' }}>
+                <span>{t('recrutement')}</span>
+            </Tag>
 
-			<RowWrapper>
-				<SloganSection06>{t('joinUs')}</SloganSection06>
-				<SocialMediaContainer>
-					<a href="https://www.linkedin.com/company/asp-experts/" target="_blank" rel="noopener noreferrer">
-						<Image
-							src={linkedin}
-							alt='linkedin'
-						/>
-					</a>
+            <RowWrapper>
+                <SloganSection06>{t('joinUs')}</SloganSection06>
+                <SocialMediaContainer>
+                    <a
+                        href='https://www.linkedin.com/company/asp-experts/'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <Image
+                            src={linkedin}
+                            alt='linkedin'
+                        />
+                    </a>
 
-					<Image
-						src={instagram}
-						alt='instagram'
-					/>
-					<Image
-						src={whatsapp}
-						alt='whatsapp'
-					/>
-					<Image
-						src={youtube}
-						alt='youtube'
-					/>
-				</SocialMediaContainer>
-			</RowWrapper>
-			<Form
-				method='post'
-				onSubmit={handleOnSubmit}
-			>
-				<FormLayout>
-					<TextContentContainer>
-						<TextContent>
-							<h1>{t('joinUsText')}</h1>
-						</TextContent>
-						<FormColumn>
-							<TextInput
-								required
-								label='Email'
-								placeholder='your@email.com'
-								type='email'
-								radius='lg'
-								icon={<IconMail color='#2457F5' />}
-								size='lg'
-								name='email'
-								styles={{
-									defaultVariant: {
-										borderColor: '#2457F5',
-										'&:focus': {
-											borderColor: '#2457F5',
-										},
-									},
-								}}
-							// {...form.getInputProps("email")}
-							/>
+                    <Image
+                        src={instagram}
+                        alt='instagram'
+                    />
+                    <a
+                        href='https://api.whatsapp.com/send?phone=33768095356&text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20et%20souhaiterais%20prendre%20contact%20avec%20un%20expert-comptable.'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <Image
+                            src={whatsapp}
+                            alt='whatsapp'
+                        />
+                    </a>
+                    <Image
+                        src={youtube}
+                        alt='youtube'
+                    />
+                </SocialMediaContainer>
+            </RowWrapper>
+            <Form
+                method='post'
+                onSubmit={handleOnSubmit}
+            >
+                <FormLayout>
+                    <TextContentContainer>
+                        <TextContent>
+                            <h1>{t('joinUsText')}</h1>
+                        </TextContent>
+                        <FormColumn>
+                            <TextInput
+                                required
+                                label='Email'
+                                placeholder='your@email.com'
+                                type='email'
+                                radius='lg'
+                                icon={<IconMail color='#2457F5' />}
+                                size='lg'
+                                name='email'
+                                styles={{
+                                    defaultVariant: {
+                                        borderColor: '#2457F5',
+                                        '&:focus': {
+                                            borderColor: '#2457F5',
+                                        },
+                                    },
+                                }}
+                                // {...form.getInputProps("email")}
+                            />
 
-							<Group
-								position='left'
-								spacing='xl'
-							>
-								<TextInput
-									required
-									label={t('firstName')}
-									placeholder={t('firstName')}
-									type='text'
-									radius='lg'
-									size='lg'
-									name='firstName'
-									// {...form.getInputProps("firstName")}
-									icon={<IconUser color='#2457F5' />}
-									styles={{
-										defaultVariant: {
-											borderColor: '#2457F5',
-											'&:focus': {
-												borderColor: '#2457F5',
-											},
-										},
-									}}
-								/>
-								<TextInput
-									required
-									label={t('lastName')}
-									placeholder={t('lastName')}
-									tyoe='text'
-									radius='lg'
-									size='lg'
-									icon={<IconUser color='#2457F5' />}
-									name='lastName'
-									// {...form.getInputProps("lastName")}
-									styles={{
-										defaultVariant: {
-											borderColor: '#2457F5',
-											'&:focus': {
-												borderColor: '#2457F5',
-											},
-										},
-									}}
-								/>
-							</Group>
+                            <Group
+                                position='left'
+                                spacing='xl'
+                            >
+                                <TextInput
+                                    required
+                                    label={t('firstName')}
+                                    placeholder={t('firstName')}
+                                    type='text'
+                                    radius='lg'
+                                    size='lg'
+                                    name='firstName'
+                                    // {...form.getInputProps("firstName")}
+                                    icon={<IconUser color='#2457F5' />}
+                                    styles={{
+                                        defaultVariant: {
+                                            borderColor: '#2457F5',
+                                            '&:focus': {
+                                                borderColor: '#2457F5',
+                                            },
+                                        },
+                                    }}
+                                />
+                                <TextInput
+                                    required
+                                    label={t('lastName')}
+                                    placeholder={t('lastName')}
+                                    tyoe='text'
+                                    radius='lg'
+                                    size='lg'
+                                    icon={<IconUser color='#2457F5' />}
+                                    name='lastName'
+                                    // {...form.getInputProps("lastName")}
+                                    styles={{
+                                        defaultVariant: {
+                                            borderColor: '#2457F5',
+                                            '&:focus': {
+                                                borderColor: '#2457F5',
+                                            },
+                                        },
+                                    }}
+                                />
+                            </Group>
 
-							<TextInput
-								required
-								label={t('phone')}
-								placeholder='01 23 45 67 89'
-								type='tel'
-								radius='lg'
-								size='lg'
-								icon={<IconPhone color='#2457F5' />}
-								name='phone'
-								// {...form.getInputProps("phone")}
-								styles={{
-									defaultVariant: {
-										borderColor: '#2457F5',
-										'&:focus': {
-											borderColor: '#2457F5',
-										},
-									},
-								}}
-							/>
-							<Textarea
-								placeholder={t('your_message')}
-								label={t('your_message')}
-								name='message'
-								withAsterisk
-								size='xl'
-								radius='lg'
-							/>
-							<Modal
-								opened={opened}
-								onClose={() => {
-									setOpened(false)
-								}}
-								overlayColor={
-									theme.colorScheme === 'dark'
-										? theme.colors.dark[9]
-										: theme.colors.gray[2]
-								}
-								overlayOpacity={0.55}
-								overlayBlur={3}
-								transitionDuration={400}
-								centered
-								radius='md'
-								padding='xl'
-								size='lg'
-							>
-								<Group position='center'>
-									<Flex
-										direction='column'
-										align='center'
-										justify='center'
-										gap={30}
-									>
-										<TextContentContentModal>
-											<h1>{t('form_success_title')}</h1>
-											<p>{t('form_success_subtitle')}</p>
-										</TextContentContentModal>
-										<IconCircleCheck
-											size={60}
-											color='#4364F7'
-										/>
-									</Flex>
-								</Group>
-							</Modal>
-						</FormColumn>
-					</TextContentContainer>
-					<FormColumn>
-						<div className={classes.wrapper}>
-							<Dropzone
-								openRef={openRef}
-								onDrop={onDrop}
-								onReject={(files) =>
-									console.log('rejected files', files)
-								}
-								className={classes.dropzone}
-								radius='md'
-								name='file'
-								multiple={false}
-								accept={[MIME_TYPES.pdf]}
-								maxSize={30 * 1024 ** 2}
-							>
-								<div style={{ pointerEvents: 'none' }}>
-									<Group position='center'>
-										<Dropzone.Accept>
-											<IconDownload
-												size={50}
-												color='#4364F7'
-												stroke={1.5}
-											/>
-										</Dropzone.Accept>
-										<Dropzone.Reject>
-											<IconX
-												size={50}
-												color={theme.colors.red[6]}
-												stroke={1.5}
-											/>
-										</Dropzone.Reject>
-										<Dropzone.Idle>
-											<IconCloudUpload
-												size={50}
-												color='#4364F7'
-												stroke={1.5}
-											/>
-										</Dropzone.Idle>
-									</Group>
+                            <TextInput
+                                required
+                                label={t('phone')}
+                                placeholder='01 23 45 67 89'
+                                type='tel'
+                                radius='lg'
+                                size='lg'
+                                icon={<IconPhone color='#2457F5' />}
+                                name='phone'
+                                // {...form.getInputProps("phone")}
+                                styles={{
+                                    defaultVariant: {
+                                        borderColor: '#2457F5',
+                                        '&:focus': {
+                                            borderColor: '#2457F5',
+                                        },
+                                    },
+                                }}
+                            />
+                            <Textarea
+                                placeholder={t('your_message')}
+                                label={t('your_message')}
+                                name='message'
+                                withAsterisk
+                                size='xl'
+                                radius='lg'
+                            />
+                            <Modal
+                                opened={opened}
+                                onClose={() => {
+                                    setOpened(false)
+                                }}
+                                overlayColor={
+                                    theme.colorScheme === 'dark'
+                                        ? theme.colors.dark[9]
+                                        : theme.colors.gray[2]
+                                }
+                                overlayOpacity={0.55}
+                                overlayBlur={3}
+                                transitionDuration={400}
+                                centered
+                                radius='md'
+                                padding='xl'
+                                size='lg'
+                            >
+                                <Group position='center'>
+                                    <Flex
+                                        direction='column'
+                                        align='center'
+                                        justify='center'
+                                        gap={30}
+                                    >
+                                        <TextContentContentModal>
+                                            <h1>{t('form_success_title')}</h1>
+                                            <p>{t('form_success_subtitle')}</p>
+                                        </TextContentContentModal>
+                                        <IconCircleCheck
+                                            size={60}
+                                            color='#4364F7'
+                                        />
+                                    </Flex>
+                                </Group>
+                            </Modal>
+                        </FormColumn>
+                    </TextContentContainer>
+                    <FormColumn>
+                        <div className={classes.wrapper}>
+                            <Dropzone
+                                openRef={openRef}
+                                onDrop={onDrop}
+                                onReject={(files) =>
+                                    console.log('rejected files', files)
+                                }
+                                className={classes.dropzone}
+                                radius='md'
+                                name='file'
+                                multiple={false}
+                                accept={[MIME_TYPES.pdf]}
+                                maxSize={30 * 1024 ** 2}
+                            >
+                                <div style={{ pointerEvents: 'none' }}>
+                                    <Group position='center'>
+                                        <Dropzone.Accept>
+                                            <IconDownload
+                                                size={50}
+                                                color='#4364F7'
+                                                stroke={1.5}
+                                            />
+                                        </Dropzone.Accept>
+                                        <Dropzone.Reject>
+                                            <IconX
+                                                size={50}
+                                                color={theme.colors.red[6]}
+                                                stroke={1.5}
+                                            />
+                                        </Dropzone.Reject>
+                                        <Dropzone.Idle>
+                                            <IconCloudUpload
+                                                size={50}
+                                                color='#4364F7'
+                                                stroke={1.5}
+                                            />
+                                        </Dropzone.Idle>
+                                    </Group>
 
-									<Text
-										align='center'
-										weight={700}
-										size='lg'
-										mt='xl'
-									>
-										<Dropzone.Accept>
-											Drop files here
-										</Dropzone.Accept>
-										<Dropzone.Reject>
-											Pdf file less than 30mb
-										</Dropzone.Reject>
-										<Dropzone.Idle>
-											Upload resume
-										</Dropzone.Idle>
-									</Text>
+                                    <Text
+                                        align='center'
+                                        weight={700}
+                                        size='lg'
+                                        mt='xl'
+                                    >
+                                        <Dropzone.Accept>
+                                            Drop files here
+                                        </Dropzone.Accept>
+                                        <Dropzone.Reject>
+                                            Pdf file less than 30mb
+                                        </Dropzone.Reject>
+                                        <Dropzone.Idle>
+                                            Upload resume
+                                        </Dropzone.Idle>
+                                    </Text>
 
-									{selectedFile ? (
-										<Text
-											align='center'
-											size='sm'
-											mt='xs'
-											color='dimmed'
-										>
-											{selectedFile.name}
-										</Text>
-									) : (
-										<Text
-											align='center'
-											size='sm'
-											mt='xs'
-											color='dimmed'
-										>
-											Drag & apos;n&apos;drop files here
-											to upload. We can accept only{' '}
-											<i>.pdf</i> files that are less than
-											30mb in size.
-										</Text>
-									)}
-								</div>
-							</Dropzone>
+                                    {selectedFile ? (
+                                        <Text
+                                            align='center'
+                                            size='sm'
+                                            mt='xs'
+                                            color='dimmed'
+                                        >
+                                            {selectedFile.name}
+                                        </Text>
+                                    ) : (
+                                        <Text
+                                            align='center'
+                                            size='sm'
+                                            mt='xs'
+                                            color='dimmed'
+                                        >
+                                            Drag & apos;n&apos;drop files here
+                                            to upload. We can accept only{' '}
+                                            <i>.pdf</i> files that are less than
+                                            30mb in size.
+                                        </Text>
+                                    )}
+                                </div>
+                            </Dropzone>
 
-							<Button
-								className={classes.control}
-								size='md'
-								radius='xl'
-								onClick={() => openRef.current?.()}
-							>
-								Select files
-							</Button>
-						</div>
-					</FormColumn>
-				</FormLayout>
-				<GradientButton
-					type='submit'
-					size='lg'
-					width='300px'
-					gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
-					onClick={() => setOpened(true)}
-				>
-					{t('send')}
-				</GradientButton>
-			</Form>
-		</ContactFormContainer>
-	)
+                            <Button
+                                className={classes.control}
+                                size='md'
+                                radius='xl'
+                                onClick={() => openRef.current?.()}
+                            >
+                                Select files
+                            </Button>
+                        </div>
+                    </FormColumn>
+                </FormLayout>
+                <GradientButton
+                    type='submit'
+                    size='lg'
+                    width='300px'
+                    gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
+                    onClick={() => setOpened(true)}
+                >
+                    {t('send')}
+                </GradientButton>
+            </Form>
+        </ContactFormContainer>
+    )
 }
 
 export default HiringForm

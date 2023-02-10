@@ -187,11 +187,16 @@ const OurValuesWrapper = styled.div`
     @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
     }
+
+    @media screen and (max-width: 425px) {
+        grid-template-columns: 350px;
+    }
 `
 
 const ValuesContainer = styled.div`
     display: flex;
     flex-flow: column;
+    justify-content: center;
     gap: 2rem;
 `
 const ImageWrapper = styled(motion.div)`
@@ -200,13 +205,14 @@ const ImageWrapper = styled(motion.div)`
     height: 200px;
     object-fit: cover;
     align-self: center;
+
     @media screen and (max-width: 425px) {
         width: 320px;
         height: 180px;
     }
 
     @media screen and (min-width: 768px) {
-        width: 400px;
+        width: 500px;
         height: 400px;
     }
 `
@@ -221,11 +227,19 @@ const Value = styled(motion.div)`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     align-items: center;
 
+    @media screen and (max-width: 425px) {
+        gap: 1rem;
+    }
+
     h1 {
         font-family: 'AllRoundGothic-Demi';
         font-size: 36px;
         color: #1b1464;
         line-height: 1.5;
+
+        @media screen and (max-width: 425px) {
+            font-size: 26px;
+        }
     }
 `
 

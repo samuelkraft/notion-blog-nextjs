@@ -84,15 +84,24 @@ const OurPartners = styled.div`
     color: #1b1464;
     line-height: 1.2;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     h1 {
         @media screen and (max-width: 465px) {
-            font-size: 42px;
+            font-size: 32px;
         }
 
         @media screen and (min-width: 768px) {
-            font-size: 48px;
+            font-size: 46px;
+            width: 40rem;
         }
         @media screen and (min-width: 1024px) {
+            font-size: 52px;
+            width: 40rem;
+        }
+        @media screen and (min-width: 1440px) {
             font-size: 58px;
         }
     }

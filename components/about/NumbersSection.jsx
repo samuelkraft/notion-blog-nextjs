@@ -307,8 +307,8 @@ const RowWrapper = styled(motion.div)`
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin: 4rem 0;
 
     @media screen and (max-width: 900px) {
         flex-flow: column;

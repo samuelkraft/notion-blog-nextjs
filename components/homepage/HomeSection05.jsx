@@ -107,7 +107,7 @@ export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
     }
     @media screen and (min-width: 1024px) {
         font-size: 50px;
-        gap: 5rem;
+        gap: 0rem;
     }
     @media screen and (min-width: 1440px) {
         font-size: 52px;

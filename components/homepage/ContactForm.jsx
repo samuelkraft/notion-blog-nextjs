@@ -90,18 +90,30 @@ const ContactForm = () => {
             <RowWrapper>
                 <SloganSection06>{t('followUs')}</SloganSection06>
                 <SocialMediaContainer>
-                    <Image
-                        src={linkedin}
-                        alt='linkedin'
-                    />
+                    <a
+                        href='https://www.linkedin.com/company/asp-experts/'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <Image
+                            src={linkedin}
+                            alt='linkedin'
+                        />
+                    </a>
                     <Image
                         src={instagram}
                         alt='instagram'
                     />
-                    <Image
-                        src={whatsapp}
-                        alt='whatsapp'
-                    />
+                    <a
+                        href='https://api.whatsapp.com/send?phone=33768095356&text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20et%20souhaiterais%20prendre%20contact%20avec%20un%20expert-comptable.'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <Image
+                            src={whatsapp}
+                            alt='whatsapp'
+                        />
+                    </a>
                     <Image
                         src={youtube}
                         alt='youtube'

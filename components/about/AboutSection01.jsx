@@ -30,7 +30,7 @@ const AboutSection01 = () => {
             ref={ref}
         >
             <AboutSection01Wrapper>
-                <Tag style={{ width: '30%' }}>
+                <Tag style={{ width: '20%' }}>
                     <span>{t('about')}</span>
                 </Tag>
 
@@ -53,7 +53,7 @@ const AboutSection01 = () => {
 
                 <OurStoryContainer>
                     <StoryContainer>
-                        <Tag>
+                        <Tag style={{ width: '30%' }}>
                             <span>{t('ourStory')}</span>
                         </Tag>
 
@@ -154,7 +154,7 @@ export const AboutSection01Container = styled(motion.div)`
     }
 
     @media screen and (min-width: 1440px) {
-        padding: 1rem 15%;
+        padding: 1rem 6%;
     }
     @media screen and (min-width: 1800px) {
         padding: 1rem 10%;
@@ -171,14 +171,13 @@ export const AboutSection01Container = styled(motion.div)`
 const AboutSection01Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: center;
     text-align: center;
 `
 
 export const SloganAbout = styled(motion.h1)`
     font-family: 'AllRoundGothic-Demi';
-    font-size: 32px;
+    font-size: 42px;
     color: #1b1464;
     line-height: 1.2;
     text-align: center;
@@ -187,7 +186,7 @@ export const SloganAbout = styled(motion.h1)`
     }
 
     @media screen and (min-width: 768px) {
-        font-size: 32px;
+        font-size: 46px;
         width: 40rem;
     }
     @media screen and (min-width: 1024px) {
@@ -226,11 +225,27 @@ const StoryContainer = styled.div`
     align-self: center;
 
     h1 {
-        font-size: 52px;
+        font-size: 32px;
         font-family: 'AllRoundGothic-Demi';
         color: #1b1464;
         text-align: left;
         margin: 3rem 0;
+
+        @media screen and (max-width: 465px) {
+            font-size: 32px;
+        }
+
+        @media screen and (min-width: 768px) {
+            font-size: 32px;
+            width: 40rem;
+        }
+        @media screen and (min-width: 1024px) {
+            font-size: 52px;
+            width: 40rem;
+        }
+        @media screen and (min-width: 1440px) {
+            font-size: 58px;
+        }
     }
 `
 
@@ -269,19 +284,19 @@ const StoryImageWrapper = styled(motion.div)`
 
     @media screen and (min-width: 551px) {
         width: 100%;
-        height: 40vh;
+        height: 30vh;
         border-top-right-radius: 25vw;
         border-bottom-left-radius: 25vw;
     }
     @media screen and (min-width: 1200px) {
-        width: 100%;
-        height: 35vh;
+        width: 80%;
+        height: 25vh;
         border-top-right-radius: 12vw;
         border-bottom-left-radius: 12vw;
     }
     @media screen and (min-width: 1440px) {
-        width: 100%;
-        height: 40vh;
+        width: 80%;
+        height: 30vh;
         border-top-right-radius: 12vw;
         border-bottom-left-radius: 12vw;
     }
@@ -293,10 +308,8 @@ const StoryImageWrapper = styled(motion.div)`
     }
 
     @media screen and (min-width: 2560px) {
-        width: 30vw;
-        height: 50vh;
-        border-top-right-radius: 12vw;
-        border-bottom-left-radius: 12vw;
+        width: 90%;
+        height: 45vh;
     }
 `
 
@@ -305,6 +318,8 @@ const StoryImageWrapper2 = styled(StoryImageWrapper)`
 `
 
 const OurStoryContainer2 = styled(OurStoryContainer)`
+    margin-top: 2rem;
+
     @media screen and (max-width: 1200px) {
         flex-direction: column;
     }
