@@ -83,7 +83,7 @@ const ContactForm = () => {
             }}
             ref={ref}
         >
-            <Tag style={{ width: '35%' }}>
+            <Tag style={{ width: '30%' }}>
                 <span>Contact</span>
             </Tag>
 

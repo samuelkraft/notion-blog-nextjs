@@ -50,7 +50,7 @@ const HomeSection05 = () => {
                     animate='show'
                 >
                     <Tag style={{ width: '35%' }}>
-                        <span>{t('whyUs')}</span>
+                        <span>{t('administrativeServices')}</span>
                     </Tag>
                     <SloganSection01>{t('section05_title')}</SloganSection01>
                     <HeadingSection05>

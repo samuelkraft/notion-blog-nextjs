@@ -48,7 +48,7 @@ const BlogSection = ({ posts }) => {
                     initial='hidden'
                     animate='show'
                 >
-                    <Tag style={{ width: '35%' }}>
+                    <Tag style={{ width: '20%' }}>
                         <span>Blog</span>
                     </Tag>
                     <RowWrapper>

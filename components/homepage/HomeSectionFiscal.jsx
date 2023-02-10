@@ -51,7 +51,7 @@ const HomeSectionFiscal = () => {
                     animate='show'
                 >
                     <Tag>
-                        <span>{t('whyUs')}</span>
+                        <span>{t('taxServices')}</span>
                     </Tag>
                     <SloganSection01>
                         {t('sectionFiscal_title')}

@@ -52,7 +52,7 @@ const HomeSectionJuridique = () => {
                     animate='show'
                 >
                     <Tag>
-                        <span>{t('whyUs')}</span>
+                        <span>{t('legalServices')}</span>
                     </Tag>
                     <SloganSection01>
                         {t('sectionJuridique_title')}

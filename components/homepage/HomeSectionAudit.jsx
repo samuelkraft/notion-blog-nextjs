@@ -51,7 +51,7 @@ const HomeSectionAudit = () => {
                     animate='show'
                 >
                     <Tag>
-                        <span>{t('whyUs')}</span>
+                        <span>{t('auditServices')}</span>
                     </Tag>
                     <SloganSection01>{t('sectionAudit_title')}</SloganSection01>
                     <HeadingSection02>

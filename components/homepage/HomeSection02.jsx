@@ -49,7 +49,7 @@ const HomeSection02 = () => {
                     animate='show'
                 >
                     <Tag>
-                        <span>{t('whyUs')}</span>
+                        <span>{t('accountingServices')}</span>
                     </Tag>
                     <SloganSection02
                         initial={{ y: 200, opacity: 0.5 }}
