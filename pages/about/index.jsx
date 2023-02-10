@@ -7,7 +7,6 @@ import AboutSection03 from '../../components/about/AboutSection03'
 import AboutSection04 from '../../components/about/AboutSection04'
 import AboutSection05 from '../../components/about/AboutSection05'
 import HeroAboutPage from '../../components/about/HeroAboutPage'
-import HiringForm from '../../components/about/HiringForm'
 import HeaderMegaMenu from '../../components/header/HeaderMegaMenu'
 import Footer from '../../components/footer/Footer'
 import { motion } from 'framer-motion'
@@ -19,6 +18,7 @@ import {
     sliderContainer,
 } from '../../lib/animation'
 import styled from 'styled-components'
+import OurValues from '../../components/about/OurValues'
 
 const AboutPage = ({}) => {
     const { t, i18n } = useTranslation('common', {
@@ -101,6 +101,7 @@ const AboutPage = ({}) => {
                     <HeroAboutPage />
                     <AboutSection01 />
                     <AboutSection02 />
+                    <OurValues />
                     {/* <AboutSection03 /> */}
                     <AboutSection04 />
                     <AboutSection05
@@ -108,7 +109,6 @@ const AboutPage = ({}) => {
                         paragraph={t('joinOurTeamText')}
                         btnText={t('seeMore')}
                     />
-                    <HiringForm />
                     <Footer />
                 </motion.div>
             </motion.div>

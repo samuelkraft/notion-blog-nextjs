@@ -543,7 +543,14 @@ export default function HeaderMegaMenu() {
                                     withinPortal
                                 >
                                     <HoverCard.Target>
-                                        <Text className={classes.link}>
+                                        <Text
+                                            className={cx(classes.link, {
+                                                [classes.mainLinkActive]:
+                                                    router.asPath.includes(
+                                                        '-tax'
+                                                    ),
+                                            })}
+                                        >
                                             <Center inline>
                                                 <Box
                                                     component='span'
@@ -677,16 +684,22 @@ export default function HeaderMegaMenu() {
                                 >
                                     {t('contact')}
                                 </Link>
-                                <div className={classes.link}>
-                                    <a
-                                        href='https://www.linkedin.com/company/asp-experts/'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        className={classes.hiring}
-                                    >
-                                        {t('recrutement')}
-                                    </a>
-                                </div>
+                                <Link
+                                    href='/hiring'
+                                    className={cx(classes.hiring, {
+                                        [classes.mainLinkActive]:
+                                            router.pathname.includes('/hiring'),
+                                    })}
+                                    locale={router.locale}
+                                    onClick={(e) =>
+                                        handlePreventRefreshOnSameLink(
+                                            e,
+                                            '/hiring'
+                                        )
+                                    }
+                                >
+                                    {t('recrutement')}
+                                </Link>
 
                                 <Group className={classes.hiddenMobile}>
                                     <LanguageSwitcher />
@@ -787,7 +800,7 @@ export default function HeaderMegaMenu() {
                         href='/#contact'
                         className={classes.link}
                         onClick={(e) => {
-                            handlePreventRefreshOnSameLink(e, '/blog/')
+                            handlePreventRefreshOnSameLink(e, '/#contact')
                             closeDrawer()
                         }}
                         locale={router.locale}
@@ -795,15 +808,17 @@ export default function HeaderMegaMenu() {
                         {t('contact')}
                     </Link>
 
-                    <div className={classes.link}>
-                        <a
-                            href='https://www.linkedin.com/company/asp-experts/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
-                            {t('recrutement')}
-                        </a>
-                    </div>
+                    <Link
+                        href='/hiring'
+                        className={classes.link}
+                        onClick={(e) => {
+                            handlePreventRefreshOnSameLink(e, '/hiring/')
+                            closeDrawer()
+                        }}
+                        locale={router.locale}
+                    >
+                        {t('recrutement')}
+                    </Link>
 
                     <Divider
                         my='sm'

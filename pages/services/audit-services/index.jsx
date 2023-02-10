@@ -32,6 +32,7 @@ import { pageAnimation } from '../../../lib/animation'
 import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 import AboutSection05 from '../../../components/about/AboutSection05'
+import logoArrow from '../../../images/logo_arrow.png'
 
 const AuditServices = ({}) => {
     const { t, i18n } = useTranslation('auditServices', {
@@ -122,7 +123,7 @@ const AuditServices = ({}) => {
                     </LayoutColumn>
 
                     <Heading>
-                        <Slogan>{t('features_title')}</Slogan>
+                        <Subtitle>{t('features_title')}</Subtitle>
                     </Heading>
 
                     <Heading>
@@ -220,7 +221,7 @@ const AuditServices = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -233,7 +234,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -248,7 +249,7 @@ const AuditServices = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -263,7 +264,7 @@ const AuditServices = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -278,7 +279,7 @@ const AuditServices = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -293,7 +294,7 @@ const AuditServices = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -335,7 +336,7 @@ const AuditServices = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -347,7 +348,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -389,7 +390,7 @@ const AuditServices = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -400,7 +401,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -411,7 +412,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -422,7 +423,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -433,7 +434,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -444,7 +445,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -455,7 +456,7 @@ const AuditServices = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -484,7 +485,7 @@ const AuditServices = ({}) => {
                             <Heading>
                                 <RowWrapper className=''>
                                     <Image
-                                        src={check}
+                                        src={logoArrow}
                                         alt='check1'
                                         width={50}
                                         height={50}
@@ -497,7 +498,7 @@ const AuditServices = ({}) => {
                                 </RowWrapper>
                                 <RowWrapper className=''>
                                     <Image
-                                        src={check}
+                                        src={logoArrow}
                                         alt='check1'
                                         width={50}
                                         height={50}
@@ -510,7 +511,7 @@ const AuditServices = ({}) => {
                                 </RowWrapper>
                                 <RowWrapper className=''>
                                     <Image
-                                        src={check}
+                                        src={logoArrow}
                                         alt='check1'
                                         width={50}
                                         height={50}

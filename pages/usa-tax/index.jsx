@@ -34,6 +34,8 @@ import Head from 'next/head'
 import InfiniteSlider from '../../components/slider/InfiniteSlider'
 import AboutSection05 from '../../components/about/AboutSection05'
 
+import logoArrow from '../../images/logo_arrow.png'
+
 const UsaTax = ({}) => {
     const { t, i18n } = useTranslation('usaTax', {
         bindI18n: 'languageChanged loaded',
@@ -123,11 +125,11 @@ const UsaTax = ({}) => {
                     </LayoutColumn>
 
                     <Heading>
-                        <Slogan>{t('features_title')}</Slogan>
+                        <Subtitle>{t('features_title')}</Subtitle>
                     </Heading>
 
                     <Heading>
-                        <Slogan>{t('declaration_revenu')}</Slogan>
+                        <Subtitle>{t('declaration_revenu')}</Subtitle>
                     </Heading>
 
                     <Heading>
@@ -171,7 +173,7 @@ const UsaTax = ({}) => {
                     </Heading>
 
                     <Heading>
-                        <Slogan>{t('expatriation')}</Slogan>
+                        <Subtitle>{t('expatriation')}</Subtitle>
                     </Heading>
 
                     <Heading>
@@ -194,7 +196,7 @@ const UsaTax = ({}) => {
                     </Heading>
 
                     <Heading>
-                        <Slogan>{t('conseils')}</Slogan>
+                        <Subtitle>{t('conseils')}</Subtitle>
                     </Heading>
 
                     <Heading>
@@ -224,19 +226,19 @@ const UsaTax = ({}) => {
                     </Heading>
 
                     <Heading>
-                        <Slogan>{t('demande_itin')}</Slogan>
+                        <Subtitle>{t('demande_itin')}</Subtitle>
                     </Heading>
 
                     <Heading>{t('demande_itin_text')}</Heading>
 
                     <Heading>
-                        <Slogan>{t('missions')}</Slogan>
+                        <Subtitle>{t('missions')}</Subtitle>
                     </Heading>
 
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -247,7 +249,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -258,7 +260,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -269,7 +271,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -279,7 +281,7 @@ const UsaTax = ({}) => {
                     </Heading>
 
                     <Heading>
-                        <Slogan>{t('devez-vous_itin')}</Slogan>
+                        <Subtitle>{t('devez-vous_itin')}</Subtitle>
                     </Heading>
 
                     <Heading>
@@ -307,7 +309,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -318,7 +320,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -329,7 +331,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -340,7 +342,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -351,7 +353,7 @@ const UsaTax = ({}) => {
                     <Heading>
                         <RowWrapper className=''>
                             <Image
-                                src={check}
+                                src={logoArrow}
                                 alt='check1'
                                 width={50}
                                 height={50}
@@ -401,7 +403,7 @@ const UsaTax = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -414,7 +416,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -428,7 +430,7 @@ const UsaTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -442,7 +444,7 @@ const UsaTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -457,7 +459,7 @@ const UsaTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -472,7 +474,7 @@ const UsaTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -486,7 +488,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -500,7 +502,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -529,7 +531,7 @@ const UsaTax = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -541,7 +543,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -553,7 +555,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -567,7 +569,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -606,7 +608,7 @@ const UsaTax = ({}) => {
                                 <Heading>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -619,7 +621,7 @@ const UsaTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -655,7 +657,7 @@ const UsaTax = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -667,7 +669,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -679,7 +681,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -691,7 +693,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -703,7 +705,7 @@ const UsaTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}

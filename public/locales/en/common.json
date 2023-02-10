@@ -193,10 +193,17 @@
     "sectionAudit_text3": "Our interventions are diverse and varied. They can be carried out within the framework of a legal obligation which is imposed on certain companies or of a voluntary approach. The due diligence carried out by our firm is a guarantee of quality with regard to shareholders or banks.",
     "sectionAudit_text4": "As for the so-called contractual audit missions (IT, social, tax, administrative, legal audit, etc.), we have various and varied internal skills that allow us to adapt each mission to your needs.",
 
-    "associes": "Associates",
+    "associes": "French & American Associates",
     "collaborateurs": "Collaborators",
     "bureaux": "Offices",
     "paris_telaviv": "Paris - Tel Aviv",
     "clients_francais": "French customers",
-    "clients_etrangers": "International customers"
+    "clients_etrangers": "International customers",
+
+    "valeurs": "Our values",
+
+    "integrite": "Integrity",
+    "bienveillance": "Goodwill",
+    "professionnalisme": "Professionnalism",
+    "innovation": "Innovation"
 }

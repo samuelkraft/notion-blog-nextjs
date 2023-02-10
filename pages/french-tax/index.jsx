@@ -35,6 +35,8 @@ import Head from 'next/head'
 import InfiniteSlider from '../../components/slider/InfiniteSlider'
 import AboutSection05 from '../../components/about/AboutSection05'
 
+import logoArrow from '../../images/logo_arrow.png'
+
 const FrenchTax = ({}) => {
     const { t, i18n } = useTranslation('frenchTax', {
         bindI18n: 'languageChanged loaded',
@@ -124,7 +126,7 @@ const FrenchTax = ({}) => {
                     </LayoutColumn>
 
                     <Heading>
-                        <Slogan>{t('features_title')}</Slogan>
+                        <Subtitle>{t('features_title')}</Subtitle>
                     </Heading>
 
                     <Heading>
@@ -240,7 +242,7 @@ const FrenchTax = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -253,7 +255,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -268,7 +270,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -283,7 +285,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -298,7 +300,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -313,7 +315,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -327,7 +329,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -341,7 +343,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -364,7 +366,7 @@ const FrenchTax = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -375,7 +377,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -388,7 +390,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -401,7 +403,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -435,7 +437,7 @@ const FrenchTax = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -448,7 +450,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -461,7 +463,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -474,7 +476,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -499,7 +501,7 @@ const FrenchTax = ({}) => {
                                 <Heading>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -512,7 +514,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -560,7 +562,7 @@ const FrenchTax = ({}) => {
                                 <Heading>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -573,7 +575,7 @@ const FrenchTax = ({}) => {
 
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -585,7 +587,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -612,7 +614,7 @@ const FrenchTax = ({}) => {
                                 <Heading>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -624,7 +626,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -636,7 +638,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -648,7 +650,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -660,7 +662,7 @@ const FrenchTax = ({}) => {
                                     </RowWrapper>
                                     <RowWrapper className=''>
                                         <Image
-                                            src={check}
+                                            src={logoArrow}
                                             alt='check1'
                                             width={50}
                                             height={50}
@@ -685,7 +687,7 @@ const FrenchTax = ({}) => {
 
                             <RowWrapper className=''>
                                 <Image
-                                    src={check}
+                                    src={logoArrow}
                                     alt='check1'
                                     width={50}
                                     height={50}
@@ -698,7 +700,7 @@ const FrenchTax = ({}) => {
                             </RowWrapper>
                             <RowWrapper className=''>
                                 <Image
-                                    src={check}
+                                    src={logoArrow}
                                     alt='check1'
                                     width={50}
                                     height={50}
@@ -711,7 +713,7 @@ const FrenchTax = ({}) => {
                             </RowWrapper>
                             <RowWrapper className=''>
                                 <Image
-                                    src={check}
+                                    src={logoArrow}
                                     alt='check1'
                                     width={50}
                                     height={50}

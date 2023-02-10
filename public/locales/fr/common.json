@@ -41,10 +41,10 @@
     "about": "À propos",
     "ourStory": "Notre histoire",
     "whoAreWe": "Qui sommes nous ?",
-    "story1": "Expand CPA est un cabinet d’expertise comptable et d’audit indépendant, fondé en 2019 par trois passionnés du chiffre.",
-    "story2": "Notre volonté première a été de repenser le métier, en proposant des méthodes de travail innovantes qui permettent, en plus de répondre aux obligations légales et règlementaires, d’agir en tant que conseil et véritable partenaire de nos clients.",
-    "story3": "Doté d’une équipe expérimentée, dynamique et motivée, notre cabinet repose sur la riche expérience de chaque associé, afin de proposer une offre de services complète, de qualité et dotée d’outils adaptés à toutes les formes de sociétés.",
-    "story4": "Aujourd’hui, grâce à sa double implantation géographique en Paris et Tel-Aviv, Expand CPA, accompagne des sociétés françaises et étrangères dans leur développement sur le marché français.",
+    "story1": "Expand CPA est un cabinet d’expertise comptable et d’audit français et américain qui accompagne des entreprises et des particuliers français ou américains sur les sujets de comptabilité, fiscalité, Administratif, Paie et RH.",
+    "story2": "La volonté première du cabinet a été de repenser le métier, en proposant des méthodes de travail innovantes et entièrement digitalisées qui permettent d’agir en tant que conseil et véritable partenaire de nos clients.",
+    "story3": "Doté d’une équipe expérimentée, dynamique et motivée, notre cabinet repose également sur la riche expérience de chaque associé, afin de proposer une offre de services complète, de qualité et dotée d’outils adaptés à toutes les formes de sociétés.",
+    "story4": "Aujourd’hui, grâce à sa double implantation géographique à Paris et Tel-Aviv, Expand CPA, dispose de moyens adaptés pour servir une clientèle internationale et trouver des solutions à chaque besoin.",
     "ourVision": "Notre vision",
     "vision_heading": "“Convaincue que chaque entité est unique, notre équipe s’attache scrupuleusement à accorderà chacun de nos clients une écoute attentive et singulière.”",
     "vision_paragraph": "L’humain étant au cœur de notre démarche, nous déployons des moyens de communication innovants et efficaces, afin de limiter le temps attribué à la production, favorisant ainsi notre action autour de la réflexion stratégique et notre rôle de conseil à vos côtés.",
@@ -199,10 +199,16 @@
     "sectionAudit_text3": "Nos interventions sont diverses et variées. Elles peuvent être effectuées dans le cadre d’une obligation légale qui s’impose à certaines entreprises ou bien d’une démarche volontaire. Les diligences effectuées par notre cabinet sont un gage de qualité à l’égard des actionnaires ou bien des banques.",
     "sectionAudit_text4": "Quant aux missions d’audit dites contractuelles (audit informatique, social, fiscal, administratif, juridique, etc.), nous disposons des compétences internes diverses et variées qui nous permettent d’adapter chaque mission à votre besoin.",
 
-    "associes": "Associés",
+    "associes": "Associés français & américain",
     "collaborateurs": "Collaborateurs",
     "bureaux": "Bureaux",
     "paris_telaviv": "Paris - Tel Aviv",
     "clients_francais": "Clients français",
-    "clients_etrangers": "Clients étrangers"
+    "clients_etrangers": "Clients étrangers",
+
+    "valeurs": "Nos valeurs",
+    "integrite": "Intégrité",
+    "bienveillance": "Bienveillance",
+    "professionnalisme": "Professionnalisme",
+    "innovation": "Innovation"
 }

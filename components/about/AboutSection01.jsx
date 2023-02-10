@@ -154,7 +154,7 @@ export const AboutSection01Container = styled(motion.div)`
     }
 
     @media screen and (min-width: 1440px) {
-        padding: 1rem 8%;
+        padding: 1rem 15%;
     }
     @media screen and (min-width: 1800px) {
         padding: 1rem 10%;
@@ -164,7 +164,7 @@ export const AboutSection01Container = styled(motion.div)`
         padding: 1rem 16%;
     }
     @media screen and (min-width: 2500px) {
-        padding: 1rem 25%;
+        padding: 1rem 20%;
     }
 `
 
@@ -260,7 +260,7 @@ const StoryImageWrapper = styled(motion.div)`
     background-size: cover;
     background-repeat: no-repeat;
 
-    justify-self: end;
+    justify-self: center;
 
     @media screen and (max-width: 550px) {
         width: 100%;
@@ -286,8 +286,8 @@ const StoryImageWrapper = styled(motion.div)`
         border-bottom-left-radius: 12vw;
     }
     @media screen and (min-width: 1800px) {
-        width: 100%;
-        height: 50vh;
+        width: 80%;
+        height: 40vh;
         border-top-right-radius: 12vw;
         border-bottom-left-radius: 12vw;
     }
