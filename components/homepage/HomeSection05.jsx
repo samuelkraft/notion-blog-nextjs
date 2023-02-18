@@ -49,7 +49,7 @@ const HomeSection05 = () => {
                     initial='hidden'
                     animate='show'
                 >
-                    <Tag style={{ width: '35%' }}>
+                    <Tag style={{ width: '50%' }}>
                         <span>{t('administrativeServices')}</span>
                     </Tag>
                     <SloganSection01>{t('section05_title')}</SloganSection01>

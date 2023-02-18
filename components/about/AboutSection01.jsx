@@ -30,7 +30,7 @@ const AboutSection01 = () => {
             ref={ref}
         >
             <AboutSection01Wrapper>
-                <Tag style={{ width: '20%' }}>
+                <Tag style={{ width: '30%' }}>
                     <span>{t('about')}</span>
                 </Tag>
 

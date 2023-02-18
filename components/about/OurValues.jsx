@@ -201,10 +201,11 @@ const ValuesContainer = styled.div`
 `
 const ImageWrapper = styled(motion.div)`
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: 180px;
     object-fit: cover;
     align-self: center;
+    justify-self: center;
 
     @media screen and (max-width: 425px) {
         width: 320px;
