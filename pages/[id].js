@@ -74,10 +74,16 @@ const renderBlock = (block) => {
           <Text text={value.rich_text} />
         </h3>
       );
+    case "bulleted_list": {
+      return <ul>{value.children.map((child) => renderBlock(child))}</ul>;
+    }
+    case "numbered_list": {
+      return <ol>{value.children.map((child) => renderBlock(child))}</ol>;
+    }
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li>
+        <li key={block.id}>
           <Text text={value.rich_text} />
           {!!value.children && renderNestedList(block)}
         </li>
