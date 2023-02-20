@@ -24,6 +24,7 @@ export const Text = ({ text }) => {
           underline ? styles.underline : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
+        key={text.content}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
       </span>
@@ -96,13 +97,18 @@ const renderBlock = (block) => {
           <summary>
             <Text text={value.rich_text} />
           </summary>
-          {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+          {block.children?.map((child) => (
+            <Fragment key={child.id}>{renderBlock(child)}</Fragment>
           ))}
         </details>
       );
     case "child_page":
-      return <p>{value.title}</p>;
+      return (
+        <div className={styles.childPage}>
+          <strong>{value.title}</strong>
+          {block.children.map((child) => renderBlock(child))}
+        </div>
+      );
     case "image":
       const src =
         value.type === "external" ? value.external.url : value.file.url;
@@ -153,22 +159,34 @@ const renderBlock = (block) => {
       return (
         <table className={styles.table}>
           <tbody>
-            {value.children?.map((child, i) => {
+            {block.children?.map((child, i) => {
               const RowElement =
                 value.has_column_header && i == 0 ? "th" : "td";
               return (
-                <tr>
-                  {child.table_row?.cells?.map((cell) => (
-                    <RowElement>
-                      <Text text={cell} />
-                    </RowElement>
-                  ))}
+                <tr key={child.id}>
+                  {child.table_row?.cells?.map((cell, i) => {
+                    return (
+                      <RowElement key={`${cell.plain_text}-${i}`}>
+                        <Text text={cell} />
+                      </RowElement>
+                    );
+                  })}
                 </tr>
               );
             })}
           </tbody>
         </table>
       );
+    }
+    case "column_list": {
+      return (
+        <div className={styles.row}>
+          {block.children.map((block) => renderBlock(block))}
+        </div>
+      );
+    }
+    case "column": {
+      return <div>{block.children.map((child) => renderBlock(child))}</div>;
     }
     default:
       return `❌ Unsupported block (${
@@ -218,32 +236,10 @@ export const getStaticProps = async (context) => {
   const page = await getPage(id);
   const blocks = await getBlocks(id);
 
-  // Retrieve block children for nested blocks (one level deep), for example toggle blocks
-  // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
-  const childBlocks = await Promise.all(
-    blocks
-      .filter((block) => block.has_children)
-      .map(async (block) => {
-        return {
-          id: block.id,
-          children: await getBlocks(block.id),
-        };
-      })
-  );
-  const blocksWithChildren = blocks.map((block) => {
-    // Add child blocks if the block should contain children but none exists
-    if (block.has_children && !block[block.type].children) {
-      block[block.type]["children"] = childBlocks.find(
-        (x) => x.id === block.id
-      )?.children;
-    }
-    return block;
-  });
-
   return {
     props: {
       page,
-      blocks: blocksWithChildren,
+      blocks,
     },
     revalidate: 1,
   };
