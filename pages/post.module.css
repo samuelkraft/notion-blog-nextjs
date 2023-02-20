@@ -109,6 +109,20 @@
   padding: 6px 12px;
 }
 
+.row {
+  display: flex;
+}
+
+.row > div {
+  flex: 1;
+}
+
+.childPage {
+  border: 1px solid currentColor;
+  padding: 20px;
+  border-radius: 12px;
+}
+
 @media (prefers-color-scheme: dark) {
   .code,
   .table,
