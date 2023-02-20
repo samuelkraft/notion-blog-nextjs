@@ -149,6 +149,27 @@ const renderBlock = (block) => {
           {href}
         </a>
       );
+    case "table": {
+      return (
+        <table className={styles.table}>
+          <tbody>
+            {value.children?.map((child, i) => {
+              const RowElement =
+                value.has_column_header && i == 0 ? "th" : "td";
+              return (
+                <tr>
+                  {child.table_row?.cells?.map((cell) => (
+                    <RowElement>
+                      <Text text={cell} />
+                    </RowElement>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      );
+    }
     default:
       return `❌ Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type

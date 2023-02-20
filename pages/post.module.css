@@ -95,16 +95,29 @@
   margin-bottom: 10px;
 }
 
+.table {
+  border: 1px solid currentColor;
+  border-collapse: collapse;
+}
+.table th {
+  border: 1px solid currentColor;
+  background-color: rgb(242, 242, 242);
+  padding: 6px 12px;
+}
+.table td {
+  border: 1px solid currentColor;
+  padding: 6px 12px;
+}
+
 @media (prefers-color-scheme: dark) {
-  .code {
+  .code,
+  .table,
+  .pre {
     background-color: rgb(15, 8, 28);
   }
   .file:hover {
     background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
     border-radius: 2px;
-  }
-  .pre {
-    background-color: rgb(15, 8, 28);
   }
 }
