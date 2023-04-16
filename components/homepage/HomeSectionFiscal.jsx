@@ -16,6 +16,8 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { ImageWrapper, RowWrapper, ColumnWrapper } from './HomeSectionJuridique'
 import check from '../../images/check.svg'
+import fiscal from '../../images/fiscal_hero_img.png'
+import { RoundedButton } from './HeroHomePage'
 
 const HomeSectionFiscal = () => {
     const { t, i18n } = useTranslation('common', {
@@ -58,13 +60,10 @@ const HomeSectionFiscal = () => {
                     </SloganSection01>
                     <HeadingSection01>
                         <h2>
-                            <b>{t('sectionFiscal_bold1')}</b>
+                            {t('sectionFiscal_bold1')}
                             {t('sectionFiscal_text1')}
+                            {t('sectionFiscal_text2')}
                         </h2>
-                    </HeadingSection01>
-
-                    <HeadingSection01>
-                        <h2>{t('sectionFiscal_text2')}</h2>
                     </HeadingSection01>
 
                     <ColumnWrapper>
@@ -113,18 +112,19 @@ const HomeSectionFiscal = () => {
                         </HeadingSection01>
                     </ColumnWrapper>
                     <HeadingSection01>
-                        <Link href='/services/tax-services'>
-                            <GradientButton
-                                gradientColor='#0657CF'
-                                type='button'
-                                width={200}
-                            >
+                        <div style={{ width: '167px' }}>
+                            <RoundedButton href='/services/tax-services'>
                                 {t('readMore')}
-                            </GradientButton>
-                        </Link>
+                            </RoundedButton>{' '}
+                        </div>
                     </HeadingSection01>
                 </motion.div>
-                <ImageWrapperFiscal />
+                <Image
+                    src={fiscal}
+                    width={602}
+                    height={651}
+                    alt='conseiller fiscal'
+                />
             </HomeSection01Wrapper>
         </HomeSection01Container>
     )

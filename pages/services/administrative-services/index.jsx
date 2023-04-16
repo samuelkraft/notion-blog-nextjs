@@ -599,7 +599,7 @@ export const TextContent = styled.div`
 `
 
 export const Slogan = styled(motion.h1)`
-    font-family: 'AllRoundGothic-Demi';
+    font-family: 'Poppins', sans-serif;
     font-size: 32px;
     color: #352d61;
     line-height: 1.2;
@@ -620,7 +620,7 @@ export const Slogan = styled(motion.h1)`
 `
 
 export const Subtitle = styled.h1`
-    font-family: 'AllRoundGothic-Demi';
+    font-family: 'Poppins', sans-serif;
     font-size: 24px;
     line-height: 1.2;
     color: #352d61;
@@ -727,7 +727,7 @@ export const Feature = styled.div`
         font-size: 20px;
         line-height: 30px;
         color: #352d61;
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
 
         @media screen and (max-width: 465px) {
             font-size: 20px;

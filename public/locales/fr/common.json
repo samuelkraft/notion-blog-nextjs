@@ -24,7 +24,7 @@
     "footerLinks": "Liens utiles",
     "coordonnees": "Coordonnées",
     "CTA": "Bénéficiez de l’expertise Expand CPA !",
-    "contactUs": "Contactez-nous",
+    "contactUs": "Nous contacter",
     "contactUsText": "Nous sommes à votre disposition pour répondre à toutes vos questions.",
     "comptable_dedie": "Comptable dédié",
     "expertiseRH": "Expertise RH",
@@ -102,7 +102,8 @@
     "section03_bold1": "l’accompagnement administratif",
     "section03_heading_pt2": " lors de ",
     "section03_bold2": "l’implantation d’entités",
-    "section03_heading_pt3": " sur le territoire. Nous conseillons également nos clients sur la forme d’exercice du business la plus adaptée (bureau de liaison, succursale ou filiale). Nos comptables et experts-comptables sont à vos côtés pour tout contact avec les administrations. Nous aidons à  ",
+    "section03_heading_pt3": " sur le territoire. Nous conseillons également nos clients sur la forme d’exercice du business la plus adaptée (bureau de liaison, succursale ou filiale).",
+    "section03_heading_pt3_2": "Nos comptables et experts-comptables sont à vos côtés pour tout contact avec les administrations. Nous aidons à  ",
     "section03_bold3": "déployer les activités",
     "section03_heading_pt4": " commerciales sereinement sur le plan administratif.",
     "section04_title": "Expertise RH, une prestation technique",
@@ -210,5 +211,8 @@
     "integrite": "Intégrité",
     "bienveillance": "Bienveillance",
     "professionnalisme": "Professionnalisme",
-    "innovation": "Innovation"
+    "innovation": "Innovation",
+
+    "section03_tag": "S’INSTALLER FACILEMENT EN FRANCE",
+    "contactFormBtnLabel": "Nous envoyer un message"
 }

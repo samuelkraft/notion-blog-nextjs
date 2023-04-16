@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useTranslation } from 'next-i18next'
 import { SloganAbout } from './AboutSection01'
 import { motion, useInView } from 'framer-motion'
-import { AboutSection03Container } from './AboutSection03'
+import { HeroContainer } from '../homepage/HeroHomePage'
 import { useRef } from 'react'
 
 const AboutSection02 = () => {
@@ -11,7 +11,7 @@ const AboutSection02 = () => {
     const isInView = useInView(ref, { once: true })
 
     return (
-        <AboutSection03Container
+        <HeroContainer
             initial={{ opacity: 0 }}
             animate={{
                 opacity: isInView ? 1 : 0,
@@ -31,7 +31,7 @@ const AboutSection02 = () => {
                     <h3>{t('vision_paragraph')}</h3>
                 </OurVisionContainer>
             </AboutSection02Wrapper>
-        </AboutSection03Container>
+        </HeroContainer>
     )
 }
 
@@ -56,7 +56,7 @@ const OurVisionContainer = styled.div`
     gap: 3rem;
 
     h1 {
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         font-size: 32px;
         letter-spacing: 0.327px;
 

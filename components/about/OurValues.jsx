@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { useTranslation } from 'next-i18next'
 import { SloganAbout } from './AboutSection01'
 import { motion, useInView } from 'framer-motion'
-import { AboutSection03Container } from './AboutSection03'
 import { useRef } from 'react'
 import logo from '../../images/logo_Expand-CPA.svg'
 import bienveillance from '../../images/bienveillance.svg'
@@ -11,13 +10,14 @@ import pro from '../../images/pro.svg'
 import integrite from '../../images/integrite.svg'
 import Image from 'next/image'
 import { AboutSection02Wrapper } from './AboutSection02'
+import { HeroContainer } from '../homepage/HeroHomePage'
 
 const OurValues = () => {
     const { t } = useTranslation('common')
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     return (
-        <AboutSection03Container
+        <HeroContainer
             initial={{ opacity: 0 }}
             animate={{
                 opacity: isInView ? 1 : 0,
@@ -175,7 +175,7 @@ const OurValues = () => {
                     </ValuesContainer>
                 </OurValuesWrapper>
             </AboutSection02Wrapper>
-        </AboutSection03Container>
+        </HeroContainer>
     )
 }
 
@@ -233,7 +233,7 @@ const Value = styled(motion.div)`
     }
 
     h1 {
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         font-size: 36px;
         color: #1b1464;
         line-height: 1.5;

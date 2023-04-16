@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components'
 import { useTranslation } from 'next-i18next'
-import { AboutSection03Container } from './AboutSection03'
 import cic from '../../images/cic.png'
 import businessFrance from '../../images/businessFrance.png'
 import caillaut from '../../images/caillaut.png'
@@ -12,6 +11,7 @@ import memories from '../../images/memories.png'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { HomeSection05Wrapper } from '../homepage/HomeSection05'
+import { HeroContainer } from '../homepage/HeroHomePage'
 import Image from 'next/image'
 const AboutSection04 = () => {
     const { t } = useTranslation('common')
@@ -28,7 +28,7 @@ const AboutSection04 = () => {
         franco,
     ]
     return (
-        <AboutSection03Container
+        <HeroContainer
             initial={{ opacity: 0 }}
             animate={{
                 opacity: isInView ? 1 : 0,
@@ -72,14 +72,14 @@ const AboutSection04 = () => {
                     </InfiniteSliderWrapper>
                 </InfiniteSliderContainer>
             </HomeSection05Wrapper>
-        </AboutSection03Container>
+        </HeroContainer>
     )
 }
 
 export default AboutSection04
 
 const OurPartners = styled.div`
-    font-family: 'AllRoundGothic-Demi';
+    font-family: 'Poppins', sans-serif;
     font-size: 36px;
     color: #1b1464;
     line-height: 1.2;

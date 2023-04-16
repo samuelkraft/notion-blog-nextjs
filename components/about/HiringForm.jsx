@@ -483,7 +483,7 @@ const TextContent = styled.div`
         margin-bottom: 0rem;
     }
     h1 {
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         @media screen and (max-width: 1024px) {
             font-size: 42px;
             line-height: 1.2;

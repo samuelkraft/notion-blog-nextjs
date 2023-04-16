@@ -32,7 +32,7 @@ import {
 } from '@tabler/icons'
 
 import { useTranslation } from 'next-i18next'
-import Logo from '../../images/logo_Expand-CPA.svg'
+import Logo from '../../images/Logo_Expand_CPA_horizontal.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -45,6 +45,7 @@ const useStyles = createStyles((theme) => ({
     root: {
         position: 'fixed',
         zIndex: 20,
+        boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.09)',
 
         '@media screen and (max-width: 768px)': {
             padding: '0.75rem',
@@ -57,9 +58,10 @@ const useStyles = createStyles((theme) => ({
 
     inner: {
         display: 'flex',
-        justifyContent: 'space-between',
+        maxWidth: '1200px',
         alignItems: 'center',
         fontFamily: "'Gilroy', sans-serif",
+        fontSize: '12px',
         padding: '0',
         '@media screen and (min-width: 768px)': {
             padding: '0.5rem',
@@ -82,12 +84,8 @@ const useStyles = createStyles((theme) => ({
             theme.colorScheme === 'dark'
                 ? theme.colors.dark[0]
                 : theme.colors.gray[9],
-        fontSize: theme.fontSizes.md,
-        fontWeight: 600,
-
-        '@media screen and (min-width: 1500px)': {
-            fontSize: theme.fontSizes.xl,
-        },
+        fontSize: '16px',
+        fontWeight: 500,
     },
 
     hiring: {
@@ -106,7 +104,7 @@ const useStyles = createStyles((theme) => ({
                 theme.colorScheme === 'dark'
                     ? theme.colors.dark[0]
                     : theme.colors.gray[9],
-            fontWeight: 600,
+            fontWeight: 500,
         },
     },
 
@@ -126,7 +124,7 @@ const useStyles = createStyles((theme) => ({
         fontFamily: "'Gilroy', sans-serif",
         color: theme.colors.dark,
         fontSize: theme.fontSizes.md,
-        fontWeight: 600,
+        fontWeight: 500,
     },
 
     dropdownFooter: {
@@ -166,6 +164,15 @@ const useStyles = createStyles((theme) => ({
             theme.colorScheme === 'dark'
                 ? theme.colors.dark[6]
                 : theme.colors.gray[1],
+    },
+
+    contactUsBtn: {
+        background:
+            'linear-gradient(78.06deg, #1B1464 -48.75%, #0657CF 96.72%)',
+        borderRadius: '60px',
+        color: '#fff',
+        padding: '10px 20px',
+        fontSize: '16px',
     },
 }))
 
@@ -279,7 +286,7 @@ export default function HeaderMegaMenu() {
                         weight={500}
                         style={{
                             fontFamily: "'Gilroy',sans-serif",
-                            fontWeight: 600,
+                            fontWeight: 500,
                         }}
                     >
                         {item.title}
@@ -324,7 +331,7 @@ export default function HeaderMegaMenu() {
                         weight={500}
                         style={{
                             fontFamily: "'Gilroy',sans-serif",
-                            fontWeight: 600,
+                            fontWeight: 500,
                         }}
                     >
                         {item.title}
@@ -345,10 +352,7 @@ export default function HeaderMegaMenu() {
                     className={classes.inner}
                     fluid
                 >
-                    <Group
-                        position='left'
-                        sx={{ height: '100%' }}
-                    >
+                    <Group sx={{ height: '100%' }}>
                         <Burger
                             opened={drawerOpened}
                             onClick={toggleDrawer}
@@ -670,7 +674,7 @@ export default function HeaderMegaMenu() {
                                 </Link>
                                 <Link
                                     href='/#contact'
-                                    className={cx(classes.link, {
+                                    className={cx(classes.contactUsBtn, {
                                         [classes.mainLinkActive]:
                                             router.asPath === '/#contact',
                                     })}
@@ -682,9 +686,9 @@ export default function HeaderMegaMenu() {
                                         )
                                     }
                                 >
-                                    {t('contact')}
+                                    {t('contactUs')}
                                 </Link>
-                                <Link
+                                {/* <Link
                                     href='/hiring'
                                     className={cx(classes.hiring, {
                                         [classes.mainLinkActive]:
@@ -699,7 +703,7 @@ export default function HeaderMegaMenu() {
                                     }
                                 >
                                     {t('recrutement')}
-                                </Link>
+                                </Link> */}
 
                                 <Group className={classes.hiddenMobile}>
                                     <LanguageSwitcher />

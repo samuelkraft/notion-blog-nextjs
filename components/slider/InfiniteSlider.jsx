@@ -98,8 +98,8 @@ const InfiniteSlider = () => {
 }
 
 const Heading = styled.h3`
-    font-family: 'AllRoundGothic-Demi';
-    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     font-size: 28px;
     display: flex;
     justify-content: center;
@@ -190,7 +190,6 @@ const BrandSlider = styled.div`
     animation-name: ${SlideInfinite};
     animation-duration: 20s;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
     animation-timing-function: ease-in-out;
 
     @media screen and (max-width: 500px) {

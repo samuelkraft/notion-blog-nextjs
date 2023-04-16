@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 import {
     HomeSection01Container,
     HomeSection01Wrapper,
@@ -15,6 +16,7 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { HomeSectionJuridiqueWrapper } from './HomeSectionJuridique'
 import { HeadingSection02 } from './HomeSection02'
+import audit from '../../images/audit_hero_img.png'
 
 const HomeSectionAudit = () => {
     const { t, i18n } = useTranslation('common', {
@@ -43,7 +45,12 @@ const HomeSectionAudit = () => {
             ref={ref}
         >
             <HomeSectionJuridiqueWrapper>
-                <ImageWrapperAudit />
+                <Image
+                    src={audit}
+                    width={600}
+                    height={650}
+                    alt='Audit'
+                />
                 <motion.div
                     className='text-content'
                     variants={titleAnim}

@@ -14,6 +14,9 @@ import GradientButton from '../button/GradientButton'
 import { HeroImageContainer } from './HeroHomePage'
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import expertiseRH from '../../images/expertise_RH.svg'
+import Image from 'next/image'
+import { RoundedButton } from './HeroHomePage'
 
 const HomeSection04 = () => {
     const { t, i18n } = useTranslation('common', {
@@ -68,20 +71,39 @@ const HomeSection04 = () => {
                         </h2>
                     </HeadingSection01>
                     <HeadingSection01>
-                        <Link href='/services/payroll-services'>
-                            <GradientButton
-                                gradientColor='#0657CF'
-                                type='button'
-                                width={200}
-                                onClick={() => setOpened((o) => !o)}
-                            >
+                        <div
+                            className=''
+                            style={{ width: '158px' }}
+                        >
+                            <RoundedButton href='/services/payroll-services'>
                                 {t('readMore')}
-                            </GradientButton>
-                        </Link>
+                            </RoundedButton>
+                        </div>
                     </HeadingSection01>
                 </motion.div>
                 <HeroImageContainerSection04>
-                    <ImageWrapper1
+                    <Image
+                        src={expertiseRH}
+                        width={480}
+                        height={480}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        alt='expertiseRH'
+                        transition={{
+                            delay: 5,
+                            default: {
+                                duration: 1,
+                                ease: [0, 0.71, 0.2, 1.01],
+                            },
+                            scale: {
+                                type: 'spring',
+                                damping: 10,
+                                stiffness: 100,
+                                restDelta: 0.001,
+                            },
+                        }}
+                    />
+                    {/* <ImageWrapper1
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
@@ -114,7 +136,7 @@ const HomeSection04 = () => {
                                 restDelta: 0.001,
                             },
                         }}
-                    />
+                    /> */}
                 </HeroImageContainerSection04>
             </HomeSection04Wrapper>
         </HomeSection01Container>

@@ -342,7 +342,7 @@ const NumberCard = styled(motion.div)`
     h1 {
         font-size: 3.5rem;
         color: #1b1464;
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
     }
 
     span {

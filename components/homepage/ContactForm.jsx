@@ -5,15 +5,17 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 
-import linkedin from '../../images/linkedin.svg'
-import whatsapp from '../../images/whatsapp.svg'
-import youtube from '../../images/youtube.svg'
-import instagram from '../../images/instagram.svg'
+import { RoundedButton } from './HeroHomePage'
 import mail from '../../images/mail.svg'
 import redLocation from '../../images/red_location.svg'
 import greenLocation from '../../images/green_location.svg'
 import phone from '../../images/phone.svg'
 import map from '../../images/map.png'
+import location1 from '../../images/location1.svg'
+import location2 from '../../images/location2.svg'
+import email from '../../images/email.svg'
+import telephone from '../../images/telephone.svg'
+
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import {
@@ -83,44 +85,6 @@ const ContactForm = () => {
             }}
             ref={ref}
         >
-            <Tag style={{ width: '30%' }}>
-                <span>Contact</span>
-            </Tag>
-
-            <RowWrapper>
-                <SloganSection06>{t('followUs')}</SloganSection06>
-                <SocialMediaContainer>
-                    <a
-                        href='https://www.linkedin.com/company/asp-experts/'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <Image
-                            src={linkedin}
-                            alt='linkedin'
-                        />
-                    </a>
-                    <Image
-                        src={instagram}
-                        alt='instagram'
-                    />
-                    <a
-                        href='https://api.whatsapp.com/send?phone=33768095356&text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20et%20souhaiterais%20prendre%20contact%20avec%20un%20expert-comptable.'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <Image
-                            src={whatsapp}
-                            alt='whatsapp'
-                        />
-                    </a>
-                    <Image
-                        src={youtube}
-                        alt='youtube'
-                    />
-                </SocialMediaContainer>
-            </RowWrapper>
-
             <Form
                 method='post'
                 onSubmit={handleOnSubmit}
@@ -132,38 +96,22 @@ const ContactForm = () => {
                         <p>{t('form_paragraph')}</p>
                     </TextContent>
                     <FormLayout>
-                        <TextInput
-                            required
-                            label='Email'
-                            placeholder='your@email.com'
-                            type='email'
-                            radius='lg'
-                            icon={<IconMail color='#2457F5' />}
-                            size='lg'
-                            name='email'
-                            styles={{
-                                defaultVariant: {
-                                    borderColor: '#2457F5',
-                                    '&:focus': {
-                                        borderColor: '#2457F5',
-                                    },
-                                },
-                            }}
-                        />
-
                         <Group
                             position='left'
-                            spacing='xl'
+                            spacing='sm'
                         >
                             <TextInput
                                 required
                                 label={t('firstName')}
                                 placeholder={t('firstName')}
                                 type='text'
-                                radius='lg'
-                                size='lg'
+                                radius='md'
+                                size='md'
                                 name='firstName'
-                                icon={<IconUser color='#2457F5' />}
+                                style={{
+                                    boxShadow:
+                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                }}
                                 styles={{
                                     defaultVariant: {
                                         borderColor: '#2457F5',
@@ -178,10 +126,13 @@ const ContactForm = () => {
                                 label={t('lastName')}
                                 placeholder={t('lastName')}
                                 tyoe='text'
-                                radius='lg'
-                                size='lg'
-                                icon={<IconUser color='#2457F5' />}
+                                radius='md'
+                                size='md'
                                 name='lastName'
+                                style={{
+                                    boxShadow:
+                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                }}
                                 styles={{
                                     defaultVariant: {
                                         borderColor: '#2457F5',
@@ -195,13 +146,36 @@ const ContactForm = () => {
 
                         <TextInput
                             required
+                            label='Email'
+                            placeholder='your@email.com'
+                            type='email'
+                            radius='md'
+                            size='md'
+                            name='email'
+                            style={{
+                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                            }}
+                            styles={{
+                                defaultVariant: {
+                                    borderColor: '#2457F5',
+                                    '&:focus': {
+                                        borderColor: '#2457F5',
+                                    },
+                                },
+                            }}
+                        />
+
+                        <TextInput
+                            required
                             label={t('phone')}
                             placeholder='01 23 45 67 89'
                             type='tel'
-                            radius='lg'
-                            size='lg'
-                            icon={<IconPhone color='#2457F5' />}
+                            radius='md'
+                            size='md'
                             name='phone'
+                            style={{
+                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                            }}
                             styles={{
                                 defaultVariant: {
                                     borderColor: '#2457F5',
@@ -235,10 +209,12 @@ const ContactForm = () => {
                                 { value: 'rh', label: t('rh') },
                             ]}
                             required
-                            radius='lg'
-                            size='lg'
-                            icon={<IconBriefcase color='#4364F7' />}
+                            radius='md'
+                            size='md'
                             name='needs'
+                            style={{
+                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                            }}
                         />
 
                         <Textarea
@@ -246,8 +222,11 @@ const ContactForm = () => {
                             label={t('your_message')}
                             name='message'
                             withAsterisk
-                            size='lg'
-                            radius='lg'
+                            size='md'
+                            radius='md'
+                            style={{
+                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                            }}
                         />
 
                         <Modal
@@ -266,7 +245,7 @@ const ContactForm = () => {
                             centered
                             radius='md'
                             padding='xl'
-                            size='lg'
+                            size='md'
                         >
                             <Group position='center'>
                                 <Flex
@@ -288,12 +267,14 @@ const ContactForm = () => {
                         </Modal>
                         <GradientButton
                             type='submit'
-                            size='lg'
+                            size='md'
                             width='300px'
-                            gradientColor='linear-gradient(92.29deg, #4364F7 0.66%, #1B1464 96.93%);'
+                            weight='400'
+                            radius='xl'
+                            gradientColor='#0657CF'
                             onClick={() => setOpened(true)}
                         >
-                            {t('send')}
+                            {t('contactFormBtnLabel')}
                         </GradientButton>
                     </FormLayout>
                 </TextContentContainer>
@@ -315,7 +296,7 @@ const ContactForm = () => {
                         >
                             <ContactInfo>
                                 <Image
-                                    src={redLocation}
+                                    src={location1}
                                     alt='paris'
                                 />
                                 <p>
@@ -331,7 +312,7 @@ const ContactForm = () => {
                         >
                             <ContactInfo>
                                 <Image
-                                    src={greenLocation}
+                                    src={location2}
                                     alt='tel aviv'
                                 />
                                 <p>Menahem Begin, 132 TEL AVIV</p>
@@ -340,20 +321,16 @@ const ContactForm = () => {
                         <a href='tel:01-86-96-37-01'>
                             <ContactInfo>
                                 <Image
-                                    src={phone}
+                                    src={telephone}
                                     alt='phone'
                                 />
-                                <p>
-                                    <u>01 86 96 37 01</u>
-                                    <br />
-                                    <u>06 59 69 13 42</u>
-                                </p>
+                                <p>01 86 96 37 01 - 06 59 69 13 42</p>
                             </ContactInfo>
                         </a>
                         <a href='mailto:contact@expand-cpa.com'>
                             <ContactInfo>
                                 <Image
-                                    src={mail}
+                                    src={email}
                                     alt='mail'
                                 />
                                 <p>contact@expand-cpa.com</p>
@@ -367,28 +344,35 @@ const ContactForm = () => {
 }
 
 const ContactFormContainer = styled(motion.div)`
-    padding: 1rem;
+    padding: 5rem;
+    background: linear-gradient(
+        360deg,
+        rgba(217, 224, 236, 0.25) 0%,
+        rgba(217, 224, 236, 0) 119.76%
+    );
+
+    min-height: 100vh;
 
     @media screen and (min-width: 768px) {
-        padding: 2rem;
+        padding: 5rem;
     }
     @media screen and (min-width: 1024px) {
-        padding: 2rem 10%;
+        padding: 5rem 10%;
         flex-flow: row;
     }
 
     @media screen and (min-width: 1440px) {
-        padding: 2rem 14%;
+        padding: 5rem 14%;
     }
     @media screen and (min-width: 1800px) {
-        padding: 2rem 18%;
+        padding: 5rem 18%;
     }
 
     @media screen and (min-width: 2100px) {
-        padding: 2rem 22%;
+        padding: 5rem 22%;
     }
     @media screen and (min-width: 2500px) {
-        padding: 2rem 25%;
+        padding: 5rem 25%;
     }
 `
 
@@ -398,7 +382,6 @@ const Form = styled.form`
     flex-flow: column;
     margin-top: 2rem;
     padding: 2rem;
-    border: 3px solid #1b1464;
     border-radius: 51px;
 
     @media screen and (min-width: 1200px) {
@@ -450,7 +433,7 @@ const TextContent = styled.div`
         margin-bottom: 0rem;
     }
     h1 {
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         @media screen and (max-width: 1024px) {
             font-size: 42px;
             line-height: 1.2;
@@ -542,9 +525,9 @@ const ContactInfo = styled.div`
     gap: 1rem;
 
     p {
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Gilroy';
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 20px;
         line-height: 24px;
 

@@ -6,6 +6,13 @@ import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import { IconPhone, IconMail, IconMapPin } from '@tabler/icons'
 import { useEffect } from 'react'
+import footerLogo from '../../images/footer_logo.svg'
+import fb from '../../images/fb_footer.svg'
+import ig from '../../images/instagram_footer.svg'
+import twitter from '../../images/twitter_footer.svg'
+import ordreExpCompta from '../../images/ordre_experts_comptable.svg'
+import AICPA from '../../images/AICPA.svg'
+import CNCC from '../../images/CNCC.svg'
 
 const Footer = () => {
     const { t, i18n } = useTranslation('common', {
@@ -34,139 +41,164 @@ const Footer = () => {
                         onClick={(e) => handlePreventRefreshOnSameLink(e, '/')}
                     >
                         <Image
-                            src={Logo}
+                            src={footerLogo}
                             width={200}
-                            height={150}
+                            height={300}
                             alt='logo'
                         />
                     </Link>
-                    <div>
-                        <p>{t('slogan')}</p>
-                    </div>
                 </div>
-                <div className='column'>
-                    <h2>{t('footerLinks')}</h2>
-                    <div>
-                        <Link
-                            locale={router.locale}
-                            href='/about'
-                            onClick={(e) =>
-                                handlePreventRefreshOnSameLink(e, '/about/')
-                            }
-                        >
-                            <div className='links'>
-                                <span>{t('cabinet')}</span>
+                <div className='layout-wrapper'>
+                    <div className='layout'>
+                        <div className='menu'>
+                            <div className='column'>
+                                <h2>{t('MENU')}</h2>
+                                <div>
+                                    <Link
+                                        locale={router.locale}
+                                        href='/about'
+                                        onClick={(e) =>
+                                            handlePreventRefreshOnSameLink(
+                                                e,
+                                                '/about/'
+                                            )
+                                        }
+                                    >
+                                        <div className='links'>
+                                            <span>{t('cabinet')}</span>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link
+                                        locale={router.locale}
+                                        href='/services'
+                                        onClick={(e) =>
+                                            handlePreventRefreshOnSameLink(
+                                                e,
+                                                '/services/'
+                                            )
+                                        }
+                                    >
+                                        <div className='links'>
+                                            <span>{t('business')}</span>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link
+                                        locale={router.locale}
+                                        href='/french-tax'
+                                        onClick={(e) =>
+                                            handlePreventRefreshOnSameLink(
+                                                e,
+                                                '/french-tax/'
+                                            )
+                                        }
+                                    >
+                                        <div className='links'>
+                                            <span>{t('tax')}</span>
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link
-                            locale={router.locale}
-                            href='/services'
-                            onClick={(e) =>
-                                handlePreventRefreshOnSameLink(e, '/services/')
-                            }
-                        >
-                            <div className='links'>
-                                <span>{t('business')}</span>
-                            </div>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link
-                            locale={router.locale}
-                            href='/french-tax'
-                            onClick={(e) =>
-                                handlePreventRefreshOnSameLink(
-                                    e,
-                                    '/french-tax/'
-                                )
-                            }
-                        >
-                            <div className='links'>
-                                <span>{t('tax')}</span>
-                            </div>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link
-                            locale={router.locale}
-                            href='/blog'
-                            onClick={(e) =>
-                                handlePreventRefreshOnSameLink(e, '/blog/')
-                            }
-                        >
-                            <div className='links'>
-                                <span>{t('blog')}</span>
-                            </div>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link
-                            locale={router.locale}
-                            href='/#contact'
-                            onClick={(e) =>
-                                handlePreventRefreshOnSameLink(e, '/#contact')
-                            }
-                        >
-                            <div className='links'>
-                                <span>{t('contact')}</span>
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-                <div className='column'>
-                    <h2>{t('coordonnees')}</h2>
-                    <a href='tel:01-86-96-37-01'>
-                        <div className='links'>
-                            <IconPhone size={28} />
-                            <span>01 86 96 37 01 / 06 59 69 13 42</span>
-                        </div>
-                    </a>
-                    <a href='mailto:contact@expand-cpa.com'>
-                        <div className='links'>
-                            <IconMail size={28} />
-                            <span>contact@expand-cpa.com</span>
-                        </div>
-                    </a>
 
-                    <div className='links'>
-                        <IconMapPin size={28} />
-                        <div className='column-location'>
-                            <a
-                                href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                <span>46 Rue La Fayette 75009 Paris</span>
-                            </a>
-                            <a
-                                href='https://www.google.fr/maps/place/7+Rue+Th%C3%A9odule+Ribot,+75017+Paris/@48.8794754,2.3005712,19.25z/data=!4m5!3m4!1s0x47e66f957a5df687:0x9924b093569f6139!8m2!3d48.8793096!4d2.3008406?hl=fr'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                <span>7 Rue Theodule Ribot 75017 Paris</span>
-                            </a>
-                            <a
-                                href='https://www.google.fr/maps/place/%D7%A7%D7%A0%D7%99%D7%95%D7%9F+%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99,+Derech+Menachem+Begin+132,+Tel+Aviv-Yafo,+Isra%C3%ABl%E2%80%AD/@32.0743897,34.7899806,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b991302fe6f:0x7e4710b90ab7ab85!8m2!3d32.0743897!4d34.7921693?hl=fr'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                <span>Menahem Begin, 132 TEL AVIV</span>
-                            </a>
+                            <div className='col-2'>
+                                <div className='column'>
+                                    <div>
+                                        <Link
+                                            locale={router.locale}
+                                            href='/blog'
+                                            onClick={(e) =>
+                                                handlePreventRefreshOnSameLink(
+                                                    e,
+                                                    '/blog/'
+                                                )
+                                            }
+                                        >
+                                            <div className='links'>
+                                                <span>{t('blog')}</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link
+                                            locale={router.locale}
+                                            href='/#contact'
+                                            onClick={(e) =>
+                                                handlePreventRefreshOnSameLink(
+                                                    e,
+                                                    '/#contact'
+                                                )
+                                            }
+                                        >
+                                            <div className='links'>
+                                                <span>{t('contact')}</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link
+                                            locale={router.locale}
+                                            href='/recrutement'
+                                            onClick={(e) =>
+                                                handlePreventRefreshOnSameLink(
+                                                    e,
+                                                    '/recrutement'
+                                                )
+                                            }
+                                        >
+                                            <div className='links'>
+                                                <span>{t('recrutement')}</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='contact'>
+                            <div className='column'>
+                                <h2>{t('coordonnees')}</h2>
+                                <a href='tel:01-86-96-37-01'>
+                                    <div className='links'>
+                                        <span>
+                                            01 86 96 37 01 - 06 59 69 13 42
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href='mailto:contact@expand-cpa.com'>
+                                    <div className='links'>
+                                        <span>contact@expand-cpa.com</span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    <Social />
+                    <Copyright>
+                        <div className='left'>
+                            <Image src={fb} />
+                            <Image src={ig} />
+                            <Image src={twitter} />
+                        </div>
+                        <p>©2022 Expand-CPA All right reserved.</p>
+
+                        <div className='right'>
+                            <Image src={ordreExpCompta} />
+                            <Image src={AICPA} />
+                            <Image src={CNCC} />
+                        </div>
+                    </Copyright>
                 </div>
             </FooterWrapper>
-            <Copyright>
-                <p>©2022 Expand-CPA All right reserved.</p>
-            </Copyright>
         </FooterContainer>
     )
 }
 
 const FooterContainer = styled.footer`
     padding: 2rem;
+    background: linear-gradient(59.02deg, #4364f7 -82.13%, #1b1464 99.15%);
     @media screen and (min-width: 768px) {
         padding: 2rem;
     }
@@ -191,35 +223,57 @@ const FooterContainer = styled.footer`
 
 const FooterWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
-    color: #1b1464;
+    gap: 5rem;
+    color: white;
 
     .brand {
-        width: 33%;
-        p {
-            font-family: 'AllRoundGothic-Demi';
-            font-weight: 500;
-            font-size: 1.2rem;
-        }
-        @media screen and (max-width: 767px) {
-            width: 100%;
-        }
+        transform: translateY(-2.1rem);
     }
 
     h2 {
-        font-family: 'AllRoundGothic-Demi';
-        color: #1b1464;
-        font-size: 36px;
-        margin-bottom: 1.5rem;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 32px;
+        /* identical to box height, or 178% */
+
+        text-transform: uppercase;
+
+        color: #ffffff;
     }
 
     a,
     a:visited,
     a::after {
-        text-decoration: none;
-        color: #1b1464;
+        font-family: 'Gilroy';
+        font-style: normal;
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 18px;
+        line-height: 32px;
+        /* identical to box height, or 178% */
+
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .layout-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        transform: translateY(2rem);
+        width: 80%;
+    }
+
+    .layout {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
     }
 
     .links {
@@ -228,14 +282,18 @@ const FooterWrapper = styled.div`
         justify-content: flex-start;
         align-items: center;
         gap: 1rem;
-        font-weight: 500;
+        font-weight: 4 00;
         font-size: 1.2rem;
+    }
+
+    .col-2 {
+        align-self: flex-end;
     }
 
     .column {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .column-location {
@@ -253,10 +311,36 @@ const FooterWrapper = styled.div`
     }
 `
 
+const Social = styled.div`
+    display: flex;
+    border-top: 1px solid white;
+    justify-content: flex-end;
+    align-items: end;
+    align-content: flex-end;
+`
+
 const Copyright = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
     margin-top: 2rem;
-    color: #1b1464;
+    color: white;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    /* identical to box height, or 200% */
+
+    text-align: right;
+    margin-top: -1rem;
+    color: #ffffff;
+    padding-bottom: 2rem;
+
+    .left {
+        display: flex;
+        gap: 12px;
+    }
 `
 export default Footer

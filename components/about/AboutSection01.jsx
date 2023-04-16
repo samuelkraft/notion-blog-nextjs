@@ -176,7 +176,7 @@ const AboutSection01Wrapper = styled.div`
 `
 
 export const SloganAbout = styled(motion.h1)`
-    font-family: 'AllRoundGothic-Demi';
+    font-family: 'Poppins', sans-serif;
     font-size: 42px;
     color: #1b1464;
     line-height: 1.2;
@@ -226,7 +226,7 @@ const StoryContainer = styled.div`
 
     h1 {
         font-size: 32px;
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         color: #1b1464;
         text-align: left;
         margin: 3rem 0;

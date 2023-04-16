@@ -15,6 +15,9 @@ import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
+import american from '../../images/american.svg'
+import { RoundedButton } from './HeroHomePage'
+import Image from 'next/image'
 
 const HomeSection05 = () => {
     const { t, i18n } = useTranslation('common', {
@@ -29,63 +32,85 @@ const HomeSection05 = () => {
     const isInView = useInView(ref, { once: true })
 
     return (
-        <HomeSection01Container
-            initial={{ opacity: 0 }}
-            animate={{
-                opacity: isInView ? 1 : 0,
-            }}
-            transition={{
-                duration: 1,
-                delay: 0.5,
-                ease: 'easeInOut',
-                when: 'afterChildren',
-            }}
-            ref={ref}
-        >
-            <HomeSection01Wrapper>
-                <motion.div
-                    className='text-content'
-                    variants={titleAnim}
-                    initial='hidden'
-                    animate='show'
-                >
-                    <Tag style={{ width: '50%' }}>
-                        <span>{t('administrativeServices')}</span>
-                    </Tag>
-                    <SloganSection01>{t('section05_title')}</SloganSection01>
-                    <HeadingSection05>
-                        <h2>
-                            {t('section05_heading_pt1')}
-                            <b>{t('section05_bold1')}</b>
-                            {t('section05_heading_pt2')}
-                        </h2>
-                    </HeadingSection05>
-                    <HeadingSection05>
-                        <h2>
-                            {t('section05_heading_pt3')}
-                            <b>{t('section05_bold2')}</b>
-                            {t('section05_heading_pt4')}
-                        </h2>
-                    </HeadingSection05>
-                    <HeadingSection05>
-                        <Link href='/services/administrative-services'>
-                            <GradientButton
-                                gradientColor='#0657CF'
-                                type='button'
-                                width={200}
-                            >
-                                {t('readMore')}
-                            </GradientButton>
-                        </Link>
-                    </HeadingSection05>
-                </motion.div>
-                <ImageWrapper />
-            </HomeSection01Wrapper>
-        </HomeSection01Container>
+        <Background>
+            <HomeSection05Container
+                initial={{ opacity: 0 }}
+                animate={{
+                    opacity: isInView ? 1 : 0,
+                }}
+                transition={{
+                    duration: 1,
+                    delay: 0.5,
+                    ease: 'easeInOut',
+                    when: 'afterChildren',
+                }}
+                ref={ref}
+            >
+                <HomeSection01Wrapper>
+                    <motion.div
+                        className='text-content'
+                        variants={titleAnim}
+                        initial='hidden'
+                        animate='show'
+                    >
+                        <Tag style={{ width: '50%' }}>
+                            <span>{t('administrativeServices')}</span>
+                        </Tag>
+                        <SloganSection01>
+                            {t('section05_title')}
+                        </SloganSection01>
+                        <HeadingSection05>
+                            <h2>
+                                {t('section05_heading_pt1')}
+                                <b>{t('section05_bold1')}</b>
+                                {t('section05_heading_pt2')}
+                            </h2>
+                        </HeadingSection05>
+                        <HeadingSection05>
+                            <h2>
+                                {t('section05_heading_pt3')}
+                                <b>{t('section05_bold2')}</b>
+                                {t('section05_heading_pt4')}
+                            </h2>
+                        </HeadingSection05>
+                        <HeadingSection05>
+                            <div style={{ width: '167px' }}>
+                                <RoundedButton href='/services/administrative-services'>
+                                    {t('readMore')}
+                                </RoundedButton>
+                            </div>
+                        </HeadingSection05>
+                    </motion.div>
+                    <ImageWrapper>
+                        <Image src={american} />
+                    </ImageWrapper>
+                    <BackgroundGradient />
+                </HomeSection01Wrapper>
+            </HomeSection05Container>
+        </Background>
     )
 }
 
-export const HomeSection05Container = styled(HomeSection01Container)``
+const Background = styled.div`
+    background: rgba(217, 224, 236, 0.2);
+    border-radius: 40px 0px;
+    position: relative;
+    z-index: 1;
+`
+
+const BackgroundGradient = styled.div`
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(21.66deg, #4364f7 22.39%, #1b1464 95.86%);
+    border-radius: 300px 0px 0px 0px;
+`
+
+export const HomeSection05Container = styled(motion.div)`
+    padding: 3rem 0;
+`
 
 export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
     display: flex;
@@ -117,106 +142,10 @@ export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
     }
 `
 
-const SloganSection05 = styled(SloganSection01)`
-    @media screen and (min-width: 1440px) {
-        width: 40rem;
-    }
-`
-
-const HeadingSection05 = styled(HeadingSection01)`
-    @media screen and (min-width: 1200px) {
-        h2 {
-            font-size: 20px;
-        }
-        width: 100%;
-    }
-`
-
-const CardContainer = styled.div`
-    margin-top: 3rem;
-    @media screen and (max-width: 1440px) {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 5rem;
-        justify-content: center;
-        align-items: center;
-    }
-
-    @media screen and (min-width: 1441px) {
-        display: grid;
-        grid-template-columns: repeat(2, 525px);
-        grid-gap: 3rem;
-        justify-content: center;
-        align-items: center;
-    }
-`
-
-const BorderedCard = styled.div`
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: 3rem;
-    border: 3px solid #1b1464;
-    border-radius: 51px;
-    gap: 2rem;
-
-    h3 {
-        font-family: 'AllRoundGothic-Demi';
-        font-size: 32px;
-        color: #1b1464;
-    }
-
-    p {
-        color: #1b1464;
-        font-size: 20px;
-    }
-
-    @media screen and (min-width: 1440px) {
-        height: 800px;
-    }
-`
+const HeadingSection05 = styled(HeadingSection01)``
 
 const ImageWrapper = styled.div`
-    border-top-right-radius: 25vw;
-    border-bottom-left-radius: 25vw;
-    border-bottom-right-radius: 25vw;
-    background-image: url('https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80');
-    background-position: 50% 0%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 3rem;
-    width: 100%;
-    height: 50vh;
-    align-self: center;
-
-    @media screen and (max-width: 479px) {
-        margin-top: 3rem;
-        width: 100%;
-        height: 50vh;
-    }
-
-    @media screen and (min-width: 767px) {
-        margin-top: 3rem;
-        height: 80vh;
-        width: 100%;
-    }
-
-    @media screen and (min-width: 991px) {
-        height: 45vh;
-        width: 100%;
-        background-position: 50% 40%;
-    }
-
-    @media screen and (min-width: 1440px) {
-        height: 60vh;
-        background-position: 50% 50%;
-    }
-    @media screen and (min-width: 2100px) {
-        height: 60vh;
-        width: 25vw;
-        background-position: 50% 40%;
-        margin-right: 5rem;
-    }
+    z-index: 2;
 `
 
 export default HomeSection05

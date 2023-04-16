@@ -94,7 +94,7 @@ export default CategoryBlog
 
 const HeadingMedium = styled(HeadingLarge)`
     color: #1b1464;
-    font-family: 'AllRoundGothic-Demi';
+    font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
 
     @media screen and (max-width: 991px) {
@@ -238,7 +238,7 @@ const BlogPostCard = styled.div`
         align-items: flex-start;
         h1 {
             font-size: 24px;
-            font-family: 'AllRoundGothic-Demi';
+            font-family: 'Poppins', sans-serif;
             color: #1b1464;
             line-height: 38px;
             letter-spacing: 0.327px;

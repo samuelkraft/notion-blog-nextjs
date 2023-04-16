@@ -102,7 +102,7 @@ const JoinOurTeamContainer = styled.div`
     height: 50vh;
 
     h1 {
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         font-size: 36px;
         letter-spacing: 0.327px;
         text-align: left;
@@ -151,7 +151,7 @@ const JoinOurTeamContainer = styled.div`
 const JoinOurTeamContainer2 = styled(JoinOurTeamContainer)`
     h3 {
         font-size: 24px;
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         letter-spacing: 0.327px;
         text-align: left;
 
@@ -164,7 +164,7 @@ const JoinOurTeamContainer2 = styled(JoinOurTeamContainer)`
     }
 
     h1 {
-        font-family: 'AllRoundGothic-Demi';
+        font-family: 'Poppins', sans-serif;
         font-size: 28px;
         letter-spacing: 0.327px;
         text-align: left;
