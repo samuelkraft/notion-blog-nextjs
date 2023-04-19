@@ -127,6 +127,7 @@ const HomeSectionJuridique = () => {
                         </Center>
                     </motion.div>
                 </HomeSectionJuridiqueWrapper>
+                <BackgroundBlur />
             </HomeSection01Container>
         </Background>
     )
@@ -141,8 +142,11 @@ const SloganJuridique = styled(SloganSection01)`
     text-align: center;
     font-weight: 600;
     align-self: center;
+
     @media screen and (max-width: 465px) {
-        width: 100%;
+        width: 60%;
+        font-size: 25px;
+        line-height: 38px;
     }
 
     @media screen and (min-width: 768px) {
@@ -177,7 +181,11 @@ const HeadingJuridique = styled(HeadingSection01)`
         }
 
         @media screen and (min-width: 1200px) {
-            width: 60%;
+            width: 70%;
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 70%;
         }
     }
 `
@@ -187,6 +195,11 @@ const CardContainer = styled.div`
     gap: 13px;
     line-height: 1.5;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 `
 
 const Card = styled.div`
@@ -195,6 +208,7 @@ const Card = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     padding: 2rem;
 
@@ -211,29 +225,38 @@ const Card = styled.div`
     font-weight: 500;
     letter-spacing: 0.05rem;
 
+    @media screen and (max-width: 768px) {
+        width: 50%;
+        height: 25%;
+    }
+
     .long-text {
         transform: translateY(16px);
 
         h2 {
             transform: translateY(16px);
         }
+
+        @media screen and (max-width: 1024px) {
+            transform: translateY(0px);
+
+            h2 {
+                transform: translateY(0px);
+            }
+        }
     }
 `
 
-const JuridiqueContainer = styled.div`
-    padding: 2rem;
-    max-width: 1200px;
-    min-height: 100vh;
-    margin: 0 auto;
+const BackgroundBlur = styled.div`
+    position: absolute;
+    top: 50;
+    left: 50;
 
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    width: 352.73px;
+    height: 503.04px;
 
-    @media screen and (max-width: 1200px) {
-        padding: 3rem;
-    }
+    background: rgba(6, 87, 207, 0.6);
+    filter: blur(200px);
 `
 
 export const HomeSectionJuridiqueWrapper = styled(HomeSection01Wrapper)`
@@ -250,6 +273,7 @@ export const HomeSectionJuridiqueWrapper = styled(HomeSection01Wrapper)`
 
     @media screen and (min-width: 1200px) {
         flex-flow: row;
+        gap: 5rem;
     }
 `
 
@@ -304,9 +328,7 @@ export const ImageWrapper = styled.div`
 export const ColumnWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     align-items: start;
-    margin-bottom: 2rem;
 `
 
 export const RowWrapper = styled.div`

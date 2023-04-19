@@ -78,6 +78,17 @@ const BlogSection = ({ posts }) => {
                         styles={(theme) => ({
                             root: {
                                 maxWidth: '1200px',
+
+                                '@media screen and (max-width: 1250px)': {
+                                    maxWidth: '900px',
+                                },
+
+                                '@media screen and (max-width: 960px)': {
+                                    maxWidth: '600px',
+                                },
+                                '@media screen and (max-width: 768px)': {
+                                    maxWidth: '300px',
+                                },
                             },
 
                             control: {
@@ -85,17 +96,23 @@ const BlogSection = ({ posts }) => {
                                 height: '3rem',
                                 border: '1px solid #C6D0EB',
                                 backgroundColor: '#1B1464',
+
+                                '@media screen and (max-width: 768px)': {
+                                    width: '2rem',
+                                    height: '2rem',
+                                },
                             },
 
                             controls: {
                                 top: 'none',
                                 bottom: '-8rem',
-                                right: '13rem',
+                                right: '10rem',
                                 justifyContent: 'right',
                                 gap: '12px',
 
                                 '@media screen and (max-width: 768px)': {
-                                    bottom: '-8rem',
+                                    bottom: '0rem',
+                                    right: '12rem',
                                 },
                             },
 
@@ -179,9 +196,14 @@ const CarouselContainer = styled.div`
 
 const SeeAllBtnWrapper = styled.div`
     position: absolute;
-    width: 200px;
-    bottom: 4.2rem;
+    width: 157px;
+    bottom: 4.5rem;
     right: 0;
+
+    @media screen and (max-width: 768px) {
+        right: 2rem;
+        bottom: 8.5rem;
+    }
 `
 
 const BlogSlogan = styled(SloganSection01)`

@@ -10,14 +10,11 @@ import {
 import { motion, useInView } from 'framer-motion'
 import { titleAnim, fade } from '../../lib/animation'
 import { useTranslation } from 'next-i18next'
-import GradientButton from '../button/GradientButton'
-import { HeroImageContainer } from './HeroHomePage'
 import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
 import expertiseRH from '../../images/expertise_RH.svg'
 import Image from 'next/image'
 import { RoundedButton } from './HeroHomePage'
-
+import { BackgroundBlur } from './HomeSection01'
 const HomeSection04 = () => {
     const { t, i18n } = useTranslation('common', {
         bindI18n: 'languageChanged loaded',
@@ -81,11 +78,12 @@ const HomeSection04 = () => {
                         </div>
                     </HeadingSection01>
                 </motion.div>
-                <HeroImageContainerSection04>
+                <ImageWrapper>
+                    <BackgroundBlur />
+
                     <Image
                         src={expertiseRH}
-                        width={480}
-                        height={480}
+                        fill
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         alt='expertiseRH'
@@ -103,59 +101,30 @@ const HomeSection04 = () => {
                             },
                         }}
                     />
-                    {/* <ImageWrapper1
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            delay: 5,
-                            default: {
-                                duration: 1,
-                                ease: [0, 0.71, 0.2, 1.01],
-                            },
-                            scale: {
-                                type: 'spring',
-                                damping: 10,
-                                stiffness: 100,
-                                restDelta: 0.001,
-                            },
-                        }}
-                    />
-                    <ImageWrapper2
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            delay: 5,
-                            default: {
-                                duration: 1,
-                                ease: [0, 0.71, 0.2, 1.01],
-                            },
-                            scale: {
-                                type: 'spring',
-                                damping: 10,
-                                stiffness: 100,
-                                restDelta: 0.001,
-                            },
-                        }}
-                    /> */}
-                </HeroImageContainerSection04>
+                </ImageWrapper>
             </HomeSection04Wrapper>
         </HomeSection01Container>
     )
 }
 
-const HeroImageContainerSection04 = styled(HeroImageContainer)`
-    align-items: center;
-    justify-content: center;
-
-    @media screen and (min-width: 1200px) {
-        margin-top: 15rem;
-    }
-`
-
 const HomeSection04Wrapper = styled(HomeSection01Wrapper)`
     @media screen and (min-width: 1200px) {
         .text-content {
         }
+    }
+`
+
+const ImageWrapper = styled(motion.div)`
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    height: 500px;
+    margin-top: 2rem;
+    justify-self: center;
+
+    @media screen and (max-width: 600px) {
+        width: 300px;
+        height: 300px;
     }
 `
 

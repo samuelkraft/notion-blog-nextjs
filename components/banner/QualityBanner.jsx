@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useTranslation } from 'next-i18next'
 import qualite from '../../images/qualite.svg'
 import Image from 'next/image'
-import { HeadingSection01 } from './HomeSection01'
+import { HeadingSection01 } from '../homepage/HomeSection01'
 
 import { useEffect } from 'react'
 
@@ -17,14 +17,12 @@ const QualityBanner = () => {
 
     return (
         <BannerLayout>
-            <BannerContainer>
+            <BadgeContainer>
                 <Image
                     src={qualite}
-                    width={93}
-                    height={103}
+                    fill
                 />
-            </BannerContainer>
-
+            </BadgeContainer>
             <div className='text-content'>
                 <HeadingBanner>
                     <h2>
@@ -38,13 +36,15 @@ const QualityBanner = () => {
     )
 }
 
-const BannerContainer = styled.div`
+const BadgeContainer = styled.div`
     position: absolute;
-    top: -40px;
+    top: -70px;
     left: 50;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 120px;
+    height: 140px;
 `
 
 const BannerLayout = styled.div`
@@ -66,23 +66,21 @@ const BannerLayout = styled.div`
     color: #ffffff;
 
     border-radius: 0px 0px 53px 0px;
-    padding: 20px 40px;
+    padding: 3rem;
+
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
 `
 
 const HeadingBanner = styled(HeadingSection01)`
-    margin-top: 4rem;
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     h2 {
         color: #ffffff;
-
-        width: 100%;
-
-        @media screen and (min-width: 1024px) {
-            width: 100%;
-        }
-
-        @media screen and (min-width: 1200px) {
-            width: 100%;
-        }
     }
 `
 

@@ -12,7 +12,6 @@ import { motion, useInView } from 'framer-motion'
 import { titleAnim, fade } from '../../lib/animation'
 import { useEffect, useRef } from 'react'
 
-import Link from 'next/link'
 import { RoundedButton } from './HeroHomePage'
 
 const HomeSection02 = () => {
@@ -154,6 +153,12 @@ const ImageWrapper = styled.div`
         background-position: 50% 40%;
     }
 
+    @media screen and (max-width: 1024px) {
+        width: 390px;
+        height: 382.59px;
+        transform: translate(-5%, -5%);
+    }
+
     @media screen and (min-width: 1200px) {
         transform: translate(-5%, -5%);
     }
@@ -177,4 +182,11 @@ const BackgroundBlue = styled.div`
     height: 678.01px;
     background: #0657cf;
     border-radius: 300px 0px 300px 300px;
+
+    @media screen and (max-width: 1024px) {
+        margin-top: 5rem;
+
+        width: 404.75px;
+        height: 389.35px;
+    }
 `

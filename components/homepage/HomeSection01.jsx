@@ -13,9 +13,9 @@ import papier from '../../images/papier.svg'
 import audit from '../../images/audit.svg'
 import teamwork from '../../images/teamwork.svg'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { RoundedButton } from './HeroHomePage'
+import qualite from '../../images/qualite.svg'
 
 const HomeSection01 = () => {
     const { t, i18n } = useTranslation('common', {
@@ -163,8 +163,21 @@ const HomeSection01 = () => {
                         <BackgroundBlur />
                     </FeaturesCardContainer>
                 </HomeSection01Wrapper>
+                <AbsoluteBanner>
+                    <div className='text-content'>
+                        <p>
+                            {t('our')}
+                            <b>{t('section01_bold3')}</b>
+                            {t('section01_heading_pt5')}
+                        </p>
+                    </div>
+                    <Image
+                        src={qualite}
+                        alt='qualite'
+                        fill
+                    />
+                </AbsoluteBanner>
             </HomeSection01Container>
-            <RelativeContainer />
         </Background>
     )
 }
@@ -178,6 +191,11 @@ const Background = styled.div`
         rgba(217, 224, 236, 0) 119.76%
     );
     border-radius: 0px 0px 40px 0px;
+    position: relative;
+
+    @media screen and (max-width: 1024px) {
+        padding-bottom: 2rem;
+    }
 `
 
 export const HomeSection01Container = styled(motion.div)`
@@ -206,7 +224,6 @@ export const HeadingSection01 = styled(Heading)`
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-        width: 493.31px;
         color: #1b1464;
 
         @media screen and (min-width: 1024px) {
@@ -220,23 +237,18 @@ export const HeadingSection01 = styled(Heading)`
 `
 
 export const SloganSection01 = styled(Slogan)`
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 55px;
-    /* or 138% */
-
-    letter-spacing: 0.327px;
-
     /* Bleu foncé */
 
     color: #1b1464;
 
     @media screen and (min-width: 1024px) {
+        font-size: 35px;
+        line-height: 55px;
         width: 30rem;
     }
     @media screen and (min-width: 1200px) {
+        font-size: 40px;
+        line-height: 60px;
         width: 37rem;
     }
 `
@@ -263,6 +275,10 @@ export const FeaturesCardContainer = styled.div`
         grid-column-gap: 13.56px;
         grid-row-gap: 13.56px;
         grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 1024px) {
+        margin-top: 5rem;
     }
 
     @media screen and (min-width: 1200px) {
@@ -341,7 +357,7 @@ export const Tag = styled.div`
     width: 60%;
     color: #0657cf;
 `
-const BackgroundBlur = styled.div`
+export const BackgroundBlur = styled.div`
     position: absolute;
     width: 281.87px;
     height: 281.87px;
@@ -349,8 +365,58 @@ const BackgroundBlur = styled.div`
     top: 20;
 
     background: rgba(6, 87, 207, 0.3);
-    filter: blur(195px);
+    filter: blur(165px);
 `
 const RelativeContainer = styled.div`
     position: relative;
+    height: 200px;
+`
+const AbsoluteBanner = styled.div`
+    position: absolute;
+    bottom: -80px;
+    left: 50;
+
+    width: 1000px;
+    height: 160px;
+
+    @media screen and (max-width: 1200px) {
+        transform: translate(-100px, 0);
+    }
+
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
+
+    .text-content {
+        p {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            color: #ffffff;
+        }
+
+        background: #1b1464;
+        border-radius: 0px 0px 300px 0px;
+        padding: 3rem;
+
+        width: 650px;
+        height: 110px;
+
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        transform: translate(530px, 20px);
+
+        @media screen and (max-width: 1400px) {
+            width: 550px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            width: 500px;
+        }
+    }
 `

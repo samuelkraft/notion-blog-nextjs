@@ -226,8 +226,16 @@ const FooterWrapper = styled.div`
     gap: 5rem;
     color: white;
 
+    @media screen and (max-width: 768px) {
+        gap: 2rem;
+    }
+
     .brand {
         transform: translateY(-2.1rem);
+
+        @media screen and (max-width: 768px) {
+            transform: translateY(-4.1rem);
+        }
     }
 
     h2 {
@@ -268,12 +276,22 @@ const FooterWrapper = styled.div`
         display: flex;
         flex-flow: row;
         justify-content: space-between;
+
+        @media screen and (max-width: 767px) {
+            flex-flow: column;
+            gap: 3rem;
+        }
     }
 
     .menu {
         display: flex;
         justify-content: space-between;
-        width: 40%;
+        width: 50%;
+        align-items: center;
+
+        @media screen and (max-width: 767px) {
+            width: 100%;
+        }
     }
 
     .links {
@@ -341,6 +359,23 @@ const Copyright = styled.div`
     .left {
         display: flex;
         gap: 12px;
+
+        @media screen and (max-width: 767px) {
+            flex-flow: column;
+            gap: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        /* flex-flow: column; */
+        gap: 1rem;
+    }
+
+    .right {
+        @media screen and (max-width: 767px) {
+            flex-flow: column;
+            gap: 1rem;
+        }
     }
 `
 export default Footer

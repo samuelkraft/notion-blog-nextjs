@@ -159,6 +159,7 @@ export const HeroWrapper = styled.div`
     }
     @media screen and (min-width: 1024px) {
         flex-flow: row;
+        gap: 2rem;
     }
     @media screen and (min-width: 1200px) {
         flex-flow: row;
@@ -211,6 +212,7 @@ export const Heading = styled.div`
     display: flex;
     flex-flow: column;
     justify-content: start;
+    font-size: 16px;
 
     h2 {
         font-style: normal;
@@ -223,7 +225,7 @@ export const Heading = styled.div`
             font-family: 'Gilroy';
             font-style: normal;
             font-weight: 400;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 22px;
         }
     }
@@ -254,33 +256,28 @@ const ImageWrapper1 = styled(motion.div)`
     grid-row-end: 4;
     justify-self: end;
 
-    width: 16vw;
-    height: 28vw;
+    width: 215.54px;
+    height: 343.7px;
     border-radius: 25vw;
     background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630fa7b82b57093487bddec2_img-header-01.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: -15px 16px 33px 3px rgba(0, 0, 0, 0.12);
+
+    justify-self: start;
+
+    @media screen and (max-width: 500px) {
+        width: 160.54px;
+        height: 325.7px;
+    }
+
     @media screen and (max-width: 1023px) {
         justify-self: start;
-        width: 40vw;
-        height: 75vw;
     }
 
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
         justify-self: center;
-        width: 25vw;
-        height: 40vw;
-    }
-
-    @media screen and (min-width: 1440px) {
-        width: 12vw;
-        height: 20vw;
-    }
-    @media screen and (min-width: 1800px) {
-        width: 10vw;
-        height: 16vw;
     }
 `
 
@@ -291,8 +288,8 @@ const ImageWrapper2 = styled(motion.div)`
     grid-row-end: 3;
     justify-self: center;
 
-    width: 16vw;
-    height: 16vw;
+    width: 211.38px;
+    height: 241.34px;
     border-top-left-radius: 100%;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
@@ -301,25 +298,22 @@ const ImageWrapper2 = styled(motion.div)`
     background-size: cover;
     background-repeat: no-repeat;
 
+    @media screen and (max-width: 500px) {
+        width: 180.54px;
+        height: 200.7px;
+    }
+
     @media screen and (max-width: 1023px) {
         justify-self: start;
-        width: 40vw;
-        height: 40vw;
     }
 
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
         justify-self: start;
-        width: 20vw;
-        height: 20vw;
     }
 
     @media screen and (min-width: 1440px) {
-        width: 12vw;
-        height: 12vw;
     }
     @media screen and (min-width: 1800px) {
-        width: 10vw;
-        height: 10vw;
     }
 `
 
@@ -330,8 +324,8 @@ const ImageWrapper3 = styled(motion.div)`
     grid-row-end: 4;
     justify-self: end;
 
-    width: 16vw;
-    height: 16vw;
+    width: 215.54px;
+    height: 231.35px;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     border-bottom-left-radius: 100%;
@@ -340,23 +334,20 @@ const ImageWrapper3 = styled(motion.div)`
     background-size: cover;
     background-repeat: no-repeat;
 
+    @media screen and (max-width: 500px) {
+        width: 180.54px;
+        height: 200.7px;
+    }
+
     @media screen and (max-width: 1023px) {
         justify-self: start;
-        width: 40vw;
-        height: 40vw;
     }
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
         justify-self: center;
-        width: 20vw;
-        height: 20vw;
     }
     @media screen and (min-width: 1440px) {
-        width: 12vw;
-        height: 12vw;
     }
     @media screen and (min-width: 1800px) {
-        width: 10vw;
-        height: 10vw;
     }
 `
 const ImageWrapper4 = styled(motion.div)`
@@ -366,33 +357,30 @@ const ImageWrapper4 = styled(motion.div)`
     grid-row-end: 7;
     justify-self: center;
 
-    width: 16vw;
-    height: 28vw;
+    width: 213.04px;
+    height: 322.06px;
     border-radius: 25vw;
     background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630fab901bd7f91a91abac3b_img-header-04.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
 
+    @media screen and (max-width: 500px) {
+        width: 160.54px;
+        height: 325.7px;
+    }
+
     @media screen and (max-width: 1023px) {
         justify-self: start;
-        width: 40vw;
-        height: 75vw;
     }
 
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
         justify-self: start;
-        width: 20vw;
-        height: 40vw;
     }
 
     @media screen and (min-width: 1440px) {
-        width: 12vw;
-        height: 20vw;
     }
     @media screen and (min-width: 1800px) {
-        width: 10vw;
-        height: 16vw;
     }
 `
 

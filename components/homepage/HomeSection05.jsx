@@ -46,7 +46,7 @@ const HomeSection05 = () => {
                 }}
                 ref={ref}
             >
-                <HomeSection01Wrapper>
+                <HomeSection05Layout>
                     <motion.div
                         className='text-content'
                         variants={titleAnim}
@@ -85,7 +85,7 @@ const HomeSection05 = () => {
                         <Image src={american} />
                     </ImageWrapper>
                     <BackgroundGradient />
-                </HomeSection01Wrapper>
+                </HomeSection05Layout>
             </HomeSection05Container>
         </Background>
     )
@@ -100,16 +100,35 @@ const Background = styled.div`
 
 const BackgroundGradient = styled.div`
     position: absolute;
-    bottom: 50px;
+    bottom: 0px;
     right: 0px;
     width: 600px;
     height: 600px;
     background: linear-gradient(21.66deg, #4364f7 22.39%, #1b1464 95.86%);
     border-radius: 300px 0px 0px 0px;
+
+    @media screen and (max-width: 1200px) {
+        width: 500px;
+        height: 600px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 400px;
+    }
+
+    @media screen and (max-width: 550px) {
+        width: 300px;
+    }
 `
 
 export const HomeSection05Container = styled(motion.div)`
     padding: 3rem 0;
+`
+
+const HomeSection05Layout = styled(HomeSection01Wrapper)`
+    .text-content {
+        padding: 3rem;
+    }
 `
 
 export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
@@ -136,9 +155,6 @@ export const HomeSection05Wrapper = styled(HomeSection01Wrapper)`
     }
     @media screen and (min-width: 1440px) {
         font-size: 52px;
-        .text-content {
-            width: 100%;
-        }
     }
 `
 
@@ -146,6 +162,22 @@ const HeadingSection05 = styled(HeadingSection01)``
 
 const ImageWrapper = styled.div`
     z-index: 2;
+
+    @media screen and (min-width: 1800px) {
+        transform: translate(20px, 100px);
+    }
+
+    @media screen and (max-width: 1799px) {
+        transform: translate(-200px, 102px);
+    }
+
+    @media screen and (max-width: 1200px) {
+        transform: translate(-200px, 155px);
+    }
+
+    @media screen and (max-width: 1024px) {
+        transform: translate(0px, 49px);
+    }
 `
 
 export default HomeSection05

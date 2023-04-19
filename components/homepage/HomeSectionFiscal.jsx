@@ -14,7 +14,7 @@ import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { ImageWrapper, RowWrapper, ColumnWrapper } from './HomeSectionJuridique'
+import { RowWrapper, ColumnWrapper } from './HomeSectionJuridique'
 import check from '../../images/check.svg'
 import fiscal from '../../images/fiscal_hero_img.png'
 import { RoundedButton } from './HeroHomePage'
@@ -72,8 +72,8 @@ const HomeSectionFiscal = () => {
                                 <Image
                                     src={check}
                                     alt='check1'
-                                    width={50}
-                                    height={50}
+                                    width={33}
+                                    height={33}
                                 />
                                 <h2>
                                     <b>{t('sectionFiscal_bullet1_bold')}</b>
@@ -86,8 +86,8 @@ const HomeSectionFiscal = () => {
                                 <Image
                                     src={check}
                                     alt='check2'
-                                    width={50}
-                                    height={50}
+                                    width={33}
+                                    height={33}
                                 />
                                 <h2>
                                     {t('sectionFiscal_bullet2')}
@@ -100,8 +100,8 @@ const HomeSectionFiscal = () => {
                                 <Image
                                     src={check}
                                     alt='check3'
-                                    width={50}
-                                    height={50}
+                                    width={33}
+                                    height={33}
                                 />
                                 <h2>
                                     {t('sectionFiscal_bullet3')}
@@ -115,31 +115,46 @@ const HomeSectionFiscal = () => {
                         <div style={{ width: '167px' }}>
                             <RoundedButton href='/services/tax-services'>
                                 {t('readMore')}
-                            </RoundedButton>{' '}
+                            </RoundedButton>
                         </div>
                     </HeadingSection01>
                 </motion.div>
-                <Image
-                    src={fiscal}
-                    width={602}
-                    height={651}
-                    alt='conseiller fiscal'
-                />
+                <ImageWrapperGradient>
+                    <Image
+                        src={fiscal}
+                        fill
+                        alt='conseiller fiscal'
+                    />
+                </ImageWrapperGradient>
             </HomeSection01Wrapper>
         </HomeSection01Container>
     )
 }
 
-const ImageWrapperFiscal = styled(ImageWrapper)`
-    border-top-right-radius: 25vw;
-    border-bottom-right-radius: 25vw;
-    border-top-left-radius: 0vw;
-    border-bottom-left-radius: 0vw;
+export const ImageWrapperGradient = styled.div`
+    position: relative;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+
+    @media screen and (max-width: 1199px) {
+        width: 480px;
+        height: 580px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        margin-top: 5rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 300px;
+        height: 400px;
+    }
 
     @media screen and (min-width: 1200px) {
-        transform: translateX(0%);
+        width: 520px;
+        height: 600px;
     }
-    background-image: url('https://img.freepik.com/free-photo/entrepreneur-man-brainstorming-management-strategy-working-hard-meeting-office_482257-8165.jpg?w=740&t=st=1675455856~exp=1675456456~hmac=f267d656bf142e394c7555db9a7755e4e92aac78c09117019440f8356bc47a3d');
 `
 
 export default HomeSectionFiscal

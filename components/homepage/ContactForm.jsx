@@ -344,7 +344,6 @@ const ContactForm = () => {
 }
 
 const ContactFormContainer = styled(motion.div)`
-    padding: 5rem;
     background: linear-gradient(
         360deg,
         rgba(217, 224, 236, 0.25) 0%,

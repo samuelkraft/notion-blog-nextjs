@@ -23,7 +23,7 @@ import HomeSectionJuridique from '../components/homepage/HomeSectionJuridique'
 import HomeSectionFiscal from '../components/homepage/HomeSectionFiscal'
 import HomeSectionAudit from '../components/homepage/HomeSectionAudit'
 import SocialBanner from '../components/banner/SocialBanner'
-
+import QualityBanner from '../components/banner/QualityBanner'
 export default function Home({ posts }) {
     const { t, i18n } = useTranslation('common', {
         bindI18n: 'languageChanged loaded',
@@ -102,7 +102,7 @@ export default function Home({ posts }) {
                 <Hero />
                 <InfiniteSlider />
                 <HomeSection01 />
-                {/* <QualityBanner /> */}
+                <QualityBanner />
                 <HomeSection02 />
                 <HomeSection03 />
                 <HomeSection04 />

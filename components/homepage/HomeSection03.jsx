@@ -41,11 +41,15 @@ const HomeSection03 = () => {
                 }}
                 ref={ref}
             >
-                <HomeSection01Wrapper>
+                <HomeSection03Wrapper>
                     <ImageWrapper>
-                        <Image src={map} />
+                        <Image
+                            src={map}
+                            fill
+                        />
                     </ImageWrapper>
                     <BlockContainer />
+
                     <motion.div
                         className='text-content'
                         variants={titleAnim}
@@ -74,7 +78,7 @@ const HomeSection03 = () => {
                             </h2>
                         </HeadingSection01>
                     </motion.div>
-                </HomeSection01Wrapper>
+                </HomeSection03Wrapper>
             </HomeSection01Container>
         </HomeSection03Container>
     )
@@ -85,15 +89,57 @@ const HomeSection03Container = styled.div`
     border-radius: 40px 0px;
     position: relative;
 `
+export const HomeSection03Wrapper = styled.div`
+    display: flex;
+    flex-flow: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    .text-content {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    @media screen and (min-width: 1024px) {
+        flex-flow: row;
+    }
+    @media screen and (min-width: 1200px) {
+        flex-flow: row;
+        gap: 2rem;
+    }
+    @media screen and (min-width: 1440px) {
+        flex-flow: row;
+        gap: 5rem;
+    }
+`
 
 const ImageWrapper = styled.div`
     position: absolute;
     top: 50;
     left: 0;
-    width: 500px;
+    width: 45%;
+    height: 500px;
+
+    @media screen and (max-width: 1024px) {
+        top: none;
+        bottom: 0;
+        width: 65%;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 65% !important ;
+        height: 600px !important;
+    }
 `
 const BlockContainer = styled.div`
-    width: 600px;
+    width: 500px;
+    height: 500px;
+    @media screen and (max-width: 1024px) {
+        width: 400px;
+        height: 400px;
+        margin-top: 5rem;
+    }
 `
 
 const SloganSection03 = styled(SloganSection01)``
