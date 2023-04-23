@@ -2,11 +2,9 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
-import { SloganSection01 } from '../homepage/HomeSection01'
 import linkedin from '../../images/linkedin.svg'
 import instagram from '../../images/instagram.svg'
 import whatsapp from '../../images/whatsapp.svg'
-import { UseTranslation } from 'next-i18next'
 import { useEffect } from 'react'
 
 const SocialBanner = () => {

@@ -1,15 +1,8 @@
 import styled from 'styled-components'
-import { Tag } from './HomeSection01'
-import { RowWrapper, SloganSection06 } from './HomeSection06'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 
-import { RoundedButton } from './HeroHomePage'
-import mail from '../../images/mail.svg'
-import redLocation from '../../images/red_location.svg'
-import greenLocation from '../../images/green_location.svg'
-import phone from '../../images/phone.svg'
 import map from '../../images/map.png'
 import location1 from '../../images/location1.svg'
 import location2 from '../../images/location2.svg'
@@ -54,20 +47,27 @@ const ContactForm = () => {
 
     async function handleOnSubmit(e) {
         e.preventDefault()
-        const formData = {}
-        Array.from(e.currentTarget.elements).forEach((field) => {
-            if (!field.name) return
-            formData[field.name] = field.value
+        console.log(e.currentTarget.elements)
+        const formData = new FormData()
+        // Append the selected file to the FormData object
+        formData.append('firstName', e.currentTarget.elements.firstName.value)
+        formData.append('lastName', e.currentTarget.elements.lastName.value)
+        formData.append('phone', e.currentTarget.elements.phone.value)
+        formData.append('email', e.currentTarget.elements.email.value)
+        formData.append('needs', e.target.elements.needs.value)
+        formData.append('message', e.currentTarget.elements.message.value)
+
+        // Affiche les valeurs
+        for (var value of formData.values()) {
+            console.log(value)
+        }
+
+        const res = await fetch('/api/contact', {
+            method: 'POST',
+            body: formData,
         })
-        fetch(`/api/monday`, {
-            method: 'post',
-            //mode: 'no-cors', // 'cors' by default
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-        console.log(formData)
+
+        const resBody = await res.json()
     }
 
     return (

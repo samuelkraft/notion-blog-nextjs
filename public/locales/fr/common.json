@@ -214,5 +214,15 @@
     "innovation": "Innovation",
 
     "section03_tag": "S’INSTALLER FACILEMENT EN FRANCE",
-    "contactFormBtnLabel": "Nous envoyer un message"
+    "contactFormBtnLabel": "Nous envoyer un message",
+
+    "servicesCard1_title": "Entreprise étrangère en France :",
+    "servicesCard1_subtitle": "nos prestations administratives",
+    "servicesCard2_title": "",
+    "servicesCard3_title": "Audit légal ou contractuel",
+    "servicesCard4_title": "Conseil juridique",
+    "servicesCard5_title": "Audit légal ou contractuel",
+    "servicesCard6_title": "Conseil juridique",
+    "servicesCard7_title": "Audit légal ou contractuel",
+    "servicesCard8_title": "Conseil juridique"
 }

@@ -7,10 +7,10 @@ import fs from "fs";
 let formSchema = yup.object().shape({
     firstName: yup.string().required(),
     lastName: yup.string().required(),
-    phone: yup.string().required(),
-    message: yup.string().required(),
     email: yup.string().email().required(),
-    file: yup.mixed().required(),
+    phone: yup.string().required(),
+    needs: yup.string().required(),
+    message: yup.string().required(),
 });
 
 
@@ -23,27 +23,17 @@ async function sendFormDataToMail(fields, files) {
         Prénom: ${fields.firstName}\r\n
         Email: ${fields.email}\r\n
         Télephone: ${fields.phone}\r\n
+        Intéressé par : ${fields.needs}\r\n	
         Message: ${fields.message}\r\n
     `;
     console.log("message: ", message);
-    console.log("files.file.filepath: ", files.file.filepath);
-    const attachement = fs.readFileSync(files.file.filepath).toString("base64");
 
-    console.log("attachement: ", attachement);
     const data = {
         to: "frederic.lay@efrei.net",
         from: "samuel.sarfati@expand-cpa.com",
-        subject: `${fields.lastName} ${fields.firstName} à envoyer sa candidature depuis le site Expand CPA`,
+        subject: `${fields.lastName} ${fields.firstName} à rempli le formulaire de contact depuis le site Expand CPA`,
         text: message,
         html: message.replace(/\r\n/g, "<br/>"),
-        attachments: [
-            {
-                content: attachement,
-                filename: files.file.originalFilename,
-                type: "application/pdf",
-                disposition: "attachment",
-            }
-        ],
     };
 
     mail.send(data).catch((error) => {

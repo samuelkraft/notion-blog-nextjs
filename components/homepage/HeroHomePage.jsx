@@ -424,7 +424,7 @@ export const RoundedButton = styled(Link)`
     justify-content: center;
 `
 
-const UnderlinedButton = styled(Link)`
+export const UnderlinedButton = styled(Link)`
     color: #1b1464;
     font-weight: 600;
     font-size: 16px;
