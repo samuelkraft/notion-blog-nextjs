@@ -79,7 +79,7 @@ const NumbersSection = () => {
 
     const { t } = useTranslation('common')
     return (
-        <>
+        <NumbersSectionContainer>
             <RowWrapper ref={ref}>
                 <NumberCard
                     initial={{ opacity: 0, scale: 0.5 }}
@@ -106,20 +106,20 @@ const NumbersSection = () => {
                             <Image
                                 src={associe2}
                                 alt='associe2'
-                                width={40}
-                                height={40}
+                                width={32}
+                                height={32}
                             />
                             <Image
                                 src={associe1}
                                 alt='associe1'
-                                width={60}
-                                height={60}
+                                width={40}
+                                height={40}
                             />
                             <Image
                                 src={associe3}
                                 alt='associe3'
-                                width={40}
-                                height={40}
+                                width={32}
+                                height={32}
                             />
                         </RowImageWrapper>
                         <h1>3</h1>
@@ -150,20 +150,20 @@ const NumbersSection = () => {
                         <RowImageWrapper>
                             <Image
                                 src={france}
-                                width={40}
-                                height={40}
+                                width={32}
+                                height={32}
                                 alt='france'
                             />
                             <Image
                                 src={world}
                                 alt='office'
-                                width={60}
-                                height={60}
+                                width={40}
+                                height={40}
                             />
                             <Image
                                 src={israel}
-                                width={40}
-                                height={40}
+                                width={32}
+                                height={32}
                                 alt='israel'
                             />
                         </RowImageWrapper>
@@ -197,8 +197,8 @@ const NumbersSection = () => {
                     <Image
                         src={handshake}
                         alt='handshake'
-                        width={60}
-                        height={60}
+                        width={45}
+                        height={45}
                     />
                     <h1>25</h1>
                     <h2>{t('collaborateurs')}</h2>
@@ -227,8 +227,8 @@ const NumbersSection = () => {
                     <Image
                         src={france}
                         alt='france'
-                        width={60}
-                        height={60}
+                        width={45}
+                        height={45}
                     />
                     <motion.h1 animate={controls}>
                         <span>+</span>
@@ -264,8 +264,8 @@ const NumbersSection = () => {
                         <Image
                             src={world}
                             alt='world'
-                            width={60}
-                            height={60}
+                            width={38}
+                            height={38}
                         />
                         <motion.h1 animate={controls2}>
                             <span>+</span>
@@ -274,32 +274,18 @@ const NumbersSection = () => {
                         <h2>{t('clients_etrangers')}</h2>
                     </div>
                 </NumberCard>
+                <Divider />
             </RowWrapper>
-        </>
+        </NumbersSectionContainer>
     )
 }
 
 const NumbersSectionContainer = styled(motion.div)`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 3rem;
-    justify-content: center;
+    max-width: 1200px;
+    display: flex;
     align-items: center;
-    margin-top: 5rem;
-
-    @media screen and (max-width: 1200px) {
-        grid-template-columns: repeat(2, 1fr);
-        .secondary {
-            transform: translateX(50%);
-        }
-    }
-
-    @media screen and (max-width: 900px) {
-        grid-template-columns: repeat(1, 1fr);
-        .secondary {
-            transform: translateX(0%);
-        }
-    }
+    justify-content: center;
+    margin: 0 auto;
 `
 
 const RowWrapper = styled(motion.div)`
@@ -320,29 +306,39 @@ const RowImageWrapper = styled(motion.div)`
     flex-flow: row;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 12px;
     line-height: 1.5;
 `
 
 const NumberCard = styled(motion.div)`
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 30px;
-    border: 3px solid #1b109e;
-    width: 250px;
-    height: 300px;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    /* shadow box 2 */
+
+    box-shadow: 4px 10px 16px rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+
+    width: 177.52px;
+    height: 288.3px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    box-shadow: rgba(76, 95, 200, 0.4) 5px 5px, rgba(48, 13, 177, 0.3) 10px 10px,
-        rgba(46, 114, 240, 0.2) 15px 15px, rgba(46, 56, 240, 0.1) 20px 20px,
-        rgba(46, 149, 240, 0.05) 25px 25px;
+
     h1 {
-        font-size: 3.5rem;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 64px;
+        /* identical to box height, or 160% */
+
+        text-align: center;
+        letter-spacing: 0.327px;
+
         color: #1b1464;
-        font-family: 'Poppins', sans-serif;
     }
 
     span {
@@ -350,12 +346,23 @@ const NumberCard = styled(motion.div)`
     }
 
     h2 {
-        font-size: 1.2rem;
-        color: #1b109e;
         font-family: 'Gilroy';
-        font-weight: 600;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
         text-align: center;
+
+        color: #1b1464;
     }
+`
+
+const Divider = styled.div`
+    height: 1px;
+    border: 2px solid #f0f3f7;
+    margin: 3rem auto;
+    max-width: 1200px;
+    width: 100%;
 `
 
 export default NumbersSection

@@ -137,7 +137,7 @@ const Background = styled.div`
     background: #1b1464;
     border-radius: 40px;
 `
-const SloganJuridique = styled(SloganSection01)`
+export const SloganJuridique = styled(SloganSection01)`
     color: white;
     text-align: center;
     font-weight: 600;

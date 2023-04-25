@@ -140,11 +140,11 @@ const Footer = () => {
                                     <div>
                                         <Link
                                             locale={router.locale}
-                                            href='/recrutement'
+                                            href='/hiring'
                                             onClick={(e) =>
                                                 handlePreventRefreshOnSameLink(
                                                     e,
-                                                    '/recrutement'
+                                                    '/hiring'
                                                 )
                                             }
                                         >

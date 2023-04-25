@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import AboutSection01 from '../../components/about/AboutSection01'
 import AboutSection02 from '../../components/about/AboutSection02'
 import AboutSection04 from '../../components/about/AboutSection04'
-import AboutSection05 from '../../components/about/AboutSection05'
 import HeroAboutPage from '../../components/about/HeroAboutPage'
 import HeaderMegaMenu from '../../components/header/HeaderMegaMenu'
 import Footer from '../../components/footer/Footer'
@@ -18,8 +17,14 @@ import {
 } from '../../lib/animation'
 import styled from 'styled-components'
 import OurValues from '../../components/about/OurValues'
+import ContactForm from '../../components/homepage/ContactForm'
+import BlogSection from '../../components/homepage/BlogSection'
+import SocialBanner from '../../components/banner/SocialBanner'
+import { getDatabase } from '../../lib/notion'
+import JoinOurTeamBanner from '../../components/banner/JoinOurTeamBanner'
+export const databaseId = process.env.NOTION_DATABASE_ID
 
-const AboutPage = ({}) => {
+const AboutPage = ({ posts }) => {
     const { t, i18n } = useTranslation('common', {
         bindI18n: 'languageChanged loaded',
     })
@@ -101,13 +106,11 @@ const AboutPage = ({}) => {
                     <AboutSection01 />
                     <AboutSection02 />
                     <OurValues />
-                    {/* <AboutSection03 /> */}
                     <AboutSection04 />
-                    <AboutSection05
-                        title={t('joinOurTeam')}
-                        paragraph={t('joinOurTeamText')}
-                        btnText={t('seeMore')}
-                    />
+                    <JoinOurTeamBanner />
+                    <BlogSection posts={posts} />
+                    <ContactForm />
+                    <SocialBanner />
                     <Footer />
                 </motion.div>
             </motion.div>
@@ -116,8 +119,11 @@ const AboutPage = ({}) => {
 }
 
 const getStaticProps = async ({ locale }) => {
+    const database = await getDatabase(databaseId)
+
     return {
         props: {
+            posts: database,
             ...(await serverSideTranslations(locale, ['common'])),
         },
         revalidate: 60,

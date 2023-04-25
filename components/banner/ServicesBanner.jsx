@@ -95,7 +95,7 @@ const BackgroundBlue = styled.div`
     }
 `
 
-const SloganServices = styled.h1`
+export const SloganServices = styled.h1`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;

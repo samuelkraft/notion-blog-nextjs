@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { HeroContainer } from '../homepage/HeroHomePage'
 import { Tag } from '../homepage/HomeSection01'
 import { useTranslation } from 'next-i18next'
 
@@ -8,6 +7,17 @@ import logoArrow from '../../images/logo_arrow.png'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import NumbersSection from './NumbersSection'
+import { SloganSection01 } from '../homepage/HomeSection01'
+import { HeroContainer } from '../homepage/HeroHomePage'
+import {
+    HeadingSection01,
+    HomeSection01Wrapper,
+} from '../homepage/HomeSection01'
+import { titleAnim } from '../../lib/animation'
+import sam from '../../images/sam.png'
+import ben from '../../images/ben.svg'
+import attali from '../../images/attali.png'
+import team from '../../images/team.svg'
 
 const AboutSection01 = () => {
     const { t } = useTranslation('common')
@@ -30,11 +40,7 @@ const AboutSection01 = () => {
             ref={ref}
         >
             <AboutSection01Wrapper>
-                <Tag style={{ width: '30%' }}>
-                    <span>{t('about')}</span>
-                </Tag>
-
-                <SloganAbout
+                <SloganSection01
                     initial={{ y: 200, opacity: 0 }}
                     animate={{
                         y: 0,
@@ -46,96 +52,163 @@ const AboutSection01 = () => {
                         ease: 'easeInOut',
                     }}
                 >
-                    {t('slogan')}
-                </SloganAbout>
+                    {t('numberSection_title')}
+                </SloganSection01>
 
                 <NumbersSection />
-
-                <OurStoryContainer>
-                    <StoryContainer>
-                        <Tag style={{ width: '30%' }}>
-                            <span>{t('ourStory')}</span>
-                        </Tag>
-
-                        <h1>{t('whoAreWe')}</h1>
-                        <Story>
-                            <Image
-                                src={logoArrow}
-                                alt='logo arrow'
-                            />
-                            <h2>{t('story1')}</h2>
-                        </Story>
-                        <Story>
-                            <Image
-                                src={logoArrow}
-                                alt='logo arrow'
-                            />
-                            <h2>{t('story2')}</h2>
-                        </Story>
-                    </StoryContainer>
-
-                    <StoryImageWrapper
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{
-                            opacity: isInView ? 1 : 0,
-                            scale: isInView ? 1 : 0.5,
-                        }}
-                        transition={{
-                            delay: 1.25,
-                            default: {
-                                duration: 1,
-                                ease: [0, 0.71, 0.2, 1.01],
-                            },
-                            scale: {
-                                type: 'spring',
-                                damping: 10,
-                                stiffness: 100,
-                                restDelta: 0.001,
-                            },
-                        }}
-                    />
-                </OurStoryContainer>
-
-                <OurStoryContainer2>
-                    <StoryImageWrapper2
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{
-                            opacity: isInView ? 1 : 0,
-                            scale: isInView ? 1 : 0.5,
-                        }}
-                        transition={{
-                            delay: 1.25,
-                            default: {
-                                duration: 1,
-                                ease: [0, 0.71, 0.2, 1.01],
-                            },
-                            scale: {
-                                type: 'spring',
-                                damping: 10,
-                                stiffness: 100,
-                                restDelta: 0.001,
-                            },
-                        }}
-                    />
-
-                    <StoryContainer>
-                        <Story>
-                            <Image
-                                src={logoArrow}
-                                alt='logo arrow'
-                            />
-                            <h2>{t('story3')}</h2>
-                        </Story>
-                        <Story>
-                            <Image
-                                src={logoArrow}
-                                alt='logo arrow'
-                            />
-                            <h2>{t('story4')}</h2>
-                        </Story>
-                    </StoryContainer>
-                </OurStoryContainer2>
             </AboutSection01Wrapper>
+
+            <HeroContainer>
+                <StoryContainer>
+                    <HomeSection01Wrapper>
+                        <motion.div
+                            className='text-content'
+                            variants={titleAnim}
+                            initial='hidden'
+                            animate='show'
+                        >
+                            <Tag>
+                                <span>{t('ourStory')}</span>
+                            </Tag>
+
+                            <SloganSection01
+                                initial={{ y: 200, opacity: 0.5 }}
+                                animate={{
+                                    y: 0,
+                                    opacity: 1,
+                                }}
+                                transition={{
+                                    duration: 1,
+                                    delay: 3,
+                                    ease: 'easeInOut',
+                                }}
+                            >
+                                {t('whoAreWe')}
+                            </SloganSection01>
+                            <motion.div>
+                                <HeadingSection01>
+                                    <h2>{t('story1')}</h2>
+                                </HeadingSection01>
+
+                                <HeadingSection01>
+                                    <h2>{t('story2')}</h2>
+                                </HeadingSection01>
+                            </motion.div>
+                        </motion.div>
+
+                        <StoryImageContainer>
+                            <StoryImageWrapper
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                animate={{
+                                    opacity: isInView ? 1 : 0,
+                                    scale: isInView ? 1 : 0.5,
+                                }}
+                                transition={{
+                                    delay: 1.25,
+                                    default: {
+                                        duration: 1,
+                                        ease: [0, 0.71, 0.2, 1.01],
+                                    },
+                                    scale: {
+                                        type: 'spring',
+                                        damping: 10,
+                                        stiffness: 100,
+                                        restDelta: 0.001,
+                                    },
+                                }}
+                            >
+                                <Image
+                                    src={sam}
+                                    fill
+                                    alt='Samuel Sarfati'
+                                />
+                            </StoryImageWrapper>
+
+                            <div className='ben'>
+                                <StoryImageWrapper
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    animate={{
+                                        opacity: isInView ? 1 : 0,
+                                        scale: isInView ? 1 : 0.5,
+                                    }}
+                                    transition={{
+                                        delay: 1.25,
+                                        default: {
+                                            duration: 1,
+                                            ease: [0, 0.71, 0.2, 1.01],
+                                        },
+                                        scale: {
+                                            type: 'spring',
+                                            damping: 10,
+                                            stiffness: 100,
+                                            restDelta: 0.001,
+                                        },
+                                    }}
+                                >
+                                    <Image
+                                        src={ben}
+                                        fill
+                                        alt='Benjamin Pik'
+                                    />
+                                </StoryImageWrapper>
+                            </div>
+
+                            <StoryImageWrapper
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                animate={{
+                                    opacity: isInView ? 1 : 0,
+                                    scale: isInView ? 1 : 0.5,
+                                }}
+                                transition={{
+                                    delay: 1.25,
+                                    default: {
+                                        duration: 1,
+                                        ease: [0, 0.71, 0.2, 1.01],
+                                    },
+                                    scale: {
+                                        type: 'spring',
+                                        damping: 10,
+                                        stiffness: 100,
+                                        restDelta: 0.001,
+                                    },
+                                }}
+                            >
+                                <Image
+                                    src={attali}
+                                    fill
+                                    alt='Samuel Attali'
+                                />
+                            </StoryImageWrapper>
+                        </StoryImageContainer>
+                    </HomeSection01Wrapper>
+
+                    <HomeSection01Wrapper>
+                        <TeamImageWrapper>
+                            <Image
+                                src={team}
+                                fill
+                                alt='team'
+                            />
+                        </TeamImageWrapper>
+                        <motion.div
+                            className='text-content'
+                            variants={titleAnim}
+                            initial='hidden'
+                            animate='show'
+                        >
+                            <motion.div>
+                                <HeadingSection01>
+                                    <h2>{t('story3')}</h2>
+                                </HeadingSection01>
+
+                                <HeadingSection01>
+                                    <h2>{t('story4')}</h2>
+                                </HeadingSection01>
+                            </motion.div>
+                        </motion.div>
+                    </HomeSection01Wrapper>
+                </StoryContainer>
+            </HeroContainer>
         </AboutSection01Container>
     )
 }
@@ -143,29 +216,13 @@ const AboutSection01 = () => {
 export default AboutSection01
 
 export const AboutSection01Container = styled(motion.div)`
-    margin-top: 8rem;
-
-    padding: 2rem;
-    @media screen and (min-width: 768px) {
-        padding: 1rem 8%;
-    }
-    @media screen and (min-width: 1024px) {
-        padding: 1rem 6%;
-    }
-
-    @media screen and (min-width: 1440px) {
-        padding: 1rem 6%;
-    }
-    @media screen and (min-width: 1800px) {
-        padding: 1rem 10%;
-    }
-
-    @media screen and (min-width: 2100px) {
-        padding: 1rem 16%;
-    }
-    @media screen and (min-width: 2500px) {
-        padding: 1rem 20%;
-    }
+    min-height: 894.25px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 8rem auto;
 `
 
 const AboutSection01Wrapper = styled.div`
@@ -198,129 +255,68 @@ export const SloganAbout = styled(motion.h1)`
     }
 `
 
-const OurStoryContainer = styled.div`
-    margin-top: 4rem;
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    align-items: center;
-
-    @media screen and (max-width: 1200px) {
-        display: flex;
-        flex-direction: column-reverse;
-        grid-column-gap: 4rem;
-        grid-row-gap: 4rem;
-        grid-template-columns: 1fr;
-    }
-`
-
 const StoryContainer = styled.div`
-    grid-column-start: span 1;
-    grid-column-end: span 1;
-    grid-row-start: span 1;
-    grid-row-end: span 1;
-    align-self: center;
-
-    h1 {
-        font-size: 32px;
-        font-family: 'Poppins', sans-serif;
-        color: #1b1464;
-        text-align: left;
-        margin: 3rem 0;
-
-        @media screen and (max-width: 465px) {
-            font-size: 32px;
-        }
-
-        @media screen and (min-width: 768px) {
-            font-size: 32px;
-            width: 40rem;
-        }
-        @media screen and (min-width: 1024px) {
-            font-size: 52px;
-            width: 40rem;
-        }
-        @media screen and (min-width: 1440px) {
-            font-size: 58px;
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem;
 `
 
-const Story = styled.div`
+const StoryImageContainer = styled.div`
     display: flex;
-    gap: 3rem;
-    margin: 3rem 0;
-    align-items: center;
-    h2 {
-        font-size: 20px;
-        color: #1b1464;
-        text-align: left;
+    align-self: center;
+    justify-self: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
 
-        @media screen and (max-width: 500px) {
-            font-size: 18px;
-        }
+    @media screen and (max-width: 1240px) {
+        transform: translateX(-3rem);
+    }
+
+    @media screen and (max-width: 1024px) {
+        justify-content: center;
+        margin: 5rem auto;
+
+        transform: translateX(0);
+    }
+
+    .ben {
+        transform: translateY(3rem);
     }
 `
 
 const StoryImageWrapper = styled(motion.div)`
-    width: 100%;
-    height: 30vh;
-    border-top-right-radius: 12vw;
-    border-bottom-left-radius: 12vw;
-    background-image: url('/big3.jpg');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    justify-self: center;
-
-    @media screen and (max-width: 550px) {
-        width: 100%;
-        height: 30vh;
+    width: 186.86px;
+    height: 378.22px;
+    position: relative;
+    @media screen and (max-width: 1240px) {
+        width: 160px;
+        height: 320px;
     }
 
-    @media screen and (min-width: 551px) {
-        width: 100%;
-        height: 30vh;
-        border-top-right-radius: 25vw;
-        border-bottom-left-radius: 25vw;
-    }
-    @media screen and (min-width: 1200px) {
-        width: 80%;
-        height: 25vh;
-        border-top-right-radius: 12vw;
-        border-bottom-left-radius: 12vw;
-    }
-    @media screen and (min-width: 1440px) {
-        width: 80%;
-        height: 30vh;
-        border-top-right-radius: 12vw;
-        border-bottom-left-radius: 12vw;
-    }
-    @media screen and (min-width: 1800px) {
-        width: 80%;
-        height: 40vh;
-        border-top-right-radius: 12vw;
-        border-bottom-left-radius: 12vw;
+    @media screen and (max-width: 600px) {
+        width: 120px;
+        height: 240px;
     }
 
-    @media screen and (min-width: 2560px) {
-        width: 90%;
-        height: 45vh;
+    @media screen and (max-width: 450px) {
+        width: 100px;
+        height: 200px;
     }
 `
 
-const StoryImageWrapper2 = styled(StoryImageWrapper)`
-    background-image: url('/team.jpg');
-`
+const TeamImageWrapper = styled(motion.div)`
+    width: 635.81px;
+    height: 327px;
+    position: relative;
 
-const OurStoryContainer2 = styled(OurStoryContainer)`
-    margin-top: 2rem;
+    @media screen and (max-width: 1240px) {
+        width: 500px;
+        height: 320px;
+    }
 
-    @media screen and (max-width: 1200px) {
-        flex-direction: column;
+    @media screen and (max-width: 600px) {
+        width: 350px;
     }
 `

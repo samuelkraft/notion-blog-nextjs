@@ -1,176 +1,242 @@
 import styled from 'styled-components'
-
-import { HeroContainer } from '../homepage/HeroHomePage'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
+import { RoundedButton } from '../homepage/HeroHomePage'
+import { useTranslation } from 'next-i18next'
+import { useState, useEffect, useRef } from 'react'
+
+import { Slogan } from '../homepage/HeroHomePage'
+import trio from '../../images/trio.svg'
+
 const HeroAboutPage = () => {
+    const { t, i18n } = useTranslation('common', {
+        bindI18n: 'languageChanged loaded',
+    })
+
+    useEffect(() => {
+        i18n.reloadResources(i18n.resolvedLanguage, ['common'])
+    }, [])
+
     return (
-        <HeroContainer>
-            <GridContainer>
-                <ImageWrapper1
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                        delay: 2,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
+        <AboutHeroContainer>
+            <AboutHeroTextContent>
+                <Slogan>{t('slogan')}</Slogan>
+                <Heading>{t('sloganSubtitle')}</Heading>
+                <div style={{ width: '187px' }}>
+                    <RoundedButton href='/about/#contact'>
+                        {t('contactUs')}
+                    </RoundedButton>
+                </div>
+            </AboutHeroTextContent>
+            <Ellipse />
+            <BackgroundGradientBlue />
+            <ImageWrapper>
+                <Image
+                    src={trio}
+                    alt='trio'
+                    fill
                 />
-                <ImageWrapper2
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                        delay: 2.5,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
-                />
-                <ImageWrapper3
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                        delay: 2.25,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
-                />
-            </GridContainer>
-        </HeroContainer>
+            </ImageWrapper>
+        </AboutHeroContainer>
     )
 }
 
 export default HeroAboutPage
 
-const GridContainer = styled(motion.div)`
-    margin-top: 6rem;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    display: grid;
-    justify-content: center;
-    @media screen and (max-width: 767px) {
-        grid-column-gap: 1rem;
-        grid-row-gap: 1rem;
-    }
-`
+const AboutHeroContainer = styled.div`
+    background: rgba(217, 224, 236, 0.3);
+    border-radius: 0px 0px 40px 70px;
 
-const ImageWrapper1 = styled(motion.div)`
+    min-height: 88vh;
     position: relative;
-    width: 20vw;
-    height: 75vh;
-    border-radius: 25vw 0px 25vw 25vw;
-    background-image: url('/boss1.png');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    justify-self: end;
+`
 
-    @media screen and (max-width: 991px) {
-        width: 26vw;
-        height: 60vh;
+const AboutHeroTextContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media screen and (min-width: 1800px) {
+        padding-left: 19%;
+        padding-top: 5%;
     }
 
-    @media screen and (max-width: 767px) {
-        height: 45vh;
+    @media screen and (max-width: 1799px) {
+        padding-left: 14%;
+        padding-top: 5%;
     }
-    @media screen and (max-width: 479px) {
-        height: 30vh;
+
+    @media screen and (max-width: 1535px) {
+        padding-left: 8%;
     }
-    @media screen and (min-width: 1920px) {
-        width: 16vw;
-        height: 60vh;
+
+    @media screen and (max-width: 1024px) {
+        padding-left: 5%;
+    }
+`
+const BackgroundGradientBlue = styled.div`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 600px;
+    height: 860px;
+
+    background: linear-gradient(21.66deg, #4364f7 22.39%, #1b1464 95.86%);
+    /* Shadow_1 */
+
+    box-shadow: -15px 16px 33px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 400px 0px 0px 0px;
+
+    @media screen and (min-width: 1800px) {
+        width: 600px;
+        height: 860px;
+    }
+
+    @media screen and (max-width: 1799px) {
+        width: 450px;
+        height: 860px;
+    }
+
+    @media screen and (max-width: 1535px) {
+        width: 450px;
+        height: 860px;
+    }
+
+    @media screen and (max-width: 1439px) {
+        width: 400px;
+        height: 860px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        width: 300px;
+        height: 500px;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 250px;
+        height: 400px;
+    }
+
+    @media screen and (max-width: 580px) {
+        width: 120px;
+        height: 400px;
     }
 `
 
-const ImageWrapper2 = styled(motion.div)`
-    width: 20vw;
-    height: 75vh;
-    margin-top: -5vw;
-    border-radius: 25vw;
-    background-image: url('/boss2.png');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
+const Ellipse = styled.div`
+    position: absolute;
+    bottom: 20%;
+    left: 30%;
 
-    grid-column-start: span 1;
-    grid-column-end: span 1;
-    grid-row-start: span 1;
-    grid-row-end: span 1;
-    justify-self: center;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
 
-    @media screen and (max-width: 991px) {
-        width: 26vw;
-        height: 60vh;
+    background: #55cee1;
+    transform: rotate(-67.64deg);
+
+    @media screen and (max-width: 1799px) {
+        left: 26%;
     }
 
-    @media screen and (max-width: 767px) {
-        height: 45vh;
+    @media screen and (max-width: 1535px) {
+        left: 22%;
     }
 
-    @media screen and (max-width: 479px) {
-        height: 30vh;
+    @media screen and (max-width: 1439px) {
+        left: 18%;
     }
 
-    @media screen and (min-width: 1920px) {
-        width: 16vw;
-        height: 60vh;
-        margin-top: -3vw;
+    @media screen and (max-width: 1240px) {
+        left: 8%;
+    }
+
+    @media screen and (max-width: 1024px) {
+        bottom: 12%;
+        left: 15%;
+    }
+
+    @media screen and (max-width: 800px) {
+        left: 5%;
+        bottom: 6%;
+    }
+
+    @media screen and (max-width: 580px) {
+        width: 120px;
+        height: 120px;
+        bottom: 10%;
+    }
+`
+const ImageWrapper = styled.div`
+    position: absolute;
+    bottom: -15px;
+    left: 32%;
+    width: 900px;
+    height: 600px;
+
+    @media screen and (max-width: 1799px) {
+        left: 26%;
+    }
+
+    @media screen and (max-width: 1535px) {
+        left: 22%;
+    }
+
+    @media screen and (max-width: 1439px) {
+        left: 18%;
+    }
+
+    @media screen and (max-width: 1240px) {
+        left: 8%;
+    }
+
+    @media screen and (max-width: 1024px) {
+        width: 650.44px;
+        height: 400.26px;
+        bottom: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 511.44px;
+        height: 321.26px;
+    }
+
+    @media screen and (max-width: 645px) {
+        left: 10%;
+    }
+
+    @media screen and (max-width: 580px) {
+        width: 100%;
+        height: 300px;
+        left: 0;
+        bottom: -25px;
+    }
+
+    @media screen and (max-width: 500px) {
+        bottom: 0;
     }
 `
 
-const ImageWrapper3 = styled(motion.div)`
-    width: 20vw;
-    height: 75vh;
-    border-radius: 25vw 25vw 25vw 0px;
-    background-image: url('/boss3.png');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
+const Heading = styled.h2`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: black;
+    line-height: 29px;
 
-    grid-column-start: span 1;
-    grid-column-end: span 1;
-    grid-row-start: span 1;
-    grid-row-end: span 1;
+    width: 70%;
 
-    @media screen and (max-width: 991px) {
-        width: 26vw;
-        height: 60vh;
+    @media screen and (min-width: 1024px) {
+        display: none;
     }
 
-    @media screen and (max-width: 767px) {
-        height: 45vh;
-    }
-    @media screen and (max-width: 479px) {
-        height: 30vh;
-    }
-
-    @media screen and (min-width: 1920px) {
-        width: 15vw;
-        height: 60vh;
+    @media screen and (max-width: 768px) {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
     }
 `

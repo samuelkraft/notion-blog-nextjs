@@ -13,6 +13,8 @@ import { useRef } from 'react'
 import { HomeSection05Wrapper } from '../homepage/HomeSection05'
 import { HeroContainer } from '../homepage/HeroHomePage'
 import Image from 'next/image'
+import { SloganSection01 } from '../homepage/HomeSection01'
+
 const AboutSection04 = () => {
     const { t } = useTranslation('common')
     const ref = useRef(null)
@@ -28,7 +30,7 @@ const AboutSection04 = () => {
         franco,
     ]
     return (
-        <HeroContainer
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{
                 opacity: isInView ? 1 : 0,
@@ -41,70 +43,48 @@ const AboutSection04 = () => {
             }}
             ref={ref}
         >
-            <HomeSection05Wrapper>
-                <OurPartners>
-                    <h1>{t('ourPartners')}</h1>
-                </OurPartners>
-                <InfiniteSliderContainer>
-                    <InfiniteSliderWrapper>
-                        <BrandSlider>
-                            {partners.map((i) => {
-                                return (
-                                    <div key={Math.random(0, 100)}>
-                                        <Image
-                                            src={i}
-                                            alt={i.toString()}
-                                        />
-                                    </div>
-                                )
-                            })}
-                            {partners.map((i) => {
-                                return (
-                                    <div key={Math.random(0, 100)}>
-                                        <Image
-                                            src={i}
-                                            alt={i.toString()}
-                                        />
-                                    </div>
-                                )
-                            })}
-                        </BrandSlider>
-                    </InfiniteSliderWrapper>
-                </InfiniteSliderContainer>
-            </HomeSection05Wrapper>
-        </HeroContainer>
+            <OurPartners>
+                <SloganSection01>{t('ourPartners')}</SloganSection01>
+            </OurPartners>
+            <InfiniteSliderContainer>
+                <InfiniteSliderWrapper>
+                    <BrandSlider>
+                        {partners.map((i) => {
+                            return (
+                                <div key={Math.random(0, 100)}>
+                                    <Image
+                                        src={i}
+                                        alt={i.toString()}
+                                        height={100}
+                                    />
+                                </div>
+                            )
+                        })}
+                        {partners.map((i) => {
+                            return (
+                                <div key={Math.random(0, 100)}>
+                                    <Image
+                                        src={i}
+                                        alt={i.toString()}
+                                        height={100}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </BrandSlider>
+                </InfiniteSliderWrapper>
+            </InfiniteSliderContainer>
+        </motion.div>
     )
 }
 
 export default AboutSection04
 
 const OurPartners = styled.div`
-    font-family: 'Poppins', sans-serif;
-    font-size: 36px;
-    color: #1b1464;
-    line-height: 1.2;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    h1 {
-        @media screen and (max-width: 465px) {
-            font-size: 32px;
-        }
-
-        @media screen and (min-width: 768px) {
-            font-size: 46px;
-            width: 40rem;
-        }
-        @media screen and (min-width: 1024px) {
-            font-size: 52px;
-            width: 40rem;
-        }
-        @media screen and (min-width: 1440px) {
-            font-size: 58px;
-        }
-    }
 `
 
 const InfiniteSliderContainer = styled.div`
@@ -119,7 +99,7 @@ const InfiniteSliderContainer = styled.div`
 `
 
 const InfiniteSliderWrapper = styled.div`
-    width: 200%;
+    width: 180%;
     position: relative;
     overflow: hidden;
     height: 15rem;
@@ -132,13 +112,13 @@ const SlideInfinite = keyframes`
 		}
 	
 		100% {
-			left: -200%;
+			left: -80%;
 		}
 	
 `
 
 const BrandSlider = styled.div`
-    width: 200%;
+    width: 180%;
     display: flex;
     align-items: center;
     height: 15rem;
@@ -149,6 +129,6 @@ const BrandSlider = styled.div`
     animation-name: ${SlideInfinite};
     animation-duration: 15s;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: normal;
     animation-timing-function: ease-in-out;
 `

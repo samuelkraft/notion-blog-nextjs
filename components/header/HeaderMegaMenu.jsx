@@ -688,23 +688,6 @@ export default function HeaderMegaMenu() {
                                 >
                                     {t('contactUs')}
                                 </Link>
-                                {/* <Link
-                                    href='/hiring'
-                                    className={cx(classes.hiring, {
-                                        [classes.mainLinkActive]:
-                                            router.pathname.includes('/hiring'),
-                                    })}
-                                    locale={router.locale}
-                                    onClick={(e) =>
-                                        handlePreventRefreshOnSameLink(
-                                            e,
-                                            '/hiring'
-                                        )
-                                    }
-                                >
-                                    {t('recrutement')}
-                                </Link> */}
-
                                 <Group className={classes.hiddenMobile}>
                                     <LanguageSwitcher />
                                 </Group>

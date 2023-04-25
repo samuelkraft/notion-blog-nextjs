@@ -84,8 +84,17 @@ const AboutSection05 = ({ title, paragraph, btnText, standalone }) => {
     )
 }
 
-const AboutSection05Container = styled(AboutSection01Container)`
-    margin-top: 0rem;
+const Background = styled.div`
+    background: rgba(217, 224, 236, 0.3);
+    border-radius: 156px 70px 0px 0px;
+`
+
+const AboutSection05Container = styled.div`
+    background: linear-gradient(21.66deg, #4364f7 22.39%, #1b1464 95.86%);
+    color: white;
+
+    min-height: 55vh;
+    position: relative;
 `
 
 const JoinOurTeamContainer = styled.div`

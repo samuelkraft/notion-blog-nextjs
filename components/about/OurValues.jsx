@@ -11,13 +11,13 @@ import integrite from '../../images/integrite.svg'
 import Image from 'next/image'
 import { AboutSection02Wrapper } from './AboutSection02'
 import { HeroContainer } from '../homepage/HeroHomePage'
-
+import { SloganSection01 } from '../homepage/HomeSection01'
 const OurValues = () => {
     const { t } = useTranslation('common')
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     return (
-        <HeroContainer
+        <OurValuesContainer
             initial={{ opacity: 0 }}
             animate={{
                 opacity: isInView ? 1 : 0,
@@ -31,16 +31,16 @@ const OurValues = () => {
             ref={ref}
         >
             <AboutSection02Wrapper>
-                <SloganAbout>{t('valeurs')}</SloganAbout>
+                <SloganSection01>{t('valeurs')}</SloganSection01>
                 <OurValuesWrapper>
-                    <ImageWrapper
+                    <Value
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{
                             opacity: isInView ? 1 : 0,
                             scale: isInView ? 1 : 0.5,
                         }}
                         transition={{
-                            delay: 1,
+                            delay: 1.25,
                             default: {
                                 duration: 1,
                                 ease: [0, 0.71, 0.2, 1.01],
@@ -54,135 +54,114 @@ const OurValues = () => {
                         }}
                     >
                         <Image
-                            src={logo}
-                            fill
-                            alt='Expand CPA'
+                            src={integrite}
+                            alt='logo arrow'
+                            width={60}
+                            height={60}
                         />
-                    </ImageWrapper>
-                    <ValuesContainer>
-                        <Value
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            animate={{
-                                opacity: isInView ? 1 : 0,
-                                scale: isInView ? 1 : 0.5,
-                            }}
-                            transition={{
-                                delay: 1.25,
-                                default: {
-                                    duration: 1,
-                                    ease: [0, 0.71, 0.2, 1.01],
-                                },
-                                scale: {
-                                    type: 'spring',
-                                    damping: 10,
-                                    stiffness: 100,
-                                    restDelta: 0.001,
-                                },
-                            }}
-                        >
-                            <Image
-                                src={integrite}
-                                alt='logo arrow'
-                                width={60}
-                                height={60}
-                            />
-                            <h1>{t('integrite')}</h1>
-                        </Value>
-                        <Value2
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            animate={{
-                                opacity: isInView ? 1 : 0,
-                                scale: isInView ? 1 : 0.5,
-                            }}
-                            transition={{
-                                delay: 1.5,
-                                default: {
-                                    duration: 1,
-                                    ease: [0, 0.71, 0.2, 1.01],
-                                },
-                                scale: {
-                                    type: 'spring',
-                                    damping: 10,
-                                    stiffness: 100,
-                                    restDelta: 0.001,
-                                },
-                            }}
-                        >
-                            <Image
-                                src={pro}
-                                alt='logo arrow'
-                                width={60}
-                                height={60}
-                            />
-                            <h1>{t('professionnalisme')}</h1>
-                        </Value2>
-                        <Value3
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            animate={{
-                                opacity: isInView ? 1 : 0,
-                                scale: isInView ? 1 : 0.5,
-                            }}
-                            transition={{
-                                delay: 1.75,
-                                default: {
-                                    duration: 1,
-                                    ease: [0, 0.71, 0.2, 1.01],
-                                },
-                                scale: {
-                                    type: 'spring',
-                                    damping: 10,
-                                    stiffness: 100,
-                                    restDelta: 0.001,
-                                },
-                            }}
-                        >
-                            <Image
-                                src={bienveillance}
-                                alt='logo arrow'
-                                width={60}
-                                height={60}
-                            />
-                            <h1>{t('bienveillance')}</h1>
-                        </Value3>
-                        <Value4
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            animate={{
-                                opacity: isInView ? 1 : 0,
-                                scale: isInView ? 1 : 0.5,
-                            }}
-                            transition={{
-                                delay: 2,
-                                default: {
-                                    duration: 1,
-                                    ease: [0, 0.71, 0.2, 1.01],
-                                },
-                                scale: {
-                                    type: 'spring',
-                                    damping: 10,
-                                    stiffness: 100,
-                                    restDelta: 0.001,
-                                },
-                            }}
-                        >
-                            <Image
-                                src={innovation}
-                                alt='logo arrow'
-                                width={60}
-                                height={60}
-                            />
-                            <h1>{t('innovation')}</h1>
-                        </Value4>
-                    </ValuesContainer>
+                        <h1>{t('integrite')}</h1>
+                    </Value>
+                    <Value
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{
+                            opacity: isInView ? 1 : 0,
+                            scale: isInView ? 1 : 0.5,
+                        }}
+                        transition={{
+                            delay: 1.5,
+                            default: {
+                                duration: 1,
+                                ease: [0, 0.71, 0.2, 1.01],
+                            },
+                            scale: {
+                                type: 'spring',
+                                damping: 10,
+                                stiffness: 100,
+                                restDelta: 0.001,
+                            },
+                        }}
+                    >
+                        <Image
+                            src={pro}
+                            alt='logo arrow'
+                            width={60}
+                            height={60}
+                        />
+                        <h1>{t('professionnalisme')}</h1>
+                    </Value>
+                    <Value
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{
+                            opacity: isInView ? 1 : 0,
+                            scale: isInView ? 1 : 0.5,
+                        }}
+                        transition={{
+                            delay: 1.75,
+                            default: {
+                                duration: 1,
+                                ease: [0, 0.71, 0.2, 1.01],
+                            },
+                            scale: {
+                                type: 'spring',
+                                damping: 10,
+                                stiffness: 100,
+                                restDelta: 0.001,
+                            },
+                        }}
+                    >
+                        <Image
+                            src={bienveillance}
+                            alt='logo arrow'
+                            width={60}
+                            height={60}
+                        />
+                        <h1>{t('bienveillance')}</h1>
+                    </Value>
+                    <Value
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{
+                            opacity: isInView ? 1 : 0,
+                            scale: isInView ? 1 : 0.5,
+                        }}
+                        transition={{
+                            delay: 2,
+                            default: {
+                                duration: 1,
+                                ease: [0, 0.71, 0.2, 1.01],
+                            },
+                            scale: {
+                                type: 'spring',
+                                damping: 10,
+                                stiffness: 100,
+                                restDelta: 0.001,
+                            },
+                        }}
+                    >
+                        <Image
+                            src={innovation}
+                            alt='logo arrow'
+                            width={60}
+                            height={60}
+                        />
+                        <h1>{t('innovation')}</h1>
+                    </Value>
                 </OurValuesWrapper>
             </AboutSection02Wrapper>
-        </HeroContainer>
+            <BackgroundBlur />
+        </OurValuesContainer>
     )
 }
+
+const OurValuesContainer = styled(motion.div)`
+    position: relative;
+`
 
 const OurValuesWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+
+    margin-top: 2rem;
 
     @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
@@ -193,29 +172,15 @@ const OurValuesWrapper = styled.div`
     }
 `
 
-const ValuesContainer = styled.div`
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    gap: 2rem;
-`
-const ImageWrapper = styled(motion.div)`
-    position: relative;
-    width: 320px;
-    height: 180px;
-    object-fit: cover;
-    align-self: center;
-    justify-self: center;
+const BackgroundBlur = styled.div`
+    position: absolute;
+    width: 281.87px;
+    height: 281.87px;
+    left: 40%;
+    top: 50%;
 
-    @media screen and (max-width: 425px) {
-        width: 320px;
-        height: 180px;
-    }
-
-    @media screen and (min-width: 768px) {
-        width: 500px;
-        height: 400px;
-    }
+    background: rgba(6, 87, 207, 0.3);
+    filter: blur(165px);
 `
 
 const Value = styled(motion.div)`
@@ -223,34 +188,29 @@ const Value = styled(motion.div)`
     flex-flow: row;
     gap: 3rem;
     padding: 1.5rem;
-    border-radius: 30px;
-    border: 3px solid #4364f7;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    /* shadow box 2 */
+
+    box-shadow: 4px 10px 16px rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
 
     @media screen and (max-width: 425px) {
         gap: 1rem;
     }
 
     h1 {
-        font-family: 'Poppins', sans-serif;
-        font-size: 36px;
-        color: #1b1464;
-        line-height: 1.5;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 55px;
+        /* identical to box height, or 229% */
 
-        @media screen and (max-width: 425px) {
-            font-size: 26px;
-        }
+        letter-spacing: 0.327px;
+
+        color: #1b1464;
     }
 `
 
-const Value2 = styled(Value)`
-    border: 3px solid #4899f7;
-`
-const Value3 = styled(Value)`
-    border: 3px solid #7b42f6;
-`
-const Value4 = styled(Value)`
-    border: 3px solid #5334f5;
-`
 export default OurValues
