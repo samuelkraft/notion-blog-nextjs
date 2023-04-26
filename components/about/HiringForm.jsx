@@ -112,44 +112,6 @@ const HiringForm = () => {
             }}
             ref={ref}
         >
-            <Tag style={{ width: '40%' }}>
-                <span>{t('recrutement')}</span>
-            </Tag>
-
-            <RowWrapper>
-                <SloganSection06>{t('joinUs')}</SloganSection06>
-                <SocialMediaContainer>
-                    <a
-                        href='https://www.linkedin.com/company/asp-experts/'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <Image
-                            src={linkedin}
-                            alt='linkedin'
-                        />
-                    </a>
-
-                    <Image
-                        src={instagram}
-                        alt='instagram'
-                    />
-                    <a
-                        href='https://api.whatsapp.com/send?phone=33768095356&text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20et%20souhaiterais%20prendre%20contact%20avec%20un%20expert-comptable.'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <Image
-                            src={whatsapp}
-                            alt='whatsapp'
-                        />
-                    </a>
-                    <Image
-                        src={youtube}
-                        alt='youtube'
-                    />
-                </SocialMediaContainer>
-            </RowWrapper>
             <Form
                 method='post'
                 onSubmit={handleOnSubmit}
@@ -399,28 +361,34 @@ const HiringForm = () => {
 export default HiringForm
 
 const ContactFormContainer = styled(motion.div)`
-    padding: 2rem;
+    background: linear-gradient(
+        360deg,
+        rgba(217, 224, 236, 0.25) 0%,
+        rgba(217, 224, 236, 0) 119.76%
+    );
+
+    min-height: 100vh;
 
     @media screen and (min-width: 768px) {
-        padding: 2rem 8%;
+        padding: 5rem;
     }
     @media screen and (min-width: 1024px) {
-        padding: 2rem 10%;
+        padding: 5rem 10%;
         flex-flow: row;
     }
 
     @media screen and (min-width: 1440px) {
-        padding: 2rem 14%;
+        padding: 5rem 14%;
     }
     @media screen and (min-width: 1800px) {
-        padding: 2rem 18%;
+        padding: 5rem 18%;
     }
 
     @media screen and (min-width: 2100px) {
-        padding: 2rem 22%;
+        padding: 5rem 22%;
     }
     @media screen and (min-width: 2500px) {
-        padding: 2rem 25%;
+        padding: 5rem 25%;
     }
 `
 
@@ -429,7 +397,6 @@ const Form = styled.form`
     flex-flow: column;
     gap: 2rem;
     padding: 2rem;
-    border: 3px solid #1b1464;
     border-radius: 51px;
     margin-top: 2rem;
 
