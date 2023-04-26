@@ -52,7 +52,7 @@ const Footer = () => {
                     <div className='layout'>
                         <div className='menu'>
                             <div className='column'>
-                                <h2>{t('MENU')}</h2>
+                                <h2>MENU</h2>
                                 <div>
                                     <Link
                                         locale={router.locale}

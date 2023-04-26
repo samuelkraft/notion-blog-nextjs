@@ -10,6 +10,11 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { pageAnimation } from '../../lib/animation'
+import ContactForm from '../../components/homepage/ContactForm'
+import SocialBanner from '../../components/banner/SocialBanner'
+import BlogBanner from '../../components/banner/BlogBanner'
+import BlogSection from '../../components/homepage/BlogSection'
+import BlogContent from '../../components/blog/BlogContent'
 
 const getStaticProps = async ({ locale }) => {
     const database = await getDatabase(databaseId)
@@ -107,13 +112,15 @@ export default function Blog({ posts }) {
                 exit='exit'
             >
                 <HeaderMegaMenu />
-                <HeroBlogPage posts={posts} />
-                <CategoryBlog
+                <BlogBanner />
+                <BlogContent
                     posts={posts}
                     categoryBusinessPosts={categoryBusinessPosts}
                     categoryLegalPosts={categoryLegalPosts}
                     categoryTaxPosts={categoryTaxPosts}
                 />
+                <ContactForm />
+                <SocialBanner />
                 <Footer />
             </motion.div>
         </>
