@@ -295,7 +295,7 @@ const RowWrapper = styled(motion.div)`
     margin: 4rem 0;
 
     @media screen and (max-width: 600px) {
-        flex-flow: column;
+        flex-flow: column wrap;
     }
 `
 

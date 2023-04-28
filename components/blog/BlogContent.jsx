@@ -234,9 +234,6 @@ const BlogContainer = styled(motion.div)`
     @media screen and (max-width: 1200px) {
         padding: 2rem;
     }
-
-    @media screen and (min-width: 1200px) {
-    }
 `
 
 const FiltersContainer = styled.div`
@@ -247,7 +244,7 @@ const FiltersContainer = styled.div`
 
 const FiltersLayout = styled.div`
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     gap: 1rem;
 
     .selected {
