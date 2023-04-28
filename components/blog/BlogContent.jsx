@@ -82,7 +82,7 @@ const BlogContent = ({
                         height={600}
                         slideSize='300px'
                         slideGap='md'
-                        mt={100}
+                        mt={50}
                         loop
                         withIndicators
                         nextControlIcon={
@@ -141,12 +141,12 @@ const BlogContent = ({
 
                             indicator: {
                                 backgroundColor: '#1B1464',
-                                width: '20px',
-                                height: '10px',
+                                width: '10px',
+                                height: '5px',
                                 transition: 'width 250ms ease',
 
                                 '&[data-active]': {
-                                    width: '40px',
+                                    width: '20px',
                                 },
                             },
                         })}

@@ -244,7 +244,7 @@ export const SloganSection01 = styled(Slogan)`
     @media screen and (min-width: 1024px) {
         font-size: 35px;
         line-height: 55px;
-        width: 30rem;
+        width: 28rem;
     }
     @media screen and (min-width: 1200px) {
         font-size: 40px;
@@ -320,7 +320,7 @@ export const FeaturesCard = styled(motion.div)`
         width: 329px;
         height: 90px;
         padding: 20px 30px;
-        gap: 34px;
+        justify-content: space-between;
     }
 
     .card_text-content {

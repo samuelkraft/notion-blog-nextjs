@@ -144,7 +144,7 @@ export const SloganJuridique = styled(SloganSection01)`
     align-self: center;
 
     @media screen and (max-width: 465px) {
-        width: 60%;
+        width: 90%;
         font-size: 25px;
         line-height: 38px;
     }
@@ -186,6 +186,10 @@ const HeadingJuridique = styled(HeadingSection01)`
 
         @media screen and (max-width: 1024px) {
             width: 70%;
+        }
+
+        @media screen and (max-width: 600px) {
+            width: 90%;
         }
     }
 `

@@ -148,7 +148,7 @@ export const ImageWrapperGradient = styled.div`
 
     @media screen and (max-width: 600px) {
         width: 300px;
-        height: 400px;
+        height: 300px;
     }
 
     @media screen and (min-width: 1200px) {

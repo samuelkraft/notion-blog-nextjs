@@ -58,157 +58,155 @@ const AboutSection01 = () => {
                 <NumbersSection />
             </AboutSection01Wrapper>
 
-            <HeroContainer>
-                <StoryContainer>
-                    <HomeSection01Wrapper>
-                        <motion.div
-                            className='text-content'
-                            variants={titleAnim}
-                            initial='hidden'
-                            animate='show'
-                        >
-                            <Tag>
-                                <span>{t('ourStory')}</span>
-                            </Tag>
+            <StoryContainer>
+                <HomeSection01Wrapper>
+                    <motion.div
+                        className='text-content'
+                        variants={titleAnim}
+                        initial='hidden'
+                        animate='show'
+                    >
+                        <Tag>
+                            <span>{t('ourStory')}</span>
+                        </Tag>
 
-                            <SloganSection01
-                                initial={{ y: 200, opacity: 0.5 }}
-                                animate={{
-                                    y: 0,
-                                    opacity: 1,
-                                }}
-                                transition={{
+                        <SloganSection01
+                            initial={{ y: 200, opacity: 0.5 }}
+                            animate={{
+                                y: 0,
+                                opacity: 1,
+                            }}
+                            transition={{
+                                duration: 1,
+                                delay: 3,
+                                ease: 'easeInOut',
+                            }}
+                        >
+                            {t('whoAreWe')}
+                        </SloganSection01>
+                        <motion.div>
+                            <HeadingSection01>
+                                <h2>{t('story1')}</h2>
+                            </HeadingSection01>
+
+                            <HeadingSection01>
+                                <h2>{t('story2')}</h2>
+                            </HeadingSection01>
+                        </motion.div>
+                    </motion.div>
+
+                    <StoryImageContainer>
+                        <StoryImageWrapper
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{
+                                opacity: isInView ? 1 : 0,
+                                scale: isInView ? 1 : 0.5,
+                            }}
+                            transition={{
+                                delay: 1.25,
+                                default: {
                                     duration: 1,
-                                    delay: 3,
-                                    ease: 'easeInOut',
-                                }}
-                            >
-                                {t('whoAreWe')}
-                            </SloganSection01>
-                            <motion.div>
-                                <HeadingSection01>
-                                    <h2>{t('story1')}</h2>
-                                </HeadingSection01>
-
-                                <HeadingSection01>
-                                    <h2>{t('story2')}</h2>
-                                </HeadingSection01>
-                            </motion.div>
-                        </motion.div>
-
-                        <StoryImageContainer>
-                            <StoryImageWrapper
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                animate={{
-                                    opacity: isInView ? 1 : 0,
-                                    scale: isInView ? 1 : 0.5,
-                                }}
-                                transition={{
-                                    delay: 1.25,
-                                    default: {
-                                        duration: 1,
-                                        ease: [0, 0.71, 0.2, 1.01],
-                                    },
-                                    scale: {
-                                        type: 'spring',
-                                        damping: 10,
-                                        stiffness: 100,
-                                        restDelta: 0.001,
-                                    },
-                                }}
-                            >
-                                <Image
-                                    src={sam}
-                                    fill
-                                    alt='Samuel Sarfati'
-                                />
-                            </StoryImageWrapper>
-
-                            <div className='ben'>
-                                <StoryImageWrapper
-                                    initial={{ opacity: 0, scale: 0.5 }}
-                                    animate={{
-                                        opacity: isInView ? 1 : 0,
-                                        scale: isInView ? 1 : 0.5,
-                                    }}
-                                    transition={{
-                                        delay: 1.25,
-                                        default: {
-                                            duration: 1,
-                                            ease: [0, 0.71, 0.2, 1.01],
-                                        },
-                                        scale: {
-                                            type: 'spring',
-                                            damping: 10,
-                                            stiffness: 100,
-                                            restDelta: 0.001,
-                                        },
-                                    }}
-                                >
-                                    <Image
-                                        src={ben}
-                                        fill
-                                        alt='Benjamin Pik'
-                                    />
-                                </StoryImageWrapper>
-                            </div>
-
-                            <StoryImageWrapper
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                animate={{
-                                    opacity: isInView ? 1 : 0,
-                                    scale: isInView ? 1 : 0.5,
-                                }}
-                                transition={{
-                                    delay: 1.25,
-                                    default: {
-                                        duration: 1,
-                                        ease: [0, 0.71, 0.2, 1.01],
-                                    },
-                                    scale: {
-                                        type: 'spring',
-                                        damping: 10,
-                                        stiffness: 100,
-                                        restDelta: 0.001,
-                                    },
-                                }}
-                            >
-                                <Image
-                                    src={attali}
-                                    fill
-                                    alt='Samuel Attali'
-                                />
-                            </StoryImageWrapper>
-                        </StoryImageContainer>
-                    </HomeSection01Wrapper>
-
-                    <HomeSection01Wrapper>
-                        <TeamImageWrapper>
-                            <Image
-                                src={team}
-                                fill
-                                alt='team'
-                            />
-                        </TeamImageWrapper>
-                        <motion.div
-                            className='text-content'
-                            variants={titleAnim}
-                            initial='hidden'
-                            animate='show'
+                                    ease: [0, 0.71, 0.2, 1.01],
+                                },
+                                scale: {
+                                    type: 'spring',
+                                    damping: 10,
+                                    stiffness: 100,
+                                    restDelta: 0.001,
+                                },
+                            }}
                         >
-                            <motion.div>
-                                <HeadingSection01>
-                                    <h2>{t('story3')}</h2>
-                                </HeadingSection01>
+                            <Image
+                                src={sam}
+                                fill
+                                alt='Samuel Sarfati'
+                            />
+                        </StoryImageWrapper>
 
-                                <HeadingSection01>
-                                    <h2>{t('story4')}</h2>
-                                </HeadingSection01>
-                            </motion.div>
+                        <div className='ben'>
+                            <StoryImageWrapper
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                animate={{
+                                    opacity: isInView ? 1 : 0,
+                                    scale: isInView ? 1 : 0.5,
+                                }}
+                                transition={{
+                                    delay: 1.25,
+                                    default: {
+                                        duration: 1,
+                                        ease: [0, 0.71, 0.2, 1.01],
+                                    },
+                                    scale: {
+                                        type: 'spring',
+                                        damping: 10,
+                                        stiffness: 100,
+                                        restDelta: 0.001,
+                                    },
+                                }}
+                            >
+                                <Image
+                                    src={ben}
+                                    fill
+                                    alt='Benjamin Pik'
+                                />
+                            </StoryImageWrapper>
+                        </div>
+
+                        <StoryImageWrapper
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{
+                                opacity: isInView ? 1 : 0,
+                                scale: isInView ? 1 : 0.5,
+                            }}
+                            transition={{
+                                delay: 1.25,
+                                default: {
+                                    duration: 1,
+                                    ease: [0, 0.71, 0.2, 1.01],
+                                },
+                                scale: {
+                                    type: 'spring',
+                                    damping: 10,
+                                    stiffness: 100,
+                                    restDelta: 0.001,
+                                },
+                            }}
+                        >
+                            <Image
+                                src={attali}
+                                fill
+                                alt='Samuel Attali'
+                            />
+                        </StoryImageWrapper>
+                    </StoryImageContainer>
+                </HomeSection01Wrapper>
+
+                <HomeSection01Wrapper>
+                    <TeamImageWrapper>
+                        <Image
+                            src={team}
+                            fill
+                            alt='team'
+                        />
+                    </TeamImageWrapper>
+                    <motion.div
+                        className='text-content'
+                        variants={titleAnim}
+                        initial='hidden'
+                        animate='show'
+                    >
+                        <motion.div>
+                            <HeadingSection01>
+                                <h2>{t('story3')}</h2>
+                            </HeadingSection01>
+
+                            <HeadingSection01>
+                                <h2>{t('story4')}</h2>
+                            </HeadingSection01>
                         </motion.div>
-                    </HomeSection01Wrapper>
-                </StoryContainer>
-            </HeroContainer>
+                    </motion.div>
+                </HomeSection01Wrapper>
+            </StoryContainer>
         </AboutSection01Container>
     )
 }
@@ -223,6 +221,7 @@ export const AboutSection01Container = styled(motion.div)`
     align-items: center;
     justify-content: center;
     margin: 8rem auto;
+    padding: 0 1rem;
 `
 
 const AboutSection01Wrapper = styled.div`
@@ -230,6 +229,7 @@ const AboutSection01Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 0 2rem;
 `
 
 export const SloganAbout = styled(motion.h1)`

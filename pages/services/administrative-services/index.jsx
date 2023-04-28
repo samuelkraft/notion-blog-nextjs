@@ -24,6 +24,12 @@ import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 import AboutSection05 from '../../../components/about/AboutSection05'
 import logoArrow from '../../../images/logo_arrow.png'
+import DetailServiceBanner from '../../../components/banner/DetailServiceBanner'
+import adminServicesDetailBanner from '../../../images/admin_detail_banner.png'
+import SocialBanner from '../../../components/banner/SocialBanner'
+import JoinOurTeamBanner from '../../../components/banner/JoinOurTeamBanner'
+import KeyServicesBanner from '../../../components/banner/KeyServicesBanner'
+import admin from '../../../images/papier.svg'
 
 const AdministritiveServices = ({}) => {
     const { t, i18n } = useTranslation(['administrativeServices'], {
@@ -103,84 +109,93 @@ const AdministritiveServices = ({}) => {
                 exit='exit'
             >
                 <HeaderMegaMenu />
-                <HeroContainer style={{ marginTop: '10rem' }}>
+                <DetailServiceBanner
+                    title={t('section1_title')}
+                    coverImage={adminServicesDetailBanner}
+                    heading1={t('section1_text1')}
+                    heading2={t('section1_bold1')}
+                    heading3={t('section1_text2')}
+                    color='#8306cf'
+                />
+
+                <KeyServicesBanner icon={admin} />
+
+                <HeroContainer style={{ marginTop: '40rem' }}>
                     <LayoutColumn>
-                        <TextContent>
-                            <Slogan>{t('section1_title')}</Slogan>
-                            <Heading>
-                                {t('section1_text1')}
-                                <b>{t('section1_bold1')}</b>
-                                {t('section1_text2')}
-                            </Heading>
-                        </TextContent>
+                        <LayoutColumn>
+                            <TextContent>
+                                <Slogan>{t('section1_title')}</Slogan>
+                                <Heading>
+                                    {t('section1_text1')}
+                                    <b>{t('section1_bold1')}</b>
+                                    {t('section1_text2')}
+                                </Heading>
+                            </TextContent>
+                        </LayoutColumn>
+
+                        <Heading>
+                            <Subtitle>{t('features_title')}</Subtitle>
+                        </Heading>
+
+                        <Heading>
+                            <FeaturesContainer>
+                                <Feature>
+                                    <Image
+                                        src={feat1}
+                                        alt='feat1'
+                                    />
+                                    <p>{t('feature1')}</p>
+                                </Feature>
+                                <Feature>
+                                    <Image
+                                        src={feat2}
+                                        alt='feat2'
+                                    />
+                                    <p>{t('feature2')}</p>
+                                </Feature>
+                                <Feature>
+                                    <Image
+                                        src={feat3}
+                                        alt='feat3'
+                                    />
+                                    <p>{t('feature3')}</p>
+                                </Feature>
+                                <Feature>
+                                    <Image
+                                        src={feat4}
+                                        alt='feat4'
+                                    />
+                                    <p>{t('feature4')}</p>
+                                </Feature>
+                                <Feature>
+                                    <Image
+                                        src={feat5}
+                                        alt='feat5'
+                                    />
+                                    <p>{t('feature5')}</p>
+                                </Feature>
+                                <Feature>
+                                    <Image
+                                        src={feat6}
+                                        alt='feat6'
+                                    />
+                                    <p>{t('feature6')}</p>
+                                </Feature>
+                                <Feature>
+                                    <Image
+                                        src={feat7}
+                                        alt='feat7'
+                                    />
+                                    <p>{t('feature7')}</p>
+                                </Feature>
+                            </FeaturesContainer>
+                        </Heading>
                     </LayoutColumn>
-
-                    <Heading>
-                        <Subtitle>{t('features_title')}</Subtitle>
-                    </Heading>
-
-                    <Heading>
-                        <FeaturesContainer>
-                            <Feature>
-                                <Image
-                                    src={feat1}
-                                    alt='feat1'
-                                />
-                                <p>{t('feature1')}</p>
-                            </Feature>
-                            <Feature>
-                                <Image
-                                    src={feat2}
-                                    alt='feat2'
-                                />
-                                <p>{t('feature2')}</p>
-                            </Feature>
-                            <Feature>
-                                <Image
-                                    src={feat3}
-                                    alt='feat3'
-                                />
-                                <p>{t('feature3')}</p>
-                            </Feature>
-                            <Feature>
-                                <Image
-                                    src={feat4}
-                                    alt='feat4'
-                                />
-                                <p>{t('feature4')}</p>
-                            </Feature>
-                            <Feature>
-                                <Image
-                                    src={feat5}
-                                    alt='feat5'
-                                />
-                                <p>{t('feature5')}</p>
-                            </Feature>
-                            <Feature>
-                                <Image
-                                    src={feat6}
-                                    alt='feat6'
-                                />
-                                <p>{t('feature6')}</p>
-                            </Feature>
-                            <Feature>
-                                <Image
-                                    src={feat7}
-                                    alt='feat7'
-                                />
-                                <p>{t('feature7')}</p>
-                            </Feature>
-                        </FeaturesContainer>
-                    </Heading>
-
-                    <InfiniteSlider />
-
-                    <AboutSection05
-                        title={t('CTA')}
-                        btnText={t('contactUs')}
-                        standalone
-                    />
                 </HeroContainer>
+
+                <InfiniteSlider />
+
+                <JoinOurTeamBanner />
 
                 <HeroContainer>
                     <LayoutColumn>
@@ -531,6 +546,7 @@ const AdministritiveServices = ({}) => {
                         </TextContent>
                     </LayoutColumn>
                 </HeroContainer>
+                <SocialBanner />
                 <Footer />
             </motion.div>
         </>

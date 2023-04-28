@@ -159,7 +159,6 @@ export const HeroWrapper = styled.div`
     }
     @media screen and (min-width: 1024px) {
         flex-flow: row;
-        gap: 2rem;
     }
     @media screen and (min-width: 1200px) {
         flex-flow: row;
@@ -247,6 +246,11 @@ export const HeroImageContainer = styled(motion.div)`
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr 1fr;
     margin-top: 3rem;
+
+    @media screen and (max-width: 465px) {
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+    }
 `
 
 const ImageWrapper1 = styled(motion.div)`
@@ -268,8 +272,8 @@ const ImageWrapper1 = styled(motion.div)`
     justify-self: start;
 
     @media screen and (max-width: 500px) {
-        width: 160.54px;
-        height: 325.7px;
+        width: 150.54px;
+        height: 315.7px;
     }
 
     @media screen and (max-width: 1023px) {
@@ -299,8 +303,8 @@ const ImageWrapper2 = styled(motion.div)`
     background-repeat: no-repeat;
 
     @media screen and (max-width: 500px) {
-        width: 180.54px;
-        height: 200.7px;
+        width: 170.54px;
+        height: 190.7px;
     }
 
     @media screen and (max-width: 1023px) {
@@ -309,11 +313,6 @@ const ImageWrapper2 = styled(motion.div)`
 
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
         justify-self: start;
-    }
-
-    @media screen and (min-width: 1440px) {
-    }
-    @media screen and (min-width: 1800px) {
     }
 `
 
@@ -335,8 +334,8 @@ const ImageWrapper3 = styled(motion.div)`
     background-repeat: no-repeat;
 
     @media screen and (max-width: 500px) {
-        width: 180.54px;
-        height: 200.7px;
+        width: 170.54px;
+        height: 190.7px;
     }
 
     @media screen and (max-width: 1023px) {
@@ -344,10 +343,6 @@ const ImageWrapper3 = styled(motion.div)`
     }
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
         justify-self: center;
-    }
-    @media screen and (min-width: 1440px) {
-    }
-    @media screen and (min-width: 1800px) {
     }
 `
 const ImageWrapper4 = styled(motion.div)`
@@ -366,8 +361,8 @@ const ImageWrapper4 = styled(motion.div)`
     background-repeat: no-repeat;
 
     @media screen and (max-width: 500px) {
-        width: 160.54px;
-        height: 325.7px;
+        width: 150.54px;
+        height: 315.7px;
     }
 
     @media screen and (max-width: 1023px) {
@@ -376,11 +371,6 @@ const ImageWrapper4 = styled(motion.div)`
 
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
         justify-self: start;
-    }
-
-    @media screen and (min-width: 1440px) {
-    }
-    @media screen and (min-width: 1800px) {
     }
 `
 

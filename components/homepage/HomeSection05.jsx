@@ -82,7 +82,10 @@ const HomeSection05 = () => {
                         </HeadingSection05>
                     </motion.div>
                     <ImageWrapper>
-                        <Image src={american} />
+                        <Image
+                            src={american}
+                            alt='american customer'
+                        />
                     </ImageWrapper>
                     <BackgroundGradient />
                 </HomeSection05Layout>
@@ -177,6 +180,11 @@ const ImageWrapper = styled.div`
 
     @media screen and (max-width: 1024px) {
         transform: translate(0px, 49px);
+    }
+
+    @media screen and (max-width: 768px) {
+        scale: 0.8;
+        transform: translate(-100px, 135px);
     }
 `
 

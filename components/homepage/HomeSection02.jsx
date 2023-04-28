@@ -175,6 +175,13 @@ const ImageWrapper = styled.div`
         background-position: 50% 40%;
         margin-right: 5rem;
     }
+    @media screen and (max-width: 600px) {
+        width: 300px;
+        height: 280px;
+
+        background-position: 50% 50%;
+        transform: translate(-5%, -8%);
+    }
 `
 
 const BackgroundBlue = styled.div`
@@ -188,5 +195,10 @@ const BackgroundBlue = styled.div`
 
         width: 404.75px;
         height: 389.35px;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 300px;
+        height: 280px;
     }
 `

@@ -76,7 +76,7 @@
     "seeAll": "Voir tout",
     "seeMore": "En savoir plus",
     "greeting": "Bonjour",
-    "trustedUs": "Ils nous ont fait confiance",
+    "trustedUs": "Ils nous font confiance",
     "section01_title": "Société étrangère, vous êtes implantée en France ?",
     "section01_heading_pt1": "La France exerce un réel attrait pour les investisseurs étrangers. Diriger une société étrangère établie sur le territoire français suppose toutefois de ",
     "section01_bold1": "se conformer aux règles comptables, fiscales, sociales comme juridiques ",
@@ -227,5 +227,6 @@
     "servicesCard8_title": "Conseil juridique",
 
     "numberSection_title": "En quelques chiffres",
-    "theBlog": "Le blog"
+    "theBlog": "Le blog",
+    "keyServices": "Nos services clés"
 }

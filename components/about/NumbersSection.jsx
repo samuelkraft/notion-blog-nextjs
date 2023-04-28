@@ -79,204 +79,202 @@ const NumbersSection = () => {
 
     const { t } = useTranslation('common')
     return (
-        <NumbersSectionContainer>
-            <RowWrapper ref={ref}>
-                <NumberCard
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{
-                        opacity: isInView ? 1 : 0,
-                        scale: isInView ? 1 : 0.5,
-                    }}
-                    transition={{
-                        delay: 1.25,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
-                >
-                    <div style={{ marginTop: '2rem' }}>
-                        <RowImageWrapper>
-                            <Image
-                                src={associe2}
-                                alt='associe2'
-                                width={32}
-                                height={32}
-                            />
-                            <Image
-                                src={associe1}
-                                alt='associe1'
-                                width={40}
-                                height={40}
-                            />
-                            <Image
-                                src={associe3}
-                                alt='associe3'
-                                width={32}
-                                height={32}
-                            />
-                        </RowImageWrapper>
-                        <h1>3</h1>
-                        <h2>{t('associes')}</h2>
-                    </div>
-                </NumberCard>
-                <NumberCard
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{
-                        opacity: isInView ? 1 : 0,
-                        scale: isInView ? 1 : 0.5,
-                    }}
-                    transition={{
-                        delay: 1.5,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
-                >
-                    <div style={{ marginTop: '2rem' }}>
-                        <RowImageWrapper>
-                            <Image
-                                src={france}
-                                width={32}
-                                height={32}
-                                alt='france'
-                            />
-                            <Image
-                                src={world}
-                                alt='office'
-                                width={40}
-                                height={40}
-                            />
-                            <Image
-                                src={israel}
-                                width={32}
-                                height={32}
-                                alt='israel'
-                            />
-                        </RowImageWrapper>
-                        <h1>2</h1>
-                        <h2>
-                            {t('bureaux')} <br /> Paris - Tel Aviv
-                        </h2>
-                    </div>
-                </NumberCard>
-                <NumberCard
-                    className='secondary'
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{
-                        opacity: isInView ? 1 : 0,
-                        scale: isInView ? 1 : 0.5,
-                    }}
-                    transition={{
-                        delay: 1.75,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
-                >
-                    <Image
-                        src={handshake}
-                        alt='handshake'
-                        width={45}
-                        height={45}
-                    />
-                    <h1>25</h1>
-                    <h2>{t('collaborateurs')}</h2>
-                </NumberCard>
-
-                <NumberCard
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{
-                        opacity: isInView ? 1 : 0,
-                        scale: isInView ? 1 : 0.5,
-                    }}
-                    transition={{
-                        delay: 2,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
-                >
-                    <Image
-                        src={france}
-                        alt='france'
-                        width={45}
-                        height={45}
-                    />
-                    <motion.h1 animate={controls}>
-                        <span>+</span>
-                        {count}
-                    </motion.h1>
-                    <h2>{t('clients_francais')}</h2>
-                </NumberCard>
-                <NumberCard
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{
-                        opacity: isInView ? 1 : 0,
-                        scale: isInView ? 1 : 0.5,
-                    }}
-                    transition={{
-                        delay: 2.25,
-                        default: {
-                            duration: 1,
-                            ease: [0, 0.71, 0.2, 1.01],
-                        },
-                        scale: {
-                            type: 'spring',
-                            damping: 10,
-                            stiffness: 100,
-                            restDelta: 0.001,
-                        },
-                    }}
-                >
-                    <div
-                        style={{
-                            marginTop: router.locale === 'en' ? '2rem' : '0',
-                        }}
-                    >
+        <RowWrapper ref={ref}>
+            <NumberCard
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{
+                    opacity: isInView ? 1 : 0,
+                    scale: isInView ? 1 : 0.5,
+                }}
+                transition={{
+                    delay: 1.25,
+                    default: {
+                        duration: 1,
+                        ease: [0, 0.71, 0.2, 1.01],
+                    },
+                    scale: {
+                        type: 'spring',
+                        damping: 10,
+                        stiffness: 100,
+                        restDelta: 0.001,
+                    },
+                }}
+            >
+                <div style={{ marginTop: '2rem' }}>
+                    <RowImageWrapper>
+                        <Image
+                            src={associe2}
+                            alt='associe2'
+                            width={32}
+                            height={32}
+                        />
+                        <Image
+                            src={associe1}
+                            alt='associe1'
+                            width={40}
+                            height={40}
+                        />
+                        <Image
+                            src={associe3}
+                            alt='associe3'
+                            width={32}
+                            height={32}
+                        />
+                    </RowImageWrapper>
+                    <h1>3</h1>
+                    <h2>{t('associes')}</h2>
+                </div>
+            </NumberCard>
+            <NumberCard
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{
+                    opacity: isInView ? 1 : 0,
+                    scale: isInView ? 1 : 0.5,
+                }}
+                transition={{
+                    delay: 1.5,
+                    default: {
+                        duration: 1,
+                        ease: [0, 0.71, 0.2, 1.01],
+                    },
+                    scale: {
+                        type: 'spring',
+                        damping: 10,
+                        stiffness: 100,
+                        restDelta: 0.001,
+                    },
+                }}
+            >
+                <div style={{ marginTop: '2rem' }}>
+                    <RowImageWrapper>
+                        <Image
+                            src={france}
+                            width={32}
+                            height={32}
+                            alt='france'
+                        />
                         <Image
                             src={world}
-                            alt='world'
-                            width={38}
-                            height={38}
+                            alt='office'
+                            width={40}
+                            height={40}
                         />
-                        <motion.h1 animate={controls2}>
-                            <span>+</span>
-                            {count2}
-                        </motion.h1>
-                        <h2>{t('clients_etrangers')}</h2>
-                    </div>
-                </NumberCard>
-                <Divider />
-            </RowWrapper>
-        </NumbersSectionContainer>
+                        <Image
+                            src={israel}
+                            width={32}
+                            height={32}
+                            alt='israel'
+                        />
+                    </RowImageWrapper>
+                    <h1>2</h1>
+                    <h2>
+                        {t('bureaux')} <br /> Paris - Tel Aviv
+                    </h2>
+                </div>
+            </NumberCard>
+            <NumberCard
+                className='secondary'
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{
+                    opacity: isInView ? 1 : 0,
+                    scale: isInView ? 1 : 0.5,
+                }}
+                transition={{
+                    delay: 1.75,
+                    default: {
+                        duration: 1,
+                        ease: [0, 0.71, 0.2, 1.01],
+                    },
+                    scale: {
+                        type: 'spring',
+                        damping: 10,
+                        stiffness: 100,
+                        restDelta: 0.001,
+                    },
+                }}
+            >
+                <Image
+                    src={handshake}
+                    alt='handshake'
+                    width={45}
+                    height={45}
+                />
+                <h1>25</h1>
+                <h2>{t('collaborateurs')}</h2>
+            </NumberCard>
+
+            <NumberCard
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{
+                    opacity: isInView ? 1 : 0,
+                    scale: isInView ? 1 : 0.5,
+                }}
+                transition={{
+                    delay: 2,
+                    default: {
+                        duration: 1,
+                        ease: [0, 0.71, 0.2, 1.01],
+                    },
+                    scale: {
+                        type: 'spring',
+                        damping: 10,
+                        stiffness: 100,
+                        restDelta: 0.001,
+                    },
+                }}
+            >
+                <Image
+                    src={france}
+                    alt='france'
+                    width={45}
+                    height={45}
+                />
+                <motion.h1 animate={controls}>
+                    <span>+</span>
+                    {count}
+                </motion.h1>
+                <h2>{t('clients_francais')}</h2>
+            </NumberCard>
+            <NumberCard
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{
+                    opacity: isInView ? 1 : 0,
+                    scale: isInView ? 1 : 0.5,
+                }}
+                transition={{
+                    delay: 2.25,
+                    default: {
+                        duration: 1,
+                        ease: [0, 0.71, 0.2, 1.01],
+                    },
+                    scale: {
+                        type: 'spring',
+                        damping: 10,
+                        stiffness: 100,
+                        restDelta: 0.001,
+                    },
+                }}
+            >
+                <div
+                    style={{
+                        marginTop: router.locale === 'en' ? '2rem' : '0',
+                    }}
+                >
+                    <Image
+                        src={world}
+                        alt='world'
+                        width={38}
+                        height={38}
+                    />
+                    <motion.h1 animate={controls2}>
+                        <span>+</span>
+                        {count2}
+                    </motion.h1>
+                    <h2>{t('clients_etrangers')}</h2>
+                </div>
+            </NumberCard>
+            <Divider />
+        </RowWrapper>
     )
 }
 
@@ -296,7 +294,7 @@ const RowWrapper = styled(motion.div)`
     gap: 2rem;
     margin: 4rem 0;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 600px) {
         flex-flow: column;
     }
 `

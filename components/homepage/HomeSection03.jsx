@@ -46,6 +46,7 @@ const HomeSection03 = () => {
                         <Image
                             src={map}
                             fill
+                            alt='france map'
                         />
                     </ImageWrapper>
                     <BlockContainer />
@@ -121,15 +122,23 @@ const ImageWrapper = styled.div`
     width: 45%;
     height: 500px;
 
+    @media screen and (max-width: 1200px) {
+        width: 40%;
+        top: 20%;
+    }
+
     @media screen and (max-width: 1024px) {
-        top: none;
-        bottom: 0;
+        top: 45%;
+        bottom: 0%;
         width: 65%;
     }
 
     @media screen and (max-width: 768px) {
-        width: 65% !important ;
-        height: 600px !important;
+        width: 80% !important ;
+    }
+
+    @media screen and (max-width: 480px) {
+        top: 50%;
     }
 `
 const BlockContainer = styled.div`
@@ -139,6 +148,11 @@ const BlockContainer = styled.div`
         width: 400px;
         height: 400px;
         margin-top: 5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 300px;
+        height: 300px;
     }
 `
 

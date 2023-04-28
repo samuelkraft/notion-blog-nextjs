@@ -208,14 +208,18 @@ const ImageWrapper = styled.div`
     }
 
     @media screen and (max-width: 580px) {
-        width: 100%;
+        width: 95%;
         height: 300px;
         left: 0;
-        bottom: -25px;
+        bottom: 0px;
     }
 
-    @media screen and (max-width: 500px) {
-        bottom: 0;
+    @media screen and (max-width: 389px) {
+        bottom: -40px;
+    }
+
+    @media screen and (min-width: 390px) and (max-width: 415px) {
+        bottom: -32px;
     }
 `
 
