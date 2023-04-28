@@ -397,7 +397,6 @@ const Form = styled.form`
     flex-flow: column;
     gap: 2rem;
     padding: 2rem;
-    border-radius: 51px;
     margin-top: 2rem;
 
     @media screen and (min-width: 1200px) {
@@ -452,10 +451,8 @@ const TextContent = styled.div`
     h1 {
         font-family: 'Poppins', sans-serif;
         @media screen and (max-width: 1024px) {
-            font-size: 42px;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-            margin-top: 2rem;
+            font-size: 25px;
+            line-height: 38px;
             text-align: center;
         }
 

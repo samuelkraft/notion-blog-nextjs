@@ -34,7 +34,7 @@ const ImageWrapper = styled.div`
         min-height: 40vh;
     }
     @media screen and (max-width: 500px) {
-        min-height: 30vh;
+        min-height: 25vh;
     }
 `
 const SloganHiringBanner = styled.div`
@@ -77,6 +77,6 @@ const SloganHiringBanner = styled.div`
 
     @media screen and (max-width: 580px) {
         top: 40%;
-        left: 30%;
+        left: 28%;
     }
 `
