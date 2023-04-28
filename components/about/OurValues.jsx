@@ -174,8 +174,8 @@ const OurValuesWrapper = styled.div`
 
 const BackgroundBlur = styled.div`
     position: absolute;
-    width: 281.87px;
-    height: 281.87px;
+    width: 200.87px;
+    height: 200.87px;
     left: 40%;
     top: 50%;
 
