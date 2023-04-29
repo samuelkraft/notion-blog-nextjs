@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Tag } from '../homepage/HomeSection01'
+import { SloganSection01, Tag } from '../homepage/HomeSection01'
 import { RowWrapper, SloganSection06 } from '../homepage/HomeSection06'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
@@ -118,9 +118,8 @@ const HiringForm = () => {
             >
                 <FormLayout>
                     <TextContentContainer>
-                        <TextContent>
-                            <h1>{t('joinUsText')}</h1>
-                        </TextContent>
+                        <SloganSection01>{t('joinUsText')}</SloganSection01>
+
                         <FormColumn>
                             <TextInput
                                 required
@@ -413,7 +412,7 @@ const FormLayout = styled.div`
     @media screen and (min-width: 1200px) {
         flex-flow: row;
         justify-content: stretch;
-        gap: 3rem;
+        gap: 5rem;
     }
 `
 

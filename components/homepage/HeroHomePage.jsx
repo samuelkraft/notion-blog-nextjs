@@ -166,7 +166,7 @@ export const HeroWrapper = styled.div`
     }
     @media screen and (min-width: 1440px) {
         flex-flow: row;
-        gap: 5rem;
+        gap: 3rem;
     }
 `
 

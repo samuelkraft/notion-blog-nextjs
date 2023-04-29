@@ -53,7 +53,7 @@
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Poppins';
     src: url('/assets/fonts/Poppins-SemiBold.otf') format('opentype'),
         url('/assets/fonts/Poppins-SemiBold.woff2') format('woff2'),
@@ -62,7 +62,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+} */
 
 html,
 body,

@@ -40,6 +40,7 @@ import LanguageSwitcher from './LanguageSwitcher'
 import i18nextConfig from '../../next-i18next.config'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import styled from 'styled-components'
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -63,9 +64,6 @@ const useStyles = createStyles((theme) => ({
         fontFamily: "'Gilroy', sans-serif",
         fontSize: '12px',
         padding: '0',
-        '@media screen and (min-width: 768px)': {
-            padding: '0.5rem',
-        },
     },
 
     linkswrapper: {
@@ -349,16 +347,10 @@ export default function HeaderMegaMenu() {
                 fixed
             >
                 <Container
-                    className={classes.inner}
                     fluid
+                    className={classes.hiddenDesktop}
                 >
-                    <Group sx={{ height: '100%' }}>
-                        <Burger
-                            opened={drawerOpened}
-                            onClick={toggleDrawer}
-                            className={classes.hiddenDesktop}
-                            size='lg'
-                        />
+                    <Group position='apart'>
                         <Link
                             href='/'
                             locale={router.locale}
@@ -374,6 +366,40 @@ export default function HeaderMegaMenu() {
                                 alt='Expand CPA LOGO'
                             />
                         </Link>
+                        <Group>
+                            <LanguageSwitcher />
+                            <Burger
+                                opened={drawerOpened}
+                                onClick={toggleDrawer}
+                                className={classes.hiddenDesktop}
+                                size='md'
+                            />
+                        </Group>
+                    </Group>
+                </Container>
+
+                <Container
+                    className={classes.inner}
+                    fluid
+                >
+                    <Group sx={{ height: '100%' }}>
+                        <Link
+                            href='/'
+                            locale={router.locale}
+                            onClick={(e) =>
+                                handlePreventRefreshOnSameLink(e, '/')
+                            }
+                            className={classes.hiddenMobile}
+                        >
+                            <Image
+                                src={Logo}
+                                width='150'
+                                height='100'
+                                priority
+                                alt='Expand CPA LOGO'
+                            />
+                        </Link>
+
                         <Container fluid>
                             <Group
                                 sx={{ height: '100%' }}
@@ -706,7 +732,24 @@ export default function HeaderMegaMenu() {
                     <Group
                         className={classes.hiddenDesktop}
                         onClick={closeDrawer}
+                        position='apart'
+                        spacing={10}
                     >
+                        <Link
+                            href='/'
+                            locale={router.locale}
+                            onClick={(e) =>
+                                handlePreventRefreshOnSameLink(e, '/')
+                            }
+                        >
+                            <Image
+                                src={Logo}
+                                width='150'
+                                height='100'
+                                priority
+                                alt='Expand CPA LOGO'
+                            />
+                        </Link>
                         <LanguageSwitcher />
                     </Group>
                 }
@@ -813,8 +856,16 @@ export default function HeaderMegaMenu() {
                             theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'
                         }
                     />
+                    <BackgroundGradient />
                 </ScrollArea>
             </Drawer>
         </Box>
     )
 }
+
+const BackgroundGradient = styled.div`
+    background: linear-gradient(92.29deg, #4364f7 0.66%, #1b1464 96.93%);
+    border-radius: 84.5491px 0px 0px 0px;
+    height: 30vh;
+    margin-top: 20rem;
+`
