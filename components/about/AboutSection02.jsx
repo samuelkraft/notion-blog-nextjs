@@ -67,6 +67,11 @@ export const AboutSection02Wrapper = styled.div`
         @media screen and (max-width: 768px) {
             width: 80%;
         }
+
+        @media screen and (max-width: 425px) {
+            font-size: 20px;
+            width: 100%;
+        }
     }
 
     h3 {
@@ -84,6 +89,11 @@ export const AboutSection02Wrapper = styled.div`
 
         @media screen and (max-width: 768px) {
             width: 80%;
+        }
+
+        @media screen and (max-width: 425px) {
+            font-size: 14px;
+            width: 100%;
         }
     }
 
@@ -111,5 +121,10 @@ const ImageWrapper = styled.div`
         left: 10%;
         width: 63px;
         height: 63px;
+    }
+
+    @media screen and (max-width: 425px) {
+        width: 43px;
+        height: 43px;
     }
 `

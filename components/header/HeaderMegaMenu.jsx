@@ -867,5 +867,5 @@ const BackgroundGradient = styled.div`
     background: linear-gradient(92.29deg, #4364f7 0.66%, #1b1464 96.93%);
     border-radius: 84.5491px 0px 0px 0px;
     height: 30vh;
-    margin-top: 20rem;
+    margin-top: 15rem;
 `

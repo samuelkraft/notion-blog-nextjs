@@ -196,7 +196,7 @@ const Value = styled(motion.div)`
     border-radius: 20px;
 
     @media screen and (max-width: 425px) {
-        gap: 1rem;
+        gap: 2rem;
     }
 
     h1 {
@@ -210,6 +210,10 @@ const Value = styled(motion.div)`
         letter-spacing: 0.327px;
 
         color: #1b1464;
+
+        @media screen and (max-width: 425px) {
+            font-size: 20px;
+        }
     }
 `
 

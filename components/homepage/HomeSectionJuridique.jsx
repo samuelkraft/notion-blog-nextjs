@@ -11,9 +11,7 @@ import { motion, useInView } from 'framer-motion'
 import { titleAnim, fade } from '../../lib/animation'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
-import GradientButton from '../button/GradientButton'
 import { useEffect, useRef } from 'react'
-import Link from 'next/link'
 import { RoundedButton } from './HeroHomePage'
 import check from '../../images/check.svg'
 import { Center } from '@mantine/core'
@@ -28,23 +26,10 @@ const HomeSectionJuridique = () => {
     }, [])
 
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
 
     return (
         <Background>
-            <HomeSection01Container
-                initial={{ opacity: 0 }}
-                animate={{
-                    opacity: isInView ? 1 : 0,
-                }}
-                transition={{
-                    duration: 1,
-                    delay: 0.5,
-                    ease: 'easeInOut',
-                    when: 'afterChildren',
-                }}
-                ref={ref}
-            >
+            <HomeSection01Container>
                 <HomeSectionJuridiqueWrapper>
                     <motion.div
                         className='text-content'
@@ -133,7 +118,7 @@ const HomeSectionJuridique = () => {
     )
 }
 
-const Background = styled.div`
+const Background = styled(motion.div)`
     background: #1b1464;
     border-radius: 40px;
 `

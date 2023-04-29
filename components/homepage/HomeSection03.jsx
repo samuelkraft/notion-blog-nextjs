@@ -138,7 +138,7 @@ const ImageWrapper = styled.div`
     }
 
     @media screen and (max-width: 480px) {
-        top: 50%;
+        top: 60%;
     }
 `
 const BlockContainer = styled.div`
