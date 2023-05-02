@@ -190,6 +190,9 @@ const Footer = () => {
                             <Image src={CNCC} />
                         </div>
                     </Copyright>
+                    <Copyrigth2>
+                        ©2022 Expand-CPA All right reserved.
+                    </Copyrigth2>
                 </div>
             </FooterWrapper>
         </FooterContainer>
@@ -270,6 +273,10 @@ const FooterWrapper = styled.div`
         gap: 2rem;
         transform: translateY(2rem);
         width: 80%;
+
+        @media screen and (max-width: 767px) {
+            width: 100%;
+        }
     }
 
     .layout {
@@ -281,12 +288,16 @@ const FooterWrapper = styled.div`
             flex-flow: column;
             gap: 3rem;
         }
+
+        @media screen and (max-width: 500px) {
+            width: 90%;
+        }
     }
 
     .menu {
         display: flex;
         justify-content: space-between;
-        width: 50%;
+        width: 60%;
         align-items: center;
 
         @media screen and (max-width: 767px) {
@@ -360,22 +371,51 @@ const Copyright = styled.div`
         display: flex;
         gap: 12px;
 
-        @media screen and (max-width: 767px) {
-            flex-flow: column;
+        @media screen and (max-width: 1100px) {
             gap: 1rem;
         }
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1100px) {
         /* flex-flow: column; */
+
+        p {
+            display: none;
+        }
         gap: 1rem;
     }
 
     .right {
-        @media screen and (max-width: 767px) {
-            flex-flow: column;
+        @media screen and (max-width: 1100px) {
             gap: 1rem;
         }
     }
 `
+
+const Copyrigth2 = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2rem;
+    color: white;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    /* identical to box height, or 200% */
+
+    text-align: right;
+    margin-top: -1rem;
+    color: #ffffff;
+    padding-bottom: 2rem;
+
+    @media screen and (min-width: 1100px) {
+        /* flex-flow: column; */
+
+        display: none;
+    }
+`
+
 export default Footer

@@ -62,6 +62,16 @@ const SocialBannerContainer = styled.div`
         letter-spacing: 0.327px;
 
         color: #1b1464;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 35px;
+            line-height: 55px;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 25px;
+            line-height: 36px;
+        }
     }
 
     .social-icon {

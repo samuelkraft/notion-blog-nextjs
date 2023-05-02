@@ -37,20 +37,33 @@ export default function Blog({ posts }) {
         bindI18n: 'languageChanged loaded',
     })
 
+    console.log('posts', posts)
+
     const router = useRouter()
     useEffect(() => {
         i18n.reloadResources(i18n.resolvedLanguage, ['common'])
     }, [router.locale])
 
-    const categoryBusinessPosts = posts.filter(
+    const auditPosts = posts.filter(
         (post) =>
-            post?.properties?.Tags?.select?.name === 'Comptabilité & Fiscalité'
+            post?.properties?.Tags?.select?.name ===
+            'Audit & Commissariat aux comptes'
     )
-    const categoryLegalPosts = posts.filter(
-        (post) => post?.properties?.Tags?.select?.name === 'Juridique'
+    const paieRHPosts = posts.filter(
+        (post) => post?.properties?.Tags?.select?.name === 'Paie & RH'
     )
-    const categoryTaxPosts = posts.filter(
-        (post) => post?.properties?.Tags?.select?.name === 'CAT'
+    const organisationPosts = posts.filter(
+        (post) => post?.properties?.Tags?.select?.name === 'Organisation'
+    )
+    const fiscalitePosts = posts.filter(
+        (post) =>
+            post?.properties?.Tags?.select?.name ===
+            'Fiscalité des particuliers'
+    )
+    const comptabilitePosts = posts.filter(
+        (post) =>
+            post?.properties?.Tags?.select?.name ===
+            'Fiscalité des particuliers'
     )
 
     return (
@@ -115,9 +128,11 @@ export default function Blog({ posts }) {
                 <BlogBanner />
                 <BlogContent
                     posts={posts}
-                    categoryBusinessPosts={categoryBusinessPosts}
-                    categoryLegalPosts={categoryLegalPosts}
-                    categoryTaxPosts={categoryTaxPosts}
+                    auditPosts={auditPosts}
+                    paieRHPosts={paieRHPosts}
+                    organisationPosts={organisationPosts}
+                    fiscalitePosts={fiscalitePosts}
+                    comptabilitePosts={comptabilitePosts}
                 />
                 <ContactForm />
                 <SocialBanner />

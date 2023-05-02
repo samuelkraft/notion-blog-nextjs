@@ -9,9 +9,11 @@ import { IconChevronLeft, IconChevronRight } from '@tabler/icons'
 import { RoundedButton } from '../homepage/HeroHomePage'
 const BlogContent = ({
     posts,
-    categoryBusinessPosts,
-    categoryLegalPosts,
-    categoryTaxPosts,
+    auditPosts,
+    paieRHPosts,
+    organisationPosts,
+    fiscalitePosts,
+    comptabilitePosts,
 }) => {
     const { t, i18n } = useTranslation('common', {
         bindI18n: 'languageChanged loaded',
@@ -52,28 +54,40 @@ const BlogContent = ({
                         {t('seeAll')}
                     </Filters>
                     <Filters
-                        onClick={() => setCategory(categoryBusinessPosts)}
+                        onClick={() => setCategory(comptabilitePosts)}
                         className={
-                            category === categoryBusinessPosts ? 'selected' : ''
+                            category === comptabilitePosts ? 'selected' : ''
                         }
                     >
-                        Business
+                        Comptabilité
                     </Filters>
                     <Filters
-                        onClick={() => setCategory(categoryLegalPosts)}
-                        className={
-                            category === categoryLegalPosts ? 'selected' : ''
-                        }
+                        onClick={() => setCategory(paieRHPosts)}
+                        className={category === paieRHPosts ? 'selected' : ''}
                     >
-                        Legal
+                        Paie & RH
                     </Filters>
                     <Filters
-                        onClick={() => setCategory(categoryTaxPosts)}
+                        onClick={() => setCategory(organisationPosts)}
                         className={
-                            category === categoryTaxPosts ? 'selected' : ''
+                            category === organisationPosts ? 'selected' : ''
                         }
                     >
-                        Tax
+                        Organisation
+                    </Filters>
+                    <Filters
+                        onClick={() => setCategory(fiscalitePosts)}
+                        className={
+                            category === fiscalitePosts ? 'selected' : ''
+                        }
+                    >
+                        Fiscalité
+                    </Filters>
+                    <Filters
+                        onClick={() => setCategory(auditPosts)}
+                        className={category === auditPosts ? 'selected' : ''}
+                    >
+                        Audit
                     </Filters>
                 </FiltersLayout>
 
@@ -162,24 +176,6 @@ const BlogContent = ({
                             return (
                                 <Carousel.Slide key={post.id}>
                                     <BlogCard
-                                        initial={{ opacity: 0, scale: 0.5 }}
-                                        animate={{
-                                            opacity: isInView ? 1 : 0,
-                                            scale: isInView ? 1 : 0.5,
-                                        }}
-                                        transition={{
-                                            delay: 1.5,
-                                            default: {
-                                                duration: 5,
-                                                ease: [0, 0.71, 0.2, 1.01],
-                                            },
-                                            scale: {
-                                                type: 'tween',
-                                                damping: 10,
-                                                stiffness: 100,
-                                                restDelta: 0.001,
-                                            },
-                                        }}
                                         cover={
                                             post?.cover?.external?.url ||
                                             'https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80'
@@ -272,6 +268,7 @@ const Filters = styled.div`
     border-radius: 4px;
 
     color: #1b1464;
+    cursor: pointer;
 
     :hover {
         background: #0657cf;

@@ -19,6 +19,7 @@ import {
     Textarea,
     Flex,
     Select,
+    Checkbox,
 } from '@mantine/core'
 
 import {
@@ -228,6 +229,8 @@ const ContactForm = () => {
                                 boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                             }}
                         />
+
+                        <Checkbox label={t('policy')} />
 
                         <Modal
                             opened={opened}
