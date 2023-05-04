@@ -1,36 +1,23 @@
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useEffect } from 'react'
-import { HeroContainer } from '../../../components/homepage/HeroHomePage'
 import HeaderMegaMenu from '../../../components/header/HeaderMegaMenu'
 import Footer from '../../../components/footer/Footer'
-import Image from 'next/image'
 
 import styled from 'styled-components'
-import check from '../../../images/check.svg'
-
-import feat1 from '../../../images/administrativeServices/feat1.svg'
-import feat2 from '../../../images/administrativeServices/feat2.svg'
-import feat3 from '../../../images/administrativeServices/feat3.svg'
-import feat4 from '../../../images/administrativeServices/feat4.svg'
-import feat5 from '../../../images/administrativeServices/feat5.svg'
-import feat6 from '../../../images/administrativeServices/feat6.svg'
-import feat7 from '../../../images/administrativeServices/feat7.svg'
 
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../../../lib/animation'
 import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
-import AboutSection05 from '../../../components/about/AboutSection05'
-import logoArrow from '../../../images/logo_arrow.png'
+
 import DetailServiceBanner from '../../../components/banner/DetailServiceBanner'
 import adminServicesDetailBanner from '../../../images/admin_detail_banner.png'
 import SocialBanner from '../../../components/banner/SocialBanner'
 import JoinOurTeamBanner from '../../../components/banner/JoinOurTeamBanner'
 import KeyServicesBanner from '../../../components/banner/KeyServicesBanner'
 import admin from '../../../images/papier.svg'
-
 const AdministritiveServices = ({}) => {
     const { t, i18n } = useTranslation(['administrativeServices'], {
         bindI18n: 'languageChanged loaded',
@@ -112,9 +99,15 @@ const AdministritiveServices = ({}) => {
                 <DetailServiceBanner
                     title={t('section1_title')}
                     coverImage={adminServicesDetailBanner}
-                    heading1={t('section1_text1')}
-                    heading2={t('section1_bold1')}
-                    heading3={t('section1_text2')}
+                    textContent={
+                        <>
+                            <h3>{t('section1_text1')}</h3>
+                            <h3>
+                                <b>{t('section1_bold1')}</b>
+                            </h3>
+                            <h3>{t('section1_text2')}</h3>
+                        </>
+                    }
                     color='#8306cf'
                 />
 
@@ -238,46 +231,41 @@ const AdministritiveServices = ({}) => {
                 </TextContentContainer>
 
                 <TextContentContainer>
-                    <LayoutColumn>
-                        <TextContent>
-                            <Slogan>{t('section7_title')}</Slogan>
+                    <SectionImage>
+                        <BackgroundColor color='#1B1464'>
+                            <ImageWrapper src={'/adminServices.png'} />
+                        </BackgroundColor>
+                        <div className='text-content'>
+                            <h1>{t('section7_title')}</h1>
 
-                            <Paragraph>
+                            <p>
                                 {t('section7_text1')}
                                 <b>{t('section7_bold1')}</b>
                                 {t('section7_text2')}
-                            </Paragraph>
+                            </p>
+                        </div>
+                    </SectionImage>
+                </TextContentContainer>
 
-                            <Slogan>{t('section7_subtitle1')}</Slogan>
+                <TextContentContainer>
+                    <TextContent>
+                        <Slogan>{t('section7_subtitle1')}</Slogan>
 
-                            <Paragraph>
-                                <b>{t('section7_bold2')}</b>
-                                {t('section7_text3')}
-                            </Paragraph>
-                            <Paragraph>
-                                {t('section7_text4')}
-                                <b>{t('section7_bold3')}</b>
-                            </Paragraph>
+                        <Paragraph>
+                            <b>{t('section7_bold2')}</b>
+                            {t('section7_text3')}
+                        </Paragraph>
+                        <Paragraph>
+                            {t('section7_text4')}
+                            <b>{t('section7_bold3')}</b>
+                        </Paragraph>
 
-                            <Paragraph>
-                                <RowWrapper className=''>
-                                    <Paragraph>
-                                        {t('section7_bullet1')}
-                                    </Paragraph>
-                                </RowWrapper>
-                                <RowWrapper className=''>
-                                    <Paragraph>
-                                        {t('section7_bullet2')}
-                                    </Paragraph>
-                                </RowWrapper>
-                                <RowWrapper className=''>
-                                    <Paragraph>
-                                        {t('section7_bullet3')}
-                                    </Paragraph>
-                                </RowWrapper>
-                            </Paragraph>
-                        </TextContent>
-                    </LayoutColumn>
+                        <BulletList>
+                            <li>{t('section7_bullet1')}</li>
+                            <li>{t('section7_bullet2')}</li>
+                            <li>{t('section7_bullet3')}</li>
+                        </BulletList>
+                    </TextContent>
                 </TextContentContainer>
 
                 <TextContentContainer gray>
@@ -317,6 +305,7 @@ const AdministritiveServices = ({}) => {
                             {t('section9_text4')}
                         </Paragraph>
                     </TextContent>
+                    <Divider />
                 </TextContentContainer>
                 <SocialBanner />
                 <Footer />
@@ -340,17 +329,22 @@ export { getStaticProps }
 
 export default AdministritiveServices
 
-const TextContentContainer = styled.div`
+export const TextContentContainer = styled.div`
     min-height: ${(props) => (props.gray ? '60vh' : '50vh')};
 
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     margin: 3rem auto;
 
     background: ${(props) => (props.gray ? 'rgba(217, 224, 236, 0.15)' : '')};
     border-radius: ${(props) => (props.gray ? '0px 0px 0px 143px' : '')};
+
+    @media screen and (max-width: 1200px) {
+        padding: 0 2rem;
+    }
 `
 
 export const Layout = styled.div`
@@ -378,11 +372,11 @@ export const Layout = styled.div`
 `
 
 const Divider = styled.div`
-    margin: 2rem 0;
-    height: 1.5px;
-    width: 100%;
+    height: 1px;
+    border: 2px solid #f0f3f7;
+    margin: 3rem auto;
     max-width: 1200px;
-    border: 1px solid #b9b9b9;
+    width: 100%;
 `
 
 export const LayoutReversed = styled(Layout)`
@@ -412,8 +406,8 @@ export const Slogan = styled(motion.h1)`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
-    line-height: 56px;
+    font-size: 25px;
+    line-height: 38px;
     /* or 140% */
 
     letter-spacing: 0.327px;
@@ -428,6 +422,12 @@ export const Slogan = styled(motion.h1)`
     }
     @media screen and (min-width: 1024px) {
         font-size: 36px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 25px;
+        line-height: 38px;
+        width: 100%;
     }
 `
 
@@ -466,7 +466,7 @@ export const Heading = styled.div`
     color: #1b1464;
 `
 
-const Paragraph = styled.p`
+export const Paragraph = styled.p`
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
@@ -477,9 +477,13 @@ const Paragraph = styled.p`
     color: #1b1464;
 
     width: 70%;
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
 `
 
-const BulletList = styled.div`
+export const BulletList = styled.div`
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -497,16 +501,67 @@ const BulletList = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-    position: relative;
-    width: 400px;
-    height: 500px;
-    object-fit: cover;
+    background-image: ${(props) => `url(${props.src})`};
+    background-position: 50% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+    width: 482.79px;
+    height: 341px;
+    border-radius: 188.375px 0px 188.375px 0px;
 
-    justify-self: center;
+    @media screen and (min-width: 1200px) {
+        transform: translate(-2.5%, -16%);
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 493.79px;
+        height: 348.43px;
+        background-position: 50% 50%;
+    }
+    @media screen and (min-width: 2100px) {
+        width: 493.79px;
+        height: 348.43px;
+        background-position: 50% 40%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 400px;
+        height: 300px;
+        transform: translate(-2.5%, -18%);
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 400px;
+        height: 300px;
+    }
 
     @media screen and (max-width: 500px) {
-        width: 300px;
-        height: 400px;
+        width: 350px;
+        height: 250px;
+        transform: translate(-2.5%, -22%);
+    }
+`
+
+export const BackgroundColor = styled.div`
+    width: 493.79px;
+    height: 348.43px;
+    background: ${(props) => props.color};
+    border-radius: 188.375px 0px 188.375px 0px;
+
+    @media screen and (max-width: 1200px) {
+        width: 400px;
+        height: 300px;
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 400px;
+        height: 300px;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 350px;
+        height: 250px;
     }
 `
 
@@ -559,5 +614,82 @@ export const Feature = styled.div`
         @media screen and (max-width: 465px) {
             font-size: 20px;
         }
+    }
+`
+
+export const SectionImage = styled.div`
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 1440px;
+
+    .text-content {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        gap: 2rem;
+
+        h1 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 38px;
+            /* or 140% */
+
+            letter-spacing: 0.327px;
+
+            color: #1b1464;
+
+            @media screen and (min-width: 768px) {
+                font-size: 25px;
+                line-height: 38px;
+            }
+            @media screen and (min-width: 1024px) {
+                font-size: 36px;
+            }
+        }
+
+        p {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 154.15%;
+            /* or 25px */
+
+            color: #1b1464;
+        }
+
+        @media screen and (min-width: 1024px) {
+            width: 50%;
+        }
+        @media screen and (min-width: 1200px) {
+        }
+        @media screen and (min-width: 1440px) {
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        flex-flow: column;
+        gap: 3rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        gap: 3rem;
+
+        flex-flow: column;
+    }
+    @media screen and (min-width: 1024px) {
+        flex-flow: row;
+        gap: 3rem;
+    }
+    @media screen and (min-width: 1200px) {
+        flex-flow: row;
+    }
+    @media screen and (min-width: 1440px) {
+        flex-flow: row;
     }
 `

@@ -47,14 +47,6 @@ const useStyles = createStyles((theme) => ({
         position: 'fixed',
         zIndex: 20,
         boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.09)',
-
-        '@media screen and (max-width: 768px)': {
-            padding: '0.75rem',
-        },
-
-        '@media screen and (min-width: 1024px)': {
-            padding: '0rem 1%',
-        },
     },
 
     inner: {
@@ -340,9 +332,9 @@ export default function HeaderMegaMenu() {
     ))
 
     return (
-        <Box mb={120}>
+        <Box mb={100}>
             <Header
-                height={120}
+                height={100}
                 className={classes.root}
                 fixed
             >

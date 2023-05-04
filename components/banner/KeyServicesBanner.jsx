@@ -31,6 +31,10 @@ const KeyServicesWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+
+    @media screen and (max-width: 1200px) {
+        padding: 2rem;
+    }
 `
 
 const KeyServicesHeader = styled.div`
@@ -74,5 +78,5 @@ const KeyServices = styled.div`
     justify-content: center;
     padding: 3% 6%;
 
-    min-width: 1200px;
+    max-width: 1200px;
 `
