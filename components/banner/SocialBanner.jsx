@@ -78,5 +78,6 @@ const SocialBannerContainer = styled.div`
     .social-icon {
         display: flex;
         gap: 10px;
+        cursor: pointer;
     }
 `

@@ -374,7 +374,10 @@ export default function HeaderMegaMenu() {
                     className={classes.inner}
                     fluid
                 >
-                    <Group sx={{ height: '100%' }}>
+                    <Group
+                        sx={{ height: '100%' }}
+                        spacing={130}
+                    >
                         <Link
                             href='/'
                             locale={router.locale}
@@ -445,10 +448,6 @@ export default function HeaderMegaMenu() {
                                                 >
                                                     {t('business')}
                                                 </Box>
-                                                <IconChevronDown
-                                                    size={16}
-                                                    color={theme.fn.primaryColor()}
-                                                />
                                             </Center>
                                         </Link>
                                     </HoverCard.Target>
@@ -580,10 +579,6 @@ export default function HeaderMegaMenu() {
                                                 >
                                                     {t('tax')}
                                                 </Box>
-                                                <IconChevronDown
-                                                    size={16}
-                                                    color={theme.fn.primaryColor()}
-                                                />
                                             </Center>
                                         </Text>
                                     </HoverCard.Target>

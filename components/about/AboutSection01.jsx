@@ -70,7 +70,7 @@ const AboutSection01 = () => {
                             <span>{t('ourStory')}</span>
                         </Tag>
 
-                        <SloganSection01
+                        <SloganAbout01
                             initial={{ y: 200, opacity: 0.5 }}
                             animate={{
                                 y: 0,
@@ -83,7 +83,7 @@ const AboutSection01 = () => {
                             }}
                         >
                             {t('whoAreWe')}
-                        </SloganSection01>
+                        </SloganAbout01>
                         <motion.div>
                             <HeadingSection01>
                                 <h2>{t('story1')}</h2>
@@ -229,7 +229,6 @@ const AboutSection01Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 2rem;
 `
 
 export const SloganAbout = styled(motion.h1)`
@@ -244,14 +243,36 @@ export const SloganAbout = styled(motion.h1)`
 
     @media screen and (min-width: 768px) {
         font-size: 46px;
-        width: 40rem;
     }
     @media screen and (min-width: 1024px) {
         font-size: 52px;
-        width: 40rem;
     }
     @media screen and (min-width: 1440px) {
         font-size: 58px;
+    }
+`
+
+const SloganAbout01 = styled.h1`
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+    color: #1b1464;
+    letter-spacing: 0.327px;
+    font-size: 25px;
+    line-height: 36px;
+
+    @media screen and (max-width: 465px) {
+        font-size: 25px;
+        line-height: 36px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        font-size: 35px;
+        line-height: 55px;
+    }
+    @media screen and (min-width: 1200px) {
+        font-size: 40px;
+        line-height: 60px;
     }
 `
 

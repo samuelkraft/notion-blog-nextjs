@@ -23,7 +23,7 @@ import Head from 'next/head'
 
 import InfiniteSlider from '../../components/slider/InfiniteSlider'
 import DetailServiceBanner from '../../components/banner/DetailServiceBanner'
-import adminServicesDetailBanner from '../../images/admin_detail_banner.png'
+import FRBanner from '../../images/fr_banner.png'
 import SocialBanner from '../../components/banner/SocialBanner'
 import JoinOurTeamBanner from '../../components/banner/JoinOurTeamBanner'
 import KeyServicesBanner from '../../components/banner/KeyServicesBanner'
@@ -107,7 +107,8 @@ const FrenchTax = ({}) => {
 
                 <DetailServiceBanner
                     title={t('section1_title')}
-                    coverImage={adminServicesDetailBanner}
+                    coverImage={FRBanner}
+                    coverImageMobile='/fr.jpg'
                     textContent={
                         <>
                             <h3>

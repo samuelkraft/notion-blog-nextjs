@@ -12,7 +12,7 @@ import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 
 import DetailServiceBanner from '../../../components/banner/DetailServiceBanner'
-import adminServicesDetailBanner from '../../../images/admin_detail_banner.png'
+import auditImageBanner from '../../../images/audit_banner.png'
 import SocialBanner from '../../../components/banner/SocialBanner'
 import JoinOurTeamBanner from '../../../components/banner/JoinOurTeamBanner'
 import KeyServicesBanner from '../../../components/banner/KeyServicesBanner'
@@ -109,7 +109,8 @@ const AuditServices = ({}) => {
 
                 <DetailServiceBanner
                     title={t('section1_title')}
-                    coverImage={adminServicesDetailBanner}
+                    coverImage={auditImageBanner}
+                    coverImageMobile='/audit.jpg'
                     textContent={
                         <>
                             <h3>
@@ -215,8 +216,8 @@ const AuditServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <SectionImage>
@@ -232,8 +233,8 @@ const AuditServices = ({}) => {
                             </p>
                         </div>
                     </SectionImage>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer gray>
                     <TextContent>
@@ -310,28 +311,28 @@ const AuditServices = ({}) => {
                             {t('section5_text2')}
                         </Paragraph>
 
-                        <Paragraph>
-                            <Paragraph>
+                        <BulletList>
+                            <li>
                                 {t('section5_bullet1')}
                                 <b>{t('section5_bullet1_2')}</b>
                                 {t('section5_bullet1_3')}
-                            </Paragraph>
+                            </li>
 
-                            <Paragraph>
+                            <li>
                                 {t('section5_bullet2')}
                                 <b>{t('section5_bullet2_2')}</b>
                                 {t('section5_bullet2_3')}
-                            </Paragraph>
+                            </li>
 
-                            <Paragraph>
+                            <li>
                                 {t('section5_bullet3')}
                                 <b>{t('section5_bullet3_2')}</b>
                                 {t('section5_bullet3_3')}
-                            </Paragraph>
-                        </Paragraph>
+                            </li>
+                        </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
                 <SocialBanner />
                 <Footer />
             </motion.div>

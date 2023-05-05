@@ -11,7 +11,7 @@ import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 
 import DetailServiceBanner from '../../../components/banner/DetailServiceBanner'
-import adminServicesDetailBanner from '../../../images/admin_detail_banner.png'
+import comptableBanner from '../../../images/comptable_banner.png'
 import SocialBanner from '../../../components/banner/SocialBanner'
 import JoinOurTeamBanner from '../../../components/banner/JoinOurTeamBanner'
 import KeyServicesBanner from '../../../components/banner/KeyServicesBanner'
@@ -111,7 +111,8 @@ const AccountingServices = ({}) => {
 
                 <DetailServiceBanner
                     title={t('section1_title')}
-                    coverImage={adminServicesDetailBanner}
+                    coverImage={comptableBanner}
+                    coverImageMobile='/comptable.jpg'
                     textContent={
                         <>
                             <h3>
@@ -244,9 +245,9 @@ const AccountingServices = ({}) => {
                                 {t('section3_bullet11_2')}
                             </li>
                         </BulletList>
-                        <Divider />
                     </TextContent>
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <SectionImage>
@@ -261,8 +262,8 @@ const AccountingServices = ({}) => {
                             </p>
                         </div>
                     </SectionImage>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <TextContent>
@@ -441,9 +442,8 @@ const AccountingServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
-
+                <Divider />
                 <SocialBanner />
                 <Footer />
             </motion.div>

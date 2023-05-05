@@ -44,7 +44,7 @@ const HomeSection01 = () => {
                 }}
                 ref={ref}
             >
-                <HomeSection01Wrapper>
+                <Wrapper01>
                     <motion.div
                         className='text-content'
                         variants={titleAnim}
@@ -54,7 +54,7 @@ const HomeSection01 = () => {
                         <Tag>
                             <span>{t('whyUs')}</span>
                         </Tag>
-                        <SloganSection01
+                        <Slogan01
                             initial={{ y: 200, opacity: 0.5 }}
                             animate={{
                                 y: 0,
@@ -67,7 +67,7 @@ const HomeSection01 = () => {
                             }}
                         >
                             {t('section01_title')}
-                        </SloganSection01>
+                        </Slogan01>
                         <motion.div
                             initial={{ y: 200, opacity: 0.5 }}
                             animate={{
@@ -162,7 +162,7 @@ const HomeSection01 = () => {
                         </FeaturesCard>
                         <BackgroundBlur />
                     </FeaturesCardContainer>
-                </HomeSection01Wrapper>
+                </Wrapper01>
                 <AbsoluteBanner>
                     <div className='text-content'>
                         <p>
@@ -199,7 +199,6 @@ const Background = styled.div`
 `
 
 export const HomeSection01Container = styled(motion.div)`
-    padding: 2rem;
     max-width: 1200px;
     min-height: 100vh;
     margin: 0 auto;
@@ -214,10 +213,51 @@ export const HomeSection01Container = styled(motion.div)`
     }
 `
 
-export const HomeSection01Wrapper = styled(HeroWrapper)``
+export const HomeSection01Wrapper = styled(HeroWrapper)`
+    @media screen and (min-width: 1200px) {
+        flex-flow: row;
+        gap: 2rem;
+    }
+    @media screen and (min-width: 1440px) {
+        flex-flow: row;
+        gap: 4rem;
+    }
+`
+
+const Wrapper01 = styled(motion.div)`
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .text-content {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 465px) {
+        flex-flow: column;
+    }
+
+    @media screen and (min-width: 768px) {
+        flex-flow: column;
+    }
+    @media screen and (min-width: 1024px) {
+        flex-flow: row;
+    }
+    @media screen and (min-width: 1200px) {
+        flex-flow: row;
+        gap: 2rem;
+    }
+    @media screen and (min-width: 1440px) {
+        flex-flow: row;
+        gap: 11rem;
+    }
+`
 
 export const HeadingSection01 = styled(Heading)`
-    margin-top: 2rem;
+    margin-top: 25px;
     h2 {
         font-family: 'Gilroy';
         font-style: normal;
@@ -249,7 +289,22 @@ export const SloganSection01 = styled(Slogan)`
     @media screen and (min-width: 1200px) {
         font-size: 40px;
         line-height: 60px;
-        width: 37rem;
+        width: 39rem;
+    }
+`
+
+const Slogan01 = styled(Slogan)`
+    color: #1b1464;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 35px;
+        line-height: 55px;
+        width: 28rem;
+    }
+    @media screen and (min-width: 1200px) {
+        font-size: 40px;
+        line-height: 60px;
+        width: 30rem;
     }
 `
 

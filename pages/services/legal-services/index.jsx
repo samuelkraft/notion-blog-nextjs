@@ -10,7 +10,7 @@ import { pageAnimation } from '../../../lib/animation'
 import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 import DetailServiceBanner from '../../../components/banner/DetailServiceBanner'
-import adminServicesDetailBanner from '../../../images/admin_detail_banner.png'
+import legalBanner from '../../../images/legal_banner.png'
 import SocialBanner from '../../../components/banner/SocialBanner'
 import JoinOurTeamBanner from '../../../components/banner/JoinOurTeamBanner'
 import KeyServicesBanner from '../../../components/banner/KeyServicesBanner'
@@ -108,7 +108,8 @@ const LegalServices = ({}) => {
 
                 <DetailServiceBanner
                     title={t('section1_title')}
-                    coverImage={adminServicesDetailBanner}
+                    coverImage={legalBanner}
+                    coverImageMobile='/legal.jpg'
                     textContent={
                         <>
                             <h3>
@@ -242,8 +243,8 @@ const LegalServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <SectionImage>
@@ -258,8 +259,8 @@ const LegalServices = ({}) => {
                             </p>
                         </div>
                     </SectionImage>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <TextContent>
@@ -378,8 +379,8 @@ const LegalServices = ({}) => {
                             {t('section5_text6')}
                         </Paragraph>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
                 <SocialBanner />
                 <Footer />
             </motion.div>

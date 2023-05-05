@@ -99,6 +99,7 @@ const AdministritiveServices = ({}) => {
                 <DetailServiceBanner
                     title={t('section1_title')}
                     coverImage={adminServicesDetailBanner}
+                    coverImageMobile='/adminServices.png'
                     textContent={
                         <>
                             <h3>{t('section1_text1')}</h3>
@@ -154,11 +155,11 @@ const AdministritiveServices = ({}) => {
                 <TextContentContainer>
                     <TextContent>
                         <Slogan>{t('section4_title')}</Slogan>
-                        <BulletList>
-                            <li>
-                                <b>{t('section4_text1')}</b>
-                            </li>
+                        <Paragraph>
+                            <b>{t('section4_text1')}</b>
+                        </Paragraph>
 
+                        <BulletList>
                             <li>
                                 {t('section4_bullet1')}
                                 <b>{t('section4_bold1')}</b>
@@ -193,9 +194,8 @@ const AdministritiveServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <TextContent>
@@ -246,6 +246,7 @@ const AdministritiveServices = ({}) => {
                         </div>
                     </SectionImage>
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <TextContent>
@@ -305,8 +306,9 @@ const AdministritiveServices = ({}) => {
                             {t('section9_text4')}
                         </Paragraph>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
+
                 <SocialBanner />
                 <Footer />
             </motion.div>
@@ -330,15 +332,14 @@ export { getStaticProps }
 export default AdministritiveServices
 
 export const TextContentContainer = styled.div`
-    min-height: ${(props) => (props.gray ? '60vh' : '50vh')};
-
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin: 3rem auto;
-
+    margin-top: 85px;
+    margin-bottom: 85px;
+    padding: ${(props) => (props.gray ? '85px' : '0px 0px 0px 0px')};
     background: ${(props) => (props.gray ? 'rgba(217, 224, 236, 0.15)' : '')};
     border-radius: ${(props) => (props.gray ? '0px 0px 0px 143px' : '')};
 
@@ -347,49 +348,15 @@ export const TextContentContainer = styled.div`
     }
 `
 
-export const Layout = styled.div`
-    display: flex;
-    flex-flow: column;
-    background: transparent;
-    gap: 3rem;
-    align-items: center;
-    @media screen and (max-width: 465px) {
-        flex-flow: column;
-    }
-
-    @media screen and (min-width: 768px) {
-        font-size: 48px;
-        flex-flow: column;
-    }
-    @media screen and (min-width: 1024px) {
-        font-size: 50px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    @media screen and (min-width: 1440px) {
-        font-size: 52px;
-    }
-`
-
 export const Divider = styled.div`
     height: 1px;
     border: 2px solid #f0f3f7;
-    margin: 3rem auto;
+    margin-top: 85px;
     max-width: 1200px;
     width: 100%;
-`
 
-export const LayoutReversed = styled(Layout)`
-    flex-flow: column-reverse;
-`
-
-export const LayoutColumn = styled.div`
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: start;
-    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 `
 
 export const TextContent = styled.div`
@@ -398,7 +365,7 @@ export const TextContent = styled.div`
     justify-content: start;
     align-items: start;
     align-content: start;
-    gap: 2rem;
+    gap: 18.84px;
     max-width: 1200px;
 `
 
@@ -414,14 +381,21 @@ export const Slogan = styled(motion.h1)`
 
     color: #1b1464;
 
-    width: 65%;
+    width: 70%;
 
     @media screen and (min-width: 768px) {
         font-size: 25px;
         line-height: 38px;
     }
     @media screen and (min-width: 1024px) {
-        font-size: 36px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 56px;
+        /* or 140% */
+
+        letter-spacing: 0.327px;
     }
 
     @media screen and (max-width: 767px) {
@@ -459,9 +433,9 @@ export const Subtitle = styled.h1`
 export const Heading = styled.div`
     font-family: 'Gilroy';
     font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+    letter-spacing: 0.08em;
 
     color: #1b1464;
 `
@@ -471,7 +445,7 @@ export const Paragraph = styled.p`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 154.15%;
+    line-height: 24.66px;
     /* or 25px */
 
     color: #1b1464;
@@ -486,17 +460,19 @@ export const Paragraph = styled.p`
 export const BulletList = styled.div`
     display: flex;
     flex-flow: column;
-    gap: 10px;
+    gap: 2px;
 
     li {
         font-family: 'Gilroy';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 154.15%;
+        line-height: 24.66px;
         /* or 25px */
 
         color: #1b1464;
+
+        margin-left: 10px;
     }
 `
 

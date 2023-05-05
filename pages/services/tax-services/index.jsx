@@ -10,7 +10,7 @@ import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 
 import DetailServiceBanner from '../../../components/banner/DetailServiceBanner'
-import adminServicesDetailBanner from '../../../images/admin_detail_banner.png'
+import fiscaliteBanner from '../../../images/fiscalite_banner.png'
 import SocialBanner from '../../../components/banner/SocialBanner'
 import JoinOurTeamBanner from '../../../components/banner/JoinOurTeamBanner'
 import KeyServicesBanner from '../../../components/banner/KeyServicesBanner'
@@ -107,7 +107,8 @@ const TaxServices = ({}) => {
 
                 <DetailServiceBanner
                     title={t('section1_title')}
-                    coverImage={adminServicesDetailBanner}
+                    coverImage={fiscaliteBanner}
+                    coverImageMobile='/fiscal.jpg'
                     textContent={
                         <>
                             <h3>
@@ -211,8 +212,8 @@ const TaxServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <SectionImage>
@@ -227,8 +228,8 @@ const TaxServices = ({}) => {
                             </p>
                         </div>
                     </SectionImage>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <TextContent>
@@ -251,13 +252,22 @@ const TaxServices = ({}) => {
 
                             <li>{t('section3_bullet6')}</li>
                         </BulletList>
+                    </TextContent>
+                </TextContentContainer>
+
+                <TextContentContainer gray>
+                    <TextContent>
                         <Slogan>{t('section4_title')}</Slogan>
                         <Paragraph>
                             {t('section4_text1')}
                             <b>{t('section4_bold1')}</b>
                             {t('section4_text2')}
                         </Paragraph>
+                    </TextContent>
+                </TextContentContainer>
 
+                <TextContentContainer>
+                    <TextContent>
                         <Slogan>{t('section4_subtitle1')}</Slogan>
 
                         <Paragraph>
@@ -316,8 +326,8 @@ const TaxServices = ({}) => {
                             {t('section5_text6')}
                         </Paragraph>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
                 <SocialBanner />
                 <Footer />
             </motion.div>

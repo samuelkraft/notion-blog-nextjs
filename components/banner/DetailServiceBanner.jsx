@@ -2,7 +2,13 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 
-const DetailServiceBanner = ({ title, textContent, coverImage, color }) => {
+const DetailServiceBanner = ({
+    title,
+    textContent,
+    coverImage,
+    color,
+    coverImageMobile,
+}) => {
     return (
         <DetailServiceBannerWrapper>
             <BackgroundGrey>
@@ -29,7 +35,7 @@ const DetailServiceBanner = ({ title, textContent, coverImage, color }) => {
             </BackgroundBlueMobile>
             <BackgroundServiceMobile color={color} />
 
-            <ImageWrapperMobile src='/adminServices.png' />
+            <ImageWrapperMobile src={coverImageMobile} />
             <TextWrapper>{textContent}</TextWrapper>
         </DetailServiceBannerWrapper>
     )
@@ -101,7 +107,7 @@ const BackgroundBlue = styled.div`
             letter-spacing: 0.327px;
 
             color: #ffffff;
-            width: 45%;
+            width: 52%;
 
             @media screen and (max-width: 1799px) {
                 width: 55%;

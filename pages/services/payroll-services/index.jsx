@@ -13,7 +13,7 @@ import Head from 'next/head'
 import InfiniteSlider from '../../../components/slider/InfiniteSlider'
 
 import DetailServiceBanner from '../../../components/banner/DetailServiceBanner'
-import adminServicesDetailBanner from '../../../images/admin_detail_banner.png'
+import RHBanner from '../../../images/rh_banner.png'
 import SocialBanner from '../../../components/banner/SocialBanner'
 import JoinOurTeamBanner from '../../../components/banner/JoinOurTeamBanner'
 import KeyServicesBanner from '../../../components/banner/KeyServicesBanner'
@@ -112,7 +112,8 @@ const PayrollServices = ({}) => {
 
                 <DetailServiceBanner
                     title={t('section1_title')}
-                    coverImage={adminServicesDetailBanner}
+                    coverImage={RHBanner}
+                    coverImageMobile='/rh.jpg'
                     textContent={
                         <>
                             <h3>
@@ -129,12 +130,12 @@ const PayrollServices = ({}) => {
                     icon={embauche}
                     textContent={
                         <>
-                            <Paragraph>{t('feature1_')}</Paragraph>
-                            <Paragraph>{t('feature2_')}</Paragraph>
-                            <Paragraph>{t('feature3_')}</Paragraph>
-                            <Paragraph>{t('feature4_')}</Paragraph>
-                            <Paragraph>{t('feature5')}</Paragraph>
-                            <Paragraph>{t('feature6')}</Paragraph>
+                            <Heading>{t('feature1_')}</Heading>
+                            <Heading>{t('feature2_')}</Heading>
+                            <Heading>{t('feature3_')}</Heading>
+                            <Heading>{t('feature4_')}</Heading>
+                            <Heading>{t('feature5')}</Heading>
+                            <Heading>{t('feature6')}</Heading>
                         </>
                     }
                 />
@@ -237,8 +238,8 @@ const PayrollServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <SectionImage>
@@ -254,6 +255,7 @@ const PayrollServices = ({}) => {
                         </div>
                     </SectionImage>
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer>
                     <TextContent>
@@ -283,8 +285,8 @@ const PayrollServices = ({}) => {
                             <li>{t('section4_bullet10')}</li>
                         </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
 
                 <TextContentContainer gray>
                     <TextContent>
@@ -363,8 +365,8 @@ const PayrollServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-                    <Divider />
                 </TextContentContainer>
+                <Divider />
                 <SocialBanner />
                 <Footer />
             </motion.div>

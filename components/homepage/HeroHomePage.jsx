@@ -207,7 +207,7 @@ export const HeadingContainer = styled(motion.div)`
 `
 
 export const Heading = styled.div`
-    margin-top: 3rem;
+    margin-top: 25px;
     display: flex;
     flex-flow: column;
     justify-content: start;
