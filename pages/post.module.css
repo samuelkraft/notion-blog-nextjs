@@ -1,139 +1,170 @@
 .container {
-	padding: 0 20px;
-	max-width: 1000px;
-	margin: 0 auto;
-	line-height: 1.5;
-	color: #1b1464;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: #1b1464;
 }
 
 .container h1 {
-	font-size: 48px;
-	font-family: "AllRoundGothic-Demi";
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 78px;
+
+    letter-spacing: -1.5px;
+
+    color: #1b1464;
 }
 .container h2 {
-	font-size: 36px;
-	font-family: "AllRoundGothic-Demi";
+    font-size: 36px;
+    font-family: 'Poppins';
 }
 .container h3 {
-	font-size: 32px;
-	font-family: "AllRoundGothic-Demi";
+    font-size: 32px;
+    font-family: 'Poppins';
 }
 .container p {
-	font-size: 24px;
-	line-height: 2;
+    font-size: 16px;
+    line-height: 2;
 }
 .container li {
-	font-size: 24px;
-	line-height: 2;
+    font-size: 16px;
+    line-height: 2;
 }
 .container label {
-	font-size: 24px;
-	line-height: 2;
+    font-size: 24px;
+    line-height: 2;
 }
 .container label {
-	font-size: 24px;
-	line-height: 2;
+    font-size: 24px;
+    line-height: 2;
 }
 
 .container img {
-	width: 100%;
-	height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .container figure {
-	margin-left: 0;
-	margin-right: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .container figcaption {
-	opacity: 0.6;
+    opacity: 0.6;
 }
 
 .name {
-	font-size: 48px;
+    font-size: 48px;
 }
 
 .back {
-	margin-top: 20px;
-	font-weight: 500;
-	display: flex;
-	gap: 10px;
-	margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 500;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .code {
-	font-family: monospace;
-	background-color: rgb(242, 242, 242);
-	padding: 2px 4px;
-	border-radius: 2px;
+    font-family: monospace;
+    background-color: rgb(242, 242, 242);
+    padding: 2px 4px;
+    border-radius: 2px;
 }
 
 .italic {
-	font-style: italic;
+    font-style: italic;
 }
 
 .pre {
-	background-color: rgb(242, 242, 242);
-	padding: 2px 4px;
-	margin: 20px 0;
-	line-height: 2.3;
-	border-radius: 12px;
-	overflow: auto;
+    background-color: rgb(242, 242, 242);
+    padding: 2px 4px;
+    margin: 20px 0;
+    line-height: 2.3;
+    border-radius: 12px;
+    overflow: auto;
 }
 
 .code_block {
-	padding: 20px;
-	font-family: monospace;
-	display: flex;
-	flex-wrap: wrap;
+    padding: 20px;
+    font-family: monospace;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .file {
-	padding: 2px 4px;
-	text-decoration: none;
+    padding: 2px 4px;
+    text-decoration: none;
 }
 
 .file a {
-	color: inherit;
+    color: inherit;
 }
 
 .file:hover {
-	background: rgba(55, 53, 47, 0.08);
-	cursor: pointer;
-	border-radius: 2px;
+    background: rgba(55, 53, 47, 0.08);
+    cursor: pointer;
+    border-radius: 2px;
 }
 
 .italic {
-	font-style: italic;
+    font-style: italic;
 }
 
 .strikethrough {
-	text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 .underline {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .bookmark {
-	display: block;
-	margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
-	.code {
-		background-color: #f7f7f7;
-	}
-	.file:hover {
-		background: #f7f7f7;
-		cursor: pointer;
-		border-radius: 2px;
-	}
-	.pre {
-		background-color: #f7f7f7;
-	}
+    .code {
+        background-color: #f7f7f7;
+    }
+    .file:hover {
+        background: #f7f7f7;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+    .pre {
+        background-color: #f7f7f7;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 38px;
+    }
+    .container h2 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 34px;
+    }
+    .container h3 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+    }
 }

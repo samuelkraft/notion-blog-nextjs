@@ -371,7 +371,7 @@ export const Layout = styled.div`
     }
 `
 
-const Divider = styled.div`
+export const Divider = styled.div`
     height: 1px;
     border: 2px solid #f0f3f7;
     margin: 3rem auto;
@@ -476,7 +476,7 @@ export const Paragraph = styled.p`
 
     color: #1b1464;
 
-    width: 70%;
+    width: 72%;
 
     @media screen and (max-width: 1200px) {
         width: 100%;

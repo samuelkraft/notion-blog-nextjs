@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
-import linkedin from '../../images/linkedin.svg'
-import instagram from '../../images/instagram.svg'
-import whatsapp from '../../images/whatsapp.svg'
+import fb from '../../images/fb_blue.svg'
+import instagram from '../../images/ig_blue.svg'
+import twitter from '../../images/twitter_blue.svg'
 import { useEffect } from 'react'
 
 const SocialBanner = () => {
@@ -20,20 +20,21 @@ const SocialBanner = () => {
             <h1>{t('followUs')}</h1>
             <div className='social-icon'>
                 <Image
-                    src={linkedin}
+                    src={fb}
                     alt='linkedin'
+                    width={50}
+                    height={50}
+                />
+
+                <Image
+                    src={twitter}
+                    alt='whatsapp'
                     width={50}
                     height={50}
                 />
                 <Image
                     src={instagram}
                     alt='instagram'
-                    width={50}
-                    height={50}
-                />
-                <Image
-                    src={whatsapp}
-                    alt='whatsapp'
                     width={50}
                     height={50}
                 />
@@ -54,8 +55,8 @@ const SocialBannerContainer = styled.div`
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 600;
-        font-size: 40px;
-        line-height: 55px;
+        font-size: 25px;
+        line-height: 36px;
         /* identical to box height, or 138% */
 
         text-align: center;
@@ -76,6 +77,6 @@ const SocialBannerContainer = styled.div`
 
     .social-icon {
         display: flex;
-        gap: 1rem;
+        gap: 10px;
     }
 `

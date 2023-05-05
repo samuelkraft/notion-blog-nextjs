@@ -104,7 +104,7 @@ const BackgroundBlue = styled.div`
             width: 45%;
 
             @media screen and (max-width: 1799px) {
-                width: 50%;
+                width: 55%;
             }
 
             @media screen and (max-width: 1380px) {

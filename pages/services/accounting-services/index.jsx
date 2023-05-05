@@ -23,9 +23,11 @@ import {
     TextContentContainer,
     BackgroundColor,
     Slogan,
-    Heading,
-    BulletList,
     Paragraph,
+    BulletList,
+    ImageWrapper,
+    Heading,
+    Divider,
 } from '../administrative-services'
 
 const AccountingServices = ({}) => {
@@ -144,20 +146,25 @@ const AccountingServices = ({}) => {
                 <TextContentContainer>
                     <TextContent>
                         <Slogan>{t('section2_title')}</Slogan>
-                        <Heading>
+                        <Paragraph>
                             {t('section2_text1')}
                             <b>{t('section2_bold1')}</b>
-                        </Heading>
+                        </Paragraph>
+                    </TextContent>
+                </TextContentContainer>
+
+                <TextContentContainer gray>
+                    <TextContent>
                         <Slogan>{t('section2_subtitle1')}</Slogan>
-                        <Heading>
+                        <Paragraph>
                             {t('section2_text2')}
                             <b>{t('section2_bold2')}</b>
-                        </Heading>
+                        </Paragraph>
 
-                        <Heading>
+                        <Paragraph>
                             <b>{t('section2_bold3')}</b>
                             {t('section2_text3')}
-                        </Heading>
+                        </Paragraph>
                     </TextContent>
                 </TextContentContainer>
 
@@ -237,86 +244,95 @@ const AccountingServices = ({}) => {
                                 {t('section3_bullet11_2')}
                             </li>
                         </BulletList>
+                        <Divider />
                     </TextContent>
                 </TextContentContainer>
 
                 <TextContentContainer>
-                    <div>
-                        <TextContent>
-                            <Slogan>{t('section4_title')}</Slogan>
-                            <Heading>
+                    <SectionImage>
+                        <BackgroundColor color='#0657CF'>
+                            <ImageWrapper src={'/adminServices.png'} />
+                        </BackgroundColor>
+                        <div className='text-content'>
+                            <h1>{t('section4_title')}</h1>
+                            <p>
                                 {t('section4_text1')}
                                 <b>{t('section4_bold1')}</b>
-                            </Heading>
-
-                            <Slogan>{t('section4_subtitle')} </Slogan>
-
-                            <Heading>
-                                <b>{t('section4_bold2')}</b>
-                                {t('section4_text2')}
-                            </Heading>
-                            <BulletList>
-                                <li>
-                                    <b>{t('section4_bullet1')}</b>
-                                    {t('section4_bullet1_2')}
-                                </li>
-
-                                <li>
-                                    <b>{t('section4_bullet2')}</b>
-                                    {t('section4_bullet2_2')}
-                                </li>
-
-                                <li>
-                                    <b>{t('section4_bullet3')}</b>
-                                    {t('section4_bullet3_2')}
-                                </li>
-
-                                <li>
-                                    <b>{t('section4_bullet4')}</b>
-                                </li>
-
-                                <li>
-                                    <b>{t('section4_bullet5')}</b>
-                                    {t('section4_bullet5_2')}
-                                </li>
-
-                                <li>
-                                    <b>{t('section4_bullet6')}</b>
-                                </li>
-
-                                <li>
-                                    <b>{t('section4_bullet7')}</b>
-                                    {t('section4_bullet7_2')}
-                                </li>
-
-                                <li>
-                                    <b>{t('section4_bullet8')}</b>
-                                    {t('section4_bullet8_2')}
-                                </li>
-
-                                <li>
-                                    {t('section4_bullet9')}
-                                    <b> {t('section4_bullet9_2')}</b>
-                                </li>
-                            </BulletList>
-                        </TextContent>
-                    </div>
+                            </p>
+                        </div>
+                    </SectionImage>
+                    <Divider />
                 </TextContentContainer>
 
                 <TextContentContainer>
                     <TextContent>
+                        <Slogan>{t('section4_subtitle')} </Slogan>
+
+                        <Paragraph>
+                            <b>{t('section4_bold2')}</b>
+                            {t('section4_text2')}
+                        </Paragraph>
+                        <BulletList>
+                            <li>
+                                <b>{t('section4_bullet1')}</b>
+                                {t('section4_bullet1_2')}
+                            </li>
+
+                            <li>
+                                <b>{t('section4_bullet2')}</b>
+                                {t('section4_bullet2_2')}
+                            </li>
+
+                            <li>
+                                <b>{t('section4_bullet3')}</b>
+                                {t('section4_bullet3_2')}
+                            </li>
+
+                            <li>
+                                <b>{t('section4_bullet4')}</b>
+                            </li>
+
+                            <li>
+                                <b>{t('section4_bullet5')}</b>
+                                {t('section4_bullet5_2')}
+                            </li>
+
+                            <li>
+                                <b>{t('section4_bullet6')}</b>
+                            </li>
+
+                            <li>
+                                <b>{t('section4_bullet7')}</b>
+                                {t('section4_bullet7_2')}
+                            </li>
+
+                            <li>
+                                <b>{t('section4_bullet8')}</b>
+                                {t('section4_bullet8_2')}
+                            </li>
+
+                            <li>
+                                {t('section4_bullet9')}
+                                <b> {t('section4_bullet9_2')}</b>
+                            </li>
+                        </BulletList>
+                    </TextContent>
+                </TextContentContainer>
+
+                <TextContentContainer gray>
+                    <TextContent>
                         <Slogan>{t('section5_title')}</Slogan>
 
-                        <Heading>
+                        <Paragraph>
                             <b>{t('section5_bold1')}</b>
                             {t('section5_text1')}
-                        </Heading>
+                        </Paragraph>
 
-                        <Heading>
+                        <Paragraph>
                             {t('section5_text2')}
                             <b>{t('section5_bold2')}</b>
                             {t('section5_text3')}
-                        </Heading>
+                        </Paragraph>
                     </TextContent>
                 </TextContentContainer>
 
@@ -324,93 +340,110 @@ const AccountingServices = ({}) => {
                     <TextContent>
                         <Slogan>{t('section6_title')}</Slogan>
 
-                        <Heading>
+                        <Paragraph>
                             {t('section6_text1')}
                             <b>{t('section6_bold1')}</b>
-                        </Heading>
+                        </Paragraph>
+                    </TextContent>
+                </TextContentContainer>
 
+                <TextContentContainer gray>
+                    <TextContent>
                         <Slogan>{t('section6_subtitle3')}</Slogan>
 
-                        <Heading>{t('section6_text6')}</Heading>
+                        <Paragraph>{t('section6_text6')}</Paragraph>
 
-                        <Heading>
-                            <Heading>
+                        <BulletList>
+                            <li>
                                 <b>{t('section6_bullet3')}</b>
                                 {t('section6_bullet3_2')}
-                            </Heading>
+                            </li>
 
-                            <Heading>
+                            <li>
                                 <b>{t('section6_bullet4')}</b>
                                 {t('section6_bullet4_2')}
-                            </Heading>
+                            </li>
 
-                            <Heading>
+                            <li>
                                 <b>{t('section6_bullet5')}</b>
-                            </Heading>
-                        </Heading>
+                            </li>
+                        </BulletList>
+                    </TextContent>
+                </TextContentContainer>
 
+                <TextContentContainer>
+                    <TextContent>
                         <Slogan>{t('section6_subtitle1')}</Slogan>
 
-                        <Heading>
+                        <Paragraph>
                             <b>{t('section6_bold2')}</b>
-                        </Heading>
+                        </Paragraph>
 
-                        <Heading>
+                        <Paragraph>
                             {t('section6_text2')}
                             <b>{t('section6_bold3')}</b>
-                        </Heading>
-                        <Heading>
+                        </Paragraph>
+                        <Paragraph>
                             <b>{t('section6_bold4')}</b>
                             {t('section6_text3')}
-                        </Heading>
-
+                        </Paragraph>
+                    </TextContent>
+                </TextContentContainer>
+                <TextContentContainer>
+                    <TextContent>
                         <Slogan>{t('section6_subtitle2')}</Slogan>
 
-                        <Heading>
+                        <Paragraph>
                             {t('section6_text4')}
                             <b>{t('section6_bold5')}</b>
                             {t('section6_text5')}
-                        </Heading>
+                        </Paragraph>
 
-                        <Heading>
-                            <Heading>
+                        <BulletList>
+                            <li>
                                 <b>{t('section6_bullet1')}</b>
                                 {t('section6_bullet1_2')}
-                            </Heading>
+                            </li>
 
-                            <Heading>
+                            <li>
                                 <b>{t('section6_bullet2')}</b>
                                 {t('section6_bullet2_2')}
-                            </Heading>
-                        </Heading>
+                            </li>
+                        </BulletList>
+                    </TextContent>
+                </TextContentContainer>
 
+                <TextContentContainer>
+                    <TextContent>
                         <Slogan>{t('section7_title')}</Slogan>
 
-                        <Heading>
+                        <Paragraph>
                             {t('section7_text1')}
                             <b>{t('section7_bold1')}</b>
                             {t('section7_text2')}
-                        </Heading>
+                        </Paragraph>
 
-                        <Heading>
-                            <Heading>
+                        <BulletList>
+                            <li>
                                 {t('section7_bullet1')}
                                 <b>{t('section6_bullet1_2')}</b>
-                            </Heading>
+                            </li>
 
-                            <Heading>
+                            <li>
                                 {t('section7_bullet2')}
                                 <b>{t('section7_bullet2_2')}</b>
-                            </Heading>
+                            </li>
 
-                            <Heading>
+                            <li>
                                 {t('section7_bullet3')}
                                 <b>{t('section7_bullet3_2')}</b>
                                 {t('section7_bullet3_3')}
-                            </Heading>
-                        </Heading>
+                            </li>
+                        </BulletList>
                     </TextContent>
+                    <Divider />
                 </TextContentContainer>
+
                 <SocialBanner />
                 <Footer />
             </motion.div>
