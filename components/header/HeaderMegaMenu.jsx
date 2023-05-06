@@ -455,10 +455,7 @@ export default function HeaderMegaMenu() {
                                     <HoverCard.Dropdown
                                         sx={{ overflow: 'hidden' }}
                                     >
-                                        <Group
-                                            position='apart'
-                                            px='md'
-                                        >
+                                        <Group position='apart'>
                                             <Text
                                                 weight={500}
                                                 style={{

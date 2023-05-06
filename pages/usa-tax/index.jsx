@@ -297,7 +297,7 @@ const UsaTax = ({}) => {
                 <TextContentContainer>
                     <SectionImage>
                         <BackgroundColor color='#0657CF'>
-                            <ImageWrapper src={'/adminServices.png'} />
+                            <ImageWrapper src={'/usa.jpg'} />
                         </BackgroundColor>
                         <div className='text-content'>
                             <h1>{t('section4_title')}</h1>

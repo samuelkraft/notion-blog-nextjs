@@ -249,7 +249,7 @@ const LegalServices = ({}) => {
                 <TextContentContainer>
                     <SectionImage>
                         <BackgroundColor color='#FFC834'>
-                            <ImageWrapper src={'/adminServices.png'} />
+                            <ImageWrapper src={'/legal.jpg'} />
                         </BackgroundColor>
                         <div className='text-content'>
                             <h1>{t('section3_title')}</h1>

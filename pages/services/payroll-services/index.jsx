@@ -244,7 +244,7 @@ const PayrollServices = ({}) => {
                 <TextContentContainer>
                     <SectionImage>
                         <BackgroundColor color='#55CEE1'>
-                            <ImageWrapper src={'/adminServices.png'} />
+                            <ImageWrapper src={'/rh.jpg'} />
                         </BackgroundColor>
                         <div className='text-content'>
                             <h1>{t('section4_title')}</h1>

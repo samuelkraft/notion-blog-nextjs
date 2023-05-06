@@ -344,7 +344,7 @@ export const TextContentContainer = styled.div`
     border-radius: ${(props) => (props.gray ? '0px 0px 0px 143px' : '')};
 
     @media screen and (max-width: 1200px) {
-        padding: 0 2rem;
+        padding: ${(props) => (props.gray ? '8rem 1.5rem' : '0 1.5rem')};
     }
 `
 
@@ -357,6 +357,10 @@ export const Divider = styled.div`
 
     margin-left: auto;
     margin-right: auto;
+
+    @media screen and (max-width: 1200px) {
+        width: 90%;
+    }
 `
 
 export const TextContent = styled.div`

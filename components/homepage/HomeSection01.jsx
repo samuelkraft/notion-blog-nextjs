@@ -16,6 +16,7 @@ import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import { RoundedButton } from './HeroHomePage'
 import qualite from '../../images/qualite.svg'
+import Link from 'next/link'
 
 const HomeSection01 = () => {
     const { t, i18n } = useTranslation('common', {
@@ -106,60 +107,72 @@ const HomeSection01 = () => {
                         </motion.div>
                     </motion.div>
                     <FeaturesCardContainer>
-                        <FeaturesCard>
-                            <Image
-                                src={comptable}
-                                alt='comptable_dedie'
-                            />
-                            <div className='card_text-content'>
-                                {t('comptable_dedie')}
-                            </div>
-                        </FeaturesCard>
-                        <FeaturesCard>
-                            <Image
-                                src={papier}
-                                alt='administrativeServices'
-                            />
-                            <div className='card_text-content'>
-                                {t('administrativeServices')}
-                            </div>
-                        </FeaturesCard>
-                        <FeaturesCard2>
-                            <Image
-                                src={embauche}
-                                alt='expertiseRH'
-                            />
-                            <div className='card_text-content'>
-                                {t('expertiseRH')}
-                            </div>
-                        </FeaturesCard2>
-                        <FeaturesCard2>
-                            <Image
-                                src={teamwork}
-                                alt='conseilJuridique'
-                            />
-                            <div className='card_text-content'>
-                                {t('conseilJuridique')}
-                            </div>
-                        </FeaturesCard2>
-                        <FeaturesCard>
-                            <Image
-                                src={fiscal}
-                                alt='conseillerFiscal'
-                            />
-                            <div className='card_text-content'>
-                                {t('conseillerFiscal')}
-                            </div>
-                        </FeaturesCard>
-                        <FeaturesCard>
-                            <Image
-                                src={audit}
-                                alt='auditServices'
-                            />
-                            <div className='card_text-content'>
-                                {t('auditServices')}
-                            </div>
-                        </FeaturesCard>
+                        <Link href='/services/accounting-services'>
+                            <FeaturesCard>
+                                <Image
+                                    src={comptable}
+                                    alt='comptable_dedie'
+                                />
+                                <div className='card_text-content'>
+                                    {t('comptable_dedie')}
+                                </div>
+                            </FeaturesCard>
+                        </Link>
+                        <Link href='/services/administrative-services'>
+                            <FeaturesCard>
+                                <Image
+                                    src={papier}
+                                    alt='administrativeServices'
+                                />
+                                <div className='card_text-content'>
+                                    {t('administrativeServices')}
+                                </div>
+                            </FeaturesCard>
+                        </Link>
+                        <Link href='/services/payroll-services'>
+                            <FeaturesCard2>
+                                <Image
+                                    src={embauche}
+                                    alt='expertiseRH'
+                                />
+                                <div className='card_text-content'>
+                                    {t('expertiseRH')}
+                                </div>
+                            </FeaturesCard2>
+                        </Link>
+                        <Link href='/services/legal-services'>
+                            <FeaturesCard2>
+                                <Image
+                                    src={teamwork}
+                                    alt='conseilJuridique'
+                                />
+                                <div className='card_text-content'>
+                                    {t('conseilJuridique')}
+                                </div>
+                            </FeaturesCard2>
+                        </Link>
+                        <Link href='/services/tax-services'>
+                            <FeaturesCard>
+                                <Image
+                                    src={fiscal}
+                                    alt='conseillerFiscal'
+                                />
+                                <div className='card_text-content'>
+                                    {t('conseillerFiscal')}
+                                </div>
+                            </FeaturesCard>
+                        </Link>
+                        <Link href='/services/audit-services'>
+                            <FeaturesCard>
+                                <Image
+                                    src={audit}
+                                    alt='auditServices'
+                                />
+                                <div className='card_text-content'>
+                                    {t('auditServices')}
+                                </div>
+                            </FeaturesCard>
+                        </Link>
                         <BackgroundBlur />
                     </FeaturesCardContainer>
                 </Wrapper01>

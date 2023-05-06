@@ -231,11 +231,11 @@ const FrenchTax = ({}) => {
                             </li>
                         </BulletList>
 
-                        <li>
+                        <Paragraph>
                             {t('section2_text10')}
                             <b>{t('section2_bold6')}</b>
                             {t('section2_text11')}
-                        </li>
+                        </Paragraph>
 
                         <BulletList>
                             <li>{t('section2_bullet9')}</li>
@@ -253,7 +253,7 @@ const FrenchTax = ({}) => {
                 <TextContentContainer>
                     <SectionImage>
                         <BackgroundColor color='#0657CF'>
-                            <ImageWrapper src={'/adminServices.png'} />
+                            <ImageWrapper src={'/fr.jpg'} />
                         </BackgroundColor>
                         <div className='text-content'>
                             <h1>{t('section3_title')}</h1>

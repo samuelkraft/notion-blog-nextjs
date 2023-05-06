@@ -222,7 +222,7 @@ const AuditServices = ({}) => {
                 <TextContentContainer>
                     <SectionImage>
                         <BackgroundColor color='#06CF62'>
-                            <ImageWrapper src={'/adminServices.png'} />
+                            <ImageWrapper src={'/audit.jpg'} />
                         </BackgroundColor>
                         <div className='text-content'>
                             <h1>{t('section3_title')}</h1>

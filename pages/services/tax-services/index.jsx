@@ -218,7 +218,7 @@ const TaxServices = ({}) => {
                 <TextContentContainer>
                     <SectionImage>
                         <BackgroundColor color='#FE6D34'>
-                            <ImageWrapper src={'/adminServices.png'} />
+                            <ImageWrapper src={'/fiscal.jpg'} />
                         </BackgroundColor>
                         <div className='text-content'>
                             <h1>{t('section3_title')}</h1>
