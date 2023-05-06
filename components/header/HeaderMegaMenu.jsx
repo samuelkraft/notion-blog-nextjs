@@ -16,6 +16,7 @@ import {
     Collapse,
     ScrollArea,
     Container,
+    Stack,
 } from '@mantine/core'
 
 import { useDisclosure } from '@mantine/hooks'
@@ -29,6 +30,7 @@ import {
     IconPigMoney,
     IconEye,
     IconCoinEuro,
+    IconX,
 } from '@tabler/icons'
 
 import { useTranslation } from 'next-i18next'
@@ -41,6 +43,8 @@ import i18nextConfig from '../../next-i18next.config'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import styled from 'styled-components'
+
+import { RoundedButton } from '../homepage/HeroHomePage'
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -74,6 +78,20 @@ const useStyles = createStyles((theme) => ({
             theme.colorScheme === 'dark'
                 ? theme.colors.dark[0]
                 : theme.colors.gray[9],
+        fontSize: '16px',
+        fontWeight: 500,
+    },
+
+    linkMobile: {
+        display: 'block',
+        lineHeight: '19px',
+        padding: '8px 12px',
+        letterSpacing: '0.327px',
+        borderRadius: theme.radius.sm,
+        textDecoration: 'none',
+        cursor: 'pointer',
+        fontFamily: "'Gilroy', sans-serif",
+        color: '#1B1464',
         fontSize: '16px',
         fontWeight: 500,
     },
@@ -711,13 +729,22 @@ export default function HeaderMegaMenu() {
                 opened={drawerOpened}
                 onClose={closeDrawer}
                 size='100%'
-                padding='md'
+                styles={(theme) => ({
+                    closeButton: {
+                        color: '#0657CF',
+                    },
+
+                    header: {
+                        boxShadow: ' 0px 4px 13px rgba(0, 0, 0, 0.07)',
+                        padding: '0 20px',
+                    },
+                })}
                 title={
                     <Group
                         className={classes.hiddenDesktop}
                         onClick={closeDrawer}
                         position='apart'
-                        spacing={10}
+                        spacing={60}
                     >
                         <Link
                             href='/'
@@ -744,102 +771,99 @@ export default function HeaderMegaMenu() {
                     sx={{ height: 'calc(100vh - 60px)' }}
                     mx='-md'
                 >
-                    <Divider
-                        my='sm'
-                        color={
-                            theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'
-                        }
-                    />
+                    <Stack
+                        spacing={37}
+                        px={25}
+                    >
+                        <Link
+                            href='/about'
+                            className={classes.linkMobile}
+                            onClick={(e) => {
+                                handlePreventRefreshOnSameLink(e, '/about/')
+                                closeDrawer()
+                            }}
+                            locale={router.locale}
+                        >
+                            {t('cabinet')}
+                        </Link>
+                        <UnstyledButton
+                            className={classes.linkMobile}
+                            onClick={toggleLinks}
+                        >
+                            <Center inline>
+                                <Box
+                                    component='span'
+                                    mr={5}
+                                >
+                                    {t('business')}
+                                </Box>
+                                <IconChevronDown
+                                    size={16}
+                                    color='#1B1464'
+                                />
+                            </Center>
+                        </UnstyledButton>
+                        <Collapse in={linksOpened}>{businessLinks}</Collapse>
 
-                    <Link
-                        href='/about'
-                        className={classes.link}
-                        onClick={(e) => {
-                            handlePreventRefreshOnSameLink(e, '/about/')
-                            closeDrawer()
-                        }}
-                        locale={router.locale}
-                    >
-                        {t('cabinet')}
-                    </Link>
-                    <UnstyledButton
-                        className={classes.link}
-                        onClick={toggleLinks}
-                    >
-                        <Center inline>
-                            <Box
-                                component='span'
-                                mr={5}
-                            >
-                                {t('business')}
-                            </Box>
-                            <IconChevronDown
-                                size={16}
-                                color={theme.fn.primaryColor()}
-                            />
-                        </Center>
-                    </UnstyledButton>
-                    <Collapse in={linksOpened}>{businessLinks}</Collapse>
+                        <UnstyledButton
+                            className={classes.linkMobile}
+                            onClick={toggleLinks}
+                        >
+                            <Center inline>
+                                <Box
+                                    component='span'
+                                    mr={5}
+                                >
+                                    {t('tax')}
+                                </Box>
+                                <IconChevronDown
+                                    size={16}
+                                    color='#1B1464'
+                                />
+                            </Center>
+                        </UnstyledButton>
+                        <Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
+                        <Link
+                            href='/blog'
+                            className={classes.linkMobile}
+                            onClick={(e) => {
+                                handlePreventRefreshOnSameLink(e, '/blog/')
+                                closeDrawer()
+                            }}
+                            locale={router.locale}
+                        >
+                            {t('blog')}
+                        </Link>
+                        <Link
+                            href='/#contact'
+                            className={classes.linkMobile}
+                            onClick={(e) => {
+                                handlePreventRefreshOnSameLink(e, '/#contact')
+                                closeDrawer()
+                            }}
+                            locale={router.locale}
+                        >
+                            {t('contact')}
+                        </Link>
 
-                    <UnstyledButton
-                        className={classes.link}
-                        onClick={toggleLinks}
-                    >
-                        <Center inline>
-                            <Box
-                                component='span'
-                                mr={5}
-                            >
-                                {t('tax')}
-                            </Box>
-                            <IconChevronDown
-                                size={16}
-                                color={theme.fn.primaryColor()}
-                            />
-                        </Center>
-                    </UnstyledButton>
-                    <Collapse in={linksOpened}>{privateTaxLinks}</Collapse>
-                    <Link
-                        href='/blog'
-                        className={classes.link}
-                        onClick={(e) => {
-                            handlePreventRefreshOnSameLink(e, '/blog/')
-                            closeDrawer()
-                        }}
-                        locale={router.locale}
-                    >
-                        {t('blog')}
-                    </Link>
-                    <Link
-                        href='/#contact'
-                        className={classes.link}
-                        onClick={(e) => {
-                            handlePreventRefreshOnSameLink(e, '/#contact')
-                            closeDrawer()
-                        }}
-                        locale={router.locale}
-                    >
-                        {t('contact')}
-                    </Link>
+                        <Link
+                            href='/hiring'
+                            className={classes.linkMobile}
+                            onClick={(e) => {
+                                handlePreventRefreshOnSameLink(e, '/hiring/')
+                                closeDrawer()
+                            }}
+                            locale={router.locale}
+                        >
+                            {t('recrutement')}
+                        </Link>
+                        <div style={{ width: '200px' }}>
+                            <RoundedButton href='/#contact'>
+                                {t('contactUs')}
+                            </RoundedButton>
+                        </div>
+                    </Stack>
 
-                    <Link
-                        href='/hiring'
-                        className={classes.link}
-                        onClick={(e) => {
-                            handlePreventRefreshOnSameLink(e, '/hiring/')
-                            closeDrawer()
-                        }}
-                        locale={router.locale}
-                    >
-                        {t('recrutement')}
-                    </Link>
-
-                    <Divider
-                        my='sm'
-                        color={
-                            theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'
-                        }
-                    />
                     <BackgroundGradient />
                 </ScrollArea>
             </Drawer>
@@ -850,6 +874,6 @@ export default function HeaderMegaMenu() {
 const BackgroundGradient = styled.div`
     background: linear-gradient(92.29deg, #4364f7 0.66%, #1b1464 96.93%);
     border-radius: 84.5491px 0px 0px 0px;
-    height: 30vh;
-    margin-top: 15rem;
+    height: 50vh;
+    margin-top: 100px;
 `

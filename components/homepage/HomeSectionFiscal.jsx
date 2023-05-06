@@ -135,7 +135,7 @@ export const FiscalWrapper = styled(HomeSection01Wrapper)`
     @media screen and (min-width: 1024px) {
         flex-flow: row;
         justify-content: space-between;
-        gap: 6rem;
+        gap: 4rem;
     }
 `
 
@@ -144,6 +144,11 @@ export const ImageWrapperGradient = styled.div`
     width: 300px;
     height: 400px;
     object-fit: cover;
+
+    @media screen and (max-width: 1250px) {
+        width: 480px;
+        height: 580px;
+    }
 
     @media screen and (max-width: 1199px) {
         width: 480px;
@@ -157,11 +162,6 @@ export const ImageWrapperGradient = styled.div`
     @media screen and (max-width: 600px) {
         width: 300px;
         height: 300px;
-    }
-
-    @media screen and (max-width: 1250px) {
-        width: 480px;
-        height: 580px;
     }
 
     @media screen and (min-width: 1250px) {

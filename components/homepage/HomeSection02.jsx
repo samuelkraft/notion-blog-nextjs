@@ -40,7 +40,7 @@ const HomeSection02 = () => {
             }}
             ref={ref}
         >
-            <HomeSection01Wrapper>
+            <HomeSection02Wrapper>
                 <motion.div
                     className='text-content'
                     variants={titleAnim}
@@ -107,12 +107,29 @@ const HomeSection02 = () => {
                 <BackgroundBlue>
                     <ImageWrapper></ImageWrapper>
                 </BackgroundBlue>
-            </HomeSection01Wrapper>
+            </HomeSection02Wrapper>
         </HomeSection01Container>
     )
 }
 
 export default HomeSection02
+
+const HomeSection02Wrapper = styled(HomeSection01Wrapper)`
+    @media screen and (min-width: 1024px) {
+        flex-flow: row;
+        justify-content: space-between;
+        gap: 8rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-flow: row;
+        gap: 2rem;
+    }
+    @media screen and (min-width: 1440px) {
+        flex-flow: row;
+        gap: 4rem;
+    }
+`
 
 const SloganSection02 = styled(SloganSection01)`
     @media screen and (min-width: 1024px) {
@@ -159,6 +176,12 @@ const ImageWrapper = styled.div`
         transform: translate(-5%, -5%);
     }
 
+    @media screen and (min-width: 1024px) {
+        width: 375.2px;
+        height: 678.01px;
+        transform: translate(-5%, -5%);
+    }
+
     @media screen and (min-width: 1200px) {
         transform: translate(-5%, -5%);
     }
@@ -193,8 +216,13 @@ const BackgroundBlue = styled.div`
     @media screen and (max-width: 1024px) {
         margin-top: 5rem;
 
-        width: 404.75px;
-        height: 389.35px;
+        width: 390px;
+        height: 382.59px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 375.2px;
+        height: 678.01px;
     }
 
     @media screen and (max-width: 600px) {

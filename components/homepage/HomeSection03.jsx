@@ -104,7 +104,7 @@ export const HomeSection03Wrapper = styled.div`
 
     @media screen and (min-width: 1024px) {
         flex-flow: row;
-        gap: 6rem;
+        gap: 3rem;
     }
     @media screen and (min-width: 1200px) {
         flex-flow: row;
@@ -128,7 +128,7 @@ const ImageWrapper = styled.div`
         top: 20%;
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
         top: 45%;
         bottom: 0%;
         width: 65%;
@@ -145,7 +145,7 @@ const ImageWrapper = styled.div`
 const BlockContainer = styled.div`
     width: 500px;
     height: 500px;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
         width: 400px;
         height: 400px;
         margin-top: 5rem;

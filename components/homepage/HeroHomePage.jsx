@@ -127,6 +127,10 @@ export const HeroContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    align-content: center;
+
+    // center the content
     margin: 0 auto;
 
     @media screen and (max-width: 1200px) {
@@ -135,6 +139,11 @@ export const HeroContainer = styled.div`
 
     @media screen and (min-width: 1200px) {
         margin-top: -60px;
+        padding: 2rem;
+    }
+
+    @media screen and (min-width: 1250px) {
+        padding: 0;
     }
 `
 
@@ -260,8 +269,8 @@ const ImageWrapper1 = styled(motion.div)`
     grid-row-end: 4;
     justify-self: end;
 
-    width: 215.54px;
-    height: 343.7px;
+    width: 200px;
+    height: 323.7px;
     border-radius: 25vw;
     background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630fa7b82b57093487bddec2_img-header-01.jpg');
     background-position: 50% 50%;
@@ -292,8 +301,8 @@ const ImageWrapper2 = styled(motion.div)`
     grid-row-end: 3;
     justify-self: center;
 
-    width: 211.38px;
-    height: 241.34px;
+    width: 200.38px;
+    height: 221.34px;
     border-top-left-radius: 100%;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
@@ -323,7 +332,7 @@ const ImageWrapper3 = styled(motion.div)`
     grid-row-end: 4;
     justify-self: end;
 
-    width: 215.54px;
+    width: 200px;
     height: 231.35px;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
@@ -352,7 +361,7 @@ const ImageWrapper4 = styled(motion.div)`
     grid-row-end: 7;
     justify-self: center;
 
-    width: 213.04px;
+    width: 200px;
     height: 322.06px;
     border-radius: 25vw;
     background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630fab901bd7f91a91abac3b_img-header-04.jpg');
@@ -387,7 +396,7 @@ const BlurCircleBottomLeft = styled.div`
     background: rgba(6, 87, 207, 0.7);
     filter: blur(195px);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         width: 180.38px;
         height: 180.38px;
     }
@@ -401,6 +410,10 @@ const BlurCircleTopLeft = styled.div`
     top: 100px;
     background: #8a32fa;
     filter: blur(182px);
+    @media screen and (max-width: 1024px) {
+        width: 180.38px;
+        height: 180.38px;
+    }
 `
 
 export const RoundedButton = styled(Link)`

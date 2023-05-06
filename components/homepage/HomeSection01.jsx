@@ -230,7 +230,6 @@ export const HomeSection01Wrapper = styled(HeroWrapper)`
     @media screen and (min-width: 1024px) {
         flex-flow: row;
         justify-content: space-between;
-        gap: 12rem;
     }
 
     @media screen and (min-width: 1200px) {
@@ -265,7 +264,7 @@ const Wrapper01 = styled(motion.div)`
     @media screen and (min-width: 1024px) {
         flex-flow: row;
         justify-content: space-between;
-        gap: 6rem;
+        gap: 1em;
     }
     @media screen and (min-width: 1200px) {
         flex-flow: row;
@@ -460,7 +459,7 @@ const AbsoluteBanner = styled.div`
         transform: translate(-100px, 0);
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
         display: none;
     }
 

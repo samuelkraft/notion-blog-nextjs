@@ -135,8 +135,8 @@ const HomeSection05Layout = styled(HomeSection01Wrapper)`
 
     @media screen and (min-width: 1024px) {
         flex-flow: row;
-        justify-content: space-between;
-        gap: 12rem;
+        justify-content: center;
+        gap: 3rem;
     }
 
     @media screen and (min-width: 1200px) {
@@ -145,7 +145,6 @@ const HomeSection05Layout = styled(HomeSection01Wrapper)`
     }
     @media screen and (min-width: 1440px) {
         flex-flow: row;
-        justify-content: center;
         gap: 4rem;
     }
 `
@@ -183,18 +182,18 @@ const ImageWrapper = styled.div`
     z-index: 2;
 
     @media screen and (min-width: 1800px) {
-        transform: translate(20px, 90px);
+        transform: translate(15px, 90px);
     }
 
     @media screen and (max-width: 1799px) {
-        transform: translate(-220px, 90px);
+        transform: translate(-140px, 90px);
     }
 
     @media screen and (max-width: 1200px) {
-        transform: translate(-260px, 145px);
+        transform: translate(-200px, 145px);
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
         transform: translate(0px, 49px);
     }
 
