@@ -45,7 +45,7 @@ const HomeSectionFiscal = () => {
             }}
             ref={ref}
         >
-            <HomeSection01Wrapper>
+            <FiscalWrapper>
                 <motion.div
                     className='text-content'
                     variants={titleAnim}
@@ -126,10 +126,18 @@ const HomeSectionFiscal = () => {
                         alt='conseiller fiscal'
                     />
                 </ImageWrapperGradient>
-            </HomeSection01Wrapper>
+            </FiscalWrapper>
         </HomeSection01Container>
     )
 }
+
+export const FiscalWrapper = styled(HomeSection01Wrapper)`
+    @media screen and (min-width: 1024px) {
+        flex-flow: row;
+        justify-content: space-between;
+        gap: 6rem;
+    }
+`
 
 export const ImageWrapperGradient = styled.div`
     position: relative;
@@ -151,7 +159,12 @@ export const ImageWrapperGradient = styled.div`
         height: 300px;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (max-width: 1250px) {
+        width: 480px;
+        height: 580px;
+    }
+
+    @media screen and (min-width: 1250px) {
         width: 520px;
         height: 600px;
     }

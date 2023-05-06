@@ -227,6 +227,12 @@ export const HomeSection01Container = styled(motion.div)`
 `
 
 export const HomeSection01Wrapper = styled(HeroWrapper)`
+    @media screen and (min-width: 1024px) {
+        flex-flow: row;
+        justify-content: space-between;
+        gap: 12rem;
+    }
+
     @media screen and (min-width: 1200px) {
         flex-flow: row;
         gap: 2rem;
@@ -258,10 +264,13 @@ const Wrapper01 = styled(motion.div)`
     }
     @media screen and (min-width: 1024px) {
         flex-flow: row;
+        justify-content: space-between;
+        gap: 6rem;
     }
     @media screen and (min-width: 1200px) {
         flex-flow: row;
-        gap: 2rem;
+        justify-content: space-between;
+        gap: 10rem;
     }
     @media screen and (min-width: 1440px) {
         flex-flow: row;

@@ -108,9 +108,10 @@ const HomeSection04 = () => {
 }
 
 const HomeSection04Wrapper = styled(HomeSection01Wrapper)`
-    @media screen and (min-width: 1200px) {
-        .text-content {
-        }
+    @media screen and (min-width: 1024px) {
+        flex-flow: row;
+        justify-content: space-between;
+        gap: 5rem;
     }
 `
 

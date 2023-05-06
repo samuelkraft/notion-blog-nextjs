@@ -104,6 +104,7 @@ export const HomeSection03Wrapper = styled.div`
 
     @media screen and (min-width: 1024px) {
         flex-flow: row;
+        gap: 6rem;
     }
     @media screen and (min-width: 1200px) {
         flex-flow: row;
