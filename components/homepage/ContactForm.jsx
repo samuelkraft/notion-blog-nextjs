@@ -20,6 +20,7 @@ import {
     Flex,
     Select,
     Checkbox,
+    Stack,
 } from '@mantine/core'
 
 import {
@@ -102,28 +103,6 @@ const ContactForm = () => {
                             spacing='sm'
                         >
                             <TextInput
-                                required
-                                label={t('firstName')}
-                                placeholder={t('firstName')}
-                                type='text'
-                                radius='md'
-                                size='md'
-                                name='firstName'
-                                style={{
-                                    boxShadow:
-                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
-                                }}
-                                styles={{
-                                    defaultVariant: {
-                                        borderColor: '#2457F5',
-                                        '&:focus': {
-                                            borderColor: '#2457F5',
-                                        },
-                                    },
-                                }}
-                            />
-                            <TextInput
-                                required
                                 label={t('lastName')}
                                 placeholder={t('lastName')}
                                 tyoe='text'
@@ -141,12 +120,57 @@ const ContactForm = () => {
                                             borderColor: '#2457F5',
                                         },
                                     },
+
+                                    label: {
+                                        marginBottom: 6,
+                                        fontFamily: 'Gilroy',
+                                        fontWeight: 500,
+                                        fontSize: '14px',
+                                        lineHeight: '20px',
+                                        /* identical to box height, or 143% */
+
+                                        /* Gray/700 */
+
+                                        color: '#344054',
+                                    },
+                                }}
+                            />
+                            <TextInput
+                                label={t('firstName')}
+                                placeholder={t('firstName')}
+                                type='text'
+                                radius='md'
+                                size='md'
+                                name='firstName'
+                                style={{
+                                    boxShadow:
+                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                }}
+                                styles={{
+                                    defaultVariant: {
+                                        borderColor: '#2457F5',
+                                        '&:focus': {
+                                            borderColor: '#2457F5',
+                                        },
+                                    },
+
+                                    label: {
+                                        marginBottom: 6,
+                                        fontFamily: 'Gilroy',
+                                        fontWeight: 500,
+                                        fontSize: '14px',
+                                        lineHeight: '20px',
+                                        /* identical to box height, or 143% */
+
+                                        /* Gray/700 */
+
+                                        color: '#344054',
+                                    },
                                 }}
                             />
                         </Group>
 
                         <TextInput
-                            required
                             label='Email'
                             placeholder='your@email.com'
                             type='email'
@@ -163,11 +187,23 @@ const ContactForm = () => {
                                         borderColor: '#2457F5',
                                     },
                                 },
+
+                                label: {
+                                    marginBottom: 6,
+                                    fontFamily: 'Gilroy',
+                                    fontWeight: 500,
+                                    fontSize: '14px',
+                                    lineHeight: '20px',
+                                    /* identical to box height, or 143% */
+
+                                    /* Gray/700 */
+
+                                    color: '#344054',
+                                },
                             }}
                         />
 
                         <TextInput
-                            required
                             label={t('phone')}
                             placeholder='01 23 45 67 89'
                             type='tel'
@@ -183,6 +219,19 @@ const ContactForm = () => {
                                     '&:focus': {
                                         borderColor: '#2457F5',
                                     },
+                                },
+
+                                label: {
+                                    marginBottom: 6,
+                                    fontFamily: 'Gilroy',
+                                    fontWeight: 500,
+                                    fontSize: '14px',
+                                    lineHeight: '20px',
+                                    /* identical to box height, or 143% */
+
+                                    /* Gray/700 */
+
+                                    color: '#344054',
                                 },
                             }}
                         />
@@ -209,10 +258,30 @@ const ContactForm = () => {
                                 { value: 'paie', label: t('payroll') },
                                 { value: 'rh', label: t('rh') },
                             ]}
-                            required
                             radius='md'
                             size='md'
                             name='needs'
+                            styles={{
+                                defaultVariant: {
+                                    borderColor: '#2457F5',
+                                    '&:focus': {
+                                        borderColor: '#2457F5',
+                                    },
+                                },
+
+                                label: {
+                                    marginBottom: 6,
+                                    fontFamily: 'Gilroy',
+                                    fontWeight: 500,
+                                    fontSize: '14px',
+                                    lineHeight: '20px',
+                                    /* identical to box height, or 143% */
+
+                                    /* Gray/700 */
+
+                                    color: '#344054',
+                                },
+                            }}
                             style={{
                                 boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                             }}
@@ -222,9 +291,29 @@ const ContactForm = () => {
                             placeholder={t('your_message')}
                             label={t('your_message')}
                             name='message'
-                            withAsterisk
                             size='md'
                             radius='md'
+                            styles={{
+                                defaultVariant: {
+                                    borderColor: '#2457F5',
+                                    '&:focus': {
+                                        borderColor: '#2457F5',
+                                    },
+                                },
+
+                                label: {
+                                    marginBottom: 6,
+                                    fontFamily: 'Gilroy',
+                                    fontWeight: 500,
+                                    fontSize: '14px',
+                                    lineHeight: '20px',
+                                    /* identical to box height, or 143% */
+
+                                    /* Gray/700 */
+
+                                    color: '#344054',
+                                },
+                            }}
                             style={{
                                 boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                             }}
@@ -292,22 +381,29 @@ const ContactForm = () => {
                         </ImageWrapper>
                     </ContactInfoContainer>
                     <ContactInfoContainer>
-                        <a
-                            href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
-                            <ContactInfo>
-                                <Image
-                                    src={location1}
-                                    alt='paris'
-                                />
-                                <p>
-                                    46 Rue La Fayette 75009 Paris <br />7 Rue
-                                    Theodule Ribot 75017 Paris
-                                </p>
-                            </ContactInfo>
-                        </a>
+                        <ContactInfo>
+                            <Image
+                                src={location1}
+                                alt='paris'
+                            />
+                            <Stack spacing={'xs'}>
+                                <a
+                                    href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
+                                    3 rue Jules Lefebvre 75009 Paris
+                                </a>
+                                <a
+                                    href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
+                                    7 Rue Theodule Ribot 75017 Paris
+                                </a>
+                            </Stack>
+                        </ContactInfo>
+
                         <a
                             href='https://www.google.fr/maps/place/%D7%A7%D7%A0%D7%99%D7%95%D7%9F+%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99,+Derech+Menachem+Begin+132,+Tel+Aviv-Yafo,+Isra%C3%ABl%E2%80%AD/@32.0743897,34.7899806,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b991302fe6f:0x7e4710b90ab7ab85!8m2!3d32.0743897!4d34.7921693?hl=fr'
                             target='_blank'
@@ -384,12 +480,10 @@ const Form = styled.form`
     flex-flow: column;
     margin-top: 2rem;
     padding: 2rem;
-    border-radius: 51px;
 
     @media screen and (min-width: 1200px) {
         flex-flow: row;
         gap: 3rem;
-        padding: 5rem;
     }
 `
 
@@ -427,6 +521,7 @@ const TextContent = styled.div`
     flex-flow: column;
     align-items: center;
     align-content: center;
+    gap: 25px;
     @media screen and (max-width: 1024px) {
         margin-bottom: 3rem;
     }
@@ -435,32 +530,40 @@ const TextContent = styled.div`
         margin-bottom: 0rem;
     }
     h1 {
-        font-family: 'Poppins', sans-serif;
-        @media screen and (max-width: 1024px) {
-            font-size: 42px;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 55px;
+        /* or 138% */
 
-        @media screen and (min-width: 1024px) {
-            font-size: 42px;
-            margin-bottom: 1rem;
-            line-height: 44px;
-            text-align: start;
-        }
-        @media screen and (min-width: 1440px) {
-            font-size: 46px;
-            margin-bottom: 1rem;
-            line-height: 55px;
-            text-align: start;
+        letter-spacing: 0.327px;
+
+        /* Bleu foncé */
+
+        color: #1b1464;
+
+        @media screen and (max-width: 1024px) {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 23px;
+            line-height: 34px;
+            /* Bleu foncé */
+
+            color: #1b1464;
         }
     }
 
     p {
-        line-height: 24px;
-        margin: 1rem 0rem;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        /* or 150% */
+
+        color: #1b1464;
 
         @media screen and (max-width: 1024px) {
             font-size: 18px;
@@ -475,8 +578,6 @@ const TextContent = styled.div`
             font-size: 20px;
             padding: 0rem 0rem;
             width: 80%;
-        }
-        @media screen and (min-width: 1440px) {
         }
     }
 `
@@ -526,7 +627,8 @@ const ContactInfo = styled.div`
 
     gap: 1rem;
 
-    p {
+    p,
+    a {
         font-family: 'Gilroy';
         font-style: normal;
         font-weight: 500;
@@ -538,7 +640,8 @@ const ContactInfo = styled.div`
 
     @media screen and (max-width: 500px) {
         width: 300px;
-        p {
+        p,
+        a {
             font-size: 18px;
         }
     }

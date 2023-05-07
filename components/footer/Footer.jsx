@@ -1,15 +1,12 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link'
-import Logo from '../../images/logo_Expand-CPA.svg'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
-import { IconPhone, IconMail, IconMapPin } from '@tabler/icons'
 import { useEffect } from 'react'
 import footerLogo from '../../images/footer_logo.svg'
-import fb from '../../images/fb_footer.svg'
-import ig from '../../images/instagram_footer.svg'
-import twitter from '../../images/twitter_footer.svg'
+
+import linkedin from '../../images/linkedin_white.svg'
 import ordreExpCompta from '../../images/ordre_experts_comptable.svg'
 import AICPA from '../../images/AICPA.svg'
 import CNCC from '../../images/CNCC.svg'
@@ -178,9 +175,7 @@ const Footer = () => {
                     <Social />
                     <Copyright>
                         <div className='left'>
-                            <Image src={fb} />
-                            <Image src={ig} />
-                            <Image src={twitter} />
+                            <Image src={linkedin} />
                         </div>
                         <p>©2022 Expand-CPA All right reserved.</p>
 

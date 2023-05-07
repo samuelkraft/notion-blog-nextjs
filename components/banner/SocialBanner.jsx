@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next'
 import fb from '../../images/fb_blue.svg'
 import instagram from '../../images/ig_blue.svg'
 import twitter from '../../images/twitter_blue.svg'
+import linkedin from '../../images/linkedin_blue.svg'
 import { useEffect } from 'react'
 
 const SocialBanner = () => {
@@ -20,21 +21,8 @@ const SocialBanner = () => {
             <h1>{t('followUs')}</h1>
             <div className='social-icon'>
                 <Image
-                    src={fb}
+                    src={linkedin}
                     alt='linkedin'
-                    width={50}
-                    height={50}
-                />
-
-                <Image
-                    src={twitter}
-                    alt='whatsapp'
-                    width={50}
-                    height={50}
-                />
-                <Image
-                    src={instagram}
-                    alt='instagram'
                     width={50}
                     height={50}
                 />
