@@ -206,8 +206,6 @@ const UsaTax = ({}) => {
                             {t('section2_text6')}
                         </Paragraph>
 
-                        <Paragraph>{t('section2_text7')}</Paragraph>
-
                         <BulletList>
                             <li>
                                 {t('section2_bullet1')}
@@ -411,7 +409,6 @@ const UsaTax = ({}) => {
                             {t('section5_text7')}
                             <b>{t('section5_bold4')}</b>
                             {t('section5_text8')}
-                            <b>{t('section5_bold5')}</b>
                         </Paragraph>
                     </TextContent>
                 </TextContentContainer>

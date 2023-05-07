@@ -226,6 +226,9 @@ const AdministritiveServices = ({}) => {
                             <li>{t('section6_bullet3')}</li>
 
                             <li>{t('section6_bullet6')}</li>
+                            <li>{t('section6_bullet7')}</li>
+                            <li>{t('section6_bullet8')}</li>
+                            <li>{t('section6_bullet9')}</li>
                         </BulletList>
                     </TextContent>
                 </TextContentContainer>

@@ -172,7 +172,6 @@ const AccountingServices = ({}) => {
                 <TextContentContainer>
                     <TextContent>
                         <Slogan>{t('section3_title')}</Slogan>
-                        <Paragraph>{t('section3_text1')}</Paragraph>
 
                         <Paragraph>
                             <b>{t('section3_bold1')}</b>
@@ -320,7 +319,7 @@ const AccountingServices = ({}) => {
                     </TextContent>
                 </TextContentContainer>
 
-                <TextContentContainer gray>
+                {/* <TextContentContainer gray>
                     <TextContent>
                         <Slogan>{t('section5_title')}</Slogan>
 
@@ -335,9 +334,9 @@ const AccountingServices = ({}) => {
                             {t('section5_text3')}
                         </Paragraph>
                     </TextContent>
-                </TextContentContainer>
+                </TextContentContainer> */}
 
-                <TextContentContainer>
+                <TextContentContainer gray>
                     <TextContent>
                         <Slogan>{t('section6_title')}</Slogan>
 
@@ -348,7 +347,7 @@ const AccountingServices = ({}) => {
                     </TextContent>
                 </TextContentContainer>
 
-                <TextContentContainer gray>
+                <TextContentContainer>
                     <TextContent>
                         <Slogan>{t('section6_subtitle3')}</Slogan>
 
@@ -372,7 +371,7 @@ const AccountingServices = ({}) => {
                     </TextContent>
                 </TextContentContainer>
 
-                <TextContentContainer>
+                <TextContentContainer gray>
                     <TextContent>
                         <Slogan>{t('section6_subtitle1')}</Slogan>
 

@@ -22,7 +22,7 @@
     "feature8": "Étude de prix de transfert",
 
     "section1_title": "Conseiller fiscal français",
-    "section1_text1": "La dimension internationale fait partie des gènes et de la culture d’Expand CPA, cabinet d’expertise comptable et d’audit français. Nous accompagnons les entreprises françaises et étrangères pour l’ensemble de leurs besoins comptables, RH, juridiques et fiscaux. Nous sommes spécialisés dans l’appui des sociétés étrangères pour l’implantation de filiales en France. Nous assurons notamment le rôle de ",
+    "section1_text1": "La dimension internationale fait partie des gènes et de la culture d’Expand CPA, cabinet d’expertise comptable et d’audit français. Nous accompagnons les entreprises françaises et étrangères pour l’ensemble de leurs besoins comptables, RH, juridiques et fiscaux. Nous sommes spécialisés dans l’implantation des sociétés étrangères pour l’implantation de filiales en France. Nous assurons notamment le rôle de ",
     "section1_bold1": "conseiller fiscal ",
     "section1_text2": "auprès de ces entreprises, tant les règles françaises s’avèrent complexes.",
 
@@ -30,7 +30,7 @@
     "section2_bold1": "CEO ou CFO d’une société étrangère, vous êtes responsable de l’implantation d’une entreprise en France ? ",
     "section2_text1": "",
 
-    "section2_subtitle1": "La fiscalité française est une matière ardue pour les entreprises étrangères",
+    "section2_subtitle1": "",
     "section2_bold2": "",
     "section2_text2": "",
 
@@ -101,16 +101,16 @@
     "section4_subtitle1": "L’optimisation fiscale, c’est notre métier",
     "section4_text3": "Le conseiller fiscal a pour mission d’optimiser la fiscalité de l’entreprise comme celle de ses dirigeants. Il cherche donc à ",
     "section4_bold2": "réduire l’imposition autant que possible tout en respectant le droit fiscal. ",
-    "section4_text4": "Ils prodiguent leurs conseils et orientent si nécessaire vers des avocats de leur réseau dans le cadre d’une procédure judiciaire voire au pénal. ",
+    "section4_text4": "Ils prodiguent leurs conseils et orientent si nécessaire vers des avocats de leur réseau dans le cadre d’une procédure judiciaire voire pénale. ",
     "section4_bold3": "En recourant à un conseiller fiscal, le dirigeant étranger d’une entreprise établie en France bénéficie également de services en matière de gestion de son patrimoine privé en tant que particulier. ",
-    "section4_text5": "Il trouve auprès du cabinet Expand CPA des conseils en défiscalisation. Assurance, placements, investissements, le fiscaliste propose des solutions selon le niveau de risque que le client accepte de prendre et en fonction de l’analyse de sa situation personnelle.",
+    "section4_text5": "Il trouve auprès du cabinet Expand CPA des conseils en défiscalisation. ",
 
     "section4_subtitle2": "Expand CPA vous accompagne en cas de contrôle fiscal en France",
 
     "section4_bold4": "L’administration fiscale française possède ses codes. C’est une affaire d’expert en droit fiscal et en comptabilité française. ",
     "section4_text6": "Un étranger qui pilote une entreprise en France a tout intérêt à confier cette mission à un spécialiste.",
 
-    "section4_bold5": "Expand CPA, cabinet d’expertise-comptable et conseiller fiscal, se charge de tout en cas de contrôle de l’administration. ",
+    "section4_bold5": "Expand CPA, cabinet d’expertise-comptable et conseiller fiscal, se charge de vous accompagner en cas de contrôle de l’administration",
     "section4_text7": " Du déclenchement de la vérification jusqu’à la réponse à la notification d’une proposition de rectification, votre fiscaliste reste présent et traite chaque point avec professionnalisme. ",
 
     "section4_subtitle3": "Notre spécialité : la convention fiscale franco-américaine",
@@ -125,7 +125,7 @@
     "section5_bold2": "spécialisés sur le marché France et US. ",
 
     "section5_text3": "Notre cabinet propose une offre du type « guichet unique » pour toute entreprise étrangère désireuse d’investir sur le territoire français. ",
-    "section5_bold3": "Tous les domaines s’interconnectent, le fiscal, la comptabilité, le social, le juridique, le financier, etc. ",
+    "section5_bold3": "Tous les domaines s’interconnectent, le fiscal, , le social, le juridique, le financier,  la comptabilité etc. ",
     "section5_text4": "Aussi, nos conseillers fiscaux travaillent main dans la main avec leurs collègues afin d’optimiser les solutions proposées à chaque client. ",
 
     "section5_text5": "Notre approche professionnelle repose sur ",

@@ -329,7 +329,7 @@ const PayrollServices = ({}) => {
                     </TextContent>
                 </TextContentContainer>
 
-                <TextContentContainer gray>
+                <TextContentContainer>
                     <TextContent>
                         <Slogan>{t('section7_title')}</Slogan>
 
@@ -341,7 +341,7 @@ const PayrollServices = ({}) => {
                     </TextContent>
                 </TextContentContainer>
 
-                <TextContentContainer>
+                {/* <TextContentContainer>
                     <TextContent>
                         <Slogan>{t('section8_title')}</Slogan>
 
@@ -365,7 +365,7 @@ const PayrollServices = ({}) => {
                             </li>
                         </BulletList>
                     </TextContent>
-                </TextContentContainer>
+                </TextContentContainer> */}
                 <Divider />
                 <SocialBanner />
                 <Footer />

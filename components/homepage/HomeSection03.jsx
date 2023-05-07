@@ -123,7 +123,7 @@ const ImageWrapper = styled.div`
     width: 45%;
     height: 500px;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1700px) {
         width: 40%;
         top: 20%;
     }

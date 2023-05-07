@@ -354,8 +354,6 @@ const FrenchTax = ({}) => {
                             <li>{t('section4_bullet1')}</li>
 
                             <li>{t('section4_bullet2')}</li>
-
-                            <li>{t('section4_bullet3')}</li>
                         </BulletList>
 
                         <Slogan>{t('section4_subtitle3')}</Slogan>
@@ -420,7 +418,6 @@ const FrenchTax = ({}) => {
                             <li>
                                 {t('section5_bullet3')}
                                 <b>{t('section5_bullet3_2')}</b>
-                                {t('section5_bullet3_3')}
                             </li>
                         </BulletList>
                     </TextContent>

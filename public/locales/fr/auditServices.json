@@ -1,7 +1,7 @@
 {
     "contactUs": "Contactez-nous",
     "page_title": "Auditeur français : missions pour entreprises étrangères",
-    "persona": "Une entreprise étrangère basée en France doit parfois recourir à un auditeur français. Choisissez Expand CPA pour ces missions.",
+    "persona": "Certaines entreprises étrangères situées en France doivent parfois recourir à un auditeur français. Choisissez Expand CPA pour ces missions.",
     "CTA": "Bénéficiez de l’expertise Expand CPA !",
 
     "features_title": "Nos services clés :",
@@ -17,7 +17,7 @@
     "readLess": "Voir moins",
 
     "section1_title": "Missions d’audit dans les sociétés étrangères établies en France",
-    "section1_text1": "Expand CPA, cabinet d’expertise comptable et de commissariat aux comptes est membre de la Compagnie régionale des commissaires aux comptes (CRCC) de Paris. Fort de notre double implantation et de notre organisation multiculturelle, nous sommes spécialisés dans l’accompagnement des entreprises étrangères désireuses de s’installer en France. Ces sociétés font appel à nous pour toutes les missions qu’un ",
+    "section1_text1": "Expand CPA, cabinet d’expertise comptable et de commissariat aux comptes, est membre de la Compagnie régionale des commissaires aux comptes (CRCC) de Paris. Fort de notre double implantation et de notre organisation multiculturelle, nous sommes spécialisés dans l’accompagnement des entreprises étrangères désireuses de s’installer en France. Ces sociétés font appel à nous pour toutes les missions qu’un ",
     "section1_bold1": "auditeur français ",
     "section1_text2": "est susceptible de mener, qu’il s’agisse d’audit légal ou contractuel.",
 
@@ -34,7 +34,7 @@
     "section2_text6": " En cas de franchissement de certains seuils, l’intervention d’un ",
     "section2_bold4": "commissaire aux comptes ",
     "section2_text7": "s’impose afin d’auditer les comptes de la société en vue de leur certification. Pour ces missions à caractère légal, une entreprise étrangère doit impérativement faire appel à un auditeur, inscrit sur la liste des commissaires aux comptes établie par le Haut Conseil des Commissaires aux Comptes.",
-    "section2_subtitle2": "Missions d’audit : questions récurrentes des entreprises étrangères installées en France",
+    "section2_subtitle2": "Missions d’audit : questions récurrentes des entreprises étrangères établies en France",
     "section2_text8": "Les sociétés étrangères situées en France contactent généralement Expand CPA avec les interrogations suivantes en matière d’audit français :",
     "section2_bullet1": "Êtes-vous habilité à réaliser des ",
     "section2_bullet1_2": "missions d’audit légal ",
@@ -65,13 +65,14 @@
     "section3_text4": "en vue de la certification ou non des comptes, avec ou sans réserve.",
     "section3_text5": "Pour mener à bien ses travaux, le commissaire aux comptes opère chaque année avec deux interventions phares :",
     "section3_bullet1": "La mission intérimaire ",
-    "section3_bullet1_2": "se déroule généralement quelques mois avant la clôture. Elle vise à analyser apprécier le risque au travers du contrôle interne et à préparer l’intervention de clôture.",
+    "section3_bullet1_2": "se déroule généralement quelques mois avant la clôture. Elle vise à apprécier le risque au travers du contrôle interne et à préparer l’intervention de clôture.",
     "section3_bullet2": "La mission dite finale ",
     "section3_bullet2_2": "intervient après l’établissement des comptes annuels par le service comptabilité ou par l’expert-comptable de l’entreprise. ",
     "section3_text6": "Au cours de ces missions, ",
     "section3_bold3": "l’auditeur français analyse les flux financiers ",
     "section3_text7": "issus de la comptabilité. Il réalise des sondages sur pièces selon l’ampleur des risques préalablement identifiés. Il circularise les tiers, banques et avocats. Puis, il émet son rapport et le présente à l’assemblée générale de la société.",
-    "section3_subtitle2": "Audits légaux ponctuels : des missions spécifiques selon les projets de l’entreprise basée en France",
+
+    "section3_subtitle2": "Audits légaux ponctuels : des missions spécifiques selon les projets de l’entreprise située en France",
     "section3_text8": "Au cours de la vie d’une société, tout entrepreneur peut être amené à demander une ",
     "section3_bold4": "mission de commissariat ponctuelle et spécifique.",
     "section3_text9": " qui sera réalisée par des commissaires aux comptes comme le cabinet Expand CPA ou par un autre cabinet désigné par le Tribunal de Commerce. ",
@@ -81,9 +82,9 @@
     "section3_bullet4": "Commissariat à la fusion ",
     "section3_bullet4_2": "consistant à apprécier l’opération par le contrôle des critères d’évaluation retenus et du rapport d’échange.",
 
-    "section4_title": "Auditeur français : missions contractuelles pour des sociétés étrangères en France",
+    "section4_title": "Auditeur français : missions contractuelles pour des sociétés étrangères établies en France",
     "section4_text1": "Le cabinet Expand CPA propose aussi de recourir à un auditeur français pour diverses ",
-    "section4_bold1": "missions ponctuelles et non légales ",
+    "section4_bold1": "missions ponctuelles diverses et variées ",
     "section4_text2": "selon les besoins de contrôle ou de réassurance des dirigeants. Les experts-comptables comme les commissaires aux comptes peuvent réaliser ces prestations contractuelles. ",
     "section4_text3": "Notre cabinet ",
     "section4_bold2": "adapte le contenu de la mission d’audit ",
@@ -96,7 +97,7 @@
     "section4_bullet6": "Conseil et appui aux dirigeants pour la constitution d’une société, l’augmentation du capital, les fusions, scissions ou apports partiels d’actifs",
     "section4_bullet7": "Aide à la réalisation d’une levée de fonds ou à l’élaboration d’un business plan afin de développer l’activité en France.",
 
-    "section5_title": "Pourquoi choisir Expand CPA comme auditeur français d’une société étrangère ?",
+    "section5_title": "Pourquoi choisir Expand CPA comme auditeur français d’une société étrangère ?",
     "section5_text1": "Expand CPA, expert en accompagnement des entreprises étrangères qui s’implantent en France, possède de ",
     "section5_bold1": "nombreux atouts pour ces missions ",
     "section5_text2": "d’audit légal comme contractuel : ",
@@ -106,7 +107,7 @@
     "section5_bullet2": "Quant à la mission d'audit contractuel, si nous effectuons déjà des prestations comptables, sociales ou fiscales, nous disposons d’une ",
     "section5_bullet2_2": "excellente connaissance ",
     "section5_bullet2_3": "des flux et processus de l’entreprise.",
-    "section5_bullet3": "Notre compétence en matière d’accompagnement des sociétés étrangères en France nous à permis de mieux comprendre leur fonctionnement et aussi à adapter notre communication avec leurs dirigeants.",
+    "section5_bullet3": "Notre compétence en matière d’accompagnement des sociétés étrangères établies en France nous à permis de mieux comprendre leur fonctionnement et aussi à adapter notre communication avec leurs dirigeants.",
     "section5_bullet3_2": "Nos auditeurs français parlent couramment anglais. ",
     "section5_bullet3_3": "ce qui constitue un atout majeur.",
 

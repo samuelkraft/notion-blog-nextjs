@@ -151,17 +151,6 @@ const TaxServices = ({}) => {
                     </TextContent>
                 </TextContentContainer>
 
-                <TextContentContainer gray>
-                    <TextContent>
-                        <Slogan>{t('section2_subtitle1')}</Slogan>
-
-                        <Paragraph>
-                            <b>{t('section2_bold3')}</b>
-                            {t('section2_text3')}
-                        </Paragraph>
-                    </TextContent>
-                </TextContentContainer>
-
                 <TextContentContainer>
                     <TextContent>
                         <Slogan>{t('section2_subtitle2')}</Slogan>

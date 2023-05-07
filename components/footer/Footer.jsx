@@ -175,7 +175,13 @@ const Footer = () => {
                     <Social />
                     <Copyright>
                         <div className='left'>
-                            <Image src={linkedin} />
+                            <a
+                                href='https://www.linkedin.com/company/asp-experts/posts/?feedView=all'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                <Image src={linkedin} />
+                            </a>
                         </div>
                         <p>©2022 Expand-CPA All right reserved.</p>
 

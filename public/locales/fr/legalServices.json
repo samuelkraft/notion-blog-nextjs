@@ -16,7 +16,7 @@
     "feature4": "Conseil et appui à l’obtention des autorisations administratives diverses",
 
     "section1_title": "Conseiller juridique français pour société étrangère située en France",
-    "section1_text1": "En tant que cabinet d’expertise comptable tourné vers l’international, Expand CPA est spécialisé dans l'accompagnement des sociétés étrangères qui s’implantent sur le territoire française. Nous proposons grâce à nos différents spécialistes un package complet de prestations pour la gestion comptable, financière, sociale et administrative, sans oublier le ",
+    "section1_text1": "En tant que cabinet d’expertise comptable tourné vers l’international, Expand CPA est spécialisé dans l'accompagnement des sociétés étrangères qui s’implantent sur le territoire français. Nous proposons grâce à nos différents spécialistes un package complet de prestations pour la gestion comptable, financière, sociale et administrative, sans oublier le ",
     "section1_bold1": "conseil juridique.",
     "section1_text2": " Ainsi, nos experts sont en mesure de traiter tous les aspects juridiques auxquels une société étrangère pourrait rencontrer dans un nouveau pays. L’objectif premier est de vous apporter un éclairage suffisant pour que vous puissiez prendre les bonnes décisions et appréhender correctement les risques & enjeux juridiques.",
 
@@ -34,12 +34,12 @@
     "section2_text5": "Avec ce type de consultation, les professionnels étrangers opèrent en confiance et consacrent leur énergie au déploiement de l’activité en France.",
 
     "section2_subtitle2": "Implantation française d’une entreprise étrangère :  ",
-    "section2_text6": "Voici les problématiques souvent rencontrées par les entreprises étrangères qui souhaitent sur le plan du ",
-    "section2_bold4": "conseil juridique lors d’une consultation",
-    "section2_text7": " pour une entreprise étrangère basée en France :",
+    "section2_text6": "Voici les problématiques d'ordre juridique souvent rencontrées par les entreprises étrangères qui souhaitent s'implanter sur le territoire français : ",
+    "section2_bold4": "",
+    "section2_text7": "",
 
     "section2_bullet1": "Quelle ",
-    "section2_bullet1_2": "forme d’exercice de l’activité",
+    "section2_bullet1_2": "forme d’exercice d’activité",
     "section2_bullet1_3": " choisir ? En cas de création d’une société, quel statut juridique retenir ?",
     "section2_bullet2": "Qu’est-ce qu’une ",
     "section2_bullet2_2": "succursale française",
@@ -50,14 +50,14 @@
     "section2_bullet4": "Quelles sont les ",
     "section2_bullet4_2": "règles de base en droit social ",
     "section2_bullet4_3": "afin de recruter des salariés ?",
-    "section2_bullet5": "Comment s’assurer de ",
-    "section2_bullet5_2": "respecter le droit du travail",
+    "section2_bullet5": "Comment s’assurer du ",
+    "section2_bullet5_2": "respect du droit du travail",
     "section2_bullet5_3": " ?",
     "section2_bullet6": "Quelles démarches juridiques et administratives effectuer pour ",
     "section2_bullet6_2": "créer une filiale en France ",
     "section2_bullet6_3": "?",
-    "section2_bullet7": "Comment appliquer la ",
-    "section2_bullet7_2": "convention fiscale ",
+    "section2_bullet7": "Comment appliquer correctement les ",
+    "section2_bullet7_2": "conventions fiscales applicables ",
     "section2_bullet7_3": "?",
     "section2_bullet8": "Quand doit-on absolument ",
     "section2_bullet8_2": "recourir à un notaire ou à un avocat ",
@@ -65,7 +65,7 @@
     "section2_bullet9": "Vos juristes peuvent-ils ",
     "section2_bullet9_2": "rédiger les statuts ",
     "section2_bullet9_3": "d’une société ?",
-    "section2_bullet10": "Pouvez-vous nous aider à établir un ",
+    "section2_bullet10": "Pouvez-vous nous aider à rédiger un ",
     "section2_bullet10_2": "pacte d’actionnaires",
     "section2_bullet10_3": " ?",
     "section2_bullet11": "Comment fonctionnent les procédures judiciaires françaises et les ",
@@ -95,24 +95,24 @@
 
     "section4_title": "Le conseil juridique, des missions ponctuelles tout au long de la vie de l’entreprise",
     "section4_text1": "Les juristes d’Expand CPA interviennent aussi ponctuellement auprès d’entreprises étrangères installées en France. ",
-    "section4_bold1": "Il prodigue quelques conseils et oriente, si nécessaire, vers des avocats de son réseau adaptés à chacun de vos besoins. ",
+    "section4_bold1": "Ils apportent leur conseil juridique tant en droit des sociétés, qu’en droit fiscal ou du droit du travail. ",
 
     "section4_subtitle1": "Droit des sociétés : nos prestations et conseils juridiques ponctuels",
     "section4_text2": "Le cabinet Expand CPA accompagne également les entreprises en cas de ",
     "section4_bold2": "rachat, fusion, acquisition ou cession. ",
-    "section4_text3": "Ils prodiguent leurs conseils et orientent si nécessaire vers des avocats de leur réseau dans le cadre d’une procédure judiciaire voire au pénal. ",
+    "section4_text3": "Il prodigue quelques conseils et oriente, si nécessaire, vers des avocats de son réseau adaptés à chacun de vos besoins. ",
 
     "section4_subtitle2": "Droit fiscal : nos recommandations juridiques aux entreprises étrangères",
     "section4_text4": "Si une ",
     "section4_bold3": "option fiscal ",
     "section4_text5": "doit être envisagée, nos experts présentent aux clients les conséquences au niveau de la société elle-même ainsi qu’au niveau des dirigeants : ils conseils également sur la partie ",
     "section4_bold4": "fiscalité du particulier et de la famille étrangère ",
-    "section4_text6": "qui vit sur notre territoire tout en intégrant le patrimoine mobilier ou immobilier dans la réflexion.",
+    "section4_text6": "qui vit sur le territoire français tout en intégrant le patrimoine mobilier ou immobilier dans la réflexion.",
 
     "section4_subtitle3": "Droit du travail et droit des contrats : notre conseil juridique",
     "section4_text7": "En cas de ",
     "section4_bold5": "litige ",
-    "section4_text8": "avec un salarié, client ou un fournisseurs, les conseillers juridiques du cabinet analysent d’abord le différend. Ils émettent leurs recommandations et suggère une ligne de conduite à adopter pour par le biais d’une procédure amiable, dans la mesure du possible. Si une action en justice s’impose, ils orientent les entreprises vers des avocats spécialistes du sujet de leur réseau. ",
+    "section4_text8": "avec un salarié, client ou un fournisseurs, les conseillers juridiques du cabinet analysent d’abord le différend. Ils émettent leurs recommandations et suggèrent une ligne de conduite à adopter pour par le biais d’une procédure amiable, dans la mesure du possible. Si une action en justice s’impose, ils orientent les entreprises vers des avocats spécialistes du sujet de leur réseau. ",
 
     "section5_title": "Pourquoi faire appel à Expand CPA pour le conseil juridique en France ?",
     "section5_text1": "Notre cabinet d’expertise comptable dispose de ",
@@ -120,16 +120,16 @@
     "section5_text2": "qui veulent implanter leur entreprise en France. ",
 
     "section5_bold2": "Notre positionnement international et notre bonne connaissance des États-Unis aident à adapter nos explications et notre communication pour ce type de clientèle. ",
-    "section5_text3": "Nous avons pleinement conscience des points de difficultés que peuvent rencontrer les entrepreneurs qui arrivent des USA.",
+    "section5_text3": "Nous avons pleinement conscience des points de difficultés que peuvent rencontrer les entrepreneurs qui arrivent d'un pays étranger.",
 
     "section5_bold3": "Notre conseil juridique n’est jamais hors sol. ",
-    "section5_text4": "Nous exerçons notre métier avec professionnalisme au sein d’une équipe pluridisciplinaire, experte en comptabilité, fiscalité et gestion sociale en France. Cette approche globale des besoins de nos clients accroît la pertinence de nos conseils juridiques, toujours prodigués dans un contexte d’entreprise précis. ",
+    "section5_text4": "Nous exerçons notre métier avec professionnalisme au sein d’une équipe pluridisciplinaire, experte en comptabilité, fiscalité et gestion sociale en France. Cette approche globale des besoins de nos clients accroît la pertinence de nos conseils juridiques.",
 
     "section5_text5": "Parmi les valeurs fondamentales chez Expand CPA, l’écoute attentive de nos clients contribue à bâtir des solutions juridiques sur mesure et réellement adaptées. Nous avons à cœur d’",
     "section5_bold4": "inclure une dimension pédagogique à nos missions. ",
     "section5_text6": "Expliquer simplement les lois françaises et rendre notre conseil juridique compréhensible pour nos interlocuteurs étrangers, c’est ce qui nous motive au quotidien.",
 
-    "section6_title": "Autres missions de notre cabinet comptable pour sociétés étrangères en France",
+    "section6_title": "Autres missions de notre cabinet comptable pour sociétés étrangères établies en France",
     "section6_text1": "Notre package d’accompagnement des entreprises étrangères installées en France peut également comprendre ",
     "section6_bold1": "en plus du conseil juridique, ",
     "section6_text2": "les prestations suivantes :",
@@ -139,6 +139,6 @@
     "section6_bullet3": "Notre expertise pour les RH d’une société étrangère en France",
     "section6_bullet4": "Conseiller fiscal dédié",
     "section6_bullet5": "Fiscalité du particulier en France : prestations pour entreprises étrangères",
-    "section6_bullet6": "Imposition USA pour étrangers basés en France",
+    "section6_bullet6": "Imposition USA pour étrangers établis en France",
     "section6_bullet7": "Missions d’audit dans les sociétés étrangères établies en France "
 }

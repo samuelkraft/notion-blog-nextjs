@@ -182,7 +182,7 @@ const ImageWrapper = styled.div`
     z-index: 2;
 
     @media screen and (min-width: 1800px) {
-        transform: translate(15px, 90px);
+        transform: translate(15px, 78px);
     }
 
     @media screen and (max-width: 1799px) {

@@ -56,9 +56,8 @@ const HomeSection01 = () => {
                             <span>{t('whyUs')}</span>
                         </Tag>
                         <Slogan01
-                            initial={{ y: 200, opacity: 0.5 }}
+                            initial={{ opacity: 0.5 }}
                             animate={{
-                                y: 0,
                                 opacity: 1,
                             }}
                             transition={{
@@ -70,9 +69,8 @@ const HomeSection01 = () => {
                             {t('section01_title')}
                         </Slogan01>
                         <motion.div
-                            initial={{ y: 200, opacity: 0.5 }}
+                            initial={{ opacity: 0.5 }}
                             animate={{
-                                y: 0,
                                 opacity: 1,
                             }}
                             transition={{

@@ -20,12 +20,18 @@ const SocialBanner = () => {
         <SocialBannerContainer>
             <h1>{t('followUs')}</h1>
             <div className='social-icon'>
-                <Image
-                    src={linkedin}
-                    alt='linkedin'
-                    width={50}
-                    height={50}
-                />
+                <a
+                    href='https://www.linkedin.com/company/asp-experts/posts/?feedView=all'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    <Image
+                        src={linkedin}
+                        alt='linkedin'
+                        width={50}
+                        height={50}
+                    />
+                </a>
             </div>
         </SocialBannerContainer>
     )
