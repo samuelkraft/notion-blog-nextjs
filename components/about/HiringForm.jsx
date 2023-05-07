@@ -1,27 +1,11 @@
 import styled from 'styled-components'
-import { SloganSection01, Tag } from '../homepage/HomeSection01'
-import { RowWrapper, SloganSection06 } from '../homepage/HomeSection06'
-import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 
-import linkedin from '../../images/linkedin.svg'
-import whatsapp from '../../images/whatsapp.svg'
-import youtube from '../../images/youtube.svg'
-import instagram from '../../images/instagram.svg'
-
 import { useState, useRef } from 'react'
-import { useRouter } from 'next/router'
-import {
-    TextInput,
-    Modal,
-    useMantineTheme,
-    Group,
-    Textarea,
-    Flex,
-} from '@mantine/core'
+import { TextInput, Modal, Group, Textarea, Flex } from '@mantine/core'
 
-import { IconMail, IconUser, IconPhone, IconCircleCheck } from '@tabler/icons'
+import { IconCircleCheck } from '@tabler/icons'
 
 import { Text, Button, createStyles } from '@mantine/core'
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone'
@@ -66,7 +50,6 @@ const HiringForm = () => {
     const { t } = useTranslation('common')
     const { classes, theme } = useStyles()
     const [opened, setOpened] = useState(false)
-    const router = useRouter()
     const [selectedFile, setSelectedFile] = useState(null)
     const openRef = useRef(null)
     const ref = useRef(null)
