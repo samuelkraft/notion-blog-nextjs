@@ -180,15 +180,27 @@ const Footer = () => {
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
-                                <Image src={linkedin} />
+                                <Image
+                                    src={linkedin}
+                                    alt='linkedin'
+                                />
                             </a>
                         </div>
                         <p>©2022 Expand-CPA All right reserved.</p>
 
                         <div className='right'>
-                            <Image src={ordreExpCompta} />
-                            <Image src={AICPA} />
-                            <Image src={CNCC} />
+                            <Image
+                                src={ordreExpCompta}
+                                alt='Ordre Experts Comptables'
+                            />
+                            <Image
+                                src={AICPA}
+                                alt='AICPA'
+                            />
+                            <Image
+                                src={CNCC}
+                                alt='CNCC'
+                            />
                         </div>
                     </Copyright>
                     <Copyrigth2>

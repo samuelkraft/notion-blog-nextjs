@@ -1,16 +1,10 @@
 import styled from 'styled-components'
 import { useTranslation } from 'next-i18next'
-import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { SloganServices } from './ServicesBanner'
-import { RoundedButton } from '../homepage/HeroHomePage'
-import team from '../../images/pik_consulting.svg'
-import Image from 'next/image'
 
 const JoinOurTeamBanner = () => {
     const { t } = useTranslation('common')
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
 
     return (
         <Background>
@@ -20,13 +14,13 @@ const JoinOurTeamBanner = () => {
                     <h2>{t('joinOurTeamText')}</h2>
 
                     <div style={{ width: '167px' }}>
-                        <RoundedButton
-                            href="href='https://www.linkedin.com/company/asp-experts/"
+                        <a
+                            href='https://www.linkedin.com/company/asp-experts/jobs/'
                             target='_blank'
                             rel='noopener noreferrer'
                         >
                             {t('seeMore')}
-                        </RoundedButton>
+                        </a>
                     </div>
                 </div>
                 <ImageWrapper>
@@ -129,6 +123,17 @@ const BlueGradient = styled.div`
                 font-size: 18px;
                 line-height: 22px;
             }
+        }
+
+        a {
+            background: #0657cf;
+            border-radius: 34px;
+            color: white;
+            padding: 10px 28px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 

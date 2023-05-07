@@ -21,6 +21,7 @@ const QualityBanner = () => {
                 <Image
                     src={qualite}
                     fill
+                    alt='Qualité'
                 />
             </BadgeContainer>
             <div className='text-content'>

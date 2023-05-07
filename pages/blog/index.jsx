@@ -37,8 +37,6 @@ export default function Blog({ posts }) {
         bindI18n: 'languageChanged loaded',
     })
 
-    console.log('posts', posts)
-
     const router = useRouter()
     useEffect(() => {
         i18n.reloadResources(i18n.resolvedLanguage, ['common'])

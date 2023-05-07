@@ -272,7 +272,7 @@ const ImageWrapper1 = styled(motion.div)`
     width: 200px;
     height: 323.7px;
     border-radius: 25vw;
-    background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630fa7b82b57093487bddec2_img-header-01.jpg');
+    background-image: url('/img-header-01.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -306,7 +306,7 @@ const ImageWrapper2 = styled(motion.div)`
     border-top-left-radius: 100%;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
-    background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630fa828f520d85444c34d0a_img-header-02.jpg');
+    background-image: url('/img-header-02.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -337,7 +337,7 @@ const ImageWrapper3 = styled(motion.div)`
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     border-bottom-left-radius: 100%;
-    background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630faaccf520d86023c36924_img-header-03.jpg');
+    background-image: url('/img-header-03.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -364,7 +364,7 @@ const ImageWrapper4 = styled(motion.div)`
     width: 200px;
     height: 322.06px;
     border-radius: 25vw;
-    background-image: url('https://assets.website-files.com/62e87007d1ea4833faeaf799/630fab901bd7f91a91abac3b_img-header-04.jpg');
+    background-image: url('/img-header-04.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;

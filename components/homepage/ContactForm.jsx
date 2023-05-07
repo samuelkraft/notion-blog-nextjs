@@ -388,14 +388,14 @@ const ContactForm = () => {
                             />
                             <Stack spacing={'xs'}>
                                 <a
-                                    href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
+                                    href='https://www.google.com/maps/place/3+Rue+Jules+Lefebvre,+75009+Paris,+France/data=!4m2!3m1!1s0x47e66e4bbee37b63:0xd312131ba03e4ceb?sa=X&ved=2ahUKEwiYiIPY1uL-AhVbXqQEHTblBy0Q8gF6BAgLEAI'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
                                     3 rue Jules Lefebvre 75009 Paris
                                 </a>
                                 <a
-                                    href='https://www.google.fr/maps/place/46+Rue+La+Fayette,+75009+Paris/@48.8747004,2.3380772,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e38cd18c2c1:0x7bab7dd24b147a47!8m2!3d48.8746969!4d2.3402659?hl=fr'
+                                    href='https://www.google.com/maps/place/7+Rue+Th%C3%A9odule+Ribot,+75017+Paris,+France/@48.8793131,2.2982657,17z/data=!3m1!4b1!4m6!3m5!1s0x47e66f957a5df687:0x9924b093569f6139!8m2!3d48.8793096!4d2.3008406!16s%2Fg%2F11b8v75n7x'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
