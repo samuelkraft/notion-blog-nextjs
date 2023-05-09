@@ -27,60 +27,54 @@ const HomeSection03 = () => {
     const isInView = useInView(ref, { once: true })
 
     return (
-        <HomeSection03Container>
-            <HomeSection01Container
-                initial={{ opacity: 0 }}
-                animate={{
-                    opacity: isInView ? 1 : 0,
-                }}
-                transition={{
-                    duration: 1,
-                    delay: 0.5,
-                    ease: 'easeInOut',
-                    when: 'afterChildren',
-                }}
-                ref={ref}
-            >
-                <HomeSection03Wrapper>
-                    <ImageWrapper>
-                        <Image
-                            src={map}
-                            fill
-                            alt='france map'
-                        />
-                    </ImageWrapper>
-                    <BlockContainer />
+        <HomeSection03Container
+            initial={{ opacity: 0 }}
+            animate={{
+                opacity: isInView ? 1 : 0,
+            }}
+            transition={{
+                duration: 1,
+                delay: 0.5,
+                ease: 'easeInOut',
+                when: 'afterChildren',
+            }}
+            ref={ref}
+        >
+            <HomeSection03Wrapper>
+                <ImageWrapper>
+                    <Image
+                        src={map}
+                        fill
+                        alt='france map'
+                    />
+                </ImageWrapper>
+                <BlockContainer />
 
-                    <motion.div
-                        className='text-content'
-                        variants={titleAnim}
-                        initial='hidden'
-                        animate='show'
-                    >
-                        <Tag>{t('section03_tag')}</Tag>
-                        <SloganSection03>
-                            {t('section03_title')}
-                        </SloganSection03>
-                        <HeadingSection01>
-                            <h2>
-                                {t('section03_heading_pt1')}
-                                <b>{t('section03_bold1')}</b>
-                                {t('section03_heading_pt2')}
-                                <b>{t('section03_bold2')}</b>
-                                {t('section03_heading_pt3')}
-                            </h2>
-                        </HeadingSection01>
-                        <HeadingSection01>
-                            <h2>
-                                {t('section03_heading_pt3_2')}
+                <motion.div
+                    className='text-content'
+                    variants={titleAnim}
+                >
+                    <Tag>{t('section03_tag')}</Tag>
+                    <SloganSection03>{t('section03_title')}</SloganSection03>
+                    <HeadingSection01>
+                        <h2>
+                            {t('section03_heading_pt1')}
+                            <b>{t('section03_bold1')}</b>
+                            {t('section03_heading_pt2')}
+                            <b>{t('section03_bold2')}</b>
+                            {t('section03_heading_pt3')}
+                        </h2>
+                    </HeadingSection01>
+                    <HeadingSection01>
+                        <h2>
+                            {t('section03_heading_pt3_2')}
 
-                                <b>{t('section03_bold3')}</b>
-                                {t('section03_heading_pt4')}
-                            </h2>
-                        </HeadingSection01>
-                    </motion.div>
-                </HomeSection03Wrapper>
-            </HomeSection01Container>
+                            <b>{t('section03_bold3')}</b>
+                            {t('section03_heading_pt4')}
+                        </h2>
+                    </HeadingSection01>
+                </motion.div>
+            </HomeSection03Wrapper>
         </HomeSection03Container>
     )
 }
@@ -89,6 +83,8 @@ const HomeSection03Container = styled.div`
     background: rgba(217, 224, 236, 0.2);
     border-radius: 40px 0px;
     position: relative;
+    min-height: 60vh;
+    padding: 85px 0;
 `
 export const HomeSection03Wrapper = styled.div`
     display: flex;
@@ -118,7 +114,7 @@ export const HomeSection03Wrapper = styled.div`
 
 const ImageWrapper = styled.div`
     position: absolute;
-    top: 50;
+    top: 20;
     left: 0;
     width: 45%;
     height: 500px;

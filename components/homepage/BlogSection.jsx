@@ -75,7 +75,7 @@ const BlogSection = ({ posts }) => {
                             />
                         }
                         align='start'
-                        styles={(theme) => ({
+                        styles={{
                             root: {
                                 maxWidth: '1200px',
 
@@ -119,7 +119,7 @@ const BlogSection = ({ posts }) => {
                             indicator: {
                                 backgroundColor: '#1B1464',
                             },
-                        })}
+                        }}
                     >
                         {posts.map((post) => {
                             const date = new Date(

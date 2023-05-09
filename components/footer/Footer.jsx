@@ -247,7 +247,7 @@ const FooterWrapper = styled.div`
     }
 
     .brand {
-        transform: translateY(-2.1rem);
+        transform: translateY(-3rem);
 
         @media screen and (max-width: 768px) {
             transform: translateY(-4.1rem);

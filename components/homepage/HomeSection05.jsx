@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {
-    HomeSection01Container,
     HomeSection01Wrapper,
     SloganSection01,
     Tag,
@@ -9,11 +8,8 @@ import {
 
 // Animation
 import { motion, useInView } from 'framer-motion'
-import { titleAnim, fade } from '../../lib/animation'
 
 import { useTranslation } from 'next-i18next'
-import GradientButton from '../button/GradientButton'
-import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import american from '../../images/american.svg'
 import { RoundedButton } from './HeroHomePage'
@@ -47,12 +43,7 @@ const HomeSection05 = () => {
                 ref={ref}
             >
                 <HomeSection05Layout>
-                    <motion.div
-                        className='text-content'
-                        variants={titleAnim}
-                        initial='hidden'
-                        animate='show'
-                    >
+                    <motion.div className='text-content'>
                         <Tag style={{ width: '50%' }}>
                             <span>{t('administrativeServices')}</span>
                         </Tag>

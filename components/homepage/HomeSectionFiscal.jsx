@@ -46,12 +46,7 @@ const HomeSectionFiscal = () => {
             ref={ref}
         >
             <FiscalWrapper>
-                <motion.div
-                    className='text-content'
-                    variants={titleAnim}
-                    initial='hidden'
-                    animate='show'
-                >
+                <motion.div className='text-content'>
                     <Tag>
                         <span>{t('taxServices')}</span>
                     </Tag>

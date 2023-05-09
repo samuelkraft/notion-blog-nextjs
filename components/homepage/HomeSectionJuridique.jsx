@@ -7,11 +7,11 @@ import {
     HeadingSection01,
 } from './HomeSection01'
 
-import { motion, useInView } from 'framer-motion'
-import { titleAnim, fade } from '../../lib/animation'
 import Image from 'next/image'
+
+import { motion } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { RoundedButton } from './HeroHomePage'
 import check from '../../images/check.svg'
 import { Center } from '@mantine/core'
@@ -25,18 +25,11 @@ const HomeSectionJuridique = () => {
         i18n.reloadResources(i18n.resolvedLanguage, ['common'])
     }, [])
 
-    const ref = useRef(null)
-
     return (
         <Background>
             <HomeSection01Container>
                 <HomeSectionJuridiqueWrapper>
-                    <motion.div
-                        className='text-content'
-                        variants={titleAnim}
-                        initial='hidden'
-                        animate='show'
-                    >
+                    <motion.div className='text-content'>
                         <TagJuridique>
                             <span>{t('legalServices')}</span>
                         </TagJuridique>

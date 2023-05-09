@@ -163,6 +163,10 @@ const BlogContent = ({
                                     width: '20px',
                                 },
                             },
+
+                            indicators: {
+                                bottom: '50px !important',
+                            },
                         })}
                     >
                         {category.map((post) => {

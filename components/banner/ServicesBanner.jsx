@@ -43,12 +43,8 @@ const ServicesBanner = () => {
 export default ServicesBanner
 
 const ServicesBannerContainer = styled.div`
-    min-height: 80vh;
+    min-height: 70vh;
     position: relative;
-
-    @media screen and (max-width: 768px) {
-        min-height: 70vh;
-    }
 `
 
 const BackgroundBlue = styled.div`

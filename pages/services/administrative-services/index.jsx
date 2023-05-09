@@ -161,31 +161,41 @@ const AdministritiveServices = ({}) => {
 
                         <BulletList>
                             <li>
-                                {t('section4_bullet1')}
-                                <b>{t('section4_bold1')}</b>
-                                {t('section4_bullet1_2')}
+                                <span>
+                                    {t('section4_bullet1')}
+                                    <b>{t('section4_bold1')}</b>
+                                    {t('section4_bullet1_2')}
+                                </span>
                             </li>
                             <li>
-                                {t('section4_bullet2')}
-                                <b>{t('section4_bold2')}</b>
-                                {t('section4_bullet2_2')}
+                                <span>
+                                    {t('section4_bullet2')}
+                                    <b>{t('section4_bold2')}</b>
+                                    {t('section4_bullet2_2')}
+                                </span>
                             </li>
                             <li>
-                                {t('section4_bullet3')}
-                                <b>{t('section4_bold3')}</b>
-                                {t('section4_bullet3_2')}
+                                <span>
+                                    {t('section4_bullet3')}
+                                    <b>{t('section4_bold3')}</b>
+                                    {t('section4_bullet3_2')}
+                                </span>
                             </li>
                             <li>
-                                {t('section4_bullet4')}
-                                <b>{t('section4_bold4')}</b>
-                                {t('section4_bullet4_2')}
-                                <b>{t('section4_bold4_2')}</b>
-                                {t('section4_bullet4_3')}
+                                <span>
+                                    {t('section4_bullet4')}
+                                    <b>{t('section4_bold4')}</b>
+                                    {t('section4_bullet4_2')}
+                                    <b>{t('section4_bold4_2')}</b>
+                                    {t('section4_bullet4_3')}
+                                </span>
                             </li>
                             <li>
-                                {t('section4_bullet5')}
-                                <b>{t('section4_bold5')}</b>
-                                {t('section4_bullet5_2')}
+                                <span>
+                                    {t('section4_bullet5')}
+                                    <b>{t('section4_bold5')}</b>
+                                    {t('section4_bullet5_2')}
+                                </span>
                             </li>
                             <li>
                                 {t('section4_bullet6')}
@@ -388,7 +398,7 @@ export const Slogan = styled(motion.h1)`
 
     color: #1b1464;
 
-    width: 70%;
+    width: 72%;
 
     @media screen and (min-width: 768px) {
         font-size: 25px;
@@ -409,31 +419,6 @@ export const Slogan = styled(motion.h1)`
         font-size: 25px;
         line-height: 38px;
         width: 100%;
-    }
-`
-
-export const Subtitle = styled.h1`
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    line-height: 1.2;
-    color: #352d61;
-
-    @media screen and (max-width: 465px) {
-    }
-
-    @media screen and (min-width: 768px) {
-        br {
-            display: none;
-        }
-    }
-    @media screen and (min-width: 1024px) {
-        br {
-            display: block;
-        }
-        font-size: 32px;
-    }
-    @media screen and (min-width: 1440px) {
-        font-size: 36px;
     }
 `
 
@@ -464,10 +449,9 @@ export const Paragraph = styled.p`
     }
 `
 
-export const BulletList = styled.div`
-    display: flex;
-    flex-flow: column;
-    gap: 2px;
+export const BulletList = styled.ul`
+    list-style: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
 
     li {
         font-family: 'Gilroy';
@@ -476,10 +460,19 @@ export const BulletList = styled.div`
         font-size: 16px;
         line-height: 24.66px;
         /* or 25px */
-
         color: #1b1464;
 
         margin-left: 10px;
+        position: relative;
+        padding-left: 1.5em;
+        line-height: 1.5;
+    }
+
+    li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        top: 0.15em; /* Adjust top position to better align the bullet with the text */
     }
 `
 

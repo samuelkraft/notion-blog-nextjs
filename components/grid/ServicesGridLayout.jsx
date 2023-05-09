@@ -41,12 +41,6 @@ const ServicesGridLayout = () => {
                             </div>
                         </ServicesCard>
 
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
-
                         <UnderlinedButton href='/services/accounting-services'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>
@@ -62,11 +56,7 @@ const ServicesGridLayout = () => {
                                 {t('administrativeServices')}
                             </div>
                         </ServicesCard>
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
+
                         <UnderlinedButton href='/services/administrative-services'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>
@@ -83,11 +73,6 @@ const ServicesGridLayout = () => {
                             </div>
                         </ServicesCard>
 
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
                         <UnderlinedButton href='/services/legal-services'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>
@@ -104,11 +89,6 @@ const ServicesGridLayout = () => {
                             </div>
                         </ServicesCard>
 
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
                         <UnderlinedButton href='/services/payroll-services'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>
@@ -124,11 +104,7 @@ const ServicesGridLayout = () => {
                                 {t('conseillerFiscal')}
                             </div>
                         </ServicesCard>
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
+
                         <UnderlinedButton href='/services/tax-services'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>
@@ -144,11 +120,7 @@ const ServicesGridLayout = () => {
                                 {t('auditServices')}
                             </div>
                         </ServicesCard>
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
+
                         <UnderlinedButton href='/services/audit-services'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>
@@ -164,11 +136,7 @@ const ServicesGridLayout = () => {
                                 {t('frenchTax')}
                             </div>
                         </ServicesCard>
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
+
                         <UnderlinedButton href='/french-tax'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>
@@ -184,11 +152,7 @@ const ServicesGridLayout = () => {
                                 {t('usTax')}
                             </div>
                         </ServicesCard>
-                        <p>
-                            <b>{t('servicesCard1_title')}</b>
-                            <br />
-                            {t('servicesCard1_subtitle')}
-                        </p>
+
                         <UnderlinedButton href='/us-tax'>
                             {t('seeMore')} <IconArrowRight size={12} />
                         </UnderlinedButton>

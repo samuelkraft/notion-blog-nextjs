@@ -336,7 +336,7 @@ const AccountingServices = ({}) => {
                     </TextContent>
                 </TextContentContainer> */}
 
-                <TextContentContainer gray>
+                {/* <TextContentContainer gray>
                     <TextContent>
                         <Slogan>{t('section6_title')}</Slogan>
 
@@ -345,7 +345,7 @@ const AccountingServices = ({}) => {
                             <b>{t('section6_bold1')}</b>
                         </Paragraph>
                     </TextContent>
-                </TextContentContainer>
+                </TextContentContainer> */}
 
                 <TextContentContainer>
                     <TextContent>

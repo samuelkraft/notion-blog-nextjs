@@ -19,17 +19,10 @@ import {
     Textarea,
     Flex,
     Select,
-    Checkbox,
     Stack,
 } from '@mantine/core'
 
-import {
-    IconMail,
-    IconUser,
-    IconPhone,
-    IconCircleCheck,
-    IconBriefcase,
-} from '@tabler/icons'
+import { IconCircleCheck } from '@tabler/icons'
 import { motion, useInView } from 'framer-motion'
 
 const ContactForm = () => {
@@ -241,10 +234,6 @@ const ContactForm = () => {
                             placeholder={t('compta-courante')}
                             data={[
                                 {
-                                    value: 'audit-annuel',
-                                    label: t('audit-annual'),
-                                },
-                                {
                                     value: 'compta-courante',
                                     label: t('compta-courante'),
                                 },
@@ -253,10 +242,13 @@ const ContactForm = () => {
                                     label: t('compta-exception'),
                                 },
                                 { value: 'irpp', label: t('irpp') },
+                                {
+                                    value: 'audit-annuel',
+                                    label: t('audit-annual'),
+                                },
+                                { value: 'rh', label: t('rh') },
                                 { value: 'itin', label: t('itin') },
                                 { value: 'juridique', label: t('juridique') },
-                                { value: 'paie', label: t('payroll') },
-                                { value: 'rh', label: t('rh') },
                             ]}
                             radius='md'
                             size='md'
@@ -318,8 +310,6 @@ const ContactForm = () => {
                                 boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                             }}
                         />
-
-                        <Checkbox label={t('policy')} />
 
                         <Modal
                             opened={opened}

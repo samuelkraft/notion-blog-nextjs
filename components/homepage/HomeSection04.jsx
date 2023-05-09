@@ -8,9 +8,8 @@ import {
 } from './HomeSection01'
 // Animation
 import { motion, useInView } from 'framer-motion'
-import { titleAnim, fade } from '../../lib/animation'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import expertiseRH from '../../images/expertise_RH.svg'
 import Image from 'next/image'
 import { RoundedButton } from './HeroHomePage'
@@ -27,8 +26,6 @@ const HomeSection04 = () => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
 
-    const [opened, setOpened] = useState(false)
-
     return (
         <HomeSection01Container
             initial={{ opacity: 0 }}
@@ -44,12 +41,7 @@ const HomeSection04 = () => {
             ref={ref}
         >
             <HomeSection04Wrapper>
-                <motion.div
-                    className='text-content'
-                    variants={titleAnim}
-                    initial='hidden'
-                    animate='show'
-                >
+                <motion.div className='text-content'>
                     <Tag>
                         <span>{t('payrollServices')}</span>
                     </Tag>
@@ -68,10 +60,7 @@ const HomeSection04 = () => {
                         </h2>
                     </HeadingSection01>
                     <HeadingSection01>
-                        <div
-                            className=''
-                            style={{ width: '158px' }}
-                        >
+                        <div style={{ width: '158px' }}>
                             <RoundedButton href='/services/payroll-services'>
                                 {t('readMore')}
                             </RoundedButton>
@@ -84,22 +73,7 @@ const HomeSection04 = () => {
                     <Image
                         src={expertiseRH}
                         fill
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
                         alt='expertiseRH'
-                        transition={{
-                            delay: 5,
-                            default: {
-                                duration: 1,
-                                ease: [0, 0.71, 0.2, 1.01],
-                            },
-                            scale: {
-                                type: 'spring',
-                                damping: 10,
-                                stiffness: 100,
-                                restDelta: 0.001,
-                            },
-                        }}
                     />
                 </ImageWrapper>
             </HomeSection04Wrapper>

@@ -41,39 +41,12 @@ const HomeSection02 = () => {
             ref={ref}
         >
             <HomeSection02Wrapper>
-                <motion.div
-                    className='text-content'
-                    variants={titleAnim}
-                    initial='hidden'
-                    animate='show'
-                >
+                <motion.div className='text-content'>
                     <Tag>
                         <span>{t('accountingServices')}</span>
                     </Tag>
-                    <SloganSection02
-                        initial={{ opacity: 0.5 }}
-                        animate={{
-                            opacity: 1,
-                        }}
-                        transition={{
-                            duration: 1,
-                            delay: 4.5,
-                            ease: 'easeInOut',
-                        }}
-                    >
-                        {t('section02_title')}
-                    </SloganSection02>
-                    <motion.div
-                        initial={{ opacity: 0.5 }}
-                        animate={{
-                            opacity: 1,
-                        }}
-                        transition={{
-                            duration: 1,
-                            delay: 4.5,
-                            ease: 'easeInOut',
-                        }}
-                    >
+                    <SloganSection02>{t('section02_title')}</SloganSection02>
+                    <motion.div>
                         <HeadingSection02>
                             <h2>
                                 {t('section02_heading_pt1')}

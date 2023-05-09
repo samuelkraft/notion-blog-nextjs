@@ -48,12 +48,7 @@ const HomeSectionAudit = () => {
                         alt='Audit'
                     />
                 </ImageWrapperGradient>
-                <motion.div
-                    className='text-content'
-                    variants={titleAnim}
-                    initial='hidden'
-                    animate='show'
-                >
+                <motion.div className='text-content'>
                     <Tag>
                         <span>{t('auditServices')}</span>
                     </Tag>

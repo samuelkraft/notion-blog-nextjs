@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 // Animation
 import { motion, useInView } from 'framer-motion'
-import { titleAnim, fade } from '../../lib/animation'
 import { Slogan, Heading, HeroWrapper } from './HeroHomePage'
 
 import comptable from '../../images/comptable.svg'
@@ -46,12 +45,7 @@ const HomeSection01 = () => {
                 ref={ref}
             >
                 <Wrapper01>
-                    <motion.div
-                        className='text-content'
-                        variants={titleAnim}
-                        initial='hidden'
-                        animate='show'
-                    >
+                    <motion.div className='text-content'>
                         <Tag>
                             <span>{t('whyUs')}</span>
                         </Tag>
