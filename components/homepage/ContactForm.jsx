@@ -234,21 +234,27 @@ const ContactForm = () => {
                             placeholder={t('compta-courante')}
                             data={[
                                 {
-                                    value: 'compta-courante',
+                                    value: 'Mission fiscale et comptable pour une entreprise',
                                     label: t('compta-courante'),
                                 },
                                 {
-                                    value: 'compta-exception',
+                                    value: 'Mission fiscale pour un particulier',
                                     label: t('compta-exception'),
                                 },
-                                { value: 'irpp', label: t('irpp') },
                                 {
-                                    value: 'audit-annuel',
+                                    value: 'Mission de conseil',
+                                    label: t('irpp'),
+                                },
+                                {
+                                    value: "Mission d'audit",
                                     label: t('audit-annual'),
                                 },
-                                { value: 'rh', label: t('rh') },
-                                { value: 'itin', label: t('itin') },
-                                { value: 'juridique', label: t('juridique') },
+                                { value: 'Mission paie et RH', label: t('rh') },
+                                { value: "Demande d'ITIN", label: t('itin') },
+                                {
+                                    value: 'Mission juridique',
+                                    label: t('juridique'),
+                                },
                             ]}
                             radius='md'
                             size='md'
@@ -327,7 +333,7 @@ const ContactForm = () => {
                             centered
                             radius='md'
                             padding='xl'
-                            size='md'
+                            size='lg'
                         >
                             <Group position='center'>
                                 <Flex
@@ -373,7 +379,7 @@ const ContactForm = () => {
                     <ContactInfoContainer>
                         <ContactInfo>
                             <Image
-                                src={location1}
+                                src={location2}
                                 alt='paris'
                             />
                             <Stack spacing={'xs'}>
@@ -401,7 +407,7 @@ const ContactForm = () => {
                         >
                             <ContactInfo>
                                 <Image
-                                    src={location2}
+                                    src={location1}
                                     alt='tel aviv'
                                 />
                                 <p>Menahem Begin, 132 TEL AVIV</p>
