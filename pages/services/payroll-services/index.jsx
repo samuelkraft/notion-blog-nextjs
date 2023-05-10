@@ -296,6 +296,9 @@ const PayrollServices = ({}) => {
                             {t('section5_text1')}
                             <b>{t('section5_bold1')}</b>
                             {t('section5_text2')}
+                        </Paragraph>
+
+                        <Paragraph>
                             <b>{t('section5_bold2')}</b>
                             {t('section5_text3')}
                             <b>{t('section5_bold3')}</b>

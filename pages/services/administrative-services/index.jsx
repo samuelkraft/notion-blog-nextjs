@@ -270,8 +270,8 @@ const AdministritiveServices = ({}) => {
                             {t('section7_text3')}
                         </Paragraph>
                         <Paragraph>
-                            {t('section7_text4')}
                             <b>{t('section7_bold3')}</b>
+                            {t('section7_text4')}
                         </Paragraph>
 
                         <BulletList>
@@ -286,8 +286,8 @@ const AdministritiveServices = ({}) => {
                     <TextContent>
                         <Slogan>{t('section8_title')}</Slogan>
                         <Paragraph>
-                            {t('section8_text1')}
                             <b>{t('section2_bold1')}</b>
+                            {t('section8_text1')}
                             {t('section8_text2')}
                         </Paragraph>
                         <BulletList>

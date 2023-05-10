@@ -8,12 +8,9 @@ import {
 } from './HomeSection01'
 
 import { motion, useInView } from 'framer-motion'
-import { titleAnim, fade } from '../../lib/animation'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
-import GradientButton from '../button/GradientButton'
 import { useEffect, useRef } from 'react'
-import Link from 'next/link'
 import { RowWrapper, ColumnWrapper } from './HomeSectionJuridique'
 import check from '../../images/check.svg'
 import fiscal from '../../images/fiscal_hero_img.png'
@@ -137,17 +134,18 @@ export const FiscalWrapper = styled(HomeSection01Wrapper)`
 export const ImageWrapperGradient = styled.div`
     position: relative;
     width: 300px;
-    height: 400px;
+    height: 348px;
     object-fit: cover;
+    aspect-ratio: 0.92;
 
     @media screen and (max-width: 1250px) {
         width: 480px;
-        height: 580px;
+        height: 528px;
     }
 
     @media screen and (max-width: 1199px) {
         width: 480px;
-        height: 580px;
+        height: 528px;
     }
 
     @media screen and (max-width: 1024px) {
@@ -156,12 +154,12 @@ export const ImageWrapperGradient = styled.div`
 
     @media screen and (max-width: 600px) {
         width: 300px;
-        height: 300px;
+        height: 348px;
     }
 
     @media screen and (min-width: 1250px) {
         width: 520px;
-        height: 600px;
+        height: 568px;
     }
 `
 

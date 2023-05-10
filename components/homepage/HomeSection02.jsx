@@ -5,11 +5,9 @@ import {
     SloganSection01,
     Tag,
 } from './HomeSection01'
-import GradientButton from '../button/GradientButton'
 import styled from 'styled-components'
 import { useTranslation } from 'next-i18next'
 import { motion, useInView } from 'framer-motion'
-import { titleAnim, fade } from '../../lib/animation'
 import { useEffect, useRef } from 'react'
 
 import { RoundedButton } from './HeroHomePage'

@@ -1,18 +1,11 @@
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 
-import {
-    SloganSection01,
-    HomeSection01Container,
-    HeadingSection01,
-    HomeSection01Wrapper,
-    Tag,
-} from './HomeSection01'
+import { SloganSection01, HeadingSection01, Tag } from './HomeSection01'
 import { useEffect, useRef } from 'react'
 import { useInView, motion } from 'framer-motion'
 import map from '../../images/france_map.svg'
 import Image from 'next/image'
-import { titleAnim, fade } from '../../lib/animation'
 
 const HomeSection03 = () => {
     const { t, i18n } = useTranslation('common', {
@@ -50,10 +43,7 @@ const HomeSection03 = () => {
                 </ImageWrapper>
                 <BlockContainer />
 
-                <motion.div
-                    className='text-content'
-                    variants={titleAnim}
-                >
+                <motion.div className='text-content'>
                     <Tag>{t('section03_tag')}</Tag>
                     <SloganSection03>{t('section03_title')}</SloganSection03>
                     <HeadingSection01>
@@ -96,6 +86,7 @@ export const HomeSection03Wrapper = styled.div`
         display: flex;
         flex-flow: column;
         justify-content: center;
+        padding: 3rem;
     }
 
     @media screen and (min-width: 1024px) {
@@ -131,6 +122,7 @@ const ImageWrapper = styled.div`
     }
 
     @media screen and (max-width: 768px) {
+        top: 50%;
         width: 80% !important ;
     }
 

@@ -10,7 +10,7 @@ import {
 import { motion, useInView } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useRef } from 'react'
-import expertiseRH from '../../images/expertise_RH.svg'
+import expertiseRH from '../../images/expertise_RH.png'
 import Image from 'next/image'
 import { RoundedButton } from './HeroHomePage'
 import { BackgroundBlur } from './HomeSection01'
