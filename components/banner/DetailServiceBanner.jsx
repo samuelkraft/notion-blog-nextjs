@@ -149,12 +149,12 @@ const ImageWrapper = styled.div`
     top: -20%;
 
     width: 500px;
-    height: 600px;
+    height: 582px;
 
     @media screen and (max-width: 1380px) {
         top: -10%;
         width: 450px;
-        height: 600px;
+        height: 532px;
     }
 `
 

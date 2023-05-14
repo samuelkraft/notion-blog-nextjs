@@ -313,7 +313,6 @@ const HiringForm = () => {
                                 name='file'
                                 multiple={false}
                                 accept={[MIME_TYPES.pdf]}
-                                maxSize={30 * 1024 ** 2}
                             >
                                 <div style={{ pointerEvents: 'none' }}>
                                     <Group position='center'>
