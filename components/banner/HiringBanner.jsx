@@ -12,6 +12,7 @@ const HiringBanner = () => {
                 src={hiringBanner}
                 alt='join us'
                 fill
+                priority
             />
 
             <SloganHiringBanner>{t('joinUs')}</SloganHiringBanner>

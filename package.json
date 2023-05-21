@@ -13,6 +13,7 @@
 		"@mantine/core": "^5.9.2",
 		"@mantine/dropzone": "^5.9.5",
 		"@mantine/ds": "^5.9.2",
+		"@mantine/form": "^6.0.11",
 		"@mantine/hooks": "^5.9.2",
 		"@mantine/next": "^5.9.2",
 		"@mantine/prism": "^5.9.2",

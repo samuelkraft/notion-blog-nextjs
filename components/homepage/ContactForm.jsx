@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
+import { useForm } from '@mantine/form'
 
 import map from '../../images/map.png'
 import location1 from '../../images/location1.svg'
@@ -40,29 +41,74 @@ const ContactForm = () => {
     const [opened, setOpened] = useState(false)
     const router = useRouter()
 
+    // Define your validation functions
+    const validateEmail = (value) => {
+        const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
+        return emailRegex.test(value)
+            ? null
+            : 'Please enter a valid email address'
+    }
+
+    const validateRequired = (value) => {
+        if (value === undefined) return 'This field is required'
+        return value.trim() !== '' ? null : 'This field is required'
+    }
+
+    const validatePhone = (value) => {
+        const phoneRegex = /^\d{1,4}\s?\d{1,4}\s?\d{1,4}$/
+        return phoneRegex.test(value)
+            ? null
+            : 'Please enter a valid phone number'
+    }
+
+    const form = useForm({
+        initialValues: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            needs: '',
+            message: '',
+        },
+
+        validate: {
+            email: (value) => validateEmail(value),
+            firstName: (value) => validateRequired(value),
+            lastName: (value) => validateRequired(value),
+            phone: (value) => validatePhone(value),
+            needs: (value) => validateRequired(value),
+        },
+    })
+
     async function handleOnSubmit(e) {
         e.preventDefault()
-        console.log(e.currentTarget.elements)
-        const formData = new FormData()
-        // Append the selected file to the FormData object
-        formData.append('firstName', e.currentTarget.elements.firstName.value)
-        formData.append('lastName', e.currentTarget.elements.lastName.value)
-        formData.append('phone', e.currentTarget.elements.phone.value)
-        formData.append('email', e.currentTarget.elements.email.value)
-        formData.append('needs', e.target.elements.needs.value)
-        formData.append('message', e.currentTarget.elements.message.value)
 
-        // Affiche les valeurs
-        for (var value of formData.values()) {
-            console.log(value)
+        form.validate()
+        const nbFieldsError = Object.keys(form.errors).length
+
+        if (nbFieldsError === 0) {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                body: JSON.stringify(form.values),
+            })
+
+            const resBody = await res.json()
+            console.log('response', resBody)
+
+            if (res.status === 200) {
+                // If the request was successful, do something (e.g., show a success message or redirect)
+                console.log('Form submitted successfully')
+                setOpened(true)
+                form.reset()
+            } else {
+                // If the request failed, show an error message or handle the error in some other way
+                console.error('Failed to submit the form', resBody)
+            }
+        } else {
+            // show error message on the form
+            console.log('error')
+            form.validate(form.errors[0])
         }
-
-        const res = await fetch('/api/contact', {
-            method: 'POST',
-            body: formData,
-        })
-
-        const resBody = await res.json()
     }
 
     return (
@@ -81,7 +127,7 @@ const ContactForm = () => {
             ref={ref}
         >
             <Form
-                method='post'
+                method='POST'
                 onSubmit={handleOnSubmit}
             >
                 <TextContentContainer>
@@ -98,10 +144,14 @@ const ContactForm = () => {
                             <TextInput
                                 label={t('lastName')}
                                 placeholder={t('lastName')}
-                                tyoe='text'
+                                type='text'
                                 radius='md'
                                 size='md'
                                 name='lastName'
+                                {...form.getInputProps('lastName', {
+                                    onBlur: () => form.validate('lastName'),
+                                })}
+                                error={form.errors.lastName}
                                 style={{
                                     boxShadow:
                                         '0px 1px 2px rgba(16, 24, 40, 0.05)',
@@ -135,6 +185,10 @@ const ContactForm = () => {
                                 radius='md'
                                 size='md'
                                 name='firstName'
+                                {...form.getInputProps('firstName', {
+                                    onBlur: () => form.validate('firstName'),
+                                })}
+                                error={form.errors.firstName}
                                 style={{
                                     boxShadow:
                                         '0px 1px 2px rgba(16, 24, 40, 0.05)',
@@ -167,6 +221,9 @@ const ContactForm = () => {
                             label='Email'
                             placeholder='your@email.com'
                             type='email'
+                            {...form.getInputProps('email')}
+                            onBlur={() => form.validate('email')}
+                            error={form.errors.email}
                             radius='md'
                             size='md'
                             name='email'
@@ -203,6 +260,10 @@ const ContactForm = () => {
                             radius='md'
                             size='md'
                             name='phone'
+                            {...form.getInputProps('phone', {
+                                onBlur: () => form.validate('phone'),
+                            })}
+                            error={form.errors.phone}
                             style={{
                                 boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                             }}
@@ -259,6 +320,9 @@ const ContactForm = () => {
                             radius='md'
                             size='md'
                             name='needs'
+                            {...form.getInputProps('needs')}
+                            error={form.errors.needs}
+                            onBlur={() => form.validate('needs')}
                             styles={{
                                 defaultVariant: {
                                     borderColor: '#2457F5',
@@ -289,6 +353,7 @@ const ContactForm = () => {
                             placeholder={t('your_message')}
                             label={t('your_message')}
                             name='message'
+                            {...form.getInputProps('message')}
                             size='md'
                             radius='md'
                             styles={{
@@ -360,7 +425,6 @@ const ContactForm = () => {
                             weight='400'
                             radius='xl'
                             gradientColor='#0657CF'
-                            onClick={() => setOpened(true)}
                         >
                             {t('contactFormBtnLabel')}
                         </GradientButton>

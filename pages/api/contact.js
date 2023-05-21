@@ -1,8 +1,6 @@
-import formidable from "formidable";
-import * as yup from "yup";
 import mail from "@sendgrid/mail";
+import * as yup from "yup";
 mail.setApiKey(process.env.SENDGRID_API_KEY);
-import fs from "fs";
 
 let formSchema = yup.object().shape({
     firstName: yup.string().required(),
@@ -10,14 +8,10 @@ let formSchema = yup.object().shape({
     email: yup.string().email().required(),
     phone: yup.string().required(),
     needs: yup.string().required(),
-    message: yup.string().required(),
+    message: yup.string(),
 });
 
-
-async function sendFormDataToMail(fields, files) {
-    // save to persistent data store
-    console.log("fields: ", fields);
-    console.log("files: ", files);
+async function sendFormDataToMail(fields) {
     const message = `
         Nom: ${fields.lastName}\r\n
         Prénom: ${fields.firstName}\r\n
@@ -26,7 +20,6 @@ async function sendFormDataToMail(fields, files) {
         Intéressé par : ${fields.needs}\r\n	
         Message: ${fields.message}\r\n
     `;
-    console.log("message: ", message);
 
     const data = {
         to: "frederic.lay@efrei.net",
@@ -42,12 +35,11 @@ async function sendFormDataToMail(fields, files) {
             console.error(error.response.body);
         }
     });
-
 }
 
-async function validateFromData(fields, files) {
+async function validateFromData(fields) {
     try {
-        await formSchema.validate({ ...fields, ...files });
+        await formSchema.validate(fields);
         return true;
     } catch (e) {
         return false;
@@ -55,50 +47,26 @@ async function validateFromData(fields, files) {
 }
 
 async function handlePostFormReq(req, res) {
-    const form = formidable({ multiples: true });
+    const fields = JSON.parse(req.body);
 
-    const formData = new Promise((resolve, reject) => {
-        form.parse(req, async (err, fields, files) => {
-            if (err) {
-                reject("error");
-            }
-            resolve({ fields, files });
-        });
-    });
-
-    try {
-        const { fields, files } = await formData;
-        const isValid = await validateFromData(fields, files);
-        if (!isValid) throw Error("invalid form schema");
-
-        try {
-            await sendFormDataToMail(fields, files);
-            res.status(200).send({ status: "submitted" });
-            return;
-        } catch (e) {
-            res.status(500).send({ status: "something went wrong" });
-            return;
-        }
-    } catch (e) {
+    const isValid = await validateFromData(fields);
+    if (!isValid) {
         res.status(400).send({ status: "invalid submission" });
         return;
     }
+
+    try {
+        await sendFormDataToMail(fields);
+        res.status(200).send({ status: "submitted" });
+    } catch (e) {
+        res.status(500).send({ status: "something went wrong" });
+    }
 }
-
-
-
 
 export default async function handler(req, res) {
-    if (req.method == "POST") {
+    if (req.method === "POST") {
         await handlePostFormReq(req, res);
     } else {
-        res.status(404).send("method not found");
+        res.status(405).json({ message: "Method not allowed" }); // 405 Method Not Allowed
     }
 }
-
-export const config = {
-    api: {
-        bodyParser: false
-    }
-};
-

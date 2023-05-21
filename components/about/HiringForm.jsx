@@ -5,13 +5,15 @@ import GradientButton from '../button/GradientButton'
 import { useState, useRef } from 'react'
 import { TextInput, Modal, Group, Textarea, Flex } from '@mantine/core'
 
-import { IconCircleCheck } from '@tabler/icons'
+import { IconCircleCheck, IconCircleX } from '@tabler/icons'
 
 import { Text, Button, createStyles } from '@mantine/core'
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone'
 import { IconCloudUpload, IconX, IconDownload } from '@tabler/icons'
 
 import { motion, useInView } from 'framer-motion'
+
+import { useForm } from '@mantine/form'
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -50,6 +52,7 @@ const HiringForm = () => {
     const { t } = useTranslation('common')
     const { classes, theme } = useStyles()
     const [opened, setOpened] = useState(false)
+    const [openedError, setOpenedError] = useState(false)
     const [selectedFile, setSelectedFile] = useState(null)
     const openRef = useRef(null)
     const ref = useRef(null)
@@ -59,33 +62,98 @@ const HiringForm = () => {
         setSelectedFile(acceptedFiles[0])
     }
 
+    // Define your validation functions
+    const validateEmail = (value) => {
+        const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
+        return emailRegex.test(value)
+            ? null
+            : 'Please enter a valid email address'
+    }
+
+    const validateRequired = (value) => {
+        if (value === undefined) return 'This field is required'
+        return value.trim() !== '' ? null : 'This field is required'
+    }
+
+    const validatePhone = (value) => {
+        const phoneRegex = /^\d{1,4}\s?\d{1,4}\s?\d{1,4}$/
+        return phoneRegex.test(value)
+            ? null
+            : 'Please enter a valid phone number'
+    }
+
+    const form = useForm({
+        initialValues: {
+            lastName: '',
+            firstName: '',
+            email: '',
+            phone: '',
+            message: '',
+        },
+
+        validate: {
+            lastName: (value) => validateRequired(value),
+            firstName: (value) => validateRequired(value),
+            email: (value) => validateEmail(value),
+            phone: (value) => validatePhone(value),
+            message: (value) => validateRequired(value),
+        },
+
+        validateInputOnBlur: true,
+    })
+
     async function handleOnSubmit(e) {
         e.preventDefault()
-        console.log(e.currentTarget.elements)
-        const formData = new FormData()
-        // Append the selected file to the FormData object
-        formData.append('file', selectedFile)
-        formData.append('firstName', e.currentTarget.elements.firstName.value)
-        formData.append('lastName', e.currentTarget.elements.lastName.value)
-        formData.append('phone', e.currentTarget.elements.phone.value)
-        formData.append('email', e.currentTarget.elements.email.value)
-        formData.append('message', e.currentTarget.elements.message.value)
-        // Array.from(e.currentTarget.elements).forEach((field) => {
-        // 	if (!field.name) return;
-        // 	formData.append(field.name, field.value);
-        // });
 
-        // Affiche les valeurs
-        for (var value of formData.values()) {
-            console.log(value)
+        // Validate the form before sending it
+
+        if (selectedFile === null) {
+            setOpenedError(true)
+            return
         }
 
-        const res = await fetch('/api/hiring', {
-            method: 'POST',
-            body: formData,
-        })
+        form.validate()
+        const nbFieldsError = Object.keys(form.errors).length
+        if (nbFieldsError === 0) {
+            const formData = new FormData()
 
-        const resBody = await res.json()
+            // Append the selected file to the FormData object
+            formData.append('file', selectedFile)
+            formData.append(
+                'firstName',
+                e.currentTarget.elements.firstName.value
+            )
+            formData.append('lastName', e.currentTarget.elements.lastName.value)
+            formData.append('phone', e.currentTarget.elements.phone.value)
+            formData.append('email', e.currentTarget.elements.email.value)
+            formData.append('message', e.currentTarget.elements.message.value)
+
+            // Affiche les valeurs
+            for (var value of formData.values()) {
+                console.log(value)
+            }
+
+            const res = await fetch('/api/hiring', {
+                method: 'POST',
+                body: formData,
+            })
+
+            const resBody = await res.json()
+            console.log('response', resBody)
+
+            if (res.status === 200) {
+                // If the request was successful, do something (e.g., show a success message or redirect)
+                console.log('Form submitted successfully')
+                setOpened(true)
+                form.reset()
+            } else {
+                // If the request failed, show an error message or handle the error in some other way
+                console.error('Failed to submit the form', resBody)
+            }
+        } else {
+            console.log('error')
+            form.validate(form.errors[0])
+        }
     }
 
     return (
@@ -119,10 +187,14 @@ const HiringForm = () => {
                                 <TextInput
                                     label={t('lastName')}
                                     placeholder={t('lastName')}
-                                    tyoe='text'
+                                    type='text'
                                     radius='lg'
                                     size='lg'
                                     name='lastName'
+                                    {...form.getInputProps('lastName', {
+                                        onBlur: () => form.validate('lastName'),
+                                    })}
+                                    error={form.errors.lastName}
                                     styles={{
                                         defaultVariant: {
                                             borderColor: '#2457F5',
@@ -152,6 +224,11 @@ const HiringForm = () => {
                                     radius='lg'
                                     size='lg'
                                     name='firstName'
+                                    {...form.getInputProps('firstName', {
+                                        onBlur: () =>
+                                            form.validate('firstName'),
+                                    })}
+                                    error={form.errors.firstName}
                                     styles={{
                                         defaultVariant: {
                                             borderColor: '#2457F5',
@@ -182,6 +259,10 @@ const HiringForm = () => {
                                 radius='lg'
                                 size='lg'
                                 name='email'
+                                {...form.getInputProps('email', {
+                                    onBlur: () => form.validate('email'),
+                                })}
+                                error={form.errors.email}
                                 styles={{
                                     defaultVariant: {
                                         borderColor: '#2457F5',
@@ -203,7 +284,6 @@ const HiringForm = () => {
                                         color: '#344054',
                                     },
                                 }}
-                                // {...form.getInputProps("email")}
                             />
 
                             <TextInput
@@ -213,7 +293,10 @@ const HiringForm = () => {
                                 radius='lg'
                                 size='lg'
                                 name='phone'
-                                // {...form.getInputProps("phone")}
+                                {...form.getInputProps('phone', {
+                                    onBlur: () => form.validate('phone'),
+                                })}
+                                error={form.errors.phone}
                                 styles={{
                                     defaultVariant: {
                                         borderColor: '#2457F5',
@@ -239,6 +322,9 @@ const HiringForm = () => {
                                 placeholder={t('your_message')}
                                 label={t('Message')}
                                 name='message'
+                                {...form.getInputProps('message', {
+                                    onBlur: () => form.validate('message'),
+                                })}
                                 size='xl'
                                 radius='lg'
                                 styles={{
@@ -292,6 +378,43 @@ const HiringForm = () => {
                                             <p>{t('form_success_subtitle')}</p>
                                         </TextContentContentModal>
                                         <IconCircleCheck
+                                            size={60}
+                                            color='#4364F7'
+                                        />
+                                    </Flex>
+                                </Group>
+                            </Modal>
+
+                            <Modal
+                                opened={openedError}
+                                onClose={() => {
+                                    setOpenedError(false)
+                                }}
+                                overlayColor={
+                                    theme.colorScheme === 'dark'
+                                        ? theme.colors.dark[9]
+                                        : theme.colors.gray[2]
+                                }
+                                overlayOpacity={0.55}
+                                overlayBlur={3}
+                                transitionDuration={400}
+                                centered
+                                radius='md'
+                                padding='xl'
+                                size='lg'
+                            >
+                                <Group position='center'>
+                                    <Flex
+                                        direction='column'
+                                        align='center'
+                                        justify='center'
+                                        gap={30}
+                                    >
+                                        <TextContentContentModal>
+                                            <h1>File is required</h1>
+                                            <p>Please upload your resume</p>
+                                        </TextContentContentModal>
+                                        <IconCircleX
                                             size={60}
                                             color='#4364F7'
                                         />
@@ -396,7 +519,6 @@ const HiringForm = () => {
                     weight='400'
                     radius='xl'
                     gradientColor='#0657CF'
-                    onClick={() => setOpened(true)}
                 >
                     {t('contactFormBtnLabel')}
                 </GradientButton>
