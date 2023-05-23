@@ -3,7 +3,14 @@ import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 
 import { useState, useRef } from 'react'
-import { TextInput, Modal, Group, Textarea, Flex } from '@mantine/core'
+import {
+    TextInput,
+    Modal,
+    Group,
+    Textarea,
+    Flex,
+    Skeleton,
+} from '@mantine/core'
 
 import { IconCircleCheck, IconCircleX } from '@tabler/icons'
 
@@ -54,6 +61,8 @@ const HiringForm = () => {
     const [opened, setOpened] = useState(false)
     const [openedError, setOpenedError] = useState(false)
     const [selectedFile, setSelectedFile] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
+
     const openRef = useRef(null)
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
@@ -115,6 +124,7 @@ const HiringForm = () => {
         form.validate()
         const nbFieldsError = Object.keys(form.errors).length
         if (nbFieldsError === 0) {
+            setIsLoading(true)
             const formData = new FormData()
 
             // Append the selected file to the FormData object
@@ -146,9 +156,11 @@ const HiringForm = () => {
                 console.log('Form submitted successfully')
                 setOpened(true)
                 form.reset()
+                setIsLoading(false)
             } else {
                 // If the request failed, show an error message or handle the error in some other way
                 console.error('Failed to submit the form', resBody)
+                setIsLoading(false)
             }
         } else {
             console.log('error')
@@ -171,358 +183,388 @@ const HiringForm = () => {
             }}
             ref={ref}
         >
-            <Form
-                method='post'
-                onSubmit={handleOnSubmit}
-            >
-                <FormLayout>
-                    <TextContentContainer>
-                        <h1>{t('joinUsText')}</h1>
-
-                        <FormColumn>
-                            <Group
-                                position='left'
-                                spacing='xl'
-                            >
-                                <TextInput
-                                    label={t('lastName')}
-                                    placeholder={t('lastName')}
-                                    type='text'
-                                    radius='lg'
-                                    size='lg'
-                                    name='lastName'
-                                    {...form.getInputProps('lastName', {
-                                        onBlur: () => form.validate('lastName'),
-                                    })}
-                                    error={form.errors.lastName}
-                                    styles={{
-                                        defaultVariant: {
-                                            borderColor: '#2457F5',
-                                            '&:focus': {
-                                                borderColor: '#2457F5',
-                                            },
-                                        },
-
-                                        label: {
-                                            marginBottom: 6,
-                                            fontFamily: 'Gilroy',
-                                            fontWeight: 500,
-                                            fontSize: '14px',
-                                            lineHeight: '20px',
-                                            /* identical to box height, or 143% */
-
-                                            /* Gray/700 */
-
-                                            color: '#344054',
-                                        },
-                                    }}
-                                />
-                                <TextInput
-                                    label={t('firstName')}
-                                    placeholder={t('firstName')}
-                                    type='text'
-                                    radius='lg'
-                                    size='lg'
-                                    name='firstName'
-                                    {...form.getInputProps('firstName', {
-                                        onBlur: () =>
-                                            form.validate('firstName'),
-                                    })}
-                                    error={form.errors.firstName}
-                                    styles={{
-                                        defaultVariant: {
-                                            borderColor: '#2457F5',
-                                            '&:focus': {
-                                                borderColor: '#2457F5',
-                                            },
-                                        },
-                                        label: {
-                                            marginBottom: 6,
-                                            fontFamily: 'Gilroy',
-                                            fontWeight: 500,
-                                            fontSize: '14px',
-                                            lineHeight: '20px',
-                                            /* identical to box height, or 143% */
-
-                                            /* Gray/700 */
-
-                                            color: '#344054',
-                                        },
-                                    }}
-                                />
-                            </Group>
-
-                            <TextInput
-                                label='Email'
-                                placeholder='jean.dupont@votre-entreprise.com'
-                                type='email'
-                                radius='lg'
-                                size='lg'
-                                name='email'
-                                {...form.getInputProps('email', {
-                                    onBlur: () => form.validate('email'),
-                                })}
-                                error={form.errors.email}
-                                styles={{
-                                    defaultVariant: {
-                                        borderColor: '#2457F5',
-                                        '&:focus': {
-                                            borderColor: '#2457F5',
-                                        },
-                                    },
-
-                                    label: {
-                                        marginBottom: 6,
-                                        fontFamily: 'Gilroy',
-                                        fontWeight: 500,
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        /* identical to box height, or 143% */
-
-                                        /* Gray/700 */
-
-                                        color: '#344054',
-                                    },
-                                }}
-                            />
-
-                            <TextInput
-                                label={t('phone')}
-                                placeholder='01 23 45 67 89'
-                                type='tel'
-                                radius='lg'
-                                size='lg'
-                                name='phone'
-                                {...form.getInputProps('phone', {
-                                    onBlur: () => form.validate('phone'),
-                                })}
-                                error={form.errors.phone}
-                                styles={{
-                                    defaultVariant: {
-                                        borderColor: '#2457F5',
-                                        '&:focus': {
-                                            borderColor: '#2457F5',
-                                        },
-                                    },
-                                    label: {
-                                        marginBottom: 6,
-                                        fontFamily: 'Gilroy',
-                                        fontWeight: 500,
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        /* identical to box height, or 143% */
-
-                                        /* Gray/700 */
-
-                                        color: '#344054',
-                                    },
-                                }}
-                            />
-                            <Textarea
-                                placeholder={t('your_message')}
-                                label={t('Message')}
-                                name='message'
-                                {...form.getInputProps('message', {
-                                    onBlur: () => form.validate('message'),
-                                })}
-                                size='xl'
-                                radius='lg'
-                                styles={{
-                                    defaultVariant: {
-                                        borderColor: '#2457F5',
-                                        '&:focus': {
-                                            borderColor: '#2457F5',
-                                        },
-                                    },
-                                    label: {
-                                        marginBottom: 6,
-                                        fontFamily: 'Gilroy',
-                                        fontWeight: 500,
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        /* identical to box height, or 143% */
-
-                                        /* Gray/700 */
-
-                                        color: '#344054',
-                                    },
-                                }}
-                            />
-                            <Modal
-                                opened={opened}
-                                onClose={() => {
-                                    setOpened(false)
-                                }}
-                                overlayColor={
-                                    theme.colorScheme === 'dark'
-                                        ? theme.colors.dark[9]
-                                        : theme.colors.gray[2]
-                                }
-                                overlayOpacity={0.55}
-                                overlayBlur={3}
-                                transitionDuration={400}
-                                centered
-                                radius='md'
-                                padding='xl'
-                                size='lg'
-                            >
-                                <Group position='center'>
-                                    <Flex
-                                        direction='column'
-                                        align='center'
-                                        justify='center'
-                                        gap={30}
-                                    >
-                                        <TextContentContentModal>
-                                            <h1>{t('form_success_title')}</h1>
-                                            <p>{t('form_success_subtitle')}</p>
-                                        </TextContentContentModal>
-                                        <IconCircleCheck
-                                            size={60}
-                                            color='#4364F7'
-                                        />
-                                    </Flex>
-                                </Group>
-                            </Modal>
-
-                            <Modal
-                                opened={openedError}
-                                onClose={() => {
-                                    setOpenedError(false)
-                                }}
-                                overlayColor={
-                                    theme.colorScheme === 'dark'
-                                        ? theme.colors.dark[9]
-                                        : theme.colors.gray[2]
-                                }
-                                overlayOpacity={0.55}
-                                overlayBlur={3}
-                                transitionDuration={400}
-                                centered
-                                radius='md'
-                                padding='xl'
-                                size='lg'
-                            >
-                                <Group position='center'>
-                                    <Flex
-                                        direction='column'
-                                        align='center'
-                                        justify='center'
-                                        gap={30}
-                                    >
-                                        <TextContentContentModal>
-                                            <h1>File is required</h1>
-                                            <p>Please upload your resume</p>
-                                        </TextContentContentModal>
-                                        <IconCircleX
-                                            size={60}
-                                            color='#4364F7'
-                                        />
-                                    </Flex>
-                                </Group>
-                            </Modal>
-                        </FormColumn>
-                    </TextContentContainer>
-                    <InputFileColumn>
-                        <div className={classes.wrapper}>
-                            <Dropzone
-                                openRef={openRef}
-                                onDrop={onDrop}
-                                onReject={(files) =>
-                                    console.log('rejected files', files)
-                                }
-                                className={classes.dropzone}
-                                radius='md'
-                                name='file'
-                                multiple={false}
-                                accept={[MIME_TYPES.pdf]}
-                            >
-                                <div style={{ pointerEvents: 'none' }}>
-                                    <Group position='center'>
-                                        <Dropzone.Accept>
-                                            <IconDownload
-                                                size={50}
-                                                color='#4364F7'
-                                                stroke={1.5}
-                                            />
-                                        </Dropzone.Accept>
-                                        <Dropzone.Reject>
-                                            <IconX
-                                                size={50}
-                                                color={theme.colors.red[6]}
-                                                stroke={1.5}
-                                            />
-                                        </Dropzone.Reject>
-                                        <Dropzone.Idle>
-                                            <IconCloudUpload
-                                                size={50}
-                                                color='#4364F7'
-                                                stroke={1.5}
-                                            />
-                                        </Dropzone.Idle>
-                                    </Group>
-
-                                    <Text
-                                        align='center'
-                                        weight={700}
-                                        size='lg'
-                                        mt='xl'
-                                    >
-                                        <Dropzone.Accept>
-                                            Drop files here
-                                        </Dropzone.Accept>
-                                        <Dropzone.Reject>
-                                            Pdf file less than 30mb
-                                        </Dropzone.Reject>
-                                        <Dropzone.Idle>
-                                            Upload resume
-                                        </Dropzone.Idle>
-                                    </Text>
-
-                                    {selectedFile ? (
-                                        <Text
-                                            align='center'
-                                            size='sm'
-                                            mt='xs'
-                                            color='dimmed'
-                                        >
-                                            {selectedFile.name}
-                                        </Text>
-                                    ) : (
-                                        <Text
-                                            align='center'
-                                            size='sm'
-                                            mt='xs'
-                                            color='dimmed'
-                                        >
-                                            Drag n Drop your file here
-                                        </Text>
-                                    )}
-                                </div>
-                            </Dropzone>
-
-                            <Button
-                                className={classes.control}
-                                size='md'
-                                radius='xl'
-                                onClick={() => openRef.current?.()}
-                            >
-                                Select files
-                            </Button>
-                        </div>
-                    </InputFileColumn>
-                </FormLayout>
-                <GradientButton
-                    type='submit'
-                    size='md'
-                    width='300px'
-                    weight='400'
-                    radius='xl'
-                    gradientColor='#0657CF'
+            {isLoading ? (
+                <>
+                    <Skeleton
+                        height={50}
+                        circle
+                        mb='xl'
+                    />
+                    <Skeleton
+                        height={8}
+                        radius='xl'
+                    />
+                    <Skeleton
+                        height={8}
+                        mt={6}
+                        radius='xl'
+                    />
+                    <Skeleton
+                        height={8}
+                        mt={6}
+                        width='70%'
+                        radius='xl'
+                    />
+                </>
+            ) : (
+                <Form
+                    method='post'
+                    onSubmit={handleOnSubmit}
                 >
-                    {t('contactFormBtnLabel')}
-                </GradientButton>
-            </Form>
+                    <FormLayout>
+                        <TextContentContainer>
+                            <h1>{t('joinUsText')}</h1>
+
+                            <FormColumn>
+                                <Group
+                                    position='left'
+                                    spacing='xl'
+                                >
+                                    <TextInput
+                                        label={t('lastName')}
+                                        placeholder={t('lastName')}
+                                        type='text'
+                                        radius='lg'
+                                        size='lg'
+                                        name='lastName'
+                                        {...form.getInputProps('lastName', {
+                                            onBlur: () =>
+                                                form.validate('lastName'),
+                                        })}
+                                        error={form.errors.lastName}
+                                        styles={{
+                                            defaultVariant: {
+                                                borderColor: '#2457F5',
+                                                '&:focus': {
+                                                    borderColor: '#2457F5',
+                                                },
+                                            },
+
+                                            label: {
+                                                marginBottom: 6,
+                                                fontFamily: 'Gilroy',
+                                                fontWeight: 500,
+                                                fontSize: '14px',
+                                                lineHeight: '20px',
+                                                /* identical to box height, or 143% */
+
+                                                /* Gray/700 */
+
+                                                color: '#344054',
+                                            },
+                                        }}
+                                    />
+                                    <TextInput
+                                        label={t('firstName')}
+                                        placeholder={t('firstName')}
+                                        type='text'
+                                        radius='lg'
+                                        size='lg'
+                                        name='firstName'
+                                        {...form.getInputProps('firstName', {
+                                            onBlur: () =>
+                                                form.validate('firstName'),
+                                        })}
+                                        error={form.errors.firstName}
+                                        styles={{
+                                            defaultVariant: {
+                                                borderColor: '#2457F5',
+                                                '&:focus': {
+                                                    borderColor: '#2457F5',
+                                                },
+                                            },
+                                            label: {
+                                                marginBottom: 6,
+                                                fontFamily: 'Gilroy',
+                                                fontWeight: 500,
+                                                fontSize: '14px',
+                                                lineHeight: '20px',
+                                                /* identical to box height, or 143% */
+
+                                                /* Gray/700 */
+
+                                                color: '#344054',
+                                            },
+                                        }}
+                                    />
+                                </Group>
+
+                                <TextInput
+                                    label='Email'
+                                    placeholder='jean.dupont@votre-entreprise.com'
+                                    type='email'
+                                    radius='lg'
+                                    size='lg'
+                                    name='email'
+                                    {...form.getInputProps('email', {
+                                        onBlur: () => form.validate('email'),
+                                    })}
+                                    error={form.errors.email}
+                                    styles={{
+                                        defaultVariant: {
+                                            borderColor: '#2457F5',
+                                            '&:focus': {
+                                                borderColor: '#2457F5',
+                                            },
+                                        },
+
+                                        label: {
+                                            marginBottom: 6,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: 500,
+                                            fontSize: '14px',
+                                            lineHeight: '20px',
+                                            /* identical to box height, or 143% */
+
+                                            /* Gray/700 */
+
+                                            color: '#344054',
+                                        },
+                                    }}
+                                />
+
+                                <TextInput
+                                    label={t('phone')}
+                                    placeholder='01 23 45 67 89'
+                                    type='tel'
+                                    radius='lg'
+                                    size='lg'
+                                    name='phone'
+                                    {...form.getInputProps('phone', {
+                                        onBlur: () => form.validate('phone'),
+                                    })}
+                                    error={form.errors.phone}
+                                    styles={{
+                                        defaultVariant: {
+                                            borderColor: '#2457F5',
+                                            '&:focus': {
+                                                borderColor: '#2457F5',
+                                            },
+                                        },
+                                        label: {
+                                            marginBottom: 6,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: 500,
+                                            fontSize: '14px',
+                                            lineHeight: '20px',
+                                            /* identical to box height, or 143% */
+
+                                            /* Gray/700 */
+
+                                            color: '#344054',
+                                        },
+                                    }}
+                                />
+                                <Textarea
+                                    placeholder={t('your_message')}
+                                    label={t('Message')}
+                                    name='message'
+                                    {...form.getInputProps('message', {
+                                        onBlur: () => form.validate('message'),
+                                    })}
+                                    size='xl'
+                                    radius='lg'
+                                    styles={{
+                                        defaultVariant: {
+                                            borderColor: '#2457F5',
+                                            '&:focus': {
+                                                borderColor: '#2457F5',
+                                            },
+                                        },
+                                        label: {
+                                            marginBottom: 6,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: 500,
+                                            fontSize: '14px',
+                                            lineHeight: '20px',
+                                            /* identical to box height, or 143% */
+
+                                            /* Gray/700 */
+
+                                            color: '#344054',
+                                        },
+                                    }}
+                                />
+                                <Modal
+                                    opened={opened}
+                                    onClose={() => {
+                                        setOpened(false)
+                                    }}
+                                    overlayColor={
+                                        theme.colorScheme === 'dark'
+                                            ? theme.colors.dark[9]
+                                            : theme.colors.gray[2]
+                                    }
+                                    overlayOpacity={0.55}
+                                    overlayBlur={3}
+                                    transitionDuration={400}
+                                    centered
+                                    radius='md'
+                                    padding='xl'
+                                    size='lg'
+                                >
+                                    <Group position='center'>
+                                        <Flex
+                                            direction='column'
+                                            align='center'
+                                            justify='center'
+                                            gap={30}
+                                        >
+                                            <TextContentContentModal>
+                                                <h1>
+                                                    {t('form_success_title')}
+                                                </h1>
+                                                <p>
+                                                    {t('form_success_subtitle')}
+                                                </p>
+                                            </TextContentContentModal>
+                                            <IconCircleCheck
+                                                size={60}
+                                                color='#4364F7'
+                                            />
+                                        </Flex>
+                                    </Group>
+                                </Modal>
+
+                                <Modal
+                                    opened={openedError}
+                                    onClose={() => {
+                                        setOpenedError(false)
+                                    }}
+                                    overlayColor={
+                                        theme.colorScheme === 'dark'
+                                            ? theme.colors.dark[9]
+                                            : theme.colors.gray[2]
+                                    }
+                                    overlayOpacity={0.55}
+                                    overlayBlur={3}
+                                    transitionDuration={400}
+                                    centered
+                                    radius='md'
+                                    padding='xl'
+                                    size='lg'
+                                >
+                                    <Group position='center'>
+                                        <Flex
+                                            direction='column'
+                                            align='center'
+                                            justify='center'
+                                            gap={30}
+                                        >
+                                            <TextContentContentModal>
+                                                <h1>File is required</h1>
+                                                <p>Please upload your resume</p>
+                                            </TextContentContentModal>
+                                            <IconCircleX
+                                                size={60}
+                                                color='#4364F7'
+                                            />
+                                        </Flex>
+                                    </Group>
+                                </Modal>
+                            </FormColumn>
+                        </TextContentContainer>
+                        <InputFileColumn>
+                            <div className={classes.wrapper}>
+                                <Dropzone
+                                    openRef={openRef}
+                                    onDrop={onDrop}
+                                    onReject={(files) =>
+                                        console.log('rejected files', files)
+                                    }
+                                    className={classes.dropzone}
+                                    radius='md'
+                                    name='file'
+                                    multiple={false}
+                                    accept={[MIME_TYPES.pdf]}
+                                >
+                                    <div style={{ pointerEvents: 'none' }}>
+                                        <Group position='center'>
+                                            <Dropzone.Accept>
+                                                <IconDownload
+                                                    size={50}
+                                                    color='#4364F7'
+                                                    stroke={1.5}
+                                                />
+                                            </Dropzone.Accept>
+                                            <Dropzone.Reject>
+                                                <IconX
+                                                    size={50}
+                                                    color={theme.colors.red[6]}
+                                                    stroke={1.5}
+                                                />
+                                            </Dropzone.Reject>
+                                            <Dropzone.Idle>
+                                                <IconCloudUpload
+                                                    size={50}
+                                                    color='#4364F7'
+                                                    stroke={1.5}
+                                                />
+                                            </Dropzone.Idle>
+                                        </Group>
+
+                                        <Text
+                                            align='center'
+                                            weight={700}
+                                            size='lg'
+                                            mt='xl'
+                                        >
+                                            <Dropzone.Accept>
+                                                Drop files here
+                                            </Dropzone.Accept>
+                                            <Dropzone.Reject>
+                                                Pdf file less than 30mb
+                                            </Dropzone.Reject>
+                                            <Dropzone.Idle>
+                                                Upload resume
+                                            </Dropzone.Idle>
+                                        </Text>
+
+                                        {selectedFile ? (
+                                            <Text
+                                                align='center'
+                                                size='sm'
+                                                mt='xs'
+                                                color='dimmed'
+                                            >
+                                                {selectedFile.name}
+                                            </Text>
+                                        ) : (
+                                            <Text
+                                                align='center'
+                                                size='sm'
+                                                mt='xs'
+                                                color='dimmed'
+                                            >
+                                                Drag n Drop your file here
+                                            </Text>
+                                        )}
+                                    </div>
+                                </Dropzone>
+
+                                <Button
+                                    className={classes.control}
+                                    size='md'
+                                    radius='xl'
+                                    onClick={() => openRef.current?.()}
+                                >
+                                    Select files
+                                </Button>
+                            </div>
+                        </InputFileColumn>
+                    </FormLayout>
+                    <GradientButton
+                        type='submit'
+                        size='md'
+                        width='300px'
+                        weight='400'
+                        radius='xl'
+                        gradientColor='#0657CF'
+                    >
+                        {t('contactFormBtnLabel')}
+                    </GradientButton>
+                </Form>
+            )}
         </ContactFormContainer>
     )
 }

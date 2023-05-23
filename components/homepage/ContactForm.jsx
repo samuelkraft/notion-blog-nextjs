@@ -11,7 +11,6 @@ import email from '../../images/email.svg'
 import telephone from '../../images/telephone.svg'
 
 import { useState, useEffect, useRef } from 'react'
-import { useRouter } from 'next/router'
 import {
     TextInput,
     Modal,
@@ -21,6 +20,7 @@ import {
     Flex,
     Select,
     Stack,
+    Skeleton,
 } from '@mantine/core'
 
 import { IconCircleCheck } from '@tabler/icons'
@@ -39,7 +39,7 @@ const ContactForm = () => {
     }, [])
     const theme = useMantineTheme()
     const [opened, setOpened] = useState(false)
-    const router = useRouter()
+    const [isLoading, setIsLoading] = useState(false)
 
     // Define your validation functions
     const validateEmail = (value) => {
@@ -87,6 +87,7 @@ const ContactForm = () => {
         const nbFieldsError = Object.keys(form.errors).length
 
         if (nbFieldsError === 0) {
+            setIsLoading(true)
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 body: JSON.stringify(form.values),
@@ -100,9 +101,11 @@ const ContactForm = () => {
                 console.log('Form submitted successfully')
                 setOpened(true)
                 form.reset()
+                setIsLoading(false)
             } else {
                 // If the request failed, show an error message or handle the error in some other way
                 console.error('Failed to submit the form', resBody)
+                setIsLoading(false)
             }
         } else {
             // show error message on the form
@@ -126,378 +129,414 @@ const ContactForm = () => {
             }}
             ref={ref}
         >
-            <Form
-                method='POST'
-                onSubmit={handleOnSubmit}
-            >
-                <TextContentContainer>
-                    <TextContent>
-                        <h1>{t('form_title')}</h1>
+            {isLoading ? (
+                <>
+                    <Skeleton
+                        height={50}
+                        circle
+                        mb='xl'
+                    />
+                    <Skeleton
+                        height={8}
+                        radius='xl'
+                    />
+                    <Skeleton
+                        height={8}
+                        mt={6}
+                        radius='xl'
+                    />
+                    <Skeleton
+                        height={8}
+                        mt={6}
+                        width='70%'
+                        radius='xl'
+                    />
+                </>
+            ) : (
+                <Form
+                    method='POST'
+                    onSubmit={handleOnSubmit}
+                >
+                    <TextContentContainer>
+                        <TextContent>
+                            <h1>{t('form_title')}</h1>
 
-                        <p>{t('form_paragraph')}</p>
-                    </TextContent>
-                    <FormLayout>
-                        <Group
-                            position='left'
-                            spacing='sm'
-                        >
-                            <TextInput
-                                label={t('lastName')}
-                                placeholder={t('lastName')}
-                                type='text'
-                                radius='md'
-                                size='md'
-                                name='lastName'
-                                {...form.getInputProps('lastName', {
-                                    onBlur: () => form.validate('lastName'),
-                                })}
-                                error={form.errors.lastName}
-                                style={{
-                                    boxShadow:
-                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
-                                }}
-                                styles={{
-                                    defaultVariant: {
-                                        borderColor: '#2457F5',
-                                        '&:focus': {
+                            <p>{t('form_paragraph')}</p>
+                        </TextContent>
+                        <FormLayout>
+                            <Group
+                                position='left'
+                                spacing='sm'
+                            >
+                                <TextInput
+                                    label={t('lastName')}
+                                    placeholder={t('lastName')}
+                                    type='text'
+                                    radius='md'
+                                    size='md'
+                                    name='lastName'
+                                    {...form.getInputProps('lastName', {
+                                        onBlur: () => form.validate('lastName'),
+                                    })}
+                                    error={form.errors.lastName}
+                                    style={{
+                                        boxShadow:
+                                            '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                    }}
+                                    styles={{
+                                        defaultVariant: {
                                             borderColor: '#2457F5',
+                                            '&:focus': {
+                                                borderColor: '#2457F5',
+                                            },
                                         },
-                                    },
 
-                                    label: {
-                                        marginBottom: 6,
-                                        fontFamily: 'Gilroy',
-                                        fontWeight: 500,
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        /* identical to box height, or 143% */
+                                        label: {
+                                            marginBottom: 6,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: 500,
+                                            fontSize: '14px',
+                                            lineHeight: '20px',
+                                            /* identical to box height, or 143% */
 
-                                        /* Gray/700 */
+                                            /* Gray/700 */
 
-                                        color: '#344054',
-                                    },
-                                }}
-                            />
-                            <TextInput
-                                label={t('firstName')}
-                                placeholder={t('firstName')}
-                                type='text'
-                                radius='md'
-                                size='md'
-                                name='firstName'
-                                {...form.getInputProps('firstName', {
-                                    onBlur: () => form.validate('firstName'),
-                                })}
-                                error={form.errors.firstName}
-                                style={{
-                                    boxShadow:
-                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
-                                }}
-                                styles={{
-                                    defaultVariant: {
-                                        borderColor: '#2457F5',
-                                        '&:focus': {
+                                            color: '#344054',
+                                        },
+                                    }}
+                                />
+                                <TextInput
+                                    label={t('firstName')}
+                                    placeholder={t('firstName')}
+                                    type='text'
+                                    radius='md'
+                                    size='md'
+                                    name='firstName'
+                                    {...form.getInputProps('firstName', {
+                                        onBlur: () =>
+                                            form.validate('firstName'),
+                                    })}
+                                    error={form.errors.firstName}
+                                    style={{
+                                        boxShadow:
+                                            '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                    }}
+                                    styles={{
+                                        defaultVariant: {
                                             borderColor: '#2457F5',
+                                            '&:focus': {
+                                                borderColor: '#2457F5',
+                                            },
                                         },
-                                    },
 
-                                    label: {
-                                        marginBottom: 6,
-                                        fontFamily: 'Gilroy',
-                                        fontWeight: 500,
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        /* identical to box height, or 143% */
+                                        label: {
+                                            marginBottom: 6,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: 500,
+                                            fontSize: '14px',
+                                            lineHeight: '20px',
+                                            /* identical to box height, or 143% */
 
-                                        /* Gray/700 */
+                                            /* Gray/700 */
 
-                                        color: '#344054',
-                                    },
-                                }}
-                            />
-                        </Group>
-
-                        <TextInput
-                            label='Email'
-                            placeholder='your@email.com'
-                            type='email'
-                            {...form.getInputProps('email')}
-                            onBlur={() => form.validate('email')}
-                            error={form.errors.email}
-                            radius='md'
-                            size='md'
-                            name='email'
-                            style={{
-                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
-                            }}
-                            styles={{
-                                defaultVariant: {
-                                    borderColor: '#2457F5',
-                                    '&:focus': {
-                                        borderColor: '#2457F5',
-                                    },
-                                },
-
-                                label: {
-                                    marginBottom: 6,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: 500,
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    /* identical to box height, or 143% */
-
-                                    /* Gray/700 */
-
-                                    color: '#344054',
-                                },
-                            }}
-                        />
-
-                        <TextInput
-                            label={t('phone')}
-                            placeholder='01 23 45 67 89'
-                            type='tel'
-                            radius='md'
-                            size='md'
-                            name='phone'
-                            {...form.getInputProps('phone', {
-                                onBlur: () => form.validate('phone'),
-                            })}
-                            error={form.errors.phone}
-                            style={{
-                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
-                            }}
-                            styles={{
-                                defaultVariant: {
-                                    borderColor: '#2457F5',
-                                    '&:focus': {
-                                        borderColor: '#2457F5',
-                                    },
-                                },
-
-                                label: {
-                                    marginBottom: 6,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: 500,
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    /* identical to box height, or 143% */
-
-                                    /* Gray/700 */
-
-                                    color: '#344054',
-                                },
-                            }}
-                        />
-
-                        <Select
-                            label={t('needs')}
-                            placeholder={t('compta-courante')}
-                            data={[
-                                {
-                                    value: 'Mission fiscale et comptable pour une entreprise',
-                                    label: t('compta-courante'),
-                                },
-                                {
-                                    value: 'Mission fiscale pour un particulier',
-                                    label: t('compta-exception'),
-                                },
-                                {
-                                    value: 'Mission de conseil',
-                                    label: t('irpp'),
-                                },
-                                {
-                                    value: "Mission d'audit",
-                                    label: t('audit-annual'),
-                                },
-                                { value: 'Mission paie et RH', label: t('rh') },
-                                { value: "Demande d'ITIN", label: t('itin') },
-                                {
-                                    value: 'Mission juridique',
-                                    label: t('juridique'),
-                                },
-                            ]}
-                            radius='md'
-                            size='md'
-                            name='needs'
-                            {...form.getInputProps('needs')}
-                            error={form.errors.needs}
-                            onBlur={() => form.validate('needs')}
-                            styles={{
-                                defaultVariant: {
-                                    borderColor: '#2457F5',
-                                    '&:focus': {
-                                        borderColor: '#2457F5',
-                                    },
-                                },
-
-                                label: {
-                                    marginBottom: 6,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: 500,
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    /* identical to box height, or 143% */
-
-                                    /* Gray/700 */
-
-                                    color: '#344054',
-                                },
-                            }}
-                            style={{
-                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
-                            }}
-                        />
-
-                        <Textarea
-                            placeholder={t('your_message')}
-                            label={t('your_message')}
-                            name='message'
-                            {...form.getInputProps('message')}
-                            size='md'
-                            radius='md'
-                            styles={{
-                                defaultVariant: {
-                                    borderColor: '#2457F5',
-                                    '&:focus': {
-                                        borderColor: '#2457F5',
-                                    },
-                                },
-
-                                label: {
-                                    marginBottom: 6,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: 500,
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    /* identical to box height, or 143% */
-
-                                    /* Gray/700 */
-
-                                    color: '#344054',
-                                },
-                            }}
-                            style={{
-                                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
-                            }}
-                        />
-
-                        <Modal
-                            opened={opened}
-                            onClose={() => {
-                                setOpened(false)
-                            }}
-                            overlayColor={
-                                theme.colorScheme === 'dark'
-                                    ? theme.colors.dark[9]
-                                    : theme.colors.gray[2]
-                            }
-                            overlayOpacity={0.55}
-                            overlayBlur={3}
-                            transitionDuration={400}
-                            centered
-                            radius='md'
-                            padding='xl'
-                            size='lg'
-                        >
-                            <Group position='center'>
-                                <Flex
-                                    direction='column'
-                                    align='center'
-                                    justify='center'
-                                    gap={30}
-                                >
-                                    <TextContentContentModal>
-                                        <h1>{t('form_success_title')}</h1>
-                                        <p>{t('form_success_subtitle')}</p>
-                                    </TextContentContentModal>
-                                    <IconCircleCheck
-                                        size={60}
-                                        color='#4364F7'
-                                    />
-                                </Flex>
+                                            color: '#344054',
+                                        },
+                                    }}
+                                />
                             </Group>
-                        </Modal>
-                        <GradientButton
-                            type='submit'
-                            size='md'
-                            width='300px'
-                            weight='400'
-                            radius='xl'
-                            gradientColor='#0657CF'
-                        >
-                            {t('contactFormBtnLabel')}
-                        </GradientButton>
-                    </FormLayout>
-                </TextContentContainer>
-                <TextContentContainer2>
-                    <ContactInfoContainer>
-                        <ImageWrapper>
-                            <Image
-                                src={map}
-                                alt='map'
-                                fill
-                            />
-                        </ImageWrapper>
-                    </ContactInfoContainer>
-                    <ContactInfoContainer>
-                        <ContactInfo>
-                            <Image
-                                src={location2}
-                                alt='paris'
-                            />
-                            <Stack spacing={'xs'}>
-                                <a
-                                    href='https://www.google.com/maps/place/3+Rue+Jules+Lefebvre,+75009+Paris,+France/data=!4m2!3m1!1s0x47e66e4bbee37b63:0xd312131ba03e4ceb?sa=X&ved=2ahUKEwiYiIPY1uL-AhVbXqQEHTblBy0Q8gF6BAgLEAI'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                >
-                                    3 rue Jules Lefebvre 75009 Paris
-                                </a>
-                                <a
-                                    href='https://www.google.com/maps/place/7+Rue+Th%C3%A9odule+Ribot,+75017+Paris,+France/@48.8793131,2.2982657,17z/data=!3m1!4b1!4m6!3m5!1s0x47e66f957a5df687:0x9924b093569f6139!8m2!3d48.8793096!4d2.3008406!16s%2Fg%2F11b8v75n7x'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                >
-                                    7 Rue Theodule Ribot 75017 Paris
-                                </a>
-                            </Stack>
-                        </ContactInfo>
 
-                        <a
-                            href='https://www.google.fr/maps/place/%D7%A7%D7%A0%D7%99%D7%95%D7%9F+%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99,+Derech+Menachem+Begin+132,+Tel+Aviv-Yafo,+Isra%C3%ABl%E2%80%AD/@32.0743897,34.7899806,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b991302fe6f:0x7e4710b90ab7ab85!8m2!3d32.0743897!4d34.7921693?hl=fr'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
+                            <TextInput
+                                label='Email'
+                                placeholder='your@email.com'
+                                type='email'
+                                {...form.getInputProps('email')}
+                                onBlur={() => form.validate('email')}
+                                error={form.errors.email}
+                                radius='md'
+                                size='md'
+                                name='email'
+                                style={{
+                                    boxShadow:
+                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                }}
+                                styles={{
+                                    defaultVariant: {
+                                        borderColor: '#2457F5',
+                                        '&:focus': {
+                                            borderColor: '#2457F5',
+                                        },
+                                    },
+
+                                    label: {
+                                        marginBottom: 6,
+                                        fontFamily: 'Gilroy',
+                                        fontWeight: 500,
+                                        fontSize: '14px',
+                                        lineHeight: '20px',
+                                        /* identical to box height, or 143% */
+
+                                        /* Gray/700 */
+
+                                        color: '#344054',
+                                    },
+                                }}
+                            />
+
+                            <TextInput
+                                label={t('phone')}
+                                placeholder='01 23 45 67 89'
+                                type='tel'
+                                radius='md'
+                                size='md'
+                                name='phone'
+                                {...form.getInputProps('phone', {
+                                    onBlur: () => form.validate('phone'),
+                                })}
+                                error={form.errors.phone}
+                                style={{
+                                    boxShadow:
+                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                }}
+                                styles={{
+                                    defaultVariant: {
+                                        borderColor: '#2457F5',
+                                        '&:focus': {
+                                            borderColor: '#2457F5',
+                                        },
+                                    },
+
+                                    label: {
+                                        marginBottom: 6,
+                                        fontFamily: 'Gilroy',
+                                        fontWeight: 500,
+                                        fontSize: '14px',
+                                        lineHeight: '20px',
+                                        /* identical to box height, or 143% */
+
+                                        /* Gray/700 */
+
+                                        color: '#344054',
+                                    },
+                                }}
+                            />
+
+                            <Select
+                                label={t('needs')}
+                                placeholder={t('compta-courante')}
+                                data={[
+                                    {
+                                        value: 'Mission fiscale et comptable pour une entreprise',
+                                        label: t('compta-courante'),
+                                    },
+                                    {
+                                        value: 'Mission fiscale pour un particulier',
+                                        label: t('compta-exception'),
+                                    },
+                                    {
+                                        value: 'Mission de conseil',
+                                        label: t('irpp'),
+                                    },
+                                    {
+                                        value: "Mission d'audit",
+                                        label: t('audit-annual'),
+                                    },
+                                    {
+                                        value: 'Mission paie et RH',
+                                        label: t('rh'),
+                                    },
+                                    {
+                                        value: "Demande d'ITIN",
+                                        label: t('itin'),
+                                    },
+                                    {
+                                        value: 'Mission juridique',
+                                        label: t('juridique'),
+                                    },
+                                ]}
+                                radius='md'
+                                size='md'
+                                name='needs'
+                                {...form.getInputProps('needs')}
+                                error={form.errors.needs}
+                                onBlur={() => form.validate('needs')}
+                                styles={{
+                                    defaultVariant: {
+                                        borderColor: '#2457F5',
+                                        '&:focus': {
+                                            borderColor: '#2457F5',
+                                        },
+                                    },
+
+                                    label: {
+                                        marginBottom: 6,
+                                        fontFamily: 'Gilroy',
+                                        fontWeight: 500,
+                                        fontSize: '14px',
+                                        lineHeight: '20px',
+                                        /* identical to box height, or 143% */
+
+                                        /* Gray/700 */
+
+                                        color: '#344054',
+                                    },
+                                }}
+                                style={{
+                                    boxShadow:
+                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                }}
+                            />
+
+                            <Textarea
+                                placeholder={t('your_message')}
+                                label={t('your_message')}
+                                name='message'
+                                {...form.getInputProps('message')}
+                                size='md'
+                                radius='md'
+                                styles={{
+                                    defaultVariant: {
+                                        borderColor: '#2457F5',
+                                        '&:focus': {
+                                            borderColor: '#2457F5',
+                                        },
+                                    },
+
+                                    label: {
+                                        marginBottom: 6,
+                                        fontFamily: 'Gilroy',
+                                        fontWeight: 500,
+                                        fontSize: '14px',
+                                        lineHeight: '20px',
+                                        /* identical to box height, or 143% */
+
+                                        /* Gray/700 */
+
+                                        color: '#344054',
+                                    },
+                                }}
+                                style={{
+                                    boxShadow:
+                                        '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                                }}
+                            />
+
+                            <Modal
+                                opened={opened}
+                                onClose={() => {
+                                    setOpened(false)
+                                }}
+                                overlayColor={
+                                    theme.colorScheme === 'dark'
+                                        ? theme.colors.dark[9]
+                                        : theme.colors.gray[2]
+                                }
+                                overlayOpacity={0.55}
+                                overlayBlur={3}
+                                transitionDuration={400}
+                                centered
+                                radius='md'
+                                padding='xl'
+                                size='lg'
+                            >
+                                <Group position='center'>
+                                    <Flex
+                                        direction='column'
+                                        align='center'
+                                        justify='center'
+                                        gap={30}
+                                    >
+                                        <TextContentContentModal>
+                                            <h1>{t('form_success_title')}</h1>
+                                            <p>{t('form_success_subtitle')}</p>
+                                        </TextContentContentModal>
+                                        <IconCircleCheck
+                                            size={60}
+                                            color='#4364F7'
+                                        />
+                                    </Flex>
+                                </Group>
+                            </Modal>
+                            <GradientButton
+                                type='submit'
+                                size='md'
+                                width='300px'
+                                weight='400'
+                                radius='xl'
+                                gradientColor='#0657CF'
+                            >
+                                {t('contactFormBtnLabel')}
+                            </GradientButton>
+                        </FormLayout>
+                    </TextContentContainer>
+                    <TextContentContainer2>
+                        <ContactInfoContainer>
+                            <ImageWrapper>
+                                <Image
+                                    src={map}
+                                    alt='map'
+                                    fill
+                                />
+                            </ImageWrapper>
+                        </ContactInfoContainer>
+                        <ContactInfoContainer>
                             <ContactInfo>
                                 <Image
-                                    src={location1}
-                                    alt='tel aviv'
+                                    src={location2}
+                                    alt='paris'
                                 />
-                                <p>Menahem Begin, 132 TEL AVIV</p>
+                                <Stack spacing={'xs'}>
+                                    <a
+                                        href='https://www.google.com/maps/place/3+Rue+Jules+Lefebvre,+75009+Paris,+France/data=!4m2!3m1!1s0x47e66e4bbee37b63:0xd312131ba03e4ceb?sa=X&ved=2ahUKEwiYiIPY1uL-AhVbXqQEHTblBy0Q8gF6BAgLEAI'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    >
+                                        3 rue Jules Lefebvre 75009 Paris
+                                    </a>
+                                    <a
+                                        href='https://www.google.com/maps/place/7+Rue+Th%C3%A9odule+Ribot,+75017+Paris,+France/@48.8793131,2.2982657,17z/data=!3m1!4b1!4m6!3m5!1s0x47e66f957a5df687:0x9924b093569f6139!8m2!3d48.8793096!4d2.3008406!16s%2Fg%2F11b8v75n7x'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    >
+                                        7 Rue Theodule Ribot 75017 Paris
+                                    </a>
+                                </Stack>
                             </ContactInfo>
-                        </a>
-                        <a href='tel:01-86-96-37-01'>
-                            <ContactInfo>
-                                <Image
-                                    src={telephone}
-                                    alt='phone'
-                                />
-                                <p>01 86 96 37 01 - 06 59 69 13 42</p>
-                            </ContactInfo>
-                        </a>
-                        <a href='mailto:contact@expand-cpa.com'>
-                            <ContactInfo>
-                                <Image
-                                    src={email}
-                                    alt='mail'
-                                />
-                                <p>contact@expand-cpa.com</p>
-                            </ContactInfo>
-                        </a>
-                    </ContactInfoContainer>
-                </TextContentContainer2>
-            </Form>
+
+                            <a
+                                href='https://www.google.fr/maps/place/%D7%A7%D7%A0%D7%99%D7%95%D7%9F+%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99,+Derech+Menachem+Begin+132,+Tel+Aviv-Yafo,+Isra%C3%ABl%E2%80%AD/@32.0743897,34.7899806,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b991302fe6f:0x7e4710b90ab7ab85!8m2!3d32.0743897!4d34.7921693?hl=fr'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                <ContactInfo>
+                                    <Image
+                                        src={location1}
+                                        alt='tel aviv'
+                                    />
+                                    <p>Menahem Begin, 132 TEL AVIV</p>
+                                </ContactInfo>
+                            </a>
+                            <a href='tel:01-86-96-37-01'>
+                                <ContactInfo>
+                                    <Image
+                                        src={telephone}
+                                        alt='phone'
+                                    />
+                                    <p>01 86 96 37 01 - 06 59 69 13 42</p>
+                                </ContactInfo>
+                            </a>
+                            <a href='mailto:contact@expand-cpa.com'>
+                                <ContactInfo>
+                                    <Image
+                                        src={email}
+                                        alt='mail'
+                                    />
+                                    <p>contact@expand-cpa.com</p>
+                                </ContactInfo>
+                            </a>
+                        </ContactInfoContainer>
+                    </TextContentContainer2>
+                </Form>
+            )}
         </ContactFormContainer>
     )
 }
