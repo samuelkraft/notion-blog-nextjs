@@ -3,14 +3,7 @@ import { useTranslation } from 'next-i18next'
 import GradientButton from '../button/GradientButton'
 
 import { useState, useRef } from 'react'
-import {
-    TextInput,
-    Modal,
-    Group,
-    Textarea,
-    Flex,
-    Skeleton,
-} from '@mantine/core'
+import { TextInput, Modal, Group, Textarea, Flex, Loader } from '@mantine/core'
 
 import { IconCircleCheck, IconCircleX } from '@tabler/icons'
 
@@ -184,28 +177,10 @@ const HiringForm = () => {
             ref={ref}
         >
             {isLoading ? (
-                <>
-                    <Skeleton
-                        height={50}
-                        circle
-                        mb='xl'
-                    />
-                    <Skeleton
-                        height={8}
-                        radius='xl'
-                    />
-                    <Skeleton
-                        height={8}
-                        mt={6}
-                        radius='xl'
-                    />
-                    <Skeleton
-                        height={8}
-                        mt={6}
-                        width='70%'
-                        radius='xl'
-                    />
-                </>
+                <Loader
+                    color='indigo'
+                    size='xl'
+                />
             ) : (
                 <Form
                     method='post'

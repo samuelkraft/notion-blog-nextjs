@@ -20,7 +20,7 @@ import {
     Flex,
     Select,
     Stack,
-    Skeleton,
+    Loader,
 } from '@mantine/core'
 
 import { IconCircleCheck } from '@tabler/icons'
@@ -130,28 +130,10 @@ const ContactForm = () => {
             ref={ref}
         >
             {isLoading ? (
-                <>
-                    <Skeleton
-                        height={50}
-                        circle
-                        mb='xl'
-                    />
-                    <Skeleton
-                        height={8}
-                        radius='xl'
-                    />
-                    <Skeleton
-                        height={8}
-                        mt={6}
-                        radius='xl'
-                    />
-                    <Skeleton
-                        height={8}
-                        mt={6}
-                        width='70%'
-                        radius='xl'
-                    />
-                </>
+                <Loader
+                    color='indigo'
+                    size='xl'
+                />
             ) : (
                 <Form
                     method='POST'
