@@ -15,7 +15,7 @@ const JoinOurTeamBanner = () => {
 
                     <div style={{ width: '167px' }}>
                         <a
-                            href='https://www.linkedin.com/company/asp-experts/jobs/'
+                            href='https://www.linkedin.com/company/expand-cpa/jobs/'
                             target='_blank'
                             rel='noopener noreferrer'
                         >

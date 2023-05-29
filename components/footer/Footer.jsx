@@ -176,7 +176,7 @@ const Footer = () => {
                     <Copyright>
                         <div className='left'>
                             <a
-                                href='https://www.linkedin.com/company/asp-experts/posts/?feedView=all'
+                                href='https://www.linkedin.com/company/expand-cpa/posts/?feedView=all'
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >

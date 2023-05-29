@@ -21,7 +21,7 @@ const SocialBanner = () => {
             <h1>{t('followUs')}</h1>
             <div className='social-icon'>
                 <a
-                    href='https://www.linkedin.com/company/asp-experts/posts/?feedView=all'
+                    href='https://www.linkedin.com/company/expand-cpa/posts/?feedView=all'
                     target='_blank'
                     rel='noopener noreferrer'
                 >

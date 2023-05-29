@@ -58,7 +58,7 @@ const AboutSection05 = ({ title, paragraph, btnText, standalone }) => {
                                 <h1>{title}</h1>
                                 <h3>{paragraph}</h3>
                                 <a
-                                    href='https://www.linkedin.com/company/asp-experts/'
+                                    href='https://www.linkedin.com/company/expand-cpa/'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
