@@ -12,6 +12,8 @@ let formSchema = yup.object().shape({
 });
 
 async function sendFormDataToMail(fields) {
+    // Make the word before : bold
+
     const message = `
         Nom: ${fields.lastName}\r\n
         Prénom: ${fields.firstName}\r\n
@@ -21,12 +23,15 @@ async function sendFormDataToMail(fields) {
         Message: ${fields.message}\r\n
     `;
 
+    // Prepare the message for HTML
+    let htmlMessage = message.replace(/(\S+):/g, "<b>$1:</b>").replace(/\r\n/g, "<br/>");
+
     const data = {
         to: "lay.frederic@yahoo.fr",
         from: "samuel.sarfati@expand-cpa.com",
         subject: `${fields.lastName} ${fields.firstName} à rempli le formulaire de contact depuis le site Expand CPA`,
         text: message,
-        html: message.replace(/\r\n/g, "<br/>"),
+        html: htmlMessage,
     };
 
     mail.send(data).catch((error) => {

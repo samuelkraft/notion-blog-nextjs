@@ -527,9 +527,8 @@ const HiringForm = () => {
                 </FormLayout>
                 {isLoading ? (
                     <Loader
-                        color='indigo'
-                        size='xl'
                         variant='dots'
+                        color='#0657CF'
                     />
                 ) : (
                     <GradientButton

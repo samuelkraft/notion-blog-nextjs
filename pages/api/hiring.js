@@ -30,12 +30,13 @@ async function sendFormDataToMail(fields, files) {
     const attachement = fs.readFileSync(files.file.filepath).toString("base64");
 
     console.log("attachement: ", attachement);
+    let htmlMessage = message.replace(/(\S+):/g, "<b>$1:</b>").replace(/\r\n/g, "<br/>");
     const data = {
         to: "lay.frederic@yahoo.fr",
         from: "samuel.sarfati@expand-cpa.com",
         subject: `${fields.lastName} ${fields.firstName} à envoyer sa candidature depuis le site Expand CPA`,
         text: message,
-        html: message.replace(/\r\n/g, "<br/>"),
+        html: htmlMessage,
         attachments: [
             {
                 content: attachement,
