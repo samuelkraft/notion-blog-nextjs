@@ -19,7 +19,7 @@ async function sendFormDataToMail(fields) {
         Prénom: ${fields.firstName}\r\n
         Email: ${fields.email}\r\n
         Télephone: ${fields.phone}\r\n
-        Intéressé par: ${fields.needs}\r\n	
+        Besoin: ${fields.needs}\r\n	
         Message: ${fields.message}\r\n
     `;
 
