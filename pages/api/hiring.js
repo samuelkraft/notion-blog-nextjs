@@ -32,7 +32,8 @@ async function sendFormDataToMail(fields, files) {
     console.log("attachement: ", attachement);
     let htmlMessage = message.replace(/(\S+):/g, "<b>$1:</b>").replace(/\r\n/g, "<br/>");
     const data = {
-        to: "lay.frederic@yahoo.fr",
+        to: "contact@expand-cpa.com",
+        cc: ["samuel.attali@expand-cpa.com", "benjamin.pik@expand-cpa.com"],
         from: "samuel.sarfati@expand-cpa.com",
         subject: `${fields.lastName} ${fields.firstName} à envoyer sa candidature depuis le site Expand CPA`,
         text: message,

@@ -69,7 +69,8 @@ const ContactForm = () => {
             email: '',
             phone: '',
             needs: '',
-            message: '',
+            message:
+                'Bonjour, \nJe suis intéressé par vos services et souhaiterais prendre contact avec un expert. \nJe vous remercie par avance de bien vouloir me recontacter',
         },
 
         validate: {
@@ -362,7 +363,6 @@ const ContactForm = () => {
                         <Textarea
                             placeholder={t('your_message')}
                             label={t('your_message')}
-                            name='message'
                             {...form.getInputProps('message')}
                             size='md'
                             radius='md'

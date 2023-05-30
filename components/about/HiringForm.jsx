@@ -98,7 +98,8 @@ const HiringForm = () => {
             firstName: '',
             email: '',
             phone: '',
-            message: '',
+            message:
+                "Bonjour, \nJe souhaiterais postuler au sein de votre cabinet et m'entretenir avec la Direction. \nJe vous remercie par avance de bien vouloir me recontacter",
         },
 
         validate: {
@@ -338,7 +339,6 @@ const HiringForm = () => {
                                 {...form.getInputProps('message', {
                                     onBlur: () => form.validate('message'),
                                 })}
-                                size='xl'
                                 radius='lg'
                                 styles={{
                                     defaultVariant: {
