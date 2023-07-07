@@ -43,15 +43,13 @@ const HomeSection04 = () => {
             <HomeSection04Wrapper>
                 <motion.div className='text-content'>
                     <Tag>
-                        <span>{t('payrollServices')}</span>
+                        <span>{t('payrollServicesTag')}</span>
                     </Tag>
                     <SloganSection01>{t('section04_title')}</SloganSection01>
                     <HeadingSection01>
                         <h2>
                             {t('section04_heading_pt1')}
-                            <b>
-                                <u> {t('section04_bold1')}</u>
-                            </b>
+                            <b>{t('section04_bold1')}</b>
                             {t('section04_heading_pt2')}
                             <b>{t('section04_bold2')}</b>
                             {t('section04_heading_pt3')}

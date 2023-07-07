@@ -17,6 +17,7 @@
     "accountingServices": "Services comptables",
     "taxServices": "Services fiscaux",
     "payrollServices": "Services Paie & RH",
+    "payrollServicesTag": "SERVICES PAIE & RH",
     "legalServices": "Services juridiques",
     "auditServices": "Services d'audit",
     "frenchTax": "Fiscalité française",
@@ -234,5 +235,6 @@
     "numberSection_title": "En quelques chiffres",
     "theBlog": "Le blog",
     "keyServices": "Nos services clés",
+    "sloganServicesTitle": "Nous accompagnons et proposons des services personnalisés auprès des entreprises étrangères et des résidents étrangers établis en France",
     "policy": "Vous acceptez notre politique de confidentialité amicale."
 }
