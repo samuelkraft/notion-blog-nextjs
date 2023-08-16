@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Larven Blog',
-  description: 'Larven Blog',
+  title: 'Notion Next.js blog',
+  description: 'Notion Next.js blog',
 };
 
 export default function RootLayout({ children }) {
@@ -18,9 +18,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-// function MyApp({ Component, pageProps }) {
-//   return <Component {...pageProps} />;
-// }
-
-// export default MyApp;

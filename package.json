@@ -1,8 +1,7 @@
 {
-  "name": "nextjs",
+  "name": "nextjs-notion-blog",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://blog.larven.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,8 +10,9 @@
     "predeploy": "yarn build && vercel",
     "deploy": "vercel --prod"
   },
-  "author": "Larven <dev@larven.co.tz> (https://github.com/LarvenLLC)",
+  "author": "Samuel Kraft <samuelkraft@me.com> (https://github.com/samuelkraft)",
   "contributors": [
+    "Samuel Kraft <samuelkraft@me.com> (https://github.com/samuelkraft)"
     "Adam Beleko <bossbele@larven.io> (https://github.com/BossBele)"
   ],
   "dependencies": {
