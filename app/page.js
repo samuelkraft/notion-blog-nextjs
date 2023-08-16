@@ -16,7 +16,7 @@ export default async function Page() {
   return (
     <div>
       <main className={styles.container}>
-      <header className={styles.header}>
+        <header className={styles.header}>
           <div className={styles.logos}>
             <svg
               height="80"
@@ -51,16 +51,22 @@ export default async function Page() {
           <h1>Next.js blog powered by Notion API</h1>
           <p>
             This is an example of a Next.js blog with data fetched with Notions
-            API. The data comes from{" "}
-            <a href={`https://www.notion.so/${databaseId}`}>this table</a>. Get
-            the source code on{" "}
+            API. The data comes from
+            {' '}
+            <a href={`https://www.notion.so/${databaseId}`}>this table</a>
+            . Get
+            the source code on
+            {' '}
             <a href="https://github.com/samuelkraft/notion-blog-nextjs">
               Github
-            </a>{" "}
-            or read{" "}
+            </a>
+            {' '}
+            or read
+            {' '}
             <a href="https://samuelkraft.com/blog/building-a-notion-blog-with-public-api">
               my blogpost
-            </a>{" "}
+            </a>
+            {' '}
             on building your own.
           </p>
         </header>
