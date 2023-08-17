@@ -90,7 +90,7 @@ const ContactForm = () => {
 
         if (nbFieldsError === 0) {
             setIsLoading(true)
-            const res = await fetch('/api/contact', {
+            const res = await fetch('/api/contact/', {
                 method: 'POST',
                 body: JSON.stringify(form.values),
             })

@@ -145,7 +145,7 @@ const HiringForm = () => {
                 console.log(value)
             }
 
-            const res = await fetch('/api/hiring', {
+            const res = await fetch('/api/hiring/', {
                 method: 'POST',
                 body: formData,
             })
