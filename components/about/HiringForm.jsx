@@ -116,34 +116,23 @@ const HiringForm = () => {
     async function handleOnSubmit(e) {
         e.preventDefault()
 
-        // Validate the form before sending it
-
-        if (selectedFile === null) {
+        // Check for file selection
+        if (!selectedFile) {
             setOpenedError(true)
             return
         }
 
+        // Validate the form
         form.validate()
-        const nbFieldsError = Object.keys(form.errors).length
-        if (nbFieldsError === 0) {
-            setIsLoading(true)
-            const formData = new FormData()
+        if (Object.keys(form.errors).length !== 0) {
+            console.error('Validation errors:', form.errors)
+            return // Exit early if there are validation errors
+        }
 
-            // Append the selected file to the FormData object
-            formData.append('file', selectedFile)
-            formData.append(
-                'firstName',
-                e.currentTarget.elements.firstName.value
-            )
-            formData.append('lastName', e.currentTarget.elements.lastName.value)
-            formData.append('phone', e.currentTarget.elements.phone.value)
-            formData.append('email', e.currentTarget.elements.email.value)
-            formData.append('message', e.currentTarget.elements.message.value)
+        setIsLoading(true)
 
-            // Affiche les valeurs
-            for (var value of formData.values()) {
-                console.log(value)
-            }
+        try {
+            const formData = constructFormData(e)
 
             const res = await fetch('/api/hiring/', {
                 method: 'POST',
@@ -151,23 +140,53 @@ const HiringForm = () => {
             })
 
             const resBody = await res.json()
-            console.log('response', resBody)
+            console.log(resBody)
 
-            if (res.status === 200) {
-                // If the request was successful, do something (e.g., show a success message or redirect)
-                console.log('Form submitted successfully')
-                setOpened(true)
-                form.reset()
-                setIsLoading(false)
+            if (res.status === 200 && resBody.status === 'success') {
+                handleSuccess()
             } else {
-                // If the request failed, show an error message or handle the error in some other way
-                console.error('Failed to submit the form', resBody)
-                setIsLoading(false)
+                handleError(res)
             }
-        } else {
-            console.log('error')
-            form.validate(form.errors[0])
+        } catch (error) {
+            console.error('Error during form submission:', error)
+            setIsLoading(false)
         }
+    }
+
+    function constructFormData(e) {
+        const formData = new FormData()
+
+        formData.append('file', selectedFile)
+        formData.append('firstName', e.currentTarget.elements.firstName.value)
+        formData.append('lastName', e.currentTarget.elements.lastName.value)
+        formData.append('phone', e.currentTarget.elements.phone.value)
+        formData.append('email', e.currentTarget.elements.email.value)
+        formData.append('message', e.currentTarget.elements.message.value)
+
+        return formData
+    }
+
+    async function submitForm(formData) {
+        const response = await fetch('/api/hiring/', {
+            method: 'POST',
+            body: formData,
+        })
+
+        return response
+    }
+
+    function handleSuccess() {
+        console.log('Form submitted successfully')
+        form.reset()
+        setSelectedFile(null) // Reset file
+        setIsLoading(false)
+        setOpened(true)
+    }
+
+    function handleError(response) {
+        console.error('Failed to submit the form', response.statusText)
+        setIsLoading(false)
+        setOpenedError(true)
     }
 
     return (

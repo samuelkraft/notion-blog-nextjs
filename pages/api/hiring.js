@@ -1,8 +1,14 @@
 import formidable from "formidable";
 import * as yup from "yup";
 import mail from "@sendgrid/mail";
-mail.setApiKey(process.env.SENDGRID_API_KEY);
 import fs from "fs";
+
+mail.setApiKey(process.env.SENDGRID_API_KEY);
+
+const HTTP_OK = 200;
+const HTTP_BAD_REQUEST = 400;
+const HTTP_INTERNAL_SERVER_ERROR = 500;
+const HTTP_NOT_FOUND = 404;
 
 let formSchema = yup.object().shape({
     firstName: yup.string().required(),
@@ -13,11 +19,7 @@ let formSchema = yup.object().shape({
     file: yup.mixed().required(),
 });
 
-
 async function sendFormDataToMail(fields, files) {
-    // save to persistent data store
-    console.log("fields: ", fields);
-    console.log("files: ", files);
     const message = `
         Nom: ${fields.lastName}\r\n
         Prénom: ${fields.firstName}\r\n
@@ -25,12 +27,10 @@ async function sendFormDataToMail(fields, files) {
         Télephone: ${fields.phone}\r\n
         Message: ${fields.message}\r\n
     `;
-    console.log("message: ", message);
-    console.log("files.file.filepath: ", files.file.filepath);
-    const attachement = fs.readFileSync(files.file.filepath).toString("base64");
 
-    console.log("attachement: ", attachement);
-    let htmlMessage = message.replace(/(\S+):/g, "<b>$1:</b>").replace(/\r\n/g, "<br/>");
+    const attachment = fs.readFileSync(files.file.filepath).toString("base64");
+
+    const htmlMessage = message.replace(/(\S+):/g, "<b>$1:</b>").replace(/\r\n/g, "<br/>");
     // const data = {
     //     to: "contact@expand-cpa.com",
     //     cc: ["samuel.attali@expand-cpa.com", "benjamin.pik@expand-cpa.com"],
@@ -40,7 +40,7 @@ async function sendFormDataToMail(fields, files) {
     //     html: htmlMessage,
     //     attachments: [
     //         {
-    //             content: attachement,
+    //             content: attachment,
     //             filename: files.file.originalFilename,
     //             type: "application/pdf",
     //             disposition: "attachment",
@@ -48,16 +48,16 @@ async function sendFormDataToMail(fields, files) {
     //     ],
     // };
 
+
     const data = {
         to: "lay.frederic@yahoo.fr",
-        // cc: ["samuel.attali@expand-cpa.com", "benjamin.pik@expand-cpa.com"],
         from: "contact@expand-cpa.com",
         subject: `${fields.lastName} ${fields.firstName} à envoyer sa candidature depuis le site Expand CPA`,
         text: message,
         html: htmlMessage,
         attachments: [
             {
-                content: attachement,
+                content: attachment,
                 filename: files.file.originalFilename,
                 type: "application/pdf",
                 disposition: "attachment",
@@ -65,63 +65,46 @@ async function sendFormDataToMail(fields, files) {
         ],
     };
 
-    mail.send(data).catch((error) => {
-        console.error(error);
-        if (error.response) {
-            console.error(error.response.body);
-        }
-    });
-
+    return mail.send(data);
 }
 
 async function validateFromData(fields, files) {
-    try {
-        await formSchema.validate({ ...fields, ...files });
-        return true;
-    } catch (e) {
-        return false;
-    }
+    return formSchema.validate({ ...fields, ...files });
 }
 
 async function handlePostFormReq(req, res) {
     const form = formidable({ multiples: true });
 
-    const formData = new Promise((resolve, reject) => {
-        form.parse(req, async (err, fields, files) => {
-            if (err) {
-                reject("error");
-            }
-            resolve({ fields, files });
-        });
-    });
-
     try {
-        const { fields, files } = await formData;
-        const isValid = await validateFromData(fields, files);
-        if (!isValid) throw Error("invalid form schema");
+        const { fields, files } = await new Promise((resolve, reject) => {
+            form.parse(req, (err, fields, files) => {
+                if (err) {
+                    reject(new Error("Error parsing form data."));
+                }
+                resolve({ fields, files });
+            });
+        });
 
-        try {
-            await sendFormDataToMail(fields, files);
-            res.status(200).send({ status: "submitted" });
-            return;
-        } catch (e) {
-            res.status(500).send({ status: "something went wrong" });
-            return;
+        await validateFromData(fields, files);
+        await sendFormDataToMail(fields, files);
+        res.status(HTTP_OK).send({ status: "success" });
+
+    } catch (error) {
+        if (error.message.includes("invalid form schema")) {
+            res.status(HTTP_BAD_REQUEST).send({ status: "Invalid form data.", error: error.message });
+        } else if (error.message.includes("Error parsing form data")) {
+            res.status(HTTP_BAD_REQUEST).send({ status: "Error processing form.", error: error.message });
+        } else {
+            res.status(HTTP_INTERNAL_SERVER_ERROR).send({ status: "Something went wrong.", error: error.message });
         }
-    } catch (e) {
-        res.status(400).send({ status: "invalid submission" });
-        return;
     }
 }
 
-
-
-
 export default async function handler(req, res) {
-    if (req.method == "POST") {
+    if (req.method === "POST") {
         await handlePostFormReq(req, res);
     } else {
-        res.status(404).send("method not found");
+        res.status(HTTP_NOT_FOUND).send({ status: "Method not found." });
     }
 }
 
@@ -130,4 +113,3 @@ export const config = {
         bodyParser: false
     }
 };
-
