@@ -90,28 +90,30 @@ const ContactForm = () => {
 
         if (nbFieldsError === 0) {
             setIsLoading(true)
-            const res = await fetch('/api/contact/', {
-                method: 'POST',
-                body: JSON.stringify(form.values),
-            })
 
-            const resBody = await res.json()
-            console.log('response', resBody)
+            try {
+                const res = await fetch('/api/contact/', {
+                    method: 'POST',
+                    body: JSON.stringify(form.values),
+                })
 
-            if (res.status === 200) {
-                // If the request was successful, do something (e.g., show a success message or redirect)
-                console.log('Form submitted successfully')
-                setOpened(true)
-                form.reset()
-                setIsLoading(false)
-            } else {
-                // If the request failed, show an error message or handle the error in some other way
-                console.error('Failed to submit the form', resBody)
-                setIsLoading(false)
+                const resBody = await res.json()
+
+                if (res.status === 200 && resBody.status === 'success') {
+                    // Example check on response body
+                    console.log('Form submitted successfully')
+                    setOpened(true)
+                    form.reset()
+                } else {
+                    console.error('Failed to submit the form', resBody)
+                }
+            } catch (error) {
+                console.error('Network or unexpected error occurred', error)
             }
+
+            setIsLoading(false)
         } else {
             // show error message on the form
-            console.log('error')
             form.validate(form.errors[0])
         }
     }
