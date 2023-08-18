@@ -31,26 +31,9 @@ async function sendFormDataToMail(fields, files) {
     const attachment = fs.readFileSync(files.file.filepath).toString("base64");
 
     const htmlMessage = message.replace(/(\S+):/g, "<b>$1:</b>").replace(/\r\n/g, "<br/>");
-    // const data = {
-    //     to: "contact@expand-cpa.com",
-    //     cc: ["samuel.attali@expand-cpa.com", "benjamin.pik@expand-cpa.com"],
-    //     from: "samuel.sarfati@expand-cpa.com",
-    //     subject: `${fields.lastName} ${fields.firstName} à envoyer sa candidature depuis le site Expand CPA`,
-    //     text: message,
-    //     html: htmlMessage,
-    //     attachments: [
-    //         {
-    //             content: attachment,
-    //             filename: files.file.originalFilename,
-    //             type: "application/pdf",
-    //             disposition: "attachment",
-    //         }
-    //     ],
-    // };
-
-
     const data = {
-        to: "lay.frederic@yahoo.fr",
+        to: "samuel.sarfati@expand-cpa.com",
+        cc: ["samuel.attali@expand-cpa.com", "benjamin.pik@expand-cpa.com"],
         from: "contact@expand-cpa.com",
         subject: `${fields.lastName} ${fields.firstName} à envoyer sa candidature depuis le site Expand CPA`,
         text: message,
