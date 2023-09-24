@@ -1,16 +1,35 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "nextjs-notion-blog",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint --fix",
+    "predeploy": "yarn build && vercel",
+    "deploy": "vercel --prod"
   },
+  "author": "Samuel Kraft <samuelkraft@me.com> (https://github.com/samuelkraft)",
+  "contributors": [
+    "Samuel Kraft <samuelkraft@me.com> (https://github.com/samuelkraft)",
+    "Adam Beleko <bossbele@larven.io> (https://github.com/BossBele)"
+  ],
   "dependencies": {
     "@notionhq/client": "^2.2.3",
-    "next": "13.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "^13.4.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^13.4.16",
+    "encoding": "^0.1.13",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^13.4.16",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
