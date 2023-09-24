@@ -82,16 +82,17 @@ export default async function Page() {
                 year: 'numeric',
               },
             );
+            const slug = post.properties?.Slug?.rich_text[0].text.content;
             return (
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
-                  <Link href={`/${post.id}`}>
+                  <Link href={`/article/${slug}`}>
                     <Text title={post.properties?.Title?.title} />
                   </Link>
                 </h3>
 
                 <p className={styles.postDescription}>{date}</p>
-                <Link href={`/${post.id}`}>Read post →</Link>
+                <Link href={`/article/${slug}`}>Read post →</Link>
               </li>
             );
           })}
