@@ -1,20 +1,18 @@
-import { Fragment } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import { Fragment } from "react";
+import Head from "next/head";
+import Link from "next/link";
 
-import {
-  getDatabase, getBlocks, getPageFromSlug,
-} from '../../../lib/notion';
-import Text from '../../../components/text';
-import { renderBlock } from '../../../components/notion/renderer';
-import styles from '../../../styles/post.module.css';
+import { getDatabase, getBlocks, getPageFromSlug } from "../../../lib/notion";
+import Text from "../../../components/text";
+import { renderBlock } from "../../../components/notion/renderer";
+import styles from "../../../styles/post.module.css";
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
   const database = await getDatabase();
   return database?.map((page) => {
     const slug = page.properties.Slug?.formula?.string;
-    return ({ id: page.id, slug });
+    return { id: page.id, slug };
   });
 }
 
