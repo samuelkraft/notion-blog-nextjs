@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
               height: '140px',
               objectFit: 'contain',
               display: 'block',
-              margin: '0 auto'
+              margin: '0 auto',
             }}
           />
         </header>
