@@ -13,7 +13,7 @@ async function getPosts() {
 
 export default async function Page() {
   const posts = (await getPosts()).filter(
-    (post) => post.properties?.Published?.checkbox === true
+    (post) => post.properties?.Published?.checkbox === true,
   );
 
   const groupedPosts = posts.reduce((acc, post) => {
@@ -32,7 +32,7 @@ export default async function Page() {
         <header className={styles.header}>
           {/* logos removed */}
           <div style={{ textAlign: 'center' }}>
-            <h1>Y's Magazine - IT Knowledge Base</h1>
+            <h1>Y&apos;s Magazine - IT Knowledge Base</h1>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p>
@@ -50,11 +50,11 @@ export default async function Page() {
           </div>
         </header>
 
-        {Object.entries(groupedPosts).map(([tag, posts]) => (
+        {Object.entries(groupedPosts).map(([tag, tagPosts]) => (
           <details key={tag} className={styles.categorySection} open>
             <summary className={styles.heading}>{tag}</summary>
             <ol className={styles.posts}>
-              {posts.map((post) => {
+              {tagPosts.map((post) => {
                 const date = new Date(post.last_edited_time).toLocaleString('en-US', {
                   month: 'short',
                   day: '2-digit',
