@@ -12,7 +12,7 @@ export default function Layout({ children }) {
             width={660}
             height={140}
             style={{ margin: '0 auto', display: 'block', objectFit: 'contain' }}
-            priority,
+            priority
           />
           <p>
             こんにちは、YUTOです。
