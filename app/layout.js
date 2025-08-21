@@ -13,6 +13,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <img
+          src="/Header.png"
+          alt="ヘッダー画像"
+          style={{
+            width: '450px',
+            height: 'auto',
+            objectFit: 'contain',
+            display: 'block',
+            margin: '2rem auto',
+          }}
+        />
         {children}
       </body>
     </html>
